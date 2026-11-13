@@ -13,8 +13,8 @@
 ;   undefined4 DAT_02c8103c
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_00573e70
 ;   sound_sndmain.cpp_lockSound_FUN_00575d20
+;   sound_sndmain.cpp_unlockSound_FUN_00573e70
 ;
 ; *****************************************************************************
 
@@ -38,12 +38,12 @@ section .text
     XOR ECX,ECX                         ; 00575b8e
         ;   Label: LAB_00575b8e
     MOV dword ptr [0x02c8103c],ECX      ; 00575b90 | DAT_02c8103c
-    CALL sound_sndmain.cpp_FUN_00573e70 ; 00575b96
-        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00573e70()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00573e70 ; 00575b96
+        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00573e70()
     MOV EAX,0x1                         ; 00575b9b
     RET                                 ; 00575ba0
-    CALL sound_sndmain.cpp_FUN_00573e70 ; 00575ba1
-        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00573e70()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00573e70 ; 00575ba1
+        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00573e70()
         ;   Label: LAB_00575ba1
     XOR EAX,EAX                         ; 00575ba6
     RET                                 ; 00575ba8

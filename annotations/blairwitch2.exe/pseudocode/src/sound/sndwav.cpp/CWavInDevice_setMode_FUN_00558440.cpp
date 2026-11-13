@@ -69,7 +69,7 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_00558440(CWavInDevice *thi
     _DAT_0264b264 = channels;
     _DAT_0264b268 = sample_rate;
     if (iVar2 < 0) {
-      sound_sndmain_cpp_FUN_005549c0("WavInDevice::setMode - Can't set any recording modes!");
+      sound_sndmain_cpp_logSoundError_FUN_005549c0("WavInDevice::setMode - Can't set any recording modes!");
       return 0;
     }
     _DAT_0264b24c = (&DAT_0061bf90)[iVar2 * 4];

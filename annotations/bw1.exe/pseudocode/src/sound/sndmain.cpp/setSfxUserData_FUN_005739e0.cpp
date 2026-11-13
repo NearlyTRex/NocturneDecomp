@@ -18,11 +18,11 @@ int __cdecl sound_sndmain_cpp_setSfxUserData_FUN_005739e0(uint sfx_handle,int in
     _DAT_01d1d404 = 0x10c4;
     core_main_c_FUN_005030e0("setSfxUserData - invalid user data index: %d",index);
   }
-  pCVar1 = sound_sndmain_cpp_FUN_0056fa10(sfx_handle,1);
+  pCVar1 = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_0056fa10(sfx_handle,1);
   if (pCVar1 == (CSfxSlot *)0x0) {
     return 0;
   }
   (pCVar1->options).userdata[index] = value;
-  sound_sndmain_cpp_FUN_00573e70();
+  sound_sndmain_cpp_unlockSound_FUN_00573e70();
   return 1;
 }

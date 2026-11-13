@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_allocateToss_FUN_004b6ed0
-;   sound_sndmain.cpp_FUN_005737d0
+;   sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_005737d0
 ;
 ; *****************************************************************************
 
@@ -60,8 +60,8 @@ section .text
     PUSH EDX                            ; 004b6eba
     MOV EBP,dword ptr [EAX + 0x1cb056c] ; 004b6ebb
     PUSH EBP                            ; 004b6ec1
-    CALL sound_sndmain.cpp_FUN_005737d0 ; 004b6ec2
-        ;   XREF to: 005737d0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005737d0()
+    CALL sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_005737d0 ; 004b6ec2
+        ;   XREF to: 005737d0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_005737d0(uint sfx_handle, CVector3f * position_source_ptr)
     ADD ESP,0x8                         ; 004b6ec7
     POP EBP                             ; 004b6eca
     POP EDI                             ; 004b6ecb

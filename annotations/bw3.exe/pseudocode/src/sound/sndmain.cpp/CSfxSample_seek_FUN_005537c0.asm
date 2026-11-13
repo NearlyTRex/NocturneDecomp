@@ -13,9 +13,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
+;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00553960 at 00553bc0
 ;   sound_sndmain.cpp_CSfxSlot_seek_FUN_00555750 at 00555816
-;   sound_sndmain.cpp_FUN_00552350 at 0055256d
-;   sound_sndmain.cpp_FUN_00553960 at 00553bc0
+;   sound_sndmain.cpp_loadStreamingSoundFile_FUN_00552350 at 0055256d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d2ca9
@@ -33,8 +33,8 @@
 ;   core_main.c_FUN_004e4330
 ;   crt_math.c_round_FUN_005a3120
 ;   sound_mp3.cpp_CMP3Decoder_seek_FUN_00502bc0
+;   sound_sndmain.cpp_CSfxSample_framesToBytes_FUN_00555900
 ;   sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_00555aa0
-;   sound_sndmain.cpp_FUN_00555900
 ;   support_trstream.cpp_CInStreamFile_isOpen_FUN_00573d60
 ;   support_trstream.cpp_CInStreamFile_seek_FUN_00573cf0
 ;
@@ -158,8 +158,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x16c]     ; 005538fd
     PUSH EAX                            ; 00553903
     PUSH EBX                            ; 00553904
-    CALL sound_sndmain.cpp_FUN_00555900 ; 00553905
-        ;   XREF to: 00555900 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00555900()
+    CALL sound_sndmain.cpp_CSfxSample_framesToBytes_FUN_00555900 ; 00553905
+        ;   XREF to: 00555900 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_framesToBytes_FUN_00555900(CSfxSample * this_ptr, int frame_count)
     MOV EDX,dword ptr [EBX + 0x178]     ; 0055390a
     ADD ESP,0x8                         ; 00553910
     ADD EAX,EDX                         ; 00553913

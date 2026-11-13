@@ -54,7 +54,7 @@ void __cdecl sound_sndmain_cpp_readIni_FUN_00559220(CIniFile *ini_file)
 LAB_0055931a:
       iStack_30 = sound_sndmain_cpp_isHardwareMixingEnabled_FUN_005586e0();
       engine_ini_cpp_FUN_004d8c30(ini_file,"AccelEnabled",&iStack_30);
-      sound_sndmain_cpp_FUN_005586f0(iStack_30);
+      sound_sndmain_cpp_enableHwSoundMixing_FUN_005586f0(iStack_30);
       fStack_2c = sound_sndmain_cpp_getMaxSwLatency_FUN_005591a0();
       fStack_14 = fStack_2c;
       engine_ini_cpp_FUN_004d8cd0(ini_file,"MaxSwLatency",&fStack_2c);

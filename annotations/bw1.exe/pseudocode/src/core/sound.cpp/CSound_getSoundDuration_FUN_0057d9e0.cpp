@@ -27,7 +27,7 @@ float __cdecl core_sound_cpp_CSound_getSoundDuration_FUN_0057d9e0(CSound *this_p
     pCVar3 = (CSampleInfo *)(pCVar3->name + 1);
   }
   pCVar3->name[0] = '\0';
-  iVar2 = sound_sndmain_cpp_FUN_00574410((CSfxSample *)&local_160);
+  iVar2 = sound_sndmain_cpp_getSampleInfo_FUN_00574410((CSfxSample *)&local_160);
   if (iVar2 == 0) {
     return -1.0;
   }

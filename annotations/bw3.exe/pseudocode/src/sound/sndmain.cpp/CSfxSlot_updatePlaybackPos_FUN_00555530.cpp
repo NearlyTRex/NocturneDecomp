@@ -56,7 +56,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_00555530(CSfxSlot 
   this_ptr_00 = this_ptr->sample;
   if ((-1 < (this_ptr_00->sample_info).sample_count) &&
      ((double)(this_ptr_00->sample_info).sample_count <= (this_ptr->options).playback_position)) {
-    iVar2 = sound_sndmain_cpp_FUN_00555b80(this_ptr_00);
+    iVar2 = sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_00555b80(this_ptr_00);
     if (iVar2 == 0) {
       (this_ptr->options).playback_position = (double)(this_ptr->sample->sample_info).sample_count;
     }

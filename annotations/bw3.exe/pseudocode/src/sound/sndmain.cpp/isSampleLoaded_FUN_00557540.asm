@@ -7,9 +7,9 @@
 ; char *           Stack[0x4]:4   sample_name
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_00551d20
-;   sound_sndmain.cpp_FUN_00556fd0
+;   sound_sndmain.cpp_getSfxSample_FUN_00551d20
 ;   sound_sndmain.cpp_lockSound_FUN_00558e90
+;   sound_sndmain.cpp_unlockSound_FUN_00556fd0
 ;
 ; *****************************************************************************
 
@@ -22,15 +22,15 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 00557546
     PUSH EDX                            ; 0055754a
     XOR EBX,EBX                         ; 0055754b
-    CALL sound_sndmain.cpp_FUN_00551d20 ; 0055754d
-        ;   XREF to: 00551d20 (UNCONDITIONAL_CALL)  ; CSfxSample * sound_sndmain.cpp_FUN_00551d20(char * filename)
+    CALL sound_sndmain.cpp_getSfxSample_FUN_00551d20 ; 0055754d
+        ;   XREF to: 00551d20 (UNCONDITIONAL_CALL)  ; CSfxSample * sound_sndmain.cpp_getSfxSample_FUN_00551d20(char * filename)
     ADD ESP,0x4                         ; 00557552
     TEST EAX,EAX                        ; 00557555
     JZ 0x0055755e                       ; 00557557
         ;   XREF to: 0055755e (CONDITIONAL_JUMP)  ; LAB_0055755e
     MOV EBX,0x1                         ; 00557559
-    CALL sound_sndmain.cpp_FUN_00556fd0 ; 0055755e
-        ;   XREF to: 00556fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00556fd0()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00556fd0 ; 0055755e
+        ;   XREF to: 00556fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00556fd0()
         ;   Label: LAB_0055755e
     MOV EAX,EBX                         ; 00557563
     POP EBX                             ; 00557565

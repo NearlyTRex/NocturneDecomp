@@ -81,7 +81,7 @@ void __cdecl core_bride_cpp_CBride_processDamage_FUN_00424b10(CBride *this_ptr,S
     iVar4 = core_actor_cpp_randomChance_FUN_0040cd00(0.5);
     core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
               (&this_ptr_00->base,(iVar4 == 0) + 7,iVar5);
-    iVar4 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[0]);
+    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[0]);
     if (iVar4 == 0) {
       uVar2 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"ub-hurt?.wav");

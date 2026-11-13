@@ -13,7 +13,7 @@ uint __cdecl core_door_cpp_CDoor_onLocked_FUN_00460800(CDoor *this_ptr)
 {
   uint uVar1;
   
-  uVar1 = sound_sndmain_cpp_FUN_00550b70(_DAT_01b4d330);
+  uVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(_DAT_01b4d330);
   if (uVar1 != 0) {
     return uVar1;
   }

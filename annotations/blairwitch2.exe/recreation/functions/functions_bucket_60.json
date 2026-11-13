@@ -18130,14 +18130,48 @@
   },
   {
     "addr":"0054b160",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":235,
-    "method":"FUN_0054b160",
-    "name":"sound_sndmain.cpp_FUN_0054b160",
+    "method":"computeFFT",
+    "name":"sound_sndmain.cpp_computeFFT_FUN_0054b160",
+    "params":[
+      {
+        "name":"input",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      },
+      {
+        "name":"size",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"output_real",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      },
+      {
+        "name":"output_imag",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",
@@ -18155,8 +18189,8 @@
     ],
     "conv":"__cdecl",
     "instructions":65,
-    "method":"FUN_0054b960",
-    "name":"sound_sndmain.cpp_FUN_0054b960",
+    "method":"ensureSoundMemoryAvailable",
+    "name":"sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_0054b960",
     "params":[
       {
         "name":"requested_bytes",
@@ -18452,14 +18486,48 @@
       "004cd660",
       "00580610"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":30,
-    "method":"FUN_005515e0",
-    "name":"sound_sndmain.cpp_FUN_005515e0",
+    "method":"isWithinListenerRadius",
+    "name":"sound_sndmain.cpp_isWithinListenerRadius_FUN_005515e0",
+    "params":[
+      {
+        "name":"pos_x",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      },
+      {
+        "name":"pos_y",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      },
+      {
+        "name":"pos_z",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      },
+      {
+        "name":"radius",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",
@@ -18526,8 +18594,8 @@
     ],
     "conv":"__cdecl",
     "instructions":193,
-    "method":"FUN_005519e0",
-    "name":"sound_sndmain.cpp_FUN_005519e0",
+    "method":"getSampleInfo",
+    "name":"sound_sndmain.cpp_getSampleInfo_FUN_005519e0",
     "params":[
       {
         "name":"out_sample",

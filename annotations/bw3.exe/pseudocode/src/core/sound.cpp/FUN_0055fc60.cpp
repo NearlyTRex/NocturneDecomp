@@ -9,8 +9,7 @@
 void __cdecl core_sound_cpp_FUN_0055fc60(CSound *this_ptr)
 
 {
-  int extraout_EAX;
-  int unaff_retaddr;
+  uint uVar1;
   
   if (g_CStrListInstance.item_count == 0) {
     shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_00482c70
@@ -19,8 +18,8 @@ void __cdecl core_sound_cpp_FUN_0055fc60(CSound *this_ptr)
               (&g_CStrListInstance,"sound","*.mp3");
   }
   sound_sndmain_cpp_initializeSoundDevice_FUN_00558730();
-  sound_sndmain_cpp_FUN_005586d0(unaff_retaddr);
-  if (extraout_EAX < 1) {
+  uVar1 = sound_sndmain_cpp_hasHardware3DSound_FUN_005586d0();
+  if ((int)uVar1 < 1) {
     return;
   }
   sound_sndmain_cpp_setSoundOutputMode_FUN_00558290(0x10,2,0xac44);

@@ -12,7 +12,7 @@
 ;   core_game.cpp_FUN_004d6990 at 004d6c58
 ;   engine_pod.cpp_FUN_0053b250 at 0053b797
 ;   sound_sndmain.cpp_CSfxSample_seek_FUN_005702c0 at 00570417
-;   sound_sndmain.cpp_FUN_0056e830 at 0056ea5d
+;   sound_sndmain.cpp_getSfxSample_FUN_0056e830 at 0056ea5d
 ;
 ; *****************************************************************************
 

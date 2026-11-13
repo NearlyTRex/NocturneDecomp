@@ -24,7 +24,7 @@
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
 ;   crt_unknown.c_sprintf_FUN_005bfb40
-;   sound_sndmain.cpp_FUN_005735a0
+;   sound_sndmain.cpp_isSfxPlaying_FUN_005735a0
 ;   sound_sndmain.cpp_killSfx_FUN_00573a80
 ;
 ; *****************************************************************************
@@ -164,8 +164,8 @@ section .text
     ADD ESP,0x4                         ; 004fe673
     MOV ECX,dword ptr [EBX + 0xc26c]    ; 004fe676
     PUSH ECX                            ; 004fe67c
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 004fe67d
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 004fe67d
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 004fe682
     TEST EAX,EAX                        ; 004fe685
     JNZ 0x004fe6d5                      ; 004fe687

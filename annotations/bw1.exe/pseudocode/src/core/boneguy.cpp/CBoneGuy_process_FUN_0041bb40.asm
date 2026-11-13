@@ -610,16 +610,16 @@ section .text
     SUB ESP,0x8                         ; 0041c195
     FLD float ptr [EBX + 0x20]          ; 0041c198
     FSTP double ptr [ESP]               ; 0041c19b
-    CALL sound_sndmain.cpp_FUN_00574010 ; 0041c19e
-        ;   XREF to: 00574010 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00574010()
+    CALL sound_sndmain.cpp_isWithinListenerRadius_FUN_00574010 ; 0041c19e
+        ;   XREF to: 00574010 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isWithinListenerRadius_FUN_00574010(double pos_x, double pos_y, double pos_z, float radius)
     ADD ESP,0x1c                        ; 0041c1a3
     TEST EAX,EAX                        ; 0041c1a6
     JZ 0x0041be0f                       ; 0041c1a8
         ;   XREF to: 0041be0f (CONDITIONAL_JUMP)  ; LAB_0041be0f
     MOV EDI,dword ptr [EBX + 0xc278]    ; 0041c1ae
     PUSH EDI                            ; 0041c1b4
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 0041c1b5
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 0041c1b5
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 0041c1ba
     TEST EAX,EAX                        ; 0041c1bd
     JNZ 0x0041be07                      ; 0041c1bf
@@ -636,8 +636,8 @@ section .text
     SUB ESP,0x8                         ; 0041c1de
     FLD float ptr [EBP + 0x76]          ; 0041c1e1
     FSTP double ptr [ESP]               ; 0041c1e4
-    CALL sound_sndmain.cpp_FUN_00572a50 ; 0041c1e7
-        ;   XREF to: 00572a50 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572a50(double trigger_time, int trigger_id)
+    CALL sound_sndmain.cpp_setNextSfxTriggerTime_FUN_00572a50 ; 0041c1e7
+        ;   XREF to: 00572a50 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTriggerTime_FUN_00572a50(double trigger_time, int trigger_id)
     ADD ESP,0xc                         ; 0041c1ec
     PUSH 0x5d4731                       ; 0041c1ef | = "boneGuy-walkloop.wav"
     MOV EAX,dword ptr [EBX + 0x154]     ; 0041c1f4

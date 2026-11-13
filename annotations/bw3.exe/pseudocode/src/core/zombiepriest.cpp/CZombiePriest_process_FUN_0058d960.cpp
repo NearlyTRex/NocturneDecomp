@@ -138,10 +138,10 @@ void __cdecl core_zombiepriest_cpp_CZombiePriest_process_FUN_0058d960(CZombiePri
     EVar7 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
     if (EVar7 == DEATH_STATE_ALIVE) {
       in_stack_fffffdb8 = (CZombiePriest *)0x58da0b;
-      iVar6 = sound_sndmain_cpp_FUN_00556700(this_ptr->sfx_handle);
+      iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handle);
       if (iVar6 == 0) {
         in_stack_fffffdb8 = (CZombiePriest *)0x58db25;
-        iVar6 = sound_sndmain_cpp_FUN_00556700(this_ptr->death_sfx_handle);
+        iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->death_sfx_handle);
         if (iVar6 == 0) {
           in_stack_fffffdb8 = this_ptr;
           uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)

@@ -17,7 +17,8 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_pollHwPlaybackPos_FUN_005554a0(CSfxSlot *
      (this_ptr->sample != (CSfxSample *)0x0)) {
     hardware_playback_pos = (double)(**(code **)(*_DAT_02cf3280 + 0x48))(_DAT_02cf3280,this_ptr);
     if (hardware_playback_pos < 0.0) {
-      sound_sndmain_cpp_FUN_0055a560("Error polling hw playback pos %s\n",this_ptr->sample);
+      sound_sndmain_cpp_logSoundError_FUN_0055a560
+                ("Error polling hw playback pos %s\n",this_ptr->sample);
       return 0;
     }
     sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_00555530(this_ptr,hardware_playback_pos);

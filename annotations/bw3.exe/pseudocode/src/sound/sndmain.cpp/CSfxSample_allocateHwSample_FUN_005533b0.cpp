@@ -11,75 +11,77 @@
 int __cdecl sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005533b0(CSfxSample *this_ptr)
 
 {
-  int extraout_EAX;
-  short *psVar1;
-  int iVar2;
+  uint uVar1;
+  short *psVar2;
   int iVar3;
-  CSfxSample *pCVar4;
-  uint *puVar5;
+  int iVar4;
+  CSfxSample *pCVar5;
   uint *puVar6;
-  byte bVar7;
-  int in_stack_fffffd50;
+  uint *puVar7;
+  byte bVar8;
+  uint auStack_2b0 [68];
+  int local_1a0;
   uint local_160 [84];
   
-  bVar7 = 0;
+  bVar8 = 0;
   sound_sndmain_cpp_CSfxSample_releaseBufferId_FUN_005535e0(this_ptr);
   sound_sndmain_cpp_CSfxSample_freeSampleData_FUN_00553630(this_ptr);
   if ((this_ptr->sample_info).streaming_flag == 2) {
-    sound_sndmain_cpp_FUN_0055a560("Atried to use Yamaha WAV on non-CE platform." + 1);
+    sound_sndmain_cpp_logSoundError_FUN_0055a560("Atried to use Yamaha WAV on non-CE platform." + 1);
   }
   else {
-    sound_sndmain_cpp_FUN_005586d0(in_stack_fffffd50);
-    if (extraout_EAX < 1) {
-      sound_sndmain_cpp_FUN_005514c0(this_ptr->data_size_bytes);
-      psVar1 = (short *)realloc(this_ptr->sample_data,this_ptr->data_size_bytes);
-      if (psVar1 != (short *)0x0) {
-        this_ptr->sample_data = psVar1;
+    uVar1 = sound_sndmain_cpp_hasHardware3DSound_FUN_005586d0();
+    if ((int)uVar1 < 1) {
+      sound_sndmain_cpp_ensureSoundMemoryAvailable_FUN_005514c0(this_ptr->data_size_bytes);
+      psVar2 = (short *)realloc(this_ptr->sample_data,this_ptr->data_size_bytes);
+      if (psVar2 != (short *)0x0) {
+        this_ptr->sample_data = psVar2;
         return 1;
       }
     }
     else {
-      pCVar4 = this_ptr;
-      puVar5 = (uint *)&stack0xfffffd50;
-      for (iVar2 = 0x54; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *puVar5 = *(uint *)(pCVar4->sample_info).name;
-        pCVar4 = (CSfxSample *)((int)pCVar4 + (uint)bVar7 * -8 + 4);
-        puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
+      pCVar5 = this_ptr;
+      puVar6 = auStack_2b0;
+      for (iVar3 = 0x54; iVar3 != 0; iVar3 = iVar3 + -1) {
+        *puVar6 = *(uint *)(pCVar5->sample_info).name;
+        pCVar5 = (CSfxSample *)((int)pCVar5 + (uint)bVar8 * -8 + 4);
+        puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
       }
-      puVar5 = (uint *)&stack0xfffffd50;
-      puVar6 = local_160;
-      for (iVar2 = 0x54; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *puVar6 = *puVar5;
-        puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
-        puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+      local_1a0 = this_ptr->streaming_buffer_size;
+      puVar6 = auStack_2b0;
+      puVar7 = local_160;
+      for (iVar3 = 0x54; iVar3 != 0; iVar3 = iVar3 + -1) {
+        *puVar7 = *puVar6;
+        puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
+        puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
       }
       if (_DAT_02cf3280 != (int *)0x0) {
         do {
-          iVar2 = (**(code **)(*_DAT_02cf3280 + 0x30))(_DAT_02cf3280,local_160);
-          if (iVar2 != 0) goto LAB_0055347a;
-          iVar3 = 0;
-          iVar2 = _DAT_02cebc20;
+          iVar3 = (**(code **)(*_DAT_02cf3280 + 0x30))(_DAT_02cf3280,local_160);
+          if (iVar3 != 0) goto LAB_0055347a;
+          iVar4 = 0;
+          iVar3 = _DAT_02cebc20;
           do {
-            iVar2 = iVar2 + 1;
-            if (0x3f < iVar2) {
-              iVar2 = 0;
+            iVar3 = iVar3 + 1;
+            if (0x3f < iVar3) {
+              iVar3 = 0;
             }
-            if ((((g_SfxSamples[iVar2].ref_count == 0) && (g_SfxSamples[iVar2].buffer_id != 0)) &&
-                (g_SfxSamples[iVar2].taken == 0)) &&
-               ((g_SfxSamples[iVar2].is_user_sample == 0 &&
+            if ((((g_SfxSamples[iVar3].ref_count == 0) && (g_SfxSamples[iVar3].buffer_id != 0)) &&
+                (g_SfxSamples[iVar3].taken == 0)) &&
+               ((g_SfxSamples[iVar3].is_user_sample == 0 &&
                 (g_SfxSamples[_DAT_02cebc20].locked_length == 0)))) {
-              sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00553520(g_SfxSamples + iVar2);
+              sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00553520(g_SfxSamples + iVar3);
               break;
             }
-            iVar3 = iVar3 + 1;
-          } while (iVar3 < 0x40);
-        } while (iVar3 < 0x40);
-        sound_sndmain_cpp_FUN_0055a560("allocateHwSample - failed\n");
+            iVar4 = iVar4 + 1;
+          } while (iVar4 < 0x40);
+        } while (iVar4 < 0x40);
+        sound_sndmain_cpp_logSoundError_FUN_0055a560("allocateHwSample - failed\n");
       }
-      iVar2 = 0;
+      iVar3 = 0;
 LAB_0055347a:
-      this_ptr->buffer_id = iVar2;
-      if (iVar2 != 0) {
+      this_ptr->buffer_id = iVar3;
+      if (iVar3 != 0) {
         return 1;
       }
     }

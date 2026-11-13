@@ -1577,16 +1577,16 @@ LAB_004514a7:
   if ((fVar28 != 0.0) && (*(int *)((int)fVar28 + 0xfc) != 0)) {
     (param_1->base).base.is_transparent = 1;
   }
-  iVar20 = sound_sndmain_cpp_FUN_00550b70(param_1[1].base.base.lifecycle_state);
+  iVar20 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(param_1[1].base.base.lifecycle_state);
   if (iVar20 == 0) {
     if (g_CGamePtr->goggles_active != 0) {
       sound_sndmain_cpp_killSfx_FUN_00551050((uint)param_1[1].base.base.create_prob);
       sound_sndmain_cpp_pushSfxOptions_FUN_00550450();
       sound_sndmain_cpp_setNextSfxFlagBits_FUN_005503a0(1);
-      fVar28 = (float)sound_sndmain_cpp_FUN_005506b0();
+      fVar28 = (float)sound_sndmain_cpp_startSfx_FUN_005506b0("goggle-on.wav");
       param_1[1].base.base.create_prob = fVar28;
       sound_sndmain_cpp_setNextSfxVolume_FUN_00550270(0.0);
-      EVar19 = sound_sndmain_cpp_FUN_005506b0();
+      EVar19 = sound_sndmain_cpp_startSfx_FUN_005506b0("goggle-loop.wav");
       param_1[1].base.base.lifecycle_state = EVar19;
       sound_sndmain_cpp_popSfxOptions_FUN_005504d0();
       sound_sndmain_cpp_setSfxFade_FUN_00551080(param_1[1].base.base.lifecycle_state,1.0,1.0,0);
@@ -1603,7 +1603,7 @@ LAB_004514a7:
     sound_sndmain_cpp_killSfx_FUN_00551050(param_1[1].base.base.lifecycle_state);
     sound_sndmain_cpp_pushSfxOptions_FUN_00550450();
     sound_sndmain_cpp_setNextSfxFlagBits_FUN_005503a0(1);
-    sound_sndmain_cpp_FUN_005506b0();
+    sound_sndmain_cpp_startSfx_FUN_005506b0("goggle-off.wav");
     sound_sndmain_cpp_popSfxOptions_FUN_005504d0();
     return;
   }

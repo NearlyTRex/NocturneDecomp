@@ -138,7 +138,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_00485d70(CDrone *this_ptr,float d
           core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&this_ptr_00->base,2,1);
           uVar8 = this_ptr->sfx_handles[2];
           (this_ptr->base).attack_cooldown = 1.0;
-          iVar4 = sound_sndmain_cpp_FUN_005735a0(uVar8);
+          iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(uVar8);
           if (iVar4 == 0) {
             uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                               ((CDemonActor *)this_ptr,"drone-attack?.wav");
@@ -240,15 +240,17 @@ switchD_004863fe_caseD_3:
     (this_ptr->base).attack_cooldown = (this_ptr->base).attack_cooldown - delta_time;
   }
   if ((iStack_18 == 1) &&
-     (iVar4 = sound_sndmain_cpp_FUN_00574010
+     (iVar4 = sound_sndmain_cpp_isWithinListenerRadius_FUN_00574010
                         ((double)(this_ptr->base).base.base.location.position.x,
-                         (double)(this_ptr->base).base.base.location.position.y), iVar4 != 0)) {
-    iVar4 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[1]);
+                         (double)(this_ptr->base).base.base.location.position.y,
+                         (double)(this_ptr->base).base.base.location.position.z,50.0), iVar4 != 0))
+  {
+    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[1]);
     if (iVar4 == 0) {
       sound_sndmain_cpp_pushSfxOptions_FUN_00572ac0();
       fVar13 = 2.8026e-45;
       fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.0,1.0);
-      sound_sndmain_cpp_FUN_00572a50((double)fStack_14,(int)fVar13);
+      sound_sndmain_cpp_setNextSfxTriggerTime_FUN_00572a50((double)fStack_14,(int)fVar13);
       uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playAmbientSound)
                         ((CDemonActor *)this_ptr,"slime.wav");
       this_ptr->sfx_handles[1] = uVar8;

@@ -13,7 +13,7 @@ void core_tawiscara_cpp_FUN_00595710(int param_1)
   uint uVar2;
   
   *(uint *)(param_1 + 0xd074) = 0x41200000;
-  iVar1 = sound_sndmain_cpp_FUN_00556700(*(uint *)(param_1 + 0xd070));
+  iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(*(uint *)(param_1 + 0xd070));
   if (iVar1 != 0) {
     return;
   }

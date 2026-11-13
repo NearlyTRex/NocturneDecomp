@@ -244,8 +244,8 @@ section .text
     JZ 0x004d908d                       ; 004d907a
         ;   XREF to: 004d908d (CONDITIONAL_JUMP)  ; LAB_004d908d
     PUSH EDX                            ; 004d907c
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 004d907d
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 004d907d
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 004d9082
     TEST EAX,EAX                        ; 004d9085
     JZ 0x004d91eb                       ; 004d9087
@@ -363,8 +363,8 @@ section .text
         ;   XREF to: 00572980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxChannel_FUN_00572980(int channel_index)
     ADD ESP,0x4                         ; 004d91c0
     PUSH 0x1                            ; 004d91c3
-    CALL sound_sndmain.cpp_FUN_005729f0 ; 004d91c5
-        ;   XREF to: 005729f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_005729f0(uint flags)
+    CALL sound_sndmain.cpp_setNextSfxFlags_FUN_005729f0 ; 004d91c5
+        ;   XREF to: 005729f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxFlags_FUN_005729f0(uint flags)
     ADD ESP,0x4                         ; 004d91ca
     PUSH 0x5e35d7                       ; 004d91cd | = "splash-music-44.wav"
     CALL sound_sndmain.cpp_startSfx_FUN_00572d20 ; 004d91d2

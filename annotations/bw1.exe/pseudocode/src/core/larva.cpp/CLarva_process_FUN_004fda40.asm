@@ -150,8 +150,8 @@ section .text
         ;   XREF to: 004fe436 (CONDITIONAL_JUMP)  ; LAB_004fe436
     MOV EDX,dword ptr [EBX + 0xc270]    ; 004fdb70
     PUSH EDX                            ; 004fdb76
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 004fdb77
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 004fdb77
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 004fdb7c
     TEST EAX,EAX                        ; 004fdb7f
     JZ 0x004fe3af                       ; 004fdb81

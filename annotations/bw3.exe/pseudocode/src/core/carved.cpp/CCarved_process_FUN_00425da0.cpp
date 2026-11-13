@@ -639,7 +639,7 @@ LAB_00426d3d:
       if ((this_ptr->base).victim != (CCharacter *)0x0) {
         core_carved_cpp_FUN_00429090();
         in_stack_fffffb38 = (CCarved *)0x426f46;
-        iVar5 = sound_sndmain_cpp_FUN_00556700(this_ptr->sfx_handles[1]);
+        iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handles[1]);
         if (iVar5 == 0) {
           if (this_ptr->is_female == 0) {
             in_stack_fffffb38 = this_ptr;
@@ -690,7 +690,7 @@ LAB_00426d3d:
       }
     }
     else if (pCVar2 == (CCharacter *)0x0) {
-      iVar5 = sound_sndmain_cpp_FUN_00556700(this_ptr->sfx_handles[1]);
+      iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handles[1]);
       if (iVar5 == 0) {
         if (this_ptr->is_female == 0) {
           pcVar13 = "demn_chase_???.wav";

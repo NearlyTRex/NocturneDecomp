@@ -24,7 +24,7 @@ void __cdecl core_construc_cpp_CConstruct_processDamage_FUN_00437de0(CConstruct 
     iVar2 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,2);
     core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
               (&(this_ptr->base).base.model.base,iVar2 + 7,force_immediate);
-    iVar2 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[1]);
+    iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[1]);
     if (iVar2 == 0) {
       uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"batman-hurt?.wav");
@@ -34,7 +34,7 @@ void __cdecl core_construc_cpp_CConstruct_processDamage_FUN_00437de0(CConstruct 
   else {
     (this_ptr->base).base.hit_points = 1.0;
     core_construc_cpp_CConstruct_explode_FUN_00438060(this_ptr);
-    iVar2 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[1]);
+    iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[1]);
     if (iVar2 == 0) {
       uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"batman-die.wav");

@@ -28,14 +28,14 @@ void __cdecl core_sound_cpp_CSound_configure_FUN_0057d6a0(CSound *this_ptr)
   if (iVar2 == 0) {
     core_sound_cpp_CSound_reset_FUN_0057d800(this_ptr);
     sound_sndmain_cpp_set3DListenerOrientRight_FUN_005756f0(0.0,0.0,0.0);
-    sound_sndmain_cpp_FUN_00573ec0(0,0,0,0,0,0);
-    sound_sndmain_cpp_FUN_00573f20(0x3f800000,0,0,0,0x3f800000,0,0,0,0x3f800000);
-    sound_sndmain_cpp_FUN_00573fa0(0,0,0);
+    sound_sndmain_cpp_set3DListenerPos_FUN_00573ec0(0.0,0.0,0.0);
+    sound_sndmain_cpp_set3DListenerOrient_FUN_00573f20(1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0);
+    sound_sndmain_cpp_set3DListenerVelocity_FUN_00573fa0(0.0,0.0,0.0);
     sound_sndmain_cpp_enableSoundSystem_FUN_00574ee0();
     sound_sndmain_cpp_pushSfxOptions_FUN_00572ac0();
     sound_sndmain_cpp_setNextSfxChannel_FUN_00572980(1);
-    sound_sndmain_cpp_FUN_00572a10(1);
-    iVar2 = sound_sndmain_cpp_FUN_00575220();
+    sound_sndmain_cpp_setNextSfxFlagBits_FUN_00572a10(1);
+    iVar2 = sound_sndmain_cpp_getAudioSampleRate_FUN_00575220();
     if (iVar2 < 0x7531) {
       sound_sndmain_cpp_startSfx_FUN_00572d20("splash-music-22.wav");
       sound_sndmain_cpp_popSfxOptions_FUN_00572b40();

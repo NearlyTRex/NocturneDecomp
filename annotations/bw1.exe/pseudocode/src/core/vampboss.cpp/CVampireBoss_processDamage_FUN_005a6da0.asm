@@ -33,7 +33,7 @@
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_0051b160
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
 ;   core_sound.cpp_CSound_playSound_FUN_0057d880
-;   sound_sndmain.cpp_FUN_005735a0
+;   sound_sndmain.cpp_isSfxPlaying_FUN_005735a0
 ;   sound_sndmain.cpp_killSfx_FUN_00573a80
 ;
 ; *****************************************************************************
@@ -97,8 +97,8 @@ section .text
     ADD ESP,0xc                         ; 005a6e3b
     MOV EDX,dword ptr [EBP + 0xbf3dc]   ; 005a6e3e
     PUSH EDX                            ; 005a6e44
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 005a6e45
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 005a6e45
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 005a6e4a
     TEST EAX,EAX                        ; 005a6e4d
     JZ 0x005a6ed2                       ; 005a6e4f

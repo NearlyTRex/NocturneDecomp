@@ -54,7 +54,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_0054f700(CSfxSlot *this_ptr)
       }
       sound_sndmain_cpp_CSfxSample_freeMemory_FUN_0054d9b0(this_ptr_00);
     }
-    sound_sndmain_cpp_FUN_0054b960(0);
+    sound_sndmain_cpp_ensureSoundMemoryAvailable_FUN_0054b960(0);
     this_ptr_00->streaming_slot_index = -1;
   }
   this_ptr->changed_flags = 0;

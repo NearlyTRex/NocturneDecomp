@@ -22,7 +22,7 @@
 ;   crt_memory.c_memset_FUN_005b77c0
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   sound_snddx.cpp_FUN_00554ad0
-;   sound_sndmain.cpp_FUN_005549c0
+;   sound_sndmain.cpp_logSoundError_FUN_005549c0
 ;
 ; *****************************************************************************
 
@@ -216,13 +216,13 @@ section .text
     ADD ESP,0x10                        ; 00555f85
     MOV EAX,ESP                         ; 00555f88
     PUSH EAX                            ; 00555f8a
-    CALL sound_sndmain.cpp_FUN_005549c0 ; 00555f8b
-        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005549c0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005549c0 ; 00555f8b
+        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005549c0(char * format)
     ADD ESP,0x4                         ; 00555f90
     PUSH 0x5e9c15                       ; 00555f93 | = "DirectSoundDevice::allocateSample - a..."
         ;   Label: LAB_00555f93
-    CALL sound_sndmain.cpp_FUN_005549c0 ; 00555f98
-        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005549c0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005549c0 ; 00555f98
+        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005549c0(char * format)
     ADD ESP,0x4                         ; 00555f9d
     XOR EAX,EAX                         ; 00555fa0
     ADD ESP,0x1b8                       ; 00555fa2

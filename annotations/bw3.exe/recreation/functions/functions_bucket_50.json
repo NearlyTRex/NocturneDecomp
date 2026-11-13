@@ -18475,15 +18475,15 @@
   },
   {
     "addr":"00551450",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":40,
-    "method":"FUN_00551450",
-    "name":"sound_sndmain.cpp_FUN_00551450",
+    "method":"findFreeSfxSample",
+    "name":"sound_sndmain.cpp_findFreeSfxSample_FUN_00551450",
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CSfxSample",
+      "ptr":1
     },
     "tu":"sound/sndmain.cpp",
     "variadic":false
@@ -18543,8 +18543,8 @@
     ],
     "conv":"__cdecl",
     "instructions":232,
-    "method":"FUN_00552350",
-    "name":"sound_sndmain.cpp_FUN_00552350",
+    "method":"loadStreamingSoundFile",
+    "name":"sound_sndmain.cpp_loadStreamingSoundFile_FUN_00552350",
     "params":[
       {
         "name":"slot_index",
@@ -18579,14 +18579,14 @@
       "00559d90",
       "0055a0b0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":95,
-    "method":"FUN_005526d0",
-    "name":"sound_sndmain.cpp_FUN_005526d0",
+    "method":"calculateVirtualSpeakerPositions",
+    "name":"sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_005526d0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",
@@ -18775,14 +18775,40 @@
   },
   {
     "addr":"00555d50",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":14,
-    "method":"FUN_00555d50",
-    "name":"sound_sndmain.cpp_FUN_00555d50",
+    "method":"setNextSfxStaticVelocity",
+    "name":"sound_sndmain.cpp_setNextSfxStaticVelocity_FUN_00555d50",
+    "params":[
+      {
+        "name":"vel_x",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"vel_y",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"vel_z",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",
@@ -18941,8 +18967,8 @@
       "0055701e"
     ],
     "instructions":28,
-    "method":"FUN_00556fd0",
-    "name":"sound_sndmain.cpp_FUN_00556fd0",
+    "method":"unlockSound",
+    "name":"sound_sndmain.cpp_unlockSound_FUN_00556fd0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -19175,22 +19201,12 @@
     ],
     "conv":"__cdecl",
     "instructions":2,
-    "method":"FUN_005586d0",
-    "name":"sound_sndmain.cpp_FUN_005586d0",
-    "params":[
-      {
-        "name":"enable",
-        "type":{
-          "kind":"builtin",
-          "name":"int",
-          "ptr":0
-        }
-      }
-    ],
+    "method":"hasHardware3DSound",
+    "name":"sound_sndmain.cpp_hasHardware3DSound_FUN_005586d0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"void",
+      "name":"uint",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",

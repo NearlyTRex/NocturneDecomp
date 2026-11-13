@@ -320,7 +320,6 @@ annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModel_getPartPtr
 annotations/bw1.exe/pseudocode/src/core/slew.cpp/staticInit_FUN_0056b9f0.cpp
 annotations/bw1.exe/pseudocode/src/core/smiley.cpp/CSmiley_getActorType_FUN_0056be40.cpp
 annotations/bw1.exe/pseudocode/src/core/smiley.cpp/CSmiley_reset_FUN_0056cdf0.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00575560.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxSlot_dtor_FUN_005774b0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxOptions_dtor_FUN_005774c0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndwav.cpp/FUN_0057b550.cpp
@@ -559,6 +558,7 @@ annotations/bw1.exe/pseudocode/src/core/setutil.cpp/C3DSCamera_dtor_FUN_0055c0e0
 annotations/bw1.exe/pseudocode/src/core/setutil.cpp/C3DSLight_ctor_FUN_0055c7e0.cpp
 annotations/bw1.exe/pseudocode/src/core/shovel.cpp/CShovel_fire_FUN_00562490.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModel_dtor_FUN_005637b0.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxSample_bytesToFrames_FUN_005723e0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxOptions_ctor_FUN_00577460.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxSlot_ctor_FUN_00577490.cpp
 annotations/bw1.exe/pseudocode/src/core/sound.cpp/CSound_killSound_FUN_0057d9d0.cpp
@@ -1093,6 +1093,7 @@ annotations/bw1.exe/pseudocode/src/core/shotgun.cpp/CShotgun_getDamage_FUN_00562
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_dtor_FUN_00562e30.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_free_FUN_005674d0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxSample_freeSampleData_FUN_00570130.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxSample_framesToBytes_FUN_00572400.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setAudioBitDepth_FUN_00575260.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setAudioChannelCount_FUN_00575280.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setAudioSampleRate_FUN_005752a0.cpp
@@ -1391,6 +1392,7 @@ annotations/bw1.exe/pseudocode/src/core/pendulum.cpp/CPendulum_getCollisionType_
 annotations/bw1.exe/pseudocode/src/core/script.cpp/CScript_clear_FUN_00543740.cpp
 annotations/bw1.exe/pseudocode/src/core/shadowsc.cpp/CShadowsc_archive_FUN_005612d0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxSample_getLoopMode_FUN_00572680.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setSfxVolume_FUN_00573950.cpp
 annotations/bw1.exe/pseudocode/src/core/stranger.cpp/CStranger_getDeathState_FUN_00591d50.cpp
 annotations/bw1.exe/pseudocode/src/core/stranger.cpp/CStranger_dropCarriedObject_FUN_00591d80.cpp
 annotations/bw1.exe/pseudocode/src/core/teleport.cpp/staticInit_FUN_00594df0.cpp
@@ -1493,6 +1495,8 @@ annotations/bw1.exe/pseudocode/src/sound/mp3.cpp/CMP3Decoder_unreadBits_FUN_0052
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_skinAndRotateVertices_FUN_00569920.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_skinAndLightVertices_FUN_00569970.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_skinAndInitWRecip_FUN_005699c0.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setSfxTrackedFloatPosition_FUN_005737d0.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setSfxTrackedFloatVelocity_FUN_005738d0.cpp
 annotations/bw1.exe/pseudocode/src/core/stranger.cpp/CStranger_reset_FUN_00591ce0.cpp
 annotations/bw1.exe/pseudocode/src/core/tbplayer.cpp/CBassPlayer_setup_FUN_005947b0.cpp
 annotations/bw1.exe/pseudocode/src/core/thehand.cpp/CTheHand_shouldIgnoreForTargeting_FUN_00599ba0.cpp
@@ -1574,6 +1578,7 @@ annotations/bw1.exe/pseudocode/src/core/setutil.cpp/C3DSCamera_reset_FUN_0055c14
 annotations/bw1.exe/pseudocode/src/core/shotgun.cpp/CShotgun_dtor_FUN_00562360.cpp
 annotations/bw1.exe/pseudocode/src/core/shovel.cpp/CShovel_dtor_FUN_005624f0.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_getHierarchyDistance_FUN_00563630.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/isSfxPlaying_FUN_005735a0.cpp
 annotations/bw1.exe/pseudocode/src/core/spike.cpp/CSpike_dtor_FUN_00583d10.cpp
 annotations/bw1.exe/pseudocode/src/core/stairs.cpp/CStairs_dtor_FUN_00584e00.cpp
 annotations/bw1.exe/pseudocode/src/core/stranger.cpp/CStranger_dtor_FUN_00591e60.cpp
@@ -1615,6 +1620,8 @@ annotations/bw1.exe/pseudocode/src/core/setutil.cpp/C3DSLight_reset_FUN_0055d580
 annotations/bw1.exe/pseudocode/src/core/shadow.cpp/CShadow_archive_FUN_0055fe00.cpp
 annotations/bw1.exe/pseudocode/src/core/shovel.cpp/CShovel_ctor_FUN_00562410.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_skinVerticesForLOD_FUN_00569890.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/findSfxSampleByName_FUN_0056e7f0.cpp
+annotations/bw1.exe/pseudocode/src/core/sound.cpp/FUN_0057cb30.cpp
 annotations/bw1.exe/pseudocode/src/core/stairs.cpp/CStairs_customGetFloorHeight_FUN_00584c60.cpp
 annotations/bw1.exe/pseudocode/src/core/stone.cpp/CTempleStone_canPickup_FUN_00584f10.cpp
 annotations/bw1.exe/pseudocode/src/core/tbplayer.cpp/CDrummer_setup_FUN_00594a30.cpp
@@ -1631,6 +1638,7 @@ annotations/bw1.exe/pseudocode/src/core/fldnotes.cpp/SPageResourceTwanaCharacter
 annotations/bw1.exe/pseudocode/src/core/gabriela.cpp/CGabriella_dtor_FUN_004cb760.cpp
 annotations/bw1.exe/pseudocode/src/core/inv.cpp/freeInventory_FUN_004f75a0.cpp
 annotations/bw1.exe/pseudocode/src/core/moon.cpp/CMoon_free_FUN_00521d50.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setSfxPosition_FUN_00573760.cpp
 annotations/bw1.exe/pseudocode/src/core/stranger.cpp/CStranger_tryThrowDynamite_FUN_00591410.cpp
 annotations/bw1.exe/pseudocode/src/support/trstream.cpp/CInStreamFile_ctorOpenInDirectory_FUN_005a09a0.cpp
 annotations/bw1.exe/pseudocode/src/support/trstream.cpp/CInStreamFile_dtor_FUN_005a0a50.cpp
@@ -1735,6 +1743,7 @@ annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/FUN_0056b780.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/isSoundMuted_FUN_005735f0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/isSoundSystemActive_FUN_00575540.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/isSoundBusy_FUN_00575550.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/hasHardware3DSound_FUN_00575560.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/getMixBufferCount_FUN_005756e0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/isRecordingSystemActive_FUN_00575980.cpp
 annotations/bw1.exe/pseudocode/src/core/sound.cpp/shutdownSoundSystem_FUN_0057cb90.cpp
@@ -1780,11 +1789,11 @@ annotations/bw1.exe/pseudocode/src/core/passngr.cpp/FUN_00532ec0.cpp
 annotations/bw1.exe/pseudocode/src/engine/prim.c/replaceWWithDepth_FUN_0053dd20.c
 annotations/bw1.exe/pseudocode/src/core/setdir.cpp/CDemonSet_isPointInVdirGroup_FUN_0055ba50.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_shatter_FUN_0056ac60.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_005728e0.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00572900.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_005729f0.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/resetCurrentSfxOptions_FUN_00572a90.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_005774f0.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setNextSfxVolume_FUN_005728e0.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setNextSfxBaseFrequency_FUN_00572900.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setNextSfxDelay_FUN_005729d0.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setNextSfxFlags_FUN_005729f0.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/staticInit_FUN_005774f0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndwav.cpp/getWavOutBufferSizeBytes_FUN_0057a590.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndwav.cpp/getWavInBufferSizeBytes_FUN_0057ab90.cpp
 annotations/bw1.exe/pseudocode/src/shape/spotview.cpp/CSpotView_reset_FUN_005843f0.cpp
@@ -1827,6 +1836,7 @@ annotations/bw1.exe/pseudocode/src/core/script.cpp/CScript_dtor_FUN_00543710.cpp
 annotations/bw1.exe/pseudocode/src/core/script.cpp/CScript_findDialogEntry_FUN_0054b2a0.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_rayIntersect_FUN_0056a870.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxSample_dtor_FUN_0056fe80.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/resetCurrentSfxOptions_FUN_00572a90.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndwav.cpp/staticInit_FUN_0057a570.cpp
 annotations/bw1.exe/pseudocode/src/core/sound.cpp/CSound_selectReverbPreset_FUN_0057db60.cpp
 annotations/bw1.exe/pseudocode/src/core/sound.cpp/CSound_setVolumeFade_FUN_0057dc00.cpp
@@ -1887,7 +1897,8 @@ annotations/bw1.exe/pseudocode/src/core/passngr.cpp/FUN_00532ea0.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_offsetAllBonePositions_FUN_005693d0.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_renderWithOptions_FUN_00569810.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxSample_normalizePlaybackPos_FUN_005725a0.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00572a10.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setNextSfxFlagBits_FUN_00572a10.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/clearNextSfxFlagBits_FUN_00572a30.cpp
 annotations/bw1.exe/pseudocode/src/core/sound.cpp/staticInit_FUN_0057b670.cpp
 annotations/bw1.exe/pseudocode/src/support/trisock.cpp/Socket_copy_FUN_0059c8b0.cpp
 annotations/bw1.exe/pseudocode/src/support/trstream.cpp/CInStream_scanf_FUN_0059f5a0.cpp
@@ -1936,7 +1947,8 @@ annotations/bw1.exe/pseudocode/src/sound/mp3.cpp/calculateIntensityStereoRatio_F
 annotations/bw1.exe/pseudocode/src/core/netgame.cpp/resetGameTime_FUN_0052c0f0.cpp
 annotations/bw1.exe/pseudocode/src/engine/ncursfx.cpp/CMouse_startEffect_FUN_005313b0.cpp
 annotations/bw1.exe/pseudocode/src/core/passngr.cpp/CPassenger_archive_FUN_00532dc0.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00572a50.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setNextSfxTriggerTime_FUN_00572a50.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/unlockSample_FUN_005742c0.cpp
 annotations/bw1.exe/pseudocode/src/core/turret.cpp/CTurret_archive_FUN_005a2bf0.cpp
 annotations/bw1.exe/pseudocode/src/wincore/winrun.cpp/setThreadPriority_FUN_005b3800.cpp
 annotations/bw1.exe/pseudocode/src/engine/2d.c/drawTextFormatted_FUN_00402160.c
@@ -2043,7 +2055,8 @@ annotations/bw1.exe/pseudocode/src/core/netgame.cpp/CNetGame_send_FUN_0052df50.c
 annotations/bw1.exe/pseudocode/src/engine/pod.cpp/CPod_ctor_FUN_0053c5c0.cpp
 annotations/bw1.exe/pseudocode/src/core/setcolid.cpp/CDemonSet_setRayType_FUN_005592d0.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/FUN_00569b00.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00572780.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setNextSfxStaticPosition_FUN_00572780.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setNextSfxStaticVelocity_FUN_00572840.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/popSfxOptions_FUN_00572b40.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/killAllSfx_FUN_00573b00.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/isRecordingStarted_FUN_00575990.cpp
@@ -2101,6 +2114,7 @@ annotations/bw1.exe/pseudocode/src/core/doc.cpp/staticInit_FUN_004689b0.cpp
 annotations/bw1.exe/pseudocode/src/core/doc.cpp/FUN_00476210.cpp
 annotations/bw1.exe/pseudocode/src/core/dracbrid.cpp/CDraculaBride_checkHeartShot_FUN_0047d430.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CFireEffect_createRock_FUN_004b5eb0.cpp
+annotations/bw1.exe/pseudocode/src/core/fire.cpp/CFireEffect_createToss_FUN_004b6e60.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CFireEffect_allocateToss_FUN_004b6ed0.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CFireEffect_createRainDrop_FUN_004b7320.cpp
 annotations/bw1.exe/pseudocode/src/core/ghoul.cpp/staticInit_FUN_004ddcd0.cpp
@@ -2113,6 +2127,7 @@ annotations/bw1.exe/pseudocode/src/core/setcolid.cpp/CDemonSet_ignore_FUN_005592
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_updateAnimation_FUN_005675a0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/calculateDistanceGain_FUN_0056f400.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/countActiveSfx_FUN_00573e20.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/getNearestListener_FUN_00574080.cpp
 annotations/bw1.exe/pseudocode/src/support/trisock.cpp/FUN_0059cef0.cpp
 annotations/bw1.exe/pseudocode/src/core/terrain.cpp/CTerrain_process_FUN_0059f4f0.cpp
 annotations/bw1.exe/pseudocode/src/core/zombie.cpp/CZombie_resetChaseState_FUN_005bed80.cpp
@@ -2135,11 +2150,11 @@ annotations/bw1.exe/pseudocode/src/engine/mini3d.cpp/setFrameTranslation_FUN_005
 annotations/bw1.exe/pseudocode/src/engine/mini3d.cpp/setFrameTranslation2_FUN_005117e0.cpp
 annotations/bw1.exe/pseudocode/src/core/moocow.cpp/CMooCow_processDamage_FUN_00521990.cpp
 annotations/bw1.exe/pseudocode/src/core/shadow.cpp/staticInit_FUN_0055da40.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00573e70.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/unlockSound_FUN_00573e70.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/shutdownSoundSystem_FUN_00574ea0.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00575200.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00575220.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00575240.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/getAudioBitDepth_FUN_00575200.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/getAudioSampleRate_FUN_00575220.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/getAudioChannelCount_FUN_00575240.cpp
 annotations/bw1.exe/pseudocode/src/core/sound.cpp/syncChannel3WithChannel0_FUN_0057cba0.cpp
 annotations/bw1.exe/pseudocode/src/core/stranger.cpp/staticInit_FUN_00584fe0.cpp
 annotations/bw1.exe/pseudocode/src/core/tentacle.cpp/CTentacle_shouldIgnoreForTargeting_FUN_00595ed0.cpp
@@ -2208,6 +2223,7 @@ annotations/bw1.exe/pseudocode/src/core/set.cpp/CDemonSet_setCameraAmbientValueB
 annotations/bw1.exe/pseudocode/src/core/set.cpp/CDemonSet_setCameraEnabledByGroup_FUN_005559d0.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModel_setModelName_FUN_00563b70.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setSfxUserData_FUN_005739e0.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setCurrentListener_FUN_00573eb0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/findBestRecordingDevice_FUN_005757f0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/killSoundThread_FUN_00575ca0.cpp
 annotations/bw1.exe/pseudocode/src/core/sound.cpp/CSound_shutdown_FUN_0057cdb0.cpp
@@ -2300,7 +2316,8 @@ annotations/bw1.exe/pseudocode/src/core/script.cpp/CScript_processTimer_FUN_0054
 annotations/bw1.exe/pseudocode/src/core/shadowsc.cpp/CShadowsc_ctor_FUN_005604a0.cpp
 annotations/bw1.exe/pseudocode/src/core/simbox.cpp/CSimBox_dtor_FUN_00562b00.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_init_FUN_00569f50.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_0056df60.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/findFreeSfxSample_FUN_0056df60.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setDualListenerEnabled_FUN_00573e50.cpp
 annotations/bw1.exe/pseudocode/src/core/stairs.cpp/CStairs_archive_FUN_00584a60.cpp
 annotations/bw1.exe/pseudocode/src/core/stone.cpp/CTempleStone_dtor_FUN_00584f70.cpp
 annotations/bw1.exe/pseudocode/src/core/vampboss.cpp/CVampireBoss_summonBats_FUN_005a70f0.cpp
@@ -2347,6 +2364,7 @@ annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_sc
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_renderPolygons_FUN_00569a10.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/FUN_0056b610.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/SVert_ctor_FUN_0056b990.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/lockSample_FUN_00574230.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/lockSound_FUN_00575d20.cpp
 annotations/bw1.exe/pseudocode/src/support/trstream.cpp/COutStreamFile_ctorOpen_FUN_005a17f0.cpp
 annotations/bw1.exe/pseudocode/src/core/weapon.cpp/CWeapon_dtor_FUN_005ad5d0.cpp
@@ -2442,8 +2460,10 @@ annotations/bw1.exe/pseudocode/src/engine/ncursfx.cpp/CMouse_load_FUN_005312c0.c
 annotations/bw1.exe/pseudocode/src/core/scat.cpp/CScat_ctor_FUN_00540ad0.cpp
 annotations/bw1.exe/pseudocode/src/core/shadowsc.cpp/CShadowsc_processDamage_FUN_00561330.cpp
 annotations/bw1.exe/pseudocode/src/core/smiley.cpp/CSmiley_ctor_FUN_0056be50.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_005727e0.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00572880.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setNextSfxTrackedFloatPosition_FUN_005727e0.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setNextSfxTrackedDoublePosition_FUN_00572810.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setNextSfxTrackedVelocity1_FUN_00572880.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setNextSfxTrackedVelocity2_FUN_005728b0.cpp
 annotations/bw1.exe/pseudocode/src/core/vessel.cpp/CCryptVessel_archive_FUN_005a9790.cpp
 annotations/bw1.exe/pseudocode/src/wincore/winvideo.cpp/toggleMoviePlayback_FUN_005b4c60.cpp
 annotations/bw1.exe/pseudocode/src/core/yow.cpp/CYow_dtor_FUN_005b95a0.cpp
@@ -2581,8 +2601,8 @@ annotations/bw1.exe/pseudocode/src/engine/pod.cpp/CPodFile_populateFileInfo_FUN_
 annotations/bw1.exe/pseudocode/src/core/sentinel.cpp/CSentinel_processDamage_FUN_0054cb80.cpp
 annotations/bw1.exe/pseudocode/src/core/shadow.cpp/CShadow_renderOpaque_FUN_0055fbf0.cpp
 annotations/bw1.exe/pseudocode/src/core/simbox.cpp/CSimBox_renderOpaque_FUN_00562980.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_005735a0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/set3DListenerOrientRight_FUN_005756f0.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/logSoundError_FUN_005773f0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndwav.cpp/CWavOutDevice_reset_FUN_0057a8c0.cpp
 annotations/bw1.exe/pseudocode/src/core/spike.cpp/CSpike_renderOpaque_FUN_005834e0.cpp
 annotations/bw1.exe/pseudocode/src/core/stranger.cpp/CStranger_archive_FUN_0058e240.cpp
@@ -2601,7 +2621,6 @@ annotations/bw1.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_restoreAlphaTra
 annotations/bw1.exe/pseudocode/src/core/dtrace.cpp/CDemonRaytrace_testVoxelAtCoords_FUN_0048f040.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CCrater_process_FUN_004b22d0.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CLightningBolt_activateDirectional_FUN_004b34d0.cpp
-annotations/bw1.exe/pseudocode/src/core/fire.cpp/CFireEffect_createToss_FUN_004b6e60.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CFireEffect_createGunFlames_FUN_004b6f80.cpp
 annotations/bw1.exe/pseudocode/src/core/game.cpp/pollKeyStateOnChange_FUN_004d0d70.cpp
 annotations/bw1.exe/pseudocode/src/core/grave.cpp/CGrave_ctor_FUN_004e6930.cpp
@@ -2623,7 +2642,6 @@ annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/isStreamableFile_FUN_0056ed
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxSample_releaseBufferId_FUN_005700e0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxSample_releaseSoundBuffer_FUN_00570260.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/killSfxByName_FUN_00574310.cpp
-annotations/bw1.exe/pseudocode/src/core/sound.cpp/FUN_0057cb30.cpp
 annotations/bw1.exe/pseudocode/src/core/werewolf.cpp/CWerewolf_ctor_FUN_005af2d0.cpp
 annotations/bw1.exe/pseudocode/src/engine/winfont.cpp/CWinFont_getStringWidth_FUN_005b2100.cpp
 annotations/bw1.exe/pseudocode/src/engine/winfont.cpp/CWinFont_getStringHeight_FUN_005b2160.cpp
@@ -2644,7 +2662,6 @@ annotations/bw1.exe/pseudocode/src/core/event.cpp/FUN_004aafe0.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CFireEffect_createSmokeParticle_FUN_004b5b30.cpp
 annotations/bw1.exe/pseudocode/src/core/hero.cpp/CHero_releaseFromGrab_FUN_004eaf20.cpp
 annotations/bw1.exe/pseudocode/src/sound/mp3.cpp/CMP3Decoder_putByte_FUN_00525ff0.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_0056e7f0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/pollRecordingDevice_FUN_00575b20.cpp
 annotations/bw1.exe/pseudocode/src/wincore/wddvmem.cpp/FUN_005ad270.cpp
 annotations/bw1.exe/pseudocode/src/wincore/winrun.cpp/enqueueInput_FUN_005b25b0.cpp
@@ -2661,6 +2678,7 @@ annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CStrList_sort_FUN_00499830
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CStake_init_FUN_004acaf0.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/loadLightningBoltAssets_FUN_004b3450.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/allocateBulletHole_FUN_004b4ac0.cpp
+annotations/bw1.exe/pseudocode/src/core/fire.cpp/CFireEffect_createFireball_FUN_004b5e00.cpp
 annotations/bw1.exe/pseudocode/src/core/flame.cpp/FUN_004b8e40.cpp
 annotations/bw1.exe/pseudocode/src/core/fldnotes.cpp/SNotesMap_applyReveal_FUN_004bc9b0.cpp
 annotations/bw1.exe/pseudocode/src/core/inv.cpp/CInventory_toggleDetailView_FUN_004fc370.cpp
@@ -2701,7 +2719,6 @@ annotations/bw1.exe/pseudocode/src/engine/mini3d.cpp/polyList2_FUN_00512940.cpp
 annotations/bw1.exe/pseudocode/src/engine/mini3d.cpp/polyListD3DL2_FUN_00512bd0.cpp
 annotations/bw1.exe/pseudocode/src/core/netgame.cpp/allocSimFrame_FUN_0052c330.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModel_initVertexWRecip_FUN_00564070.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxSlot_pollHwPlaybackPos_FUN_00571fa0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/stopRecordingDevice_FUN_00575b70.cpp
 annotations/bw1.exe/pseudocode/src/sound/snddx.cpp/FUN_00579f30.cpp
 annotations/bw1.exe/pseudocode/src/support/trisock.cpp/FUN_0059e040.cpp
@@ -2726,6 +2743,7 @@ annotations/bw1.exe/pseudocode/src/core/set.cpp/CDemonSet_loadMasterLightStates_
 annotations/bw1.exe/pseudocode/src/core/set.cpp/CDemonSet_saveMasterLightStates_FUN_00555ce0.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_allocMemory_FUN_00562e60.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/freeMixBuffers_FUN_0056f630.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxSlot_pollHwPlaybackPos_FUN_00571fa0.cpp
 annotations/bw1.exe/pseudocode/src/sound/snddx.cpp/FUN_0057a230.cpp
 annotations/bw1.exe/pseudocode/src/core/bmppuzzl.cpp/CAudioRecPuzzle_dtor_FUN_00415df0.cpp
 annotations/bw1.exe/pseudocode/src/core/boxactor.cpp/CLightActor_dtor_FUN_00423720.cpp
@@ -2755,8 +2773,7 @@ annotations/bw1.exe/pseudocode/src/engine/prim.c/findEdgeInBuffer_FUN_0053db80.c
 annotations/bw1.exe/pseudocode/src/core/script.cpp/CScript_getLetterboxHeight_FUN_00543950.cpp
 annotations/bw1.exe/pseudocode/src/core/setdir.cpp/CDemonSet_refreshThumbs_FUN_0055b220.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModel_free_FUN_005637d0.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00572a30.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00573980.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setSfxBaseFrequency_FUN_00573980.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/processAudio_FUN_00575fb0.cpp
 annotations/bw1.exe/pseudocode/src/core/svetlana.cpp/CSvetlana_advanceMotion_FUN_005940a0.cpp
 annotations/bw1.exe/pseudocode/src/support/trisock.cpp/FUN_0059f2a0.cpp
@@ -2782,10 +2799,7 @@ annotations/bw1.exe/pseudocode/src/cockpit/pkbitmap.cpp/CPackedBitmap_applyACTPa
 annotations/bw1.exe/pseudocode/src/cockpit/pkbmpset.cpp/CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_00539190.cpp
 annotations/bw1.exe/pseudocode/src/core/shadowsc.cpp/CShadowsc_setup_FUN_00560510.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/FUN_00567360.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00572810.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_005728b0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setSoundMuted_FUN_00573600.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_005742c0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/getAudioFormat_FUN_005751c0.cpp
 annotations/bw1.exe/pseudocode/src/wincore/winrun.cpp/FUN_005b4460.cpp
 annotations/bw1.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_restoreZBufferScanlines_FUN_00455150.cpp
@@ -2840,6 +2854,7 @@ annotations/bw1.exe/pseudocode/src/engine/matrix.c/projectTransformedPoint_FUN_0
 annotations/bw1.exe/pseudocode/src/core/mirror.cpp/CMirror_renderMirroredPrimitive_FUN_00519c20.cpp
 annotations/bw1.exe/pseudocode/src/core/motion.cpp/CMotionController_startTransition_FUN_00524880.cpp
 annotations/bw1.exe/pseudocode/src/core/motion.cpp/CMotionController_load_FUN_00525380.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/getNextActiveSfx_FUN_00573d60.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/releaseRecordingDevice_FUN_00575940.cpp
 annotations/bw1.exe/pseudocode/src/core/tbplayer.cpp/CDrummer_dtor_FUN_00594cb0.cpp
 annotations/bw1.exe/pseudocode/src/core/tbplayer.cpp/CBassPlayer_dtor_FUN_00594d50.cpp
@@ -2859,6 +2874,7 @@ annotations/bw1.exe/pseudocode/src/core/motion.cpp/CMotionController_findAndStar
 annotations/bw1.exe/pseudocode/src/core/scat.cpp/CScat_processDamage_FUN_00541c70.cpp
 annotations/bw1.exe/pseudocode/src/core/shadow.cpp/CShadow_ctor_FUN_0055dad0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setNumberOfSfxChannels_FUN_00573c10.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/set3DListenerVelocity_FUN_00573fa0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setRecordingFormat_FUN_005759b0.cpp
 annotations/bw1.exe/pseudocode/src/engine/special.cpp/FUN_00580127.cpp
 annotations/bw1.exe/pseudocode/src/engine/special.cpp/setColorTable16_FUN_005822e0.cpp
@@ -2903,7 +2919,9 @@ annotations/bw1.exe/pseudocode/src/engine/mini3d.cpp/clearZBuffer_FUN_005111a0.c
 annotations/bw1.exe/pseudocode/src/core/passngr.cpp/CPassenger_renderOpaque_FUN_00532cd0.cpp
 annotations/bw1.exe/pseudocode/src/cockpit/pkbitmap.cpp/CPackedBitmap_renderWithGlobalClipping_FUN_005378e0.cpp
 annotations/bw1.exe/pseudocode/src/core/set.cpp/CDemonSet_renderTexturedPrimitiveListVariant_FUN_005553e0.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_0056df00.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/getActiveSfxCount_FUN_0056df00.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxSlot_pollHwHandle_FUN_00571f10.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/enableHwSoundMixing_FUN_00575580.cpp
 annotations/bw1.exe/pseudocode/src/sound/snddx.cpp/FUN_00577a50.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndwav.cpp/writeWavInBuffer_FUN_0057abc0.cpp
 annotations/bw1.exe/pseudocode/src/wincore/winrun.cpp/getTime_FUN_005b2420.cpp
@@ -2918,6 +2936,8 @@ annotations/bw1.exe/pseudocode/src/engine/prim.c/prepareDepthBuffer_FUN_0053dbc0
 annotations/bw1.exe/pseudocode/src/core/script.cpp/CScript_findLabelIndex_FUN_0054acc0.cpp
 annotations/bw1.exe/pseudocode/src/core/script.cpp/CScript_computeChecksum_FUN_0054b940.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_resetToRestPose_FUN_00567500.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/formatSfxOptionsToString_FUN_00572b90.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/set3DListenerDistanceFactor_FUN_00573fe0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/startRecording_FUN_00575aa0.cpp
 annotations/bw1.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_commitDeferredSettings_FUN_0057a1e0.cpp
 annotations/bw1.exe/pseudocode/src/support/trisock.cpp/FUN_0059de90.cpp
@@ -2952,7 +2972,6 @@ annotations/bw1.exe/pseudocode/src/core/ghoul.cpp/CGhoul_ctor_FUN_004ddd60.cpp
 annotations/bw1.exe/pseudocode/src/core/ground.cpp/CGround_init_FUN_004e7240.cpp
 annotations/bw1.exe/pseudocode/src/core/lightgun.cpp/CLightGun_ctor_FUN_004ffeb0.cpp
 annotations/bw1.exe/pseudocode/src/core/lightpis.cpp/CLightPis_ctor_FUN_00501610.cpp
-annotations/bw1.exe/pseudocode/src/core/manpuz.cpp/updateGemHumChannel_FUN_005057c0.cpp
 annotations/bw1.exe/pseudocode/src/core/marquee.cpp/CMarquee_renderOpaque_FUN_00506c10.cpp
 annotations/bw1.exe/pseudocode/src/core/mission.cpp/CDemonMission_saveActor_FUN_0051b100.cpp
 annotations/bw1.exe/pseudocode/src/sound/snddx.cpp/enumerateDirectSoundDevice_FUN_0057a290.cpp
@@ -2968,19 +2987,20 @@ annotations/bw1.exe/pseudocode/src/core/haystack.cpp/CHaystack_setup_FUN_004e909
 annotations/bw1.exe/pseudocode/src/core/lever.cpp/CLever_renderOpaque_FUN_004ff5d0.cpp
 annotations/bw1.exe/pseudocode/src/engine/matrix.c/popViewport_FUN_00509210.c
 annotations/bw1.exe/pseudocode/src/core/set.cpp/CDemonSet_computeLighting_FUN_00552a70.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00573eb0.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/set3DListenerOrient_FUN_00573f20.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/closeSoundDevice_FUN_00575670.cpp
 annotations/bw1.exe/pseudocode/src/engine/special.cpp/FUN_00581f50.cpp
 annotations/bw1.exe/pseudocode/src/core/svetlana.cpp/CSvetlana_processDamage_FUN_005944c0.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_addLayerAction_FUN_00434320.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/FUN_004354a0.cpp
 annotations/bw1.exe/pseudocode/src/core/flashlit.cpp/FUN_004b9ce0.cpp
+annotations/bw1.exe/pseudocode/src/core/manpuz.cpp/updateGemHumChannel_FUN_005057c0.cpp
 annotations/bw1.exe/pseudocode/src/engine/mini3d.cpp/CMini3D_ctor_FUN_00510f60.cpp
 annotations/bw1.exe/pseudocode/src/core/mmx.c/detectCPUFeatures_FUN_0051c450.c
 annotations/bw1.exe/pseudocode/src/sound/mp3.cpp/initializeSynthesisDctTable_FUN_00527190.cpp
 annotations/bw1.exe/pseudocode/src/core/set.cpp/CDemonSet_addQueuedCoronaGlobe_FUN_00551a00.cpp
 annotations/bw1.exe/pseudocode/src/core/setutil.cpp/C3DSLight_addFilter_FUN_0055d490.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_005738d0.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setSfxChannelVol_FUN_00573b30.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setMaxSwSoundLatency_FUN_00576040.cpp
 annotations/bw1.exe/pseudocode/src/core/turret.cpp/CTurret_updateInteraction_FUN_005a35c0.cpp
 annotations/bw1.exe/pseudocode/src/core/vampboss.cpp/CVampireBoss_advanceAnimation_FUN_005a6a00.cpp
@@ -2992,7 +3012,6 @@ annotations/bw1.exe/pseudocode/src/cockpit/ckptutil.c/FUN_0043a030.c
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CAsciiArmor_flush_FUN_00443920.cpp
 annotations/bw1.exe/pseudocode/src/core/dcube.cpp/CDemonCube_allocVoxelMemory_FUN_00457bc0.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CLaserBeam_init_FUN_004b0000.cpp
-annotations/bw1.exe/pseudocode/src/core/fire.cpp/CFireEffect_createFireball_FUN_004b5e00.cpp
 annotations/bw1.exe/pseudocode/src/core/gore.cpp/CBloodSplat_initWallSplat_FUN_004e4830.cpp
 annotations/bw1.exe/pseudocode/src/core/hostage.cpp/CHostage_ctor_FUN_004ed500.cpp
 annotations/bw1.exe/pseudocode/src/core/icepick.cpp/CIcePick_processDamage_FUN_004f2570.cpp
@@ -3001,8 +3020,7 @@ annotations/bw1.exe/pseudocode/src/sound/mp3.cpp/CFileBitStream_readBit_FUN_0052
 annotations/bw1.exe/pseudocode/src/sound/mp3.cpp/calculateMainDataSize_FUN_0052a880.cpp
 annotations/bw1.exe/pseudocode/src/core/passngr.cpp/CPassenger_dtor_FUN_00532850.cpp
 annotations/bw1.exe/pseudocode/src/core/shadow.cpp/CShadow_setup_FUN_0055dbf0.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_005729d0.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_005770d0.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/openCdAudio_FUN_005770d0.cpp
 annotations/bw1.exe/pseudocode/src/support/trstream.cpp/CInStream_readLine_FUN_005a07a0.cpp
 annotations/bw1.exe/pseudocode/src/engine/2d.c/getStringWidth_FUN_004018b0.c
 annotations/bw1.exe/pseudocode/src/engine/2d.c/drawTextColor_FUN_00402440.c
@@ -3132,7 +3150,6 @@ annotations/bw1.exe/pseudocode/src/core/djien.cpp/CDjien_damageSack_FUN_00460f90
 annotations/bw1.exe/pseudocode/src/core/dlight.cpp/captureLightTextures_FUN_00464150.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CBulletHole_setupRenderState_FUN_004ac6f0.cpp
 annotations/bw1.exe/pseudocode/src/sound/mp3.cpp/applyScalefactorsToLayer2Samples_FUN_00527130.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_005773f0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndwav.cpp/CWavInDevice_close_FUN_0057ac70.cpp
 annotations/bw1.exe/pseudocode/src/engine/special.cpp/FUN_00582c90.cpp
 annotations/bw1.exe/pseudocode/src/core/stairs.cpp/CStairs_buildCollision_FUN_00584cc0.cpp
@@ -3221,7 +3238,6 @@ annotations/bw1.exe/pseudocode/src/core/npc.cpp/CNPC_processDamage_FUN_00531da0.
 annotations/bw1.exe/pseudocode/src/core/script.cpp/readActorReference_FUN_0054b320.cpp
 annotations/bw1.exe/pseudocode/src/core/set.cpp/CDemonSet_cacheMirrorLighting_FUN_005557a0.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModel_allocMemory_FUN_005638c0.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00573950.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/selectSoundDevice_FUN_005754d0.cpp
 annotations/bw1.exe/pseudocode/src/engine/texture.cpp/FUN_005965d0.cpp
 annotations/bw1.exe/pseudocode/src/core/tommygun.cpp/CTommyGun_process_FUN_00598d50.cpp
@@ -3246,7 +3262,7 @@ annotations/bw1.exe/pseudocode/src/core/frankgen.cpp/CFrankenstienMachine_ctor_F
 annotations/bw1.exe/pseudocode/src/core/inv.cpp/CInventory_cycleWeaponOfSameClass_FUN_004f8fe0.cpp
 annotations/bw1.exe/pseudocode/src/core/mirror.cpp/CMirror_setupCorners_FUN_00518820.cpp
 annotations/bw1.exe/pseudocode/src/core/mission.cpp/FUN_0051a490.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_005723e0.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/pollAllSfxSlots_FUN_00576f40.cpp
 annotations/bw1.exe/pseudocode/src/core/sound.cpp/FUN_0057c4e0.cpp
 annotations/bw1.exe/pseudocode/src/engine/special.cpp/drawPolyList_FUN_005823a0.cpp
 annotations/bw1.exe/pseudocode/src/core/stranger.cpp/CStranger_getCarryObjToBodyXForm_FUN_00590690.cpp
@@ -3260,7 +3276,6 @@ annotations/bw1.exe/pseudocode/src/core/fldnotes.cpp/SPageResourceBitmap_ctor_FU
 annotations/bw1.exe/pseudocode/src/core/fldnotes.cpp/STextPage_draw_FUN_004bb160.cpp
 annotations/bw1.exe/pseudocode/src/engine/font.cpp/CBitFont_getTextHeight_FUN_004c3f50.cpp
 annotations/bw1.exe/pseudocode/src/core/mobster.cpp/CMobster_processDamage_FUN_0051f040.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_005737d0.cpp
 annotations/bw1.exe/pseudocode/src/engine/special.cpp/FUN_00582020.cpp
 annotations/bw1.exe/pseudocode/src/core/stranger.cpp/CStranger_processWeaponTick_FUN_00591b20.cpp
 annotations/bw1.exe/pseudocode/src/core/vampboss.cpp/CVampireBoss_setup_FUN_005a52a0.cpp
@@ -3299,7 +3314,6 @@ annotations/bw1.exe/pseudocode/src/core/icepick.cpp/CIcePick_processMotionEvents
 annotations/bw1.exe/pseudocode/src/core/menu.cpp/isKeyCodeValidForMode_FUN_0050d470.cpp
 annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorphModel_addPartFromVertexBuffer_FUN_00522340.cpp
 annotations/bw1.exe/pseudocode/src/core/netgame.cpp/CNetGame_updatePing_FUN_0052ea10.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00572400.cpp
 annotations/bw1.exe/pseudocode/src/core/sound.cpp/CSound_playAmbientSound_FUN_0057d810.cpp
 annotations/bw1.exe/pseudocode/src/core/xform.cpp/clampClippedVertices_FUN_005b9f10.cpp
 annotations/bw1.exe/pseudocode/src/core/actor.cpp/FUN_0040d010.cpp
@@ -3318,6 +3332,7 @@ annotations/bw1.exe/pseudocode/src/core/mission.cpp/FUN_0051bdc0.cpp
 annotations/bw1.exe/pseudocode/src/core/set.cpp/CDemonSet_renderPrimitiveList_FUN_00555360.cpp
 annotations/bw1.exe/pseudocode/src/core/setdir.cpp/CDemonSet_buildVdirBoxGroups_FUN_0055bf10.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/FUN_0056b8c0.cpp
+annotations/bw1.exe/pseudocode/src/sound/snddx.cpp/FUN_005784b0.cpp
 annotations/bw1.exe/pseudocode/src/wincore/wddvmem.cpp/FUN_005abff0.cpp
 annotations/bw1.exe/pseudocode/src/wincore/winrun.cpp/getNextKeypress_FUN_005b2510.cpp
 annotations/bw1.exe/pseudocode/src/engine/3d.c/renderPolygonGrayscaleLitOp5_FUN_00403aa0.c
@@ -3353,7 +3368,7 @@ annotations/bw1.exe/pseudocode/src/core/particle.cpp/CParticle_setup_FUN_0053216
 annotations/bw1.exe/pseudocode/src/cockpit/pkbitmap.cpp/FUN_00538130.cpp
 annotations/bw1.exe/pseudocode/src/core/set.cpp/CDemonSet_rotateVerticies_FUN_00553140.cpp
 annotations/bw1.exe/pseudocode/src/core/setutil.cpp/generateSphereVertex_FUN_0055d610.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00573e50.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxSample_lock_FUN_00570160.cpp
 annotations/bw1.exe/pseudocode/src/sound/snddx.cpp/FUN_00577cd0.cpp
 annotations/bw1.exe/pseudocode/src/support/trstream.cpp/COutStreamFile_attach_FUN_005a1a70.cpp
 annotations/bw1.exe/pseudocode/src/core/zombie.cpp/CZombie_ctor_FUN_005bab10.cpp
@@ -3364,7 +3379,7 @@ annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorphModel_animateFromVertexB
 annotations/bw1.exe/pseudocode/src/core/script.cpp/CScript_renderEditor_FUN_00543c00.cpp
 annotations/bw1.exe/pseudocode/src/core/script.cpp/CScript_executeInitSection_FUN_00544310.cpp
 annotations/bw1.exe/pseudocode/src/core/shotgun.cpp/CShotgun_onFired_FUN_00561f80.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_005726e0.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxOptions_reset_FUN_005726e0.cpp
 annotations/bw1.exe/pseudocode/src/support/trisock.cpp/FUN_0059de00.cpp
 annotations/bw1.exe/pseudocode/src/support/trstream.cpp/CInStreamFile_readByteAt_FUN_005a0ba0.cpp
 annotations/bw1.exe/pseudocode/src/core/wateract.cpp/CWaterActor_archive_FUN_005ab300.cpp
@@ -3432,7 +3447,6 @@ annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_setWalkTarget_FU
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CInStreamPipe_fillBuffer_FUN_00444020.cpp
 annotations/bw1.exe/pseudocode/src/core/course.cpp/CCourse_load_FUN_00447db0.cpp
 annotations/bw1.exe/pseudocode/src/core/djien.cpp/CDjien_processDamage_FUN_004613b0.cpp
-annotations/bw1.exe/pseudocode/src/core/mobster.cpp/CMobster_playTaunt_FUN_0051f330.cpp
 annotations/bw1.exe/pseudocode/src/core/motion.cpp/CMotionController_advanceFrameAndCheckSignals_FUN_00524ba0.cpp
 annotations/bw1.exe/pseudocode/src/core/set.cpp/FUN_0054cf80.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_copyBoneRotations_FUN_00568cf0.cpp
@@ -3450,6 +3464,7 @@ annotations/bw1.exe/pseudocode/src/core/fire.cpp/staticInit_FUN_004aba90.cpp
 annotations/bw1.exe/pseudocode/src/core/lever.cpp/CLever_archive_FUN_004ff770.cpp
 annotations/bw1.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_getBoundingBox_FUN_00504510.cpp
 annotations/bw1.exe/pseudocode/src/engine/mini3d.cpp/matrixPush_FUN_00511fc0.cpp
+annotations/bw1.exe/pseudocode/src/core/mobster.cpp/CMobster_playTaunt_FUN_0051f330.cpp
 annotations/bw1.exe/pseudocode/src/sound/mp3.cpp/CFileBitStream_readAllocationValues_FUN_00526400.cpp
 annotations/bw1.exe/pseudocode/src/core/script.cpp/trimLine_FUN_005431a0.cpp
 annotations/bw1.exe/pseudocode/src/core/vampboss.cpp/CVampireBoss_chooseDestWayPoint_FUN_005a72e0.cpp
@@ -3487,8 +3502,6 @@ annotations/bw1.exe/pseudocode/src/core/ghoul.cpp/CGhoul_setup_FUN_004dde90.cpp
 annotations/bw1.exe/pseudocode/src/core/icepick.cpp/CIcePick_performMeleeAttack_FUN_004f2430.cpp
 annotations/bw1.exe/pseudocode/src/core/script.cpp/getActionState_FUN_00543540.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/trimLineAndRemoveComments_FUN_0056e0a0.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00572840.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00573d60.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setSoundOutputMode_FUN_00575120.cpp
 annotations/bw1.exe/pseudocode/src/core/zombie.cpp/CZombie_processDamage_FUN_005be750.cpp
 annotations/bw1.exe/pseudocode/src/core/ammo.cpp/CAmmo_ctor_FUN_0040dbc0.cpp
@@ -3498,12 +3511,11 @@ annotations/bw1.exe/pseudocode/src/core/flashlit.cpp/FUN_004b9db0.cpp
 annotations/bw1.exe/pseudocode/src/engine/matrix.c/invertTransformMatrix_FUN_005073d0.c
 annotations/bw1.exe/pseudocode/src/core/mimic.cpp/CMimic_processMorph_FUN_00510c20.cpp
 annotations/bw1.exe/pseudocode/src/sound/mp3.cpp/applyScalefactorsToSubbands_FUN_00527080.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/isWithinListenerRadius_FUN_00574010.cpp
 annotations/bw1.exe/pseudocode/src/core/xform.cpp/multiplyMatrix3x4InPlace_FUN_005b53b0.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CStrList_populateFromFileSearch_FUN_00499ed0.cpp
 annotations/bw1.exe/pseudocode/src/core/event.cpp/parseComparisonOp_FUN_004a1290.cpp
 annotations/bw1.exe/pseudocode/src/core/event.cpp/CEventList_setSfxHandle_FUN_004aa2d0.cpp
-annotations/bw1.exe/pseudocode/src/core/lightgun.cpp/CLightGun_process_FUN_00500d20.cpp
-annotations/bw1.exe/pseudocode/src/core/lightpis.cpp/CLightPis_process_FUN_00502480.cpp
 annotations/bw1.exe/pseudocode/src/engine/model.c/FUN_0051fee0.c
 annotations/bw1.exe/pseudocode/src/cockpit/pkbitmap.cpp/CPackedBitmap_reloadFromBitmapFile_FUN_00537c30.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxSlot_computeDistancesToSpeakers_FUN_00570bd0.cpp
@@ -3512,6 +3524,8 @@ annotations/bw1.exe/pseudocode/src/core/xform.cpp/quaternionToMatrix3x4_FUN_005b
 annotations/bw1.exe/pseudocode/src/core/demnfolk.cpp/FUN_0045d060.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CStrList_copyToClipboard_FUN_00499ba0.cpp
 annotations/bw1.exe/pseudocode/src/core/hero.cpp/FUN_004ea980.cpp
+annotations/bw1.exe/pseudocode/src/core/lightgun.cpp/CLightGun_process_FUN_00500d20.cpp
+annotations/bw1.exe/pseudocode/src/core/lightpis.cpp/CLightPis_process_FUN_00502480.cpp
 annotations/bw1.exe/pseudocode/src/engine/model.c/FUN_00520150.c
 annotations/bw1.exe/pseudocode/src/core/script.cpp/validateActorVariableName_FUN_00543100.cpp
 annotations/bw1.exe/pseudocode/src/support/trstream.cpp/CInStreamFile_openInDirectory_FUN_005a0fd0.cpp
@@ -3572,8 +3586,7 @@ annotations/bw1.exe/pseudocode/src/core/event.cpp/CEventList_render_FUN_004a6d80
 annotations/bw1.exe/pseudocode/src/core/game.cpp/joinNetworkGame_FUN_004d7e90.cpp
 annotations/bw1.exe/pseudocode/src/core/manpuz.cpp/FUN_00504fe0.cpp
 annotations/bw1.exe/pseudocode/src/core/melee.cpp/CMelee_ctor_FUN_00509550.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_0056dfd0.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/pollAllSfxSlots_FUN_00576f40.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/ensureSoundMemoryAvailable_FUN_0056dfd0.cpp
 annotations/bw1.exe/pseudocode/src/core/baron.cpp/CBaron_ctor_FUN_0040f210.cpp
 annotations/bw1.exe/pseudocode/src/core/bugs.cpp/CBugs_recalculateBoundingBox_FUN_00427a30.cpp
 annotations/bw1.exe/pseudocode/src/core/dirmat.cpp/FUN_0045fd80.cpp
@@ -3623,7 +3636,6 @@ annotations/bw1.exe/pseudocode/src/core/gore.cpp/CGore_renderDecals_FUN_004e5cd0
 annotations/bw1.exe/pseudocode/src/core/imp.cpp/CImp_setup_FUN_004f2860.cpp
 annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorphModel_addPartFromPolygon_FUN_005221d0.cpp
 annotations/bw1.exe/pseudocode/src/core/netgame.cpp/CNetGame_sendSimFrameAck_FUN_00530710.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00575580.cpp
 annotations/bw1.exe/pseudocode/src/core/stairs.cpp/CStairs_getBoundingBox_FUN_005849f0.cpp
 annotations/bw1.exe/pseudocode/src/engine/winfont.cpp/CWinFont_createTextBackground_FUN_005b1e90.cpp
 annotations/bw1.exe/pseudocode/src/engine/3d.c/renderPolygonFogColorOp6_FUN_00403b70.c
@@ -3700,7 +3712,6 @@ annotations/bw1.exe/pseudocode/src/core/hero.cpp/CHero_archive_FUN_004eab00.cpp
 annotations/bw1.exe/pseudocode/src/engine/mini3d.cpp/addDynamicLight_FUN_00514150.cpp
 annotations/bw1.exe/pseudocode/src/core/moloch.cpp/CMoloch_renderOpaque_FUN_00521070.cpp
 annotations/bw1.exe/pseudocode/src/core/smiley.cpp/CSmiley_setup_FUN_0056bef0.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/setSfxChannelVol_FUN_00573b30.cpp
 annotations/bw1.exe/pseudocode/src/engine/texture.cpp/CTextureCache_findFreeSlot_FUN_00596680.cpp
 annotations/bw1.exe/pseudocode/src/wincore/wddvmem.cpp/analyzePixelFormat_FUN_005acd00.cpp
 annotations/bw1.exe/pseudocode/src/engine/3d.c/renderPolygonAlphaBlendedDepthWritePlaneMaskedOp58_FUN_00406c30.c
@@ -3743,7 +3754,7 @@ annotations/bw1.exe/pseudocode/src/sound/mp3.cpp/CFileBitStream_readBits_FUN_005
 annotations/bw1.exe/pseudocode/src/sound/mp3.cpp/CMP3Decoder_huffmanDecode_FUN_005260e0.cpp
 annotations/bw1.exe/pseudocode/src/engine/pod.cpp/CPod_locateFile_FUN_0053cec0.cpp
 annotations/bw1.exe/pseudocode/src/core/setcolid.cpp/CDemonSet_popRaytraceState_FUN_00559060.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_0056fa10.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/getSfxSlotFromHandle_FUN_0056fa10.cpp
 annotations/bw1.exe/pseudocode/src/sound/snddx.cpp/FUN_005786b0.cpp
 annotations/bw1.exe/pseudocode/src/core/wateract.cpp/CWaterActor_process_FUN_005aaeb0.cpp
 annotations/bw1.exe/pseudocode/src/wincore/winrun.cpp/FUN_005b44a0.cpp
@@ -3766,7 +3777,6 @@ annotations/bw1.exe/pseudocode/src/core/dskybox.cpp/generateSkyDomeVertex_FUN_00
 annotations/bw1.exe/pseudocode/src/core/hero.cpp/CHero_doHeroAction_FUN_004ec640.cpp
 annotations/bw1.exe/pseudocode/src/sound/mp3.cpp/CFileBitStream_readQuantizedSamples_FUN_005268e0.cpp
 annotations/bw1.exe/pseudocode/src/core/set.cpp/CDemonSet_buildActorTypeLists_FUN_00555ad0.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00573fe0.cpp
 annotations/bw1.exe/pseudocode/src/core/bat.cpp/CBat_ctor_FUN_00410b50.cpp
 annotations/bw1.exe/pseudocode/src/cockpit/drawsurf.cpp/CDrawSurface_drawTextWithAlignment_FUN_00480480.cpp
 annotations/bw1.exe/pseudocode/src/core/dtrace.cpp/FUN_0048f210.cpp
@@ -3794,7 +3804,6 @@ annotations/bw1.exe/pseudocode/src/core/door.cpp/CDoor_renderOpaque_FUN_00478220
 annotations/bw1.exe/pseudocode/src/core/gore.cpp/CBloodPool_setupRenderState_FUN_004e50e0.cpp
 annotations/bw1.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_onLaserHit_FUN_00504ba0.cpp
 annotations/bw1.exe/pseudocode/src/core/pendulum.cpp/CPendulum_process_FUN_00537020.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00574230.cpp
 annotations/bw1.exe/pseudocode/src/core/stranger.cpp/FUN_0058a010.cpp
 annotations/bw1.exe/pseudocode/src/core/ammo.cpp/CAmmo_setWeaponClass_FUN_0040ddd0.cpp
 annotations/bw1.exe/pseudocode/src/core/bmppuzzl.cpp/releasePuzzleGraphics_FUN_00415c80.cpp
@@ -3831,7 +3840,6 @@ annotations/bw1.exe/pseudocode/src/core/ladder.cpp/CLadder_updatePositionFromMas
 annotations/bw1.exe/pseudocode/src/engine/mini3d.cpp/clipToUserPlane_FUN_00517520.cpp
 annotations/bw1.exe/pseudocode/src/core/path.cpp/CPathMap_isLineWalkable_FUN_005336e0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxSample_ctor_FUN_0056fe10.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxSample_seek_FUN_005702c0.cpp
 annotations/bw1.exe/pseudocode/src/engine/3d.c/FUN_004076e0.c
 annotations/bw1.exe/pseudocode/src/core/bmppuzzl.cpp/CChemPuzzle_reset_FUN_004176b0.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/FUN_00492de0.cpp
@@ -3844,6 +3852,7 @@ annotations/bw1.exe/pseudocode/src/core/shadow.cpp/FUN_0055f4f0.cpp
 annotations/bw1.exe/pseudocode/src/core/shadow.cpp/FUN_0055f540.cpp
 annotations/bw1.exe/pseudocode/src/core/shadow.cpp/FUN_0055f590.cpp
 annotations/bw1.exe/pseudocode/src/core/shadow.cpp/FUN_0055f5e0.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxSample_seek_FUN_005702c0.cpp
 annotations/bw1.exe/pseudocode/src/core/vampboss.cpp/CVampireBoss_renderOpaque_FUN_005a6b00.cpp
 annotations/bw1.exe/pseudocode/src/core/actor.cpp/archiveDescription_FUN_0040b110.cpp
 annotations/bw1.exe/pseudocode/src/core/batcreat.cpp/CBatCreature_processDismemberment_FUN_00412170.cpp
@@ -3881,6 +3890,7 @@ annotations/bw1.exe/pseudocode/src/engine/clipper.c/interpolateVertexLeftClip_FU
 annotations/bw1.exe/pseudocode/src/engine/clipper.c/interpolateVertexBottomClip_FUN_0043b7b0.c
 annotations/bw1.exe/pseudocode/src/core/setcolid.cpp/CDemonSet_pushRaytraceState_FUN_00558eb0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/getSoundMemoryStats_FUN_005746e0.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/playCdTrack_FUN_005771b0.cpp
 annotations/bw1.exe/pseudocode/src/engine/special.cpp/CExternalRenderer_validate_FUN_00582d60.cpp
 annotations/bw1.exe/pseudocode/src/core/xform.cpp/quaternionToAxisAngle_FUN_005b78a0.cpp
 annotations/bw1.exe/pseudocode/src/core/actor.cpp/FUN_0040cff0.cpp
@@ -3892,13 +3902,12 @@ annotations/bw1.exe/pseudocode/src/core/motion.cpp/FUN_005249b0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxSlot_updatePlaybackPos_FUN_00572030.cpp
 annotations/bw1.exe/pseudocode/src/core/actor.cpp/getActorClassByName_FUN_0040c240.cpp
 annotations/bw1.exe/pseudocode/src/core/bodypart.cpp/createBodyPart_FUN_00418940.cpp
-annotations/bw1.exe/pseudocode/src/sound/snddx.cpp/FUN_005799b0.cpp
 annotations/bw1.exe/pseudocode/src/core/stranger.cpp/CStranger_handleActionButton_FUN_00591120.cpp
 annotations/bw1.exe/pseudocode/src/core/zombie.cpp/CZombie_setup_FUN_005bac80.cpp
 annotations/bw1.exe/pseudocode/src/engine/alphabit.cpp/CAlphaBitmap_allocate_FUN_0040d0e0.cpp
 annotations/bw1.exe/pseudocode/src/core/door.cpp/FUN_004774f0.cpp
 annotations/bw1.exe/pseudocode/src/sound/mp3.cpp/requantizeSamples_FUN_00526f40.cpp
-annotations/bw1.exe/pseudocode/src/sound/snddx.cpp/FUN_005784b0.cpp
+annotations/bw1.exe/pseudocode/src/sound/snddx.cpp/FUN_005799b0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndwav.cpp/CWavOutDevice_setMode_FUN_0057a930.cpp
 annotations/bw1.exe/pseudocode/src/support/trisock.cpp/CSocket_sendSocketData_FUN_0059cbc0.cpp
 annotations/bw1.exe/pseudocode/src/wincore/wddvmem.cpp/FUN_005ac270.cpp
@@ -3909,7 +3918,6 @@ annotations/bw1.exe/pseudocode/src/engine/mini3d.cpp/clipAndFillPolygon_FUN_0051
 annotations/bw1.exe/pseudocode/src/engine/mini3d.cpp/setupSurfaceEdge_FUN_00516e40.cpp
 annotations/bw1.exe/pseudocode/src/core/set.cpp/FUN_00552d40.cpp
 annotations/bw1.exe/pseudocode/src/core/setcolid.cpp/FUN_005580d0.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00573fa0.cpp
 annotations/bw1.exe/pseudocode/src/engine/3d.c/setRenderAlpha_FUN_00406bd0.c
 annotations/bw1.exe/pseudocode/src/core/larva.cpp/CLarva_processDamage_FUN_004fe510.cpp
 annotations/bw1.exe/pseudocode/src/core/xform.cpp/quaternionFromAngleX_FUN_005b7af0.cpp
@@ -3924,6 +3932,7 @@ annotations/bw1.exe/pseudocode/src/core/fire.cpp/CMuzzleFlash_render_FUN_004af43
 annotations/bw1.exe/pseudocode/src/core/hero.cpp/CHero_tryApproachNearbyActor_FUN_004ebc40.cpp
 annotations/bw1.exe/pseudocode/src/core/netgame.cpp/CNetGame_processClientFrame_FUN_00530340.cpp
 annotations/bw1.exe/pseudocode/src/core/setdir.cpp/FUN_0055b280.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/computeFFT_FUN_0056d7d0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxSlot_computeChannelVolumes_FUN_00570d50.cpp
 annotations/bw1.exe/pseudocode/src/core/zombie.cpp/CZombie_processDismemberment_FUN_005be480.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_dropCarriedObject_FUN_00432820.cpp
@@ -3939,6 +3948,7 @@ annotations/bw1.exe/pseudocode/src/core/fldnotes.cpp/CFieldNotes_enableEntry_FUN
 annotations/bw1.exe/pseudocode/src/core/flattn.cpp/FUN_004bf780.cpp
 annotations/bw1.exe/pseudocode/src/core/flattn.cpp/FUN_004bf890.cpp
 annotations/bw1.exe/pseudocode/src/core/game.cpp/CGame_process_FUN_004d8060.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/createUserSample_FUN_00574100.cpp
 annotations/bw1.exe/pseudocode/src/core/stranger.cpp/FUN_005906e0.cpp
 annotations/bw1.exe/pseudocode/src/support/trisock.cpp/buildSockaddrIn_FUN_0059c7d0.cpp
 annotations/bw1.exe/pseudocode/src/core/box.cpp/CBoundingBox3D_isVisibleWithShadow_FUN_004205e0.cpp
@@ -3986,7 +3996,6 @@ annotations/bw1.exe/pseudocode/src/core/biggs.cpp/CBiggs_ctor_FUN_004149f0.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CFireEffect_createTrailFromPoints_FUN_004b7150.cpp
 annotations/bw1.exe/pseudocode/src/engine/palette.cpp/FUN_005320b0.cpp
 annotations/bw1.exe/pseudocode/src/core/script.cpp/CScript_renderSubtitles_FUN_005439b0.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00571f10.cpp
 annotations/bw1.exe/pseudocode/src/engine/2d.c/FUN_00401450.c
 annotations/bw1.exe/pseudocode/src/core/batcreat.cpp/CBatCreature_setup_FUN_00411280.cpp
 annotations/bw1.exe/pseudocode/src/engine/drender.cpp/FUN_004824b0.cpp
@@ -4059,6 +4068,7 @@ annotations/bw1.exe/pseudocode/src/core/mimic.cpp/CMimic_ctor_FUN_0050f0c0.cpp
 annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorph_addTriPartToModel_FUN_00523140.cpp
 annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorph_addQuadPartToModel_FUN_00523190.cpp
 annotations/bw1.exe/pseudocode/src/cockpit/pkbitmap.cpp/CPackedBitmap_copyRawDataToCompressedRuns_FUN_00537d00.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/set3DListenerPos_FUN_00573ec0.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/FUN_00442c00.cpp
 annotations/bw1.exe/pseudocode/src/core/dlight.cpp/CDemonLight_endBackgroundScene_FUN_00462cd0.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/FUN_0049c310.cpp
@@ -4141,6 +4151,7 @@ annotations/bw1.exe/pseudocode/src/core/icepick.cpp/CIcePick_getCarryObjToBodyXF
 annotations/bw1.exe/pseudocode/src/engine/model.c/freeMRGLData_FUN_0051f8a0.c
 annotations/bw1.exe/pseudocode/src/core/svetlana.cpp/CSvetlana_renderOpaque_FUN_00594340.cpp
 annotations/bw1.exe/pseudocode/src/core/dcube.cpp/clipEdgeToPlane_FUN_00455460.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxSample_allocateHwSample_FUN_0056feb0.cpp
 annotations/bw1.exe/pseudocode/src/core/actor.cpp/CDemonActor_save_FUN_0040adb0.cpp
 annotations/bw1.exe/pseudocode/src/core/dlight.cpp/CDemonLight_restoreDirtyRegions_FUN_00462d20.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CGunFlame_init_FUN_004b2980.cpp
@@ -4273,8 +4284,6 @@ annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_setup_FUN_0042c5
 annotations/bw1.exe/pseudocode/src/core/inv.cpp/FUN_004f8b70.cpp
 annotations/bw1.exe/pseudocode/src/engine/mini3d.cpp/polyListL_FUN_00512c60.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_getBoneAngleInterpolated_FUN_005635a0.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00574100.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_005771b0.cpp
 annotations/bw1.exe/pseudocode/src/support/trisock.cpp/FUN_0059d430.cpp
 annotations/bw1.exe/pseudocode/src/core/vampboss.cpp/CVampireBoss_processDamage_FUN_005a6da0.cpp
 annotations/bw1.exe/pseudocode/src/cockpit/ckptutil.c/FUN_00438e40.c
@@ -4342,7 +4351,6 @@ annotations/bw1.exe/pseudocode/src/core/dtri.cpp/clipPolygonToRight_FUN_00491260
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CPickList_handleInput_FUN_0049a9b0.cpp
 annotations/bw1.exe/pseudocode/src/engine/mini3d.cpp/clipAgainstPlane0_FUN_00515080.cpp
 annotations/bw1.exe/pseudocode/src/engine/mini3d.cpp/clipAgainstPlane1_FUN_005151b0.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00574080.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/CInStreamPipe_read_FUN_00443d80.cpp
 annotations/bw1.exe/pseudocode/src/engine/drender.cpp/FUN_00483270.cpp
 annotations/bw1.exe/pseudocode/src/core/event.cpp/CEventList_loadState_FUN_004aa610.cpp
@@ -4384,6 +4392,7 @@ annotations/bw1.exe/pseudocode/src/core/crate.cpp/CCrate_process_FUN_004491b0.cp
 annotations/bw1.exe/pseudocode/src/core/motion.cpp/FUN_00525110.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_turnTowardPoint_FUN_0042d540.cpp
 annotations/bw1.exe/pseudocode/src/core/set.cpp/CDemonSet_initScene_FUN_0054ec60.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxSlot_compute_FUN_00570f30.cpp
 annotations/bw1.exe/pseudocode/src/support/trisock.cpp/FUN_0059e270.cpp
 annotations/bw1.exe/pseudocode/src/core/construc.cpp/FUN_004474d0.cpp
 annotations/bw1.exe/pseudocode/src/core/dstrendr.cpp/renderSolidColorDepth16xUnrolled_FUN_00487148.cpp
@@ -4410,7 +4419,6 @@ annotations/bw1.exe/pseudocode/src/core/dcamera.cpp/FUN_0044dd70.cpp
 annotations/bw1.exe/pseudocode/src/core/dpart.cpp/FUN_00479f60.cpp
 annotations/bw1.exe/pseudocode/src/core/dtrace.cpp/FUN_0048b880.cpp
 annotations/bw1.exe/pseudocode/src/core/path.cpp/renderPathMapsAtPosition_FUN_00535370.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00573760.cpp
 annotations/bw1.exe/pseudocode/src/core/weather.cpp/CWeather_createLightningStrike_FUN_005ae580.cpp
 annotations/bw1.exe/pseudocode/src/core/dtri.cpp/clipPolygonToFar_FUN_00491690.cpp
 annotations/bw1.exe/pseudocode/src/engine/mini3d.cpp/polyList_FUN_005126d0.cpp
@@ -4430,7 +4438,7 @@ annotations/bw1.exe/pseudocode/src/core/door.cpp/CDoor_getMoveType_FUN_00478b40.
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/FUN_00492970.cpp
 annotations/bw1.exe/pseudocode/src/core/mission.cpp/FUN_0051b610.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/FUN_0056a220.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_0056f1e0.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/calculateVirtualSpeakerPositions_FUN_0056f1e0.cpp
 annotations/bw1.exe/pseudocode/src/engine/texture.cpp/FUN_00596e60.cpp
 annotations/bw1.exe/pseudocode/src/core/gore.cpp/FUN_004e63e0.cpp
 annotations/bw1.exe/pseudocode/src/engine/matrix.c/matrixPushAndTransform_FUN_00507c70.c
@@ -4445,7 +4453,7 @@ annotations/bw1.exe/pseudocode/src/core/game.cpp/captureDebugMovieFrame_FUN_004c
 annotations/bw1.exe/pseudocode/src/core/icepick.cpp/FUN_004f1670.cpp
 annotations/bw1.exe/pseudocode/src/sound/mp3.cpp/CMP3Decoder_decodeScalefacCompress_FUN_00527e80.cpp
 annotations/bw1.exe/pseudocode/src/core/stairs.cpp/CStairs_ctor_FUN_00584940.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00574410.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/getSampleInfo_FUN_00574410.cpp
 annotations/bw1.exe/pseudocode/src/core/actor.cpp/archiveRules_FUN_0040be80.cpp
 annotations/bw1.exe/pseudocode/src/core/crate.cpp/CCrate_getTargetPoints_FUN_00449530.cpp
 annotations/bw1.exe/pseudocode/src/core/event.cpp/CEventList_saveState_FUN_004aa9d0.cpp
@@ -4459,11 +4467,11 @@ annotations/bw1.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_endBackgroundSc
 annotations/bw1.exe/pseudocode/src/core/elephant.cpp/CElephantGun_process_FUN_0049e090.cpp
 annotations/bw1.exe/pseudocode/src/core/emitter.cpp/CEmitter_ctor_FUN_0049ee40.cpp
 annotations/bw1.exe/pseudocode/src/core/shotgun.cpp/CShotgun_process_FUN_00561650.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00573ec0.cpp
 annotations/bw1.exe/pseudocode/src/core/zombie.cpp/FUN_005bee80.cpp
 annotations/bw1.exe/pseudocode/src/core/ghoul.cpp/CGhoul_processDamage_FUN_004e0870.cpp
 annotations/bw1.exe/pseudocode/src/engine/pod.cpp/FUN_0053c290.cpp
 annotations/bw1.exe/pseudocode/src/core/smiley.cpp/CSmiley_attractActorToward_FUN_0056ccc0.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/flushSoundChanges_FUN_00575db0.cpp
 annotations/bw1.exe/pseudocode/src/core/teleport.cpp/CTeleport_process_FUN_00594f60.cpp
 annotations/bw1.exe/pseudocode/src/engine/3d.c/renderPolygonSolidTexturedClampedOp51_FUN_004060e0.c
 annotations/bw1.exe/pseudocode/src/core/moloch.cpp/CMoloch_processAI_FUN_00520c10.cpp
@@ -4482,7 +4490,6 @@ annotations/bw1.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_calcNormals_F
 annotations/bw1.exe/pseudocode/src/core/mirror.cpp/CMirror_renderMirrorQuadDepth_FUN_00519e40.cpp
 annotations/bw1.exe/pseudocode/src/core/netgame.cpp/CNetGame_initializeNetworkToJoin_FUN_0052c6b0.cpp
 annotations/bw1.exe/pseudocode/src/engine/prim.c/calculateTriangleWindingOrderFromIndices_FUN_0053de20.c
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00574010.cpp
 annotations/bw1.exe/pseudocode/src/core/waypoint.cpp/FUN_005ab880.cpp
 annotations/bw1.exe/pseudocode/src/core/weapon.cpp/CWeapon_getMuzzlePoint_FUN_005add80.cpp
 annotations/bw1.exe/pseudocode/src/core/crossbow.cpp/CCrossbow_getMuzzlePoint_FUN_004499f0.cpp
@@ -4497,9 +4504,7 @@ annotations/bw1.exe/pseudocode/src/core/hero.cpp/FUN_004ecda0.cpp
 annotations/bw1.exe/pseudocode/src/core/shotgun.cpp/CShotgun_renderAimBeam_FUN_00562100.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_setBoneTransform_FUN_0056ad90.cpp
 annotations/bw1.exe/pseudocode/src/core/platfrm.cpp/CPlatform_isActorOnPlatform_FUN_0053ab00.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxSample_allocateHwSample_FUN_0056feb0.cpp
 annotations/bw1.exe/pseudocode/src/core/tentacle.cpp/FUN_00595f10.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxSlot_compute_FUN_00570f30.cpp
 annotations/bw1.exe/pseudocode/src/core/dcamera.cpp/FUN_0044ee30.cpp
 annotations/bw1.exe/pseudocode/src/core/fldnotes.cpp/STextView_handleTag_FUN_004bb6f0.cpp
 annotations/bw1.exe/pseudocode/src/core/gore.cpp/CFootstep_init_FUN_004e56e0.cpp
@@ -4575,7 +4580,6 @@ annotations/bw1.exe/pseudocode/src/core/dtri.cpp/FUN_00490a40.cpp
 annotations/bw1.exe/pseudocode/src/core/doc.cpp/CDoc_processDamage_FUN_004737b0.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/enableSoundSystem_FUN_00574ee0.cpp
 annotations/bw1.exe/pseudocode/src/core/script.cpp/CScript_dbLoad_FUN_0054af20.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00573f20.cpp
 annotations/bw1.exe/pseudocode/src/core/turret.cpp/CTurret_process_FUN_005a23b0.cpp
 annotations/bw1.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_beginScene_FUN_0044ceb0.cpp
 annotations/bw1.exe/pseudocode/src/core/dcamera.cpp/renderCoronaProjectedTextureScanline_FUN_004513a0.cpp
@@ -4613,6 +4617,7 @@ annotations/bw1.exe/pseudocode/src/core/flies.cpp/drawFlyPixel_FUN_004bffb0.cpp
 annotations/bw1.exe/pseudocode/src/cockpit/ckptutil.c/blitSpanBasedSpriteVerticallyClipped_FUN_00438560.c
 annotations/bw1.exe/pseudocode/src/core/mirror.cpp/FUN_00519cb0.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/FUN_0056ae70.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxSlot_updateBoundPositionAndVelocity_FUN_00570a40.cpp
 annotations/bw1.exe/pseudocode/src/core/dcamera.cpp/blendCoronaTextureSpan_FUN_00452450.cpp
 annotations/bw1.exe/pseudocode/src/core/demnfolk.cpp/CDemnfolk_renderTransparent_FUN_0045c020.cpp
 annotations/bw1.exe/pseudocode/src/core/frankgen.cpp/CFrankenstienMachine_renderOpaque_FUN_004c5a40.cpp
@@ -4640,7 +4645,6 @@ annotations/bw1.exe/pseudocode/src/core/dtri.cpp/FUN_00492300.cpp
 annotations/bw1.exe/pseudocode/src/core/lightgun.cpp/FUN_00500090.cpp
 annotations/bw1.exe/pseudocode/src/core/lightpis.cpp/FUN_005017f0.cpp
 annotations/bw1.exe/pseudocode/src/core/script.cpp/CScript_initRuntime_FUN_00544190.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00575db0.cpp
 annotations/bw1.exe/pseudocode/src/core/box.cpp/CBoundingBox3D_render_FUN_00421670.cpp
 annotations/bw1.exe/pseudocode/src/core/menu.cpp/renderMenuAndGetChoice_FUN_00509e20.cpp
 annotations/bw1.exe/pseudocode/src/core/game.cpp/CGame_renderOverlay_FUN_004cc2b0.cpp
@@ -4667,13 +4671,11 @@ annotations/bw1.exe/pseudocode/src/core/carved.cpp/FUN_00428550.cpp
 annotations/bw1.exe/pseudocode/src/core/dcamera.cpp/FUN_0044df50.cpp
 annotations/bw1.exe/pseudocode/src/core/demnfolk.cpp/FUN_00458890.cpp
 annotations/bw1.exe/pseudocode/src/engine/mini3d.cpp/setCameraMatrix_FUN_00511240.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00570160.cpp
 annotations/bw1.exe/pseudocode/src/core/bugs.cpp/CBugs_setup_FUN_00425120.cpp
 annotations/bw1.exe/pseudocode/src/core/construc.cpp/CConstruct_getTargetPoints_FUN_004471a0.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/FUN_0049c3e0.cpp
 annotations/bw1.exe/pseudocode/src/engine/keyframe.c/interpolateCubicKeyframes_FUN_004fcd30.c
 annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorphModel_setFaceListFromTriangles_FUN_005228c0.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/nextMixingBuffer_FUN_0056f6d0.cpp
 annotations/bw1.exe/pseudocode/src/engine/zraster.c/rasterizePolygonCustom_FUN_005bf640.c
 annotations/bw1.exe/pseudocode/src/core/dracbrid.cpp/CDraculaBride_processDamage_FUN_0047d480.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_ctor_FUN_00567370.cpp
@@ -4738,7 +4740,6 @@ annotations/bw1.exe/pseudocode/src/cockpit/ckptutil.c/mmxOptimizedMemcpy_FUN_004
 annotations/bw1.exe/pseudocode/src/core/dtrace.cpp/CDemonRaytrace_setVoxelShadowBit_FUN_0048f920.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/FUN_0049dad0.cpp
 annotations/bw1.exe/pseudocode/src/core/glass.cpp/CGlass_renderBrokenGlass_FUN_004e1db0.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_0056e830.cpp
 annotations/bw1.exe/pseudocode/src/core/box.cpp/FUN_004207b0.cpp
 annotations/bw1.exe/pseudocode/src/cockpit/ckptutil.c/optimizedMemcpy_FUN_00437038.c
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_computeBoneTransforms_FUN_00569180.cpp
@@ -4754,6 +4755,7 @@ annotations/bw1.exe/pseudocode/src/core/fire.cpp/CSpark_setupRenderState_FUN_004
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CFirefly_setupRenderState_FUN_004ad9c0.cpp
 annotations/bw1.exe/pseudocode/src/sound/snddx.cpp/FUN_00578710.cpp
 annotations/bw1.exe/pseudocode/src/core/pendulum.cpp/CPendulum_updateSwing_FUN_00536a20.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/getSfxSample_FUN_0056e830.cpp
 annotations/bw1.exe/pseudocode/src/core/baron.cpp/CBaron_attachToOwner_FUN_0040fa70.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_dismemberPartInternal_FUN_00431210.cpp
 annotations/bw1.exe/pseudocode/src/cockpit/ckptutil.c/blitDualModeSprite_FUN_004380a0.c
@@ -4781,9 +4783,9 @@ annotations/bw1.exe/pseudocode/src/core/mirror.cpp/CMirror_reflectAndClipPrimiti
 annotations/bw1.exe/pseudocode/src/core/bugs.cpp/CBugs_findNextSwarmVertex_FUN_00427830.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_renderBurn_FUN_0042fe00.cpp
 annotations/bw1.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_populateCollisionList_FUN_00468420.cpp
-annotations/bw1.exe/pseudocode/src/core/game.cpp/CGame_rollCredits_FUN_004d8e50.cpp
 annotations/bw1.exe/pseudocode/src/core/mobster.cpp/CMobster_aimTommyGun_FUN_0051def0.cpp
 annotations/bw1.exe/pseudocode/src/core/door.cpp/CDoor_reposition_FUN_00477540.cpp
+annotations/bw1.exe/pseudocode/src/core/game.cpp/CGame_rollCredits_FUN_004d8e50.cpp
 annotations/bw1.exe/pseudocode/src/engine/pod.cpp/FUN_0053c650.cpp
 annotations/bw1.exe/pseudocode/src/core/xform.cpp/FUN_005b5080.cpp
 annotations/bw1.exe/pseudocode/src/engine/clipper.c/clipPolygonLeftPlane_FUN_0043bb10.c
@@ -4796,6 +4798,7 @@ annotations/bw1.exe/pseudocode/src/wincore/wddvmem.cpp/convertPaletteToDirectCol
 annotations/bw1.exe/pseudocode/src/cockpit/ckptutil.c/FUN_0043b090.c
 annotations/bw1.exe/pseudocode/src/cockpit/drawsurf.cpp/CDrawSurface_clipLine_FUN_0047f1b0.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModel_loadStream_FUN_00564ed0.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/parseWavFile_FUN_0056db10.cpp
 annotations/bw1.exe/pseudocode/src/core/hero.cpp/FUN_004eca10.cpp
 annotations/bw1.exe/pseudocode/src/core/carved.cpp/CCarved_canBeAttracted_FUN_0042b430.cpp
 annotations/bw1.exe/pseudocode/src/core/demnfolk.cpp/CDemnfolk_canBeAttracted_FUN_0045c350.cpp
@@ -4825,7 +4828,6 @@ annotations/bw1.exe/pseudocode/src/support/codec.cpp/FUN_00443530.cpp
 annotations/bw1.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_worldToScreenWithFrustumCull_FUN_0044e2a0.cpp
 annotations/bw1.exe/pseudocode/src/cockpit/pkbmpset.cpp/FUN_00538b30.cpp
 annotations/bw1.exe/pseudocode/src/engine/font.cpp/drawAlphaBlendedPixels_FUN_004c26c0.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_0056d7d0.cpp
 annotations/bw1.exe/pseudocode/src/core/zombie.cpp/CZombie_canBeAttracted_FUN_005be330.cpp
 annotations/bw1.exe/pseudocode/src/core/weather.cpp/CWeather_update_FUN_005ae190.cpp
 annotations/bw1.exe/pseudocode/src/core/set.cpp/FUN_005516c0.cpp
@@ -4910,7 +4912,6 @@ annotations/bw1.exe/pseudocode/src/core/smiley.cpp/CSmiley_getTargetPoints_FUN_0
 annotations/bw1.exe/pseudocode/src/core/frankgen.cpp/CFrankenstienMachine_process_FUN_004c5470.cpp
 annotations/bw1.exe/pseudocode/src/core/hero.cpp/CHero_tryTalkToNearbyCharacter_FUN_004eb240.cpp
 annotations/bw1.exe/pseudocode/src/core/menu.cpp/FUN_0050b470.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/pollAndMixSfx_FUN_00576c20.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/FUN_00492c20.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_walkToPoint_FUN_0042ccf0.cpp
 annotations/bw1.exe/pseudocode/src/core/lever.cpp/FUN_004ff3f0.cpp
@@ -4986,6 +4987,7 @@ annotations/bw1.exe/pseudocode/src/core/chain.cpp/CChain_setup_FUN_00435820.cpp
 annotations/bw1.exe/pseudocode/src/core/mobster.cpp/FUN_0051e5d0.cpp
 annotations/bw1.exe/pseudocode/src/core/scat.cpp/CScat_updateAI_FUN_005415c0.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/FUN_004934b0.cpp
+annotations/bw1.exe/pseudocode/src/core/sound.cpp/updateListeners_FUN_0057b780.cpp
 annotations/bw1.exe/pseudocode/src/core/actor.cpp/archivePartStatus_FUN_0040b960.cpp
 annotations/bw1.exe/pseudocode/src/engine/3d.c/renderPolygonFullEffectsBufferedOp65_FUN_004070e0.c
 annotations/bw1.exe/pseudocode/src/support/trisock.cpp/FUN_0059cf00.cpp
@@ -5066,17 +5068,20 @@ annotations/bw1.exe/pseudocode/src/core/dstrendr.cpp/blendVHBilerpLightmapShared
 annotations/bw1.exe/pseudocode/src/core/gabriela.cpp/CGabriella_findAndPickupNearbyObject_FUN_004c9500.cpp
 annotations/bw1.exe/pseudocode/src/core/gore.cpp/CBloodPool_render_FUN_004e5180.cpp
 annotations/bw1.exe/pseudocode/src/core/chain.cpp/CChain_getBoundingBox_FUN_00436be0.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxSample_pollStream_FUN_00570460.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/FUN_00430c90.cpp
 annotations/bw1.exe/pseudocode/src/core/dstrendr.cpp/blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX_FUN_0048838a.cpp
 annotations/bw1.exe/pseudocode/src/core/sound.cpp/FUN_0057c580.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModel_shatter_FUN_00566420.cpp
 annotations/bw1.exe/pseudocode/src/core/dskybox.cpp/renderSkyDome_FUN_00486900.cpp
 annotations/bw1.exe/pseudocode/src/core/vehicle.cpp/CVehicle_setup_FUN_005a7870.cpp
+annotations/bw1.exe/pseudocode/src/sound/snddx.cpp/FUN_00577f90.cpp
 annotations/bw1.exe/pseudocode/src/engine/font.cpp/FUN_004c4310.cpp
 annotations/bw1.exe/pseudocode/src/core/menu.cpp/showMainGameMenu_FUN_0050cc90.cpp
 annotations/bw1.exe/pseudocode/src/core/dmodel.cpp/FUN_00467650.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/FUN_0049d580.cpp
 annotations/bw1.exe/pseudocode/src/core/game.cpp/CGame_displayActStats_FUN_004d8700.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/nextMixingBuffer_FUN_0056f6d0.cpp
 annotations/bw1.exe/pseudocode/src/core/moocow.cpp/CMooCow_process_FUN_00521480.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_dismember_FUN_00430d90.cpp
 annotations/bw1.exe/pseudocode/src/core/gabriela.cpp/CGabriella_updateClavicleCollisionAvoidance_FUN_004cad20.cpp
@@ -5093,7 +5098,6 @@ annotations/bw1.exe/pseudocode/src/core/shadow.cpp/FUN_005601c0.cpp
 annotations/bw1.exe/pseudocode/src/core/stranger.cpp/FUN_00588a10.cpp
 annotations/bw1.exe/pseudocode/src/core/djien.cpp/CDjien_process_FUN_00460230.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/FUN_0056b360.cpp
-annotations/bw1.exe/pseudocode/src/core/sound.cpp/updateListeners_FUN_0057b780.cpp
 annotations/bw1.exe/pseudocode/src/core/dlight.cpp/FUN_00464990.cpp
 annotations/bw1.exe/pseudocode/src/core/dstrendr.cpp/blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_004895f3.cpp
 annotations/bw1.exe/pseudocode/src/core/werewolf.cpp/FUN_005b1850.cpp
@@ -5104,7 +5108,6 @@ annotations/bw1.exe/pseudocode/src/core/game.cpp/FUN_004d6990.cpp
 annotations/bw1.exe/pseudocode/src/core/xform.cpp/slerpQuaternion_FUN_005b7940.cpp
 annotations/bw1.exe/pseudocode/src/core/dstrendr.cpp/blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_00487eac.cpp
 annotations/bw1.exe/pseudocode/src/core/bugs.cpp/CBugs_updateGroundHeightGrid_FUN_00425b00.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00572b90.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/CEditorTools_showFilenameInputDialog_FUN_004958d0.cpp
 annotations/bw1.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_ctor_FUN_00503b40.cpp
 annotations/bw1.exe/pseudocode/src/core/stranger.cpp/CStranger_renderOpaque_FUN_0058e3c0.cpp
@@ -5123,7 +5126,6 @@ annotations/bw1.exe/pseudocode/src/core/dlight.cpp/CDemonLight_renderExternalVol
 annotations/bw1.exe/pseudocode/src/core/set.cpp/CDemonSet_processActors_FUN_0054fc20.cpp
 annotations/bw1.exe/pseudocode/src/core/boneguy.cpp/CBoneGuy_updatePickupBehavior_FUN_0041c9a0.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/FUN_00569440.cpp
-annotations/bw1.exe/pseudocode/src/sound/snddx.cpp/FUN_00577f90.cpp
 annotations/bw1.exe/pseudocode/src/core/fldnotes.cpp/CFieldNotes_draw_FUN_004be0f0.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/FUN_0049caa0.cpp
 annotations/bw1.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_precomputeLight_FUN_0044e8e0.cpp
@@ -5171,7 +5173,6 @@ annotations/bw1.exe/pseudocode/src/core/demnfolk.cpp/CDemnfolk_getCarryObjToBody
 annotations/bw1.exe/pseudocode/src/core/zombie.cpp/CZombie_getCarryObjToBodyXForm_FUN_005bd120.cpp
 annotations/bw1.exe/pseudocode/src/core/vehicle.cpp/CVehicle_renderOpaque_FUN_005a8670.cpp
 annotations/bw1.exe/pseudocode/src/engine/prim.c/renderIndexedPolygonAdvanced_FUN_0053f720.c
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00570a40.cpp
 annotations/bw1.exe/pseudocode/src/core/tommygun.cpp/CTommyGun_fire_FUN_00598420.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/writeBitsToStream_FUN_00442490.cpp
 annotations/bw1.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_customRayIntersect_FUN_00504580.cpp
@@ -5197,14 +5198,13 @@ annotations/bw1.exe/pseudocode/src/core/xform.cpp/inverse_FUN_005b6380.cpp
 annotations/bw1.exe/pseudocode/src/core/gabriela.cpp/CGabriella_scoreTargetVisibility_FUN_004ca0c0.cpp
 annotations/bw1.exe/pseudocode/src/core/set.cpp/CDemonSet_renderEnvMapTriangles_FUN_00554d30.cpp
 annotations/bw1.exe/pseudocode/src/core/tentacle.cpp/CTentacle_process_FUN_005952f0.cpp
-annotations/bw1.exe/pseudocode/src/core/vehicle.cpp/CVehicle_process_FUN_005a7b50.cpp
 annotations/bw1.exe/pseudocode/src/core/rifle.cpp/CRifle_fire_FUN_00540080.cpp
+annotations/bw1.exe/pseudocode/src/core/vehicle.cpp/CVehicle_process_FUN_005a7b50.cpp
 annotations/bw1.exe/pseudocode/src/engine/texture.cpp/FUN_00597d70.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/FUN_00433d50.cpp
 annotations/bw1.exe/pseudocode/src/engine/alphabit.cpp/FUN_0040d660.cpp
 annotations/bw1.exe/pseudocode/src/cockpit/ckptutil.c/blitSpanBasedSpriteClipped_FUN_00437940.c
 annotations/bw1.exe/pseudocode/src/core/dcamera.cpp/FUN_00454cc0.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_0056db10.cpp
 annotations/bw1.exe/pseudocode/src/core/dlight.cpp/FUN_00466220.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_spawnFireOnBone_FUN_0042f4d0.cpp
 annotations/bw1.exe/pseudocode/src/core/xform.cpp/matrixToQuaternion_FUN_005b75a0.cpp
@@ -5223,20 +5223,22 @@ annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/FUN_00498660.cpp
 annotations/bw1.exe/pseudocode/src/core/netgame.cpp/CNetGame_processPacket_FUN_0052d450.cpp
 annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/resampleAndConvertAudio_FUN_005747f0.cpp
 annotations/bw1.exe/pseudocode/src/core/box.cpp/CBox_ctor_FUN_0041da00.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/pollAndMixSfx_FUN_00576c20.cpp
 annotations/bw1.exe/pseudocode/src/engine/3d.c/clipAndDrawLine2D_FUN_00407af0.c
 annotations/bw1.exe/pseudocode/src/core/dstrendr.cpp/spatialFilter9TapMMX_FUN_00488aef.cpp
 annotations/bw1.exe/pseudocode/src/core/bmppuzzl.cpp/CAudioRecPuzzle_load_FUN_00415fc0.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/CSfxSlot_mix_FUN_00571420.cpp
 annotations/bw1.exe/pseudocode/src/core/boneguy.cpp/CBoneGuy_ctor_FUN_0041b750.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModel_computePartDominantBones_FUN_00566a20.cpp
 annotations/bw1.exe/pseudocode/src/core/dstrendr.cpp/blendLightmapShared4U64toU64pAmbientPx4MMX_FUN_00488cb5.cpp
 annotations/bw1.exe/pseudocode/src/core/set.cpp/FUN_0054e6a0.cpp
 annotations/bw1.exe/pseudocode/src/engine/font.cpp/FUN_004c1dd0.cpp
-annotations/bw1.exe/pseudocode/src/core/batcreat.cpp/CBatCreature_process_FUN_004115b0.cpp
 annotations/bw1.exe/pseudocode/src/core/mimic.cpp/CMimic_updatePose_FUN_0050f7e0.cpp
 annotations/bw1.exe/pseudocode/src/core/platfrm.cpp/CPlatform_process_FUN_00539810.cpp
 annotations/bw1.exe/pseudocode/src/engine/winfont.cpp/FUN_005b1c50.cpp
 annotations/bw1.exe/pseudocode/src/engine/3d.c/clipAndDrawLine3D_FUN_00407df0.c
 annotations/bw1.exe/pseudocode/src/core/netgame.cpp/CNetGame_applyNewGameSettings_FUN_0052f200.cpp
+annotations/bw1.exe/pseudocode/src/core/batcreat.cpp/CBatCreature_process_FUN_004115b0.cpp
 annotations/bw1.exe/pseudocode/src/core/dmodel.cpp/FUN_00467c00.cpp
 annotations/bw1.exe/pseudocode/src/core/weather.cpp/CWeather_renderParticles_FUN_005ae890.cpp
 annotations/bw1.exe/pseudocode/src/core/thehand.cpp/CTheHand_process_FUN_00599150.cpp
@@ -5249,6 +5251,7 @@ annotations/bw1.exe/pseudocode/src/engine/font.cpp/FUN_004c0fa0.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/FUN_005639e0.cpp
 annotations/bw1.exe/pseudocode/src/core/colonel.cpp/FUN_00444b50.cpp
 annotations/bw1.exe/pseudocode/src/engine/palette.cpp/FUN_00531ee0.cpp
+annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/startSfx_FUN_00572d20.cpp
 annotations/bw1.exe/pseudocode/src/shape/spotview.cpp/FUN_00584440.cpp
 annotations/bw1.exe/pseudocode/src/core/drone.cpp/CDrone_process_FUN_00485d70.cpp
 annotations/bw1.exe/pseudocode/src/core/elephant.cpp/CElephantGun_fire_FUN_0049e1a0.cpp
@@ -5286,7 +5289,6 @@ annotations/bw1.exe/pseudocode/src/core/dstrendr.cpp/verticalBlur3TapMMXStride32
 annotations/bw1.exe/pseudocode/src/core/dstrendr.cpp/verticalBlur3TapMMXStride256_FUN_00488875.cpp
 annotations/bw1.exe/pseudocode/src/core/dstrendr.cpp/blur3x3MMXStride128_FUN_004889b8.cpp
 annotations/bw1.exe/pseudocode/src/core/cloth.cpp/CCloth_step_FUN_00440640.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/startSfx_FUN_00572d20.cpp
 annotations/bw1.exe/pseudocode/src/core/game.cpp/FUN_004d77d0.cpp
 annotations/bw1.exe/pseudocode/src/core/path.cpp/FUN_00533140.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/FUN_00497870.cpp
@@ -5315,8 +5317,8 @@ annotations/bw1.exe/pseudocode/src/core/lightgun.cpp/CLightGun_fire_FUN_00500310
 annotations/bw1.exe/pseudocode/src/core/lightpis.cpp/CLightPis_fire_FUN_00501a70.cpp
 annotations/bw1.exe/pseudocode/src/wincore/wddvmem.cpp/FUN_005ac300.cpp
 annotations/bw1.exe/pseudocode/src/core/succubus.cpp/CSuccubus_process_FUN_00592320.cpp
-annotations/bw1.exe/pseudocode/src/core/imp.cpp/CImp_process_FUN_004f2b80.cpp
 annotations/bw1.exe/pseudocode/src/support/codec.cpp/FUN_00442600.cpp
+annotations/bw1.exe/pseudocode/src/core/imp.cpp/CImp_process_FUN_004f2b80.cpp
 annotations/bw1.exe/pseudocode/src/core/mirror.cpp/CMirrorReflection_setupMirrorReflection_FUN_005188e0.cpp
 annotations/bw1.exe/pseudocode/src/core/gabriela.cpp/CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0.cpp
 annotations/bw1.exe/pseudocode/src/core/menu.cpp/configureGraphicsOptions_FUN_0050aa90.cpp
@@ -5327,8 +5329,8 @@ annotations/bw1.exe/pseudocode/src/core/path.cpp/CPathMap_findPathToDestination_
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/FUN_00431cc0.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/FUN_00568100.cpp
 annotations/bw1.exe/pseudocode/src/core/dtrace.cpp/CDemonRaytrace_renderFrustumCubes_FUN_0048d4f0.cpp
-annotations/bw1.exe/pseudocode/src/core/batman.cpp/CBatman_process_FUN_00412ba0.cpp
 annotations/bw1.exe/pseudocode/src/core/actor.cpp/FUN_00409170.cpp
+annotations/bw1.exe/pseudocode/src/core/batman.cpp/CBatman_process_FUN_00412ba0.cpp
 annotations/bw1.exe/pseudocode/src/wincore/winrun.cpp/getKeyName_FUN_005b30e0.cpp
 annotations/bw1.exe/pseudocode/src/core/charactr.cpp/CCharacter_renderCollision_FUN_0042ea10.cpp
 annotations/bw1.exe/pseudocode/src/core/scat.cpp/CScat_blendAimBones_FUN_00542270.cpp
@@ -5341,7 +5343,6 @@ annotations/bw1.exe/pseudocode/src/core/dpart.cpp/FUN_00479c70.cpp
 annotations/bw1.exe/pseudocode/src/core/particle.cpp/FUN_00532250.cpp
 annotations/bw1.exe/pseudocode/src/core/game.cpp/CGame_processHotkeys_FUN_004d1a80.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CFirefly_render_FUN_004adaf0.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00570460.cpp
 annotations/bw1.exe/pseudocode/src/core/doc.cpp/FUN_00470820.cpp
 annotations/bw1.exe/pseudocode/src/core/setcolid.cpp/FUN_00557300.cpp
 annotations/bw1.exe/pseudocode/src/core/bugs.cpp/FUN_00426870.cpp
@@ -5379,13 +5380,13 @@ annotations/bw1.exe/pseudocode/src/core/fire.cpp/FUN_004ae640.cpp
 annotations/bw1.exe/pseudocode/src/core/curtain.cpp/CCurtain_process_FUN_0044b6f0.cpp
 annotations/bw1.exe/pseudocode/src/shape/edittool.cpp/FUN_00498360.cpp
 annotations/bw1.exe/pseudocode/src/core/carved.cpp/FUN_0042a930.cpp
-annotations/bw1.exe/pseudocode/src/sound/sndmain.cpp/FUN_00571420.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/FUN_00567620.cpp
 annotations/bw1.exe/pseudocode/src/core/game.cpp/FUN_004d0400.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/FUN_004b1fb0.cpp
 annotations/bw1.exe/pseudocode/src/support/trstream.cpp/CInStream_vscanf_FUN_0059f700.cpp
 annotations/bw1.exe/pseudocode/src/core/scat.cpp/FUN_005424f0.cpp
 annotations/bw1.exe/pseudocode/src/core/demnfolk.cpp/FUN_0045b560.cpp
+annotations/bw1.exe/pseudocode/src/core/menu.cpp/FUN_0050ba70.cpp
 annotations/bw1.exe/pseudocode/src/core/set.cpp/CDemonSet_ctor_FUN_0054d000.cpp
 annotations/bw1.exe/pseudocode/src/core/stranger.cpp/CStranger_tryPlaceObject_FUN_0058d910.cpp
 annotations/bw1.exe/pseudocode/src/core/shadow.cpp/CShadow_process_FUN_0055de50.cpp
@@ -5398,7 +5399,6 @@ annotations/bw1.exe/pseudocode/src/engine/font.cpp/FUN_004c2810.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CLaserBeam_render_FUN_004b01a0.cpp
 annotations/bw1.exe/pseudocode/src/core/xform.cpp/transformAndClipGeometry_FUN_005b9fc0.cpp
 annotations/bw1.exe/pseudocode/src/core/dracbrid.cpp/CDraculaBride_process_FUN_0047b510.cpp
-annotations/bw1.exe/pseudocode/src/core/menu.cpp/FUN_0050ba70.cpp
 annotations/bw1.exe/pseudocode/src/core/werewolf.cpp/CWerewolf_process_FUN_005af4a0.cpp
 annotations/bw1.exe/pseudocode/src/core/stranger.cpp/CStranger_updateProceduralAnimation_FUN_00588ad0.cpp
 annotations/bw1.exe/pseudocode/src/support/trisock.cpp/FUN_0059e350.cpp

@@ -1291,7 +1291,7 @@ LAB_004a1d87:
                                     uVar16 = core_event_cpp_CEventList_getSfxHandle_FUN_004aa290
                                                        (param_1,local_8ad + 1);
                                     if (local_f0 <= 0.0) {
-                                      sound_sndmain_cpp_FUN_00573950(uVar16,local_f4);
+                                      sound_sndmain_cpp_setSfxVolume_FUN_00573950(uVar16,local_f4);
                                     }
                                     else {
                                       sound_sndmain_cpp_setSfxFade_FUN_00573ab0

@@ -32,7 +32,7 @@
 ; Called Functions:
 ;   core_sound.cpp_CSound_playSound_FUN_005609b0
 ;   crt_unknown.c_sprintf_FUN_005a28c0
-;   sound_sndmain.cpp_FUN_00556240
+;   sound_sndmain.cpp_startSfx_FUN_00556240
 ;
 ; *****************************************************************************
 
@@ -321,8 +321,8 @@ section .text
     MOV dword ptr [EBX + 0xc10],EAX     ; 0041318a
     LEA EAX,[ESP + 0x304]               ; 00413190
     PUSH EAX                            ; 00413197
-    CALL sound_sndmain.cpp_FUN_00556240 ; 00413198
-        ;   XREF to: 00556240 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556240()
+    CALL sound_sndmain.cpp_startSfx_FUN_00556240 ; 00413198
+        ;   XREF to: 00556240 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_startSfx_FUN_00556240(char * filename)
     ADD ESP,0x4                         ; 0041319d
     MOV dword ptr [EBX + 0xc08],EAX     ; 004131a0
     MOV ESP,EBP                         ; 004131a6

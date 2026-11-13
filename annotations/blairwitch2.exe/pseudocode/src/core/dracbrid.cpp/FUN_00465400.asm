@@ -75,14 +75,14 @@
 ;   core_spline.cpp_FUN_00561310
 ;   core_spline.cpp_FUN_00561540
 ;   core_spline.cpp_FUN_00561780
-;   sound_sndmain.cpp_FUN_005506b0
-;   sound_sndmain.cpp_FUN_00550b70
+;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;   sound_sndmain.cpp_isSoundBusy_FUN_00552b20
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005504d0
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00550450
 ;   sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00550170
 ;   sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_00550210
 ;   sound_sndmain.cpp_setNextSfxVolume_FUN_00550270
+;   sound_sndmain.cpp_startSfx_FUN_005506b0
 ;
 ; *****************************************************************************
 
@@ -113,8 +113,8 @@ section .text
         ;   Label: LAB_00465446
     PUSH EDX                            ; 00465448
     MOV EBP,EBX                         ; 00465449
-    CALL sound_sndmain.cpp_FUN_00550b70 ; 0046544b
-        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00550b70(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00550b70 ; 0046544b
+        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00550b70(uint sfx_handle)
     ADD ESP,0x4                         ; 00465450
     TEST EAX,EAX                        ; 00465453
     JZ 0x0046546a                       ; 00465455
@@ -420,8 +420,8 @@ section .text
     ADD ESP,0xc                         ; 004658a8
     LEA EAX,[ESP + 0x4]                 ; 004658ab
     PUSH EAX                            ; 004658af
-    CALL sound_sndmain.cpp_FUN_005506b0 ; 004658b0
-        ;   XREF to: 005506b0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005506b0()
+    CALL sound_sndmain.cpp_startSfx_FUN_005506b0 ; 004658b0
+        ;   XREF to: 005506b0 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_startSfx_FUN_005506b0(char * filename)
     ADD ESP,0x4                         ; 004658b5
     MOV dword ptr [EBP],EAX             ; 004658b8 | DAT_01ba5798
     CALL sound_sndmain.cpp_popSfxOptions_FUN_005504d0 ; 004658bb

@@ -23,7 +23,7 @@
 ;   core_set.cpp_CDemonSet_addCoronaGlobe_FUN_005372f0
 ;   core_sound.cpp_CSound_playActorSound_FUN_005609d0
 ;   core_weapon.cpp_CWeapon_process_FUN_0057b160
-;   sound_sndmain.cpp_FUN_00556700
+;   sound_sndmain.cpp_isSfxPlaying_FUN_00556700
 ;   sound_sndmain.cpp_killSfx_FUN_00556be0
 ;
 ; *****************************************************************************
@@ -98,8 +98,8 @@ section .text
     MOV ECX,dword ptr [EBP + 0x25c4]    ; 004a4e5f
         ;   Label: LAB_004a4e5f
     PUSH ECX                            ; 004a4e65
-    CALL sound_sndmain.cpp_FUN_00556700 ; 004a4e66
-        ;   XREF to: 00556700 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00556700(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00556700 ; 004a4e66
+        ;   XREF to: 00556700 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00556700(uint sfx_handle)
     ADD ESP,0x4                         ; 004a4e6b
     TEST EAX,EAX                        ; 004a4e6e
     JZ 0x004a573d                       ; 004a4e70

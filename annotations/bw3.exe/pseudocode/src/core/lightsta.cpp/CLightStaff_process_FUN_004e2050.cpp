@@ -355,7 +355,7 @@ LAB_004e20c0:
     ;
     if (this_ptr->chain_active == 0) {
       in_stack_fffff848 = (CBoundingBox3D *)this_ptr->sfx_handle;
-      iVar3 = sound_sndmain_cpp_FUN_00556700((uint)in_stack_fffff848);
+      iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700((uint)in_stack_fffff848);
       if (iVar3 == 0) {
         in_stack_fffff848 = (CBoundingBox3D *)&(this_ptr->base).base.location;
         uVar4 = core_sound_cpp_CSound_playActorSound_FUN_005609d0

@@ -1090,8 +1090,8 @@ section .text
     MOV ESI,dword ptr [EBX + 0x2001c]   ; 0058689f
         ;   Label: LAB_0058689f
     PUSH ESI                            ; 005868a5
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 005868a6
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 005868a6
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 005868ab
     TEST EAX,EAX                        ; 005868ae
     JZ 0x0058813b                       ; 005868b0
@@ -2931,8 +2931,8 @@ section .text
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0 ; 00588113
         ;   XREF to: 00572ac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0()
     PUSH 0x1                            ; 00588118
-    CALL sound_sndmain.cpp_FUN_00572a10 ; 0058811a
-        ;   XREF to: 00572a10 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572a10(uint flag_mask)
+    CALL sound_sndmain.cpp_setNextSfxFlagBits_FUN_00572a10 ; 0058811a
+        ;   XREF to: 00572a10 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxFlagBits_FUN_00572a10(uint flag_mask)
     ADD ESP,0x4                         ; 0058811f
     PUSH 0x5f6812                       ; 00588122 | = "goggle-off.wav"
     CALL sound_sndmain.cpp_startSfx_FUN_00572d20 ; 00588127
@@ -2959,8 +2959,8 @@ section .text
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0 ; 0058815c
         ;   XREF to: 00572ac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0()
     PUSH 0x1                            ; 00588161
-    CALL sound_sndmain.cpp_FUN_00572a10 ; 00588163
-        ;   XREF to: 00572a10 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572a10(uint flag_mask)
+    CALL sound_sndmain.cpp_setNextSfxFlagBits_FUN_00572a10 ; 00588163
+        ;   XREF to: 00572a10 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxFlagBits_FUN_00572a10(uint flag_mask)
     ADD ESP,0x4                         ; 00588168
     PUSH 0x5f6821                       ; 0058816b | = "goggle-on.wav"
     CALL sound_sndmain.cpp_startSfx_FUN_00572d20 ; 00588170
@@ -2968,8 +2968,8 @@ section .text
     ADD ESP,0x4                         ; 00588175
     PUSH 0x0                            ; 00588178
     MOV dword ptr [EBX + 0x20020],EAX   ; 0058817a
-    CALL sound_sndmain.cpp_FUN_005728e0 ; 00588180
-        ;   XREF to: 005728e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_005728e0(float volume)
+    CALL sound_sndmain.cpp_setNextSfxVolume_FUN_005728e0 ; 00588180
+        ;   XREF to: 005728e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxVolume_FUN_005728e0(float volume)
     ADD ESP,0x4                         ; 00588185
     PUSH 0x5f682f                       ; 00588188 | = "goggle-loop.wav"
     CALL sound_sndmain.cpp_startSfx_FUN_00572d20 ; 0058818d

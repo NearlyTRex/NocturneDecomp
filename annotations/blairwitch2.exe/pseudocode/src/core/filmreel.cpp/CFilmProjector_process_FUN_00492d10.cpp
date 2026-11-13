@@ -46,7 +46,7 @@ void __cdecl core_filmreel_cpp_CFilmProjector_process_FUN_00492d10(CFilmProjecto
       this_ptr->sfx_handle = uVar4;
     }
     else {
-      iVar2 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handle);
+      iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handle);
       if (iVar2 == 0) {
         uVar4 = (*((this_ptr->base).base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,"35-loop.wav");

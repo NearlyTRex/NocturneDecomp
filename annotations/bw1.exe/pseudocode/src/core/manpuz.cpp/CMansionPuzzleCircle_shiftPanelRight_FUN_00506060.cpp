@@ -24,7 +24,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_00506060(C
   }
   pSVar1->anim_speed = 1.0;
   sound_sndmain_cpp_pushSfxOptions_FUN_00572ac0();
-  sound_sndmain_cpp_FUN_005727e0(&pSVar1->world_position);
+  sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_005727e0(&pSVar1->world_position);
   sound_sndmain_cpp_startSfx_FUN_00572d20("manpuz-doorslide.wav");
   sound_sndmain_cpp_popSfxOptions_FUN_00572b40();
   return;

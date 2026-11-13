@@ -75,13 +75,13 @@
 ;   core_spline.cpp_FUN_00583d60
 ;   core_spline.cpp_FUN_00583f90
 ;   core_spline.cpp_FUN_005841d0
-;   sound_sndmain.cpp_FUN_005727e0
-;   sound_sndmain.cpp_FUN_00572880
-;   sound_sndmain.cpp_FUN_005728e0
-;   sound_sndmain.cpp_FUN_005735a0
+;   sound_sndmain.cpp_isSfxPlaying_FUN_005735a0
 ;   sound_sndmain.cpp_isSoundBusy_FUN_00575550
 ;   sound_sndmain.cpp_popSfxOptions_FUN_00572b40
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0
+;   sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005727e0
+;   sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_00572880
+;   sound_sndmain.cpp_setNextSfxVolume_FUN_005728e0
 ;   sound_sndmain.cpp_startSfx_FUN_00572d20
 ;
 ; *****************************************************************************
@@ -113,8 +113,8 @@ section .text
         ;   Label: LAB_0047d966
     PUSH EDX                            ; 0047d968
     MOV EBP,EBX                         ; 0047d969
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 0047d96b
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 0047d96b
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 0047d970
     TEST EAX,EAX                        ; 0047d973
     JZ 0x0047d98a                       ; 0047d975
@@ -397,17 +397,17 @@ section .text
         ;   Label: LAB_0047dd84
     LEA EAX,[EBP + 0x4]                 ; 0047dd89
     PUSH EAX                            ; 0047dd8c | DAT_01bc0d58
-    CALL sound_sndmain.cpp_FUN_005727e0 ; 0047dd8d
-        ;   XREF to: 005727e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_005727e0(CVector3f * position_source_ptr)
+    CALL sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005727e0 ; 0047dd8d
+        ;   XREF to: 005727e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005727e0(CVector3f * position_source_ptr)
     ADD ESP,0x4                         ; 0047dd92
     LEA EAX,[EBP + 0x10]                ; 0047dd95
     PUSH EAX                            ; 0047dd98 | DAT_01bc0d64
-    CALL sound_sndmain.cpp_FUN_00572880 ; 0047dd99
-        ;   XREF to: 00572880 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572880(CVector3f * velocity_source_ptr)
+    CALL sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_00572880 ; 0047dd99
+        ;   XREF to: 00572880 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_00572880(CVector3f * velocity_source_ptr)
     ADD ESP,0x4                         ; 0047dd9e
     PUSH dword ptr [ESP + 0x1bc]        ; 0047dda1
-    CALL sound_sndmain.cpp_FUN_005728e0 ; 0047dda8
-        ;   XREF to: 005728e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_005728e0(float volume)
+    CALL sound_sndmain.cpp_setNextSfxVolume_FUN_005728e0 ; 0047dda8
+        ;   XREF to: 005728e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxVolume_FUN_005728e0(float volume)
     ADD ESP,0x4                         ; 0047ddad
     MOV EDI,dword ptr [ESP + 0x1b8]     ; 0047ddb0
     PUSH EDI                            ; 0047ddb7

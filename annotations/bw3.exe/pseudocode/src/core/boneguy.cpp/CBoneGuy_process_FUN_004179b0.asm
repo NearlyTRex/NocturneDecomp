@@ -628,16 +628,16 @@ section .text
     SUB ESP,0x8                         ; 0041804e
     FLD float ptr [EBX + 0x20]          ; 00418051
     FSTP double ptr [ESP]               ; 00418054
-    CALL sound_sndmain.cpp_FUN_00557170 ; 00418057
-        ;   XREF to: 00557170 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00557170()
+    CALL sound_sndmain.cpp_isWithinListenerRadius_FUN_00557170 ; 00418057
+        ;   XREF to: 00557170 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isWithinListenerRadius_FUN_00557170(double pos_x, double pos_y, double pos_z, float radius)
     ADD ESP,0x1c                        ; 0041805c
     TEST EAX,EAX                        ; 0041805f
     JZ 0x00418698                       ; 00418061
         ;   XREF to: 00418698 (CONDITIONAL_JUMP)  ; LAB_00418698
     MOV ECX,dword ptr [EBX + 0xd078]    ; 00418067
     PUSH ECX                            ; 0041806d
-    CALL sound_sndmain.cpp_FUN_00556700 ; 0041806e
-        ;   XREF to: 00556700 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00556700(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00556700 ; 0041806e
+        ;   XREF to: 00556700 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00556700(uint sfx_handle)
     ADD ESP,0x4                         ; 00418073
     TEST EAX,EAX                        ; 00418076
     JNZ 0x00417cc8                      ; 00418078

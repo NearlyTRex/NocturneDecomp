@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 43,
+    "complexity_score": 17,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 18,
-    "suspect_count": 2,
-    "suspect_types": [
-      "extra_output"
-    ],
-    "total_lines": 52
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 51
   },
   "cross_references": [
     {
@@ -43,7 +41,7 @@
     {
       "addr": "00575560",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00575560"
+      "name": "sound_sndmain.cpp_hasHardware3DSound_FUN_00575560"
     },
     {
       "addr": "005755c0",
@@ -162,22 +160,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 5,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 16,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "if (extraout_EAX < 1) {",
-      "type": "extra_output"
-    }
-  ]
+  "suspects": []
 }

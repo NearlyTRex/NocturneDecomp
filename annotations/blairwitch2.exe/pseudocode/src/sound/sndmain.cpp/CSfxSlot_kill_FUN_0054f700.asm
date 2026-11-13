@@ -7,16 +7,16 @@
 ; CSfxSlot *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[11]:
+;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_0054ddf0 at 0054e0a8
 ;   sound_sndmain.cpp_CSfxSlot_compute_FUN_0054e8c0 at 0054eba3
-;   sound_sndmain.cpp_FUN_0054d3a0 at 0054d42b
-;   sound_sndmain.cpp_FUN_0054ddf0 at 0054e0a8
-;   sound_sndmain.cpp_FUN_0054edb0 at 0054eef5
-;   sound_sndmain.cpp_FUN_0054f8a0 at 0054f919
-;   sound_sndmain.cpp_FUN_005506b0 at 0055092b
-;   sound_sndmain.cpp_FUN_00553380 at 00553534
+;   sound_sndmain.cpp_CSfxSlot_mix_FUN_0054edb0 at 0054eef5
+;   sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_0054f8a0 at 0054f919
 ;   sound_sndmain.cpp_enableSfxChannel_FUN_00551220 at 00551277
+;   sound_sndmain.cpp_flushSoundChanges_FUN_00553380 at 00553534
+;   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_0054d3a0 at 0054d42b
 ;   sound_sndmain.cpp_killAllSfx_FUN_005510d0 at 005510e3
 ;   sound_sndmain.cpp_killSfxByName_FUN_005518e0 at 00551923
+;   sound_sndmain.cpp_killSfx_FUN_00551050 at 00551065
 ;   ... and 1 more
 ;
 ; Referenced Globals:
@@ -41,7 +41,7 @@
 ;   core_main.c_FUN_004e4500
 ;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_0054d9b0
-;   sound_sndmain.cpp_FUN_0054b960
+;   sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_0054b960
 ;
 ; *****************************************************************************
 
@@ -146,8 +146,8 @@ section .text
     ADD ESP,0x4                         ; 0054f81d
     PUSH 0x0                            ; 0054f820
         ;   Label: LAB_0054f820
-    CALL sound_sndmain.cpp_FUN_0054b960 ; 0054f822
-        ;   XREF to: 0054b960 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_0054b960(int requested_bytes)
+    CALL sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_0054b960 ; 0054f822
+        ;   XREF to: 0054b960 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_0054b960(int requested_bytes)
     ADD ESP,0x4                         ; 0054f827
     MOV dword ptr [ESI + 0x160],0xffffffff ; 0054f82a
     MOV dword ptr [EBX + 0x118],0x0     ; 0054f834

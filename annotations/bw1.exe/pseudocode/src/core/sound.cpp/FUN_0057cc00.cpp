@@ -29,7 +29,7 @@ void __cdecl core_sound_cpp_FUN_0057cc00(CSound *this_ptr)
   _DAT_02c82a6c = 0x501502f9;
   _DAT_02c82a70 = 0x501502f9;
   _DAT_02c82a74 = 0x501502f9;
-  sound_sndmain_cpp_FUN_00573fa0();
+  sound_sndmain_cpp_set3DListenerVelocity_FUN_00573fa0(0.0,0.0,0.0);
   core_sound_cpp_updateListeners_FUN_0057b780();
   _DAT_02c82a7c = 0;
   sound_sndmain_cpp_set3DListenerOrientRight_FUN_005756f0(_DAT_02c82a84,_DAT_02c82a88,_DAT_02c82a8c)

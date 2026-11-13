@@ -99,8 +99,8 @@
 ;   core_dirmat.cpp_FUN_0045f690
 ;   core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_00557110
 ;   crt_string.c__strnicmp_FUN_005c1210
-;   sound_sndmain.cpp_FUN_00573ec0
-;   sound_sndmain.cpp_FUN_00573f20
+;   sound_sndmain.cpp_set3DListenerOrient_FUN_00573f20
+;   sound_sndmain.cpp_set3DListenerPos_FUN_00573ec0
 ;
 ; *****************************************************************************
 
@@ -194,8 +194,8 @@ section .text
     LEA EDI,[ESP + 0x128]               ; 0057b8ce
     FSTP double ptr [ESP]               ; 0057b8d5
     XOR EBX,EBX                         ; 0057b8d8
-    CALL sound_sndmain.cpp_FUN_00573ec0 ; 0057b8da
-        ;   XREF to: 00573ec0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00573ec0()
+    CALL sound_sndmain.cpp_set3DListenerPos_FUN_00573ec0 ; 0057b8da
+        ;   XREF to: 00573ec0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_set3DListenerPos_FUN_00573ec0(double pos_x, double pos_y, double pos_z)
     ADD ESP,0x18                        ; 0057b8df
     LEA EAX,[ESP + 0xe0]                ; 0057b8e2
     MOV ECX,0x3f800000                  ; 0057b8e9
@@ -255,8 +255,8 @@ section .text
     PUSH dword ptr [ESP + 0x130]        ; 0057b9d3
     PUSH dword ptr [ESP + 0x130]        ; 0057b9da
     PUSH dword ptr [ESP + 0x130]        ; 0057b9e1
-    CALL sound_sndmain.cpp_FUN_00573f20 ; 0057b9e8
-        ;   XREF to: 00573f20 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00573f20()
+    CALL sound_sndmain.cpp_set3DListenerOrient_FUN_00573f20 ; 0057b9e8
+        ;   XREF to: 00573f20 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_set3DListenerOrient_FUN_00573f20(float front_x, float front_y, float front_z, float up_x, ...)
     MOV EAX,[0x0061d95c]                ; 0057b9ed | g_CGamePtr
     ADD ESP,0x24                        ; 0057b9f2
     MOV EDX,dword ptr [EAX + 0x25c]     ; 0057b9f5 | g_CGameInstance.goggles_active

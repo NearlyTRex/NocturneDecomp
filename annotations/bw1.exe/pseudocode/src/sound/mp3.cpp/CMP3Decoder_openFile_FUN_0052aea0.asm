@@ -8,8 +8,8 @@
 ; char *           Stack[0x8]:4   filename
 ;
 ; XREF[3]:
-;   sound_sndmain.cpp_FUN_0056e830 at 0056ec5c
-;   sound_sndmain.cpp_FUN_00574410 at 00574601
+;   sound_sndmain.cpp_getSampleInfo_FUN_00574410 at 00574601
+;   sound_sndmain.cpp_getSfxSample_FUN_0056e830 at 0056ec5c
 ;   sound_sndmain.cpp_startSfx_FUN_00572d20 at 005731c9
 ;
 ; Referenced Globals:

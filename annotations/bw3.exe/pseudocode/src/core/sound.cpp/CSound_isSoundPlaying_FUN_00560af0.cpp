@@ -11,6 +11,6 @@ int __cdecl core_sound_cpp_CSound_isSoundPlaying_FUN_00560af0(CSound *this_ptr,u
 {
   int iVar1;
   
-  iVar1 = sound_sndmain_cpp_FUN_00556700(sfx_handle);
+  iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(sfx_handle);
   return iVar1;
 }

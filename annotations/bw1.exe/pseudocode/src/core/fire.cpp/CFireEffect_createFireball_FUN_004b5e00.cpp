@@ -13,11 +13,9 @@ void __cdecl core_fire_cpp_CFireEffect_createFireball_FUN_004b5e00(CFireEffect *
 {
   int iVar1;
   int iVar2;
-  int iVar3;
   CFireball *this_ptr_00;
   
   iVar1 = _DAT_01ca9e5c;
-  iVar3 = _DAT_01ca9e5c * 0xa4;
   iVar2 = _DAT_01ca9e5c + 1;
   this_ptr_00 = g_FireballPool + _DAT_01ca9e5c;
   _DAT_01ca9e5c = iVar2;
@@ -36,7 +34,8 @@ void __cdecl core_fire_cpp_CFireEffect_createFireball_FUN_004b5e00(CFireEffect *
   g_FireballPool[iVar1].lighting_active = lighting_active;
   g_FireballPool[iVar1].first_update_flag = 0;
   g_FireballPool[iVar1].sfx_handle = sfx_handle;
-  sound_sndmain_cpp_FUN_005737d0(sfx_handle,this_ptr_00);
-  sound_sndmain_cpp_FUN_005738d0(g_FireballPool[iVar1].sfx_handle,iVar3 + 0x1ca9e6c);
+  sound_sndmain_cpp_setSfxTrackedFloatPosition_FUN_005737d0(sfx_handle,(CVector3f *)this_ptr_00);
+  sound_sndmain_cpp_setSfxTrackedFloatVelocity_FUN_005738d0
+            (g_FireballPool[iVar1].sfx_handle,&g_FireballPool[iVar1].base.velocity);
   return;
 }

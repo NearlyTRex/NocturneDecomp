@@ -20,7 +20,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0054bf80
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0
-;   sound_sndmain.cpp_FUN_00556230
+;   sound_sndmain.cpp_preloadSfx_FUN_00556230
 ;
 ; *****************************************************************************
 
@@ -67,8 +67,8 @@ section .text
         ;   XREF to: 004a42c0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a42c0()
     ADD ESP,0x8                         ; 004a43a1
     PUSH 0x5c0a63                       ; 004a43a4
-    CALL sound_sndmain.cpp_FUN_00556230 ; 004a43a9
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 004a43a9
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 004a43ae
     PUSH 0x5c0a73                       ; 004a43b1
     LEA EAX,[ESP + 0x23a8]              ; 004a43b6
@@ -122,12 +122,12 @@ section .text
         ;   XREF to: 0054e6b0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004a4446
     PUSH 0x5c0aa8                       ; 004a4449
-    CALL sound_sndmain.cpp_FUN_00556230 ; 004a444e
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 004a444e
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 004a4453
     PUSH 0x5c0abc                       ; 004a4456
-    CALL sound_sndmain.cpp_FUN_00556230 ; 004a445b
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 004a445b
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 004a4460
     PUSH 0x3                            ; 004a4463
     MOV EDX,dword ptr [ESP + 0x252c]    ; 004a4465
@@ -136,8 +136,8 @@ section .text
         ;   XREF to: 004a42f0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a42f0()
     ADD ESP,0x8                         ; 004a4472
     PUSH 0x5c0ad1                       ; 004a4475
-    CALL sound_sndmain.cpp_FUN_00556230 ; 004a447a
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 004a447a
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 004a447f
     JMP 0x004a437c                      ; 004a4482
         ;   XREF to: 004a437c (UNCONDITIONAL_JUMP)  ; LAB_004a437c

@@ -1,0 +1,159 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 22,
+    "complexity_score": 15,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 37
+  },
+  "cross_references": [
+    {
+      "addr": "004a2830",
+      "from_addr": "004a28b4",
+      "name": "core_fire.cpp_CFireEffect_createFireball_FUN_004a2830",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a3920",
+      "from_addr": "004a3992",
+      "name": "core_fire.cpp_FUN_004a3920",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00556930",
+    "address_range": [
+      [
+        "00556930",
+        "0055696b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_00556930",
+    "signature": "int __cdecl sound_sndmain_cpp_setSfxTrackedFloatPosition_FUN_00556930(uint sfx_handle,CVector3f *position_source_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00552f10",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getSfxSlotFromHandle_FUN_00552f10"
+    },
+    {
+      "addr": "00556fd0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_unlockSound_FUN_00556fd0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004a3992",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_FUN_004a3920",
+        "estimated_params": 2,
+        "instructions_analyzed": 19,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a28b4",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CFireEffect_createFireball_FUN_004a2830",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8823529411764706,
+    "instruction_count": 17,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CBRANCH": 1,
+      "COPY": 13,
+      "INT_ADD": 9,
+      "INT_AND": 7,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 6,
+      "INT_OR": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 4,
+      "LOAD": 5,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 7
+    },
+    "pcode_op_count": 66
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00550da0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005737d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a98b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4906
+    },
+    "nocturne.exe": {
+      "addr": "00526ea0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4906
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "sfx_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "position_source_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": []
+}

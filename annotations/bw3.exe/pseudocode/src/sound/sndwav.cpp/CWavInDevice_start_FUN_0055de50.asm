@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005a28f0
-;   sound_sndmain.cpp_FUN_0055a560
+;   sound_sndmain.cpp_logSoundError_FUN_0055a560
 ;   sound_sndwav.cpp_writeWavInBuffer_FUN_0055dcf0
 ;   waveInStart
 ;
@@ -106,8 +106,8 @@ section .text
     RET                                 ; 0055df14
     PUSH 0x5d508f                       ; 0055df15 | = "waveInStart failed!"
         ;   Label: LAB_0055df15
-    CALL sound_sndmain.cpp_FUN_0055a560 ; 0055df1a
-        ;   XREF to: 0055a560 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_0055a560()
+    CALL sound_sndmain.cpp_logSoundError_FUN_0055a560 ; 0055df1a
+        ;   XREF to: 0055a560 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_0055a560(char * format)
     ADD ESP,0x4                         ; 0055df1f
     MOV EAX,dword ptr [EDI]             ; 0055df22
     PUSH EDI                            ; 0055df24

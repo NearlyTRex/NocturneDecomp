@@ -27,7 +27,7 @@
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   sound_snddx.cpp_FUN_00577500
 ;   sound_snddx.cpp_FUN_00577a50
-;   sound_sndmain.cpp_FUN_005773f0
+;   sound_sndmain.cpp_logSoundError_FUN_005773f0
 ;
 ; *****************************************************************************
 
@@ -267,8 +267,8 @@ section .text
     ADD ESP,0x10                        ; 00579d95
     LEA EAX,[ESP + 0x320]               ; 00579d98
     PUSH EAX                            ; 00579d9f
-    CALL sound_sndmain.cpp_FUN_005773f0 ; 00579da0
-        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005773f0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005773f0 ; 00579da0
+        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005773f0(char * format)
     ADD ESP,0x4                         ; 00579da5
     XOR EAX,EAX                         ; 00579da8
     ADD ESP,0xaf4                       ; 00579daa
@@ -292,8 +292,8 @@ section .text
     ADD ESP,0x10                        ; 00579dd6
     LEA EAX,[ESP + 0x4b0]               ; 00579dd9
     PUSH EAX                            ; 00579de0
-    CALL sound_sndmain.cpp_FUN_005773f0 ; 00579de1
-        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005773f0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005773f0 ; 00579de1
+        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005773f0(char * format)
     ADD ESP,0x4                         ; 00579de6
     XOR EAX,EAX                         ; 00579de9
     ADD ESP,0xaf4                       ; 00579deb
@@ -317,8 +317,8 @@ section .text
     ADD ESP,0x10                        ; 00579e17
     LEA EAX,[ESP + 0x7d0]               ; 00579e1a
     PUSH EAX                            ; 00579e21
-    CALL sound_sndmain.cpp_FUN_005773f0 ; 00579e22
-        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005773f0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005773f0 ; 00579e22
+        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005773f0(char * format)
     ADD ESP,0x4                         ; 00579e27
     XOR EAX,EAX                         ; 00579e2a
     ADD ESP,0xaf4                       ; 00579e2c
@@ -342,8 +342,8 @@ section .text
     ADD ESP,0x10                        ; 00579e58
     LEA EAX,[ESP + 0x640]               ; 00579e5b
     PUSH EAX                            ; 00579e62
-    CALL sound_sndmain.cpp_FUN_005773f0 ; 00579e63
-        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005773f0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005773f0 ; 00579e63
+        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005773f0(char * format)
     ADD ESP,0x4                         ; 00579e68
     JMP 0x00579d19                      ; 00579e6b
         ;   XREF to: 00579d19 (UNCONDITIONAL_JUMP)  ; LAB_00579d19
@@ -362,8 +362,8 @@ section .text
     ADD ESP,0x10                        ; 00579e91
     LEA EAX,[ESP + 0x960]               ; 00579e94
     PUSH EAX                            ; 00579e9b
-    CALL sound_sndmain.cpp_FUN_005773f0 ; 00579e9c
-        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005773f0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005773f0 ; 00579e9c
+        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005773f0(char * format)
     ADD ESP,0x4                         ; 00579ea1
     XOR EAX,EAX                         ; 00579ea4
     ADD ESP,0xaf4                       ; 00579ea6
@@ -387,8 +387,8 @@ section .text
     ADD ESP,0x10                        ; 00579ed2
     LEA EAX,[ESP + 0x190]               ; 00579ed5
     PUSH EAX                            ; 00579edc
-    CALL sound_sndmain.cpp_FUN_005773f0 ; 00579edd
-        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005773f0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005773f0 ; 00579edd
+        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005773f0(char * format)
     ADD ESP,0x4                         ; 00579ee2
     XOR EAX,EAX                         ; 00579ee5
     ADD ESP,0xaf4                       ; 00579ee7
@@ -412,8 +412,8 @@ section .text
     ADD ESP,0x10                        ; 00579f10
     MOV EAX,ESP                         ; 00579f13
     PUSH EAX                            ; 00579f15
-    CALL sound_sndmain.cpp_FUN_005773f0 ; 00579f16
-        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005773f0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005773f0 ; 00579f16
+        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005773f0(char * format)
     ADD ESP,0x4                         ; 00579f1b
     XOR EAX,EAX                         ; 00579f1e
     ADD ESP,0xaf4                       ; 00579f20

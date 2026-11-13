@@ -21,9 +21,9 @@
 ;   undefined4 DAT_00605b10
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_00570460
-;   sound_sndmain.cpp_FUN_00573e70
+;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00570460
 ;   sound_sndmain.cpp_lockSound_FUN_00575d20
+;   sound_sndmain.cpp_unlockSound_FUN_00573e70
 ;
 ; *****************************************************************************
 
@@ -58,15 +58,15 @@ section .text
         ;   Label: LAB_00577085
     PUSH dword ptr [ESP + 0x10]         ; 00577089
     PUSH EBX                            ; 0057708d
-    CALL sound_sndmain.cpp_FUN_00570460 ; 0057708e
-        ;   XREF to: 00570460 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00570460()
+    CALL sound_sndmain.cpp_CSfxSample_pollStream_FUN_00570460 ; 0057708e
+        ;   XREF to: 00570460 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_pollStream_FUN_00570460(CSfxSample * this_ptr, float time_window, float update_interval)
     ADD EBX,0x1b0                       ; 00577093
     ADD ESP,0xc                         ; 00577099
     CMP EBX,ESI                         ; 0057709c
     JNZ 0x00577085                      ; 0057709e
         ;   XREF to: 00577085 (CONDITIONAL_JUMP)  ; LAB_00577085
-    CALL sound_sndmain.cpp_FUN_00573e70 ; 005770a0
-        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00573e70()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00573e70 ; 005770a0
+        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00573e70()
     MOV ESP,EBP                         ; 005770a5
     POP EBP                             ; 005770a7
     POP ESI                             ; 005770a8

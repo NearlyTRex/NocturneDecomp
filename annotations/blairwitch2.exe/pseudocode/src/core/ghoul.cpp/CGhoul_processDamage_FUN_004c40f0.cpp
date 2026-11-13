@@ -97,7 +97,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004c40f0(CGhoul *this_ptr,S
       }
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                 (&(this_ptr->base).base.model.base,iVar5,1);
-      iVar5 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[2]);
+      iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[2]);
       if (iVar5 == 0) {
         uVar7 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,"ghoul-die-!-?.wav @1.6");
@@ -133,7 +133,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004c40f0(CGhoul *this_ptr,S
       this_ptr->flinch_blend_weight = 1.0;
       this_ptr->flinch_motion_index = iVar5;
     }
-    iVar5 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[1]);
+    iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[1]);
     if (iVar5 == 0) {
       uVar7 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"ghoul-mad-!-?.wav");

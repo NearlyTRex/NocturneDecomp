@@ -21,7 +21,7 @@
 ;   undefined4 DAT_0264b25c
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_005549c0
+;   sound_sndmain.cpp_logSoundError_FUN_005549c0
 ;   waveInAddBuffer
 ;   waveInPrepareHeader
 ;
@@ -84,8 +84,8 @@ section .text
     RET                                 ; 00558216
     PUSH 0x5ea5f6                       ; 00558217 | = "waveOutPrepareHeader failed!"
         ;   Label: LAB_00558217
-    CALL sound_sndmain.cpp_FUN_005549c0 ; 0055821c
-        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005549c0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005549c0 ; 0055821c
+        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005549c0(char * format)
     ADD ESP,0x4                         ; 00558221
     XOR EAX,EAX                         ; 00558224
     POP EBP                             ; 00558226
@@ -94,8 +94,8 @@ section .text
     RET                                 ; 00558229
     PUSH 0x5ea613                       ; 0055822a | = "waveOutWrite failed!"
         ;   Label: LAB_0055822a
-    CALL sound_sndmain.cpp_FUN_005549c0 ; 0055822f
-        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005549c0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005549c0 ; 0055822f
+        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005549c0(char * format)
     ADD ESP,0x4                         ; 00558234
     XOR EAX,EAX                         ; 00558237
     POP EBP                             ; 00558239

@@ -3417,8 +3417,8 @@ section .text
     PUSH dword ptr [EBP + 0x12]         ; 0048b346
         ;   Label: LAB_0048b346
     PUSH ECX                            ; 0048b349
-    CALL sound_sndmain.cpp_FUN_00550f20 ; 0048b34a
-        ;   XREF to: 00550f20 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00550f20()
+    CALL sound_sndmain.cpp_setSfxVolume_FUN_00550f20 ; 0048b34a
+        ;   XREF to: 00550f20 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxVolume_FUN_00550f20(uint sfx_handle, float volume)
     ADD ESP,0x8                         ; 0048b34f
     JMP 0x00489af6                      ; 0048b352
         ;   XREF to: 00489af6 (UNCONDITIONAL_JUMP)  ; caseD_6

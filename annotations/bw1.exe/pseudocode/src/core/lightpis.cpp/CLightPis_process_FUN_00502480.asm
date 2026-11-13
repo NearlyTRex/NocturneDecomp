@@ -27,14 +27,14 @@
 ;   core_set.cpp_CDemonSet_addDynamicLight_FUN_005518e0
 ;   core_weapon.cpp_CWeapon_process_FUN_005ad770
 ;   core_weather.cpp_CWeather_createLightningStrike_FUN_005ae580
-;   sound_sndmain.cpp_FUN_005727e0
-;   sound_sndmain.cpp_FUN_005728e0
-;   sound_sndmain.cpp_FUN_00572900
-;   sound_sndmain.cpp_FUN_005735a0
-;   sound_sndmain.cpp_FUN_00573950
-;   sound_sndmain.cpp_FUN_00573980
+;   sound_sndmain.cpp_isSfxPlaying_FUN_005735a0
 ;   sound_sndmain.cpp_killSfx_FUN_00573a80
 ;   sound_sndmain.cpp_popSfxOptions_FUN_00572b40
+;   sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0
+;   sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_00572900
+;   sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005727e0
+;   sound_sndmain.cpp_setNextSfxVolume_FUN_005728e0
+;   sound_sndmain.cpp_setSfxBaseFrequency_FUN_00573980
 ;   ... and 2 more
 ;
 ; *****************************************************************************
@@ -96,8 +96,8 @@ section .text
     FXCH                                ; 0050253b
     FSTP float ptr [ESP + 0xc]          ; 0050253d
     FSTP float ptr [ESP + 0x8]          ; 00502541
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 00502545
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 00502545
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 0050254a
     TEST EAX,EAX                        ; 0050254d
     JZ 0x0050262e                       ; 0050254f
@@ -105,14 +105,14 @@ section .text
     MOV ESI,dword ptr [EBX + 0x57c]     ; 00502555
     PUSH dword ptr [ESP + 0x8]          ; 0050255b
     PUSH ESI                            ; 0050255f
-    CALL sound_sndmain.cpp_FUN_00573950 ; 00502560
-        ;   XREF to: 00573950 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00573950()
+    CALL sound_sndmain.cpp_setSfxVolume_FUN_00573950 ; 00502560
+        ;   XREF to: 00573950 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxVolume_FUN_00573950(uint sfx_handle, float volume)
     ADD ESP,0x8                         ; 00502565
     MOV EDI,dword ptr [EBX + 0x57c]     ; 00502568
     PUSH dword ptr [ESP + 0x4]          ; 0050256e
     PUSH EDI                            ; 00502572
-    CALL sound_sndmain.cpp_FUN_00573980 ; 00502573
-        ;   XREF to: 00573980 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00573980(uint sfx_handle, float base_frequency)
+    CALL sound_sndmain.cpp_setSfxBaseFrequency_FUN_00573980 ; 00502573
+        ;   XREF to: 00573980 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxBaseFrequency_FUN_00573980(uint sfx_handle, float base_frequency)
     ADD ESP,0x8                         ; 00502578
     PUSH EBX                            ; 0050257b
         ;   Label: LAB_0050257b
@@ -183,16 +183,16 @@ section .text
         ;   Label: LAB_0050262e
     LEA EAX,[EBX + 0x20]                ; 00502633
     PUSH EAX                            ; 00502636
-    CALL sound_sndmain.cpp_FUN_005727e0 ; 00502637
-        ;   XREF to: 005727e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_005727e0(CVector3f * position_source_ptr)
+    CALL sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005727e0 ; 00502637
+        ;   XREF to: 005727e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005727e0(CVector3f * position_source_ptr)
     ADD ESP,0x4                         ; 0050263c
     PUSH dword ptr [ESP + 0x8]          ; 0050263f
-    CALL sound_sndmain.cpp_FUN_005728e0 ; 00502643
-        ;   XREF to: 005728e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_005728e0(float volume)
+    CALL sound_sndmain.cpp_setNextSfxVolume_FUN_005728e0 ; 00502643
+        ;   XREF to: 005728e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxVolume_FUN_005728e0(float volume)
     ADD ESP,0x4                         ; 00502648
     PUSH dword ptr [ESP + 0x4]          ; 0050264b
-    CALL sound_sndmain.cpp_FUN_00572900 ; 0050264f
-        ;   XREF to: 00572900 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572900(float base_frequency)
+    CALL sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_00572900 ; 0050264f
+        ;   XREF to: 00572900 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_00572900(float base_frequency)
     ADD ESP,0x4                         ; 00502654
     PUSH 0x5e7002                       ; 00502657
     CALL sound_sndmain.cpp_startSfx_FUN_00572d20 ; 0050265c

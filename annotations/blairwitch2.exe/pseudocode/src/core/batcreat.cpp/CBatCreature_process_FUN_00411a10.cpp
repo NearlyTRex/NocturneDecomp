@@ -157,9 +157,10 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00411a10(CBatCreature *t
                                 (fStack_154 - (this_ptr->base).base.base.orient.vec.y);
           if (ABS(fStack_14) < (float)_DAT_005cb8f6) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(pCStack_20,3,1);
-            iVar5 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[1]);
+            iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[1]);
             if ((iVar5 == 0) &&
-               (iVar5 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[2]), iVar5 == 0)) {
+               (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[2]),
+               iVar5 == 0)) {
               uVar6 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                 ((CDemonActor *)this_ptr,"batman-attack?.wav");
               this_ptr->sfx_handles[2] = uVar6;
@@ -212,9 +213,12 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00411a10(CBatCreature *t
           }
           core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(pCStack_24,iVar5,1);
           if ((((this_ptr->alert_played == 0) &&
-               (iVar5 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[1]), iVar5 == 0)) &&
-              (iVar5 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[2]), iVar5 == 0)) &&
-             (iVar5 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[0]), iVar5 == 0)) {
+               (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[1]),
+               iVar5 == 0)) &&
+              (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[2]),
+              iVar5 == 0)) &&
+             (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[0]),
+             iVar5 == 0)) {
             uVar6 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                               ((CDemonActor *)this_ptr,"batman-alert.wav");
             this_ptr->alert_played = 1;
@@ -294,9 +298,10 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00411a10(CBatCreature *t
               core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(pCStack_20,2,1);
               uVar6 = this_ptr->sfx_handles[1];
               (this_ptr->base).attack_cooldown = 0.0;
-              iVar5 = sound_sndmain_cpp_FUN_00550b70(uVar6);
+              iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(uVar6);
               if ((iVar5 == 0) &&
-                 (iVar5 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[2]), iVar5 == 0)) {
+                 (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[2]),
+                 iVar5 == 0)) {
                 uVar6 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                   ((CDemonActor *)this_ptr,"batman-attack?.wav");
                 this_ptr->sfx_handles[2] = uVar6;
@@ -327,9 +332,10 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00411a10(CBatCreature *t
                         (&(this_ptr->base).base.model.base,3,1);
               uVar6 = this_ptr->sfx_handles[1];
               (this_ptr->base).attack_cooldown = 1.0;
-              iVar5 = sound_sndmain_cpp_FUN_00550b70(uVar6);
+              iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(uVar6);
               if ((iVar5 == 0) &&
-                 (iVar5 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[2]), iVar5 == 0)) {
+                 (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[2]),
+                 iVar5 == 0)) {
                 uVar6 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                   ((CDemonActor *)this_ptr,"batman-attack?.wav");
                 this_ptr->sfx_handles[2] = uVar6;

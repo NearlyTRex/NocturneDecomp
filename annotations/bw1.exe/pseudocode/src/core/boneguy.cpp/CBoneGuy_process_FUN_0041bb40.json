@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1034,
-    "complexity_score": 1160,
+    "complexity_score": 1162,
     "cross_reference_count": 0,
     "function_call_count": 39,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 525,
+    "pseudocode_lines": 527,
     "suspect_count": 57,
     "suspect_types": [
       "pointer_cast",
@@ -24,7 +24,7 @@
       "unrolled_memset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1559
+    "total_lines": 1561
   },
   "cross_references": [],
   "function": {
@@ -207,19 +207,14 @@
       "name": "engine_console.cpp_CConsole_printf_FUN_00445430"
     },
     {
-      "addr": "00572a50",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00572a50"
-    },
-    {
       "addr": "005735a0",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005735a0"
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005735a0"
     },
     {
       "addr": "00574010",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00574010"
+      "name": "sound_sndmain.cpp_isWithinListenerRadius_FUN_00574010"
     },
     {
       "addr": "00573a80",
@@ -235,6 +230,11 @@
       "addr": "00572ac0",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0"
+    },
+    {
+      "addr": "00572a50",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxTriggerTime_FUN_00572a50"
     }
   ],
   "globals": [
@@ -600,7 +600,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 516,
+      "line": 518,
       "match": "2.8026e-45",
       "severity": "mild",
       "text": "fVar19 = 2.8026e-45;",
@@ -608,7 +608,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 522,
+      "line": 524,
       "match": "6.038918e-39",
       "severity": "mild",
       "text": "fStack_260 = 6.038918e-39;",

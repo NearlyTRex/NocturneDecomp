@@ -41,7 +41,7 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_start_FUN_0057ad20(CWavInDevice *this_
   if (MVar2 == 0) {
     return 1;
   }
-  sound_sndmain_cpp_FUN_005773f0("waveInStart failed!");
+  sound_sndmain_cpp_logSoundError_FUN_005773f0("waveInStart failed!");
   (*((this_ptr->base).vtable)->reset)(&this_ptr->base);
   return 0;
 }

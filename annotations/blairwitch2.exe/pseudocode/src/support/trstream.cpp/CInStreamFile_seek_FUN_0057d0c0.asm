@@ -11,7 +11,7 @@
 ; XREF[3]:
 ;   core_game.cpp_FUN_004bbf70 at 004bc23b
 ;   sound_sndmain.cpp_CSfxSample_seek_FUN_0054dc50 at 0054dda7
-;   sound_sndmain.cpp_FUN_0054c1c0 at 0054c3eb
+;   sound_sndmain.cpp_getSfxSample_FUN_0054c1c0 at 0054c3eb
 ;
 ; *****************************************************************************
 

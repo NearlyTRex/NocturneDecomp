@@ -1762,8 +1762,8 @@ section .text
     ADD ESP,0x4                         ; 005973c9
     MOV EDI,dword ptr [EBX + 0x10bdc]   ; 005973cc
     PUSH EDI                            ; 005973d2
-    CALL sound_sndmain.cpp_FUN_00550b70 ; 005973d3
-        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00550b70(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00550b70 ; 005973d3
+        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00550b70(uint sfx_handle)
     ADD ESP,0x4                         ; 005973d8
     TEST EAX,EAX                        ; 005973db
     JNZ 0x00596e2a                      ; 005973dd
@@ -1852,8 +1852,8 @@ section .text
         ;   XREF to: 00597581 (CONDITIONAL_JUMP)  ; LAB_00597581
     MOV EDI,dword ptr [EBX + 0x10bdc]   ; 0059750a
     PUSH EDI                            ; 00597510
-    CALL sound_sndmain.cpp_FUN_00550b70 ; 00597511
-        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00550b70(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00550b70 ; 00597511
+        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00550b70(uint sfx_handle)
     ADD ESP,0x4                         ; 00597516
     TEST EAX,EAX                        ; 00597519
     JNZ 0x0059753e                      ; 0059751b

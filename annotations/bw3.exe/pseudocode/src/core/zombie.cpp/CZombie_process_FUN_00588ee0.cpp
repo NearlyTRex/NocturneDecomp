@@ -737,7 +737,7 @@ LAB_00588fbb:
           if (0x3FA66666 + (float)_DAT_005d86df < fStack_74) {
             core_zombie_cpp_FUN_0058cc20(this_ptr);
             in_stack_fffffa44 = (UActorVTable *)0x58a4cc;
-            iVar7 = sound_sndmain_cpp_FUN_00556700(this_ptr->sfx_handles[1]);
+            iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handles[1]);
             if (iVar7 == 0) {
               if (this_ptr->is_female == 0) {
                 in_stack_fffffa44 = (UActorVTable *)this_ptr;
@@ -778,7 +778,7 @@ LAB_00588fbb:
       }
       else {
         if (pCVar22 == (CCharacter *)0x0) {
-          iVar7 = sound_sndmain_cpp_FUN_00556700(this_ptr->sfx_handles[1]);
+          iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handles[1]);
           if (iVar7 == 0) {
             if (this_ptr->is_female == 0) {
               pcVar25 = "zom-a0?.wav";

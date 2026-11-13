@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   engine_font.cpp_FUN_004b01d0 at 004b0273
-;   sound_sndmain.cpp_FUN_00551620 at 005517ac
+;   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00551620 at 005517ac
 ;
 ; *****************************************************************************
 

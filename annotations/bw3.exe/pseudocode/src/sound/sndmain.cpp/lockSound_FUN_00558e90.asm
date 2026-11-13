@@ -6,15 +6,15 @@
 ;
 ; XREF[27]:
 ;   core_tommygun.cpp_CTommyGun_process_FUN_0056bd40 at 0056be4d
-;   sound_sndmain.cpp_FUN_00552f10 at 00552f62
-;   sound_sndmain.cpp_FUN_00556240 at 005562e6
-;   sound_sndmain.cpp_FUN_00556fb0 at 00556fb0
-;   sound_sndmain.cpp_FUN_00557010 at 00557010
-;   sound_sndmain.cpp_FUN_00557020 at 00557020
-;   sound_sndmain.cpp_FUN_00557080 at 00557080
-;   sound_sndmain.cpp_FUN_00557100 at 00557100
-;   sound_sndmain.cpp_FUN_00557260 at 0055726e
-;   sound_sndmain.cpp_FUN_00557390 at 00557398
+;   sound_sndmain.cpp_createUserSample_FUN_00557260 at 0055726e
+;   sound_sndmain.cpp_enableSfxChannel_FUN_00556db0 at 00556df2
+;   sound_sndmain.cpp_enableSoundSystem_FUN_00558050 at 00558088
+;   sound_sndmain.cpp_freeAllSamples_FUN_00557800 at 00557802
+;   sound_sndmain.cpp_freeSampleByName_FUN_005574e0 at 005574e7
+;   sound_sndmain.cpp_getChannelLevels_FUN_00559c90 at 00559cd7
+;   sound_sndmain.cpp_getRecordingDeviceCount_FUN_005588a0 at 005588b6
+;   sound_sndmain.cpp_getSampleInfo_FUN_00557570 at 00557581
+;   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_00552f10 at 00552f62
 ;   ... and 17 more
 ;
 ; Referenced Globals:

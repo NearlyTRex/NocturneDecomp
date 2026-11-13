@@ -34,7 +34,7 @@ int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_00579f70(LPGUID d
   if (uVar1 != 0) {
     sound_snddx_cpp_FUN_00577500(uVar1);
     _sprintf(acStack_394,"DirectSux: Unable to %s.  (%s)");
-    sound_sndmain_cpp_FUN_005773f0(acStack_394);
+    sound_sndmain_cpp_logSoundError_FUN_005773f0(acStack_394);
     return 1;
   }
   if (pIStack_14 == (LPDIRECTSOUND)0x0) {
@@ -46,7 +46,7 @@ int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_00579f70(LPGUID d
   if (uVar1 != 0) {
     sound_snddx_cpp_FUN_00577500(uVar1);
     _sprintf(acStack_20c,"DirectSux: Unable to %s.  (%s)");
-    sound_sndmain_cpp_FUN_005773f0(acStack_20c);
+    sound_sndmain_cpp_logSoundError_FUN_005773f0(acStack_20c);
   }
   if ((int *)DStack_74.dwReserved1 != (int *)0x0) {
     (**(code **)(*(int *)DStack_74.dwReserved1 + 8))(DStack_74.dwReserved1);

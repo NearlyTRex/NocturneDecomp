@@ -20,7 +20,7 @@ void core_game_cpp_FUN_004c4bc0(int param_1)
   }
   else {
     if (*(uint *)(param_1 + 0x2fc) != 0) {
-      iVar1 = sound_sndmain_cpp_FUN_00556700(*(uint *)(param_1 + 0x2fc));
+      iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(*(uint *)(param_1 + 0x2fc));
       if (iVar1 != 0) goto LAB_004c4be7;
     }
     core_game_cpp_FUN_004c4a60

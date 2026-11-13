@@ -12,9 +12,8 @@ void __cdecl sound_sndmain_cpp_setSfxChannelVol_FUN_00556c90(int channel_index,f
 
 {
   int iVar1;
-  int extraout_EAX;
-  int *piVar2;
-  int unaff_ESI;
+  uint uVar2;
+  int *piVar3;
   
   if ((channel_index < 0) || (0x1f < channel_index)) {
     _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
@@ -24,17 +23,17 @@ void __cdecl sound_sndmain_cpp_setSfxChannelVol_FUN_00556c90(int channel_index,f
   iVar1 = _DAT_02cf3280;
   *(float *)(channel_index * 4 + 0x2cf28c0) = volume;
   if (iVar1 != 0) {
-    sound_sndmain_cpp_FUN_005586d0(unaff_ESI);
-    if (0 < extraout_EAX) {
+    uVar2 = sound_sndmain_cpp_hasHardware3DSound_FUN_005586d0();
+    if (0 < (int)uVar2) {
       sound_sndmain_cpp_lockSound_FUN_00558e90();
-      piVar2 = (int *)0x2ce721c;
+      piVar3 = (int *)0x2ce721c;
       do {
-        if (((piVar2[0x19] != 0) && (piVar2[0x18] != 0)) && (channel_index == *piVar2)) {
-          *(byte *)(piVar2 + 0x46) = *(byte *)(piVar2 + 0x46) | 8;
+        if (((piVar3[0x19] != 0) && (piVar3[0x18] != 0)) && (channel_index == *piVar3)) {
+          *(byte *)(piVar3 + 0x46) = *(byte *)(piVar3 + 0x46) | 8;
         }
-        piVar2 = piVar2 + 0x47;
-      } while (piVar2 != (int *)&DAT_02ceb91c);
-      sound_sndmain_cpp_FUN_00556fd0();
+        piVar3 = piVar3 + 0x47;
+      } while (piVar3 != (int *)&DAT_02ceb91c);
+      sound_sndmain_cpp_unlockSound_FUN_00556fd0();
       return;
     }
   }

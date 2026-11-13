@@ -13,8 +13,8 @@
 ;   core_tommygun.cpp_CTommyGun_process_FUN_0056bd40 at 0056beb8
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_00552f10
-;   sound_sndmain.cpp_FUN_00556fd0
+;   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_00552f10
+;   sound_sndmain.cpp_unlockSound_FUN_00556fd0
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
         ;   Label: sound_sndmain.cpp_getSfxSampleInfo_FUN_00556780
     MOV EDX,dword ptr [ESP + 0x8]       ; 00556782
     PUSH EDX                            ; 00556786
-    CALL sound_sndmain.cpp_FUN_00552f10 ; 00556787
-        ;   XREF to: 00552f10 (UNCONDITIONAL_CALL)  ; CSfxSlot * sound_sndmain.cpp_FUN_00552f10(uint sfx_handle, int check_hardware_playback)
+    CALL sound_sndmain.cpp_getSfxSlotFromHandle_FUN_00552f10 ; 00556787
+        ;   XREF to: 00552f10 (UNCONDITIONAL_CALL)  ; CSfxSlot * sound_sndmain.cpp_getSfxSlotFromHandle_FUN_00552f10(uint sfx_handle, int check_hardware_playback)
     ADD ESP,0x8                         ; 0055678c
     TEST EAX,EAX                        ; 0055678f
     JNZ 0x00556794                      ; 00556791
@@ -38,8 +38,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x10]      ; 0055679b
     MOV ESI,dword ptr [EAX + 0x68]      ; 0055679f
     MOVSD.REP ES:EDI,ESI                ; 005567a2
-    CALL sound_sndmain.cpp_FUN_00556fd0 ; 005567a4
-        ;   XREF to: 00556fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00556fd0()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00556fd0 ; 005567a4
+        ;   XREF to: 00556fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00556fd0()
     MOV EAX,0x1                         ; 005567a9
     POP ESI                             ; 005567ae
     POP EDI                             ; 005567af

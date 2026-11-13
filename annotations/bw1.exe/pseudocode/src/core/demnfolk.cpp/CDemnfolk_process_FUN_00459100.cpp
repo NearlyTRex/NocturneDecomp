@@ -251,7 +251,7 @@ void __cdecl core_demnfolk_cpp_CDemnfolk_process_FUN_00459100(CDemnfolk *this_pt
     (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
     return;
   }
-  iVar10 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[3]);
+  iVar10 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[3]);
   if (iVar10 != 0) {
     if (g_CGamePtr->slow_motion_mode == 1) {
       fVar27 = (1.0 - g_CGamePtr->slow_motion_timer) * (float)_DAT_005d801b + (float)_DAT_005d801b;
@@ -262,7 +262,7 @@ void __cdecl core_demnfolk_cpp_CDemnfolk_process_FUN_00459100(CDemnfolk *this_pt
       uVar11 = this_ptr->sfx_handles[3];
       fVar27 = 1.0;
     }
-    sound_sndmain_cpp_FUN_00573980(uVar11,fVar27);
+    sound_sndmain_cpp_setSfxBaseFrequency_FUN_00573980(uVar11,fVar27);
   }
   if (0.0 < this_ptr->pain_cooldown) {
     this_ptr->pain_cooldown = this_ptr->pain_cooldown - delta_time;
@@ -415,7 +415,7 @@ LAB_004591e5:
           in_stack_fffffac8 = (CDemnfolk *)0x459675;
           core_demnfolk_cpp_FUN_0045d060();
         }
-        iVar10 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[2]);
+        iVar10 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[2]);
         if (iVar10 == 0) {
           (*(((this_ptr->base).base.base.vtable._uh)->_uh).canReachPickup)
                     ((CHero *)this_ptr,(CDemonActor *)in_stack_fffffac0,(int)in_stack_fffffac4,
@@ -635,7 +635,7 @@ LAB_004591e5:
         if ((this_ptr->base).victim != (CCharacter *)0x0) {
           core_demnfolk_cpp_FUN_0045d060();
           in_stack_fffffac0 = (CDemnfolk *)0x45a517;
-          iVar10 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[1]);
+          iVar10 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[1]);
           if (iVar10 == 0) {
             in_stack_fffffac0 = (CDemnfolk *)0x45a52f;
             (*(((this_ptr->base).base.base.vtable._uh)->_uh).isWeaponDrawn)((CHero *)this_ptr);
@@ -681,7 +681,7 @@ LAB_0045a07d:
       }
       else {
         if (pCVar23 == (CCharacter *)0x0) {
-          iVar10 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[1]);
+          iVar10 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[1]);
           if (iVar10 == 0) {
             (*(((this_ptr->base).base.base.vtable._uh)->_uh).isWeaponDrawn)((CHero *)this_ptr);
           }

@@ -12,8 +12,8 @@
 ;   undefined4 DAT_02cf329c
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_00556fd0
 ;   sound_sndmain.cpp_lockSound_FUN_00558e90
+;   sound_sndmain.cpp_unlockSound_FUN_00556fd0
 ;
 ; *****************************************************************************
 
@@ -79,8 +79,8 @@ section .text
     CMP EDX,EAX                         ; 00559d1c
     JL 0x00559ce8                       ; 00559d1e
         ;   XREF to: 00559ce8 (CONDITIONAL_JUMP)  ; LAB_00559ce8
-    CALL sound_sndmain.cpp_FUN_00556fd0 ; 00559d20
-        ;   XREF to: 00556fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00556fd0()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00556fd0 ; 00559d20
+        ;   XREF to: 00556fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00556fd0()
         ;   Label: LAB_00559d20
     FILD dword ptr [0x02cf329c]         ; 00559d25 | DAT_02cf329c
     FDIVR float ptr [ESP]               ; 00559d2b

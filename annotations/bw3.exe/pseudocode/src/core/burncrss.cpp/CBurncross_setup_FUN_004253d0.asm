@@ -13,7 +13,7 @@
 ;   core_fire.cpp_FUN_004a41d0
 ;   core_flame.cpp_FUN_004a5ad0
 ;   core_weapon.cpp_CWeapon_setup_FUN_0057af40
-;   sound_sndmain.cpp_FUN_00556230
+;   sound_sndmain.cpp_preloadSfx_FUN_00556230
 ;
 ; *****************************************************************************
 
@@ -26,16 +26,16 @@ section .text
         ;   XREF to: 0057af40 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_setup_FUN_0057af40(CWeapon * this_ptr)
     ADD ESP,0x4                         ; 004253da
     PUSH 0x5b793a                       ; 004253dd
-    CALL sound_sndmain.cpp_FUN_00556230 ; 004253e2
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 004253e2
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 004253e7
     PUSH 0x5b7948                       ; 004253ea
-    CALL sound_sndmain.cpp_FUN_00556230 ; 004253ef
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 004253ef
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 004253f4
     PUSH 0x5b795c                       ; 004253f7
-    CALL sound_sndmain.cpp_FUN_00556230 ; 004253fc
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 004253fc
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 00425401
     PUSH 0x0                            ; 00425404
     MOV ECX,dword ptr [0x005fc5a0]      ; 00425406 | DAT_005fc5a0

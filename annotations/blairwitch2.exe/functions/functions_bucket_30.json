@@ -46055,10 +46055,10 @@
         "start":"0054edb0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_0054edb0",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"sound_sndmain.cpp_CSfxSlot_mix_FUN_0054edb0",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -46590,9 +46590,40 @@
           "type":"undefined8"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CSfxSlot*"
+        },
+        {
+          "name":"mix_buffer",
+          "storage":{
+            "offset":8,
+            "size":44,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":44
+              }
+            ]
+          },
+          "type":"SMixBuffer"
+        }
+      ]
     }
   },
   {
@@ -46813,10 +46844,10 @@
         "start":"005506b0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_005506b0",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"sound_sndmain.cpp_startSfx_FUN_005506b0",
+    "ret":"uint",
     "vars":{
       "locals":[
         {
@@ -46900,8 +46931,33 @@
           "type":"undefined1"
         }
       ],
+      "params":[
+        {
+          "name":"filename",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -47045,13 +47101,86 @@
         "start":"00550d30"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_00550d30",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"sound_sndmain.cpp_setSfxPosition_FUN_00550d30",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"sfx_handle",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        },
+        {
+          "name":"pos_x",
+          "storage":{
+            "offset":8,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"pos_y",
+          "storage":{
+            "offset":16,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"pos_z",
+          "storage":{
+            "offset":24,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -47140,13 +47269,38 @@
         "start":"00551330"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_00551330",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"sound_sndmain.cpp_getNextActiveSfx_FUN_00551330",
+    "ret":"uint",
     "vars":{
+      "params":[
+        {
+          "name":"current_sfx_handle",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -47159,14 +47313,29 @@
         "start":"005515b0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_005515b0",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_005515b0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"distance_in_feet",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        }
+      ]
     }
   },
   {
@@ -47474,27 +47643,19 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_00552b30",
-    "ret":"void",
+    "name":"sound_sndmain.cpp_hasHardware3DSound_FUN_00552b30",
+    "ret":"uint",
     "vars":{
-      "params":[
-        {
-          "name":"enable",
-          "storage":{
-            "offset":4,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x4]",
-                "offset":4,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        }
-      ]
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {

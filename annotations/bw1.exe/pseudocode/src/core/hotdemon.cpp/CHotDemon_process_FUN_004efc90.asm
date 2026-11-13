@@ -496,8 +496,8 @@ section .text
     ADD ESP,0xc                         ; 004f0184
     MOV ESI,dword ptr [EBX + 0xc268]    ; 004f0187
     PUSH ESI                            ; 004f018d
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 004f018e
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 004f018e
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 004f0193
     TEST EAX,EAX                        ; 004f0196
     JNZ 0x004f00e5                      ; 004f0198
@@ -754,8 +754,8 @@ section .text
     ADD ESP,0xc                         ; 004f0447
     MOV ECX,dword ptr [EBX + 0xc268]    ; 004f044a
     PUSH ECX                            ; 004f0450
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 004f0451
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 004f0451
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 004f0456
     TEST EAX,EAX                        ; 004f0459
     JZ 0x004f04a9                       ; 004f045b

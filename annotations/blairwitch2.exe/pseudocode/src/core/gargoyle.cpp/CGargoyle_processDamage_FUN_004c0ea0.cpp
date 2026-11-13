@@ -38,7 +38,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_processDamage_FUN_004c0ea0(CGargoyle *t
     fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
     (this_ptr->base).base.hit_points = fVar1;
     if (0.0 < fVar1) {
-      iVar3 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[0]);
+      iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[0]);
       if (iVar3 == 0) {
         uVar2 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,"gargoyle-hurt?.wav");

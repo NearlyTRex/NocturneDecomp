@@ -22,7 +22,7 @@
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   sound_snddx.cpp_fillStreamBuffer_FUN_0055a820
 ;   sound_snddx.cpp_FUN_0055a670
-;   sound_sndmain.cpp_FUN_0055a560
+;   sound_sndmain.cpp_logSoundError_FUN_0055a560
 ;   sound_sndmain.cpp_startSoundThread_FUN_00558d70
 ;
 ; *****************************************************************************
@@ -113,8 +113,8 @@ section .text
     LEA EAX,[ESP + 0x190]               ; 0055adbf
     PUSH EAX                            ; 0055adc6
         ;   Label: LAB_0055adc6
-    CALL sound_sndmain.cpp_FUN_0055a560 ; 0055adc7
-        ;   XREF to: 0055a560 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_0055a560()
+    CALL sound_sndmain.cpp_logSoundError_FUN_0055a560 ; 0055adc7
+        ;   XREF to: 0055a560 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_0055a560(char * format)
     ADD ESP,0x4                         ; 0055adcc
     MOV EDX,dword ptr [ESP + 0x334]     ; 0055adcf
         ;   Label: LAB_0055adcf

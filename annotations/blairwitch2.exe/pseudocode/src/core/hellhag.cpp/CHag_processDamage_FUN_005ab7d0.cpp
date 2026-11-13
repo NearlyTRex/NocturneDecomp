@@ -27,7 +27,7 @@ void __cdecl core_hellhag_cpp_CHag_processDamage_FUN_005ab7d0(CHag *this_ptr,SDa
     }
     (this_ptr->base).flinch_timer = 0.0;
     if ((this_ptr->base).hit_sound[0] != '\0') {
-      iVar2 = sound_sndmain_cpp_FUN_00550b70((this_ptr->base).hit_sfx_handle);
+      iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70((this_ptr->base).hit_sfx_handle);
       if (iVar2 == 0) {
         uVar3 = (*((this_ptr->base).base.base.base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,(this_ptr->base).hit_sound);

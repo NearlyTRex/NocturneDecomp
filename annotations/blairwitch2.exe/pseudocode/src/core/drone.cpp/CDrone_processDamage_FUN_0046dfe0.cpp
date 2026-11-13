@@ -20,7 +20,7 @@ void __cdecl core_drone_cpp_CDrone_processDamage_FUN_0046dfe0(CDrone *this_ptr,S
   (this_ptr->base).base.hit_points = fVar1;
   if (0.0 < fVar1) {
     sound_sndmain_cpp_killSfx_FUN_00551050(this_ptr->sfx_handles[1]);
-    iVar2 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[0]);
+    iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[0]);
     if (iVar2 == 0) {
       uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"drone-hurt?.wav");

@@ -69,7 +69,7 @@ void __cdecl core_demnfolk_cpp_CDemnfolk_playHurtSound_FUN_0045cec0(CDemnfolk *t
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  iVar3 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[0]);
+  iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[0]);
   if (iVar3 != 0) {
     return;
   }

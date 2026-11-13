@@ -2,22 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 393,
-    "complexity_score": 563,
+    "complexity_score": 520,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 153,
-    "suspect_count": 38,
+    "pseudocode_lines": 150,
+    "suspect_count": 35,
     "suspect_types": [
-      "extra_output",
-      "pointer_truncation",
       "undefined_data",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 546
+    "total_lines": 543
   },
   "cross_references": [],
   "function": {
@@ -54,19 +52,19 @@
       "name": "sound_snddx.cpp_FUN_0055a670"
     },
     {
-      "addr": "005586d0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005586d0"
-    },
-    {
-      "addr": "0055a560",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_0055a560"
-    },
-    {
       "addr": "005591a0",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_getMaxSwLatency_FUN_005591a0"
+    },
+    {
+      "addr": "005586d0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_hasHardware3DSound_FUN_005586d0"
+    },
+    {
+      "addr": "0055a560",
+      "is_variadic": true,
+      "name": "sound_sndmain.cpp_logSoundError_FUN_0055a560"
     }
   ],
   "globals": [
@@ -297,16 +295,8 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 40,
+      "line": 38,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02cf49d4 + 8))(_DAT_02cf49d4);",
@@ -314,7 +304,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 44,
       "match": "param_3",
       "severity": "mild",
       "text": "uStack_46 = param_3;",
@@ -322,7 +312,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 45,
       "match": "param_4",
       "severity": "mild",
       "text": "iStack_44 = param_4;",
@@ -330,7 +320,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 46,
       "match": "param_2",
       "severity": "mild",
       "text": "uStack_3c = (short)((int)((param_2 + (param_2 >> 0x1f) * -8) -",
@@ -338,7 +328,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 46,
       "match": "param_2",
       "severity": "mild",
       "text": "uStack_3c = (short)((int)((param_2 + (param_2 >> 0x1f) * -8) -",
@@ -346,7 +336,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 47,
       "match": "param_2",
       "severity": "mild",
       "text": "(uint)((param_2 >> 0x1f) << 2 < 0)) >> 3) * param_3;",
@@ -354,7 +344,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 47,
       "match": "param_3",
       "severity": "mild",
       "text": "(uint)((param_2 >> 0x1f) << 2 < 0)) >> 3) * param_3;",
@@ -362,7 +352,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 48,
       "match": "param_4",
       "severity": "mild",
       "text": "iStack_40 = param_4 * (uint)uStack_3c;",
@@ -370,7 +360,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 49,
       "match": "param_2",
       "severity": "mild",
       "text": "uStack_3a = (ushort)param_2;",
@@ -378,7 +368,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 52,
+      "line": 50,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar1 = (**(code **)(*_DAT_02cf49c8 + 0x38))(_DAT_02cf49c8,&uStack_48);",
@@ -386,7 +376,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 54,
+      "line": 52,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar1 = (**(code **)(*_DAT_02cf49c8 + 0x14))(_DAT_02cf49c8,&uStack_48,0x12,0);",
@@ -394,7 +384,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 60,
+      "line": 58,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02cf49d4 + 8))(_DAT_02cf49d4);",
@@ -402,7 +392,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 77,
+      "line": 74,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar1 = (**(code **)(*_DAT_02cf49c4 + 0xc))(_DAT_02cf49c4,&uStack_6c,&uStack_20,0);",
@@ -410,7 +400,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 79,
+      "line": 76,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)*piStack_30)(piStack_30,&DAT_00608bb8,&piStack_2c);",
@@ -418,7 +408,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 79,
+      "line": 76,
       "match": "DAT_00608bb8",
       "severity": "mild",
       "text": "(**(code **)*piStack_30)(piStack_30,&DAT_00608bb8,&piStack_2c);",
@@ -426,7 +416,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 82,
+      "line": 79,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piStack_30 + 8))(piStack_30);",
@@ -434,7 +424,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 87,
+      "line": 84,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)*piStack_2c)(piStack_2c,&DAT_006044e0,&DAT_02cf49d4);",
@@ -442,7 +432,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 84,
       "match": "DAT_006044e0",
       "severity": "mild",
       "text": "(**(code **)*piStack_2c)(piStack_2c,&DAT_006044e0,&DAT_02cf49d4);",
@@ -450,7 +440,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 84,
       "match": "DAT_02cf49d4",
       "severity": "mild",
       "text": "(**(code **)*piStack_2c)(piStack_2c,&DAT_006044e0,&DAT_02cf49d4);",
@@ -458,7 +448,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 89,
+      "line": 86,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piStack_30 + 8))(piStack_30);",
@@ -466,7 +456,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 93,
+      "line": 90,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piStack_2c + 8))(piStack_2c);",
@@ -474,7 +464,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 105,
+      "line": 102,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02cf49d4 + 0x10))(_DAT_02cf49d4,&DAT_006044f0,0,0,0,&uStack_28,4);",
@@ -482,23 +472,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 105,
+      "line": 102,
       "match": "DAT_006044f0",
       "severity": "mild",
       "text": "(**(code **)(*_DAT_02cf49d4 + 0x10))(_DAT_02cf49d4,&DAT_006044f0,0,0,0,&uStack_28,4);",
       "type": "undefined_data"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 108,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "if (0 < extraout_EAX) {",
-      "type": "extra_output"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 109,
+      "line": 106,
       "match": "param_1",
       "severity": "mild",
       "text": "*param_1 = 0;",
@@ -506,7 +488,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 128,
+      "line": 125,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02cf49cc + 8))(_DAT_02cf49cc);",
@@ -514,7 +496,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 131,
+      "line": 128,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar1 = (**(code **)(*_DAT_02cf49c4 + 0xc))(_DAT_02cf49c4,&uStack_a0,&DAT_02cf49cc,0);",
@@ -522,7 +504,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 131,
+      "line": 128,
       "match": "DAT_02cf49cc",
       "severity": "mild",
       "text": "uVar1 = (**(code **)(*_DAT_02cf49c4 + 0xc))(_DAT_02cf49c4,&uStack_a0,&DAT_02cf49cc,0);",
@@ -530,7 +512,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 133,
+      "line": 130,
       "match": "param_5",
       "severity": "mild",
       "text": "*param_5 = _DAT_02cf49e4;",
@@ -538,19 +520,11 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 153,
+      "line": 150,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02cf49cc + 8))(_DAT_02cf49cc);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer value `enable` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 107,
-      "match": "(int)enable",
-      "severity": "moderate",
-      "text": "sound_sndmain_cpp_FUN_005586d0((int)enable);",
-      "type": "pointer_truncation"
     }
   ],
   "vtable_info": {

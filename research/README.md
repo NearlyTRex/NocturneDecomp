@@ -988,6 +988,22 @@ Ghidra source location: `~/Repositories/Ghidra/`
   `renderVolumetricLightScanline`) are real. The CRT fall-through chains are left as they are.
 - **BW has `CSlew`:** its `slew.cpp` `init` is byte-identical to nocedit's. nocedit's 28-byte type
   is imported into all three builds.
+- **Every `sndmain.cpp` function is named and typed** (bw1 61, bw2 54, bw3 63 were `FUN_`). Most are
+  nocedit's, in nocedit's order; body matching missed them because BW changed the bodies:
+  - **BW stores less as double:** the `setNextSfx*` and `setSfx*` velocities, the delay, the
+    listener orientation and velocity, the distance factor and the listener radius are floats.
+    Positions stay double. `CSfxOptions` is 0x60 bytes per slot to nocedit's 0x70.
+  - **Two listeners:** the listener state is indexed. `setCurrentListener` picks the one the
+    `set3DListener*` setters write, `setDualListenerEnabled` turns the second on, and
+    `CSfxSlot_compute` uses `getNearestListener` for each slot.
+  - **`parseWavFile` reads a `CInStream`**, not a `FILE *`.
+  - **BW-only:** `findSfxSampleByName`, `createUserSample`, `lockSample`/`unlockSample`,
+    `CSfxSample_bytesToFrames`/`framesToBytes`, `flushSoundChanges` (the tail of `unlockSound`),
+    CD audio through MCI (`openCdAudio`, `playCdTrack`), and bw3's `preloadSfx`.
+  - **`hasHardware3DSound` sits before `isHardwareMixingEnabled`** and drops nocedit's
+    `isSoundSystemActive` check.
+  - **`SMixBuffer` is nocedit's 44-byte layout** (`bw_own_structs.json`), since `CSfxSlot_mix` takes
+    it by value.
 
 - **Stale "Failed to disassemble" bookmarks are deleted** (`clear_stale_bookmarks.py`): 18 across
   nocturne and the BW builds. The 6 left are Watcom `strstr`'s deliberate jumps.

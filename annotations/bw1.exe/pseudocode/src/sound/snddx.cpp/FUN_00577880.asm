@@ -16,7 +16,7 @@
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   sound_snddx.cpp_FUN_00577500
-;   sound_sndmain.cpp_FUN_005773f0
+;   sound_sndmain.cpp_logSoundError_FUN_005773f0
 ;
 ; *****************************************************************************
 
@@ -122,8 +122,8 @@ section .text
     MOV EAX,ESP                         ; 00577985
     PUSH EAX                            ; 00577987
     XOR EDI,EDI                         ; 00577988
-    CALL sound_sndmain.cpp_FUN_005773f0 ; 0057798a
-        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005773f0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005773f0 ; 0057798a
+        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005773f0(char * format)
     ADD ESP,0x4                         ; 0057798f
     JMP 0x005778e7                      ; 00577992
         ;   XREF to: 005778e7 (UNCONDITIONAL_JUMP)  ; LAB_005778e7

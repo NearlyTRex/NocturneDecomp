@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void)
@@ -15,27 +14,29 @@ void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void)
   float fVar1;
   int iVar2;
   CMatrix3x3f *pCVar3;
-  uint *puVar4;
+  float *pfVar4;
   float *pfVar5;
-  uint *puVar6;
-  byte bVar7;
-  float afStackY_110c [968];
+  byte bVar6;
+  float afStackY_110c [3];
+  int aiStackY_1100 [3];
+  float afStackY_10f4 [54];
+  int aiStackY_101c [908];
   float local_1b8;
+  float local_1b4 [10];
+  float local_18c [10];
+  float local_164 [10];
   float local_13c;
   float local_138;
   float local_134;
   uint local_130;
   uint local_12c;
   uint local_128;
-  uint local_124;
-  float local_120;
+  float local_124;
+  float local_120 [2];
   int local_118;
-  float local_114;
-  int local_110;
-  uint local_10c;
-  uint local_108;
-  uint local_104;
-  uint local_100;
+  int local_114 [2];
+  float local_10c;
+  float local_108 [5];
   float local_f4;
   float fStack_f0;
   float fStack_ec;
@@ -47,14 +48,14 @@ void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void)
   float local_d4;
   int local_d0;
   float afStack_cc [5];
-  uint local_b8;
-  uint local_b4;
-  uint local_b0;
+  float local_b8;
+  float local_b4;
+  float local_b0;
   CVector3f local_ac;
   float local_a0;
   float fStack_9c;
   float fStack_98;
-  uint local_94;
+  float local_94;
   float afStack_90 [5];
   CVector3i local_7c;
   float local_70;
@@ -73,7 +74,7 @@ void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void)
   int local_1c;
   float local_18;
   
-  bVar7 = 0;
+  bVar6 = 0;
   if (g_CGamePtr->goggles_active == 0) {
     local_f4 = g_CDemonCameraInstance.base.position.f.x;
     fStack_f0 = g_CDemonCameraInstance.base.position.f.y;
@@ -97,15 +98,15 @@ void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void)
       return;
     }
     pCVar3 = &g_CDemonCameraInstance.base.rotation_matrix;
-    pfVar5 = (float *)&stack0xfffffe4c;
+    pfVar5 = local_1b4;
     for (iVar2 = 10; iVar2 != 0; iVar2 = iVar2 + -1) {
       *pfVar5 = pCVar3->m[0].x;
       pCVar3 = (CMatrix3x3f *)&pCVar3->m[0].y;
       pfVar5 = pfVar5 + 1;
     }
     iVar2 = 10;
-    puVar4 = (uint *)&stack0xfffffe4c;
-    puVar6 = (uint *)&stack0xfffffe9c;
+    pfVar4 = local_1b4;
+    pfVar5 = local_164;
   }
   else {
     local_a0 = g_CDemonLightInstance.base.base.position.f.x;
@@ -114,54 +115,56 @@ void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void)
     local_13c = g_CDemonLightInstance.base.base.position.f.x;
     local_138 = g_CDemonLightInstance.base.base.position.f.y;
     local_134 = g_CDemonLightInstance.base.base.position.f.z;
-    if (local_60 + 2 != &stack0xfffffec4) {
+    if (local_60 + 2 != &local_13c) {
       local_60[2] = g_CDemonLightInstance.base.base.position.f.x;
       local_60[3] = g_CDemonLightInstance.base.base.position.f.y;
       local_50 = g_CDemonLightInstance.base.base.position.f.z;
     }
     pCVar3 = &g_CDemonLightInstance.base.base.rotation_matrix;
-    pfVar5 = (float *)&stack0xfffffe74;
+    pfVar5 = local_18c;
     for (iVar2 = 10; iVar2 != 0; iVar2 = iVar2 + -1) {
       *pfVar5 = pCVar3->m[0].x;
       pCVar3 = (CMatrix3x3f *)&pCVar3->m[0].y;
       pfVar5 = pfVar5 + 1;
     }
     iVar2 = 10;
-    puVar6 = (uint *)&stack0xfffffe9c;
-    puVar4 = (uint *)&stack0xfffffe74;
+    pfVar5 = local_164;
+    pfVar4 = local_18c;
   }
   for (; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar6 = *puVar4;
-    puVar4 = puVar4 + 1;
-    puVar6 = puVar6 + 1;
+    *pfVar5 = *pfVar4;
+    pfVar4 = pfVar4 + 1;
+    pfVar5 = pfVar5 + 1;
   }
-  sound_sndmain_cpp_FUN_00551490((double)local_60[2],(double)local_60[3],(double)local_50);
+  sound_sndmain_cpp_set3DListenerPos_FUN_00551490
+            ((double)local_60[2],(double)local_60[3],(double)local_50);
   local_e8 = 0x3f800000;
   local_e4 = 0;
   local_e0 = 0;
-  core_dirmat_cpp_FUN_00449530(&stack0xfffffe9c);
+  core_dirmat_cpp_FUN_00449530(local_164);
   afStack_90[2] = 0.0;
   afStack_90[3] = 1.0;
   afStack_90[4] = 0.0;
-  local_b8 = local_100;
-  afStack_cc[(uint)bVar7 * -2 + 6] = (&local_114)[(uint)bVar7 * -2 + 6];
-  afStack_cc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] =
-       (&local_114)[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7];
-  core_dirmat_cpp_FUN_00449530(&stack0xfffffe9c);
+  local_b8 = local_108[2];
+  afStack_cc[(uint)bVar6 * -2 + 6] = local_108[(uint)bVar6 * -2 + 3];
+  afStack_cc[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7] =
+       local_108[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
+  core_dirmat_cpp_FUN_00449530(local_164);
   local_130 = 0;
   local_12c = 0;
   local_10c = local_94;
-  (&local_114)[(uint)bVar7 * -2 + 3] = afStack_90[(uint)bVar7 * -2];
-  (&local_114)[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
-       afStack_90[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+  local_108[(uint)bVar6 * -2] = afStack_90[(uint)bVar6 * -2];
+  local_108[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+       afStack_90[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
   local_128 = 0x3f800000;
-  core_dirmat_cpp_FUN_00449530(&stack0xfffffe9c);
+  core_dirmat_cpp_FUN_00449530(local_164);
   local_124 = afStack_cc[2];
-  (&stack0xfffffee0)[(uint)bVar7 * 0xfffffffe] = afStack_cc[(uint)bVar7 * -2 + 3];
-  (&local_114)[(uint)bVar7 * -2 + (uint)bVar7 * -2 + -2] =
-       afStack_cc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
-  sound_sndmain_cpp_FUN_005514f0
-            (local_b8,local_b4,local_b0,local_10c,local_108,local_104,local_124,local_120);
+  local_120[(uint)bVar6 * -2] = afStack_cc[(uint)bVar6 * -2 + 3];
+  local_108[(uint)bVar6 * -2 + (uint)bVar6 * -2 + -5] =
+       afStack_cc[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
+  sound_sndmain_cpp_set3DListenerOrient_FUN_005514f0
+            (local_b8,local_b4,local_b0,local_10c,local_108[0],local_108[1],local_124,local_120[0],
+             local_120[1]);
   _DAT_0264b2a8 = 0.0;
   if (g_CGamePtr->goggles_active == 0) {
     iVar2 = _strnicmp
@@ -174,9 +177,9 @@ void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void)
         do {
           core_dcamera_cpp_FUN_0043c6b0();
           local_7c.x = local_d0;
-          *(float *)((int)&local_7c + (uint)bVar7 * -8 + 4) = afStack_cc[(uint)bVar7 * -2];
-          *(float *)((int)&local_7c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-               afStack_cc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+          *(float *)((int)&local_7c + (uint)bVar6 * -8 + 4) = afStack_cc[(uint)bVar6 * -2];
+          *(float *)((int)&local_7c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+               afStack_cc[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
           local_1b8 = 0.0;
           if (local_7c.z < 0x7fffffff) {
             local_7c.z = local_7c.z + -0x300;
@@ -186,21 +189,21 @@ void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void)
             core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780
                       (&g_CDemonCameraInstance,&local_7c,&local_34);
             local_118 = local_34.x;
-            (&local_114)[(uint)bVar7 * -2] = *(float *)((int)&local_34 + (uint)bVar7 * -8 + 4);
-            (&local_114)[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-                 *(float *)((int)&local_34 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+            local_114[(uint)bVar6 * -2] = *(int *)((int)&local_34 + (uint)bVar6 * -8 + 4);
+            local_114[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+                 *(int *)((int)&local_34 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
             fVar1 = (float)_DAT_005ea704;
-            local_18 = (float)local_110;
+            local_18 = (float)local_114[1];
             local_ac.x = (float)local_118 * fVar1;
-            local_ac.y = (float)(int)local_114 * fVar1;
+            local_ac.y = (float)local_114[0] * fVar1;
             local_64 = (float)local_118 * fVar1 - local_60[2];
-            local_ac.z = (float)local_110 * fVar1;
-            local_60[0] = (float)(int)local_114 * fVar1 - local_60[3];
-            local_60[1] = (float)local_110 * fVar1 - local_50;
+            local_ac.z = (float)local_114[1] * fVar1;
+            local_60[0] = (float)local_114[0] * fVar1 - local_60[3];
+            local_60[1] = (float)local_114[1] * fVar1 - local_50;
             local_40 = local_64;
-            local_3c[(uint)bVar7 * -2] = local_60[(uint)bVar7 * -2];
-            local_3c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-                 local_60[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+            local_3c[(uint)bVar6 * -2] = local_60[(uint)bVar6 * -2];
+            local_3c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+                 local_60[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
             fVar1 = SQRT(local_3c[1] * local_3c[1] + local_40 * local_40 + local_3c[0] * local_3c[0]
                         );
             if ((float)_DAT_005ea724 < fVar1) {

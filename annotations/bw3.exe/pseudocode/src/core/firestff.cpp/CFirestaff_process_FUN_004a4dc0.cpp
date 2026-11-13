@@ -104,7 +104,7 @@ void __cdecl core_firestff_cpp_CFirestaff_process_FUN_004a4dc0(CFirestaff *this_
                        ((this_ptr->base).carried_by_actor,g_CHeroClassInfo.name_hash);
     if ((pCVar2 == (CDemonActor *)0x0) ||
        ((this_ptr->base).ammo_per_shot <= *(int *)(pCVar2[0x185].create_event + 0x50))) {
-      iVar3 = sound_sndmain_cpp_FUN_00556700(this_ptr->sfx_handle);
+      iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handle);
       if (iVar3 == 0) {
         uVar6 = core_sound_cpp_CSound_playActorSound_FUN_005609d0
                           (0x02CF5680,(CDemonActor *)this_ptr,"wp_firestaff_loop.wav",

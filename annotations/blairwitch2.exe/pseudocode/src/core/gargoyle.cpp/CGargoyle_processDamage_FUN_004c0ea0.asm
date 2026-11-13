@@ -20,7 +20,7 @@
 ;   core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004c0c00
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   core_motion.cpp_FUN_005035c0
-;   sound_sndmain.cpp_FUN_00550b70
+;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
 ;
 ; *****************************************************************************
@@ -153,8 +153,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x10b38]   ; 004c0fd1
         ;   Label: LAB_004c0fd1
     PUSH EBX                            ; 004c0fd7
-    CALL sound_sndmain.cpp_FUN_00550b70 ; 004c0fd8
-        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00550b70(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00550b70 ; 004c0fd8
+        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00550b70(uint sfx_handle)
     ADD ESP,0x4                         ; 004c0fdd
     TEST EAX,EAX                        ; 004c0fe0
     JNZ 0x004c0f9e                      ; 004c0fe2

@@ -12,10 +12,10 @@ void __cdecl sound_sndmain_cpp_pollAllSfxSlots_FUN_00554510(void)
 
 {
   int iVar1;
-  int extraout_EAX;
-  int iVar2;
+  uint uVar2;
+  int iVar3;
   CSfxSlot *this_ptr;
-  float delta_time;
+  float local_18;
   
   if (_DAT_0264901c < 1) {
     _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
@@ -23,30 +23,30 @@ void __cdecl sound_sndmain_cpp_pollAllSfxSlots_FUN_00554510(void)
     core_main_c_FUN_004e4500("SfxSlot::pollSfx - must be locked!");
   }
   iVar1 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
-  iVar2 = iVar1 - _DAT_02649020;
-  if ((iVar2 < 0) || (0x1cccb < iVar2)) {
+  iVar3 = iVar1 - _DAT_02649020;
+  if ((iVar3 < 0) || (0x1cccb < iVar3)) {
     _DAT_02649020 = iVar1;
     if (_DAT_026484bc == 0) {
-      sound_sndmain_cpp_FUN_0054cb70();
+      sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_0054cb70();
     }
-    delta_time = 0.0;
-    sound_sndmain_cpp_FUN_00552b30(0);
-    if (0 < extraout_EAX) {
-      delta_time = (float)iVar2 * _DAT_005e941a;
-      if (0.0 <= delta_time) {
-        if (_DAT_005e941e < delta_time) {
-          delta_time = 0.25;
+    local_18 = 0.0;
+    uVar2 = sound_sndmain_cpp_hasHardware3DSound_FUN_00552b30();
+    if (0 < (int)uVar2) {
+      local_18 = (float)iVar3 * _DAT_005e941a;
+      if (0.0 <= local_18) {
+        if (_DAT_005e941e < local_18) {
+          local_18 = 0.25;
         }
       }
       else {
-        delta_time = 0.0;
+        local_18 = 0.0;
       }
     }
     this_ptr = (CSfxSlot *)0x263cf1c;
     do {
-      iVar1 = sound_sndmain_cpp_CSfxSlot_compute_FUN_0054e8c0(this_ptr,delta_time);
+      iVar1 = sound_sndmain_cpp_CSfxSlot_compute_FUN_0054e8c0(this_ptr,local_18);
       if (iVar1 != 0) {
-        sound_sndmain_cpp_FUN_0054f8a0(this_ptr);
+        sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_0054f8a0(this_ptr);
       }
       this_ptr = this_ptr + 1;
     } while (this_ptr != (CSfxSlot *)&DAT_0264161c);

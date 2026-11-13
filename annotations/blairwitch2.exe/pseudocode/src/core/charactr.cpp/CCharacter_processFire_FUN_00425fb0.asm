@@ -53,11 +53,11 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00547810
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
 ;   core_xform.cpp_FUN_00591530
-;   sound_sndmain.cpp_FUN_00550f20
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005504d0
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00550450
 ;   sound_sndmain.cpp_setNextSfxVolume_FUN_00550270
+;   sound_sndmain.cpp_setSfxVolume_FUN_00550f20
 ;
 ; *****************************************************************************
 
@@ -205,8 +205,8 @@ section .text
     FSTP float ptr [ESP + 0x34]         ; 0042614c
     PUSH dword ptr [ESP + 0x34]         ; 00426150
     PUSH EAX                            ; 00426154
-    CALL sound_sndmain.cpp_FUN_00550f20 ; 00426155
-        ;   XREF to: 00550f20 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00550f20()
+    CALL sound_sndmain.cpp_setSfxVolume_FUN_00550f20 ; 00426155
+        ;   XREF to: 00550f20 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxVolume_FUN_00550f20(uint sfx_handle, float volume)
     ADD ESP,0x8                         ; 0042615a
     TEST EAX,EAX                        ; 0042615d
     JZ 0x0042637d                       ; 0042615f

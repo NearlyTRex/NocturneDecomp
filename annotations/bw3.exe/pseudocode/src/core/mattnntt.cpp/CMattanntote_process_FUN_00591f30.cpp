@@ -350,7 +350,7 @@ void __cdecl core_mattnntt_cpp_CMattanntote_process_FUN_00591f30(CMattanntote *t
                   in_stack_fffffcf0 =
                        *(char **)(this_ptr->flames[5].base.footstep_sound_code + uVar6 * 4 + 0x2c);
                   in_stack_fffffcec = (CMattanntote *)0x592732;
-                  iVar5 = sound_sndmain_cpp_FUN_00556700((uint)in_stack_fffffcf0);
+                  iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700((uint)in_stack_fffffcf0);
                   if (iVar5 == 0) {
                     in_stack_fffffcf0 = "mann_firestaff.wav";
                     in_stack_fffffcec = this_ptr;
@@ -366,8 +366,8 @@ void __cdecl core_mattnntt_cpp_CMattanntote_process_FUN_00591f30(CMattanntote *t
               }
             }
             else if ((uVar6 == 0x44c) &&
-                    (iVar5 = sound_sndmain_cpp_FUN_00556700(this_ptr->sfx_handles[0]), iVar5 == 0))
-            {
+                    (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handles[0]),
+                    iVar5 == 0)) {
               uVar6 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                 ((CDemonActor *)this_ptr,"mann_stand.wav");
               this_ptr->sfx_handles[0] = uVar6;
@@ -375,7 +375,7 @@ void __cdecl core_mattnntt_cpp_CMattanntote_process_FUN_00591f30(CMattanntote *t
           }
         }
         else if (uVar6 < 0x44e) {
-          iVar5 = sound_sndmain_cpp_FUN_00556700
+          iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                             (*(uint *)(this_ptr->flames[5].base.footstep_sound_code +
                                       uVar6 * 4 + 0x2c));
           if (iVar5 == 0) {
@@ -385,7 +385,7 @@ void __cdecl core_mattnntt_cpp_CMattanntote_process_FUN_00591f30(CMattanntote *t
           }
         }
         else if (uVar6 < 0x44f) {
-          iVar5 = sound_sndmain_cpp_FUN_00556700
+          iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                             (*(uint *)(this_ptr->flames[5].base.footstep_sound_code +
                                       uVar6 * 4 + 0x2c));
           if (iVar5 == 0) {
@@ -395,7 +395,7 @@ void __cdecl core_mattnntt_cpp_CMattanntote_process_FUN_00591f30(CMattanntote *t
           }
         }
         else if (uVar6 < 0x450) {
-          iVar5 = sound_sndmain_cpp_FUN_00556700
+          iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                             (*(uint *)(this_ptr->flames[5].base.footstep_sound_code +
                                       uVar6 * 4 + 0x2c));
           if (iVar5 == 0) {
@@ -405,7 +405,7 @@ void __cdecl core_mattnntt_cpp_CMattanntote_process_FUN_00591f30(CMattanntote *t
           }
         }
         else {
-          iVar5 = sound_sndmain_cpp_FUN_00556700
+          iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                             (*(uint *)(this_ptr->flames[5].base.footstep_sound_code +
                                       uVar6 * 4 + 0x2c));
           if (iVar5 == 0) {
@@ -416,7 +416,7 @@ void __cdecl core_mattnntt_cpp_CMattanntote_process_FUN_00591f30(CMattanntote *t
         }
       }
       else if (uVar6 < 0x452) {
-        iVar5 = sound_sndmain_cpp_FUN_00556700
+        iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                           (*(uint *)(this_ptr->flames[5].base.footstep_sound_code + uVar6 * 4 + 0x2c
                                     ));
         if (iVar5 == 0) {
@@ -427,7 +427,7 @@ void __cdecl core_mattnntt_cpp_CMattanntote_process_FUN_00591f30(CMattanntote *t
       }
       else if (uVar6 < 0x454) {
         if (uVar6 < 0x453) {
-          iVar5 = sound_sndmain_cpp_FUN_00556700
+          iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                             (*(uint *)(this_ptr->flames[5].base.footstep_sound_code +
                                       uVar6 * 4 + 0x2c));
           if (iVar5 == 0) {
@@ -437,7 +437,7 @@ void __cdecl core_mattnntt_cpp_CMattanntote_process_FUN_00591f30(CMattanntote *t
           }
         }
         else {
-          iVar5 = sound_sndmain_cpp_FUN_00556700
+          iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                             (*(uint *)(this_ptr->flames[5].base.footstep_sound_code +
                                       uVar6 * 4 + 0x2c));
           if (iVar5 == 0) {
@@ -448,7 +448,7 @@ void __cdecl core_mattnntt_cpp_CMattanntote_process_FUN_00591f30(CMattanntote *t
         }
       }
       else if (uVar6 < 0x455) {
-        iVar5 = sound_sndmain_cpp_FUN_00556700
+        iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                           (*(uint *)(this_ptr->flames[5].base.footstep_sound_code + uVar6 * 4 + 0x2c
                                     ));
         if (iVar5 == 0) {
@@ -458,7 +458,7 @@ void __cdecl core_mattnntt_cpp_CMattanntote_process_FUN_00591f30(CMattanntote *t
         }
       }
       else if (uVar6 < 0x456) {
-        iVar5 = sound_sndmain_cpp_FUN_00556700
+        iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                           (*(uint *)(this_ptr->flames[5].base.footstep_sound_code + uVar6 * 4 + 0x2c
                                     ));
         if (iVar5 == 0) {
@@ -468,7 +468,7 @@ void __cdecl core_mattnntt_cpp_CMattanntote_process_FUN_00591f30(CMattanntote *t
         }
       }
       else if (uVar6 < 0x457) {
-        iVar5 = sound_sndmain_cpp_FUN_00556700
+        iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                           (*(uint *)(this_ptr->flames[5].base.footstep_sound_code + uVar6 * 4 + 0x2c
                                     ));
         if (iVar5 == 0) {
@@ -478,7 +478,7 @@ void __cdecl core_mattnntt_cpp_CMattanntote_process_FUN_00591f30(CMattanntote *t
         }
       }
       else if ((uVar6 == 0x457) &&
-              (iVar5 = sound_sndmain_cpp_FUN_00556700
+              (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                                  (*(uint *)((int)(this_ptr->flames + 5 + 7) + 0x2c)), iVar5 == 0)) {
         uVar6 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,"mann_disappear.wav");

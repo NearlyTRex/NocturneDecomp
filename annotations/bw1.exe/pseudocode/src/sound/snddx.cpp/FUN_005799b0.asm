@@ -16,8 +16,8 @@
 ;   core_main.c_FUN_005030e0
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   sound_snddx.cpp_FUN_00577500
-;   sound_sndmain.cpp_FUN_005723e0
-;   sound_sndmain.cpp_FUN_005773f0
+;   sound_sndmain.cpp_CSfxSample_bytesToFrames_FUN_005723e0
+;   sound_sndmain.cpp_logSoundError_FUN_005773f0
 ;
 ; *****************************************************************************
 
@@ -90,8 +90,8 @@ section .text
     PUSH EBX                            ; 00579a58
     MOV EDI,dword ptr [ESI + 0x68]      ; 00579a59
     PUSH EDI                            ; 00579a5c
-    CALL sound_sndmain.cpp_FUN_005723e0 ; 00579a5d
-        ;   XREF to: 005723e0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005723e0()
+    CALL sound_sndmain.cpp_CSfxSample_bytesToFrames_FUN_005723e0 ; 00579a5d
+        ;   XREF to: 005723e0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_bytesToFrames_FUN_005723e0(CSfxSample * this_ptr, int byte_count)
     ADD ESP,0x8                         ; 00579a62
     MOV dword ptr [ESP + 0x1a0],EAX     ; 00579a65
     FILD dword ptr [ESP + 0x1a0]        ; 00579a6c
@@ -119,8 +119,8 @@ section .text
     ADD ESP,0x10                        ; 00579aa2
     LEA EAX,[ESP + 0x8]                 ; 00579aa5
     PUSH EAX                            ; 00579aa9
-    CALL sound_sndmain.cpp_FUN_005773f0 ; 00579aaa
-        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005773f0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005773f0 ; 00579aaa
+        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005773f0(char * format)
     ADD ESP,0x4                         ; 00579aaf
     XOR EDX,EDX                         ; 00579ab2
     MOV ECX,0xbff00000                  ; 00579ab4

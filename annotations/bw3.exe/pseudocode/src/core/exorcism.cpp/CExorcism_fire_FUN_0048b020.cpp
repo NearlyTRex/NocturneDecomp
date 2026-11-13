@@ -77,7 +77,7 @@ int __cdecl core_exorcism_cpp_CExorcism_fire_FUN_0048b020(CExorcism *this_ptr)
   if ((this_ptr->was_firing_prev_frame != 0) && (this_ptr->target != (CCharacter *)0x0)) {
     return 1;
   }
-  iVar3 = sound_sndmain_cpp_FUN_00556700(_DAT_01c6e35c);
+  iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(_DAT_01c6e35c);
   if (iVar3 == 0) {
     _DAT_01c6e35c =
          core_sound_cpp_CSound_playActorSound_FUN_005609d0

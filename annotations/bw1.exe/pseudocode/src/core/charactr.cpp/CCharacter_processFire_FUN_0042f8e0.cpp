@@ -106,10 +106,10 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042f8e0(CCharacter *t
       }
       local_54 = (float)this_ptr->fire_count * (float)_DAT_005d5a07 * (float)_DAT_005d5a0f +
                  (float)_DAT_005d5a17;
-      iVar7 = sound_sndmain_cpp_FUN_00573950(this_ptr->sfx_handle,local_54);
+      iVar7 = sound_sndmain_cpp_setSfxVolume_FUN_00573950(this_ptr->sfx_handle,local_54);
       if (iVar7 == 0) {
         sound_sndmain_cpp_pushSfxOptions_FUN_00572ac0();
-        sound_sndmain_cpp_FUN_005728e0(local_54);
+        sound_sndmain_cpp_setNextSfxVolume_FUN_005728e0(local_54);
         uVar6 = (*((this_ptr->base).vtable._ub)->playAmbientSound)
                           (&this_ptr->base,"character-onfire-loop.wav");
         this_ptr->sfx_handle = uVar6;

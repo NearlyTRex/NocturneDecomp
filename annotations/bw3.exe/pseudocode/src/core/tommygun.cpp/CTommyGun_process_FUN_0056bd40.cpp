@@ -46,7 +46,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_0056bd40(CTommyGun *this_pt
         sound_sndmain_cpp_popSfxOptions_FUN_00556050();
       }
       sound_sndmain_cpp_killSfx_FUN_00556be0(this_ptr->sfx_handles[0]);
-      sound_sndmain_cpp_FUN_00556fd0();
+      sound_sndmain_cpp_unlockSound_FUN_00556fd0();
       return;
     }
     sound_sndmain_cpp_killSfx_FUN_00556be0(this_ptr->sfx_handles[0]);
@@ -54,7 +54,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_0056bd40(CTommyGun *this_pt
   }
   this_ptr->fire_frames_remaining = this_ptr->fire_frames_remaining + -1;
   fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.9,1.1111112);
-  iVar2 = sound_sndmain_cpp_FUN_00556ae0(this_ptr->sfx_handles[0],fVar1);
+  iVar2 = sound_sndmain_cpp_setSfxBaseFrequency_FUN_00556ae0(this_ptr->sfx_handles[0],fVar1);
   if (iVar2 != 0) {
     return;
   }

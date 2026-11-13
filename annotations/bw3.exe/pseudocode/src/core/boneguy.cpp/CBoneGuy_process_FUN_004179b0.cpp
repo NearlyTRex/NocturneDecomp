@@ -514,11 +514,12 @@ switchD_00418691_caseD_3:
             (&(this_ptr->base).base.model);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433350((CCharacter *)this_ptr,delta_time);
   if ((iStack_38 == 1) &&
-     (iVar8 = sound_sndmain_cpp_FUN_00557170
+     (iVar8 = sound_sndmain_cpp_isWithinListenerRadius_FUN_00557170
                         ((double)(this_ptr->base).base.base.location.position.x,
-                         SUB84(__BITCAST_UINT64((double)(this_ptr->base).base.base.location.position.y),0)),
-     iVar8 != 0)) {
-    iVar8 = sound_sndmain_cpp_FUN_00556700(this_ptr->sfx_handle);
+                         (double)(this_ptr->base).base.base.location.position.y,
+                         (double)(this_ptr->base).base.base.location.position.z,100.0), iVar8 != 0))
+  {
+    iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handle);
     if (iVar8 != 0) {
       return;
     }

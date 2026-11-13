@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_fire.cpp_FUN_004a3a30
-;   sound_sndmain.cpp_FUN_00556930
+;   sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_00556930
 ;
 ; *****************************************************************************
 
@@ -61,8 +61,8 @@ section .text
     PUSH EDX                            ; 004a398a
     MOV EBP,dword ptr [EAX + 0x1cf65b8] ; 004a398b
     PUSH EBP                            ; 004a3991
-    CALL sound_sndmain.cpp_FUN_00556930 ; 004a3992
-        ;   XREF to: 00556930 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556930()
+    CALL sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_00556930 ; 004a3992
+        ;   XREF to: 00556930 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_00556930(uint sfx_handle, CVector3f * position_source_ptr)
     ADD ESP,0x8                         ; 004a3997
     POP EBP                             ; 004a399a
     POP EDI                             ; 004a399b

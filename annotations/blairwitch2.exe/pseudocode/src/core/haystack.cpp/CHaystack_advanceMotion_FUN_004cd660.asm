@@ -26,7 +26,7 @@
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042aa00
 ;   core_haystack.cpp_CHaystack_checkMeleeHit_FUN_004cd7a0
 ;   core_motion.cpp_CMotionController_advance_FUN_005030c0
-;   sound_sndmain.cpp_FUN_005515e0
+;   sound_sndmain.cpp_isWithinListenerRadius_FUN_005515e0
 ;
 ; *****************************************************************************
 
@@ -104,8 +104,8 @@ section .text
     SUB ESP,0x8                         ; 004cd6fe
     FLD float ptr [EBX + 0x20]          ; 004cd701
     FSTP double ptr [ESP]               ; 004cd704
-    CALL sound_sndmain.cpp_FUN_005515e0 ; 004cd707
-        ;   XREF to: 005515e0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005515e0()
+    CALL sound_sndmain.cpp_isWithinListenerRadius_FUN_005515e0 ; 004cd707
+        ;   XREF to: 005515e0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isWithinListenerRadius_FUN_005515e0(double pos_x, double pos_y, double pos_z, float radius)
     ADD ESP,0x1c                        ; 004cd70c
     TEST EAX,EAX                        ; 004cd70f
     JZ 0x004cd6ba                       ; 004cd711
@@ -128,8 +128,8 @@ section .text
     SUB ESP,0x8                         ; 004cd73e
     FLD float ptr [EBX + 0x20]          ; 004cd741
     FSTP double ptr [ESP]               ; 004cd744
-    CALL sound_sndmain.cpp_FUN_005515e0 ; 004cd747
-        ;   XREF to: 005515e0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005515e0()
+    CALL sound_sndmain.cpp_isWithinListenerRadius_FUN_005515e0 ; 004cd747
+        ;   XREF to: 005515e0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isWithinListenerRadius_FUN_005515e0(double pos_x, double pos_y, double pos_z, float radius)
     ADD ESP,0x1c                        ; 004cd74c
     TEST EAX,EAX                        ; 004cd74f
     JZ 0x004cd6ba                       ; 004cd751

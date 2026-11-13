@@ -71,7 +71,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_processDamage_FUN_004f05b0(CHotDemon *t
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
               (&(this_ptr->base).base.model.base,iVar5,1);
-    iVar5 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[1]);
+    iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[1]);
     if (iVar5 == 0) {
       uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"hotdemon-hurt?.wav");

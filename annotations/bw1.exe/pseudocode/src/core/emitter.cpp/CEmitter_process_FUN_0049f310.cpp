@@ -98,7 +98,7 @@ void __cdecl core_emitter_cpp_CEmitter_process_FUN_0049f310(CEmitter *this_ptr,f
   }
   if (this_ptr->emitter_type == EMITTER_TYPE_SOUND) {
     iVar7 = 0;
-    iVar4 = sound_sndmain_cpp_FUN_00574010
+    iVar4 = sound_sndmain_cpp_isWithinListenerRadius_FUN_00574010
                       ((double)(this_ptr->base).location.position.x,
                        (double)(this_ptr->base).location.position.y,
                        (double)(this_ptr->base).location.position.z,this_ptr->sound_radius);
@@ -348,7 +348,7 @@ LAB_0049f48d:
               (g_CGorePtr,&CStack_158,&CStack_a4,3,BLOOD_TYPE_RED);
   }
   if (((this_ptr->wav_name[0] != '\0') &&
-      (iVar7 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handle), iVar7 == 0)) &&
+      (iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handle), iVar7 == 0)) &&
      ((this_ptr->sfx_type != EMITTER_SOUND_ONE_SHOT || (this_ptr->prev_emitter_state == 0)))) {
     uVar6 = (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->wav_name);
     this_ptr->sfx_handle = uVar6;

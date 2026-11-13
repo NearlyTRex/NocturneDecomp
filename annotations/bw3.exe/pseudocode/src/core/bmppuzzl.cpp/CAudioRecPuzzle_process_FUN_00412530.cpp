@@ -140,13 +140,13 @@ LAB_00412610:
       iVar2 = this_ptr->speed_setting;
       iVar3 = this_ptr->knob_positions[0];
       if ((this_ptr->playback_started == 0) &&
-         (iVar5 = sound_sndmain_cpp_FUN_00556700(this_ptr->clip_sfx[0]), iVar5 == 0)) {
+         (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->clip_sfx[0]), iVar5 == 0)) {
         (**(code **)((int)(this_ptr->base).vtable + 0x58))(this_ptr,iVar3,iVar7,iVar8,iVar2,iVar6);
         this_ptr->playback_started = 1;
         return;
       }
       if ((this_ptr->playback_started != 0) &&
-         (iVar5 = sound_sndmain_cpp_FUN_00556700(this_ptr->clip_sfx[0]), iVar5 == 0)) {
+         (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->clip_sfx[0]), iVar5 == 0)) {
         this_ptr->transport_state = 1;
         this_ptr->playback_started = 0;
         if (((iVar3 == this_ptr->solution[0]) &&

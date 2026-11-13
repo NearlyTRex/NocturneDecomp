@@ -144,7 +144,7 @@ LAB_005ae1bc:
       fVar8 = (float10)fscale(fVar7 + fVar8,fVar6);
       this_ptr->max_flash_interval = (float)fVar8;
     }
-    iVar4 = sound_sndmain_cpp_FUN_005735a0(_DAT_02c9a540);
+    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(_DAT_02c9a540);
     if (iVar4 == 0) {
       _DAT_02c9a540 =
            core_sound_cpp_CSound_playSound_FUN_0057d880(0x02C82A60,this_ptr,"rain.wav @ .1")

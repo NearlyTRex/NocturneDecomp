@@ -66,6 +66,6 @@ int sound_snddx_cpp_FUN_00578a80(uint param_1,int param_2,int param_3,int param_
   }
   sound_snddx_cpp_FUN_00577500(uVar1);
   _sprintf((char *)&piStack_1c8,"DirectSux: Unable to %s.  (%s)");
-  sound_sndmain_cpp_FUN_005773f0(&piStack_1c8);
+  sound_sndmain_cpp_logSoundError_FUN_005773f0((char *)&piStack_1c8);
   return 0;
 }

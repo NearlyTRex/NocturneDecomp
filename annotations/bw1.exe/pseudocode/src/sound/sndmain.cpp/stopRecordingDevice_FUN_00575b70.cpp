@@ -17,11 +17,11 @@ int __cdecl sound_sndmain_cpp_stopRecordingDevice_FUN_00575b70(void)
   if (_DAT_02c81038 != (int *)0x0) {
     iVar1 = (**(code **)(*_DAT_02c81038 + 8))(_DAT_02c81038);
     if (iVar1 == 0) {
-      sound_sndmain_cpp_FUN_00573e70();
+      sound_sndmain_cpp_unlockSound_FUN_00573e70();
       return 0;
     }
   }
   _DAT_02c8103c = 0;
-  sound_sndmain_cpp_FUN_00573e70();
+  sound_sndmain_cpp_unlockSound_FUN_00573e70();
   return 1;
 }

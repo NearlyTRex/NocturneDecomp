@@ -40,7 +40,7 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_close_FUN_00558240(CWavInDevice *this_
   }
   MVar2 = waveInClose(_DAT_0264b108);
   if (MVar2 != 0) {
-    sound_sndmain_cpp_FUN_005549c0("waveInClose failed.");
+    sound_sndmain_cpp_logSoundError_FUN_005549c0("waveInClose failed.");
     uVar4 = 0;
   }
   _DAT_0264b108 = (HWAVEIN)0x0;

@@ -61,12 +61,12 @@ void __cdecl core_bat_cpp_CBat_process_FUN_0040f010(CBat *this_ptr,float delta_t
   }
   if ((this_ptr->periodic_sound[0] != '\0') &&
      (fVar5 = this_ptr->sound_timer - delta_time, this_ptr->sound_timer = fVar5, fVar5 <= 0.0)) {
-    iVar2 = sound_sndmain_cpp_FUN_00556700(this_ptr->sfx_handle);
+    iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handle);
     if (iVar2 == 0) {
-      iVar2 = sound_sndmain_cpp_FUN_00557170
+      iVar2 = sound_sndmain_cpp_isWithinListenerRadius_FUN_00557170
                         ((double)(this_ptr->base).location.position.x,
                          (double)(this_ptr->base).location.position.y,
-                         (double)(this_ptr->base).location.position.z,0x42480000);
+                         (double)(this_ptr->base).location.position.z,50.0);
       if (iVar2 != 0) {
         uVar3 = (*((this_ptr->base).vtable._ub)->playAmbientSound)
                           (&this_ptr->base,this_ptr->periodic_sound);

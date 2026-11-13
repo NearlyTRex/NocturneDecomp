@@ -223,16 +223,16 @@ LAB_0055f102:
     }
     sound_sndmain_cpp_pushSfxOptions_FUN_00555fd0();
     if (position_tracker == (CVector3f *)0x0) {
-      sound_sndmain_cpp_FUN_00555c90((double)x,(double)y,(double)z);
+      sound_sndmain_cpp_setNextSfxStaticPosition_FUN_00555c90((double)x,(double)y,(double)z);
     }
     else {
-      sound_sndmain_cpp_FUN_00555cf0(position_tracker);
+      sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_00555cf0(position_tracker);
     }
     sound_sndmain_cpp_setNextSfxFlags_FUN_00555f00(flags);
-    sound_sndmain_cpp_FUN_00555e30(0,user_data);
-    sound_sndmain_cpp_FUN_00555df0(1.0);
-    sound_sndmain_cpp_FUN_00555e10(1.0);
-    uVar2 = sound_sndmain_cpp_FUN_00556240();
+    sound_sndmain_cpp_setNextSfxUserData_FUN_00555e30(0,user_data);
+    sound_sndmain_cpp_setNextSfxVolume_FUN_00555df0(1.0);
+    sound_sndmain_cpp_setNextSfxBaseFrequency_FUN_00555e10(1.0);
+    uVar2 = sound_sndmain_cpp_startSfx_FUN_00556240(local_a8);
     sound_sndmain_cpp_popSfxOptions_FUN_00556050();
   }
   return uVar2;

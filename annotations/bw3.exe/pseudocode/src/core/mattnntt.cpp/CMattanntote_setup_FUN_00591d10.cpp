@@ -45,18 +45,18 @@ void __cdecl core_mattnntt_cpp_CMattanntote_setup_FUN_00591d10(CMattanntote *thi
   else {
     (this_ptr->base).base.health_bar_mode = HEALTH_BAR_ALWAYS;
   }
-  sound_sndmain_cpp_FUN_00556230("mann_firestaff.wav");
-  sound_sndmain_cpp_FUN_00556230("mann_stand.wav");
-  sound_sndmain_cpp_FUN_00556230("mann_chasewalk.wav");
-  sound_sndmain_cpp_FUN_00556230("mann_chasefast.wav");
-  sound_sndmain_cpp_FUN_00556230("mann_attack.wav");
-  sound_sndmain_cpp_FUN_00556230("mann_attack1.wav");
-  sound_sndmain_cpp_FUN_00556230("mann_attack2.wav");
-  sound_sndmain_cpp_FUN_00556230("mann_attack3.wav");
-  sound_sndmain_cpp_FUN_00556230("mann_pain.wav");
-  sound_sndmain_cpp_FUN_00556230("mann_die.wav");
-  sound_sndmain_cpp_FUN_00556230("mann_warning.wav");
-  sound_sndmain_cpp_FUN_00556230("mann_appear.wav");
-  sound_sndmain_cpp_FUN_00556230("mann_disappear.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("mann_firestaff.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("mann_stand.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("mann_chasewalk.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("mann_chasefast.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("mann_attack.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("mann_attack1.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("mann_attack2.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("mann_attack3.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("mann_pain.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("mann_die.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("mann_warning.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("mann_appear.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("mann_disappear.wav");
   return;
 }

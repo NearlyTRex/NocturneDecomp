@@ -19,7 +19,7 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_sound.cpp_CSound_playActorSound_FUN_0055ae50
 ;   crt_string.c__stricmp_FUN_005b8130
-;   sound_sndmain.cpp_FUN_00550b70
+;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;
 ; *****************************************************************************
 
@@ -75,8 +75,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x1c3f8d0] ; 0049b908
         ;   Label: LAB_0049b908
     PUSH EAX                            ; 0049b90e
-    CALL sound_sndmain.cpp_FUN_00550b70 ; 0049b90f
-        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00550b70(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00550b70 ; 0049b90f
+        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00550b70(uint sfx_handle)
     ADD ESP,0x4                         ; 0049b914
     TEST EAX,EAX                        ; 0049b917
     JZ 0x0049b924                       ; 0049b919

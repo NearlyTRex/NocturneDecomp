@@ -12,7 +12,7 @@ void core_shadowsc_cpp_FUN_00560fe0(int param_1)
   int iVar1;
   uint uVar2;
   
-  iVar1 = sound_sndmain_cpp_FUN_005735a0(*(uint *)(param_1 + 0xc27c));
+  iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(*(uint *)(param_1 + 0xc27c));
   if (iVar1 != 0) {
     return;
   }

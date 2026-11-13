@@ -453,8 +453,8 @@ section .text
     ADD ESP,0xc                         ; 004c57ff
     MOV ESI,dword ptr [EBX + 0xd098]    ; 004c5802
     PUSH ESI                            ; 004c5808
-    CALL sound_sndmain.cpp_FUN_00556700 ; 004c5809
-        ;   XREF to: 00556700 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00556700(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00556700 ; 004c5809
+        ;   XREF to: 00556700 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00556700(uint sfx_handle)
     ADD ESP,0x4                         ; 004c580e
     TEST EAX,EAX                        ; 004c5811
     JNZ 0x004c548e                      ; 004c5813
@@ -565,8 +565,8 @@ section .text
     ADD ESP,0xc                         ; 004c593c
     MOV EDI,dword ptr [EBX + 0xd098]    ; 004c593f
     PUSH EDI                            ; 004c5945
-    CALL sound_sndmain.cpp_FUN_00556700 ; 004c5946
-        ;   XREF to: 00556700 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00556700(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00556700 ; 004c5946
+        ;   XREF to: 00556700 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00556700(uint sfx_handle)
     ADD ESP,0x4                         ; 004c594b
     TEST EAX,EAX                        ; 004c594e
     JNZ 0x004c548e                      ; 004c5950
@@ -726,8 +726,8 @@ section .text
     ADD ESP,0xc                         ; 004c5ae2
     MOV EAX,dword ptr [EBX + 0xd098]    ; 004c5ae5
     PUSH EAX                            ; 004c5aeb
-    CALL sound_sndmain.cpp_FUN_00556700 ; 004c5aec
-        ;   XREF to: 00556700 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00556700(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00556700 ; 004c5aec
+        ;   XREF to: 00556700 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00556700(uint sfx_handle)
     ADD ESP,0x4                         ; 004c5af1
     TEST EAX,EAX                        ; 004c5af4
     JNZ 0x004c548e                      ; 004c5af6

@@ -181,7 +181,7 @@ int __cdecl sound_sndmain_cpp_closeSoundDevice_FUN_005285b0(void);
 int __cdecl sound_sndmain_cpp_getCurrentSoundDevice_FUN_00528610(void);
 int __cdecl sound_sndmain_cpp_getMixBufferCount_FUN_00528620(void);
 void __cdecl sound_sndmain_cpp_set3DListenerOrientRight_FUN_00528630(float orient_right_x,float orient_right_y,float orient_right_z);
-DWORD __stdcall sound_sndmain_cpp_audioThreadProc_FUN_00528670(LPVOID lpThreadParam);
+DWORD __cdecl sound_sndmain_cpp_audioThreadProc_FUN_00528670(LPVOID lpThreadParam);
 int __cdecl sound_sndmain_cpp_startSoundThread_FUN_005286d0(double latency_seconds);
 int __cdecl sound_sndmain_cpp_killSoundThread_FUN_00528780(void);
 void __cdecl sound_sndmain_cpp_lockSound_FUN_00528800(void);

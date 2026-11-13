@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1128,
-    "complexity_score": 1032,
+    "complexity_score": 1023,
     "cross_reference_count": 0,
     "function_call_count": 38,
     "global_count": 28,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 527,
-    "suspect_count": 44,
+    "pseudocode_lines": 528,
+    "suspect_count": 43,
     "suspect_types": [
       "fast_sqrt_inline",
       "pointer_cast",
@@ -24,7 +24,7 @@
       "unrolled_memset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1655
+    "total_lines": 1656
   },
   "cross_references": [],
   "function": {
@@ -204,12 +204,12 @@
     {
       "addr": "00556700",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00556700"
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_00556700"
     },
     {
       "addr": "00557170",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00557170"
+      "name": "sound_sndmain.cpp_isWithinListenerRadius_FUN_00557170"
     },
     {
       "addr": "00556be0",
@@ -629,16 +629,8 @@
       "type": "undefined_data"
     },
     {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 512,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "SUB84(__BITCAST_UINT64((double)(this_ptr->base).base.base.location.position.y),0)),",
-      "type": "sub84_truncation"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 519,
+      "line": 520,
       "match": "2.8026e-45",
       "severity": "mild",
       "text": "fVar20 = 2.8026e-45;",
@@ -646,7 +638,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 525,
+      "line": 526,
       "match": "6.015501e-39",
       "severity": "mild",
       "text": "fStack_230 = 6.015501e-39;",

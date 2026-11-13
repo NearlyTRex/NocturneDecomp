@@ -16,7 +16,7 @@
 ;   core_construc.cpp_CConstruct_explode_FUN_00438060
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   sound_sndmain.cpp_FUN_00550b70
+;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
 ;
 ; *****************************************************************************
@@ -61,8 +61,8 @@ section .text
     ADD ESP,0x4                         ; 00437e41
     MOV EAX,dword ptr [EBX + 0x10b9c]   ; 00437e44
     PUSH EAX                            ; 00437e4a
-    CALL sound_sndmain.cpp_FUN_00550b70 ; 00437e4b
-        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00550b70(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00550b70 ; 00437e4b
+        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00550b70(uint sfx_handle)
     ADD ESP,0x4                         ; 00437e50
     TEST EAX,EAX                        ; 00437e53
     JZ 0x00437e6d                       ; 00437e55
@@ -104,8 +104,8 @@ section .text
     ADD ESP,0xc                         ; 00437ea5
     MOV EBP,dword ptr [EBX + 0x10b9c]   ; 00437ea8
     PUSH EBP                            ; 00437eae
-    CALL sound_sndmain.cpp_FUN_00550b70 ; 00437eaf
-        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00550b70(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00550b70 ; 00437eaf
+        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00550b70(uint sfx_handle)
     ADD ESP,0x4                         ; 00437eb4
     TEST EAX,EAX                        ; 00437eb7
     JNZ 0x00437e57                      ; 00437eb9

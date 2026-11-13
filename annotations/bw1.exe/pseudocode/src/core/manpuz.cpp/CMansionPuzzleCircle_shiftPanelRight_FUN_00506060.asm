@@ -17,9 +17,9 @@
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
 ;   core_manpuz.cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_00506200
-;   sound_sndmain.cpp_FUN_005727e0
 ;   sound_sndmain.cpp_popSfxOptions_FUN_00572b40
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0
+;   sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005727e0
 ;   sound_sndmain.cpp_startSfx_FUN_00572d20
 ;
 ; *****************************************************************************
@@ -70,8 +70,8 @@ section .text
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0 ; 005060c7
         ;   XREF to: 00572ac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0()
     PUSH EBX                            ; 005060cc
-    CALL sound_sndmain.cpp_FUN_005727e0 ; 005060cd
-        ;   XREF to: 005727e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_005727e0(CVector3f * position_source_ptr)
+    CALL sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005727e0 ; 005060cd
+        ;   XREF to: 005727e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005727e0(CVector3f * position_source_ptr)
     ADD ESP,0x4                         ; 005060d2
     PUSH 0x5e75e1                       ; 005060d5
     CALL sound_sndmain.cpp_startSfx_FUN_00572d20 ; 005060da

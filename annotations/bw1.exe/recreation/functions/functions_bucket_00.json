@@ -18119,14 +18119,14 @@
     "calls":[
       "005030e0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":30,
-    "method":"FUN_0056df00",
-    "name":"sound_sndmain.cpp_FUN_0056df00",
+    "method":"getActiveSfxCount",
+    "name":"sound_sndmain.cpp_getActiveSfxCount_FUN_0056df00",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",
@@ -18224,14 +18224,25 @@
       "00572d20",
       "00574100"
     ],
-    "conv":"unknown",
+    "cls":"CSfxSample",
+    "conv":"__cdecl",
     "instructions":11,
-    "method":"FUN_00572400",
-    "name":"sound_sndmain.cpp_FUN_00572400",
-    "receiver":false,
+    "method":"framesToBytes",
+    "name":"sound_sndmain.cpp_CSfxSample_framesToBytes_FUN_00572400",
+    "params":[
+      {
+        "name":"frame_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",
@@ -18268,8 +18279,8 @@
     ],
     "conv":"__cdecl",
     "instructions":20,
-    "method":"FUN_00572780",
-    "name":"sound_sndmain.cpp_FUN_00572780",
+    "method":"setNextSfxStaticPosition",
+    "name":"sound_sndmain.cpp_setNextSfxStaticPosition_FUN_00572780",
     "params":[
       {
         "name":"pos_x",
@@ -18315,8 +18326,8 @@
     ],
     "conv":"__cdecl",
     "instructions":8,
-    "method":"FUN_00572880",
-    "name":"sound_sndmain.cpp_FUN_00572880",
+    "method":"setNextSfxTrackedVelocity1",
+    "name":"sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_00572880",
     "params":[
       {
         "name":"velocity_source_ptr",
@@ -18345,8 +18356,8 @@
     ],
     "conv":"__cdecl",
     "instructions":7,
-    "method":"FUN_00572900",
-    "name":"sound_sndmain.cpp_FUN_00572900",
+    "method":"setNextSfxBaseFrequency",
+    "name":"sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_00572900",
     "params":[
       {
         "name":"base_frequency",
@@ -18450,8 +18461,8 @@
     ],
     "conv":"__cdecl",
     "instructions":29,
-    "method":"FUN_00573980",
-    "name":"sound_sndmain.cpp_FUN_00573980",
+    "method":"setSfxBaseFrequency",
+    "name":"sound_sndmain.cpp_setSfxBaseFrequency_FUN_00573980",
     "params":[
       {
         "name":"sfx_handle",
@@ -18607,14 +18618,40 @@
     "callers":[
       "00570f30"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":41,
-    "method":"FUN_00574080",
-    "name":"sound_sndmain.cpp_FUN_00574080",
+    "method":"getNearestListener",
+    "name":"sound_sndmain.cpp_getNearestListener_FUN_00574080",
+    "params":[
+      {
+        "name":"pos_x",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      },
+      {
+        "name":"pos_y",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      },
+      {
+        "name":"pos_z",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",
@@ -18630,14 +18667,24 @@
       "00574380",
       "00575d20"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":86,
-    "method":"FUN_00574100",
-    "name":"sound_sndmain.cpp_FUN_00574100",
+    "method":"createUserSample",
+    "name":"sound_sndmain.cpp_createUserSample_FUN_00574100",
+    "params":[
+      {
+        "name":"sample",
+        "type":{
+          "kind":"class",
+          "name":"CSfxSample",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",
@@ -18728,8 +18775,8 @@
     ],
     "conv":"__cdecl",
     "instructions":7,
-    "method":"FUN_00575200",
-    "name":"sound_sndmain.cpp_FUN_00575200",
+    "method":"getAudioBitDepth",
+    "name":"sound_sndmain.cpp_getAudioBitDepth_FUN_00575200",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -18782,14 +18829,24 @@
       "005030e0",
       "00575540"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":16,
-    "method":"FUN_00575580",
-    "name":"sound_sndmain.cpp_FUN_00575580",
+    "method":"enableHwSoundMixing",
+    "name":"sound_sndmain.cpp_enableHwSoundMixing_FUN_00575580",
+    "params":[
+      {
+        "name":"enable",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",

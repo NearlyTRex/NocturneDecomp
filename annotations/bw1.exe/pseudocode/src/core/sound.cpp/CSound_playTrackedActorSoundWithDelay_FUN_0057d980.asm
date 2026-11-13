@@ -15,9 +15,9 @@
 ;
 ; Called Functions:
 ;   core_sound.cpp_playSfxInternal_FUN_0057bef0
-;   sound_sndmain.cpp_FUN_005729d0
 ;   sound_sndmain.cpp_popSfxOptions_FUN_00572b40
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0
+;   sound_sndmain.cpp_setNextSfxDelay_FUN_005729d0
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0 ; 0057d981
         ;   XREF to: 00572ac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0()
     PUSH dword ptr [ESP + 0x18]         ; 0057d986
-    CALL sound_sndmain.cpp_FUN_005729d0 ; 0057d98a
-        ;   XREF to: 005729d0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005729d0()
+    CALL sound_sndmain.cpp_setNextSfxDelay_FUN_005729d0 ; 0057d98a
+        ;   XREF to: 005729d0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxDelay_FUN_005729d0(float delay_seconds)
     ADD ESP,0x4                         ; 0057d98f
     PUSH 0x0                            ; 0057d992
     MOV EDX,dword ptr [ESP + 0x18]      ; 0057d994

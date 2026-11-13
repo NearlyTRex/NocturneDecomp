@@ -41,17 +41,17 @@ void __cdecl core_hino_cpp_CHino_setup_FUN_0059b770(CHino *this_ptr)
   }
   this_ptr->sfx_handle = 0;
   this_ptr->unknown_0xd058 = 0;
-  sound_sndmain_cpp_FUN_00556230("hino_stand_fly.wav");
-  sound_sndmain_cpp_FUN_00556230("hino_walk_fly.wav");
-  sound_sndmain_cpp_FUN_00556230("hino_run_fly.wav");
-  sound_sndmain_cpp_FUN_00556230("hino_reverse.wav");
-  sound_sndmain_cpp_FUN_00556230("hino_attack_fly.wav");
-  sound_sndmain_cpp_FUN_00556230("hino_attack_fly2.wav");
-  sound_sndmain_cpp_FUN_00556230("hino_damage_fly.wav");
-  sound_sndmain_cpp_FUN_00556230("hino_die_fly.wav");
-  sound_sndmain_cpp_FUN_00556230("hino_warning.wav");
-  sound_sndmain_cpp_FUN_00556230("hino_big_attack.wav");
-  sound_sndmain_cpp_FUN_00556230("hino_appear.wav");
-  sound_sndmain_cpp_FUN_00556230("hino_disappear.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("hino_stand_fly.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("hino_walk_fly.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("hino_run_fly.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("hino_reverse.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("hino_attack_fly.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("hino_attack_fly2.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("hino_damage_fly.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("hino_die_fly.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("hino_warning.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("hino_big_attack.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("hino_appear.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("hino_disappear.wav");
   return;
 }

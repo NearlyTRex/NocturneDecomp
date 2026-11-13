@@ -204,8 +204,8 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005a7b50(CVehicle *this_ptr,f
                       (unaff_EDI,(SDamageInfo *)auStack_164);
           }
           else if ((fStack_168 < fStack_ec + (float)_DAT_005f908b) &&
-                  (iVar13 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[0]), iVar13 == 0))
-          {
+                  (iVar13 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[0]),
+                  iVar13 == 0)) {
             uVar11 = core_vehicle_cpp_CVehicle_playTrackedSound_FUN_005a89c0
                                (this_ptr,"?model-t-horn?.wav" + 1);
             this_ptr->sfx_handles[0] = uVar11;
@@ -327,15 +327,16 @@ joined_r0x005a8421:
             (0x01D2C900,(CDemonActor *)this_ptr_01);
   core_mission_cpp_CDemonMission_addActorToList_FUN_0051b160(0x01D2C900,(CDemonActor *)actor);
 LAB_005a80a6:
-  iVar13 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[1]);
+  iVar13 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[1]);
   if (iVar13 == 0) {
     uVar11 = core_vehicle_cpp_CVehicle_playTrackedSound_FUN_005a89c0
                        (this_ptr,"ext-modelt-fast_??.wav");
     this_ptr->sfx_handles[1] = uVar11;
   }
-  sound_sndmain_cpp_FUN_00573980(this_ptr->sfx_handles[1],1.0);
+  sound_sndmain_cpp_setSfxBaseFrequency_FUN_00573980(this_ptr->sfx_handles[1],1.0);
   if (((float)_DAT_005f9083 < ABS((this_ptr->local_velocity).x)) &&
-     (iVar13 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[2]), iVar13 == 0)) {
+     (iVar13 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[2]), iVar13 == 0))
+  {
     uVar11 = core_vehicle_cpp_CVehicle_playTrackedSound_FUN_005a89c0(this_ptr,"skid_??.wav");
     this_ptr->sfx_handles[2] = uVar11;
     return;

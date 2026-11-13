@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[3]:
-;   sound_sndmain.cpp_FUN_00575580 at 00575580
+;   sound_sndmain.cpp_enableHwSoundMixing_FUN_00575580 at 00575580
 ;   sound_sndmain.cpp_enableSoundSystem_FUN_00574ee0 at 00574ee4
 ;   sound_sndmain.cpp_selectSoundDevice_FUN_005754d0 at 005754d5
 ;

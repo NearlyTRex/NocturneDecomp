@@ -18,8 +18,6 @@
 ;   crt_math.c_round_FUN_005b7ff0
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   sound_sndmain.cpp_CSfxSample_init_FUN_0054fcd0
-;   sound_sndmain.cpp_FUN_00550f50
-;   sound_sndmain.cpp_FUN_00551440
 ;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00550c30
 ;   sound_sndmain.cpp_getSfxSampleInfo_FUN_00550bf0
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
@@ -27,6 +25,8 @@
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005504d0
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00550450
 ;   sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005503e0
+;   sound_sndmain.cpp_setSfxBaseFrequency_FUN_00550f50
+;   sound_sndmain.cpp_unlockSound_FUN_00551440
 ;
 ; *****************************************************************************
 
@@ -63,8 +63,8 @@ section .text
     FSTP float ptr [ESP + 0xc]          ; 0057618b
     PUSH dword ptr [ESP + 0xc]          ; 0057618f
     PUSH EDX                            ; 00576193
-    CALL sound_sndmain.cpp_FUN_00550f50 ; 00576194
-        ;   XREF to: 00550f50 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00550f50(uint sfx_handle, float base_frequency)
+    CALL sound_sndmain.cpp_setSfxBaseFrequency_FUN_00550f50 ; 00576194
+        ;   XREF to: 00550f50 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxBaseFrequency_FUN_00550f50(uint sfx_handle, float base_frequency)
     ADD ESP,0x8                         ; 00576199
     TEST EAX,EAX                        ; 0057619c
     JZ 0x005761a7                       ; 0057619e
@@ -201,8 +201,8 @@ section .text
     CALL sound_sndmain.cpp_killSfx_FUN_00551050 ; 0057633c
         ;   XREF to: 00551050 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00551050(uint sfx_handle)
     ADD ESP,0x4                         ; 00576341
-    CALL sound_sndmain.cpp_FUN_00551440 ; 00576344
-        ;   XREF to: 00551440 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00551440()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00551440 ; 00576344
+        ;   XREF to: 00551440 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00551440()
     MOV ESP,EBP                         ; 00576349
     POP EBP                             ; 0057634b
     POP EDI                             ; 0057634c

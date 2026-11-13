@@ -21,7 +21,7 @@
 ;   engine_pod.cpp_FUN_00512fb0 at 0051315c
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_00569790 at 00569aa3
 ;   engine_texture.cpp_FUN_0056ad60 at 0056ae86
-;   sound_sndmain.cpp_FUN_00551d20 at 00552079
+;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00553960 at 00553e94
 ;   ... and 1 more
 ;
 ; Called Functions:

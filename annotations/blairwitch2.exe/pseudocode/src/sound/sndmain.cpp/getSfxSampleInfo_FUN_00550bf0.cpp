@@ -15,7 +15,7 @@ int __cdecl sound_sndmain_cpp_getSfxSampleInfo_FUN_00550bf0(uint sfx_handle,CSfx
   byte bVar4;
   
   bVar4 = 0;
-  pCVar1 = sound_sndmain_cpp_FUN_0054d3a0(sfx_handle,1);
+  pCVar1 = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_0054d3a0(sfx_handle,1);
   if (pCVar1 == (CSfxSlot *)0x0) {
     return 0;
   }
@@ -25,6 +25,6 @@ int __cdecl sound_sndmain_cpp_getSfxSampleInfo_FUN_00550bf0(uint sfx_handle,CSfx
     pCVar3 = (CSfxSample *)((int)pCVar3 + (uint)bVar4 * -8 + 4);
     output_buffer = (CSfxSample *)((int)output_buffer + (uint)bVar4 * -8 + 4);
   }
-  sound_sndmain_cpp_FUN_00551440();
+  sound_sndmain_cpp_unlockSound_FUN_00551440();
   return 1;
 }

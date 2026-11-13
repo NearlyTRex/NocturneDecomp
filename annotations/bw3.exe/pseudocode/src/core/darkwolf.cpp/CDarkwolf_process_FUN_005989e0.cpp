@@ -116,7 +116,7 @@ void __cdecl core_darkwolf_cpp_CDarkwolf_process_FUN_005989e0(CDarkwolf *this_pt
     if (((iStack_1c == 3) &&
         (fStack_18 = core_motion_cpp_FUN_004fc930(&(this_ptr->base).base.model.base),
         fStack_18 < (float)_DAT_005d9882)) &&
-       (iVar9 = sound_sndmain_cpp_FUN_00556700(this_ptr->sfx_handle), iVar9 == 0)) {
+       (iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handle), iVar9 == 0)) {
       uVar11 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                          ((CDemonActor *)this_ptr,"dog_howl.wav");
       this_ptr->sfx_handle = uVar11;

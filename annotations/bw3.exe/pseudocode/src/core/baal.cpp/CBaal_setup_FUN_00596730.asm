@@ -26,7 +26,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_00548090
-;   sound_sndmain.cpp_FUN_00556230
+;   sound_sndmain.cpp_preloadSfx_FUN_00556230
 ;
 ; *****************************************************************************
 
@@ -86,44 +86,44 @@ section .text
     MOV dword ptr [EBX + 0x2540],0x0    ; 005967d8
     PUSH 0x5d94b7                       ; 005967e2 | = "baal_stand.wav"
         ;   Label: LAB_005967e2
-    CALL sound_sndmain.cpp_FUN_00556230 ; 005967e7
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 005967e7
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 005967ec
     PUSH 0x5d94c6                       ; 005967ef | = "baal_chasewalk.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 005967f4
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 005967f4
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 005967f9
     PUSH 0x5d94d9                       ; 005967fc | = "baal_chasefast.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 00596801
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 00596801
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 00596806
     PUSH 0x5d94ec                       ; 00596809 | = "baal_attack.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059680e
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059680e
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 00596813
     PUSH 0x5d94fc                       ; 00596816 | = "baal_attack1.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059681b
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059681b
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 00596820
     PUSH 0x5d950d                       ; 00596823 | = "baal_attack2.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 00596828
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 00596828
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059682d
     PUSH 0x5d951e                       ; 00596830 | = "baal_attack3.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 00596835
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 00596835
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059683a
     PUSH 0x5d952f                       ; 0059683d | = "baal_pain.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 00596842
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 00596842
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 00596847
     PUSH 0x5d953d                       ; 0059684a | = "baal_die.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059684f
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059684f
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 00596854
     PUSH 0x5d954a                       ; 00596857 | = "baal_warning.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059685c
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059685c
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 00596861
     POP EDI                             ; 00596864
     POP ESI                             ; 00596865

@@ -23,6 +23,6 @@ void __cdecl sound_sndmain_cpp_killSfxByName_FUN_005518e0(char *sample_name)
     }
     iVar2 = iVar2 + 0x11c;
   } while (iVar2 != 0x4700);
-  sound_sndmain_cpp_FUN_00551440();
+  sound_sndmain_cpp_unlockSound_FUN_00551440();
   return;
 }

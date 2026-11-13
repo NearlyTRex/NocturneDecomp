@@ -25,7 +25,7 @@
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   core_motion.cpp_FUN_005035c0
 ;   core_werewolf.cpp_CWerewolf_playHowl_FUN_0058d060
-;   sound_sndmain.cpp_FUN_00550b70
+;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
 ;
 ; *****************************************************************************
@@ -277,8 +277,8 @@ section .text
         ;   Label: LAB_0058db89
     MOV EDI,dword ptr [EAX + 0x10b1c]   ; 0058db8c
     PUSH EDI                            ; 0058db92
-    CALL sound_sndmain.cpp_FUN_00550b70 ; 0058db93
-        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00550b70(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00550b70 ; 0058db93
+        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00550b70(uint sfx_handle)
     ADD ESP,0x4                         ; 0058db98
     TEST EAX,EAX                        ; 0058db9b
     JNZ 0x0058da43                      ; 0058db9d

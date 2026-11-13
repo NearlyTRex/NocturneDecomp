@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 148,
-    "complexity_score": 123,
+    "complexity_score": 124,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 53,
+    "pseudocode_lines": 54,
     "suspect_count": 5,
     "suspect_types": [
       "concat_reconstruction",
@@ -15,9 +15,15 @@
       "undefined_type",
       "warning_overlapping_globals"
     ],
-    "total_lines": 201
+    "total_lines": 202
   },
   "cross_references": [
+    {
+      "addr": "00553960",
+      "from_addr": "00553bc0",
+      "name": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_00553960",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "00555750",
       "from_addr": "00555816",
@@ -27,13 +33,7 @@
     {
       "addr": "00552350",
       "from_addr": "0055256d",
-      "name": "sound_sndmain.cpp_FUN_00552350",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00553960",
-      "from_addr": "00553bc0",
-      "name": "sound_sndmain.cpp_FUN_00553960",
+      "name": "sound_sndmain.cpp_loadStreamingSoundFile_FUN_00552350",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -66,14 +66,14 @@
       "name": "sound_mp3.cpp_CMP3Decoder_seek_FUN_00502bc0"
     },
     {
+      "addr": "00555900",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_framesToBytes_FUN_00555900"
+    },
+    {
       "addr": "00555aa0",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_00555aa0"
-    },
-    {
-      "addr": "00555900",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00555900"
     },
     {
       "addr": "00573d60",
@@ -154,7 +154,7 @@
       {
         "call_addr": "00553bc0",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00553960",
+        "caller": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_00553960",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -165,7 +165,7 @@
       {
         "call_addr": "0055256d",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00552350",
+        "caller": "sound_sndmain.cpp_loadStreamingSoundFile_FUN_00552350",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

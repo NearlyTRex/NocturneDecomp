@@ -7,8 +7,8 @@
 ; CInStreamFile *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   sound_sndmain.cpp_FUN_0054c7f0 at 0054ca8a
-;   sound_sndmain.cpp_FUN_005519e0 at 00551ae8
+;   sound_sndmain.cpp_getSampleInfo_FUN_005519e0 at 00551ae8
+;   sound_sndmain.cpp_loadStreamingSoundFile_FUN_0054c7f0 at 0054ca8a
 ;
 ; *****************************************************************************
 

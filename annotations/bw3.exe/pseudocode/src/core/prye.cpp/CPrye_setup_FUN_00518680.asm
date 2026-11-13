@@ -34,7 +34,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0054c180
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_00548090
 ;   core_skeleton.cpp_FUN_0054dbd0
-;   sound_sndmain.cpp_FUN_00556230
+;   sound_sndmain.cpp_preloadSfx_FUN_00556230
 ;
 ; *****************************************************************************
 
@@ -337,32 +337,32 @@ section .text
     PUSH 0x5ccfa2                       ; 00518a02 | = "prye-pain1.wav"
     MOV dword ptr [0x01ed3744],EBX      ; 00518a07 | DAT_01ed3744
     MOV dword ptr [EBP + 0x20cfc],EBX   ; 00518a0d
-    CALL sound_sndmain.cpp_FUN_00556230 ; 00518a13
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 00518a13
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 00518a18
     PUSH 0x5ccfb1                       ; 00518a1b | = "prye-pain2.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 00518a20
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 00518a20
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 00518a25
     PUSH 0x5ccfc0                       ; 00518a28 | = "prye-pain3.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 00518a2d
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 00518a2d
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 00518a32
     PUSH 0x5ccfcf                       ; 00518a35 | = "prye-death1.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 00518a3a
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 00518a3a
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 00518a3f
     PUSH 0x5ccfdf                       ; 00518a42 | = "prye-death2.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 00518a47
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 00518a47
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 00518a4c
     PUSH 0x5ccfef                       ; 00518a4f | = "prye-death3.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 00518a54
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 00518a54
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 00518a59
     PUSH 0x5ccfff                       ; 00518a5c | = "fall-1.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 00518a61
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 00518a61
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 00518a66
     ADD ESP,0x30                        ; 00518a69
     POP EBP                             ; 00518a6c

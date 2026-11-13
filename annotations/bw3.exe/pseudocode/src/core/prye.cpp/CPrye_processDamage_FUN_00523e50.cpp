@@ -59,7 +59,7 @@ void __cdecl core_prye_cpp_CPrye_processDamage_FUN_00523e50(CPrye *this_ptr,SDam
           (iVar3 = core_actor_cpp_randomChance_FUN_0040cf40(0.333), iVar3 != 0)))) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&this_ptr_00->base,0x31,1);
       }
-      iVar3 = sound_sndmain_cpp_FUN_00556700(this_ptr->sfx_handle);
+      iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handle);
       if (iVar3 == 0) {
         uVar5 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,"prye-pain?.wav");

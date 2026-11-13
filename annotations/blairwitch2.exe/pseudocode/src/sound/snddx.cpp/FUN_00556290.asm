@@ -28,7 +28,7 @@
 ;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;   sound_snddx.cpp_FUN_00554ad0
 ;   sound_snddx.cpp_FUN_00554e50
-;   sound_sndmain.cpp_FUN_005549c0
+;   sound_sndmain.cpp_logSoundError_FUN_005549c0
 ;
 ; *****************************************************************************
 
@@ -216,8 +216,8 @@ section .text
     ADD ESP,0x10                        ; 00556494
     LEA EAX,[ESP + 0x190]               ; 00556497
     PUSH EAX                            ; 0055649e
-    CALL sound_sndmain.cpp_FUN_005549c0 ; 0055649f
-        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005549c0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005549c0 ; 0055649f
+        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005549c0(char * format)
     ADD ESP,0x4                         ; 005564a4
     XOR EAX,EAX                         ; 005564a7
     ADD ESP,0x320                       ; 005564a9
@@ -267,8 +267,8 @@ section .text
     ADD ESP,0x10                        ; 00556506
     MOV EAX,ESP                         ; 00556509
     PUSH EAX                            ; 0055650b
-    CALL sound_sndmain.cpp_FUN_005549c0 ; 0055650c
-        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005549c0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005549c0 ; 0055650c
+        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005549c0(char * format)
     ADD ESP,0x4                         ; 00556511
     JMP 0x005564c8                      ; 00556514
         ;   XREF to: 005564c8 (UNCONDITIONAL_JUMP)  ; LAB_005564c8

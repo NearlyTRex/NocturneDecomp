@@ -178,7 +178,7 @@ LAB_005a2447:
     this_ptr->fire_sound_frames = this_ptr->fire_sound_frames + -1;
     fStack_108 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.9,1.1111112);
     fStack_18 = fStack_108;
-    iVar5 = sound_sndmain_cpp_FUN_00573980(this_ptr->sfx_handles[0],fStack_108);
+    iVar5 = sound_sndmain_cpp_setSfxBaseFrequency_FUN_00573980(this_ptr->sfx_handles[0],fStack_108);
     if (iVar5 == 0) {
       _sprintf(acStack_104,"turret-loop.wav * %f");
       uVar6 = (*((this_ptr->base).base.vtable._ub)->playAmbientSound)

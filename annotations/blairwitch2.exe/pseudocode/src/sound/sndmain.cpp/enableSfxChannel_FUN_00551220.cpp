@@ -28,7 +28,7 @@ void __cdecl sound_sndmain_cpp_enableSfxChannel_FUN_00551220(int channel_index,i
       }
       iVar1 = iVar1 + 0x11c;
     } while (iVar1 != 0x4700);
-    sound_sndmain_cpp_FUN_00551440();
+    sound_sndmain_cpp_unlockSound_FUN_00551440();
   }
   return;
 }

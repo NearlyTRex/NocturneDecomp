@@ -27,8 +27,8 @@
 ;   crt_math.c_round_FUN_005c03a0
 ;   GlobalAlloc
 ;   GlobalLock
-;   sound_sndmain.cpp_FUN_005773f0
 ;   sound_sndmain.cpp_getMaxSwLatency_FUN_00576030
+;   sound_sndmain.cpp_logSoundError_FUN_005773f0
 ;   waveOutOpen
 ;
 ; *****************************************************************************
@@ -162,8 +162,8 @@ section .text
     JZ 0x0057aaee                       ; 0057aacd
         ;   XREF to: 0057aaee (CONDITIONAL_JUMP)  ; LAB_0057aaee
     PUSH 0x5f578c                       ; 0057aacf | = "waveOutOpen failed"
-    CALL sound_sndmain.cpp_FUN_005773f0 ; 0057aad4
-        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005773f0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005773f0 ; 0057aad4
+        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005773f0(char * format)
     ADD ESP,0x4                         ; 0057aad9
     PUSH EDI                            ; 0057aadc
         ;   Label: LAB_0057aadc

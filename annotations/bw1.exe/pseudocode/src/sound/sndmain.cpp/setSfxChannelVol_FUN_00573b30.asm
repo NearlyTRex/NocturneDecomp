@@ -30,9 +30,9 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
-;   sound_sndmain.cpp_FUN_00573e70
-;   sound_sndmain.cpp_FUN_00575560
+;   sound_sndmain.cpp_hasHardware3DSound_FUN_00575560
 ;   sound_sndmain.cpp_lockSound_FUN_00575d20
+;   sound_sndmain.cpp_unlockSound_FUN_00573e70
 ;
 ; *****************************************************************************
 
@@ -69,8 +69,8 @@ section .text
         ;   Label: LAB_00573b78
     POP EBX                             ; 00573b79
     RET                                 ; 00573b7a
-    CALL sound_sndmain.cpp_FUN_00575560 ; 00573b7b
-        ;   XREF to: 00575560 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00575560(int enable)
+    CALL sound_sndmain.cpp_hasHardware3DSound_FUN_00575560 ; 00573b7b
+        ;   XREF to: 00575560 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_hasHardware3DSound_FUN_00575560()
         ;   Label: LAB_00573b7b
     CMP EAX,0x1                         ; 00573b80
     JL 0x00573b78                       ; 00573b83
@@ -89,8 +89,8 @@ section .text
     CMP EAX,EDX                         ; 00573ba1
     JNZ 0x00573b97                      ; 00573ba3
         ;   XREF to: 00573b97 (CONDITIONAL_JUMP)  ; LAB_00573b97
-    CALL sound_sndmain.cpp_FUN_00573e70 ; 00573ba5
-        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00573e70()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00573e70 ; 00573ba5
+        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00573e70()
     POP ESI                             ; 00573baa
     POP EBX                             ; 00573bab
     RET                                 ; 00573bac

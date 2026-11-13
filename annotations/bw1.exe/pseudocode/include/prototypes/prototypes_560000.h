@@ -11,6 +11,7 @@
 #include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CInStream.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CQuaternion4f.h"
 #include "types/classes/CSfxSample.h"
@@ -243,24 +244,24 @@ int __cdecl core_smiley_cpp_CSmiley_getTargetPoints_FUN_0056d200(CSmiley *this_p
 ECollisionType __cdecl core_smiley_cpp_CSmiley_getCollisionType_FUN_0056d3e0(CSmiley *this_ptr,SCollisionInfo *collision_info);
 CSmiley * __cdecl core_smiley_cpp_CSmiley_dtor_FUN_0056d400(CSmiley *this_ptr,uint flags);
 void __cdecl sound_sndmain_cpp_staticInit_FUN_0056d490(void);
-void sound_sndmain_cpp_FUN_0056d7d0(void);
-undefined4 sound_sndmain_cpp_FUN_0056db10(int *param_1,int *param_2,int param_3);
-int sound_sndmain_cpp_FUN_0056df00(void);
-CSfxSample * sound_sndmain_cpp_FUN_0056df60(void);
-int __cdecl sound_sndmain_cpp_FUN_0056dfd0(int requested_bytes);
+void __cdecl sound_sndmain_cpp_computeFFT_FUN_0056d7d0(float *input,int size,float *output_real,float *output_imag);
+int __cdecl sound_sndmain_cpp_parseWavFile_FUN_0056db10(CInStream *stream,int *file_offset_ptr,CSfxSample *sfx_sample);
+int __cdecl sound_sndmain_cpp_getActiveSfxCount_FUN_0056df00(void);
+CSfxSample * __cdecl sound_sndmain_cpp_findFreeSfxSample_FUN_0056df60(void);
+int __cdecl sound_sndmain_cpp_ensureSoundMemoryAvailable_FUN_0056dfd0(int requested_bytes);
 void __cdecl sound_sndmain_cpp_trimLineAndRemoveComments_FUN_0056e0a0(char *line);
 void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_0056e130(CSfxSample *this_ptr);
-CSfxSample * sound_sndmain_cpp_FUN_0056e7f0(void);
-CSfxSample * __cdecl sound_sndmain_cpp_FUN_0056e830(char *filename);
+CSfxSample * __cdecl sound_sndmain_cpp_findSfxSampleByName_FUN_0056e7f0(char *filename);
+CSfxSample * __cdecl sound_sndmain_cpp_getSfxSample_FUN_0056e830(char *filename);
 int __cdecl sound_sndmain_cpp_isStreamableFile_FUN_0056ede0(char *filename);
-void sound_sndmain_cpp_FUN_0056f1e0(void);
+void __cdecl sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_0056f1e0(void);
 int sound_sndmain_cpp_allocateHwSample_FUN_0056f360(void);
 float __cdecl sound_sndmain_cpp_calculateDistanceGain_FUN_0056f400(float distance,float reference_distance,float min_distance,float max_distance);
 void __cdecl sound_sndmain_cpp_allocMixBuffers_FUN_0056f470(int requested_size,int num_buffers);
 void __cdecl sound_sndmain_cpp_freeMixBuffers_FUN_0056f630(void);
 void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_0056f6d0(void);
 void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_0056f890(float *input_samples,ushort *output_buffer,int bits_per_sample,int num_samples,int output_stride);
-CSfxSlot * __cdecl sound_sndmain_cpp_FUN_0056fa10(uint sfx_handle,int check_hardware_playback);
+CSfxSlot * __cdecl sound_sndmain_cpp_getSfxSlotFromHandle_FUN_0056fa10(uint sfx_handle,int check_hardware_playback);
 double __cdecl sound_sndmain_cpp_mixResampleMonoToStereo_FUN_0056fb90(short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains,double resample_position,double resample_delta,int samples_to_process);
 double __cdecl sound_sndmain_cpp_mixResampleStereoToStereo_FUN_0056fcd0(short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains,double resample_position,double resample_delta,int samples_to_process);
 CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_ctor_FUN_0056fe10(CSfxSample *this_ptr);

@@ -20481,8 +20481,8 @@
     ],
     "conv":"__cdecl",
     "instructions":23,
-    "method":"FUN_00555e30",
-    "name":"sound_sndmain.cpp_FUN_00555e30",
+    "method":"setNextSfxUserData",
+    "name":"sound_sndmain.cpp_setNextSfxUserData_FUN_00555e30",
     "params":[
       {
         "name":"index",
@@ -20536,14 +20536,24 @@
     "calls":[
       "00551d20"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":5,
-    "method":"FUN_00556230",
-    "name":"sound_sndmain.cpp_FUN_00556230",
+    "method":"preloadSfx",
+    "name":"sound_sndmain.cpp_preloadSfx_FUN_00556230",
+    "params":[
+      {
+        "name":"filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",
@@ -20559,14 +20569,32 @@
       "00552f10",
       "00556fd0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":17,
-    "method":"FUN_00556930",
-    "name":"sound_sndmain.cpp_FUN_00556930",
+    "method":"setSfxTrackedFloatPosition",
+    "name":"sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_00556930",
+    "params":[
+      {
+        "name":"sfx_handle",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      },
+      {
+        "name":"position_source_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",
@@ -20581,14 +20609,32 @@
       "00552f10",
       "00556fd0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":17,
-    "method":"FUN_00556a30",
-    "name":"sound_sndmain.cpp_FUN_00556a30",
+    "method":"setSfxTrackedFloatVelocity",
+    "name":"sound_sndmain.cpp_setSfxTrackedFloatVelocity_FUN_00556a30",
+    "params":[
+      {
+        "name":"sfx_handle",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      },
+      {
+        "name":"velocity_source_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",
@@ -20606,14 +20652,32 @@
       "00552f10",
       "00556fd0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":14,
-    "method":"FUN_00556ab0",
-    "name":"sound_sndmain.cpp_FUN_00556ab0",
+    "method":"setSfxVolume",
+    "name":"sound_sndmain.cpp_setSfxVolume_FUN_00556ab0",
+    "params":[
+      {
+        "name":"sfx_handle",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      },
+      {
+        "name":"volume",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",
@@ -20710,14 +20774,24 @@
     "calls":[
       "00558e90"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":8,
-    "method":"FUN_00556fb0",
-    "name":"sound_sndmain.cpp_FUN_00556fb0",
+    "method":"setDualListenerEnabled",
+    "name":"sound_sndmain.cpp_setDualListenerEnabled_FUN_00556fb0",
+    "params":[
+      {
+        "name":"enabled",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",
@@ -20820,8 +20894,8 @@
     ],
     "conv":"__cdecl",
     "instructions":7,
-    "method":"FUN_005583b0",
-    "name":"sound_sndmain.cpp_FUN_005583b0",
+    "method":"getAudioChannelCount",
+    "name":"sound_sndmain.cpp_getAudioChannelCount_FUN_005583b0",
     "receiver":false,
     "ret":{
       "kind":"builtin",

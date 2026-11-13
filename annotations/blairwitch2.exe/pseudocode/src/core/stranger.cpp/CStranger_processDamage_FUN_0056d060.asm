@@ -38,7 +38,7 @@
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   core_motion.cpp_FUN_005035c0
 ;   engine_console.cpp_CConsole_printf_FUN_00436710
-;   sound_sndmain.cpp_FUN_00550b70
+;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
 ;
 ; *****************************************************************************
@@ -349,8 +349,8 @@ section .text
     MOV ECX,dword ptr [EBX + 0x258d4]   ; 0056d39b
         ;   Label: LAB_0056d39b
     PUSH ECX                            ; 0056d3a1
-    CALL sound_sndmain.cpp_FUN_00550b70 ; 0056d3a2
-        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00550b70(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00550b70 ; 0056d3a2
+        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00550b70(uint sfx_handle)
     ADD ESP,0x4                         ; 0056d3a7
     TEST EAX,EAX                        ; 0056d3aa
     JNZ 0x0056d29f                      ; 0056d3ac

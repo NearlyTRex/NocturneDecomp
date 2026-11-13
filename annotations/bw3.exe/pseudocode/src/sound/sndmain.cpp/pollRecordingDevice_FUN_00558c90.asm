@@ -11,9 +11,9 @@
 ;   undefined4 DAT_02cf3c68
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_00556fd0
 ;   sound_sndmain.cpp_isRecordingStarted_FUN_00558b00
 ;   sound_sndmain.cpp_lockSound_FUN_00558e90
+;   sound_sndmain.cpp_unlockSound_FUN_00556fd0
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     TEST EDX,EDX                        ; 00558ca4
     JNZ 0x00558cb3                      ; 00558ca6
         ;   XREF to: 00558cb3 (CONDITIONAL_JUMP)  ; LAB_00558cb3
-    CALL sound_sndmain.cpp_FUN_00556fd0 ; 00558ca8
-        ;   XREF to: 00556fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00556fd0()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00556fd0 ; 00558ca8
+        ;   XREF to: 00556fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00556fd0()
         ;   Label: LAB_00558ca8
     MOV EAX,0xffffffff                  ; 00558cad
     RET                                 ; 00558cb2
@@ -48,8 +48,8 @@ section .text
     CALL dword ptr [EBX + 0x10]         ; 00558cc2
     ADD ESP,0xc                         ; 00558cc5
     MOV EBX,EAX                         ; 00558cc8
-    CALL sound_sndmain.cpp_FUN_00556fd0 ; 00558cca
-        ;   XREF to: 00556fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00556fd0()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00556fd0 ; 00558cca
+        ;   XREF to: 00556fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00556fd0()
     MOV EAX,EBX                         ; 00558ccf
     POP EBX                             ; 00558cd1
     POP ESI                             ; 00558cd2

@@ -23,7 +23,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   sound_sndmain.cpp_FUN_00554920 at 00555186
+;   sound_sndmain.cpp_CSfxSlot_mix_FUN_00554920 at 00555186
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d2b82

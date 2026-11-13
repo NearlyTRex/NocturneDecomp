@@ -21,8 +21,8 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0
-;   sound_sndmain.cpp_FUN_00550da0
-;   sound_sndmain.cpp_FUN_00550ea0
+;   sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_00550da0
+;   sound_sndmain.cpp_setSfxTrackedFloatVelocity_FUN_00550ea0
 ;
 ; *****************************************************************************
 
@@ -75,15 +75,15 @@ section .text
     MOV dword ptr [EBX + 0x48],0x0      ; 0049d579
     PUSH EAX                            ; 0049d580
     MOV dword ptr [EBX + 0x60],EAX      ; 0049d581
-    CALL sound_sndmain.cpp_FUN_00550da0 ; 0049d584
-        ;   XREF to: 00550da0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00550da0()
+    CALL sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_00550da0 ; 0049d584
+        ;   XREF to: 00550da0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_00550da0(uint sfx_handle, CVector3f * position_source_ptr)
     ADD ESP,0x8                         ; 0049d589
     LEA EAX,[EBX + 0xc]                 ; 0049d58c
     PUSH EAX                            ; 0049d58f
     MOV ECX,dword ptr [EBX + 0x60]      ; 0049d590
     PUSH ECX                            ; 0049d593
-    CALL sound_sndmain.cpp_FUN_00550ea0 ; 0049d594
-        ;   XREF to: 00550ea0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00550ea0()
+    CALL sound_sndmain.cpp_setSfxTrackedFloatVelocity_FUN_00550ea0 ; 0049d594
+        ;   XREF to: 00550ea0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxTrackedFloatVelocity_FUN_00550ea0(uint sfx_handle, CVector3f * velocity_source_ptr)
     ADD ESP,0x8                         ; 0049d599
     POP EBP                             ; 0049d59c
     POP EDI                             ; 0049d59d

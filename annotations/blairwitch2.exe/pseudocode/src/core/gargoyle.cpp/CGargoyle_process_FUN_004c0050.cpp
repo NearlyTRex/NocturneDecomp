@@ -115,7 +115,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004c0050(CGargoyle *this_pt
         fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,1.0);
         this_ptr->petrify_timer = fStack_14;
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(pCStack_18,5,1);
-        iVar4 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[1]);
+        iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[1]);
         if (iVar4 == 0) {
           uVar6 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                             ((CDemonActor *)this_ptr,"gargoyle-stone.wav");
@@ -189,7 +189,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004c0050(CGargoyle *this_pt
         fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,1.0);
         this_ptr->petrify_timer = fStack_14;
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(pCStack_1c,5,1);
-        iVar4 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[1]);
+        iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[1]);
         if (iVar4 == 0) {
           uVar6 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                             ((CDemonActor *)this_ptr,"gargoyle-stone.wav");
@@ -337,7 +337,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004c0050(CGargoyle *this_pt
          fVar11 < 0.0)) {
         this_ptr->petrify_timer = 0.0;
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(pCStack_18,0,1);
-        iVar4 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[1]);
+        iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[1]);
         if (iVar4 == 0) {
           uVar6 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                             ((CDemonActor *)this_ptr,"gargoyle-alive?.wav");

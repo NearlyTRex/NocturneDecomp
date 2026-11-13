@@ -16,8 +16,8 @@
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   sound_snddx.cpp_fillStreamBuffer_FUN_00554c80
 ;   sound_snddx.cpp_FUN_00554ad0
-;   sound_sndmain.cpp_FUN_00552b30
-;   sound_sndmain.cpp_FUN_005549c0
+;   sound_sndmain.cpp_hasHardware3DSound_FUN_00552b30
+;   sound_sndmain.cpp_logSoundError_FUN_005549c0
 ;   sound_sndmain.cpp_pollAllSfxSlots_FUN_00554510
 ;
 ; *****************************************************************************
@@ -27,8 +27,8 @@ section .text
     PUSH EBX                            ; 00555a80
         ;   Label: sound_snddx.cpp_FUN_00555a80
     SUB ESP,0x198                       ; 00555a81
-    CALL sound_sndmain.cpp_FUN_00552b30 ; 00555a87
-        ;   XREF to: 00552b30 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00552b30(int enable)
+    CALL sound_sndmain.cpp_hasHardware3DSound_FUN_00552b30 ; 00555a87
+        ;   XREF to: 00552b30 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_hasHardware3DSound_FUN_00552b30()
     CMP EAX,0x1                         ; 00555a8c
     JGE 0x00555aa5                      ; 00555a8f
         ;   XREF to: 00555aa5 (CONDITIONAL_JUMP)  ; LAB_00555aa5
@@ -99,8 +99,8 @@ section .text
     ADD ESP,0x10                        ; 00555b26
     MOV EAX,ESP                         ; 00555b29
     PUSH EAX                            ; 00555b2b
-    CALL sound_sndmain.cpp_FUN_005549c0 ; 00555b2c
-        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005549c0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005549c0 ; 00555b2c
+        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005549c0(char * format)
     ADD ESP,0x4                         ; 00555b31
     XOR EAX,EAX                         ; 00555b34
     ADD ESP,0x198                       ; 00555b36

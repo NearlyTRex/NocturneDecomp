@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 95,
-    "complexity_score": 132,
+    "complexity_score": 80,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 52,
-    "suspect_count": 6,
+    "pseudocode_lines": 50,
+    "suspect_count": 2,
     "suspect_types": [
-      "extra_output",
-      "stack_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 147
+    "total_lines": 145
   },
   "cross_references": [],
   "function": {
@@ -49,12 +47,12 @@
     {
       "addr": "00575560",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00575560"
+      "name": "sound_sndmain.cpp_hasHardware3DSound_FUN_00575560"
     },
     {
       "addr": "005773f0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005773f0"
+      "is_variadic": true,
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005773f0"
     },
     {
       "addr": "00576f40",
@@ -175,43 +173,11 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_fffffe64",
-      "severity": "moderate",
-      "text": "int in_stack_fffffe64;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_fffffe64",
-      "severity": "moderate",
-      "text": "sound_sndmain_cpp_FUN_00575560(in_stack_fffffe64);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 21,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "if (extraout_EAX < 1) {",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 26,
+      "line": 24,
       "match": "code *",
       "severity": "moderate",
-      "text": "uVar2 = (**(code **)(*_DAT_02c81d9c + 0x10))();",
+      "text": "uVar1 = (**(code **)(*_DAT_02c81d9c + 0x10))();",
       "type": "unresolved_funcptr"
     }
   ],

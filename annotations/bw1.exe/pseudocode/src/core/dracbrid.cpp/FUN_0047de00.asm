@@ -61,7 +61,7 @@
 ;   core_spline.cpp_FUN_00583f90
 ;   core_spline.cpp_FUN_005841d0
 ;   engine_console.cpp_CConsole_printf_FUN_00445430
-;   sound_sndmain.cpp_FUN_005735a0
+;   sound_sndmain.cpp_isSfxPlaying_FUN_005735a0
 ;
 ; *****************************************************************************
 
@@ -120,8 +120,8 @@ section .text
         ;   Label: LAB_0047de76
     MOV EBX,dword ptr [EAX]             ; 0047de7a | DAT_01bc0da8
     PUSH EBX                            ; 0047de7c
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 0047de7d
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 0047de7d
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 0047de82
     TEST EAX,EAX                        ; 0047de85
     JZ 0x0047e026                       ; 0047de87

@@ -8,10 +8,10 @@
 ;   core_dracbrid.cpp_FUN_00465400 at 00465436
 ;   core_menu.cpp_FUN_004ed260 at 004ed972
 ;   core_sound.cpp_FUN_0055a1d0 at 0055a239
-;   sound_sndmain.cpp_FUN_005506b0 at 005506d7
 ;   sound_sndmain.cpp_enableSoundSystem_FUN_005524b0 at 005524cb
 ;   sound_sndmain.cpp_setMaxSwSoundLatency_FUN_00553610 at 00553610
 ;   sound_sndmain.cpp_setSoundOutputMode_FUN_005526f0 at 005526f6
+;   sound_sndmain.cpp_startSfx_FUN_005506b0 at 005506d7
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02648e84

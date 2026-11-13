@@ -99,7 +99,7 @@ int __cdecl core_burncrss_cpp_CBurncross_fire_FUN_00424550(CBurncross *this_ptr)
     (this_ptr->base).fire_cooldown_timer = 1.0;
     return 0;
   }
-  iVar3 = sound_sndmain_cpp_FUN_00556700(this_ptr->sfx_handle);
+  iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handle);
   if (iVar3 == 0) {
     uVar6 = core_sound_cpp_CSound_playActorSound_FUN_005609d0
                       (0x02CF5680,(CDemonActor *)this_ptr,"wp_burningcross.wav",

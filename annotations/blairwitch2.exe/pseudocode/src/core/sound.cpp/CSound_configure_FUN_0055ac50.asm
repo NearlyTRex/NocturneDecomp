@@ -23,19 +23,19 @@
 ; Called Functions:
 ;   core_sound.cpp_CSound_reset_FUN_0055adb0
 ;   sound_sndmain.cpp_enableSoundSystem_FUN_005524b0
-;   sound_sndmain.cpp_FUN_005506b0
-;   sound_sndmain.cpp_FUN_00551490
-;   sound_sndmain.cpp_FUN_005514f0
-;   sound_sndmain.cpp_FUN_00551570
-;   sound_sndmain.cpp_FUN_005527f0
+;   sound_sndmain.cpp_getAudioSampleRate_FUN_005527f0
 ;   sound_sndmain.cpp_getSfxChannelVol_FUN_00551190
 ;   sound_sndmain.cpp_isSoundMuted_FUN_00550bc0
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005504d0
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00550450
+;   sound_sndmain.cpp_set3DListenerOrient_FUN_005514f0
 ;   sound_sndmain.cpp_set3DListenerOrientRight_FUN_00552cc0
+;   sound_sndmain.cpp_set3DListenerPos_FUN_00551490
+;   sound_sndmain.cpp_set3DListenerVelocity_FUN_00551570
 ;   sound_sndmain.cpp_setNextSfxChannel_FUN_00550310
 ;   sound_sndmain.cpp_setNextSfxFlagBits_FUN_005503a0
 ;   sound_sndmain.cpp_setSfxChannelVol_FUN_00551100
+;   sound_sndmain.cpp_startSfx_FUN_005506b0
 ;
 ; *****************************************************************************
 
@@ -111,8 +111,8 @@ section .text
     PUSH 0x0                            ; 0055acfc
     PUSH 0x0                            ; 0055acfe
     PUSH 0x0                            ; 0055ad00
-    CALL sound_sndmain.cpp_FUN_00551490 ; 0055ad02
-        ;   XREF to: 00551490 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00551490()
+    CALL sound_sndmain.cpp_set3DListenerPos_FUN_00551490 ; 0055ad02
+        ;   XREF to: 00551490 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_set3DListenerPos_FUN_00551490(double pos_x, double pos_y, double pos_z)
     ADD ESP,0x18                        ; 0055ad07
     PUSH 0x3f800000                     ; 0055ad0a
     PUSH 0x0                            ; 0055ad0f
@@ -123,14 +123,14 @@ section .text
     PUSH 0x0                            ; 0055ad1c
     PUSH 0x0                            ; 0055ad1e
     PUSH 0x3f800000                     ; 0055ad20
-    CALL sound_sndmain.cpp_FUN_005514f0 ; 0055ad25
-        ;   XREF to: 005514f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005514f0()
+    CALL sound_sndmain.cpp_set3DListenerOrient_FUN_005514f0 ; 0055ad25
+        ;   XREF to: 005514f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_set3DListenerOrient_FUN_005514f0(float front_x, float front_y, float front_z, float up_x, ...)
     ADD ESP,0x24                        ; 0055ad2a
     PUSH 0x0                            ; 0055ad2d
     PUSH 0x0                            ; 0055ad2f
     PUSH 0x0                            ; 0055ad31
-    CALL sound_sndmain.cpp_FUN_00551570 ; 0055ad33
-        ;   XREF to: 00551570 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00551570()
+    CALL sound_sndmain.cpp_set3DListenerVelocity_FUN_00551570 ; 0055ad33
+        ;   XREF to: 00551570 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_set3DListenerVelocity_FUN_00551570(float velocity_x, float velocity_y, float velocity_z)
     ADD ESP,0xc                         ; 0055ad38
     CALL sound_sndmain.cpp_enableSoundSystem_FUN_005524b0 ; 0055ad3b
         ;   XREF to: 005524b0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_enableSoundSystem_FUN_005524b0()
@@ -144,14 +144,14 @@ section .text
     CALL sound_sndmain.cpp_setNextSfxFlagBits_FUN_005503a0 ; 0055ad51
         ;   XREF to: 005503a0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxFlagBits_FUN_005503a0(uint flag_mask)
     ADD ESP,0x4                         ; 0055ad56
-    CALL sound_sndmain.cpp_FUN_005527f0 ; 0055ad59
-        ;   XREF to: 005527f0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005527f0()
+    CALL sound_sndmain.cpp_getAudioSampleRate_FUN_005527f0 ; 0055ad59
+        ;   XREF to: 005527f0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getAudioSampleRate_FUN_005527f0()
     CMP EAX,0x7530                      ; 0055ad5e
     JLE 0x0055ad90                      ; 0055ad63
         ;   XREF to: 0055ad90 (CONDITIONAL_JUMP)  ; LAB_0055ad90
     PUSH 0x5ea904                       ; 0055ad65 | s_XBLAIRMENU_wav_005ea903+1
-    CALL sound_sndmain.cpp_FUN_005506b0 ; 0055ad6a
-        ;   XREF to: 005506b0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005506b0()
+    CALL sound_sndmain.cpp_startSfx_FUN_005506b0 ; 0055ad6a
+        ;   XREF to: 005506b0 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_startSfx_FUN_005506b0(char * filename)
     ADD ESP,0x4                         ; 0055ad6f
     CALL sound_sndmain.cpp_popSfxOptions_FUN_005504d0 ; 0055ad72
         ;   XREF to: 005504d0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_005504d0()
@@ -168,8 +168,8 @@ section .text
         ;   XREF to: 0055ac74 (UNCONDITIONAL_JUMP)  ; LAB_0055ac74
     PUSH 0x5ea913                       ; 0055ad90 | = "XBLAIRMENU.wav"
         ;   Label: LAB_0055ad90
-    CALL sound_sndmain.cpp_FUN_005506b0 ; 0055ad95
-        ;   XREF to: 005506b0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005506b0()
+    CALL sound_sndmain.cpp_startSfx_FUN_005506b0 ; 0055ad95
+        ;   XREF to: 005506b0 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_startSfx_FUN_005506b0(char * filename)
     ADD ESP,0x4                         ; 0055ad9a
     CALL sound_sndmain.cpp_popSfxOptions_FUN_005504d0 ; 0055ad9d
         ;   XREF to: 005504d0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_005504d0()

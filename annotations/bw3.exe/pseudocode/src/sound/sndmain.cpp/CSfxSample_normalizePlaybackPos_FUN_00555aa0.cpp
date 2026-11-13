@@ -14,7 +14,7 @@ double __cdecl sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_00555aa0(CS
   
   position = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00555930
                        (&this_ptr->sample_info,position,input_type,2);
-  iVar1 = sound_sndmain_cpp_FUN_00555b80(this_ptr);
+  iVar1 = sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_00555b80(this_ptr);
   if (iVar1 == 0) {
     if (position < 0.0) {
       position = 0.0;

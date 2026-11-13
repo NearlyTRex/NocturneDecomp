@@ -48,16 +48,13 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_00570f30(CSfxSlot *this_ptr,f
       }
       *(byte *)&this_ptr->changed_flags = (byte)this_ptr->changed_flags | 8;
     }
-    sound_sndmain_cpp_FUN_00570a40();
+    sound_sndmain_cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_00570a40(this_ptr);
     _DAT_02c7fc88 =
-         sound_sndmain_cpp_FUN_00574080
-                   (*(uint *)&(this_ptr->options).position.x,
-                    *(uint *)((int)&(this_ptr->options).position.x + 4),
-                    *(uint *)&(this_ptr->options).position.y,
-                    *(uint *)((int)&(this_ptr->options).position.y + 4),
-                    *(uint *)&(this_ptr->options).position.z);
+         sound_sndmain_cpp_getNearestListener_FUN_00574080
+                   ((this_ptr->options).position.x,(this_ptr->options).position.y,
+                    (this_ptr->options).position.z);
     if (_DAT_02c7fc8c != 0) {
-      sound_sndmain_cpp_FUN_0056f1e0();
+      sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_0056f1e0();
     }
     if ((this_ptr->options).delay_remaining == _DAT_00605af4) {
       if (this_ptr->is_active == 1) {

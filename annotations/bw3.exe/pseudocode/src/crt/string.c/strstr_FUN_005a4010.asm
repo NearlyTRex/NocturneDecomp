@@ -16,7 +16,7 @@
 ;   core_hino.cpp_CHino_process_FUN_0059b960 at 0059c194
 ;   core_hino.cpp_FUN_0059d000 at 0059d02b
 ;   core_script.cpp_trimLine_FUN_00528790 at 005287d5
-;   sound_sndmain.cpp_FUN_00551620 at 0055181a
+;   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00551620 at 0055181a
 ;   sound_sndmain.cpp_trimLineAndRemoveComments_FUN_00551590 at 0055159d
 ;
 ; *****************************************************************************

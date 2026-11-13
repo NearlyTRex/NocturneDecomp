@@ -33,20 +33,20 @@ void __cdecl core_lightgun_cpp_CLightGun_process_FUN_004e38d0(CLightGun *this_pt
   if (EVar1 == WEAPON_STATE_IN_HAND) {
     fVar2 = (_DAT_005f95dc - 0x40000000) * this_ptr->charge_ratio + 0x40000000;
     base_frequency = _DAT_005f95e0 + (_DAT_005f95e4 - _DAT_005f95e0) * this_ptr->charge_ratio;
-    iVar3 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handle);
+    iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handle);
     if (iVar3 == 0) {
       sound_sndmain_cpp_pushSfxOptions_FUN_00550450();
       sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_00550170
                 (&(this_ptr->base).base.location.position);
       sound_sndmain_cpp_setNextSfxVolume_FUN_00550270(fVar2);
       sound_sndmain_cpp_setNextSfxBaseFrequency_FUN_00550290(base_frequency);
-      uVar4 = sound_sndmain_cpp_FUN_005506b0("@cre-charge.wav" + 1);
+      uVar4 = sound_sndmain_cpp_startSfx_FUN_005506b0("@cre-charge.wav" + 1);
       this_ptr->sfx_handle = uVar4;
       sound_sndmain_cpp_popSfxOptions_FUN_005504d0();
     }
     else {
-      sound_sndmain_cpp_FUN_00550f20(this_ptr->sfx_handle,fVar2);
-      sound_sndmain_cpp_FUN_00550f50(this_ptr->sfx_handle,base_frequency);
+      sound_sndmain_cpp_setSfxVolume_FUN_00550f20(this_ptr->sfx_handle,fVar2);
+      sound_sndmain_cpp_setSfxBaseFrequency_FUN_00550f50(this_ptr->sfx_handle,base_frequency);
     }
     core_lightgun_cpp_FUN_004e2bf0(this_ptr);
     if (this_ptr->fire_flash_pending != 0) {

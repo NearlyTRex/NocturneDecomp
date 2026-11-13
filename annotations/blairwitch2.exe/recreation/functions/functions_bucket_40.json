@@ -17717,14 +17717,15 @@
       "005ba8cc",
       "005ba9e0"
     ],
-    "conv":"unknown",
+    "cls":"CSfxSample",
+    "conv":"__cdecl",
     "instructions":429,
-    "method":"FUN_0054bac0",
-    "name":"sound_sndmain.cpp_FUN_0054bac0",
-    "receiver":false,
+    "method":"parseConfigFile",
+    "name":"sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_0054bac0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",
@@ -17766,8 +17767,8 @@
     ],
     "conv":"__cdecl",
     "instructions":379,
-    "method":"FUN_0054c1c0",
-    "name":"sound_sndmain.cpp_FUN_0054c1c0",
+    "method":"getSfxSample",
+    "name":"sound_sndmain.cpp_getSfxSample_FUN_0054c1c0",
     "params":[
       {
         "name":"filename",
@@ -18156,18 +18157,18 @@
       "00553380",
       "0058fd00"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "data_refs":[
       "00551430",
       "0055148e"
     ],
     "instructions":28,
-    "method":"FUN_00551440",
-    "name":"sound_sndmain.cpp_FUN_00551440",
+    "method":"unlockSound",
+    "name":"sound_sndmain.cpp_unlockSound_FUN_00551440",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",
@@ -18414,8 +18415,8 @@
     ],
     "conv":"__cdecl",
     "instructions":29,
-    "method":"FUN_00552e40",
-    "name":"sound_sndmain.cpp_FUN_00552e40",
+    "method":"selectRecordingDevice",
+    "name":"sound_sndmain.cpp_selectRecordingDevice_FUN_00552e40",
     "params":[
       {
         "name":"device_id",
@@ -18508,32 +18509,42 @@
       "0058ffc0",
       "005b7768"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":25,
-    "method":"FUN_005549c0",
-    "name":"sound_sndmain.cpp_FUN_005549c0",
+    "method":"logSoundError",
+    "name":"sound_sndmain.cpp_logSoundError_FUN_005549c0",
+    "params":[
+      {
+        "name":"format",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",
-    "variadic":false
+    "variadic":true
   },
   {
     "addr":"00554ac0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "data_refs":[
       "0061fc68"
     ],
     "instructions":2,
-    "method":"FUN_00554ac0",
-    "name":"sound_sndmain.cpp_FUN_00554ac0",
+    "method":"staticInit",
+    "name":"sound_sndmain.cpp_staticInit_FUN_00554ac0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",

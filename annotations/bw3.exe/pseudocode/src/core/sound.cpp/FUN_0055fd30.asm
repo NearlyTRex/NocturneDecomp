@@ -44,13 +44,13 @@
 ;   core_sound.cpp_updateListeners_FUN_0055e8b0
 ;   sound_sndmain.cpp_enableSfxChannel_FUN_00556db0
 ;   sound_sndmain.cpp_enableSoundSystem_FUN_00558050
-;   sound_sndmain.cpp_FUN_00557100
 ;   sound_sndmain.cpp_getSfxChannelVol_FUN_00556d20
 ;   sound_sndmain.cpp_isSfxChannelEnabled_FUN_00556e30
 ;   sound_sndmain.cpp_isSoundBusy_FUN_005586c0
 ;   sound_sndmain.cpp_popSfxOptions_FUN_00556050
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00555fd0
 ;   sound_sndmain.cpp_set3DListenerOrientRight_FUN_00558860
+;   sound_sndmain.cpp_set3DListenerVelocity_FUN_00557100
 ;   sound_sndmain.cpp_setNextSfxChannel_FUN_00555e90
 ;   sound_sndmain.cpp_setSfxChannelVol_FUN_00556c90
 ;
@@ -72,8 +72,8 @@ section .text
     MOV dword ptr [0x02cf568c],ESI      ; 0055fd53 | DAT_02cf568c
     MOV dword ptr [0x02cf5690],ESI      ; 0055fd59 | DAT_02cf5690
     MOV dword ptr [0x02cf5694],ESI      ; 0055fd5f | DAT_02cf5694
-    CALL sound_sndmain.cpp_FUN_00557100 ; 0055fd65
-        ;   XREF to: 00557100 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00557100()
+    CALL sound_sndmain.cpp_set3DListenerVelocity_FUN_00557100 ; 0055fd65
+        ;   XREF to: 00557100 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_set3DListenerVelocity_FUN_00557100(float velocity_x, float velocity_y, float velocity_z)
     ADD ESP,0xc                         ; 0055fd6a
     CALL core_sound.cpp_updateListeners_FUN_0055e8b0 ; 0055fd6d
         ;   XREF to: 0055e8b0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_updateListeners_FUN_0055e8b0()

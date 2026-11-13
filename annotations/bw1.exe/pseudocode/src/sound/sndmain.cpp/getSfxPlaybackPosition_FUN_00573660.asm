@@ -23,8 +23,8 @@
 ; Called Functions:
 ;   sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_00572430
 ;   sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_00571fa0
-;   sound_sndmain.cpp_FUN_0056fa10
-;   sound_sndmain.cpp_FUN_00573e70
+;   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_0056fa10
+;   sound_sndmain.cpp_unlockSound_FUN_00573e70
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     PUSH 0x1                            ; 0057366c
     MOV EDX,dword ptr [EBP + 0x14]      ; 0057366e
     PUSH EDX                            ; 00573671
-    CALL sound_sndmain.cpp_FUN_0056fa10 ; 00573672
-        ;   XREF to: 0056fa10 (UNCONDITIONAL_CALL)  ; CSfxSlot * sound_sndmain.cpp_FUN_0056fa10(uint sfx_handle, int check_hardware_playback)
+    CALL sound_sndmain.cpp_getSfxSlotFromHandle_FUN_0056fa10 ; 00573672
+        ;   XREF to: 0056fa10 (UNCONDITIONAL_CALL)  ; CSfxSlot * sound_sndmain.cpp_getSfxSlotFromHandle_FUN_0056fa10(uint sfx_handle, int check_hardware_playback)
     ADD ESP,0x8                         ; 00573677
     MOV EBX,EAX                         ; 0057367a
     TEST EAX,EAX                        ; 0057367c
@@ -79,8 +79,8 @@ section .text
     FLD double ptr [ESP + 0x24]         ; 005736bd
     ADD ESP,0x14                        ; 005736c1
     FSTP double ptr [ESP + 0x8]         ; 005736c4
-    CALL sound_sndmain.cpp_FUN_00573e70 ; 005736c8
-        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00573e70()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00573e70 ; 005736c8
+        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00573e70()
     MOV EAX,dword ptr [ESP + 0x8]       ; 005736cd
     MOV dword ptr [ESP],EAX             ; 005736d1
     MOV EAX,dword ptr [ESP + 0xc]       ; 005736d4
@@ -100,8 +100,8 @@ section .text
     MOV dword ptr [ESP + 0x4],ECX       ; 005736f2
     JMP 0x005736dc                      ; 005736f6
         ;   XREF to: 005736dc (UNCONDITIONAL_JUMP)  ; LAB_005736dc
-    CALL sound_sndmain.cpp_FUN_00573e70 ; 005736f8
-        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00573e70()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00573e70 ; 005736f8
+        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00573e70()
         ;   Label: LAB_005736f8
     XOR EDI,EDI                         ; 005736fd
     MOV EAX,0xbff00000                  ; 005736ff

@@ -1274,7 +1274,7 @@ LAB_004896f7:
                                     uVar17 = core_event_cpp_CEventList_getSfxHandle_FUN_00491920
                                                        (param_1,local_138d + 1);
                                     if (local_e4 <= 0.0) {
-                                      sound_sndmain_cpp_FUN_00550f20(uVar17,local_e8);
+                                      sound_sndmain_cpp_setSfxVolume_FUN_00550f20(uVar17,local_e8);
                                     }
                                     else {
                                       sound_sndmain_cpp_setSfxFade_FUN_00551080

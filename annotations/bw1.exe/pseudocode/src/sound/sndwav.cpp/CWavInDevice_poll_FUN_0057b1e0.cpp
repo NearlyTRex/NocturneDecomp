@@ -59,6 +59,6 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_poll_FUN_0057b1e0(CWavInDevice *this_p
     _DAT_02c82a48 = 0;
     _DAT_02c82a44 = iVar1;
   }
-  sound_sndmain_cpp_FUN_005773f0("WavInDevice::poll - queueWavInBuffer failed");
+  sound_sndmain_cpp_logSoundError_FUN_005773f0("WavInDevice::poll - queueWavInBuffer failed");
   return -1;
 }

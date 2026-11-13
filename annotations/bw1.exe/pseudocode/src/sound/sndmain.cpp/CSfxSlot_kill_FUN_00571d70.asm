@@ -7,13 +7,13 @@
 ; CSfxSlot *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[11]:
+;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00570460 at 00570718
 ;   sound_sndmain.cpp_CSfxSlot_compute_FUN_00570f30 at 00571213
-;   sound_sndmain.cpp_FUN_0056fa10 at 0056fa9b
-;   sound_sndmain.cpp_FUN_00570460 at 00570718
-;   sound_sndmain.cpp_FUN_00571420 at 00571565
-;   sound_sndmain.cpp_FUN_00571f10 at 00571f89
-;   sound_sndmain.cpp_FUN_00575db0 at 00575f64
+;   sound_sndmain.cpp_CSfxSlot_mix_FUN_00571420 at 00571565
+;   sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_00571f10 at 00571f89
 ;   sound_sndmain.cpp_enableSfxChannel_FUN_00573c50 at 00573ca7
+;   sound_sndmain.cpp_flushSoundChanges_FUN_00575db0 at 00575f64
+;   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_0056fa10 at 0056fa9b
 ;   sound_sndmain.cpp_killAllSfx_FUN_00573b00 at 00573b13
 ;   sound_sndmain.cpp_killSfxByName_FUN_00574310 at 00574353
 ;   sound_sndmain.cpp_killSfx_FUN_00573a80 at 00573a95
@@ -41,7 +41,7 @@
 ;   core_main.c_FUN_005030e0
 ;   engine_console.cpp_CConsole_printf_FUN_00445430
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00570020
-;   sound_sndmain.cpp_FUN_0056dfd0
+;   sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_0056dfd0
 ;
 ; *****************************************************************************
 
@@ -146,8 +146,8 @@ section .text
     ADD ESP,0x4                         ; 00571e8d
     PUSH 0x0                            ; 00571e90
         ;   Label: LAB_00571e90
-    CALL sound_sndmain.cpp_FUN_0056dfd0 ; 00571e92
-        ;   XREF to: 0056dfd0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_0056dfd0(int requested_bytes)
+    CALL sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_0056dfd0 ; 00571e92
+        ;   XREF to: 0056dfd0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_0056dfd0(int requested_bytes)
     ADD ESP,0x4                         ; 00571e97
     MOV dword ptr [ESI + 0x160],0xffffffff ; 00571e9a
     MOV dword ptr [EBX + 0x118],0x0     ; 00571ea4

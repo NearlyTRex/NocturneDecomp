@@ -583,7 +583,7 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)sound_sndmain_cpp_FUN_0055a660
+        .func = (RUNTIME_HANDLER_FUNC *)sound_sndmain_cpp_staticInit_FUN_0055a660
     },
     {
         .status = 0x00,

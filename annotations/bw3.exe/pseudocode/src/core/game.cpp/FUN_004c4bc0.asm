@@ -9,7 +9,7 @@
 ;
 ; Called Functions:
 ;   core_game.cpp_FUN_004c4a60
-;   sound_sndmain.cpp_FUN_00556700
+;   sound_sndmain.cpp_isSfxPlaying_FUN_00556700
 ;   sound_sndmain.cpp_setSfxFade_FUN_00556c10
 ;
 ; *****************************************************************************
@@ -29,8 +29,8 @@ section .text
     JZ 0x004c4c0e                       ; 004c4bd8
         ;   XREF to: 004c4c0e (CONDITIONAL_JUMP)  ; LAB_004c4c0e
     PUSH ESI                            ; 004c4bda
-    CALL sound_sndmain.cpp_FUN_00556700 ; 004c4bdb
-        ;   XREF to: 00556700 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00556700(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00556700 ; 004c4bdb
+        ;   XREF to: 00556700 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00556700(uint sfx_handle)
     ADD ESP,0x4                         ; 004c4be0
     TEST EAX,EAX                        ; 004c4be3
     JZ 0x004c4c0e                       ; 004c4be5

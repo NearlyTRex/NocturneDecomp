@@ -26,7 +26,7 @@ bool sound_snddx_cpp_FUN_00554e50(int param_1)
     if (error_code != 0) {
       sound_snddx_cpp_FUN_00554ad0(error_code);
       _sprintf((char *)apiStack_1a4,"DirectSux: Unable to %s.  (%s)");
-      sound_sndmain_cpp_FUN_005549c0(apiStack_1a4);
+      sound_sndmain_cpp_logSoundError_FUN_005549c0((char *)apiStack_1a4);
     }
     bVar4 = error_code == 0;
     piVar1 = *(int **)(param_1 + 0x264ac14);

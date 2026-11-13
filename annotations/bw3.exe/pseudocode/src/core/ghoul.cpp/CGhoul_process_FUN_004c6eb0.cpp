@@ -456,10 +456,10 @@ switchD_004c795a_caseD_e:
           if ((this_ptr->base).victim != (CCharacter *)0x0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
                       (&(this_ptr->base).base.model.base,1,1);
-            iVar5 = sound_sndmain_cpp_FUN_00556700(this_ptr->sfx_handles[0]);
+            iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handles[0]);
             if (iVar5 != 0) {
               in_stack_fffffb28 = (char *)0x4c8044;
-              iVar5 = sound_sndmain_cpp_FUN_00556700(this_ptr->sfx_handles[1]);
+              iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handles[1]);
               if (iVar5 != 0) break;
             }
             in_stack_fffffb28 = (char *)this_ptr;

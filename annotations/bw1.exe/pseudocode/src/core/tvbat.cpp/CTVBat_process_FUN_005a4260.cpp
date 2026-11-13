@@ -401,12 +401,12 @@ LAB_005a437b:
   if ((this_ptr->periodic_sound[0] != '\0') &&
      (fVar14 = this_ptr->periodic_sound_timer - delta_time, this_ptr->periodic_sound_timer = fVar14,
      fVar14 <= 0.0)) {
-    iVar15 = sound_sndmain_cpp_FUN_005735a0(this_ptr->periodic_sound_handle);
+    iVar15 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->periodic_sound_handle);
     if ((iVar15 == 0) &&
-       (iVar15 = sound_sndmain_cpp_FUN_00574010
+       (iVar15 = sound_sndmain_cpp_isWithinListenerRadius_FUN_00574010
                            ((double)(this_ptr->base).base.base.location.position.x,
                             (double)(this_ptr->base).base.base.location.position.y,
-                            (double)(this_ptr->base).base.base.location.position.z,0x42480000),
+                            (double)(this_ptr->base).base.base.location.position.z,50.0),
        iVar15 != 0)) {
       uVar13 = (*((this_ptr->base).base.base.vtable._ub)->playAmbientSound)
                          ((CDemonActor *)this_ptr,this_ptr->periodic_sound);

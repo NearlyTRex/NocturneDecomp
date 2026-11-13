@@ -21,7 +21,7 @@
 ;   core_dfilter.cpp_CFilterFX_openMovie_FUN_0045ddb0
 ;   core_event.cpp_CEventList_executeCommands_FUN_004a1b70
 ;   core_main.c_FUN_005030e0
-;   sound_sndmain.cpp_FUN_005735a0
+;   sound_sndmain.cpp_isSfxPlaying_FUN_005735a0
 ;   sound_sndmain.cpp_killSfx_FUN_00573a80
 ;
 ; *****************************************************************************
@@ -71,8 +71,8 @@ section .text
         ;   XREF to: 004ab787 (CONDITIONAL_JUMP)  ; LAB_004ab787
     MOV EDX,dword ptr [EBX + 0x3e0]     ; 004ab731
     PUSH EDX                            ; 004ab737
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 004ab738
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 004ab738
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 004ab73d
     TEST EAX,EAX                        ; 004ab740
     JZ 0x004ab76d                       ; 004ab742

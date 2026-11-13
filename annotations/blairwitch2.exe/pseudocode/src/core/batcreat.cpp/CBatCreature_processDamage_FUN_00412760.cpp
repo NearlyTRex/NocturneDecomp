@@ -96,7 +96,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_processDamage_FUN_00412760(CBatCreat
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                 (&(this_ptr->base).base.model.base,6,1);
     }
-    iVar3 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[1]);
+    iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[1]);
     if (iVar3 == 0) {
       uVar1 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"batman-hurt?.wav");

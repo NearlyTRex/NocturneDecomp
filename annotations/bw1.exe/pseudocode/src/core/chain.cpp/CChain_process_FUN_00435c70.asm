@@ -18,7 +18,7 @@
 ;   core_chain.cpp_CChain_constrainSegmentDistance_FUN_004359e0
 ;   core_chain.cpp_FUN_004357a0
 ;   core_sound.cpp_CSound_playTrackedActorSound_FUN_0057d8d0
-;   sound_sndmain.cpp_FUN_005735a0
+;   sound_sndmain.cpp_isSfxPlaying_FUN_005735a0
 ;   sound_sndmain.cpp_killSfx_FUN_00573a80
 ;
 ; *****************************************************************************
@@ -658,8 +658,8 @@ section .text
     ADD ESP,0x4                         ; 004364df
     MOV ESI,dword ptr [EBX + 0x218]     ; 004364e2
     PUSH ESI                            ; 004364e8
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 004364e9
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 004364e9
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 004364ee
     TEST EAX,EAX                        ; 004364f1
     JZ 0x00436529                       ; 004364f3
@@ -708,16 +708,16 @@ section .text
     MOV ECX,dword ptr [EBX + 0x218]     ; 00436564
         ;   Label: LAB_00436564
     PUSH ECX                            ; 0043656a
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 0043656b
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 0043656b
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 00436570
     TEST EAX,EAX                        ; 00436573
     JNZ 0x004365c3                      ; 00436575
         ;   XREF to: 004365c3 (CONDITIONAL_JUMP)  ; LAB_004365c3
     MOV ESI,dword ptr [EBX + 0x280]     ; 00436577
     PUSH ESI                            ; 0043657d
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 0043657e
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 0043657e
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 00436583
     TEST EAX,EAX                        ; 00436586
     JNZ 0x004365c3                      ; 00436588

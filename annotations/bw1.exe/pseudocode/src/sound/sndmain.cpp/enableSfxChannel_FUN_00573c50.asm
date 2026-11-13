@@ -25,8 +25,8 @@
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_00571d70
-;   sound_sndmain.cpp_FUN_00573e70
 ;   sound_sndmain.cpp_lockSound_FUN_00575d20
+;   sound_sndmain.cpp_unlockSound_FUN_00573e70
 ;
 ; *****************************************************************************
 
@@ -75,8 +75,8 @@ section .text
     CMP EBX,0x4700                      ; 00573cb5
     JNZ 0x00573c97                      ; 00573cbb
         ;   XREF to: 00573c97 (CONDITIONAL_JUMP)  ; LAB_00573c97
-    CALL sound_sndmain.cpp_FUN_00573e70 ; 00573cbd
-        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00573e70()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00573e70 ; 00573cbd
+        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00573e70()
     POP ESI                             ; 00573cc2
         ;   Label: LAB_00573cc2
     POP EBX                             ; 00573cc3

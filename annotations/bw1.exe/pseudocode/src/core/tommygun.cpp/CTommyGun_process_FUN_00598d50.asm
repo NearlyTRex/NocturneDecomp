@@ -18,15 +18,15 @@
 ;   crt_math.c_round_FUN_005c03a0
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   sound_sndmain.cpp_CSfxSample_init_FUN_00572340
-;   sound_sndmain.cpp_FUN_00572a50
-;   sound_sndmain.cpp_FUN_00573980
-;   sound_sndmain.cpp_FUN_00573e70
 ;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00573660
 ;   sound_sndmain.cpp_getSfxSampleInfo_FUN_00573620
 ;   sound_sndmain.cpp_killSfx_FUN_00573a80
 ;   sound_sndmain.cpp_lockSound_FUN_00575d20
 ;   sound_sndmain.cpp_popSfxOptions_FUN_00572b40
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0
+;   sound_sndmain.cpp_setNextSfxTriggerTime_FUN_00572a50
+;   sound_sndmain.cpp_setSfxBaseFrequency_FUN_00573980
+;   sound_sndmain.cpp_unlockSound_FUN_00573e70
 ;
 ; *****************************************************************************
 
@@ -63,8 +63,8 @@ section .text
     FSTP float ptr [ESP + 0xc]          ; 00598dab
     PUSH dword ptr [ESP + 0xc]          ; 00598daf
     PUSH EDX                            ; 00598db3
-    CALL sound_sndmain.cpp_FUN_00573980 ; 00598db4
-        ;   XREF to: 00573980 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00573980(uint sfx_handle, float base_frequency)
+    CALL sound_sndmain.cpp_setSfxBaseFrequency_FUN_00573980 ; 00598db4
+        ;   XREF to: 00573980 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxBaseFrequency_FUN_00573980(uint sfx_handle, float base_frequency)
     ADD ESP,0x8                         ; 00598db9
     TEST EAX,EAX                        ; 00598dbc
     JZ 0x00598dc7                       ; 00598dbe
@@ -183,8 +183,8 @@ section .text
     PUSH ECX                            ; 00598f2a
     MOV ESI,dword ptr [ESP + 0x8]       ; 00598f2b
     PUSH ESI                            ; 00598f2f
-    CALL sound_sndmain.cpp_FUN_00572a50 ; 00598f30
-        ;   XREF to: 00572a50 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572a50(double trigger_time, int trigger_id)
+    CALL sound_sndmain.cpp_setNextSfxTriggerTime_FUN_00572a50 ; 00598f30
+        ;   XREF to: 00572a50 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTriggerTime_FUN_00572a50(double trigger_time, int trigger_id)
     ADD ESP,0xc                         ; 00598f35
     PUSH 0x5f7f36                       ; 00598f38
         ;   Label: LAB_00598f38
@@ -201,8 +201,8 @@ section .text
     CALL sound_sndmain.cpp_killSfx_FUN_00573a80 ; 00598f5c
         ;   XREF to: 00573a80 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00573a80(uint sfx_handle)
     ADD ESP,0x4                         ; 00598f61
-    CALL sound_sndmain.cpp_FUN_00573e70 ; 00598f64
-        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00573e70()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00573e70 ; 00598f64
+        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00573e70()
     MOV ESP,EBP                         ; 00598f69
     POP EBP                             ; 00598f6b
     POP EDI                             ; 00598f6c

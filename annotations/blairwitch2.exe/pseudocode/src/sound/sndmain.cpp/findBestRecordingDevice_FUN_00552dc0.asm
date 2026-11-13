@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   sound_sndmain.cpp_FUN_00552e40 at 00552e61
+;   sound_sndmain.cpp_selectRecordingDevice_FUN_00552e40 at 00552e61
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_getRecordingDeviceCount_FUN_00552d00

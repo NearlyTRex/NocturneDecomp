@@ -21,8 +21,8 @@
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_00555270
-;   sound_sndmain.cpp_FUN_00552f10
-;   sound_sndmain.cpp_FUN_00556fd0
+;   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_00552f10
+;   sound_sndmain.cpp_unlockSound_FUN_00556fd0
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
         ;   Label: sound_sndmain.cpp_killSfx_FUN_00556be0
     MOV EDX,dword ptr [ESP + 0x8]       ; 00556be2
     PUSH EDX                            ; 00556be6
-    CALL sound_sndmain.cpp_FUN_00552f10 ; 00556be7
-        ;   XREF to: 00552f10 (UNCONDITIONAL_CALL)  ; CSfxSlot * sound_sndmain.cpp_FUN_00552f10(uint sfx_handle, int check_hardware_playback)
+    CALL sound_sndmain.cpp_getSfxSlotFromHandle_FUN_00552f10 ; 00556be7
+        ;   XREF to: 00552f10 (UNCONDITIONAL_CALL)  ; CSfxSlot * sound_sndmain.cpp_getSfxSlotFromHandle_FUN_00552f10(uint sfx_handle, int check_hardware_playback)
     ADD ESP,0x8                         ; 00556bec
     TEST EAX,EAX                        ; 00556bef
     JNZ 0x00556bf4                      ; 00556bf1
@@ -44,8 +44,8 @@ section .text
     CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_00555270 ; 00556bf5
         ;   XREF to: 00555270 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_00555270(CSfxSlot * this_ptr)
     ADD ESP,0x4                         ; 00556bfa
-    CALL sound_sndmain.cpp_FUN_00556fd0 ; 00556bfd
-        ;   XREF to: 00556fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00556fd0()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00556fd0 ; 00556bfd
+        ;   XREF to: 00556fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00556fd0()
     MOV EAX,0x1                         ; 00556c02
     RET                                 ; 00556c07
 

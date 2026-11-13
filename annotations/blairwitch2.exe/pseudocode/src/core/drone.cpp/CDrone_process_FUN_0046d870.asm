@@ -153,16 +153,16 @@ section .text
     SUB ESP,0x8                         ; 0046d9b3
     FLD float ptr [EBX + 0x20]          ; 0046d9b6
     FSTP double ptr [ESP]               ; 0046d9b9
-    CALL sound_sndmain.cpp_FUN_005515e0 ; 0046d9bc
-        ;   XREF to: 005515e0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005515e0()
+    CALL sound_sndmain.cpp_isWithinListenerRadius_FUN_005515e0 ; 0046d9bc
+        ;   XREF to: 005515e0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isWithinListenerRadius_FUN_005515e0(double pos_x, double pos_y, double pos_z, float radius)
     ADD ESP,0x1c                        ; 0046d9c1
     TEST EAX,EAX                        ; 0046d9c4
     JZ 0x0046df51                       ; 0046d9c6
         ;   XREF to: 0046df51 (CONDITIONAL_JUMP)  ; LAB_0046df51
     MOV EDI,dword ptr [EBX + 0x10b08]   ; 0046d9cc
     PUSH EDI                            ; 0046d9d2
-    CALL sound_sndmain.cpp_FUN_00550b70 ; 0046d9d3
-        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00550b70(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00550b70 ; 0046d9d3
+        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00550b70(uint sfx_handle)
     ADD ESP,0x4                         ; 0046d9d8
     TEST EAX,EAX                        ; 0046d9db
     JZ 0x0046df05                       ; 0046d9dd
@@ -616,8 +616,8 @@ section .text
     MOV ECX,dword ptr [EBX + 0x10b0c]   ; 0046de90
     PUSH ECX                            ; 0046de96
     MOV dword ptr [EBX + 0x10a74],0x3f800000 ; 0046de97
-    CALL sound_sndmain.cpp_FUN_00550b70 ; 0046dea1
-        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00550b70(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00550b70 ; 0046dea1
+        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00550b70(uint sfx_handle)
     ADD ESP,0x4                         ; 0046dea6
     TEST EAX,EAX                        ; 0046dea9
     JNZ 0x0046d971                      ; 0046deab

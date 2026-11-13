@@ -21,7 +21,7 @@
 ;   core_gore.cpp_CGore_spawnFliesOnActor_FUN_004e64d0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
-;   sound_sndmain.cpp_FUN_005735a0
+;   sound_sndmain.cpp_isSfxPlaying_FUN_005735a0
 ;   sound_sndmain.cpp_killSfx_FUN_00573a80
 ;
 ; *****************************************************************************
@@ -81,8 +81,8 @@ section .text
     ADD ESP,0xc                         ; 0059454f
     MOV EAX,dword ptr [EBX + 0x95614]   ; 00594552
     PUSH EAX                            ; 00594558
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 00594559
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 00594559
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 0059455e
     TEST EAX,EAX                        ; 00594561
     JZ 0x00594625                       ; 00594563

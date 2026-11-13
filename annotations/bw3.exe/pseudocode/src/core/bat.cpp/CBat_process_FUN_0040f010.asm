@@ -18,8 +18,8 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_bat.cpp_CBat_updateCoursePosition_FUN_0040f2f0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
-;   sound_sndmain.cpp_FUN_00556700
-;   sound_sndmain.cpp_FUN_00557170
+;   sound_sndmain.cpp_isSfxPlaying_FUN_00556700
+;   sound_sndmain.cpp_isWithinListenerRadius_FUN_00557170
 ;
 ; *****************************************************************************
 
@@ -155,8 +155,8 @@ section .text
     MOV ESI,dword ptr [EBX + 0x380]     ; 0040f17d
         ;   Label: LAB_0040f17d
     PUSH ESI                            ; 0040f183
-    CALL sound_sndmain.cpp_FUN_00556700 ; 0040f184
-        ;   XREF to: 00556700 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00556700(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00556700 ; 0040f184
+        ;   XREF to: 00556700 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00556700(uint sfx_handle)
     ADD ESP,0x4                         ; 0040f189
     TEST EAX,EAX                        ; 0040f18c
     JNZ 0x0040f1d6                      ; 0040f18e
@@ -171,8 +171,8 @@ section .text
     SUB ESP,0x8                         ; 0040f1a7
     FLD float ptr [EBX + 0x20]          ; 0040f1aa
     FSTP double ptr [ESP]               ; 0040f1ad
-    CALL sound_sndmain.cpp_FUN_00557170 ; 0040f1b0
-        ;   XREF to: 00557170 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00557170()
+    CALL sound_sndmain.cpp_isWithinListenerRadius_FUN_00557170 ; 0040f1b0
+        ;   XREF to: 00557170 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isWithinListenerRadius_FUN_00557170(double pos_x, double pos_y, double pos_z, float radius)
     ADD ESP,0x1c                        ; 0040f1b5
     TEST EAX,EAX                        ; 0040f1b8
     JZ 0x0040f1d6                       ; 0040f1ba

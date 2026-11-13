@@ -14,7 +14,7 @@
 ;   TerminatedCString s_were_wav_005ee74a
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_00550b70
+;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     MOV EDX,dword ptr [EBX + 0x10b14]   ; 0058d065
     PUSH EDX                            ; 0058d06b
     MOV dword ptr [EBX + 0x10b18],0x41200000 ; 0058d06c
-    CALL sound_sndmain.cpp_FUN_00550b70 ; 0058d076
-        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00550b70(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00550b70 ; 0058d076
+        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00550b70(uint sfx_handle)
     ADD ESP,0x4                         ; 0058d07b
     TEST EAX,EAX                        ; 0058d07e
     JZ 0x0058d084                       ; 0058d080

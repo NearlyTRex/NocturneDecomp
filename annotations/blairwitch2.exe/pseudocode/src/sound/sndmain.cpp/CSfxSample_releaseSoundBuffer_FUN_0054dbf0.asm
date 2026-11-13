@@ -8,9 +8,9 @@
 ;
 ; XREF[4]:
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_0054d9b0 at 0054d9e4
-;   sound_sndmain.cpp_FUN_0054c1c0 at 0054c561
-;   sound_sndmain.cpp_FUN_0054ddf0 at 0054e38c
-;   sound_sndmain.cpp_FUN_00551890 at 005518cd
+;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_0054ddf0 at 0054e38c
+;   sound_sndmain.cpp_getSfxSample_FUN_0054c1c0 at 0054c561
+;   sound_sndmain.cpp_unlockSample_FUN_00551890 at 005518cd
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02648e80

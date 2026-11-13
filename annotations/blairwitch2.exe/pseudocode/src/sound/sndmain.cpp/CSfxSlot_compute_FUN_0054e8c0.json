@@ -2,31 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 458,
-    "complexity_score": 238,
+    "complexity_score": 210,
     "cross_reference_count": 5,
     "function_call_count": 10,
     "global_count": 30,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 133,
-    "suspect_count": 9,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 130,
+    "suspect_count": 7,
     "suspect_types": [
-      "pointer_cast",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 591
+    "total_lines": 588
   },
   "cross_references": [
     {
-      "addr": "005506b0",
-      "from_addr": "005508f1",
-      "name": "sound_sndmain.cpp_FUN_005506b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00553380",
       "from_addr": "005534e5",
-      "name": "sound_sndmain.cpp_FUN_00553380",
+      "name": "sound_sndmain.cpp_flushSoundChanges_FUN_00553380",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -45,6 +38,12 @@
       "addr": "005541f0",
       "from_addr": "005543ba",
       "name": "sound_sndmain.cpp_pollAndMixSfx_FUN_005541f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005506b0",
+      "from_addr": "005508f1",
+      "name": "sound_sndmain.cpp_startSfx_FUN_005506b0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -73,6 +72,11 @@
       "name": "engine_console.cpp_CConsole_printf_FUN_00436710"
     },
     {
+      "addr": "0054cb70",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_0054cb70"
+    },
+    {
       "addr": "0054e820",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_0054e820"
@@ -98,19 +102,14 @@
       "name": "sound_sndmain.cpp_CSfxSlot_kill_FUN_0054f700"
     },
     {
-      "addr": "0054cb70",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_0054cb70"
-    },
-    {
       "addr": "0054e3d0",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_0054e3d0"
+      "name": "sound_sndmain.cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_0054e3d0"
     },
     {
       "addr": "00551650",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00551650"
+      "name": "sound_sndmain.cpp_getNearestListener_FUN_00551650"
     }
   ],
   "globals": [
@@ -301,7 +300,7 @@
       {
         "call_addr": "005508f1",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_005506b0",
+        "caller": "sound_sndmain.cpp_startSfx_FUN_005506b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -312,7 +311,7 @@
       {
         "call_addr": "005534e5",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00553380",
+        "caller": "sound_sndmain.cpp_flushSoundChanges_FUN_00553380",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -570,7 +569,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 72,
+      "line": 69,
       "match": "DAT_02648428",
       "severity": "mild",
       "text": "(float10)*(double *)(&DAT_02648428 + _DAT_026484b8 * 8);",
@@ -578,7 +577,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 74,
+      "line": 71,
       "match": "DAT_02648438",
       "severity": "mild",
       "text": "(float10)*(double *)(&DAT_02648438 + _DAT_026484b8 * 8);",
@@ -586,7 +585,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 76,
+      "line": 73,
       "match": "DAT_02648448",
       "severity": "mild",
       "text": "(float10)*(double *)(&DAT_02648448 + _DAT_026484b8 * 8);",
@@ -594,7 +593,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 91,
+      "line": 88,
       "match": "DAT_0061bcb4",
       "severity": "mild",
       "text": "local_28 = (fVar1 * DAT_0061bcb4 + _DAT_005fbc18) / _DAT_005fbc18;",
@@ -602,7 +601,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 116,
+      "line": 113,
       "match": "DAT_0061bc9c",
       "severity": "mild",
       "text": "if ((this_ptr->is_active == 1) && (iVar5 = 0, 0 < DAT_0061bc9c)) {",
@@ -610,27 +609,11 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 120,
+      "line": 117,
       "match": "DAT_0061bc9c",
       "severity": "mild",
       "text": "} while (iVar5 < DAT_0061bc9c);",
       "type": "undefined_data"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 48,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(this_ptr->options).position.x + 4),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 50,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(this_ptr->options).position.y + 4),",
-      "type": "pointer_cast"
     }
   ]
 }

@@ -28,7 +28,7 @@ void __cdecl core_larva_cpp_CLarva_processDamage_FUN_004e1140(CLarva *this_ptr,S
   (this_ptr->base).base.hit_points = fVar1;
   if (0.0 < fVar1) {
     sound_sndmain_cpp_killSfx_FUN_00551050(this_ptr->sfx_handles[1]);
-    iVar2 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[0]);
+    iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[0]);
     if (iVar2 == 0) {
       _sprintf(acStack_f0,"l%s-shot?.wav");
       uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)

@@ -7,8 +7,8 @@
 ; CInStreamFile *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
+;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_0054ddf0 at 0054e305
 ;   sound_sndmain.cpp_CSfxSample_seek_FUN_0054dc50 at 0054dd7f
-;   sound_sndmain.cpp_FUN_0054ddf0 at 0054e305
 ;   support_codec.cpp_FUN_004340f0 at 0043410d
 ;
 ; *****************************************************************************

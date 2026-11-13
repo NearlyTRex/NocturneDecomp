@@ -513,8 +513,8 @@ section .text
         ;   XREF to: 0050beba (CONDITIONAL_JUMP)  ; LAB_0050beba
     POP EDI                             ; 0050bed2
         ;   Label: LAB_0050bed2
-    CALL sound_sndmain.cpp_FUN_00575220 ; 0050bed3
-        ;   XREF to: 00575220 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00575220()
+    CALL sound_sndmain.cpp_getAudioSampleRate_FUN_00575220 ; 0050bed3
+        ;   XREF to: 00575220 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getAudioSampleRate_FUN_00575220()
     PUSH EAX                            ; 0050bed8
     PUSH 0x5e80ae                       ; 0050bed9 | DAT_005e80ae
     LEA EAX,[ESP + 0x720]               ; 0050bede
@@ -597,8 +597,8 @@ section .text
         ;   XREF to: 0050bf72 (CONDITIONAL_JUMP)  ; LAB_0050bf72
     POP EDI                             ; 0050bf8a
         ;   Label: LAB_0050bf8a
-    CALL sound_sndmain.cpp_FUN_00575200 ; 0050bf8b
-        ;   XREF to: 00575200 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00575200()
+    CALL sound_sndmain.cpp_getAudioBitDepth_FUN_00575200 ; 0050bf8b
+        ;   XREF to: 00575200 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getAudioBitDepth_FUN_00575200()
     PUSH EAX                            ; 0050bf90
     PUSH 0x5e80c6                       ; 0050bf91 | DAT_005e80c6
     LEA EAX,[ESP + 0x720]               ; 0050bf96
@@ -655,8 +655,8 @@ section .text
     POP EDI                             ; 0050bfff
         ;   Label: LAB_0050bfff
     LEA ESI,[EBX + 0x1]                 ; 0050c000
-    CALL sound_sndmain.cpp_FUN_00575240 ; 0050c003
-        ;   XREF to: 00575240 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00575240()
+    CALL sound_sndmain.cpp_getAudioChannelCount_FUN_00575240 ; 0050c003
+        ;   XREF to: 00575240 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getAudioChannelCount_FUN_00575240()
     MOV dword ptr [ESP + 0xa3c],ESI     ; 0050c008
     CMP EAX,0x1                         ; 0050c00f
     JNC 0x0050c3f4                      ; 0050c012
@@ -795,8 +795,8 @@ section .text
     TEST EAX,EAX                        ; 0050c169
     JZ 0x0050c2c6                       ; 0050c16b
         ;   XREF to: 0050c2c6 (CONDITIONAL_JUMP)  ; LAB_0050c2c6
-    CALL sound_sndmain.cpp_FUN_00575240 ; 0050c171
-        ;   XREF to: 00575240 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00575240()
+    CALL sound_sndmain.cpp_getAudioChannelCount_FUN_00575240 ; 0050c171
+        ;   XREF to: 00575240 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getAudioChannelCount_FUN_00575240()
     MOV EBX,EAX                         ; 0050c176
     MOV dword ptr [ESP + 0xa40],EAX     ; 0050c178
     MOV EAX,[0x0061b498]                ; 0050c17f | DAT_0061b498
@@ -1082,8 +1082,8 @@ section .text
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0 ; 0050c4a7
         ;   XREF to: 00572ac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0()
     PUSH 0x1                            ; 0050c4ac
-    CALL sound_sndmain.cpp_FUN_005729f0 ; 0050c4ae
-        ;   XREF to: 005729f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_005729f0(uint flags)
+    CALL sound_sndmain.cpp_setNextSfxFlags_FUN_005729f0 ; 0050c4ae
+        ;   XREF to: 005729f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxFlags_FUN_005729f0(uint flags)
     ADD ESP,0x4                         ; 0050c4b3
     PUSH 0x5e813b                       ; 0050c4b6 | = "colt45-0.wav"
     CALL sound_sndmain.cpp_startSfx_FUN_00572d20 ; 0050c4bb
@@ -1351,8 +1351,8 @@ section .text
     MOV dword ptr [ESP + 0x1c],EDI      ; 0050c769
     JMP 0x0050c6b4                      ; 0050c76d
         ;   XREF to: 0050c6b4 (UNCONDITIONAL_JUMP)  ; LAB_0050c6b4
-    CALL sound_sndmain.cpp_FUN_00575220 ; 0050c772
-        ;   XREF to: 00575220 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00575220()
+    CALL sound_sndmain.cpp_getAudioSampleRate_FUN_00575220 ; 0050c772
+        ;   XREF to: 00575220 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getAudioSampleRate_FUN_00575220()
         ;   Label: caseD_4
     MOV ESI,dword ptr [0x01d1ee8c]      ; 0050c777 | DAT_01d1ee8c
     MOV EBX,EAX                         ; 0050c77d
@@ -1371,8 +1371,8 @@ section .text
     JLE 0x0050c79e                      ; 0050c797
         ;   XREF to: 0050c79e (CONDITIONAL_JUMP)  ; LAB_0050c79e
     MOV EBX,0xac44                      ; 0050c799
-    CALL sound_sndmain.cpp_FUN_00575220 ; 0050c79e
-        ;   XREF to: 00575220 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00575220()
+    CALL sound_sndmain.cpp_getAudioSampleRate_FUN_00575220 ; 0050c79e
+        ;   XREF to: 00575220 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getAudioSampleRate_FUN_00575220()
         ;   Label: LAB_0050c79e
     CMP EBX,EAX                         ; 0050c7a3
     JZ 0x0050c341                       ; 0050c7a5
@@ -1412,22 +1412,22 @@ section .text
     MOV EBX,0xac44                      ; 0050c7ef
     JMP 0x0050c790                      ; 0050c7f4
         ;   XREF to: 0050c790 (UNCONDITIONAL_JUMP)  ; LAB_0050c790
-    CALL sound_sndmain.cpp_FUN_00575200 ; 0050c7f6
-        ;   XREF to: 00575200 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00575200()
+    CALL sound_sndmain.cpp_getAudioBitDepth_FUN_00575200 ; 0050c7f6
+        ;   XREF to: 00575200 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getAudioBitDepth_FUN_00575200()
         ;   Label: caseD_5
     CMP EAX,0x10                        ; 0050c7fb
     JNZ 0x0050c83a                      ; 0050c7fe
         ;   XREF to: 0050c83a (CONDITIONAL_JUMP)  ; LAB_0050c83a
     MOV EBX,0x8                         ; 0050c800
-    CALL sound_sndmain.cpp_FUN_00575560 ; 0050c805
-        ;   XREF to: 00575560 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00575560(int enable)
+    CALL sound_sndmain.cpp_hasHardware3DSound_FUN_00575560 ; 0050c805
+        ;   XREF to: 00575560 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_hasHardware3DSound_FUN_00575560()
         ;   Label: LAB_0050c805
     TEST EAX,EAX                        ; 0050c80a
     JLE 0x0050c813                      ; 0050c80c
         ;   XREF to: 0050c813 (CONDITIONAL_JUMP)  ; LAB_0050c813
     MOV EBX,0x10                        ; 0050c80e
-    CALL sound_sndmain.cpp_FUN_00575200 ; 0050c813
-        ;   XREF to: 00575200 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00575200()
+    CALL sound_sndmain.cpp_getAudioBitDepth_FUN_00575200 ; 0050c813
+        ;   XREF to: 00575200 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getAudioBitDepth_FUN_00575200()
         ;   Label: LAB_0050c813
     CMP EBX,EAX                         ; 0050c818
     JZ 0x0050c341                       ; 0050c81a
@@ -1446,21 +1446,21 @@ section .text
         ;   Label: LAB_0050c83a
     JMP 0x0050c805                      ; 0050c83f
         ;   XREF to: 0050c805 (UNCONDITIONAL_JUMP)  ; LAB_0050c805
-    CALL sound_sndmain.cpp_FUN_00575240 ; 0050c841
-        ;   XREF to: 00575240 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00575240()
+    CALL sound_sndmain.cpp_getAudioChannelCount_FUN_00575240 ; 0050c841
+        ;   XREF to: 00575240 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getAudioChannelCount_FUN_00575240()
         ;   Label: caseD_6
     CMP EAX,0x1                         ; 0050c846
     SETZ AL                             ; 0050c849
     AND EAX,0xff                        ; 0050c84c
     LEA EBX,[EAX + 0x1]                 ; 0050c851
-    CALL sound_sndmain.cpp_FUN_00575560 ; 0050c854
-        ;   XREF to: 00575560 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00575560(int enable)
+    CALL sound_sndmain.cpp_hasHardware3DSound_FUN_00575560 ; 0050c854
+        ;   XREF to: 00575560 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_hasHardware3DSound_FUN_00575560()
     TEST EAX,EAX                        ; 0050c859
     JLE 0x0050c862                      ; 0050c85b
         ;   XREF to: 0050c862 (CONDITIONAL_JUMP)  ; LAB_0050c862
     MOV EBX,0x2                         ; 0050c85d
-    CALL sound_sndmain.cpp_FUN_00575240 ; 0050c862
-        ;   XREF to: 00575240 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00575240()
+    CALL sound_sndmain.cpp_getAudioChannelCount_FUN_00575240 ; 0050c862
+        ;   XREF to: 00575240 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getAudioChannelCount_FUN_00575240()
         ;   Label: LAB_0050c862
     CMP EBX,EAX                         ; 0050c867
     JZ 0x0050c341                       ; 0050c869
@@ -1527,8 +1527,8 @@ section .text
     ADD ESP,0x4                         ; 0050c8f5
     CALL sound_sndmain.cpp_initializeSoundDevice_FUN_005755c0 ; 0050c8f8
         ;   XREF to: 005755c0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_initializeSoundDevice_FUN_005755c0()
-    CALL sound_sndmain.cpp_FUN_00575560 ; 0050c8fd
-        ;   XREF to: 00575560 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00575560(int enable)
+    CALL sound_sndmain.cpp_hasHardware3DSound_FUN_00575560 ; 0050c8fd
+        ;   XREF to: 00575560 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_hasHardware3DSound_FUN_00575560()
     TEST EAX,EAX                        ; 0050c902
     JLE 0x0050c917                      ; 0050c904
         ;   XREF to: 0050c917 (CONDITIONAL_JUMP)  ; LAB_0050c917
@@ -1562,8 +1562,8 @@ section .text
     JLE 0x0050c95c                      ; 0050c946
         ;   XREF to: 0050c95c (CONDITIONAL_JUMP)  ; LAB_0050c95c
     PUSH 0x0                            ; 0050c948
-    CALL sound_sndmain.cpp_FUN_00575580 ; 0050c94a
-        ;   XREF to: 00575580 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00575580()
+    CALL sound_sndmain.cpp_enableHwSoundMixing_FUN_00575580 ; 0050c94a
+        ;   XREF to: 00575580 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_enableHwSoundMixing_FUN_00575580(int enable)
     ADD ESP,0x4                         ; 0050c94f
     CALL sound_sndmain.cpp_initializeSoundDevice_FUN_005755c0 ; 0050c952
         ;   XREF to: 005755c0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_initializeSoundDevice_FUN_005755c0()
@@ -1571,8 +1571,8 @@ section .text
         ;   XREF to: 0050c333 (UNCONDITIONAL_JUMP)  ; LAB_0050c333
     PUSH 0x2                            ; 0050c95c
         ;   Label: LAB_0050c95c
-    CALL sound_sndmain.cpp_FUN_00575580 ; 0050c95e
-        ;   XREF to: 00575580 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00575580()
+    CALL sound_sndmain.cpp_enableHwSoundMixing_FUN_00575580 ; 0050c95e
+        ;   XREF to: 00575580 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_enableHwSoundMixing_FUN_00575580(int enable)
     ADD ESP,0x4                         ; 0050c963
     CALL sound_sndmain.cpp_initializeSoundDevice_FUN_005755c0 ; 0050c966
         ;   XREF to: 005755c0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_initializeSoundDevice_FUN_005755c0()

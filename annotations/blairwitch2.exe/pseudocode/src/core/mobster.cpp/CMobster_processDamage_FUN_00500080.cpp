@@ -56,7 +56,7 @@ LAB_00500121:
     iVar3 = core_actor_cpp_randomChance_FUN_0040d060(0.5);
     if (iVar3 != 0) goto LAB_00500121;
   }
-  iVar3 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[0]);
+  iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[0]);
   if (iVar3 == 0) {
     uVar4 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                       ((CDemonActor *)this_ptr,"mobster-hit-?.wav");

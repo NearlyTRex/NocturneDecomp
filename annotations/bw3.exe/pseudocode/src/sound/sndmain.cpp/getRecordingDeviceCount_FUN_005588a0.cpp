@@ -16,7 +16,7 @@ int __cdecl sound_sndmain_cpp_getRecordingDeviceCount_FUN_005588a0(void)
     return DAT_00604254;
   }
   sound_sndmain_cpp_lockSound_FUN_00558e90();
-  sound_sndmain_cpp_FUN_00556fd0();
+  sound_sndmain_cpp_unlockSound_FUN_00556fd0();
   DAT_00604254 = 0;
   device_id = 0;
   do {

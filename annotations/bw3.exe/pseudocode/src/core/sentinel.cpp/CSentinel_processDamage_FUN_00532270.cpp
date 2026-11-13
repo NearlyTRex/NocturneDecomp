@@ -32,7 +32,7 @@ void __cdecl core_sentinel_cpp_CSentinel_processDamage_FUN_00532270(CSentinel *t
       core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
                 (&(this_ptr->base).base.model.base,7,1);
     }
-    iVar4 = sound_sndmain_cpp_FUN_00556700(this_ptr->sfx_handle);
+    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handle);
     if (iVar4 != 0) goto LAB_005322ed;
     sound_name = "sentinel-hurt?.wav";
   }

@@ -35,7 +35,7 @@ void __cdecl core_hostage_cpp_CHostage_processDamage_FUN_004d30d0(CHostage *this
       this_ptr->grabber_flee_timer = 3.0;
       this_ptr->grabber = pCVar2;
     }
-    iVar3 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handle);
+    iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handle);
     if (iVar3 == 0) {
       uVar4 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,this_ptr->damage_sound);

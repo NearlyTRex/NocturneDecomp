@@ -10,8 +10,8 @@
 ;   core_menu.cpp_FUN_004e94f0 at 004ea147
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_00558370
-;   sound_sndmain.cpp_FUN_005583b0
+;   sound_sndmain.cpp_getAudioBitDepth_FUN_00558370
+;   sound_sndmain.cpp_getAudioChannelCount_FUN_005583b0
 ;   sound_sndmain.cpp_setSoundOutputMode_FUN_00558290
 ;
 ; *****************************************************************************
@@ -21,11 +21,11 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 00558410
         ;   Label: sound_sndmain.cpp_setAudioSampleRate_FUN_00558410
     PUSH EDX                            ; 00558414
-    CALL sound_sndmain.cpp_FUN_005583b0 ; 00558415
-        ;   XREF to: 005583b0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005583b0()
+    CALL sound_sndmain.cpp_getAudioChannelCount_FUN_005583b0 ; 00558415
+        ;   XREF to: 005583b0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getAudioChannelCount_FUN_005583b0()
     PUSH EAX                            ; 0055841a
-    CALL sound_sndmain.cpp_FUN_00558370 ; 0055841b
-        ;   XREF to: 00558370 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00558370()
+    CALL sound_sndmain.cpp_getAudioBitDepth_FUN_00558370 ; 0055841b
+        ;   XREF to: 00558370 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getAudioBitDepth_FUN_00558370()
     PUSH EAX                            ; 00558420
     CALL sound_sndmain.cpp_setSoundOutputMode_FUN_00558290 ; 00558421
         ;   XREF to: 00558290 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSoundOutputMode_FUN_00558290(int bits_per_sample, int channels, int sample_rate)

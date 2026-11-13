@@ -471,8 +471,8 @@ section .text
     MOV EDX,dword ptr [EBX + 0x25648]   ; 004d516d
         ;   Label: LAB_004d516d
     PUSH EDX                            ; 004d5173
-    CALL sound_sndmain.cpp_FUN_00550b70 ; 004d5174
-        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00550b70(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00550b70 ; 004d5174
+        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00550b70(uint sfx_handle)
     ADD ESP,0x4                         ; 004d5179
     TEST EAX,EAX                        ; 004d517c
     JZ 0x004d52aa                       ; 004d517e

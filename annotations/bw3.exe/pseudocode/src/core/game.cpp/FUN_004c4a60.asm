@@ -14,14 +14,14 @@
 ; Called Functions:
 ;   core_sound.cpp_CSound_playSound_FUN_005609b0
 ;   crt_string.c__stricmp_FUN_005a3260
-;   sound_sndmain.cpp_FUN_00555df0
-;   sound_sndmain.cpp_FUN_00556700
 ;   sound_sndmain.cpp_isSfxChannelEnabled_FUN_00556e30
+;   sound_sndmain.cpp_isSfxPlaying_FUN_00556700
 ;   sound_sndmain.cpp_popSfxOptions_FUN_00556050
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00555fd0
 ;   sound_sndmain.cpp_setNextSfxChannel_FUN_00555e90
 ;   sound_sndmain.cpp_setNextSfxFlagBits_FUN_00555f20
 ;   sound_sndmain.cpp_setNextSfxTriggerTime_FUN_00555f60
+;   sound_sndmain.cpp_setNextSfxVolume_FUN_00555df0
 ;   sound_sndmain.cpp_setSfxFade_FUN_00556c10
 ;
 ; *****************************************************************************
@@ -92,8 +92,8 @@ section .text
     RET                                 ; 004c4ae4
     PUSH EDX                            ; 004c4ae5
         ;   Label: LAB_004c4ae5
-    CALL sound_sndmain.cpp_FUN_00556700 ; 004c4ae6
-        ;   XREF to: 00556700 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00556700(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00556700 ; 004c4ae6
+        ;   XREF to: 00556700 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00556700(uint sfx_handle)
     ADD ESP,0x4                         ; 004c4aeb
     TEST EAX,EAX                        ; 004c4aee
     JNZ 0x004c4ae0                      ; 004c4af0
@@ -127,8 +127,8 @@ section .text
     JZ 0x004c4bb1                       ; 004c4b2a
         ;   XREF to: 004c4bb1 (CONDITIONAL_JUMP)  ; LAB_004c4bb1
     PUSH 0x3c23d70a                     ; 004c4b30
-    CALL sound_sndmain.cpp_FUN_00555df0 ; 004c4b35
-        ;   XREF to: 00555df0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00555df0(float volume)
+    CALL sound_sndmain.cpp_setNextSfxVolume_FUN_00555df0 ; 004c4b35
+        ;   XREF to: 00555df0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxVolume_FUN_00555df0(float volume)
         ;   Label: LAB_004c4b35
     ADD ESP,0x4                         ; 004c4b3a
     PUSH 0x1                            ; 004c4b3d

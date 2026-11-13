@@ -13,11 +13,11 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_updateSfxEntries_FUN_00491a90
-;   sound_sndmain.cpp_FUN_005506b0
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005504d0
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00550450
 ;   sound_sndmain.cpp_setNextSfxFlagBits_FUN_005503a0
 ;   sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005503e0
+;   sound_sndmain.cpp_startSfx_FUN_005506b0
 ;
 ; *****************************************************************************
 
@@ -56,8 +56,8 @@ section .text
         ;   XREF to: 005503a0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxFlagBits_FUN_005503a0(uint flag_mask)
     ADD ESP,0x4                         ; 00491c35
     PUSH EDI                            ; 00491c38
-    CALL sound_sndmain.cpp_FUN_005506b0 ; 00491c39
-        ;   XREF to: 005506b0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005506b0()
+    CALL sound_sndmain.cpp_startSfx_FUN_005506b0 ; 00491c39
+        ;   XREF to: 005506b0 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_startSfx_FUN_005506b0(char * filename)
     ADD ESP,0x4                         ; 00491c3e
     INC EBX                             ; 00491c41
     MOV dword ptr [ESI],EAX             ; 00491c42

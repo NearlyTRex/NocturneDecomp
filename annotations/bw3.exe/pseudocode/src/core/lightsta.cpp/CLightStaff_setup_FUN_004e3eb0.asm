@@ -13,7 +13,7 @@
 ;   core_charactr.cpp_FUN_0042f280
 ;   core_fire.cpp_FUN_004a4130
 ;   core_weapon.cpp_CWeapon_setup_FUN_0057af40
-;   sound_sndmain.cpp_FUN_00556230
+;   sound_sndmain.cpp_preloadSfx_FUN_00556230
 ;
 ; *****************************************************************************
 
@@ -26,20 +26,20 @@ section .text
         ;   XREF to: 0057af40 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_setup_FUN_0057af40(CWeapon * this_ptr)
     ADD ESP,0x4                         ; 004e3eba
     PUSH 0x5c6aae                       ; 004e3ebd
-    CALL sound_sndmain.cpp_FUN_00556230 ; 004e3ec2
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 004e3ec2
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 004e3ec7
     PUSH 0x5c6abc                       ; 004e3eca
-    CALL sound_sndmain.cpp_FUN_00556230 ; 004e3ecf
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 004e3ecf
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 004e3ed4
     PUSH 0x5c6ad2                       ; 004e3ed7
-    CALL sound_sndmain.cpp_FUN_00556230 ; 004e3edc
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 004e3edc
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 004e3ee1
     PUSH 0x5c6aed                       ; 004e3ee4
-    CALL sound_sndmain.cpp_FUN_00556230 ; 004e3ee9
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 004e3ee9
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 004e3eee
     PUSH 0x3                            ; 004e3ef1
     MOV ECX,dword ptr [0x005fc5a0]      ; 004e3ef3 | DAT_005fc5a0

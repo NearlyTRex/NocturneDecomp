@@ -41,7 +41,7 @@ void __cdecl sound_sndmain_cpp_getChannelLevels_FUN_00559c90(int channel,float *
       iVar2 = iVar2 + 1;
     } while (iVar2 < _DAT_02cf329c);
   }
-  sound_sndmain_cpp_FUN_00556fd0();
+  sound_sndmain_cpp_unlockSound_FUN_00556fd0();
   fStack_20 = fStack_20 / (float)_DAT_02cf329c;
   if (1.0 < fStack_1c) {
     fStack_1c = 1.0;

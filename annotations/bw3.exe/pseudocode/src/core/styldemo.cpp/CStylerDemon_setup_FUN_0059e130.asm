@@ -286,108 +286,108 @@ section .text
         ;   XREF to: 0054e6b0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0059e40c
     PUSH 0x5d9ffd                       ; 0059e40f | = "stydem_stand.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059e414
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059e414
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059e419
     PUSH 0x5da00e                       ; 0059e41c | = "stydem_walk.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059e421
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059e421
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059e426
     PUSH 0x5da01e                       ; 0059e429 | = "stydem_run.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059e42e
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059e42e
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059e433
     PUSH 0x5da02d                       ; 0059e436 | = "stydem_attack.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059e43b
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059e43b
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059e440
     PUSH 0x5da03f                       ; 0059e443 | = "stydem_damage.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059e448
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059e448
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059e44d
     PUSH 0x5da051                       ; 0059e450 | = "stydem_die.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059e455
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059e455
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059e45a
     PUSH 0x5da060                       ; 0059e45d | = "stydem_stand_fly.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059e462
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059e462
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059e467
     PUSH 0x5da075                       ; 0059e46a | = "stydem_walk_fly.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059e46f
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059e46f
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059e474
     PUSH 0x5da089                       ; 0059e477 | = "stydem_run_fly.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059e47c
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059e47c
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059e481
     PUSH 0x5da09c                       ; 0059e484 | = "stydem_attack_fly.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059e489
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059e489
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059e48e
     PUSH 0x5da0b2                       ; 0059e491 | = "stydem_warning_fly_spell.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059e496
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059e496
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059e49b
     PUSH 0x5da0cf                       ; 0059e49e | = "stydem_fly_spell.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059e4a3
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059e4a3
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059e4a8
     PUSH 0x5da0e4                       ; 0059e4ab | = "stydem_damage_fly.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059e4b0
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059e4b0
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059e4b5
     PUSH 0x5da0fa                       ; 0059e4b8 | = "stydem_die_fly.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059e4bd
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059e4bd
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059e4c2
     PUSH 0x5da10d                       ; 0059e4c5 | = "stydem_takeoff.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059e4ca
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059e4ca
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059e4cf
     PUSH 0x5da120                       ; 0059e4d2 | = "stydem_land.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059e4d7
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059e4d7
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059e4dc
     PUSH 0x5da130                       ; 0059e4df | = "stydem_warning_spell_1.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059e4e4
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059e4e4
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059e4e9
     PUSH 0x5da14b                       ; 0059e4ec | = "stydem_spell_1.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059e4f1
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059e4f1
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059e4f6
     PUSH 0x5da15e                       ; 0059e4f9 | = "stydem_warning_spell_2.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059e4fe
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059e4fe
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059e503
     PUSH 0x5da179                       ; 0059e506 | = "stydem_spell_2.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059e50b
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059e50b
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059e510
     PUSH 0x5da18c                       ; 0059e513 | = "stydem_warning_spell_3.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059e518
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059e518
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059e51d
     PUSH 0x5da1a7                       ; 0059e520 | = "stydem_spell_3.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059e525
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059e525
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059e52a
     PUSH 0x5da1ba                       ; 0059e52d | = "stydem_raise_zombie.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059e532
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059e532
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059e537
     PUSH 0x5da1d2                       ; 0059e53a | = "stydem_transforming.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059e53f
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059e53f
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059e544
     PUSH 0x5da1ea                       ; 0059e547 | = "stydem_taunt1.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059e54c
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059e54c
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059e551
     PUSH 0x5da1fc                       ; 0059e554 | = "stydem_taunt2.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059e559
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059e559
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059e55e
     POP EDI                             ; 0059e561
     POP ESI                             ; 0059e562

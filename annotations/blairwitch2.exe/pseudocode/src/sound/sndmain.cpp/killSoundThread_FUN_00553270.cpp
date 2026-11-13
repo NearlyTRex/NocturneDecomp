@@ -23,6 +23,6 @@ int __cdecl sound_sndmain_cpp_killSoundThread_FUN_00553270(void)
   if (_DAT_02649010 == 0) {
     return 1;
   }
-  sound_sndmain_cpp_FUN_005549c0("Mb`?killSoundThread - failed!\n" + 4);
+  sound_sndmain_cpp_logSoundError_FUN_005549c0("Mb`?killSoundThread - failed!\n" + 4);
   return (uint)(_DAT_02649010 == 0);
 }

@@ -295,7 +295,7 @@ void core_game_cpp_FUN_004ce580(CGame *param_1)
       if (_DAT_01cd0c48 != 0) {
         uVar4 = sound_sndmain_cpp_getFirstActiveSfx_FUN_00573d20();
         iVar2 = 0x37;
-        for (; uVar4 != 0; uVar4 = sound_sndmain_cpp_FUN_00573d60(uVar4)) {
+        for (; uVar4 != 0; uVar4 = sound_sndmain_cpp_getNextActiveSfx_FUN_00573d60(uVar4)) {
           sound_sndmain_cpp_CSfxSample_init_FUN_00572340(&CStack_724);
           iVar5 = sound_sndmain_cpp_getSfxSampleInfo_FUN_00573620(uVar4,&CStack_724);
           if (iVar5 != 0) {

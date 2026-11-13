@@ -198,7 +198,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_playClip_FUN_00412ee0(CAudioRecPu
   this_ptr->clip_sfx[1] = uVar2;
   uVar2 = core_sound_cpp_CSound_playSound_FUN_005609b0(0x02CF5680,this_ptr,acStack_54c);
   this_ptr->clip_sfx[2] = uVar2;
-  uVar2 = sound_sndmain_cpp_FUN_00556240();
+  uVar2 = sound_sndmain_cpp_startSfx_FUN_00556240(acStack_24c);
   this_ptr->clip_sfx[0] = uVar2;
   return;
 }

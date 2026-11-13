@@ -13,7 +13,7 @@
 ;   undefined4 DAT_02c828d8
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_005773f0
+;   sound_sndmain.cpp_logSoundError_FUN_005773f0
 ;   waveInReset
 ;   waveInUnprepareHeader
 ;
@@ -59,8 +59,8 @@ section .text
     JZ 0x0057ae22                       ; 0057ae56
         ;   XREF to: 0057ae22 (CONDITIONAL_JUMP)  ; LAB_0057ae22
     PUSH 0x5f584a                       ; 0057ae58 | = "waveInReset failed!"
-    CALL sound_sndmain.cpp_FUN_005773f0 ; 0057ae5d
-        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005773f0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005773f0 ; 0057ae5d
+        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005773f0(char * format)
     XOR ESI,ESI                         ; 0057ae62
     ADD ESP,0x4                         ; 0057ae64
     JMP 0x0057ae22                      ; 0057ae67

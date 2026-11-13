@@ -32,9 +32,8 @@
 ;   engine_ini.cpp_FUN_004d8b20
 ;   engine_ini.cpp_FUN_004d8bc0
 ;   sound_sndmain.cpp_closeSoundDevice_FUN_00552c40
+;   sound_sndmain.cpp_enableHwSoundMixing_FUN_00552b50
 ;   sound_sndmain.cpp_enableSfxChannel_FUN_00551220
-;   sound_sndmain.cpp_FUN_00552b50
-;   sound_sndmain.cpp_FUN_00552e40
 ;   sound_sndmain.cpp_getAudioFormat_FUN_00552790
 ;   sound_sndmain.cpp_getMaxSwLatency_FUN_00553600
 ;   sound_sndmain.cpp_getRecordingDeviceCount_FUN_00552d00
@@ -42,6 +41,7 @@
 ;   sound_sndmain.cpp_getSfxChannelVol_FUN_00551190
 ;   sound_sndmain.cpp_getSoundDeviceCount_FUN_00552890
 ;   sound_sndmain.cpp_getSoundDeviceInfo_FUN_00552920
+;   sound_sndmain.cpp_isHardwareMixingEnabled_FUN_00552b40
 ;   ... and 9 more
 ;
 ; *****************************************************************************
@@ -144,8 +144,8 @@ section .text
         ;   XREF to: 005536d3 (UNCONDITIONAL_JUMP)  ; LAB_005536d3
     PUSH EBX                            ; 00553771
         ;   Label: LAB_00553771
-    CALL sound_sndmain.cpp_FUN_00552e40 ; 00553772
-        ;   XREF to: 00552e40 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00552e40(int device_id)
+    CALL sound_sndmain.cpp_selectRecordingDevice_FUN_00552e40 ; 00553772
+        ;   XREF to: 00552e40 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_selectRecordingDevice_FUN_00552e40(int device_id)
     ADD ESP,0x4                         ; 00553777
     CALL sound_sndmain.cpp_isHardwareMixingEnabled_FUN_00552b40 ; 0055377a
         ;   XREF to: 00552b40 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isHardwareMixingEnabled_FUN_00552b40()
@@ -160,8 +160,8 @@ section .text
     ADD ESP,0xc                         ; 00553799
     MOV EDX,dword ptr [ESP + 0x384]     ; 0055379c
     PUSH EDX                            ; 005537a3
-    CALL sound_sndmain.cpp_FUN_00552b50 ; 005537a4
-        ;   XREF to: 00552b50 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00552b50()
+    CALL sound_sndmain.cpp_enableHwSoundMixing_FUN_00552b50 ; 005537a4
+        ;   XREF to: 00552b50 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_enableHwSoundMixing_FUN_00552b50(int enable)
     ADD ESP,0x4                         ; 005537a9
     CALL sound_sndmain.cpp_getMaxSwLatency_FUN_00553600 ; 005537ac
         ;   XREF to: 00553600 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getMaxSwLatency_FUN_00553600()

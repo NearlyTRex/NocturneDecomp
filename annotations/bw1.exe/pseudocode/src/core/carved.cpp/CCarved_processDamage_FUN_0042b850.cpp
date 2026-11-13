@@ -38,7 +38,7 @@ void __cdecl core_carved_cpp_CCarved_processDamage_FUN_0042b850(CCarved *this_pt
     ;
     if (this_ptr->pain_cooldown <= 0.0) {
       this_ptr->pain_cooldown = 2.0;
-      iVar3 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[0]);
+      iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[0]);
       if (iVar3 == 0) {
         uVar4 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,"carved-damage?.wav");

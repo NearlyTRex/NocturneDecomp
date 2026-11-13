@@ -54,7 +54,7 @@ void __cdecl sound_sndmain_cpp_readIni_FUN_00553680(CIniFile *ini_file)
 LAB_0055377a:
       iStack_30 = sound_sndmain_cpp_isHardwareMixingEnabled_FUN_00552b40();
       engine_ini_cpp_FUN_004d8b20(ini_file,"AccelEnabled",&iStack_30);
-      sound_sndmain_cpp_FUN_00552b50(iStack_30);
+      sound_sndmain_cpp_enableHwSoundMixing_FUN_00552b50(iStack_30);
       fStack_2c = sound_sndmain_cpp_getMaxSwLatency_FUN_00553600();
       fStack_14 = fStack_2c;
       engine_ini_cpp_FUN_004d8bc0(ini_file,"MaxSwLatency",&fStack_2c);
@@ -87,7 +87,7 @@ LAB_0055377a:
     sound_sndmain_cpp_getRecordingDeviceInfo_FUN_00552d60(iVar2,&SStack_29c);
     iVar1 = _stricmp(SStack_29c.device_name,local_194);
     if (iVar1 == 0) {
-      sound_sndmain_cpp_FUN_00552e40(iVar2);
+      sound_sndmain_cpp_selectRecordingDevice_FUN_00552e40(iVar2);
       goto LAB_0055377a;
     }
     iVar2 = iVar2 + 1;

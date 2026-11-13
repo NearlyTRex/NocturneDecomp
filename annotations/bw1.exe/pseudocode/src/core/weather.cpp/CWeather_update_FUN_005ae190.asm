@@ -48,7 +48,7 @@
 ;   core_sound.cpp_CSound_playSound_FUN_0057d880
 ;   core_weather.cpp_CWeather_createLightningStrike_FUN_005ae580
 ;   core_weather.cpp_CWeather_createThunder_FUN_005ae840
-;   sound_sndmain.cpp_FUN_005735a0
+;   sound_sndmain.cpp_isSfxPlaying_FUN_005735a0
 ;   sound_sndmain.cpp_killSfx_FUN_00573a80
 ;
 ; *****************************************************************************
@@ -226,8 +226,8 @@ section .text
     MOV ESI,dword ptr [0x02c9a540]      ; 005ae374 | DAT_02c9a540
         ;   Label: LAB_005ae374
     PUSH ESI                            ; 005ae37a
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 005ae37b
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 005ae37b
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 005ae380
     TEST EAX,EAX                        ; 005ae383
     JZ 0x005ae535                       ; 005ae385

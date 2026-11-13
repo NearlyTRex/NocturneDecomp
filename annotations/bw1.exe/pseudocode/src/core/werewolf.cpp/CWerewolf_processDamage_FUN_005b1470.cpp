@@ -108,7 +108,7 @@ LAB_005b16cb:
       }
     }
   }
-  iVar4 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[0]);
+  iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[0]);
   if (iVar4 == 0) {
     uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                       ((CDemonActor *)this_ptr,"werewolf-hurt?.wav");

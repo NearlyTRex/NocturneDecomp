@@ -22,7 +22,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[5]:
-;   sound_sndmain.cpp_FUN_00575db0 at 00575f15
+;   sound_sndmain.cpp_flushSoundChanges_FUN_00575db0 at 00575f15
 ;   sound_sndmain.cpp_nextMixingBuffer_FUN_0056f6d0 at 0056f7f2
 ;   sound_sndmain.cpp_pollAllSfxSlots_FUN_00576f40 at 00576f9f
 ;   sound_sndmain.cpp_pollAndMixSfx_FUN_00576c20 at 00576dea
@@ -49,14 +49,14 @@
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
 ;   engine_console.cpp_CConsole_printf_FUN_00445430
+;   sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_0056f1e0
 ;   sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_00570e90
 ;   sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_00570c40
 ;   sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_00570d50
 ;   sound_sndmain.cpp_CSfxSlot_computeDistancesToSpeakers_FUN_00570bd0
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_00571d70
-;   sound_sndmain.cpp_FUN_0056f1e0
-;   sound_sndmain.cpp_FUN_00570a40
-;   sound_sndmain.cpp_FUN_00574080
+;   sound_sndmain.cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_00570a40
+;   sound_sndmain.cpp_getNearestListener_FUN_00574080
 ;
 ; *****************************************************************************
 
@@ -133,8 +133,8 @@ section .text
         ;   Label: LAB_00570fe2
     PUSH EBX                            ; 00570fe9
         ;   Label: LAB_00570fe9
-    CALL sound_sndmain.cpp_FUN_00570a40 ; 00570fea
-        ;   XREF to: 00570a40 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00570a40()
+    CALL sound_sndmain.cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_00570a40 ; 00570fea
+        ;   XREF to: 00570a40 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_00570a40(CSfxSlot * this_ptr)
     ADD ESP,0x4                         ; 00570fef
     MOV EAX,dword ptr [EBX + 0x18]      ; 00570ff2
     PUSH EAX                            ; 00570ff5
@@ -148,16 +148,16 @@ section .text
     PUSH EDI                            ; 00571005
     MOV EAX,dword ptr [EBX + 0x4]       ; 00571006
     PUSH EAX                            ; 00571009
-    CALL sound_sndmain.cpp_FUN_00574080 ; 0057100a
-        ;   XREF to: 00574080 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00574080()
+    CALL sound_sndmain.cpp_getNearestListener_FUN_00574080 ; 0057100a
+        ;   XREF to: 00574080 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getNearestListener_FUN_00574080(double pos_x, double pos_y, double pos_z)
     MOV EDX,dword ptr [0x02c7fc8c]      ; 0057100f | DAT_02c7fc8c
     ADD ESP,0x18                        ; 00571015
     MOV [0x02c7fc88],EAX                ; 00571018 | DAT_02c7fc88
     TEST EDX,EDX                        ; 0057101d
     JZ 0x00571026                       ; 0057101f
         ;   XREF to: 00571026 (CONDITIONAL_JUMP)  ; LAB_00571026
-    CALL sound_sndmain.cpp_FUN_0056f1e0 ; 00571021
-        ;   XREF to: 0056f1e0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_0056f1e0()
+    CALL sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_0056f1e0 ; 00571021
+        ;   XREF to: 0056f1e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_0056f1e0()
     FLD float ptr [EBX + 0x40]          ; 00571026
         ;   Label: LAB_00571026
     FCOMP float ptr [0x00605af4]        ; 00571029 | DAT_00605af4

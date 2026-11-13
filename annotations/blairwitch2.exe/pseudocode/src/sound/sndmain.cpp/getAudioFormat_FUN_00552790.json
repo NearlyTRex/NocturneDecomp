@@ -18,19 +18,19 @@
     {
       "addr": "005527d0",
       "from_addr": "005527d9",
-      "name": "sound_sndmain.cpp_FUN_005527d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005527f0",
-      "from_addr": "005527f9",
-      "name": "sound_sndmain.cpp_FUN_005527f0",
+      "name": "sound_sndmain.cpp_getAudioBitDepth_FUN_005527d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00552810",
       "from_addr": "00552819",
-      "name": "sound_sndmain.cpp_FUN_00552810",
+      "name": "sound_sndmain.cpp_getAudioChannelCount_FUN_00552810",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005527f0",
+      "from_addr": "005527f9",
+      "name": "sound_sndmain.cpp_getAudioSampleRate_FUN_005527f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -107,7 +107,7 @@
       {
         "call_addr": "005527f9",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_005527f0",
+        "caller": "sound_sndmain.cpp_getAudioSampleRate_FUN_005527f0",
         "estimated_params": 2,
         "instructions_analyzed": 3,
         "method": "push_count",
@@ -118,7 +118,7 @@
       {
         "call_addr": "005527d9",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_005527d0",
+        "caller": "sound_sndmain.cpp_getAudioBitDepth_FUN_005527d0",
         "estimated_params": 2,
         "instructions_analyzed": 3,
         "method": "push_count",
@@ -129,7 +129,7 @@
       {
         "call_addr": "00552819",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00552810",
+        "caller": "sound_sndmain.cpp_getAudioChannelCount_FUN_00552810",
         "estimated_params": 2,
         "instructions_analyzed": 3,
         "method": "push_count",

@@ -13,6 +13,6 @@ void __cdecl sound_sndmain_cpp_setMemoryBudget_FUN_00551930(int min_bytes,int ma
 {
   _DAT_0061bcbc = min_bytes;
   DAT_0061bcc0 = max_bytes;
-  sound_sndmain_cpp_FUN_0054b960(0);
+  sound_sndmain_cpp_ensureSoundMemoryAvailable_FUN_0054b960(0);
   return;
 }

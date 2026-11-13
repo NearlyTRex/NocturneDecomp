@@ -24,10 +24,10 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
+;   sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_0054cb70
 ;   sound_sndmain.cpp_CSfxSlot_compute_FUN_0054e8c0
-;   sound_sndmain.cpp_FUN_0054cb70
-;   sound_sndmain.cpp_FUN_0054f8a0
-;   sound_sndmain.cpp_FUN_00552b30
+;   sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_0054f8a0
+;   sound_sndmain.cpp_hasHardware3DSound_FUN_00552b30
 ;   wincore_winrun.cpp_getTime_FUN_0058e9e0
 ;
 ; *****************************************************************************
@@ -65,8 +65,8 @@ section .text
     XOR EAX,EAX                         ; 00554551
         ;   Label: LAB_00554551
     MOV dword ptr [ESP],EAX             ; 00554553
-    CALL sound_sndmain.cpp_FUN_00552b30 ; 00554556
-        ;   XREF to: 00552b30 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00552b30(int enable)
+    CALL sound_sndmain.cpp_hasHardware3DSound_FUN_00552b30 ; 00554556
+        ;   XREF to: 00552b30 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_hasHardware3DSound_FUN_00552b30()
     CMP EAX,0x1                         ; 0055455b
     JGE 0x005545c5                      ; 0055455e
         ;   XREF to: 005545c5 (CONDITIONAL_JUMP)  ; LAB_005545c5
@@ -83,8 +83,8 @@ section .text
     JZ 0x00554584                       ; 00554579
         ;   XREF to: 00554584 (CONDITIONAL_JUMP)  ; LAB_00554584
     PUSH EBX                            ; 0055457b
-    CALL sound_sndmain.cpp_FUN_0054f8a0 ; 0055457c
-        ;   XREF to: 0054f8a0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_0054f8a0()
+    CALL sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_0054f8a0 ; 0055457c
+        ;   XREF to: 0054f8a0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_0054f8a0(CSfxSlot * this_ptr)
     ADD ESP,0x4                         ; 00554581
     ADD EBX,0x11c                       ; 00554584
         ;   Label: LAB_00554584
@@ -109,8 +109,8 @@ section .text
     ADD ESP,0x4                         ; 005545b6
     JMP 0x00554524                      ; 005545b9
         ;   XREF to: 00554524 (UNCONDITIONAL_JUMP)  ; LAB_00554524
-    CALL sound_sndmain.cpp_FUN_0054cb70 ; 005545be
-        ;   XREF to: 0054cb70 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_0054cb70()
+    CALL sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_0054cb70 ; 005545be
+        ;   XREF to: 0054cb70 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_0054cb70()
         ;   Label: LAB_005545be
     JMP 0x00554551                      ; 005545c3
         ;   XREF to: 00554551 (UNCONDITIONAL_JUMP)  ; LAB_00554551

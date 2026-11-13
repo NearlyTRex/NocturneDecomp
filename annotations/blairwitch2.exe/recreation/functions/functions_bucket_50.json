@@ -17983,14 +17983,15 @@
     "callers":[
       "0054e8c0"
     ],
-    "conv":"unknown",
+    "cls":"CSfxSlot",
+    "conv":"__cdecl",
     "instructions":142,
-    "method":"FUN_0054e3d0",
-    "name":"sound_sndmain.cpp_FUN_0054e3d0",
-    "receiver":false,
+    "method":"updateBoundPositionAndVelocity",
+    "name":"sound_sndmain.cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_0054e3d0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",
@@ -18047,14 +18048,40 @@
   },
   {
     "addr":"005501d0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":14,
-    "method":"FUN_005501d0",
-    "name":"sound_sndmain.cpp_FUN_005501d0",
+    "method":"setNextSfxStaticVelocity",
+    "name":"sound_sndmain.cpp_setNextSfxStaticVelocity_FUN_005501d0",
+    "params":[
+      {
+        "name":"vel_x",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"vel_y",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"vel_z",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",
@@ -18205,8 +18232,8 @@
     ],
     "conv":"__cdecl",
     "instructions":29,
-    "method":"FUN_00550f50",
-    "name":"sound_sndmain.cpp_FUN_00550f50",
+    "method":"setSfxBaseFrequency",
+    "name":"sound_sndmain.cpp_setSfxBaseFrequency_FUN_00550f50",
     "params":[
       {
         "name":"sfx_handle",
@@ -18357,14 +18384,40 @@
     "callers":[
       "0054e8c0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":41,
-    "method":"FUN_00551650",
-    "name":"sound_sndmain.cpp_FUN_00551650",
+    "method":"getNearestListener",
+    "name":"sound_sndmain.cpp_getNearestListener_FUN_00551650",
+    "params":[
+      {
+        "name":"pos_x",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      },
+      {
+        "name":"pos_y",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      },
+      {
+        "name":"pos_z",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",
@@ -18380,14 +18433,24 @@
       "00551950",
       "005532f0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":86,
-    "method":"FUN_005516d0",
-    "name":"sound_sndmain.cpp_FUN_005516d0",
+    "method":"createUserSample",
+    "name":"sound_sndmain.cpp_createUserSample_FUN_005516d0",
+    "params":[
+      {
+        "name":"sample",
+        "type":{
+          "kind":"class",
+          "name":"CSfxSample",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",
@@ -18478,8 +18541,8 @@
     ],
     "conv":"__cdecl",
     "instructions":7,
-    "method":"FUN_005527d0",
-    "name":"sound_sndmain.cpp_FUN_005527d0",
+    "method":"getAudioBitDepth",
+    "name":"sound_sndmain.cpp_getAudioBitDepth_FUN_005527d0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -18532,14 +18595,24 @@
       "004e4500",
       "00552b10"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":16,
-    "method":"FUN_00552b50",
-    "name":"sound_sndmain.cpp_FUN_00552b50",
+    "method":"enableHwSoundMixing",
+    "name":"sound_sndmain.cpp_enableHwSoundMixing_FUN_00552b50",
+    "params":[
+      {
+        "name":"enable",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",

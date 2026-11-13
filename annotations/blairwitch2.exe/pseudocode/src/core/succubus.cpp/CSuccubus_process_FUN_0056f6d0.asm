@@ -445,8 +445,8 @@ section .text
         ;   XREF to: 0056fdf4 (CONDITIONAL_JUMP)  ; LAB_0056fdf4
     MOV ECX,dword ptr [EBX + 0x12f68]   ; 0056fb36
     PUSH ECX                            ; 0056fb3c
-    CALL sound_sndmain.cpp_FUN_00550b70 ; 0056fb3d
-        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00550b70(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00550b70 ; 0056fb3d
+        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00550b70(uint sfx_handle)
     ADD ESP,0x4                         ; 0056fb42
     TEST EAX,EAX                        ; 0056fb45
     JNZ 0x0056fb68                      ; 0056fb47

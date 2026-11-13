@@ -286,9 +286,10 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412f40(CBatman *this_ptr,floa
               core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(pCStack_44,3,1);
               uVar9 = this_ptr->sfx_handles[1];
               (this_ptr->base).attack_cooldown = 1.0;
-              iVar6 = sound_sndmain_cpp_FUN_00550b70(uVar9);
+              iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(uVar9);
               if ((iVar6 == 0) &&
-                 (iVar6 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[2]), iVar6 == 0)) {
+                 (iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[2]),
+                 iVar6 == 0)) {
                 uVar9 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                   ((CDemonActor *)this_ptr,"batman-attack?.wav");
                 this_ptr->sfx_handles[2] = uVar9;
@@ -356,10 +357,12 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412f40(CBatman *this_ptr,floa
                             (0x01C38BC0,this_ptr->fall_event), iVar6 != 0)) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                   (&(this_ptr->base).base.model.base,0xb,1);
-        iVar6 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[1]);
+        iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[1]);
         if ((iVar6 == 0) &&
-           ((iVar6 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[2]), iVar6 == 0 &&
-            (iVar6 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[0]), iVar6 == 0)))) {
+           ((iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[2]),
+            iVar6 == 0 &&
+            (iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[0]),
+            iVar6 == 0)))) {
           uVar9 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                             ((CDemonActor *)this_ptr,"batman-alert.wav");
           this_ptr->sfx_handles[0] = uVar9;

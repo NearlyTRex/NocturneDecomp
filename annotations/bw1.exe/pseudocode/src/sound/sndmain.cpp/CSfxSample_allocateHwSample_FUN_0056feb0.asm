@@ -10,8 +10,8 @@
 ; undefined        Stack[-0x160]:1  local_160
 ;
 ; XREF[3]:
-;   sound_sndmain.cpp_FUN_0056e830 at 0056ea3c
-;   sound_sndmain.cpp_FUN_00574100 at 005741ed
+;   sound_sndmain.cpp_createUserSample_FUN_00574100 at 005741ed
+;   sound_sndmain.cpp_getSfxSample_FUN_0056e830 at 0056ea3c
 ;   sound_sndmain.cpp_startSfx_FUN_00572d20 at 005732b6
 ;
 ; Referenced Globals:
@@ -30,9 +30,9 @@
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00570020
 ;   sound_sndmain.cpp_CSfxSample_freeSampleData_FUN_00570130
 ;   sound_sndmain.cpp_CSfxSample_releaseBufferId_FUN_005700e0
-;   sound_sndmain.cpp_FUN_0056dfd0
-;   sound_sndmain.cpp_FUN_00575560
-;   sound_sndmain.cpp_FUN_005773f0
+;   sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_0056dfd0
+;   sound_sndmain.cpp_hasHardware3DSound_FUN_00575560
+;   sound_sndmain.cpp_logSoundError_FUN_005773f0
 ;
 ; *****************************************************************************
 
@@ -57,8 +57,8 @@ section .text
     CMP EDX,0x2                         ; 0056fed9
     JZ 0x0056ff93                       ; 0056fedc
         ;   XREF to: 0056ff93 (CONDITIONAL_JUMP)  ; LAB_0056ff93
-    CALL sound_sndmain.cpp_FUN_00575560 ; 0056fee2
-        ;   XREF to: 00575560 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00575560(int enable)
+    CALL sound_sndmain.cpp_hasHardware3DSound_FUN_00575560 ; 0056fee2
+        ;   XREF to: 00575560 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_hasHardware3DSound_FUN_00575560()
     CMP EAX,0x1                         ; 0056fee7
     JL 0x0056ffd5                       ; 0056feea
         ;   XREF to: 0056ffd5 (CONDITIONAL_JUMP)  ; LAB_0056ffd5
@@ -111,8 +111,8 @@ section .text
     JL 0x0056ff23                       ; 0056ff69
         ;   XREF to: 0056ff23 (CONDITIONAL_JUMP)  ; LAB_0056ff23
     PUSH 0x5f312c                       ; 0056ff6b | s_allocateHwSample_failed_005f312b+1
-    CALL sound_sndmain.cpp_FUN_005773f0 ; 0056ff70
-        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005773f0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005773f0 ; 0056ff70
+        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005773f0(char * format)
     ADD ESP,0x4                         ; 0056ff75
     XOR EAX,EAX                         ; 0056ff78
         ;   Label: LAB_0056ff78
@@ -130,8 +130,8 @@ section .text
     RET                                 ; 0056ff92
     PUSH 0x5f32a8                       ; 0056ff93 | s_Atried_to_use_Yamaha_WAV_005f32a7+1
         ;   Label: LAB_0056ff93
-    CALL sound_sndmain.cpp_FUN_005773f0 ; 0056ff98
-        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005773f0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005773f0 ; 0056ff98
+        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005773f0(char * format)
     ADD ESP,0x4                         ; 0056ff9d
     XOR EAX,EAX                         ; 0056ffa0
     JMP 0x0056ff88                      ; 0056ffa2
@@ -159,8 +159,8 @@ section .text
     MOV ECX,dword ptr [EBP + 0x168]     ; 0056ffd5
         ;   Label: LAB_0056ffd5
     PUSH ECX                            ; 0056ffdb
-    CALL sound_sndmain.cpp_FUN_0056dfd0 ; 0056ffdc
-        ;   XREF to: 0056dfd0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_0056dfd0(int requested_bytes)
+    CALL sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_0056dfd0 ; 0056ffdc
+        ;   XREF to: 0056dfd0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_0056dfd0(int requested_bytes)
     ADD ESP,0x4                         ; 0056ffe1
     MOV EBX,dword ptr [EBP + 0x168]     ; 0056ffe4
     PUSH EBX                            ; 0056ffea

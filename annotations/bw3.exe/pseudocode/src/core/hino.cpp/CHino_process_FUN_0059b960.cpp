@@ -168,7 +168,7 @@ void __cdecl core_hino_cpp_CHino_process_FUN_0059b960(CHino *this_ptr,float delt
     iVar6 = core_motion_cpp_CMotionController_advance_FUN_004fbb70(pCStack_58,&fStack_7c);
     switch(iVar6) {
     case 0x5dc:
-      iVar8 = sound_sndmain_cpp_FUN_00556700
+      iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                         ((uint)(this_ptr->base).base.motion_transition_costs[5][iVar6 + 0x11]);
       if (iVar8 == 0) {
         fVar17 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -177,7 +177,7 @@ void __cdecl core_hino_cpp_CHino_process_FUN_0059b960(CHino *this_ptr,float delt
       }
       break;
     case 0x5dd:
-      iVar8 = sound_sndmain_cpp_FUN_00556700
+      iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                         ((uint)(this_ptr->base).base.motion_transition_costs[5][iVar6 + 0x11]);
       if (iVar8 == 0) {
         fVar17 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -186,7 +186,7 @@ void __cdecl core_hino_cpp_CHino_process_FUN_0059b960(CHino *this_ptr,float delt
       }
       break;
     case 0x5de:
-      iVar8 = sound_sndmain_cpp_FUN_00556700
+      iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                         ((uint)(this_ptr->base).base.motion_transition_costs[5][iVar6 + 0x11]);
       if (iVar8 == 0) {
         fVar17 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -195,7 +195,7 @@ void __cdecl core_hino_cpp_CHino_process_FUN_0059b960(CHino *this_ptr,float delt
       }
       break;
     case 0x5df:
-      iVar8 = sound_sndmain_cpp_FUN_00556700
+      iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                         ((uint)(this_ptr->base).base.motion_transition_costs[5][iVar6 + 0x11]);
       if (iVar8 == 0) {
         fVar17 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -204,7 +204,7 @@ void __cdecl core_hino_cpp_CHino_process_FUN_0059b960(CHino *this_ptr,float delt
       }
       break;
     case 0x5e0:
-      iVar8 = sound_sndmain_cpp_FUN_00556700
+      iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                         ((uint)(this_ptr->base).base.motion_transition_costs[5][iVar6 + 0x11]);
       if (iVar8 == 0) {
         fVar17 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -213,7 +213,7 @@ void __cdecl core_hino_cpp_CHino_process_FUN_0059b960(CHino *this_ptr,float delt
       }
       break;
     case 0x5e1:
-      iVar8 = sound_sndmain_cpp_FUN_00556700
+      iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                         ((uint)(this_ptr->base).base.motion_transition_costs[5][iVar6 + 0x11]);
       if (iVar8 == 0) {
         fVar17 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -222,7 +222,7 @@ void __cdecl core_hino_cpp_CHino_process_FUN_0059b960(CHino *this_ptr,float delt
       }
       break;
     case 0x5e2:
-      iVar8 = sound_sndmain_cpp_FUN_00556700
+      iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                         ((uint)(this_ptr->base).base.motion_transition_costs[5][iVar6 + 0x11]);
       if (iVar8 == 0) {
         fVar17 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -231,7 +231,7 @@ void __cdecl core_hino_cpp_CHino_process_FUN_0059b960(CHino *this_ptr,float delt
       }
       break;
     case 0x5e3:
-      iVar8 = sound_sndmain_cpp_FUN_00556700
+      iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                         ((uint)(this_ptr->base).base.motion_transition_costs[5][iVar6 + 0x11]);
       if (iVar8 == 0) {
         fVar17 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -240,7 +240,7 @@ void __cdecl core_hino_cpp_CHino_process_FUN_0059b960(CHino *this_ptr,float delt
       }
       break;
     case 0x5e4:
-      iVar8 = sound_sndmain_cpp_FUN_00556700
+      iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                         ((uint)(this_ptr->base).base.motion_transition_costs[5][iVar6 + 0x11]);
       if (iVar8 == 0) {
         fVar17 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -249,7 +249,7 @@ void __cdecl core_hino_cpp_CHino_process_FUN_0059b960(CHino *this_ptr,float delt
       }
       break;
     case 0x5e5:
-      iVar8 = sound_sndmain_cpp_FUN_00556700
+      iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                         ((uint)(this_ptr->base).base.motion_transition_costs[5][iVar6 + 0x11]);
       if (iVar8 == 0) {
         fVar17 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -258,7 +258,7 @@ void __cdecl core_hino_cpp_CHino_process_FUN_0059b960(CHino *this_ptr,float delt
       }
       break;
     case 0x5e6:
-      iVar8 = sound_sndmain_cpp_FUN_00556700
+      iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                         ((uint)(this_ptr->base).base.motion_transition_costs[5][iVar6 + 0x11]);
       if (iVar8 == 0) {
         fVar17 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -267,7 +267,7 @@ void __cdecl core_hino_cpp_CHino_process_FUN_0059b960(CHino *this_ptr,float delt
       }
       break;
     case 0x5e7:
-      iVar8 = sound_sndmain_cpp_FUN_00556700
+      iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                         ((uint)(this_ptr->base).base.motion_transition_costs[5][iVar6 + 0x11]);
       if (iVar8 == 0) {
         fVar17 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)

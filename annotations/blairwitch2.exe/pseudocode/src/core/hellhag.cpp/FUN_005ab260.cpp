@@ -100,7 +100,7 @@ void core_hellhag_cpp_FUN_005ab260(int param_1,float param_2)
       if (iVar1 == 0) {
         *(float *)(param_1 + 0x25a8) = param_2 * (float)_DAT_005f0c76 + *(float *)(param_1 + 0x25a8)
         ;
-        iVar1 = sound_sndmain_cpp_FUN_00550b70(*(uint *)(param_1 + 0x1185c));
+        iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(*(uint *)(param_1 + 0x1185c));
         if (iVar1 == 0) {
           sound_sndmain_cpp_pushSfxOptions_FUN_00550450();
           iVar1 = 2;

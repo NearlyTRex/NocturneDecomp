@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 99,
+    "complexity_score": 74,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 10,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 44,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "extra_output",
       "undefined_data",
       "warning_overlapping_globals"
     ],
@@ -43,24 +42,24 @@
       "name": "core_main.c_FUN_005030e0"
     },
     {
+      "addr": "0056f1e0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_0056f1e0"
+    },
+    {
       "addr": "00570f30",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_00570f30"
     },
     {
-      "addr": "0056f1e0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_0056f1e0"
-    },
-    {
       "addr": "00571f10",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00571f10"
+      "name": "sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_00571f10"
     },
     {
       "addr": "00575560",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00575560"
+      "name": "sound_sndmain.cpp_hasHardware3DSound_FUN_00575560"
     },
     {
       "addr": "005b2420",
@@ -245,22 +244,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 27,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "if (0 < extraout_EAX) {",
-      "type": "extra_output"
     },
     {
       "description": "Undefined global data reference",

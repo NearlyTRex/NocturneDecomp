@@ -26,7 +26,7 @@
 ; Called Functions:
 ;   core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0
 ;   core_event.cpp_CEventList_executeCommands_FUN_004a1b70
-;   sound_sndmain.cpp_FUN_005735a0
+;   sound_sndmain.cpp_isSfxPlaying_FUN_005735a0
 ;   sound_sndmain.cpp_killSfx_FUN_00573a80
 ;   sound_sndmain.cpp_startSfx_FUN_00572d20
 ;
@@ -491,8 +491,8 @@ section .text
         ;   XREF to: 0041693e (CONDITIONAL_JUMP)  ; LAB_0041693e
     MOV EAX,dword ptr [EBX + 0xc14]     ; 00416c04
     PUSH EAX                            ; 00416c0a
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 00416c0b
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 00416c0b
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 00416c10
     TEST EAX,EAX                        ; 00416c13
     JNZ 0x0041693e                      ; 00416c15
@@ -541,8 +541,8 @@ section .text
     MOV EDX,dword ptr [EBX + 0xc14]     ; 00416cae
         ;   Label: LAB_00416cae
     PUSH EDX                            ; 00416cb4
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 00416cb5
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 00416cb5
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 00416cba
     TEST EAX,EAX                        ; 00416cbd
     JNZ 0x00416bfa                      ; 00416cbf

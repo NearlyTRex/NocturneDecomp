@@ -4,30 +4,30 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  unnamed_param                  11375 ( 22.5%)
-  undefined_data                  8912 ( 17.6%)
-  pointer_cast                    5916 ( 11.7%)
-  pointer_truncation              5028 ( 10.0%)
-  stack_ref                       3388 (  6.7%)
-  stack_param                     2566 (  5.1%)
-  warning_overlapping_globals     2208 (  4.4%)
-  unrolled_memcpy                 1632 (  3.2%)
-  unaffected_reg                  1204 (  2.4%)
+  unnamed_param                  10979 ( 21.9%)
+  undefined_data                  8912 ( 17.8%)
+  pointer_cast                    5936 ( 11.9%)
+  pointer_truncation              5038 ( 10.1%)
+  stack_ref                       3357 (  6.7%)
+  stack_param                     2519 (  5.0%)
+  warning_overlapping_globals     2209 (  4.4%)
+  unrolled_memcpy                 1632 (  3.3%)
+  unaffected_reg                  1200 (  2.4%)
   unresolved_funcptr               862 (  1.7%)
   concat_reconstruction            822 (  1.6%)
-  stack_alignment_array            716 (  1.4%)
-  unknown_field                    633 (  1.3%)
-  unrolled_strcpy                  579 (  1.1%)
+  stack_alignment_array            719 (  1.4%)
+  unknown_field                    651 (  1.3%)
+  unrolled_strcpy                  579 (  1.2%)
   shadow_pointer_walk              549 (  1.1%)
-  extra_output                     471 (  0.9%)
   negative_offset                  449 (  0.9%)
-  param_count_too_few              406 (  0.8%)
+  extra_output                     447 (  0.9%)
+  param_count_too_few              386 (  0.8%)
   nonstandard_int                  314 (  0.6%)
   unrolled_strlen                  302 (  0.6%)
   unrolled_memset                  274 (  0.5%)
-  warning_type_propagation         264 (  0.5%)
-  raw_address_pointer_store        252 (  0.5%)
-  raw_address_constant             204 (  0.4%)
+  warning_type_propagation         263 (  0.5%)
+  raw_address_pointer_store        254 (  0.5%)
+  raw_address_constant             203 (  0.4%)
   suspect_float                    181 (  0.4%)
   register_param                   118 (  0.2%)
   warning_unreachable              116 (  0.2%)
@@ -37,7 +37,7 @@ SUSPECT TYPE COUNTS
   derived_field_index_pun           47 (  0.1%)
   pointer_stride_bytecount          45 (  0.1%)
   self_copy_guard                   36 (  0.1%)
-  sub84_truncation                  33 (  0.1%)
+  sub84_truncation                  30 (  0.1%)
   bitcast_double_pair               30 (  0.1%)
   unrolled_strchr                   27 (  0.1%)
   sign_compare_idiom                26 (  0.1%)
@@ -76,19 +76,19 @@ SUSPECT TYPE COUNTS
   param_count_too_many               1 (  0.0%)
 
 ====================================================================================================
-TYPE: unnamed_param (11375 occurrences)
+TYPE: unnamed_param (10979 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  6781x  param_1
-  2495x  param_2
-   978x  param_3
-   577x  param_4
-   298x  param_5
-   105x  param_6
-    60x  param_7
-    23x  param_8
-     9x  param_9
+  6518x  param_1
+  2447x  param_2
+   929x  param_3
+   561x  param_4
+   292x  param_5
+    99x  param_6
+    56x  param_7
+    21x  param_8
+     7x  param_9
      5x  param_22
      5x  param_25
      4x  param_10
@@ -633,36 +633,6 @@ Functions:
   sound_snddx.cpp_FUN_005799b0
   sound_snddx.cpp_FUN_00579ad0
   sound_snddx.cpp_FUN_00579f30
-  sound_sndmain.cpp_FUN_0056db10
-  sound_sndmain.cpp_FUN_00570160
-  sound_sndmain.cpp_FUN_00570460
-  sound_sndmain.cpp_FUN_00570a40
-  sound_sndmain.cpp_FUN_00571420
-  sound_sndmain.cpp_FUN_00571f10
-  sound_sndmain.cpp_FUN_005723e0
-  sound_sndmain.cpp_FUN_00572400
-  sound_sndmain.cpp_FUN_00572810
-  sound_sndmain.cpp_FUN_00572840
-  sound_sndmain.cpp_FUN_005728b0
-  sound_sndmain.cpp_FUN_005729d0
-  sound_sndmain.cpp_FUN_00572a30
-  sound_sndmain.cpp_FUN_00572b90
-  sound_sndmain.cpp_FUN_00573760
-  sound_sndmain.cpp_FUN_005737d0
-  sound_sndmain.cpp_FUN_005738d0
-  sound_sndmain.cpp_FUN_00573950
-  sound_sndmain.cpp_FUN_00573d60
-  sound_sndmain.cpp_FUN_00573ec0
-  sound_sndmain.cpp_FUN_00573f20
-  sound_sndmain.cpp_FUN_00573fa0
-  sound_sndmain.cpp_FUN_00573fe0
-  sound_sndmain.cpp_FUN_00574010
-  sound_sndmain.cpp_FUN_00574080
-  sound_sndmain.cpp_FUN_00574230
-  sound_sndmain.cpp_FUN_005742c0
-  sound_sndmain.cpp_FUN_00575580
-  sound_sndmain.cpp_FUN_005771b0
-  sound_sndmain.cpp_FUN_005773f0
   support_codec.cpp_CAsciiArmor_encode_FUN_004438d0
   support_codec.cpp_CAsciiArmor_flush_FUN_00443920
   support_codec.cpp_CAsciiUnarmor_decode_FUN_004439b0
@@ -2004,54 +1974,54 @@ Functions:
   sound_snddx.cpp_enumerateDirectSoundDevice_FUN_0057a290
   sound_snddx.cpp_getDirectSoundDevice_FUN_0057a340
   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_0056e130
+  sound_sndmain.cpp_CSfxSample_pollStream_FUN_00570460
   sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_00570e90
   sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_00570c40
   sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_00570d50
   sound_sndmain.cpp_CSfxSlot_computeDistancesToSpeakers_FUN_00570bd0
   sound_sndmain.cpp_CSfxSlot_compute_FUN_00570f30
-  sound_sndmain.cpp_FUN_0056df00
-  sound_sndmain.cpp_FUN_0056dfd0
-  sound_sndmain.cpp_FUN_0056e830
-  sound_sndmain.cpp_FUN_0056f1e0
-  sound_sndmain.cpp_FUN_0056fa10
-  sound_sndmain.cpp_FUN_00570460
-  sound_sndmain.cpp_FUN_00573d60
-  sound_sndmain.cpp_FUN_00573ec0
-  sound_sndmain.cpp_FUN_00573f20
-  sound_sndmain.cpp_FUN_00573fa0
-  sound_sndmain.cpp_FUN_00573fe0
-  sound_sndmain.cpp_FUN_00574010
-  sound_sndmain.cpp_FUN_00574410
-  sound_sndmain.cpp_FUN_00575200
-  sound_sndmain.cpp_FUN_00575220
-  sound_sndmain.cpp_FUN_00575240
-  sound_sndmain.cpp_FUN_00575580
-  sound_sndmain.cpp_FUN_00575db0
-  sound_sndmain.cpp_FUN_005773f0
   sound_sndmain.cpp_allocMixBuffers_FUN_0056f470
   sound_sndmain.cpp_analyzeFrequencyBand_FUN_00576590
+  sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_0056f1e0
   sound_sndmain.cpp_countActiveSfx_FUN_00573e20
+  sound_sndmain.cpp_enableHwSoundMixing_FUN_00575580
   sound_sndmain.cpp_enableSoundSystem_FUN_00574ee0
+  sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_0056dfd0
+  sound_sndmain.cpp_flushSoundChanges_FUN_00575db0
+  sound_sndmain.cpp_getActiveSfxCount_FUN_0056df00
+  sound_sndmain.cpp_getAudioBitDepth_FUN_00575200
+  sound_sndmain.cpp_getAudioChannelCount_FUN_00575240
   sound_sndmain.cpp_getAudioFormat_FUN_005751c0
+  sound_sndmain.cpp_getAudioSampleRate_FUN_00575220
   sound_sndmain.cpp_getCurrentRecordingDevice_FUN_005759a0
   sound_sndmain.cpp_getCurrentSoundDevice_FUN_005756d0
   sound_sndmain.cpp_getFirstActiveSfx_FUN_00573d20
   sound_sndmain.cpp_getMaxSwLatency_FUN_00576030
+  sound_sndmain.cpp_getNextActiveSfx_FUN_00573d60
   sound_sndmain.cpp_getRecordingDeviceCount_FUN_00575730
+  sound_sndmain.cpp_getSampleInfo_FUN_00574410
+  sound_sndmain.cpp_getSfxSample_FUN_0056e830
+  sound_sndmain.cpp_getSfxSlotFromHandle_FUN_0056fa10
   sound_sndmain.cpp_getSoundDeviceCount_FUN_005752c0
   sound_sndmain.cpp_getSoundMemoryStats_FUN_005746e0
   sound_sndmain.cpp_initializeRecordingDevice_FUN_005758e0
   sound_sndmain.cpp_initializeSoundDevice_FUN_005755c0
   sound_sndmain.cpp_isHardwareMixingEnabled_FUN_00575570
   sound_sndmain.cpp_isStreamableFile_FUN_0056ede0
+  sound_sndmain.cpp_isWithinListenerRadius_FUN_00574010
   sound_sndmain.cpp_killAllSfx_FUN_00573b00
   sound_sndmain.cpp_killSfxByName_FUN_00574310
+  sound_sndmain.cpp_logSoundError_FUN_005773f0
   sound_sndmain.cpp_nextMixingBuffer_FUN_0056f6d0
   sound_sndmain.cpp_pollAllSfxSlots_FUN_00576f40
   sound_sndmain.cpp_pollAndMixSfx_FUN_00576c20
   sound_sndmain.cpp_readIni_FUN_005760b0
   sound_sndmain.cpp_selectRecordingDevice_FUN_00575870
   sound_sndmain.cpp_selectSoundDevice_FUN_005754d0
+  sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_00573fe0
+  sound_sndmain.cpp_set3DListenerOrient_FUN_00573f20
+  sound_sndmain.cpp_set3DListenerPos_FUN_00573ec0
+  sound_sndmain.cpp_set3DListenerVelocity_FUN_00573fa0
   sound_sndmain.cpp_setMaxSwSoundLatency_FUN_00576040
   sound_sndmain.cpp_setMemoryBudget_FUN_00574360
   sound_sndmain.cpp_setNumberOfSfxChannels_FUN_00573c10
@@ -2110,13 +2080,13 @@ Functions:
   wincore_winvideo.cpp_playMovie_FUN_005b4cd0
 
 ====================================================================================================
-TYPE: pointer_cast (5916 occurrences)
+TYPE: pointer_cast (5936 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  3405x  (int)&NAME used in byte-offset arithmetic
+  3401x  (int)&NAME used in byte-offset arithmetic
     99x  (code **)((int)(this_ptr->base).vtable
-    94x  (uint *)((int)pvVar4
+    96x  (uint *)((int)pvVar4
     86x  (uint *)((int)pvVar5
     68x  (CBoundingBox3D *)((int)pCVar3
     59x  (uint *)((int)pvVar3
@@ -2127,8 +2097,8 @@ Unique patterns:
     38x  (SRenderVertex *)((int)pSVar4
     34x  (uint *)((int)dest
     33x  (SRenderVertex *)((int)pSVar3
+    33x  (uint *)((int)this_ptr
     32x  (uint *)((int)pvVar1
-    31x  (uint *)((int)this_ptr
     27x  (CMatrix3x4f *)((int)pCVar3
     25x  (CMatrix3x4f *)((int)pCVar4
     23x  (float *)((int)this_ptr
@@ -3111,27 +3081,28 @@ Functions:
   sound_mp3.cpp_requantizeSamples_FUN_00526f40
   sound_snddx.cpp_directSoundEnumerationCallback_FUN_00579f70
   sound_snddx.cpp_fillStreamBuffer_FUN_005776b0
+  sound_sndmain.cpp_CSfxOptions_reset_FUN_005726e0
   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_0056feb0
-  sound_sndmain.cpp_CSfxSlot_compute_FUN_00570f30
+  sound_sndmain.cpp_CSfxSample_lock_FUN_00570160
+  sound_sndmain.cpp_CSfxSample_pollStream_FUN_00570460
+  sound_sndmain.cpp_CSfxSlot_mix_FUN_00571420
   sound_sndmain.cpp_CSfxSlot_seek_FUN_00572250
+  sound_sndmain.cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_00570a40
   sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00572030
-  sound_sndmain.cpp_FUN_0056dfd0
-  sound_sndmain.cpp_FUN_00570460
-  sound_sndmain.cpp_FUN_00571420
-  sound_sndmain.cpp_FUN_005726e0
-  sound_sndmain.cpp_FUN_00573760
-  sound_sndmain.cpp_FUN_00574100
-  sound_sndmain.cpp_FUN_00574410
-  sound_sndmain.cpp_FUN_00575db0
   sound_sndmain.cpp_allocMixBuffers_FUN_0056f470
   sound_sndmain.cpp_convert16BitAudioSignedness_FUN_005747d0
   sound_sndmain.cpp_convertMixBufToOutput_FUN_0056f890
+  sound_sndmain.cpp_createUserSample_FUN_00574100
+  sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_0056dfd0
+  sound_sndmain.cpp_flushSoundChanges_FUN_00575db0
   sound_sndmain.cpp_freeSampleByName_FUN_00574380
   sound_sndmain.cpp_getRecordingDeviceInfo_FUN_00575790
+  sound_sndmain.cpp_getSampleInfo_FUN_00574410
   sound_sndmain.cpp_getSfxSampleInfo_FUN_00573620
   sound_sndmain.cpp_getSoundDeviceInfo_FUN_00575350
   sound_sndmain.cpp_getSoundMemoryStats_FUN_005746e0
   sound_sndmain.cpp_nextMixingBuffer_FUN_0056f6d0
+  sound_sndmain.cpp_parseWavFile_FUN_0056db10
   sound_sndmain.cpp_pollAndMixSfx_FUN_00576c20
   sound_sndmain.cpp_readIni_FUN_005760b0
   sound_sndmain.cpp_resampleAndConvertAudio_FUN_005747f0
@@ -3178,29 +3149,29 @@ Functions:
   wincore_winrun.cpp_winMain_FUN_005b2e00
 
 ====================================================================================================
-TYPE: pointer_truncation (5028 occurrences)
+TYPE: pointer_truncation (5038 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   134x  (int)pvVar4
+   139x  (int)pvVar4
    108x  (int)pCVar3
     99x  (int)pvVar5
-    82x  (int)pvVar3
+    86x  (int)pvVar3
     82x  (int)&local_2d8
     71x  (int)pvVar2
     55x  (int)pvVar1
     53x  (int)pSVar4
     48x  (int)dest
     46x  (int)&CStack_28
-    44x  (int)pCVar4
+    43x  (int)pCVar4
     42x  (int)&stack0xffffffe0
     41x  (int)pSVar3
     40x  (int)&stack0xffffffc4
     40x  (int)&stack0xffffffd4
     39x  (int)&stack0xffffffc8
     38x  (int)pCVar6
+    38x  (int)pCVar5
     37x  (int)&stack0xffffffdc
-    37x  (int)pCVar5
     34x  (int)&stack0xffffffec
 
 Functions:
@@ -4043,19 +4014,21 @@ Functions:
   sound_mp3.cpp_antiAliasingButterfly_FUN_0052a0e0
   sound_mp3.cpp_mpegLayer3StereoProcess_FUN_00529370
   sound_mp3.cpp_requantizeSamples_FUN_00526f40
-  sound_snddx.cpp_FUN_00577f90
+  sound_sndmain.cpp_CSfxOptions_reset_FUN_005726e0
   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_0056feb0
+  sound_sndmain.cpp_CSfxSample_pollStream_FUN_00570460
   sound_sndmain.cpp_CSfxSlot_kill_FUN_00571d70
+  sound_sndmain.cpp_CSfxSlot_mix_FUN_00571420
   sound_sndmain.cpp_CSfxSlot_seek_FUN_00572250
+  sound_sndmain.cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_00570a40
   sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00572030
-  sound_sndmain.cpp_FUN_00570460
-  sound_sndmain.cpp_FUN_00571420
-  sound_sndmain.cpp_FUN_005726e0
-  sound_sndmain.cpp_FUN_00574100
-  sound_sndmain.cpp_FUN_00575db0
   sound_sndmain.cpp_allocMixBuffers_FUN_0056f470
   sound_sndmain.cpp_convertMixBufToOutput_FUN_0056f890
+  sound_sndmain.cpp_createUserSample_FUN_00574100
+  sound_sndmain.cpp_flushSoundChanges_FUN_00575db0
   sound_sndmain.cpp_getSfxSampleInfo_FUN_00573620
+  sound_sndmain.cpp_nextMixingBuffer_FUN_0056f6d0
+  sound_sndmain.cpp_pollAndMixSfx_FUN_00576c20
   sound_sndmain.cpp_resampleAndConvertAudio_FUN_005747f0
   sound_sndmain.cpp_startSfx_FUN_00572d20
   sound_sndmain.cpp_writeIni_FUN_005763b0
@@ -4082,7 +4055,7 @@ Functions:
   wincore_winrun.cpp_winMain_FUN_005b2e00
 
 ====================================================================================================
-TYPE: stack_ref (3388 occurrences)
+TYPE: stack_ref (3357 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -4566,11 +4539,10 @@ Functions:
   sound_snddx.cpp_FUN_00577b60
   sound_snddx.cpp_FUN_00578590
   sound_snddx.cpp_FUN_00578cc0
-  sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_0056feb0
-  sound_sndmain.cpp_FUN_00571420
-  sound_sndmain.cpp_FUN_005773f0
   sound_sndmain.cpp_allocateHwSample_FUN_0056f360
-  sound_sndmain.cpp_startSfx_FUN_00572d20
+  sound_sndmain.cpp_logSoundError_FUN_005773f0
+  sound_sndmain.cpp_nextMixingBuffer_FUN_0056f6d0
+  sound_sndmain.cpp_pollAndMixSfx_FUN_00576c20
   sound_sndwav.cpp_getWavInDevice_FUN_0057b500
   support_trisock.cpp_FUN_0059cf00
   support_trisock.cpp_FUN_0059f1a0
@@ -4579,21 +4551,20 @@ Functions:
   support_trstream.cpp_COutStream_printf_FUN_005a14c0
 
 ====================================================================================================
-TYPE: stack_param (2566 occurrences)
+TYPE: stack_param (2519 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   568x  in_stack_00000004
-   318x  in_stack_00000008
-   187x  in_stack_0000000c
-   128x  in_stack_00000010
+   551x  in_stack_00000004
+   310x  in_stack_00000008
+   183x  in_stack_0000000c
+   124x  in_stack_00000010
     80x  in_stack_00000018
     76x  in_stack_00000014
     51x  in_stack_0000001c
     41x  in_stack_fffff9d8
     40x  in_stack_fffffb24
     37x  in_stack_00000020
-    35x  in_stack_0000002c
     35x  in_stack_fffffac0
     28x  in_stack_fffffb34
     27x  in_stack_ffffff8c
@@ -4601,8 +4572,9 @@ Unique patterns:
     20x  in_stack_fffffe5c
     17x  in_stack_00000034
     17x  in_stack_fffffdd4
+    17x  in_stack_ffffff7c
     17x  in_stack_fffffb20
-    17x  in_stack_fffffe64
+    16x  in_stack_ffffff94
 
 Functions:
   cockpit_ckptutil.c_FUN_00439090
@@ -4732,7 +4704,6 @@ Functions:
   core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_005058e0
   core_melee.cpp_CMelee_fillAttackDamageInfo_FUN_00509870
   core_melee.cpp_CMelee_process_FUN_005099a0
-  core_menu.cpp_FUN_0050ba70
   core_minecar.cpp_CMineCar_setup_FUN_00510e00
   core_mirror.cpp_FUN_00519cb0
   core_mission.cpp_FUN_0051ba60
@@ -4854,16 +4825,9 @@ Functions:
   shape_spotview.cpp_FUN_00584440
   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_0052b450
   sound_snddx.cpp_FUN_00577b60
-  sound_snddx.cpp_FUN_005784b0
   sound_snddx.cpp_FUN_00578680
-  sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_0056feb0
-  sound_sndmain.cpp_FUN_0056d7d0
-  sound_sndmain.cpp_FUN_0056e7f0
-  sound_sndmain.cpp_FUN_00571420
-  sound_sndmain.cpp_FUN_00573e50
-  sound_sndmain.cpp_FUN_00573eb0
-  sound_sndmain.cpp_FUN_00574100
-  sound_sndmain.cpp_startSfx_FUN_00572d20
+  sound_sndmain.cpp_nextMixingBuffer_FUN_0056f6d0
+  sound_sndmain.cpp_pollAndMixSfx_FUN_00576c20
   sound_sndwav.cpp_CWavInDevice_setMode_FUN_0057ae70
   sound_sndwav.cpp_CWavOutDevice_setMode_FUN_0057a930
   sound_sndwav.cpp_getWavInDevice_FUN_0057b500
@@ -4878,11 +4842,11 @@ Functions:
   wincore_winrun.cpp_FUN_005b48c0
 
 ====================================================================================================
-TYPE: warning_overlapping_globals (2208 occurrences)
+TYPE: warning_overlapping_globals (2209 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  2208x  WARNING: Globals starting with
+  2209x  WARNING: Globals starting with
 
 Functions:
   cockpit_ckptutil.c_FUN_00437270
@@ -6888,10 +6852,13 @@ Functions:
   sound_snddx.cpp_fillStreamBuffer_FUN_005776b0
   sound_snddx.cpp_getDirectSoundDevice_FUN_0057a340
   sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_00572430
+  sound_sndmain.cpp_CSfxOptions_reset_FUN_005726e0
   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_0056feb0
   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00570020
   sound_sndmain.cpp_CSfxSample_init_FUN_00572340
+  sound_sndmain.cpp_CSfxSample_lock_FUN_00570160
   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_0056e130
+  sound_sndmain.cpp_CSfxSample_pollStream_FUN_00570460
   sound_sndmain.cpp_CSfxSample_releaseBufferId_FUN_005700e0
   sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00570260
   sound_sndmain.cpp_CSfxSample_seek_FUN_005702c0
@@ -6900,69 +6867,42 @@ Functions:
   sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_00570d50
   sound_sndmain.cpp_CSfxSlot_compute_FUN_00570f30
   sound_sndmain.cpp_CSfxSlot_kill_FUN_00571d70
+  sound_sndmain.cpp_CSfxSlot_mix_FUN_00571420
+  sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_00571f10
   sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_00571fa0
   sound_sndmain.cpp_CSfxSlot_seek_FUN_00572250
   sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00572030
-  sound_sndmain.cpp_FUN_0056d7d0
-  sound_sndmain.cpp_FUN_0056db10
-  sound_sndmain.cpp_FUN_0056df00
-  sound_sndmain.cpp_FUN_0056df60
-  sound_sndmain.cpp_FUN_0056dfd0
-  sound_sndmain.cpp_FUN_0056e830
-  sound_sndmain.cpp_FUN_0056f1e0
-  sound_sndmain.cpp_FUN_0056fa10
-  sound_sndmain.cpp_FUN_00570160
-  sound_sndmain.cpp_FUN_00570460
-  sound_sndmain.cpp_FUN_00571420
-  sound_sndmain.cpp_FUN_00571f10
-  sound_sndmain.cpp_FUN_005726e0
-  sound_sndmain.cpp_FUN_00572780
-  sound_sndmain.cpp_FUN_005727e0
-  sound_sndmain.cpp_FUN_00572810
-  sound_sndmain.cpp_FUN_00572840
-  sound_sndmain.cpp_FUN_00572880
-  sound_sndmain.cpp_FUN_005728b0
-  sound_sndmain.cpp_FUN_005728e0
-  sound_sndmain.cpp_FUN_00572900
-  sound_sndmain.cpp_FUN_005729d0
-  sound_sndmain.cpp_FUN_005729f0
-  sound_sndmain.cpp_FUN_00572a10
-  sound_sndmain.cpp_FUN_00572a30
-  sound_sndmain.cpp_FUN_00572a50
-  sound_sndmain.cpp_FUN_00573980
-  sound_sndmain.cpp_FUN_00573e50
-  sound_sndmain.cpp_FUN_00573e70
-  sound_sndmain.cpp_FUN_00573eb0
-  sound_sndmain.cpp_FUN_00573ec0
-  sound_sndmain.cpp_FUN_00573f20
-  sound_sndmain.cpp_FUN_00573fa0
-  sound_sndmain.cpp_FUN_00573fe0
-  sound_sndmain.cpp_FUN_00574010
-  sound_sndmain.cpp_FUN_00574080
-  sound_sndmain.cpp_FUN_00574100
-  sound_sndmain.cpp_FUN_00574410
-  sound_sndmain.cpp_FUN_00575580
-  sound_sndmain.cpp_FUN_00575db0
-  sound_sndmain.cpp_FUN_005770d0
-  sound_sndmain.cpp_FUN_005771b0
-  sound_sndmain.cpp_FUN_005774f0
   sound_sndmain.cpp_allocMixBuffers_FUN_0056f470
   sound_sndmain.cpp_allocateHwSample_FUN_0056f360
   sound_sndmain.cpp_analyzeFrequencyBand_FUN_00576590
   sound_sndmain.cpp_audioThreadProc_FUN_00575bb0
   sound_sndmain.cpp_calculateDistanceGain_FUN_0056f400
+  sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_0056f1e0
+  sound_sndmain.cpp_clearNextSfxFlagBits_FUN_00572a30
   sound_sndmain.cpp_closeSoundDevice_FUN_00575670
+  sound_sndmain.cpp_computeFFT_FUN_0056d7d0
   sound_sndmain.cpp_convertMixBufToOutput_FUN_0056f890
+  sound_sndmain.cpp_createUserSample_FUN_00574100
+  sound_sndmain.cpp_enableHwSoundMixing_FUN_00575580
   sound_sndmain.cpp_enableSfxChannel_FUN_00573c50
   sound_sndmain.cpp_enableSoundSystem_FUN_00574ee0
+  sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_0056dfd0
+  sound_sndmain.cpp_findFreeSfxSample_FUN_0056df60
+  sound_sndmain.cpp_flushSoundChanges_FUN_00575db0
   sound_sndmain.cpp_freeMixBuffers_FUN_0056f630
+  sound_sndmain.cpp_getActiveSfxCount_FUN_0056df00
   sound_sndmain.cpp_getChannelLevels_FUN_00576b20
   sound_sndmain.cpp_getMixBufferCount_FUN_005756e0
+  sound_sndmain.cpp_getNearestListener_FUN_00574080
   sound_sndmain.cpp_getRecordingDeviceInfo_FUN_00575790
   sound_sndmain.cpp_getRecordingFormat_FUN_00575a50
+  sound_sndmain.cpp_getSampleInfo_FUN_00574410
   sound_sndmain.cpp_getSfxChannelVol_FUN_00573bc0
   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00573660
+  sound_sndmain.cpp_getSfxSample_FUN_0056e830
+  sound_sndmain.cpp_getSfxSlotFromHandle_FUN_0056fa10
   sound_sndmain.cpp_getSoundDeviceInfo_FUN_00575350
+  sound_sndmain.cpp_hasHardware3DSound_FUN_00575560
   sound_sndmain.cpp_initializeRecordingDevice_FUN_005758e0
   sound_sndmain.cpp_initializeSoundDevice_FUN_005755c0
   sound_sndmain.cpp_isRecordingStarted_FUN_00575990
@@ -6971,11 +6911,15 @@ Functions:
   sound_sndmain.cpp_isSoundBusy_FUN_00575550
   sound_sndmain.cpp_isSoundMuted_FUN_005735f0
   sound_sndmain.cpp_isSoundSystemActive_FUN_00575540
+  sound_sndmain.cpp_isWithinListenerRadius_FUN_00574010
   sound_sndmain.cpp_killSoundThread_FUN_00575ca0
   sound_sndmain.cpp_lockSound_FUN_00575d20
   sound_sndmain.cpp_mixResampleMonoToStereo_FUN_0056fb90
   sound_sndmain.cpp_mixResampleStereoToStereo_FUN_0056fcd0
   sound_sndmain.cpp_nextMixingBuffer_FUN_0056f6d0
+  sound_sndmain.cpp_openCdAudio_FUN_005770d0
+  sound_sndmain.cpp_parseWavFile_FUN_0056db10
+  sound_sndmain.cpp_playCdTrack_FUN_005771b0
   sound_sndmain.cpp_pollAllSfxSlots_FUN_00576f40
   sound_sndmain.cpp_pollAllStreams_FUN_00577040
   sound_sndmain.cpp_pollAndMixSfx_FUN_00576c20
@@ -6988,13 +6932,32 @@ Functions:
   sound_sndmain.cpp_resetSoundDevice_FUN_005750e0
   sound_sndmain.cpp_selectRecordingDevice_FUN_00575870
   sound_sndmain.cpp_selectSoundDevice_FUN_005754d0
+  sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_00573fe0
   sound_sndmain.cpp_set3DListenerOrientRight_FUN_005756f0
+  sound_sndmain.cpp_set3DListenerOrient_FUN_00573f20
+  sound_sndmain.cpp_set3DListenerPos_FUN_00573ec0
+  sound_sndmain.cpp_set3DListenerVelocity_FUN_00573fa0
+  sound_sndmain.cpp_setCurrentListener_FUN_00573eb0
+  sound_sndmain.cpp_setDualListenerEnabled_FUN_00573e50
   sound_sndmain.cpp_setMaxSwSoundLatency_FUN_00576040
   sound_sndmain.cpp_setMemoryBudget_FUN_00574360
+  sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_00572900
   sound_sndmain.cpp_setNextSfxChannel_FUN_00572980
+  sound_sndmain.cpp_setNextSfxDelay_FUN_005729d0
+  sound_sndmain.cpp_setNextSfxFlagBits_FUN_00572a10
+  sound_sndmain.cpp_setNextSfxFlags_FUN_005729f0
+  sound_sndmain.cpp_setNextSfxStaticPosition_FUN_00572780
+  sound_sndmain.cpp_setNextSfxStaticVelocity_FUN_00572840
+  sound_sndmain.cpp_setNextSfxTrackedDoublePosition_FUN_00572810
+  sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005727e0
+  sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_00572880
+  sound_sndmain.cpp_setNextSfxTrackedVelocity2_FUN_005728b0
+  sound_sndmain.cpp_setNextSfxTriggerTime_FUN_00572a50
   sound_sndmain.cpp_setNextSfxUserData_FUN_00572920
+  sound_sndmain.cpp_setNextSfxVolume_FUN_005728e0
   sound_sndmain.cpp_setNumberOfSfxChannels_FUN_00573c10
   sound_sndmain.cpp_setRecordingFormat_FUN_005759b0
+  sound_sndmain.cpp_setSfxBaseFrequency_FUN_00573980
   sound_sndmain.cpp_setSfxChannelVol_FUN_00573b30
   sound_sndmain.cpp_setSfxUserData_FUN_005739e0
   sound_sndmain.cpp_setSoundMuted_FUN_00573600
@@ -7004,7 +6967,9 @@ Functions:
   sound_sndmain.cpp_startSfx_FUN_00572d20
   sound_sndmain.cpp_startSoundThread_FUN_00575c00
   sound_sndmain.cpp_staticInit_FUN_0056d490
+  sound_sndmain.cpp_staticInit_FUN_005774f0
   sound_sndmain.cpp_stopRecordingDevice_FUN_00575b70
+  sound_sndmain.cpp_unlockSound_FUN_00573e70
   sound_sndwav.cpp_CWavInDevice_close_FUN_0057ac70
   sound_sndwav.cpp_CWavInDevice_poll_FUN_0057b1e0
   sound_sndwav.cpp_CWavInDevice_reset_FUN_0057ae10
@@ -7722,10 +7687,10 @@ Functions:
   sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00528410
   sound_mp3.cpp_CMP3Decoder_read_FUN_0052b170
   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_0056feb0
-  sound_sndmain.cpp_FUN_00570460
-  sound_sndmain.cpp_FUN_00574100
-  sound_sndmain.cpp_FUN_00574410
+  sound_sndmain.cpp_CSfxSample_pollStream_FUN_00570460
+  sound_sndmain.cpp_createUserSample_FUN_00574100
   sound_sndmain.cpp_getRecordingDeviceInfo_FUN_00575790
+  sound_sndmain.cpp_getSampleInfo_FUN_00574410
   sound_sndmain.cpp_getSfxSampleInfo_FUN_00573620
   sound_sndmain.cpp_getSoundDeviceInfo_FUN_00575350
   sound_sndmain.cpp_nextMixingBuffer_FUN_0056f6d0
@@ -7745,13 +7710,13 @@ Functions:
   wincore_winrun.cpp_FUN_005b3d70
 
 ====================================================================================================
-TYPE: unaffected_reg (1204 occurrences)
+TYPE: unaffected_reg (1200 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   751x  unaff_ESI
+   749x  unaff_ESI
    221x  unaff_EDI
-   151x  unaff_EBP
+   149x  unaff_EBP
     81x  unaff_EBX
 
 Functions:
@@ -8000,8 +7965,6 @@ Functions:
   shape_edittool.cpp_FUN_004987b0
   shape_edittool.cpp_FUN_0049dc70
   sound_snddx.cpp_CDirectSoundDevice_close_FUN_00577a90
-  sound_sndmain.cpp_FUN_00575db0
-  sound_sndmain.cpp_setSfxChannelVol_FUN_00573b30
   sound_sndwav.cpp_CWavOutDevice_start_FUN_0057a7f0
   support_trisock.cpp_FUN_0059f1a0
   support_trisock.cpp_buildSockaddrIn_FUN_0059c7d0
@@ -8282,27 +8245,27 @@ Functions:
   sound_snddx.cpp_fillStreamBuffer_FUN_005776b0
   sound_snddx.cpp_getDirectSoundDevice_FUN_0057a340
   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_0056feb0
+  sound_sndmain.cpp_CSfxSample_lock_FUN_00570160
   sound_sndmain.cpp_CSfxSample_releaseBufferId_FUN_005700e0
   sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00570260
   sound_sndmain.cpp_CSfxSlot_kill_FUN_00571d70
+  sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_00571f10
   sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_00571fa0
-  sound_sndmain.cpp_FUN_0056db10
-  sound_sndmain.cpp_FUN_0056fa10
-  sound_sndmain.cpp_FUN_00570160
-  sound_sndmain.cpp_FUN_00571f10
-  sound_sndmain.cpp_FUN_00573980
-  sound_sndmain.cpp_FUN_00573fe0
-  sound_sndmain.cpp_FUN_00575db0
   sound_sndmain.cpp_allocateHwSample_FUN_0056f360
   sound_sndmain.cpp_closeSoundDevice_FUN_00575670
   sound_sndmain.cpp_enableSoundSystem_FUN_00574ee0
+  sound_sndmain.cpp_flushSoundChanges_FUN_00575db0
+  sound_sndmain.cpp_getSfxSlotFromHandle_FUN_0056fa10
+  sound_sndmain.cpp_parseWavFile_FUN_0056db10
   sound_sndmain.cpp_pollRecordingDevice_FUN_00575b20
   sound_sndmain.cpp_processAudio_FUN_00575fb0
   sound_sndmain.cpp_readIni_FUN_005760b0
   sound_sndmain.cpp_releaseRecordingDevice_FUN_00575940
   sound_sndmain.cpp_resetSoundDevice_FUN_005750e0
+  sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_00573fe0
   sound_sndmain.cpp_set3DListenerOrientRight_FUN_005756f0
   sound_sndmain.cpp_setRecordingFormat_FUN_005759b0
+  sound_sndmain.cpp_setSfxBaseFrequency_FUN_00573980
   sound_sndmain.cpp_setSoundMuted_FUN_00573600
   sound_sndmain.cpp_setSoundOutputMode_FUN_00575120
   sound_sndmain.cpp_startRecording_FUN_00575aa0
@@ -8454,16 +8417,16 @@ Functions:
   engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_0057fb03
   sound_mp3.cpp_CMP3Decoder_decodeScalefacCompress_FUN_00527e80
   sound_snddx.cpp_FUN_00578a80
+  sound_sndmain.cpp_CSfxSample_pollStream_FUN_00570460
   sound_sndmain.cpp_CSfxSample_seek_FUN_005702c0
-  sound_sndmain.cpp_FUN_00570460
-  sound_sndmain.cpp_FUN_005771b0
+  sound_sndmain.cpp_playCdTrack_FUN_005771b0
   support_codec.cpp_FUN_00442e10
   support_trisock.cpp_buildSockaddrIn_FUN_0059c7d0
   support_trstream.cpp_CInStreamMemory_seek_FUN_005a1360
   wincore_winrun.cpp_getNextKeypress_FUN_005b2510
 
 ====================================================================================================
-TYPE: stack_alignment_array (716 occurrences)
+TYPE: stack_alignment_array (719 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -9091,17 +9054,17 @@ Functions:
   support_trisock.cpp_buildSockaddrIn_FUN_0059c7d0
 
 ====================================================================================================
-TYPE: unknown_field (633 occurrences)
+TYPE: unknown_field (651 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   125x  ._4_4_
-   119x  ._0_4_
-    59x  ._8_4_
-    37x  ._12_4_
-    28x  ._16_4_
-    19x  ._24_4_
-    16x  ._20_4_
+   130x  ._4_4_
+   124x  ._0_4_
+    61x  ._8_4_
+    39x  ._12_4_
+    30x  ._16_4_
+    20x  ._24_4_
+    17x  ._20_4_
     14x  ._28_4_
     13x  ._40_4_
     12x  ._36_4_
@@ -9177,6 +9140,9 @@ Functions:
   sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00572030
   sound_sndmain.cpp_mixResampleMonoToStereo_FUN_0056fb90
   sound_sndmain.cpp_mixResampleStereoToStereo_FUN_0056fcd0
+  sound_sndmain.cpp_nextMixingBuffer_FUN_0056f6d0
+  sound_sndmain.cpp_pollAndMixSfx_FUN_00576c20
+  sound_sndmain.cpp_set3DListenerPos_FUN_00573ec0
   sound_sndmain.cpp_startSoundThread_FUN_00575c00
   sound_sndwav.cpp_CWavInDevice_setMode_FUN_0057ae70
   support_trisock.cpp_CSocket_bindSocket_FUN_0059c980
@@ -9420,7 +9386,7 @@ Functions:
   shape_edittool.cpp_showMultiChoiceDialog_FUN_00494690
   sound_mp3.cpp_CMP3Decoder_openFile_FUN_0052aea0
   sound_mp3.cpp_CMP3Decoder_read_FUN_0052b170
-  sound_sndmain.cpp_FUN_0056e830
+  sound_sndmain.cpp_getSfxSample_FUN_0056e830
   sound_sndmain.cpp_startSfx_FUN_00572d20
   sound_sndmain.cpp_writeIni_FUN_005763b0
   sound_sndwav.cpp_enumerateWavInDevice_FUN_0057b460
@@ -9452,7 +9418,6 @@ Unique patterns:
      8x  pCVar2 = (T *)&pCVar2->FIELD
      8x  pCVar3 = (T *)&pCVar3->FIELD
      8x  pCVar2 = (T *)&(pCVar2->FIELD).SUBFIELD
-     7x  pCVar8 = (T *)&(pCVar8->FIELD).SUBFIELD
      7x  pCVar3 = (T *)pCVar3->ARRAY
      7x  this_ptr = (T *)&(this_ptr->FIELD).SUBFIELD
      6x  pSVar4 = (T *)&(pSVar4->FIELD).SUBFIELD
@@ -9462,6 +9427,7 @@ Unique patterns:
      5x  pCVar2 = (T *)((pCVar2->FIELD).SUBFIELD...ARRAY + CONST)
      5x  pCVar10 = (T *)((pCVar10->FIELD).SUBFIELD...ARRAY + CONST)
      5x  pCVar5 = (T *)&pCVar5->FIELD[N].SUBFIELD
+     5x  local_14 = (T *)&(local_14->FIELD).SUBFIELD
 
 Functions:
   core_actor.cpp_CDemonActor_getBoundingBox_FUN_00408910
@@ -9762,123 +9728,9 @@ Functions:
   sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_00570c40
   sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_00570d50
   sound_sndmain.cpp_CSfxSlot_computeDistancesToSpeakers_FUN_00570bd0
-  sound_sndmain.cpp_FUN_0056e830
-  sound_sndmain.cpp_FUN_00571420
+  sound_sndmain.cpp_CSfxSlot_mix_FUN_00571420
+  sound_sndmain.cpp_getSfxSample_FUN_0056e830
   sound_sndmain.cpp_startSfx_FUN_00572d20
-
-====================================================================================================
-TYPE: extra_output (471 occurrences)
-====================================================================================================
-
-Unique patterns:
-   141x  extraout_EDX
-   112x  extraout_ECX
-    56x  extraout_EAX
-    38x  extraout_ECX_00
-    37x  extraout_EDX_00
-    22x  extraout_ECX_01
-    12x  extraout_EDX_01
-    10x  extraout_var
-     5x  extraout_EDX_02
-     4x  extraout_CL
-     4x  extraout_var_00
-     4x  extraout_EAX_00
-     4x  extraout_ECX_02
-     4x  extraout_ECX_03
-     4x  extraout_ECX_04
-     4x  extraout_ECX_05
-     2x  extraout_CL_00
-     2x  extraout_EDX_03
-     2x  extraout_EDX_04
-     2x  extraout_EDX_05
-
-Functions:
-  cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00439900
-  cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_00439ca0
-  cockpit_drawsurf.cpp_FUN_0047ef60
-  core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a200
-  core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90
-  core_charactr.cpp_CCharacter_renderBurn_FUN_0042fe00
-  core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00454830
-  core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00454c20
-  core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00453610
-  core_dcamera.cpp_FUN_0044ee30
-  core_dcamera.cpp_FUN_00454360
-  core_dfilter.cpp_CDemonFilter_init_FUN_0045dc30
-  core_dfilter.cpp_CDemonFilter_load_FUN_0045da30
-  core_dfilter.cpp_CFilterFX_process_FUN_0045df40
-  core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0045e9c0
-  core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0045e970
-  core_dirmat.cpp_FUN_0045f840
-  core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_00467880
-  core_dskybox.cpp_renderSkyDome_FUN_00486900
-  core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck_FUN_0048c010
-  core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_0048e7f0
-  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_0048d4f0
-  core_fire.cpp_CBulletTrail_render_FUN_004afcf0
-  core_fire.cpp_CLeaf_process_FUN_004af170
-  core_fire.cpp_CLightningBolt_render_FUN_004b3570
-  core_fire.cpp_CRainDrop_render_FUN_004b46e0
-  core_fldnotes.cpp_SNotesSection_addEntry_FUN_004bc020
-  core_fldnotes.cpp_SPageResourceBitmap_ctorFromFile_FUN_004baa40
-  core_fldnotes.cpp_SPageResourceBitmap_ctor_FUN_004baa10
-  core_fldnotes.cpp_SPageResourceMap_ctor_FUN_004bcb10
-  core_fldnotes.cpp_SPageResourceText_ctor_FUN_004ba850
-  core_fldnotes.cpp_SPageResourceTwanaEntry_ctor_FUN_004bac90
-  core_game.cpp_CGame_displayActStats_FUN_004d8700
-  core_game.cpp_CGame_renderIrisFade_FUN_004d61e0
-  core_game.cpp_CGame_rollCredits_FUN_004d8e50
-  core_game.cpp_FUN_004cbf20
-  core_glass.cpp_CGlass_setup_FUN_004e1150
-  core_inv.cpp_CInventory_renderSelectedItems_FUN_004faaf0
-  core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_00505060
-  core_marquee.cpp_FUN_005072c0
-  core_menu.cpp_FUN_0050ba70
-  core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_00525240
-  core_motion.cpp_FUN_00525110
-  core_path.cpp_CPathMap_renderPathMap_FUN_00534ca0
-  core_path.cpp_renderGridQuad_FUN_00534a70
-  core_set.cpp_CDemonSet_setGamma_FUN_00555830
-  core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_0055d720
-  core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0056afe0
-  core_skeleton.cpp_CDeformableModel_selectLOD_FUN_00566380
-  core_sound.cpp_FUN_0057c580
-  core_sound.cpp_FUN_0057cb30
-  core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
-  core_wateract.cpp_CWaterActor_process_FUN_005aaeb0
-  core_wateract.cpp_CWaterActor_setup_FUN_005aa720
-  core_xform.cpp_FUN_005b7c00
-  core_xform.cpp_FUN_005b7d60
-  core_xform.cpp_matrixToEulerAnglesZYX_FUN_005b5dd0
-  core_xform.cpp_matrixToEulerAngles_FUN_005b5930
-  core_xform.cpp_quaternionToAxisAngle_FUN_005b78a0
-  core_xform.cpp_slerpQuaternion_FUN_005b7940
-  engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
-  engine_font.cpp_FUN_004c1dd0
-  engine_keyframe.c_calculatePackedSurfaceNormal_FUN_004fc800
-  engine_keyframe.c_interpolateCubicKeyframes_FUN_004fcd30
-  engine_mini3d.cpp_clearZBuffer_FUN_005111a0
-  engine_mini3d.cpp_clear_FUN_00511180
-  engine_mini3d.cpp_polyListSurface_FUN_00516cc0
-  engine_mini3d.cpp_userClipPolyList_FUN_00517660
-  engine_model.c_FUN_0051f920
-  engine_pod.cpp_FUN_0053b250
-  engine_texture.cpp_CTextureCache_loadTexture_FUN_005967a0
-  sound_mp3.cpp_calculateMpegFrame_FUN_00525840
-  sound_mp3.cpp_requantizeLayer3Samples_FUN_00528ae0
-  sound_snddx.cpp_FUN_00577f90
-  sound_snddx.cpp_FUN_005784b0
-  sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_0056feb0
-  sound_sndmain.cpp_CSfxSample_seek_FUN_005702c0
-  sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_00570c40
-  sound_sndmain.cpp_FUN_00570460
-  sound_sndmain.cpp_FUN_00571420
-  sound_sndmain.cpp_FUN_005735a0
-  sound_sndmain.cpp_FUN_00575db0
-  sound_sndmain.cpp_pollAllSfxSlots_FUN_00576f40
-  sound_sndmain.cpp_setSfxChannelVol_FUN_00573b30
-  sound_sndmain.cpp_startSfx_FUN_00572d20
-  support_codec.cpp_FUN_00442e10
 
 ====================================================================================================
 TYPE: negative_offset (449 occurrences)
@@ -10053,19 +9905,123 @@ Functions:
   support_codec.cpp_CLZWDecompress_dtor_FUN_00444210
 
 ====================================================================================================
-TYPE: param_count_too_few (406 occurrences)
+TYPE: extra_output (447 occurrences)
+====================================================================================================
+
+Unique patterns:
+   141x  extraout_EDX
+   112x  extraout_ECX
+    38x  extraout_ECX_00
+    37x  extraout_EDX_00
+    36x  extraout_EAX
+    22x  extraout_ECX_01
+    12x  extraout_EDX_01
+    10x  extraout_var
+     5x  extraout_EDX_02
+     4x  extraout_CL
+     4x  extraout_var_00
+     4x  extraout_ECX_02
+     4x  extraout_ECX_03
+     4x  extraout_ECX_04
+     4x  extraout_ECX_05
+     2x  extraout_CL_00
+     2x  extraout_EDX_03
+     2x  extraout_EDX_04
+     2x  extraout_EDX_05
+     2x  extraout_EAX_00
+
+Functions:
+  cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00439900
+  cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_00439ca0
+  cockpit_drawsurf.cpp_FUN_0047ef60
+  core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a200
+  core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90
+  core_charactr.cpp_CCharacter_renderBurn_FUN_0042fe00
+  core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00454830
+  core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00454c20
+  core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00453610
+  core_dcamera.cpp_FUN_0044ee30
+  core_dcamera.cpp_FUN_00454360
+  core_dfilter.cpp_CDemonFilter_init_FUN_0045dc30
+  core_dfilter.cpp_CDemonFilter_load_FUN_0045da30
+  core_dfilter.cpp_CFilterFX_process_FUN_0045df40
+  core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0045e9c0
+  core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0045e970
+  core_dirmat.cpp_FUN_0045f840
+  core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_00467880
+  core_dskybox.cpp_renderSkyDome_FUN_00486900
+  core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck_FUN_0048c010
+  core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_0048e7f0
+  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_0048d4f0
+  core_fire.cpp_CBulletTrail_render_FUN_004afcf0
+  core_fire.cpp_CLeaf_process_FUN_004af170
+  core_fire.cpp_CLightningBolt_render_FUN_004b3570
+  core_fire.cpp_CRainDrop_render_FUN_004b46e0
+  core_fldnotes.cpp_SNotesSection_addEntry_FUN_004bc020
+  core_fldnotes.cpp_SPageResourceBitmap_ctorFromFile_FUN_004baa40
+  core_fldnotes.cpp_SPageResourceBitmap_ctor_FUN_004baa10
+  core_fldnotes.cpp_SPageResourceMap_ctor_FUN_004bcb10
+  core_fldnotes.cpp_SPageResourceText_ctor_FUN_004ba850
+  core_fldnotes.cpp_SPageResourceTwanaEntry_ctor_FUN_004bac90
+  core_game.cpp_CGame_displayActStats_FUN_004d8700
+  core_game.cpp_CGame_renderIrisFade_FUN_004d61e0
+  core_game.cpp_CGame_rollCredits_FUN_004d8e50
+  core_game.cpp_FUN_004cbf20
+  core_glass.cpp_CGlass_setup_FUN_004e1150
+  core_inv.cpp_CInventory_renderSelectedItems_FUN_004faaf0
+  core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_00505060
+  core_marquee.cpp_FUN_005072c0
+  core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_00525240
+  core_motion.cpp_FUN_00525110
+  core_path.cpp_CPathMap_renderPathMap_FUN_00534ca0
+  core_path.cpp_renderGridQuad_FUN_00534a70
+  core_set.cpp_CDemonSet_setGamma_FUN_00555830
+  core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_0055d720
+  core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0056afe0
+  core_skeleton.cpp_CDeformableModel_selectLOD_FUN_00566380
+  core_sound.cpp_FUN_0057c580
+  core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
+  core_wateract.cpp_CWaterActor_process_FUN_005aaeb0
+  core_wateract.cpp_CWaterActor_setup_FUN_005aa720
+  core_xform.cpp_FUN_005b7c00
+  core_xform.cpp_FUN_005b7d60
+  core_xform.cpp_matrixToEulerAnglesZYX_FUN_005b5dd0
+  core_xform.cpp_matrixToEulerAngles_FUN_005b5930
+  core_xform.cpp_quaternionToAxisAngle_FUN_005b78a0
+  core_xform.cpp_slerpQuaternion_FUN_005b7940
+  engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
+  engine_font.cpp_FUN_004c1dd0
+  engine_keyframe.c_calculatePackedSurfaceNormal_FUN_004fc800
+  engine_keyframe.c_interpolateCubicKeyframes_FUN_004fcd30
+  engine_mini3d.cpp_clearZBuffer_FUN_005111a0
+  engine_mini3d.cpp_clear_FUN_00511180
+  engine_mini3d.cpp_polyListSurface_FUN_00516cc0
+  engine_mini3d.cpp_userClipPolyList_FUN_00517660
+  engine_model.c_FUN_0051f920
+  engine_pod.cpp_FUN_0053b250
+  engine_texture.cpp_CTextureCache_loadTexture_FUN_005967a0
+  sound_mp3.cpp_calculateMpegFrame_FUN_00525840
+  sound_mp3.cpp_requantizeLayer3Samples_FUN_00528ae0
+  sound_sndmain.cpp_CSfxSample_pollStream_FUN_00570460
+  sound_sndmain.cpp_CSfxSample_seek_FUN_005702c0
+  sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_00570c40
+  sound_sndmain.cpp_CSfxSlot_mix_FUN_00571420
+  support_codec.cpp_FUN_00442e10
+
+====================================================================================================
+TYPE: param_count_too_few (386 occurrences)
 ====================================================================================================
 
 Unique patterns:
     87x  declared:0 vs estimated:2
-    70x  declared:0 vs estimated:4
-    64x  declared:0 vs estimated:3
-    59x  declared:0 vs estimated:1
-    38x  declared:0 vs estimated:5
-    31x  declared:0 vs estimated:6
-    14x  declared:0 vs estimated:7
-    12x  declared:0 vs estimated:8
-    10x  declared:0 vs estimated:9
+    66x  declared:0 vs estimated:4
+    61x  declared:0 vs estimated:3
+    53x  declared:0 vs estimated:1
+    37x  declared:0 vs estimated:5
+    30x  declared:0 vs estimated:6
+    13x  declared:0 vs estimated:7
+    11x  declared:0 vs estimated:8
+     8x  declared:0 vs estimated:9
      5x  declared:0 vs estimated:10
      5x  declared:4 vs estimated:5
      2x  declared:2 vs estimated:3
@@ -10075,7 +10031,6 @@ Unique patterns:
      1x  declared:0 vs estimated:28
      1x  declared:1 vs estimated:2
      1x  declared:7 vs estimated:8
-     1x  declared:0 vs estimated:15
 
 Functions:
   cockpit_ckptutil.c_FUN_0043a030
@@ -10432,26 +10387,6 @@ Functions:
   sound_mp3.cpp_FUN_0052af80
   sound_snddx.cpp_FUN_005779b0
   sound_snddx.cpp_FUN_00577a50
-  sound_sndmain.cpp_FUN_0056db10
-  sound_sndmain.cpp_FUN_00570160
-  sound_sndmain.cpp_FUN_00570460
-  sound_sndmain.cpp_FUN_00570a40
-  sound_sndmain.cpp_FUN_00571420
-  sound_sndmain.cpp_FUN_00571f10
-  sound_sndmain.cpp_FUN_005723e0
-  sound_sndmain.cpp_FUN_00572400
-  sound_sndmain.cpp_FUN_005729d0
-  sound_sndmain.cpp_FUN_00573760
-  sound_sndmain.cpp_FUN_005737d0
-  sound_sndmain.cpp_FUN_00573950
-  sound_sndmain.cpp_FUN_00573d60
-  sound_sndmain.cpp_FUN_00573ec0
-  sound_sndmain.cpp_FUN_00573f20
-  sound_sndmain.cpp_FUN_00573fa0
-  sound_sndmain.cpp_FUN_00573fe0
-  sound_sndmain.cpp_FUN_00574010
-  sound_sndmain.cpp_FUN_00574080
-  sound_sndmain.cpp_FUN_00575580
   support_codec.cpp_FUN_004425b0
   support_codec.cpp_FUN_004425e0
   support_codec.cpp_FUN_00442600
@@ -10610,8 +10545,8 @@ Functions:
   shape_edittool.cpp_FUN_00495180
   shape_edittool.cpp_FUN_0049d580
   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_0056e130
-  sound_sndmain.cpp_FUN_0056e830
-  sound_sndmain.cpp_FUN_00574410
+  sound_sndmain.cpp_getSampleInfo_FUN_00574410
+  sound_sndmain.cpp_getSfxSample_FUN_0056e830
   sound_sndmain.cpp_trimLineAndRemoveComments_FUN_0056e0a0
   sound_sndwav.cpp_enumerateWavInDevice_FUN_0057b460
   sound_sndwav.cpp_enumerateWavOutDevice_FUN_0057b370
@@ -10735,11 +10670,11 @@ Functions:
   shape_spotview.cpp_CSpotView_ctor_FUN_00584390
 
 ====================================================================================================
-TYPE: warning_type_propagation (264 occurrences)
+TYPE: warning_type_propagation (263 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   264x  WARNING: Type propagation algorithm not settling
+   263x  WARNING: Type propagation algorithm not settling
 
 Functions:
   core_actor.cpp_FUN_00408bb0
@@ -10948,7 +10883,6 @@ Functions:
   core_smiley.cpp_CSmiley_attractActorToward_FUN_0056ccc0
   core_smiley.cpp_CSmiley_processDismemberment_FUN_0056ce10
   core_smiley.cpp_CSmiley_process_FUN_0056c220
-  core_sound.cpp_updateListeners_FUN_0057b780
   core_spike.cpp_CSpike_process_FUN_005831b0
   core_spike.cpp_CSpike_setup_FUN_005830d0
   core_stranger.cpp_CStranger_aimLeftPistol_FUN_0058f660
@@ -11008,7 +10942,7 @@ Functions:
   support_trstream.cpp_COutStream_vprintf_FUN_005a14f0
 
 ====================================================================================================
-TYPE: raw_address_pointer_store (252 occurrences)
+TYPE: raw_address_pointer_store (254 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -11024,7 +10958,7 @@ Unique patterns:
      2x  *(CDemonGlobe **)(iVar5 + 0x1fe55d4
      2x  *(CDemonCamera **)(iVar5 + 0x1fe55c0
      2x  *(CDemonActor **)(iVar2 + 0x20af660
-     2x  *(void **)(iVar4 + 0x2c80698
+     2x  *(void **)(iVar3 + 0x2c80698
      2x  *(int **)(param_2 + 0x2c81dc4
      2x  *(int **)(iVar3 + 0x2c823e0
      1x  *(byte **)(iVar2 + 0x7be960
@@ -11130,14 +11064,16 @@ Functions:
   sound_snddx.cpp_FUN_00579900
   sound_snddx.cpp_FUN_005799b0
   sound_snddx.cpp_FUN_00579ad0
-  sound_sndmain.cpp_FUN_00571420
-  sound_sndmain.cpp_FUN_005727e0
-  sound_sndmain.cpp_FUN_00572880
+  sound_sndmain.cpp_CSfxSlot_mix_FUN_00571420
   sound_sndmain.cpp_allocMixBuffers_FUN_0056f470
   sound_sndmain.cpp_analyzeFrequencyBand_FUN_00576590
   sound_sndmain.cpp_getChannelLevels_FUN_00576b20
   sound_sndmain.cpp_nextMixingBuffer_FUN_0056f6d0
   sound_sndmain.cpp_pollAndMixSfx_FUN_00576c20
+  sound_sndmain.cpp_setNextSfxTrackedDoublePosition_FUN_00572810
+  sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005727e0
+  sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_00572880
+  sound_sndmain.cpp_setNextSfxTrackedVelocity2_FUN_005728b0
   sound_sndmain.cpp_setNextSfxUserData_FUN_00572920
   sound_sndwav.cpp_CWavInDevice_start_FUN_0057ad20
   sound_sndwav.cpp_CWavOutDevice_start_FUN_0057a7f0
@@ -11148,7 +11084,7 @@ Functions:
   wincore_winrun.cpp_winMain_FUN_005b2e00
 
 ====================================================================================================
-TYPE: raw_address_constant (204 occurrences)
+TYPE: raw_address_constant (203 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -11199,8 +11135,6 @@ Functions:
   core_emitter.cpp_CEmitter_process_FUN_0049f310
   core_emitter.cpp_CEmitter_renderOpaque_FUN_0049fdf0
   core_fire.cpp_CCrater_render_FUN_004b23a0
-  core_fire.cpp_CFireEffect_createFireball_FUN_004b5e00
-  core_fire.cpp_CFireEffect_createToss_FUN_004b6e60
   core_fire.cpp_CFireball_process_FUN_004ae300
   core_fire.cpp_CFirefly_setupRenderState_FUN_004ad9c0
   core_fire.cpp_CLightningBolt_render_FUN_004b3570
@@ -11266,9 +11200,9 @@ Functions:
   shape_edittool.cpp_FUN_00498660
   shape_edittool.cpp_FUN_004987b0
   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_0052b450
-  sound_sndmain.cpp_FUN_005770d0
-  sound_sndmain.cpp_FUN_005771b0
   sound_sndmain.cpp_nextMixingBuffer_FUN_0056f6d0
+  sound_sndmain.cpp_openCdAudio_FUN_005770d0
+  sound_sndmain.cpp_playCdTrack_FUN_005771b0
   sound_sndmain.cpp_pollAndMixSfx_FUN_00576c20
   wincore_wddvmem.cpp_FUN_005ac300
   wincore_winrun.cpp_FUN_005b4650
@@ -11439,8 +11373,8 @@ Functions:
   shape_edittool.cpp_FUN_00492d40
   shape_edittool.cpp_FUN_004934b0
   shape_edittool.cpp_FUN_004962b0
-  sound_sndmain.cpp_FUN_0056d7d0
   sound_sndmain.cpp_analyzeFrequencyBand_FUN_00576590
+  sound_sndmain.cpp_computeFFT_FUN_0056d7d0
   support_trisock.cpp_FUN_0059d9d0
   wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004ecf70
   wincore_winrun.cpp_FUN_005b2cf0
@@ -11663,7 +11597,7 @@ Functions:
   engine_pod.cpp_FUN_0053b250
   shape_edittool.cpp_CStrList_remove_FUN_00499730
   shape_edittool.cpp_CStrList_sort_FUN_00499830
-  sound_sndmain.cpp_FUN_00571420
+  sound_sndmain.cpp_CSfxSlot_mix_FUN_00571420
   sound_sndmain.cpp_enableSoundSystem_FUN_00574ee0
   sound_sndmain.cpp_nextMixingBuffer_FUN_0056f6d0
   sound_sndmain.cpp_pollAndMixSfx_FUN_00576c20
@@ -11705,11 +11639,11 @@ Functions:
   core_weather.cpp_CWeather_setOriginAndRotation_FUN_005af040
 
 ====================================================================================================
-TYPE: sub84_truncation (33 occurrences)
+TYPE: sub84_truncation (30 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    33x  SUB84(
+    30x  SUB84(
 
 Functions:
   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40
@@ -11728,7 +11662,6 @@ Functions:
   core_hostage.cpp_CHostage_process_FUN_004ed890
   core_lightgun.cpp_CLightGun_fire_FUN_00500310
   core_lightpis.cpp_CLightPis_fire_FUN_00501a70
-  core_menu.cpp_FUN_0050ba70
   core_rifle.cpp_CRifle_fire_FUN_00540080
   core_scat.cpp_FUN_00542b90
   core_stranger.cpp_CStranger_processFrame_FUN_00585b00
@@ -12034,8 +11967,8 @@ Functions:
   engine_special.cpp_FUN_0057f473
   engine_special.cpp_renderAlphaRow16_FUN_0058000e
   engine_special.cpp_renderMMXPerspectiveScanline16_FUN_0057e5e3
+  sound_sndmain.cpp_CSfxSample_pollStream_FUN_00570460
   sound_sndmain.cpp_CSfxSample_seek_FUN_005702c0
-  sound_sndmain.cpp_FUN_00570460
   support_codec.cpp_FUN_00442e10
   wincore_winrun.cpp_getNextKeypress_FUN_005b2510
 

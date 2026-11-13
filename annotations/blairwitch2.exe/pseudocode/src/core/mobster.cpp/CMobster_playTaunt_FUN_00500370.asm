@@ -29,7 +29,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
 ;   core_sound.cpp_CSound_getSoundDuration_FUN_0055af90
 ;   crt_unknown.c_sprintf_FUN_005b7790
-;   sound_sndmain.cpp_FUN_00550b70
+;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;
 ; *****************************************************************************
 
@@ -132,8 +132,8 @@ section .text
     FADD float ptr [0x005def35]         ; 0050044b | DAT_005def35
     PUSH EBX                            ; 00500451
     FSTP float ptr [ESI + 0x10b10]      ; 00500452
-    CALL sound_sndmain.cpp_FUN_00550b70 ; 00500458
-        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00550b70(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00550b70 ; 00500458
+        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00550b70(uint sfx_handle)
     ADD ESP,0x4                         ; 0050045d
     TEST EAX,EAX                        ; 00500460
     JNZ 0x005003d8                      ; 00500462
@@ -168,8 +168,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x10b90]   ; 005004ab
         ;   Label: LAB_005004ab
     PUSH EDX                            ; 005004b1
-    CALL sound_sndmain.cpp_FUN_00550b70 ; 005004b2
-        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00550b70(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00550b70 ; 005004b2
+        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00550b70(uint sfx_handle)
     ADD ESP,0x4                         ; 005004b7
     TEST EAX,EAX                        ; 005004ba
     JZ 0x0050049d                       ; 005004bc

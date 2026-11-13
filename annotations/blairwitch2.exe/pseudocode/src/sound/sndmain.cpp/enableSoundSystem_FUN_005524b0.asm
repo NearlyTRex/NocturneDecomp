@@ -29,13 +29,13 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005b77c0
-;   sound_sndmain.cpp_FUN_00551440
 ;   sound_sndmain.cpp_isSoundBusy_FUN_00552b20
 ;   sound_sndmain.cpp_isSoundMuted_FUN_00550bc0
 ;   sound_sndmain.cpp_isSoundSystemActive_FUN_00552b10
 ;   sound_sndmain.cpp_lockSound_FUN_005532f0
 ;   sound_sndmain.cpp_resetSoundDevice_FUN_005526b0
 ;   sound_sndmain.cpp_setSoundOutputMode_FUN_005526f0
+;   sound_sndmain.cpp_unlockSound_FUN_00551440
 ;   wincore_winrun.cpp_getTime_FUN_0058e9e0
 ;
 ; *****************************************************************************
@@ -197,16 +197,16 @@ section .text
     JZ 0x00552697                       ; 0055267c
         ;   XREF to: 00552697 (CONDITIONAL_JUMP)  ; LAB_00552697
     MOV dword ptr [0x02648e84],0x1      ; 0055267e | DAT_02648e84
-    CALL sound_sndmain.cpp_FUN_00551440 ; 00552688
-        ;   XREF to: 00551440 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00551440()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00551440 ; 00552688
+        ;   XREF to: 00551440 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00551440()
     MOV EAX,0x1                         ; 0055268d
     POP EBP                             ; 00552692
     POP EDI                             ; 00552693
     POP ESI                             ; 00552694
     POP EBX                             ; 00552695
     RET                                 ; 00552696
-    CALL sound_sndmain.cpp_FUN_00551440 ; 00552697
-        ;   XREF to: 00551440 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00551440()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00551440 ; 00552697
+        ;   XREF to: 00551440 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00551440()
         ;   Label: LAB_00552697
     XOR EAX,EAX                         ; 0055269c
     POP EBP                             ; 0055269e

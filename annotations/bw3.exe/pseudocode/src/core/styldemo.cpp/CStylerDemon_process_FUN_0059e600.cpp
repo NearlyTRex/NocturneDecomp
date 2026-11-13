@@ -426,7 +426,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
         }
         else if (uVar10 < 0x579) {
           if (uVar10 == 0x578) {
-            iVar8 = sound_sndmain_cpp_FUN_00556700(this_ptr->sfx_handles[0]);
+            iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handles[0]);
             if (iVar8 == 0) {
               uVar10 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                  ((CDemonActor *)this_ptr,"stydem_stand.wav");
@@ -438,7 +438,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
           }
         }
         else if (uVar10 < 0x57a) {
-          iVar8 = sound_sndmain_cpp_FUN_00556700
+          iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                             ((uint)(this_ptr->base).base.motion_transition_costs[0x14][uVar10]);
           if (iVar8 == 0) {
             fVar23 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -447,7 +447,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
           }
         }
         else {
-          iVar8 = sound_sndmain_cpp_FUN_00556700
+          iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                             ((uint)(this_ptr->base).base.motion_transition_costs[0x14][uVar10]);
           if (iVar8 == 0) {
             fVar23 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -457,7 +457,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
         }
       }
       else if (uVar10 < 0x57c) {
-        iVar8 = sound_sndmain_cpp_FUN_00556700
+        iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                           ((uint)(this_ptr->base).base.motion_transition_costs[0x14][uVar10]);
         if (iVar8 == 0) {
           fVar23 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -467,7 +467,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
       }
       else if (uVar10 < 0x57f) {
         if (uVar10 < 0x57d) {
-          iVar8 = sound_sndmain_cpp_FUN_00556700
+          iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                             ((uint)(this_ptr->base).base.motion_transition_costs[0x14][uVar10]);
           if (iVar8 == 0) {
             fVar23 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -476,7 +476,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
           }
         }
         else if (uVar10 < 0x57e) {
-          iVar8 = sound_sndmain_cpp_FUN_00556700
+          iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                             ((uint)(this_ptr->base).base.motion_transition_costs[0x14][uVar10]);
           if (iVar8 == 0) {
             fVar23 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -485,7 +485,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
           }
         }
         else {
-          iVar8 = sound_sndmain_cpp_FUN_00556700
+          iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                             ((uint)(this_ptr->base).base.motion_transition_costs[0x14][uVar10]);
           if (iVar8 == 0) {
             fVar23 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -495,7 +495,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
         }
       }
       else if (uVar10 < 0x580) {
-        iVar8 = sound_sndmain_cpp_FUN_00556700
+        iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                           ((uint)(this_ptr->base).base.motion_transition_costs[0x14][uVar10]);
         if (iVar8 == 0) {
           fVar23 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -504,7 +504,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
         }
       }
       else if (uVar10 < 0x581) {
-        iVar8 = sound_sndmain_cpp_FUN_00556700
+        iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                           ((uint)(this_ptr->base).base.motion_transition_costs[0x14][uVar10]);
         if (iVar8 == 0) {
           fVar23 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -513,7 +513,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
         }
       }
       else if (uVar10 < 0x582) {
-        iVar8 = sound_sndmain_cpp_FUN_00556700
+        iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                           ((uint)(this_ptr->base).base.motion_transition_costs[0x14][uVar10]);
         if (iVar8 == 0) {
           fVar23 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -522,7 +522,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
         }
       }
       else {
-        iVar8 = sound_sndmain_cpp_FUN_00556700
+        iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                           ((uint)(this_ptr->base).base.motion_transition_costs[0x14][uVar10]);
         if (iVar8 == 0) {
           fVar23 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -532,7 +532,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
       }
     }
     else if (uVar10 < 0x584) {
-      iVar8 = sound_sndmain_cpp_FUN_00556700
+      iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                         ((uint)(this_ptr->base).base.motion_transition_costs[0x14][uVar10]);
       if (iVar8 == 0) {
         fVar23 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -543,7 +543,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
     else if (uVar10 < 0x58a) {
       if (uVar10 < 0x586) {
         if (uVar10 < 0x585) {
-          iVar8 = sound_sndmain_cpp_FUN_00556700
+          iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                             ((uint)(this_ptr->base).base.motion_transition_costs[0x14][uVar10]);
           if (iVar8 == 0) {
             fVar23 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -552,7 +552,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
           }
         }
         else {
-          iVar8 = sound_sndmain_cpp_FUN_00556700
+          iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                             ((uint)(this_ptr->base).base.motion_transition_costs[0x14][uVar10]);
           if (iVar8 == 0) {
             fVar23 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -562,7 +562,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
         }
       }
       else if (uVar10 < 0x587) {
-        iVar8 = sound_sndmain_cpp_FUN_00556700
+        iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                           ((uint)(this_ptr->base).base.motion_transition_costs[0x14][uVar10]);
         if (iVar8 == 0) {
           fVar23 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -571,7 +571,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
         }
       }
       else if (uVar10 < 0x588) {
-        iVar8 = sound_sndmain_cpp_FUN_00556700
+        iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                           ((uint)(this_ptr->base).base.motion_transition_costs[0x14][uVar10]);
         if (iVar8 == 0) {
           fVar23 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -580,7 +580,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
         }
       }
       else if (uVar10 < 0x589) {
-        iVar8 = sound_sndmain_cpp_FUN_00556700
+        iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                           ((uint)(this_ptr->base).base.motion_transition_costs[0x14][uVar10]);
         if (iVar8 == 0) {
           fVar23 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -589,7 +589,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
         }
       }
       else {
-        iVar8 = sound_sndmain_cpp_FUN_00556700
+        iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                           ((uint)(this_ptr->base).base.motion_transition_costs[0x14][uVar10]);
         if (iVar8 == 0) {
           fVar23 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -599,7 +599,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
       }
     }
     else if (uVar10 < 0x58b) {
-      iVar8 = sound_sndmain_cpp_FUN_00556700
+      iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                         ((uint)(this_ptr->base).base.motion_transition_costs[0x14][uVar10]);
       if (iVar8 == 0) {
         fVar23 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -609,7 +609,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
     }
     else if (uVar10 < 0x58e) {
       if (uVar10 < 0x58c) {
-        iVar8 = sound_sndmain_cpp_FUN_00556700
+        iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                           ((uint)(this_ptr->base).base.motion_transition_costs[0x14][uVar10]);
         if (iVar8 == 0) {
           fVar23 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -618,7 +618,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
         }
       }
       else if (uVar10 < 0x58d) {
-        iVar8 = sound_sndmain_cpp_FUN_00556700
+        iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                           ((uint)(this_ptr->base).base.motion_transition_costs[0x14][uVar10]);
         if (iVar8 == 0) {
           fVar23 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -627,7 +627,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
         }
       }
       else {
-        iVar8 = sound_sndmain_cpp_FUN_00556700
+        iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                           ((uint)(this_ptr->base).base.motion_transition_costs[0x14][uVar10]);
         if (iVar8 == 0) {
           fVar23 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -637,7 +637,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
       }
     }
     else if (uVar10 < 0x58f) {
-      iVar8 = sound_sndmain_cpp_FUN_00556700
+      iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                         ((uint)(this_ptr->base).base.motion_transition_costs[0x14][uVar10]);
       if (iVar8 == 0) {
         fVar23 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -646,7 +646,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
       }
     }
     else if (uVar10 < 0x590) {
-      iVar8 = sound_sndmain_cpp_FUN_00556700
+      iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                         ((uint)(this_ptr->base).base.motion_transition_costs[0x14][uVar10]);
       if (iVar8 == 0) {
         fVar23 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -655,7 +655,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
       }
     }
     else if (uVar10 < 0x591) {
-      iVar8 = sound_sndmain_cpp_FUN_00556700
+      iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                         ((uint)(this_ptr->base).base.motion_transition_costs[0x14][uVar10]);
       if (iVar8 == 0) {
         fVar23 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -664,7 +664,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
       }
     }
     else if (uVar10 == 0x591) {
-      iVar8 = sound_sndmain_cpp_FUN_00556700(this_ptr->sfx_handles[0x19]);
+      iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handles[0x19]);
       if (iVar8 == 0) {
         uVar10 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                            ((CDemonActor *)this_ptr,"stydem_taunt2.wav");

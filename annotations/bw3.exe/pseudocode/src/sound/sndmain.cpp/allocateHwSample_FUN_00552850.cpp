@@ -37,7 +37,7 @@ int sound_sndmain_cpp_allocateHwSample_FUN_00552850(void)
         iVar2 = iVar2 + 1;
       } while (iVar2 < 0x40);
     } while (iVar2 < 0x40);
-    sound_sndmain_cpp_FUN_0055a560("allocateHwSample - failed\n");
+    sound_sndmain_cpp_logSoundError_FUN_0055a560("allocateHwSample - failed\n");
   }
   return 0;
 }

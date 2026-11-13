@@ -13,7 +13,7 @@
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   core_npc.cpp_CNPC_processDamage_FUN_00510b90
-;   sound_sndmain.cpp_FUN_00550b70
+;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;
 ; *****************************************************************************
 
@@ -62,8 +62,8 @@ section .text
     MOV EDI,dword ptr [EBX + 0x246f0]   ; 004d313e
         ;   Label: LAB_004d313e
     PUSH EDI                            ; 004d3144
-    CALL sound_sndmain.cpp_FUN_00550b70 ; 004d3145
-        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00550b70(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00550b70 ; 004d3145
+        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00550b70(uint sfx_handle)
     ADD ESP,0x4                         ; 004d314a
     TEST EAX,EAX                        ; 004d314d
     JZ 0x004d31a8                       ; 004d314f

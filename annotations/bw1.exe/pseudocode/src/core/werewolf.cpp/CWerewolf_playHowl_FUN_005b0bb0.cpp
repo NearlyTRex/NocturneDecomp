@@ -13,7 +13,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_playHowl_FUN_005b0bb0(CWerewolf *this_p
   uint uVar2;
   
   this_ptr->howl_cooldown = 10.0;
-  iVar1 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handle);
+  iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handle);
   if (iVar1 != 0) {
     return;
   }

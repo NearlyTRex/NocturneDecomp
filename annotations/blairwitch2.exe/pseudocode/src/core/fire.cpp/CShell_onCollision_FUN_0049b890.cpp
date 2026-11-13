@@ -31,7 +31,7 @@ int __cdecl core_fire_cpp_CShell_onCollision_FUN_0049b890(CShell *this_ptr,CVect
     iVar5 = 0;
     iVar4 = 0;
     do {
-      iVar2 = sound_sndmain_cpp_FUN_00550b70(*(uint *)(iVar4 + 0x1c3f8d0));
+      iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(*(uint *)(iVar4 + 0x1c3f8d0));
       if (iVar2 == 0) break;
       iVar4 = iVar4 + 4;
       iVar5 = iVar5 + 1;

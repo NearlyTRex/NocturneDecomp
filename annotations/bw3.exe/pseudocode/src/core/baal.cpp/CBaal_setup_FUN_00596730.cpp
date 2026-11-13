@@ -36,15 +36,15 @@ void __cdecl core_baal_cpp_CBaal_setup_FUN_00596730(CBaal *this_ptr)
   else {
     (this_ptr->base).base.health_bar_mode = HEALTH_BAR_ALWAYS;
   }
-  sound_sndmain_cpp_FUN_00556230("baal_stand.wav");
-  sound_sndmain_cpp_FUN_00556230("baal_chasewalk.wav");
-  sound_sndmain_cpp_FUN_00556230("baal_chasefast.wav");
-  sound_sndmain_cpp_FUN_00556230("baal_attack.wav");
-  sound_sndmain_cpp_FUN_00556230("baal_attack1.wav");
-  sound_sndmain_cpp_FUN_00556230("baal_attack2.wav");
-  sound_sndmain_cpp_FUN_00556230("baal_attack3.wav");
-  sound_sndmain_cpp_FUN_00556230("baal_pain.wav");
-  sound_sndmain_cpp_FUN_00556230("baal_die.wav");
-  sound_sndmain_cpp_FUN_00556230("baal_warning.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("baal_stand.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("baal_chasewalk.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("baal_chasefast.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("baal_attack.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("baal_attack1.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("baal_attack2.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("baal_attack3.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("baal_pain.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("baal_die.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("baal_warning.wav");
   return;
 }

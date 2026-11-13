@@ -42,7 +42,7 @@ void __cdecl core_demnfolk_cpp_CDemnfolk_processDamage_FUN_00458950(CDemnfolk *t
                 (&(this_ptr->base).base.model.base,iVar3,1);
       if (this_ptr->pain_cooldown <= 0.0) {
         this_ptr->pain_cooldown = 2.0;
-        iVar3 = sound_sndmain_cpp_FUN_00556700(this_ptr->sfx_handles[0]);
+        iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handles[0]);
         if (iVar3 == 0) {
           if (this_ptr->is_female != 0) {
             uVar5 = (*((this_ptr->base).base.base.vtable._ub)->playSound)

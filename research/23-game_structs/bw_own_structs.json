@@ -3156,6 +3156,42 @@
       "basis": "ctor 004e3b30 stores 0 at 0x2d4 after the model, as nocedit CGasMask carrier"
      }
     ]
+   },
+   {
+    "name": "SMixBuffer",
+    "size": 44,
+    "base": null,
+    "basis": "nocedit's layout; passed by value to CSfxSlot_mix 00571420 (caller copies 0x2c bytes with REP MOVSD, ADD ESP,0x30) and read at the same offsets",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "channel_buffers",
+      "type": "float *[8]",
+      "len": 32,
+      "basis": "per-channel float output buffers, as nocedit"
+     },
+     {
+      "offset": "0x20",
+      "name": "num_output_samples",
+      "type": "int",
+      "len": 4,
+      "basis": "mix reads stack +0x20 of the copy as the sample count"
+     },
+     {
+      "offset": "0x24",
+      "name": "num_channels",
+      "type": "int",
+      "len": 4,
+      "basis": "mix loops channels up to stack +0x24 of the copy"
+     },
+     {
+      "offset": "0x28",
+      "name": "output_sample_rate",
+      "type": "int",
+      "len": 4,
+      "basis": "as nocedit"
+     }
+    ]
    }
   ]
  },
@@ -6821,6 +6857,42 @@
       "type": "int",
       "len": 4,
       "basis": "ctor 005ad3c0 stores 0; no reader found"
+     }
+    ]
+   },
+   {
+    "name": "SMixBuffer",
+    "size": 44,
+    "base": null,
+    "basis": "nocedit's layout; passed by value to CSfxSlot_mix 0054edb0, whose body is instruction-for-instruction bw1's",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "channel_buffers",
+      "type": "float *[8]",
+      "len": 32,
+      "basis": "per-channel float output buffers, as nocedit"
+     },
+     {
+      "offset": "0x20",
+      "name": "num_output_samples",
+      "type": "int",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x24",
+      "name": "num_channels",
+      "type": "int",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x28",
+      "name": "output_sample_rate",
+      "type": "int",
+      "len": 4,
+      "basis": "as nocedit"
      }
     ]
    }
@@ -11619,6 +11691,42 @@
       "type": "CDemonActor*",
       "len": 4,
       "basis": "ctor 004cc6c0 stores 0 at 0x2d4 after the model, as nocedit CGasMask carrier"
+     }
+    ]
+   },
+   {
+    "name": "SMixBuffer",
+    "size": 44,
+    "base": null,
+    "basis": "nocedit's layout; passed by value to CSfxSlot_mix 00554920, whose body is instruction-for-instruction bw1's",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "channel_buffers",
+      "type": "float *[8]",
+      "len": 32,
+      "basis": "per-channel float output buffers, as nocedit"
+     },
+     {
+      "offset": "0x20",
+      "name": "num_output_samples",
+      "type": "int",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x24",
+      "name": "num_channels",
+      "type": "int",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x28",
+      "name": "output_sample_rate",
+      "type": "int",
+      "len": 4,
+      "basis": "as nocedit"
      }
     ]
    }

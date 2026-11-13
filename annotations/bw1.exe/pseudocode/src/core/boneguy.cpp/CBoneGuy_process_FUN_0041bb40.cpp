@@ -512,17 +512,19 @@ LAB_0041c243:
             (&(this_ptr->base).base.model);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433e80((CCharacter *)this_ptr,delta_time);
   if ((iStack_1c == 1) &&
-     (iVar8 = sound_sndmain_cpp_FUN_00574010
+     (iVar8 = sound_sndmain_cpp_isWithinListenerRadius_FUN_00574010
                         ((double)(this_ptr->base).base.base.location.position.x,
-                         (double)(this_ptr->base).base.base.location.position.y), iVar8 != 0)) {
-    iVar8 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handle);
+                         (double)(this_ptr->base).base.base.location.position.y,
+                         (double)(this_ptr->base).base.base.location.position.z,100.0), iVar8 != 0))
+  {
+    iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handle);
     if (iVar8 != 0) {
       return;
     }
     sound_sndmain_cpp_pushSfxOptions_FUN_00572ac0();
     fVar19 = 2.8026e-45;
     fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.0,1.0);
-    sound_sndmain_cpp_FUN_00572a50((double)fStack_14,(int)fVar19);
+    sound_sndmain_cpp_setNextSfxTriggerTime_FUN_00572a50((double)fStack_14,(int)fVar19);
     uVar13 = (*((this_ptr->base).base.base.vtable._ub)->playAmbientSound)
                        ((CDemonActor *)this_ptr,"boneGuy-walkloop.wav");
     this_ptr->sfx_handle = uVar13;

@@ -55,7 +55,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_processDamage_FUN_005944c0(CSvetlana *t
       iVar4 = 0xb;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&this_ptr_00->base,iVar4,1);
-    iVar4 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handle);
+    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handle);
     if (iVar4 == 0) {
       uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"svet-hurt?.wav");

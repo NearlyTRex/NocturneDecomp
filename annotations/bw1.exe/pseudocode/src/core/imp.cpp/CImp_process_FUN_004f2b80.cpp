@@ -393,7 +393,7 @@ LAB_004f2c63:
                  (iVar5 = core_actor_cpp_randomChance_FUN_0040cd00(0.1), iVar5 != 0)) {
                 core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
                           (&(this_ptr->base).base.model.base,8,1);
-                iVar5 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[0]);
+                iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[0]);
                 if (iVar5 == 0) {
                   uVar6 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                     ((CDemonActor *)this_ptr,"imp-jump?.wav");
@@ -434,9 +434,10 @@ LAB_004f2c63:
             this_ptr->laugh_timer = fVar16;
             if (fVar16 < 0.0) {
               this_ptr->laugh_timer = 0.0;
-              iVar5 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[0]);
+              iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[0]);
               if ((iVar5 == 0) &&
-                 (iVar5 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[1]), iVar5 == 0)) {
+                 (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[1]),
+                 iVar5 == 0)) {
                 uVar6 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                   ((CDemonActor *)this_ptr,"imp-laugh?.wav");
                 this_ptr->sfx_handles[0] = uVar6;
@@ -456,9 +457,10 @@ LAB_004f2c63:
       this_ptr->laugh_timer = fVar16;
       if (fVar16 < 0.0) {
         this_ptr->laugh_timer = 0.0;
-        iVar5 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[0]);
+        iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[0]);
         if ((iVar5 == 0) &&
-           (iVar5 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[1]), iVar5 == 0)) {
+           (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[1]),
+           iVar5 == 0)) {
           uVar6 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                             ((CDemonActor *)this_ptr,"imp-laugh?.wav");
           this_ptr->sfx_handles[0] = uVar6;

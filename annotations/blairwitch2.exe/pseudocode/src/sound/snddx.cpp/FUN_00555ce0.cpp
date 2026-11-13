@@ -97,9 +97,9 @@ int sound_snddx_cpp_FUN_00555ce0(uint param_1,int param_2)
       else {
         sound_snddx_cpp_FUN_00554ad0(uVar1);
         _sprintf((char *)&piStack_1d8,"DirectSux: Unable to %s.  (%s)");
-        sound_sndmain_cpp_FUN_005549c0(&piStack_1d8);
+        sound_sndmain_cpp_logSoundError_FUN_005549c0((char *)&piStack_1d8);
       }
-      sound_sndmain_cpp_FUN_005549c0("DirectSoundDevice::allocateSample - access failed\n");
+      sound_sndmain_cpp_logSoundError_FUN_005549c0("DirectSoundDevice::allocateSample - access failed\n");
       return 0;
     }
   }

@@ -7,8 +7,8 @@
 ; HANDLE           Stack[0x4]:4   mutex_handle
 ;
 ; XREF[6]:
-;   sound_sndmain.cpp_FUN_00556fd0 at 00557000
 ;   sound_sndmain.cpp_processAudio_FUN_00559120 at 0055918b
+;   sound_sndmain.cpp_unlockSound_FUN_00556fd0 at 00557000
 ;   support_trisock.cpp_FUN_00570ae0 at 00570b93
 ;   support_trisock.cpp_FUN_00570ea0 at 00570f42
 ;   support_trisock.cpp_FUN_00570fb0 at 00571025

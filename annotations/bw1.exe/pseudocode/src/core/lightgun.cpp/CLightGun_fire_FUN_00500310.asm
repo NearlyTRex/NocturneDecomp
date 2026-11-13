@@ -803,8 +803,8 @@ section .text
     MOV EDI,dword ptr [EBX + 0x57c]     ; 00500cdb
     PUSH dword ptr [0x00603018]         ; 00500ce1 | DAT_00603018
     PUSH EDI                            ; 00500ce7
-    CALL sound_sndmain.cpp_FUN_00573950 ; 00500ce8
-        ;   XREF to: 00573950 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00573950()
+    CALL sound_sndmain.cpp_setSfxVolume_FUN_00573950 ; 00500ce8
+        ;   XREF to: 00573950 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxVolume_FUN_00573950(uint sfx_handle, float volume)
     FLD float ptr [0x00603010]          ; 00500ced | DAT_00603010
     MOV dword ptr [EBX + 0x578],0x1     ; 00500cf3
     MOV EAX,0x1                         ; 00500cfd

@@ -642,7 +642,7 @@ LAB_00429a81:
       if ((this_ptr->base).victim != (CCharacter *)0x0) {
         core_carved_cpp_FUN_0042be20();
         in_stack_fffffb34 = (CCarved *)0x429c8a;
-        iVar7 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[1]);
+        iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[1]);
         if (iVar7 == 0) {
           in_stack_fffffb34 = this_ptr;
           uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -668,7 +668,8 @@ LAB_00429a81:
   case 10:
     this_ptr->groan_timer = this_ptr->groan_timer - delta_time;
     if ((this_ptr->groan_timer <= 0.0) &&
-       (iVar7 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[1]), iVar7 == 0)) {
+       (iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[1]), iVar7 == 0))
+    {
       pCStack_14 = (CCharacter_full_vtable *)
                    core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(3.0,6.0);
       pCVar5 = (this_ptr->base).base.base.vtable._ub;
@@ -695,7 +696,7 @@ LAB_00429a81:
       }
     }
     else if (pCVar3 == (CCharacter *)0x0) {
-      iVar7 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[1]);
+      iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[1]);
       if (iVar7 == 0) {
         uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,"carved-groan?.wav");

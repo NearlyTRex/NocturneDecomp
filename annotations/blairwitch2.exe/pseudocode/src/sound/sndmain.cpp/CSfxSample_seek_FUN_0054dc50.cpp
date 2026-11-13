@@ -52,7 +52,8 @@ void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_0054dc50(CSfxSample *this_ptr
   bVar1 = support_trstream_cpp_CInStreamFile_isOpen_FUN_0057d130(&this_ptr->file_stream);
   if (CONCAT31(extraout_var,bVar1) != 0) {
     origin = 0;
-    iVar2 = sound_sndmain_cpp_FUN_0054fd90(this_ptr);
+    iVar2 = sound_sndmain_cpp_CSfxSample_framesToBytes_FUN_0054fd90
+                      (this_ptr,this_ptr->stream_read_position);
     support_trstream_cpp_CInStreamFile_seek_FUN_0057d0c0
               (&this_ptr->file_stream,iVar2 + this_ptr->file_offset,origin);
     return;

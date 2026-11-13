@@ -328,7 +328,7 @@ LAB_0059247c:
   iVar9 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
                     (0x01C51D80,"succubusShutUp");
   if (iVar9 == 0) {
-    iVar9 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handle);
+    iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handle);
     if ((iVar9 == 0) &&
        (fVar19 = this_ptr->ambient_sfx_cooldown - delta_time,
        this_ptr->ambient_sfx_cooldown = fVar19, fVar19 < 0.0)) {

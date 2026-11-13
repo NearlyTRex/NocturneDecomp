@@ -364,9 +364,10 @@ void __cdecl core_construc_cpp_CConstruct_process_FUN_00436e80(CConstruct *this_
                         (pCStack_38,iVar7 + 5,(int)fVar16);
               uVar11 = this_ptr->sfx_handles[1];
               (this_ptr->base).attack_cooldown = 2.5;
-              iVar7 = sound_sndmain_cpp_FUN_00550b70(uVar11);
+              iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(uVar11);
               if ((iVar7 == 0) &&
-                 (iVar7 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[2]), iVar7 == 0)) {
+                 (iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[2]),
+                 iVar7 == 0)) {
                 uVar11 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                    ((CDemonActor *)this_ptr,"batman-attack?.wav");
                 this_ptr->sfx_handles[2] = uVar11;
@@ -431,10 +432,12 @@ void __cdecl core_construc_cpp_CConstruct_process_FUN_00436e80(CConstruct *this_
                             (0x01C38BC0,this_ptr->fall_event), iVar7 != 0)) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                   (&(this_ptr->base).base.model.base,0xe,1);
-        iVar7 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[1]);
+        iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[1]);
         if ((iVar7 == 0) &&
-           ((iVar7 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[2]), iVar7 == 0 &&
-            (iVar7 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[0]), iVar7 == 0)))) {
+           ((iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[2]),
+            iVar7 == 0 &&
+            (iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[0]),
+            iVar7 == 0)))) {
           uVar11 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                              ((CDemonActor *)this_ptr,"batman-alert.wav");
           this_ptr->sfx_handles[0] = uVar11;
@@ -524,11 +527,12 @@ switchD_00437b48_caseD_7:
   iVar7 = iStack_18;
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00429e90((CCharacter *)this_ptr,delta_time);
   if (((iVar7 == 3) || (iVar7 == 4)) &&
-     (iVar7 = sound_sndmain_cpp_FUN_005515e0
+     (iVar7 = sound_sndmain_cpp_isWithinListenerRadius_FUN_005515e0
                         ((double)(this_ptr->base).base.base.location.position.x,
                          (double)(this_ptr->base).base.base.location.position.y,
-                         (double)(this_ptr->base).base.base.location.position.z), iVar7 != 0)) {
-    iVar7 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handle);
+                         (double)(this_ptr->base).base.base.location.position.z,100.0), iVar7 != 0))
+  {
+    iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handle);
     if (iVar7 != 0) {
       return;
     }

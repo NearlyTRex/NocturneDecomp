@@ -28,7 +28,7 @@
 ;   core_event.cpp_CEventList_executeCommands_FUN_004894f0
 ;   core_muzzle.cpp_FUN_0059d8e0
 ;   core_sound.cpp_CSound_playActorSound_FUN_0055ae50
-;   sound_sndmain.cpp_FUN_00550b70
+;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;
 ; *****************************************************************************
 
@@ -129,8 +129,8 @@ section .text
         ;   XREF to: 0059f87b (CONDITIONAL_JUMP)  ; LAB_0059f87b
     MOV EDI,dword ptr [EBX + 0x1184c]   ; 0059f8f7
     PUSH EDI                            ; 0059f8fd
-    CALL sound_sndmain.cpp_FUN_00550b70 ; 0059f8fe
-        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00550b70(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00550b70 ; 0059f8fe
+        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00550b70(uint sfx_handle)
     ADD ESP,0x4                         ; 0059f903
     TEST EAX,EAX                        ; 0059f906
     JNZ 0x0059f87b                      ; 0059f908

@@ -24,7 +24,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_randomChance_FUN_0040cd00
-;   sound_sndmain.cpp_FUN_005735a0
+;   sound_sndmain.cpp_isSfxPlaying_FUN_005735a0
 ;
 ; *****************************************************************************
 
@@ -107,8 +107,8 @@ section .text
         ;   Label: LAB_0045ce7a
     MOV EDX,dword ptr [EBX + 0xc350]    ; 0045ce7b
     PUSH EDX                            ; 0045ce81
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 0045ce82
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 0045ce82
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 0045ce87
     TEST EAX,EAX                        ; 0045ce8a
     JZ 0x0045ce99                       ; 0045ce8c

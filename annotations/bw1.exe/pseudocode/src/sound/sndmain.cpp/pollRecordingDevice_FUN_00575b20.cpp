@@ -17,9 +17,9 @@ int __cdecl sound_sndmain_cpp_pollRecordingDevice_FUN_00575b20(short *output_buf
   iVar1 = sound_sndmain_cpp_isRecordingStarted_FUN_00575990();
   if ((iVar1 != 0) && (_DAT_02c81038 != (int *)0x0)) {
     iVar1 = (**(code **)(*_DAT_02c81038 + 0x10))(_DAT_02c81038,output_buffer,num_samples);
-    sound_sndmain_cpp_FUN_00573e70();
+    sound_sndmain_cpp_unlockSound_FUN_00573e70();
     return iVar1;
   }
-  sound_sndmain_cpp_FUN_00573e70();
+  sound_sndmain_cpp_unlockSound_FUN_00573e70();
   return -1;
 }

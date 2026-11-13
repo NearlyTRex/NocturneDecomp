@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   sound_sndmain.cpp_CSampleInfo_getSampleDuration_FUN_00572390
 ;   sound_sndmain.cpp_CSfxSample_init_FUN_00572340
-;   sound_sndmain.cpp_FUN_00574410
+;   sound_sndmain.cpp_getSampleInfo_FUN_00574410
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
         ;   Label: LAB_0057da0f
     MOV EAX,ESP                         ; 0057da12
     PUSH EAX                            ; 0057da14
-    CALL sound_sndmain.cpp_FUN_00574410 ; 0057da15
-        ;   XREF to: 00574410 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00574410(CSfxSample * out_sample)
+    CALL sound_sndmain.cpp_getSampleInfo_FUN_00574410 ; 0057da15
+        ;   XREF to: 00574410 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getSampleInfo_FUN_00574410(CSfxSample * out_sample)
     ADD ESP,0x4                         ; 0057da1a
     TEST EAX,EAX                        ; 0057da1d
     JNZ 0x0057da5c                      ; 0057da1f

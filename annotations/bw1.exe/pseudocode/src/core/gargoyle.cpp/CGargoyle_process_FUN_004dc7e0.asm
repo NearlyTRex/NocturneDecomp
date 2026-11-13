@@ -453,8 +453,8 @@ section .text
     ADD ESP,0xc                         ; 004dcc85
     MOV ESI,dword ptr [EBX + 0xc2ac]    ; 004dcc88
     PUSH ESI                            ; 004dcc8e
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 004dcc8f
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 004dcc8f
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 004dcc94
     TEST EAX,EAX                        ; 004dcc97
     JNZ 0x004dc917                      ; 004dcc99
@@ -565,8 +565,8 @@ section .text
     ADD ESP,0xc                         ; 004dcdcb
     MOV EDI,dword ptr [EBX + 0xc2ac]    ; 004dcdce
     PUSH EDI                            ; 004dcdd4
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 004dcdd5
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 004dcdd5
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 004dcdda
     TEST EAX,EAX                        ; 004dcddd
     JNZ 0x004dc917                      ; 004dcddf
@@ -726,8 +726,8 @@ section .text
     ADD ESP,0xc                         ; 004dcf71
     MOV EAX,dword ptr [EBX + 0xc2ac]    ; 004dcf74
     PUSH EAX                            ; 004dcf7a
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 004dcf7b
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 004dcf7b
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 004dcf80
     TEST EAX,EAX                        ; 004dcf83
     JNZ 0x004dc917                      ; 004dcf85

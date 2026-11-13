@@ -61,7 +61,7 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_0056d060(CStranger *t
           (iVar3 = core_actor_cpp_randomChance_FUN_0040d060(0.333), iVar3 != 0)))) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,0x24,1);
       }
-      iVar3 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handle);
+      iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handle);
       if (iVar3 == 0) {
         uVar4 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,"stranger_hit??.wav");

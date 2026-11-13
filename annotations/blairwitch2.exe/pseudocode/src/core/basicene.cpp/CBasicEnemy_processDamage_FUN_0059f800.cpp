@@ -29,7 +29,8 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processDamage_FUN_0059f800(CBasicEnem
         this_ptr->flinch_active = 1;
       }
       if ((this_ptr->hit_sound[0] != '\0') &&
-         (iVar2 = sound_sndmain_cpp_FUN_00550b70(this_ptr->hit_sfx_handle), iVar2 == 0)) {
+         (iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->hit_sfx_handle), iVar2 == 0)
+         ) {
         uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,this_ptr->hit_sound);
         this_ptr->hit_sfx_handle = uVar3;

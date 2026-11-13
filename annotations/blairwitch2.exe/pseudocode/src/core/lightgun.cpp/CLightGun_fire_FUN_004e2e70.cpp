@@ -192,7 +192,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004e2e70(CLightGun *this_ptr)
       core_setcolid_cpp_CDemonSet_init_FUN_00537e00(g_CDemonSetPtr);
       core_sound_cpp_CSound_playActorSound_FUN_0055ae50
                 (0x0264B290,(CDemonActor *)this_ptr,"cre-fire.wav",&CStack_e8);
-      sound_sndmain_cpp_FUN_00550f20(this_ptr->sfx_handle,0x40000000);
+      sound_sndmain_cpp_setSfxVolume_FUN_00550f20(this_ptr->sfx_handle,0x40000000);
       this_ptr->fire_flash_pending = 1;
       this_ptr->hit_enemy = 1;
       core_weapon_cpp_CWeapon_fire_FUN_0058a290(&this_ptr->base);

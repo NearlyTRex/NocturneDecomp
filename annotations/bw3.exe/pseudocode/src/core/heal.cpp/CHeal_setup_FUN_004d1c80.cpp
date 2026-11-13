@@ -10,7 +10,7 @@ void __cdecl core_heal_cpp_CHeal_setup_FUN_004d1c80(CHeal *this_ptr)
 
 {
   core_weapon_cpp_CWeapon_setup_FUN_0057af40(&this_ptr->base);
-  sound_sndmain_cpp_FUN_00556230();
-  sound_sndmain_cpp_FUN_00556230();
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("Awp_nomana.wav" + 1);
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("wp_heal.wav");
   return;
 }

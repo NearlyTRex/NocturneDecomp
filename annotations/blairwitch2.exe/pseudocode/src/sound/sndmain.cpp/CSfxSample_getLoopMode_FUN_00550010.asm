@@ -8,9 +8,9 @@
 ;
 ; XREF[4]:
 ;   sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_0054ff30 at 0054ff66
+;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_0054ddf0 at 0054deb5
+;   sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_0054f8a0 at 0054f8fb
 ;   sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_0054f9c0 at 0054fb79
-;   sound_sndmain.cpp_FUN_0054ddf0 at 0054deb5
-;   sound_sndmain.cpp_FUN_0054f8a0 at 0054f8fb
 ;
 ; *****************************************************************************
 

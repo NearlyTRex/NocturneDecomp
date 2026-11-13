@@ -1,0 +1,831 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 324,
+    "complexity_score": 510,
+    "cross_reference_count": 16,
+    "function_call_count": 17,
+    "global_count": 21,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 160,
+    "suspect_count": 31,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "preinc_loop_idiom",
+      "undefined_data",
+      "unresolved_funcptr",
+      "unrolled_memcpy",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 484
+  },
+  "cross_references": [
+    {
+      "addr": "00450c60",
+      "from_addr": "00453176",
+      "name": "core_doc.cpp_FUN_00450c60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00465400",
+      "from_addr": "004658b0",
+      "name": "core_dracbrid.cpp_FUN_00465400",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00491be0",
+      "from_addr": "00491c39",
+      "name": "core_event.cpp_CEventList_restartSfxEntries_FUN_00491be0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004964c0",
+      "from_addr": "00496566",
+      "name": "core_fire.cpp_CFireball_onCollision_FUN_004964c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004aca40",
+      "from_addr": "004aca7f",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004aca40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004be430",
+      "from_addr": "004be82d",
+      "name": "core_game.cpp_CGame_rollCredits_FUN_004be430",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e38d0",
+      "from_addr": "004e3aac",
+      "name": "core_lightgun.cpp_CLightGun_process_FUN_004e38d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e7220",
+      "from_addr": "004e7384",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004e7220",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e73c0",
+      "from_addr": "004e743a",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004e73c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e6b20",
+      "from_addr": "004e6c13",
+      "name": "core_manpuz.cpp_updateGemHumChannel_FUN_004e6b20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ed260",
+      "from_addr": "004edccc",
+      "name": "core_menu.cpp_FUN_004ed260",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055ac50",
+      "from_addr": "0055ad6a",
+      "name": "core_sound.cpp_CSound_configure_FUN_0055ac50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055a3c0",
+      "from_addr": "0055a942",
+      "name": "core_sound.cpp_CSound_process_FUN_0055a3c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00559b50",
+      "from_addr": "00559e84",
+      "name": "core_sound.cpp_FUN_00559b50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005594c0",
+      "from_addr": "005596f7",
+      "name": "core_sound.cpp_playSfxInternal_FUN_005594c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00563060",
+      "from_addr": "0056564f",
+      "name": "core_stranger.cpp_CStranger_processFrame_FUN_00563060",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005506b0",
+    "address_range": [
+      [
+        "005506b0",
+        "00550a51"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_startSfx_FUN_005506b0",
+    "signature": "uint __cdecl sound_sndmain_cpp_startSfx_FUN_005506b0(char *filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "005b8130",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005b8130"
+    },
+    {
+      "addr": "00460aa0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFileSize_FUN_00460aa0"
+    },
+    {
+      "addr": "00461070",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_splitPath_FUN_00461070"
+    },
+    {
+      "addr": "00550070",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxOptions_reset_FUN_00550070"
+    },
+    {
+      "addr": "0054ddf0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_0054ddf0"
+    },
+    {
+      "addr": "0054e8c0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_0054e8c0"
+    },
+    {
+      "addr": "0054f700",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSlot_kill_FUN_0054f700"
+    },
+    {
+      "addr": "0054fbe0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSlot_seek_FUN_0054fbe0"
+    },
+    {
+      "addr": "0054c1c0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getSfxSample_FUN_0054c1c0"
+    },
+    {
+      "addr": "00552b30",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_hasHardware3DSound_FUN_00552b30"
+    },
+    {
+      "addr": "005512a0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSfxChannelEnabled_FUN_005512a0"
+    },
+    {
+      "addr": "00552b20",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSoundBusy_FUN_00552b20"
+    },
+    {
+      "addr": "0054c7f0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_loadStreamingSoundFile_FUN_0054c7f0"
+    },
+    {
+      "addr": "005532f0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_lockSound_FUN_005532f0"
+    },
+    {
+      "addr": "005549c0",
+      "is_variadic": true,
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005549c0"
+    },
+    {
+      "addr": "00551440",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_unlockSound_FUN_00551440"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e7a23",
+      "name": "s_sound_sndmain_cpp_005e7a23",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7a38",
+      "name": "s_SfxSlot_kill_must_be_loc_005e7a38",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7ee3",
+      "name": "s_sound_005e7ee3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7ee9",
+      "name": "DAT_005e7ee9",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e7eed",
+      "name": "DAT_005e7eed",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e8d15",
+      "name": "s_startSfx_can_t_get_sampl_005e8d15",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061bc80",
+      "name": "DAT_0061bc80",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0263ce00",
+      "name": "g_CMP3DecoderInstanceOther.synthesis_history[1][28][14]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0263cf80",
+      "name": "DAT_0263cf80",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0263d038",
+      "name": "DAT_0263d038",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0263d098",
+      "name": "DAT_0263d098",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0263d09c",
+      "name": "DAT_0263d09c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0263d0a0",
+      "name": "DAT_0263d0a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0263d150",
+      "name": "DAT_0263d150",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264161c",
+      "name": "DAT_0264161c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02641a78",
+      "name": "g_SfxSamples[0].ref_count",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02641a84",
+      "name": "g_SfxSamples[0].streaming_slot_index",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02648e80",
+      "name": "DAT_02648e80",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264901c",
+      "name": "DAT_0264901c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 25,
+    "call_sites": [
+      {
+        "call_addr": "004be82d",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_rollCredits_FUN_004be430",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00491c39",
+        "call_type": "direct",
+        "caller": "core_event.cpp_CEventList_restartSfxEntries_FUN_00491be0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0055a942",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_CSound_process_FUN_0055a3c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0055a976",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_CSound_process_FUN_0055a3c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0055aa2b",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_CSound_process_FUN_0055a3c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0055aa64",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_CSound_process_FUN_0055a3c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0055ad6a",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_CSound_configure_FUN_0055ac50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0055ad95",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_CSound_configure_FUN_0055ac50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005596f7",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_playSfxInternal_FUN_005594c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004edccc",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004ed260",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.100806451612903,
+    "instruction_count": 248,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 28,
+      "BOOL_OR": 1,
+      "BRANCH": 8,
+      "CALL": 20,
+      "CALLIND": 1,
+      "CBRANCH": 26,
+      "COPY": 241,
+      "FLOAT2FLOAT": 6,
+      "INT_ADD": 105,
+      "INT_AND": 190,
+      "INT_CARRY": 26,
+      "INT_EQUAL": 142,
+      "INT_LEFT": 8,
+      "INT_LESS": 15,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 13,
+      "INT_OR": 21,
+      "INT_SBORROW": 15,
+      "INT_SCARRY": 30,
+      "INT_SLESS": 75,
+      "INT_SUB": 83,
+      "INT_XOR": 9,
+      "INT_ZEXT": 4,
+      "LOAD": 44,
+      "POPCOUNT": 67,
+      "RETURN": 3,
+      "STORE": 77
+    },
+    "pcode_op_count": 1265
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00572d20",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5273
+    },
+    "bw3.exe": {
+      "addr": "00556240",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a8e90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3825
+    },
+    "nocturne.exe": {
+      "addr": "005265a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.42
+    }
+  },
+  "stack_frame": {
+    "frame_size": 636,
+    "local_size": 632,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_274",
+        "offset": -628,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_174",
+        "offset": -372,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_173",
+        "offset": -371,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(CSfxOptions *)((int)pCVar12",
+      "severity": "moderate",
+      "text": "pCVar12 = (CSfxOptions *)((int)pCVar12 + ((uint)bVar14 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 70,
+      "match": "DAT_0263d09c",
+      "severity": "mild",
+      "text": "iVar2 = *(int *)(&DAT_0263d09c + iVar7);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 80,
+      "match": "(CSfxOptions *)((int)pCVar12",
+      "severity": "moderate",
+      "text": "pCVar12 = (CSfxOptions *)((int)pCVar12 + ((uint)bVar14 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 81,
+      "match": "(CSfxSlot *)((int)pCVar4",
+      "severity": "moderate",
+      "text": "pCVar4 = (CSfxSlot *)((int)pCVar4 + (uint)bVar14 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 90,
+      "match": "DAT_0263cf84",
+      "severity": "mild",
+      "text": "*(CSfxSample **)(&DAT_0263cf84 + iVar2) = pCVar9;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 102,
+      "match": "DAT_005e7ee9",
+      "severity": "mild",
+      "text": "iVar7 = _stricmp(local_274,&DAT_005e7ee9);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 104,
+      "match": "DAT_005e7eed",
+      "severity": "mild",
+      "text": "(iVar7 = _stricmp(local_274,&DAT_005e7eed), iVar7 == 0))",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 112,
+      "match": "DAT_0263cf84",
+      "severity": "mild",
+      "text": "*(CSfxSample **)(&DAT_0263cf84 + iVar2) = pCVar9;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 114,
+      "match": "DAT_0263cf84",
+      "severity": "mild",
+      "text": "iVar7 = *(int *)(&DAT_0263cf84 + iVar2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 131,
+      "match": "DAT_0061bc80",
+      "severity": "mild",
+      "text": "iVar8 = DAT_0061bc80 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 132,
+      "match": "DAT_0263cf84",
+      "severity": "mild",
+      "text": "iVar7 = *(int *)(&DAT_0263cf84 + iVar2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 133,
+      "match": "DAT_0263cf84",
+      "severity": "mild",
+      "text": "*(uint *)(iVar2 + 0x263d00c) = *(uint *)(*(int *)(&DAT_0263cf84 + iVar2) + 0x114);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 134,
+      "match": "DAT_0263cf84",
+      "severity": "mild",
+      "text": "iVar3 = *(int *)(&DAT_0263cf84 + iVar2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 135,
+      "match": "DAT_0061bc80",
+      "severity": "mild",
+      "text": "DAT_0061bc80 = iVar8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 140,
+      "match": "DAT_0061bc80",
+      "severity": "mild",
+      "text": "DAT_0061bc80 = 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 142,
+      "match": "DAT_0061bc80",
+      "severity": "mild",
+      "text": "iVar7 = DAT_0061bc80;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 143,
+      "match": "DAT_0263cf80",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_0263cf80 + iVar2) = DAT_0061bc80;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 143,
+      "match": "DAT_0061bc80",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_0263cf80 + iVar2) = DAT_0061bc80;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 145,
+      "match": "DAT_0263cf84",
+      "severity": "mild",
+      "text": "(*(CSfxSample **)(&DAT_0263cf84 + iVar2),999.0,999.0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 154,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar3 = (**(code **)(*_DAT_02648e80 + 0x40))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 155,
+      "match": "DAT_0263cf84",
+      "severity": "mild",
+      "text": "(_DAT_02648e80,*(uint *)(*(int *)(&DAT_0263cf84 + iVar2) + 0x158));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 156,
+      "match": "DAT_0263cf7c",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_0263cf7c + iVar2) = iVar3;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `pCVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 49,
+      "match": "(int)pCVar12",
+      "severity": "moderate",
+      "text": "pCVar12 = (CSfxOptions *)((int)pCVar12 + ((uint)bVar14 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 80,
+      "match": "(int)pCVar12",
+      "severity": "moderate",
+      "text": "pCVar12 = (CSfxOptions *)((int)pCVar12 + ((uint)bVar14 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 81,
+      "match": "(int)pCVar4",
+      "severity": "moderate",
+      "text": "pCVar4 = (CSfxSlot *)((int)pCVar4 + (uint)bVar14 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 35,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 46,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0x18; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 78,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar7 = 0x18; iVar7 != 0; iVar7 = iVar7 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar4` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `pCVar4 = pCVar4;` self-assign, two-var `tmp = &pCVar4->field; pCVar4 = tmp;` ping-pong, or a bare `pCVar4 = pCVar4 + N;` advance followed by a `*pCVar4 =` store \u2014 plus a constant-index store on `pCVar4`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 126,
+      "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 005507c5, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 104,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005507c5: MOVSD.REP ES:EDI,ESI  ; DAT_0263d038 | g_CMP3DecoderInstanceOther.synthesis_history[1][28][14]",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

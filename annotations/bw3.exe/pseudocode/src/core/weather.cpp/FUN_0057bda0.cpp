@@ -171,7 +171,7 @@ void core_weather_cpp_FUN_0057bda0(CWeather *param_1)
     else {
       core_weather_cpp_CWeather_createThunder_FUN_0057c840(param_1);
     }
-    iVar4 = sound_sndmain_cpp_FUN_00556700(_DAT_02d20258);
+    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(_DAT_02d20258);
     if (iVar4 == 0) {
       if (param_1->weather_type != 5) {
         _DAT_02d20258 =

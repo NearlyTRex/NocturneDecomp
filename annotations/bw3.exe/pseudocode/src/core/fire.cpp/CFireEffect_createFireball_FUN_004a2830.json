@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 61,
+    "complexity_score": 45,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 31,
-    "suspect_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 30,
+    "suspect_count": 1,
     "suspect_types": [
-      "raw_address_constant",
       "warning_overlapping_globals"
     ],
-    "total_lines": 96
+    "total_lines": 95
   },
   "cross_references": [
     {
@@ -50,12 +49,12 @@
     {
       "addr": "00556930",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00556930"
+      "name": "sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_00556930"
     },
     {
       "addr": "00556a30",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00556a30"
+      "name": "sound_sndmain.cpp_setSfxTrackedFloatVelocity_FUN_00556a30"
     }
   ],
   "globals": [
@@ -213,14 +212,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Raw hex literal 0x1cefe8c matches address of g_FireballPool (+12 bytes into) (type CFireball[64]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 33,
-      "match": "0x1cefe8c",
-      "severity": "moderate",
-      "text": "sound_sndmain_cpp_FUN_00556a30(g_FireballPool[iVar1].sfx_handle,iVar3 + 0x1cefe8c);",
-      "type": "raw_address_constant"
     }
   ]
 }

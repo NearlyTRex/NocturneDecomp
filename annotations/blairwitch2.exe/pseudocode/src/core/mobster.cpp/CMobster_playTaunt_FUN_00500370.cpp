@@ -41,7 +41,7 @@ void __cdecl core_mobster_cpp_CMobster_playTaunt_FUN_00500370(CMobster *this_ptr
     } while (iVar6 < 3);
     if (0.0 < this_ptr->taunt_timer) {
       this_ptr->taunt_timer = this_ptr->taunt_timer + _DAT_005def35;
-      iVar5 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handle);
+      iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handle);
       if (iVar5 == 0) {
         iVar6 = 0;
         iVar5 = 0;
@@ -57,8 +57,9 @@ void __cdecl core_mobster_cpp_CMobster_playTaunt_FUN_00500370(CMobster *this_ptr
                              (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + local_18),
                               g_CMobsterClassInfo.name_hash);
           if (((pCVar2 != (CDemonActor *)0x0) &&
-              (iVar4 = sound_sndmain_cpp_FUN_00550b70(*(uint *)&pCVar2[0x62].field_0x2a8),
-              iVar4 != 0)) && (iVar5 = iVar5 + 1, 3 < iVar5)) break;
+              (iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70
+                                 (*(uint *)&pCVar2[0x62].field_0x2a8), iVar4 != 0)) &&
+             (iVar5 = iVar5 + 1, 3 < iVar5)) break;
           local_18 = local_18 + 4;
           iVar6 = iVar6 + 1;
         }

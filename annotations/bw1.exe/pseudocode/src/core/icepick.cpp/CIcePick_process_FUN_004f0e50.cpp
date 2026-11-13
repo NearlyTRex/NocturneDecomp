@@ -186,7 +186,8 @@ switchD_004f148c_default:
                                 (&(this_ptr->base).base.model.base);
             if (iVar5 != pSVar11->state_index) {
               if ((((iVar5 == 0xe) || (iVar5 == 0xf)) || (iVar5 == 0x10)) &&
-                 (iVar9 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[0]), iVar9 == 0)) {
+                 (iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[0]),
+                 iVar9 == 0)) {
                 uVar10 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                    ((CDemonActor *)this_ptr,"icepick-miss?.wav");
                 this_ptr->sfx_handles[0] = uVar10;

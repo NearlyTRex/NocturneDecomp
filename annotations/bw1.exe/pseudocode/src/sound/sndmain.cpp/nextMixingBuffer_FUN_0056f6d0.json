@@ -2,23 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 145,
-    "complexity_score": 287,
+    "complexity_score": 523,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 82,
-    "suspect_count": 17,
+    "pseudocode_lines": 98,
+    "suspect_count": 37,
     "suspect_types": [
       "pointer_cast",
       "pointer_stride_bytecount",
+      "pointer_truncation",
       "raw_address_constant",
       "raw_address_pointer_store",
+      "stack_param",
+      "stack_ref",
       "undefined_data",
+      "unknown_field",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 227
+    "total_lines": 243
   },
   "cross_references": [],
   "function": {
@@ -57,7 +61,7 @@
     {
       "addr": "00571420",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00571420"
+      "name": "sound_sndmain.cpp_CSfxSlot_mix_FUN_00571420"
     }
   ],
   "globals": [
@@ -229,8 +233,24 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_ffffff94",
+      "severity": "moderate",
+      "text": "byte in_stack_ffffff94 [28];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_ffffffb0",
+      "severity": "moderate",
+      "text": "uint in_stack_ffffffb0;",
+      "type": "stack_param"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 40,
       "match": "DAT_006232ec",
       "severity": "mild",
       "text": "if (0 < DAT_006232ec) {",
@@ -238,7 +258,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 42,
+      "line": 44,
       "match": "*(void **)(iVar2 + 0x2c80698",
       "severity": "moderate",
       "text": "(*(void **)(iVar2 + 0x2c80698),",
@@ -246,15 +266,23 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 43,
+      "line": 45,
       "match": "*(void **)(iVar2 + 0x2c80698",
       "severity": "moderate",
       "text": "(void *)(_DAT_02c80668 * 4 + (int)*(void **)(iVar2 + 0x2c80698)),",
       "type": "raw_address_pointer_store"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 50,
+      "match": "in_stack_ffffffb0",
+      "severity": "moderate",
+      "text": "in_stack_ffffffb0 = 0x56f776;",
+      "type": "stack_param"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 51,
+      "line": 53,
       "match": "DAT_006232ec",
       "severity": "mild",
       "text": "} while (iVar5 < DAT_006232ec);",
@@ -262,7 +290,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 56,
       "match": "DAT_006232ec",
       "severity": "mild",
       "text": "iStack_1c = DAT_006232ec;",
@@ -270,7 +298,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 57,
       "match": "DAT_006232f0",
       "severity": "mild",
       "text": "iStack_18 = DAT_006232f0;",
@@ -278,7 +306,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 58,
       "match": "DAT_006232ec",
       "severity": "mild",
       "text": "if (0 < DAT_006232ec) {",
@@ -286,7 +314,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 62,
       "match": "(uint *)((int)auStack_40",
       "severity": "moderate",
       "text": "*(uint *)((int)auStack_40 + iVar5) = *(uint *)(iVar5 + 0x2c80698);",
@@ -294,7 +322,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 62,
+      "line": 64,
       "match": "DAT_006232ec",
       "severity": "mild",
       "text": "} while (iVar2 < DAT_006232ec * 4);",
@@ -302,7 +330,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 66,
       "match": "DAT_006232f0",
       "severity": "mild",
       "text": "fStack_14 = (float)_DAT_02c80668 / (float)DAT_006232f0;",
@@ -310,39 +338,175 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 69,
+      "line": 74,
       "match": "DAT_02c78cec",
       "severity": "mild",
-      "text": "} while (this_ptr != (CSfxSlot *)&DAT_02c78cec);",
+      "text": "} while (pCVar3 != (CSfxSlot *)&DAT_02c78cec);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 78,
+      "match": "&stack0xffffff94",
+      "severity": "moderate",
+      "text": "puVar6 = (uint *)&stack0xffffff94;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 84,
+      "match": "in_stack_ffffffb0",
+      "severity": "moderate",
+      "text": "mix_buffer.channel_buffers[7] = (float *)in_stack_ffffffb0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 85,
+      "match": "in_stack_ffffff94",
+      "severity": "moderate",
+      "text": "mix_buffer.channel_buffers[0] = (float *)in_stack_ffffff94._0_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 85,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "mix_buffer.channel_buffers[0] = (float *)in_stack_ffffff94._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 86,
+      "match": "in_stack_ffffff94",
+      "severity": "moderate",
+      "text": "mix_buffer.channel_buffers[1] = (float *)in_stack_ffffff94._4_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 86,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "mix_buffer.channel_buffers[1] = (float *)in_stack_ffffff94._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 87,
+      "match": "in_stack_ffffff94",
+      "severity": "moderate",
+      "text": "mix_buffer.channel_buffers[2] = (float *)in_stack_ffffff94._8_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 87,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "mix_buffer.channel_buffers[2] = (float *)in_stack_ffffff94._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 88,
+      "match": "in_stack_ffffff94",
+      "severity": "moderate",
+      "text": "mix_buffer.channel_buffers[3] = (float *)in_stack_ffffff94._12_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 88,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "mix_buffer.channel_buffers[3] = (float *)in_stack_ffffff94._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 89,
+      "match": "in_stack_ffffff94",
+      "severity": "moderate",
+      "text": "mix_buffer.channel_buffers[4] = (float *)in_stack_ffffff94._16_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 89,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "mix_buffer.channel_buffers[4] = (float *)in_stack_ffffff94._16_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 90,
+      "match": "in_stack_ffffff94",
+      "severity": "moderate",
+      "text": "mix_buffer.channel_buffers[5] = (float *)in_stack_ffffff94._20_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 90,
+      "match": "._20_4_",
+      "severity": "mild",
+      "text": "mix_buffer.channel_buffers[5] = (float *)in_stack_ffffff94._20_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 91,
+      "match": "in_stack_ffffff94",
+      "severity": "moderate",
+      "text": "mix_buffer.channel_buffers[6] = (float *)in_stack_ffffff94._24_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 91,
+      "match": "._24_4_",
+      "severity": "mild",
+      "text": "mix_buffer.channel_buffers[6] = (float *)in_stack_ffffff94._24_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 81,
+      "line": 97,
       "match": "DAT_02c78cec",
       "severity": "mild",
-      "text": "} while (puVar3 != &DAT_02c78cec);",
+      "text": "} while (pCVar3 != (CSfxSlot *)&DAT_02c78cec);",
       "type": "undefined_data"
     },
     {
-      "description": "Raw hex address 0x56f748 assigned to bare local `uStack_50`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_50` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 40,
-      "match": "0x56f748",
+      "description": "Pointer value `pCVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 93,
+      "match": "(int)pCVar9",
       "severity": "moderate",
-      "text": "uStack_50 = 0x56f748;",
+      "text": "mix_buffer.num_channels = (int)pCVar9;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Raw hex address 0x56f776 assigned to bare local `in_stack_ffffffb0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `in_stack_ffffffb0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 50,
+      "match": "0x56f776",
+      "severity": "moderate",
+      "text": "in_stack_ffffffb0 = 0x56f776;",
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex address 0x56f776 assigned to bare local `uStack_50`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_50` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 48,
-      "match": "0x56f776",
+      "description": "Raw hex address 0x56f7f7 assigned to bare local `uVar8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 69,
+      "match": "0x56f7f7",
       "severity": "moderate",
-      "text": "uStack_50 = 0x56f776;",
+      "text": "uVar8 = 0x56f7f7;",
       "type": "raw_address_constant"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 74,
+      "line": 79,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0xb; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -350,7 +514,7 @@
     },
     {
       "description": "mem* byte count hardcodes an element stride (count = count * N) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 49,
+      "line": 51,
       "match": "memset",
       "severity": "moderate",
       "text": "memset",

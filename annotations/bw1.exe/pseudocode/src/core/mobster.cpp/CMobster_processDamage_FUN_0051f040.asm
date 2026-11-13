@@ -19,7 +19,7 @@
 ;   core_mobster.cpp_CMobster_processDismemberment_FUN_0051ec80
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
-;   sound_sndmain.cpp_FUN_005735a0
+;   sound_sndmain.cpp_isSfxPlaying_FUN_005735a0
 ;   sound_sndmain.cpp_killSfx_FUN_00573a80
 ;
 ; *****************************************************************************
@@ -96,8 +96,8 @@ section .text
     MOV ECX,dword ptr [EBX + 0xc2fc]    ; 0051f0ee
         ;   Label: LAB_0051f0ee
     PUSH ECX                            ; 0051f0f4
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 0051f0f5
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 0051f0f5
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 0051f0fa
     TEST EAX,EAX                        ; 0051f0fd
     JZ 0x0051f19f                       ; 0051f0ff

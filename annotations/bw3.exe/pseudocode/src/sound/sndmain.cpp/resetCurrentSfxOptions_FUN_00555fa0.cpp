@@ -11,6 +11,7 @@
 void __cdecl sound_sndmain_cpp_resetCurrentSfxOptions_FUN_00555fa0(void)
 
 {
-  sound_sndmain_cpp_FUN_00555bf0((CSfxOptions *)(_DAT_02ceb91c * 0x60 + 0x2ceb920));
+  sound_sndmain_cpp_CSfxOptions_reset_FUN_00555bf0
+            ((CSfxOptions *)(_DAT_02ceb91c * 0x60 + 0x2ceb920));
   return;
 }

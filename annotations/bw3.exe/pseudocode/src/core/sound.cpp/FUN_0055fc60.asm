@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_00482c70
-;   sound_sndmain.cpp_FUN_005586d0
+;   sound_sndmain.cpp_hasHardware3DSound_FUN_005586d0
 ;   sound_sndmain.cpp_initializeSoundDevice_FUN_00558730
 ;   sound_sndmain.cpp_setSoundOutputMode_FUN_00558290
 ;
@@ -46,8 +46,8 @@ section .text
     CALL sound_sndmain.cpp_initializeSoundDevice_FUN_00558730 ; 0055fc97
         ;   XREF to: 00558730 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_initializeSoundDevice_FUN_00558730()
         ;   Label: LAB_0055fc97
-    CALL sound_sndmain.cpp_FUN_005586d0 ; 0055fc9c
-        ;   XREF to: 005586d0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_005586d0(int enable)
+    CALL sound_sndmain.cpp_hasHardware3DSound_FUN_005586d0 ; 0055fc9c
+        ;   XREF to: 005586d0 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_hasHardware3DSound_FUN_005586d0()
     TEST EAX,EAX                        ; 0055fca1
     JG 0x0055fca6                       ; 0055fca3
         ;   XREF to: 0055fca6 (CONDITIONAL_JUMP)  ; LAB_0055fca6

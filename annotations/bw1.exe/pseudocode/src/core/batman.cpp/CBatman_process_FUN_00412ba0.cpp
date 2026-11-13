@@ -304,9 +304,10 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412ba0(CBatman *this_ptr,floa
               core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(pCStack_40,3,1);
               uVar10 = this_ptr->sfx_handles[1];
               (this_ptr->base).attack_cooldown = 1.0;
-              iVar6 = sound_sndmain_cpp_FUN_005735a0(uVar10);
+              iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(uVar10);
               if ((iVar6 == 0) &&
-                 (iVar6 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[2]), iVar6 == 0)) {
+                 (iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[2]),
+                 iVar6 == 0)) {
                 uVar10 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                    ((CDemonActor *)this_ptr,"batman-attack?.wav");
                 this_ptr->sfx_handles[2] = uVar10;
@@ -374,10 +375,12 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412ba0(CBatman *this_ptr,floa
                             (0x01C51D80,this_ptr->fall_event), iVar6 != 0)) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
                   (&(this_ptr->base).base.model.base,0xb,1);
-        iVar6 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[1]);
+        iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[1]);
         if ((iVar6 == 0) &&
-           ((iVar6 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[2]), iVar6 == 0 &&
-            (iVar6 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[0]), iVar6 == 0)))) {
+           ((iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[2]),
+            iVar6 == 0 &&
+            (iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[0]),
+            iVar6 == 0)))) {
           uVar10 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                              ((CDemonActor *)this_ptr,"batman-alert.wav");
           this_ptr->sfx_handles[0] = uVar10;

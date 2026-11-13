@@ -153,16 +153,16 @@ section .text
     SUB ESP,0x8                         ; 00485eb3
     FLD float ptr [EBX + 0x20]          ; 00485eb6
     FSTP double ptr [ESP]               ; 00485eb9
-    CALL sound_sndmain.cpp_FUN_00574010 ; 00485ebc
-        ;   XREF to: 00574010 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00574010()
+    CALL sound_sndmain.cpp_isWithinListenerRadius_FUN_00574010 ; 00485ebc
+        ;   XREF to: 00574010 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isWithinListenerRadius_FUN_00574010(double pos_x, double pos_y, double pos_z, float radius)
     ADD ESP,0x1c                        ; 00485ec1
     TEST EAX,EAX                        ; 00485ec4
     JZ 0x00486451                       ; 00485ec6
         ;   XREF to: 00486451 (CONDITIONAL_JUMP)  ; LAB_00486451
     MOV EDI,dword ptr [EBX + 0xc278]    ; 00485ecc
     PUSH EDI                            ; 00485ed2
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 00485ed3
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 00485ed3
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 00485ed8
     TEST EAX,EAX                        ; 00485edb
     JZ 0x00486405                       ; 00485edd
@@ -616,8 +616,8 @@ section .text
     MOV ECX,dword ptr [EBX + 0xc27c]    ; 00486390
     PUSH ECX                            ; 00486396
     MOV dword ptr [EBX + 0xc1e4],0x3f800000 ; 00486397
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 004863a1
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 004863a1
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 004863a6
     TEST EAX,EAX                        ; 004863a9
     JNZ 0x00485e71                      ; 004863ab
@@ -665,8 +665,8 @@ section .text
     SUB ESP,0x8                         ; 0048641e
     FLD float ptr [EBP + 0x76]          ; 00486421
     FSTP double ptr [ESP]               ; 00486424
-    CALL sound_sndmain.cpp_FUN_00572a50 ; 00486427
-        ;   XREF to: 00572a50 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572a50(double trigger_time, int trigger_id)
+    CALL sound_sndmain.cpp_setNextSfxTriggerTime_FUN_00572a50 ; 00486427
+        ;   XREF to: 00572a50 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTriggerTime_FUN_00572a50(double trigger_time, int trigger_id)
     ADD ESP,0xc                         ; 0048642c
     PUSH 0x5db68e                       ; 0048642f | = "slime.wav"
     MOV EAX,dword ptr [EBX + 0x154]     ; 00486434

@@ -25,7 +25,7 @@ uint sound_snddx_cpp_FUN_005552a0(void)
       sound_snddx_cpp_FUN_00554ad0(uVar2);
       _sprintf(acStack_198,"DirectSux: Unable to %s.  (%s)");
       uVar4 = 0;
-      sound_sndmain_cpp_FUN_005549c0(acStack_198);
+      sound_sndmain_cpp_logSoundError_FUN_005549c0(acStack_198);
     }
   }
   if (_DAT_0264a5c8 != (int *)0x0) {
@@ -34,7 +34,7 @@ uint sound_snddx_cpp_FUN_005552a0(void)
       sound_snddx_cpp_FUN_00554ad0(uVar2);
       _sprintf(acStack_328,"DirectSux: Unable to %s.  (%s)");
       uVar4 = 0;
-      sound_sndmain_cpp_FUN_005549c0(acStack_328);
+      sound_sndmain_cpp_logSoundError_FUN_005549c0(acStack_328);
     }
   }
   iVar3 = 0;

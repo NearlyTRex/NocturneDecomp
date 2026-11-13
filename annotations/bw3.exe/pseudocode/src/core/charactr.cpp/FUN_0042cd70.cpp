@@ -60,7 +60,8 @@ uint core_charactr_cpp_FUN_0042cd70(CCharacter *param_1,float param_2)
   }
   if (0.0 < param_1->bind_time) {
     if ((param_1->bind_type == 0) &&
-       (iVar5 = sound_sndmain_cpp_FUN_00556700(param_1->bind_sound_handle), iVar5 == 0)) {
+       (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(param_1->bind_sound_handle), iVar5 == 0)
+       ) {
       uVar7 = core_sound_cpp_CSound_playActorSound_FUN_005609d0
                         (0x02CF5680,&param_1->base,"wp_bindevil_loop.wav",
                          &(param_1->base).location.position);

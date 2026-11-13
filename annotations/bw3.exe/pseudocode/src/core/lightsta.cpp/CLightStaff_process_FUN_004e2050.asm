@@ -293,8 +293,8 @@ section .text
     MOV EDI,dword ptr [EBX + 0x5c4]     ; 004e23e6
         ;   Label: LAB_004e23e6
     PUSH EDI                            ; 004e23ec
-    CALL sound_sndmain.cpp_FUN_00556700 ; 004e23ed
-        ;   XREF to: 00556700 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00556700(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00556700 ; 004e23ed
+        ;   XREF to: 00556700 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00556700(uint sfx_handle)
     ADD ESP,0x4                         ; 004e23f2
     TEST EAX,EAX                        ; 004e23f5
     JNZ 0x004e22fa                      ; 004e23f7

@@ -18,6 +18,6 @@ void __cdecl sound_sndmain_cpp_freeAllSamples_FUN_00557800(void)
     sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00553520(this_ptr);
     this_ptr = this_ptr + 1;
   } while (this_ptr != (CSfxSample *)0x2cf2824);
-  sound_sndmain_cpp_FUN_00556fd0();
+  sound_sndmain_cpp_unlockSound_FUN_00556fd0();
   return;
 }

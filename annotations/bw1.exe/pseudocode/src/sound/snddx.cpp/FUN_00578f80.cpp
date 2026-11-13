@@ -71,7 +71,7 @@ int sound_snddx_cpp_FUN_00578f80(uint param_1,int *param_2,uint param_3)
                            (float)*(double *)(param_2 + 5)), uVar4 != 0)) {
       sound_snddx_cpp_FUN_00577500(uVar4);
       _sprintf(acStack_b30,"DirectSux: Unable to %s.  (%s)");
-      sound_sndmain_cpp_FUN_005773f0();
+      sound_sndmain_cpp_logSoundError_FUN_005773f0(acStack_b30);
       iStack_1c = 0;
     }
     if (((param_3 & 4) != 0) &&
@@ -79,7 +79,7 @@ int sound_snddx_cpp_FUN_00578f80(uint param_1,int *param_2,uint param_3)
        uVar4 != 0)) {
       sound_snddx_cpp_FUN_00577500(uVar4);
       _sprintf(acStack_4f0,"DirectSux: Unable to %s.  (%s)");
-      sound_sndmain_cpp_FUN_005773f0();
+      sound_sndmain_cpp_logSoundError_FUN_005773f0(acStack_4f0);
       iStack_1c = 0;
     }
     if (((param_3 & 8) != 0) &&
@@ -90,7 +90,7 @@ int sound_snddx_cpp_FUN_00578f80(uint param_1,int *param_2,uint param_3)
       if (uVar4 != 0) {
         sound_snddx_cpp_FUN_00577500(uVar4);
         _sprintf(acStack_fe0,"DirectSux: Unable to %s.  (%s)");
-        sound_sndmain_cpp_FUN_005773f0();
+        sound_sndmain_cpp_logSoundError_FUN_005773f0(acStack_fe0);
         iStack_1c = 0;
       }
       piStack_18[5] = iStack_38;
@@ -103,7 +103,7 @@ int sound_snddx_cpp_FUN_00578f80(uint param_1,int *param_2,uint param_3)
       if (uVar4 != 0) {
         sound_snddx_cpp_FUN_00577500(uVar4);
         _sprintf(acStack_cc0,"DirectSux: Unable to %s.  (%s)");
-        sound_sndmain_cpp_FUN_005773f0();
+        sound_sndmain_cpp_logSoundError_FUN_005773f0(acStack_cc0);
         iStack_1c = 0;
       }
       piStack_18[7] = iStack_34;
@@ -118,7 +118,7 @@ int sound_snddx_cpp_FUN_00578f80(uint param_1,int *param_2,uint param_3)
         if (uVar4 != 0) {
           sound_snddx_cpp_FUN_00577500(uVar4);
           _sprintf(acStack_1170,"DirectSux: Unable to %s.  (%s)");
-          sound_sndmain_cpp_FUN_005773f0();
+          sound_sndmain_cpp_logSoundError_FUN_005773f0(acStack_1170);
           iStack_1c = 0;
         }
         piStack_18[8] = iStack_24;
@@ -129,14 +129,14 @@ int sound_snddx_cpp_FUN_00578f80(uint param_1,int *param_2,uint param_3)
       if (uVar4 != 0) {
         sound_snddx_cpp_FUN_00577500(uVar4);
         _sprintf(acStack_1dc,"DirectSux: Unable to %s.  (%s)");
-        sound_sndmain_cpp_FUN_005773f0(acStack_1dc);
+        sound_sndmain_cpp_logSoundError_FUN_005773f0(acStack_1dc);
         fStack_28 = 0.0;
       }
       uVar4 = (**(code **)(*piVar2 + 0x40))(piVar2,uStack_40._4_4_,1);
       if (uVar4 != 0) {
         sound_snddx_cpp_FUN_00577500(uVar4);
         _sprintf(acStack_810,"DirectSux: Unable to %s.  (%s)");
-        sound_sndmain_cpp_FUN_005773f0();
+        sound_sndmain_cpp_logSoundError_FUN_005773f0(acStack_810);
         iStack_1c = 0;
       }
     }
@@ -148,14 +148,14 @@ int sound_snddx_cpp_FUN_00578f80(uint param_1,int *param_2,uint param_3)
       if (uVar4 != 0) {
         sound_snddx_cpp_FUN_00577500(uVar4);
         _sprintf(acStack_1300,"DirectSux: Unable to %s.  (%s)");
-        sound_sndmain_cpp_FUN_005773f0();
+        sound_sndmain_cpp_logSoundError_FUN_005773f0(acStack_1300);
         iStack_1c = 0;
       }
     }
     goto LAB_005791b0;
   }
   if ((param_3 & 0xca) != 0) {
-    iVar3 = sound_sndmain_cpp_FUN_00575240();
+    iVar3 = sound_sndmain_cpp_getAudioChannelCount_FUN_00575240();
     iVar5 = 1;
     fStack_1308 = (float)param_2[0x24];
     piVar2 = param_2;
@@ -210,7 +210,7 @@ LAB_00579098:
       if (uVar4 != 0) {
         sound_snddx_cpp_FUN_00577500(uVar4);
         _sprintf(acStack_680,"DirectSux: Unable to %s.  (%s)");
-        sound_sndmain_cpp_FUN_005773f0();
+        sound_sndmain_cpp_logSoundError_FUN_005773f0(acStack_680);
         iStack_1c = 0;
       }
       piStack_18[5] = iStack_2c;
@@ -222,7 +222,7 @@ LAB_00579098:
       if (uVar4 != 0) {
         sound_snddx_cpp_FUN_00577500(uVar4);
         _sprintf(acStack_e50,"DirectSux: Unable to %s.  (%s)");
-        sound_sndmain_cpp_FUN_005773f0();
+        sound_sndmain_cpp_logSoundError_FUN_005773f0(acStack_e50);
         iStack_1c = 0;
       }
       piStack_18[6] = iStack_20;
@@ -237,7 +237,7 @@ LAB_00579098:
       if (uVar4 != 0) {
         sound_snddx_cpp_FUN_00577500(uVar4);
         _sprintf(acStack_9a0,"DirectSux: Unable to %s.  (%s)");
-        sound_sndmain_cpp_FUN_005773f0();
+        sound_sndmain_cpp_logSoundError_FUN_005773f0(acStack_9a0);
         iStack_1c = 0;
       }
       piStack_18[7] = iVar3;
@@ -251,14 +251,14 @@ LAB_00579098:
     if (uVar4 != 0) {
       sound_snddx_cpp_FUN_00577500(uVar4);
       _sprintf(acStack_360,"DirectSux: Unable to %s.  (%s)");
-      sound_sndmain_cpp_FUN_005773f0();
+      sound_sndmain_cpp_logSoundError_FUN_005773f0(acStack_360);
       iStack_1c = 0;
     }
   }
 LAB_005791b0:
   param_2[0x46] = param_2[0x46] & (~param_3 | 0x40000000);
   if (iStack_1c == 0) {
-    sound_sndmain_cpp_FUN_005773f0();
+    sound_sndmain_cpp_logSoundError_FUN_005773f0("DirectSoundDevice::setSfxOpt - failed\n");
   }
   return iStack_1c;
 }

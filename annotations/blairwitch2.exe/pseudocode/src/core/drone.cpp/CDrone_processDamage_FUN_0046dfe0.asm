@@ -16,7 +16,7 @@
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   core_motion.cpp_FUN_005035c0
-;   sound_sndmain.cpp_FUN_00550b70
+;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
 ;
 ; *****************************************************************************
@@ -105,8 +105,8 @@ section .text
     ADD ESP,0x4                         ; 0046e0ae
     MOV EDI,dword ptr [EBX + 0x10b04]   ; 0046e0b1
     PUSH EDI                            ; 0046e0b7
-    CALL sound_sndmain.cpp_FUN_00550b70 ; 0046e0b8
-        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00550b70(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00550b70 ; 0046e0b8
+        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00550b70(uint sfx_handle)
     ADD ESP,0x4                         ; 0046e0bd
     TEST EAX,EAX                        ; 0046e0c0
     JZ 0x0046e12b                       ; 0046e0c2

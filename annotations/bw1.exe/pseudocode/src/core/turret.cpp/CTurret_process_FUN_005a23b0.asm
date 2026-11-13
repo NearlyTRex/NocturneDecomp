@@ -17,9 +17,9 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_main.c_FUN_005030e0
 ;   crt_unknown.c_sprintf_FUN_005bfb40
-;   sound_sndmain.cpp_FUN_00573980
 ;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00573660
 ;   sound_sndmain.cpp_killSfx_FUN_00573a80
+;   sound_sndmain.cpp_setSfxBaseFrequency_FUN_00573980
 ;
 ; *****************************************************************************
 
@@ -85,8 +85,8 @@ section .text
     FSTP float ptr [ESP]                ; 005a24e8
     PUSH dword ptr [ESP]                ; 005a24eb
     PUSH ESI                            ; 005a24ee
-    CALL sound_sndmain.cpp_FUN_00573980 ; 005a24ef
-        ;   XREF to: 00573980 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00573980(uint sfx_handle, float base_frequency)
+    CALL sound_sndmain.cpp_setSfxBaseFrequency_FUN_00573980 ; 005a24ef
+        ;   XREF to: 00573980 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxBaseFrequency_FUN_00573980(uint sfx_handle, float base_frequency)
     ADD ESP,0x8                         ; 005a24f4
     TEST EAX,EAX                        ; 005a24f7
     JZ 0x005a281c                       ; 005a24f9

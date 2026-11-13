@@ -155,8 +155,8 @@ void __cdecl core_baal_cpp_CBaal_process_FUN_005968a0(CBaal *this_ptr,float delt
                 }
               }
               else if ((uVar4 == 0x4b0) &&
-                      (iVar3 = sound_sndmain_cpp_FUN_00556700(this_ptr->sfx_handles[0]), iVar3 == 0)
-                      ) {
+                      (iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handles[0])
+                      , iVar3 == 0)) {
                 uVar4 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                   ((CDemonActor *)this_ptr,"baal_stand.wav");
                 this_ptr->sfx_handles[0] = uVar4;
@@ -164,7 +164,7 @@ void __cdecl core_baal_cpp_CBaal_process_FUN_005968a0(CBaal *this_ptr,float delt
             }
           }
           else if (uVar4 < 0x4b2) {
-            iVar3 = sound_sndmain_cpp_FUN_00556700
+            iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                               ((uint)(this_ptr->base).base.motion_transition_costs[2][uVar4 + 0x12])
             ;
             if (iVar3 == 0) {
@@ -174,7 +174,7 @@ void __cdecl core_baal_cpp_CBaal_process_FUN_005968a0(CBaal *this_ptr,float delt
             }
           }
           else if (uVar4 < 0x4b3) {
-            iVar3 = sound_sndmain_cpp_FUN_00556700
+            iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                               ((uint)(this_ptr->base).base.motion_transition_costs[2][uVar4 + 0x12])
             ;
             if (iVar3 == 0) {
@@ -184,7 +184,7 @@ void __cdecl core_baal_cpp_CBaal_process_FUN_005968a0(CBaal *this_ptr,float delt
             }
           }
           else {
-            iVar3 = sound_sndmain_cpp_FUN_00556700
+            iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                               ((uint)(this_ptr->base).base.motion_transition_costs[2][uVar4 + 0x12])
             ;
             if (iVar3 == 0) {
@@ -195,7 +195,7 @@ void __cdecl core_baal_cpp_CBaal_process_FUN_005968a0(CBaal *this_ptr,float delt
           }
         }
         else if (uVar4 < 0x4b5) {
-          iVar3 = sound_sndmain_cpp_FUN_00556700
+          iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                             ((uint)(this_ptr->base).base.motion_transition_costs[2][uVar4 + 0x12]);
           if (iVar3 == 0) {
             fVar7 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -205,7 +205,7 @@ void __cdecl core_baal_cpp_CBaal_process_FUN_005968a0(CBaal *this_ptr,float delt
         }
         else if (uVar4 < 0x4b7) {
           if (uVar4 < 0x4b6) {
-            iVar3 = sound_sndmain_cpp_FUN_00556700
+            iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                               ((uint)(this_ptr->base).base.motion_transition_costs[2][uVar4 + 0x12])
             ;
             if (iVar3 == 0) {
@@ -215,7 +215,7 @@ void __cdecl core_baal_cpp_CBaal_process_FUN_005968a0(CBaal *this_ptr,float delt
             }
           }
           else {
-            iVar3 = sound_sndmain_cpp_FUN_00556700
+            iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                               ((uint)(this_ptr->base).base.motion_transition_costs[2][uVar4 + 0x12])
             ;
             if (iVar3 == 0) {
@@ -226,7 +226,7 @@ void __cdecl core_baal_cpp_CBaal_process_FUN_005968a0(CBaal *this_ptr,float delt
           }
         }
         else if (uVar4 < 0x4b8) {
-          iVar3 = sound_sndmain_cpp_FUN_00556700
+          iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                             ((uint)(this_ptr->base).base.motion_transition_costs[2][uVar4 + 0x12]);
           if (iVar3 == 0) {
             fVar7 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -235,7 +235,7 @@ void __cdecl core_baal_cpp_CBaal_process_FUN_005968a0(CBaal *this_ptr,float delt
           }
         }
         else if (uVar4 < 0x4b9) {
-          iVar3 = sound_sndmain_cpp_FUN_00556700
+          iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                             ((uint)(this_ptr->base).base.motion_transition_costs[2][uVar4 + 0x12]);
           if (iVar3 == 0) {
             fVar7 = (float)(*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -244,7 +244,7 @@ void __cdecl core_baal_cpp_CBaal_process_FUN_005968a0(CBaal *this_ptr,float delt
           }
         }
         else if ((uVar4 == 0x4b9) &&
-                (iVar3 = sound_sndmain_cpp_FUN_00556700
+                (iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                                    (*(uint *)((int)(&this_ptr->base + 1) + 0x54)), iVar3 == 0)) {
           uVar4 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                             ((CDemonActor *)this_ptr,"baal_warning.wav");

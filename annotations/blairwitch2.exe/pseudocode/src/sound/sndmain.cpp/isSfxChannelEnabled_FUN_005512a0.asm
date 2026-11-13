@@ -13,8 +13,8 @@
 ;   core_sound.cpp_CSound_process_FUN_0055a3c0 at 0055a60d
 ;   core_sound.cpp_FUN_0055a1d0 at 0055a263
 ;   core_sound.cpp_syncChannel3WithChannel0_FUN_0055a170 at 0055a175
-;   sound_sndmain.cpp_FUN_005506b0 at 00550746
 ;   sound_sndmain.cpp_readIni_FUN_00553680 at 005538c5
+;   sound_sndmain.cpp_startSfx_FUN_005506b0 at 00550746
 ;   sound_sndmain.cpp_writeIni_FUN_00553980 at 00553ade
 ;
 ; Referenced Globals:

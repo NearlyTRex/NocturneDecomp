@@ -841,7 +841,7 @@ LAB_0058bb9a:
        (this_ptr->base).base.model.accumulated_root_motion.y;
 LAB_0058bbb2:
   if ((uStack_1c == 0x13) && ((this_ptr->base).base.was_rendered_opaque != 0)) {
-    iVar7 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[1]);
+    iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[1]);
     if (iVar7 == 0) {
       uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"werewolf-eat.wav");

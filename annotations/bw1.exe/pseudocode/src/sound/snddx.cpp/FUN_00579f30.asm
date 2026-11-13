@@ -9,7 +9,7 @@
 ;
 ; Called Functions:
 ;   sound_snddx.cpp_FUN_00577880
-;   sound_sndmain.cpp_FUN_005773f0
+;   sound_sndmain.cpp_logSoundError_FUN_005773f0
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
         ;   XREF to: 00579f4e (CONDITIONAL_JUMP)  ; LAB_00579f4e
     PUSH 0x5f5552                       ; 00579f40 | = "DirectSoundDevice::killSfx - handle w..."
         ;   Label: LAB_00579f40
-    CALL sound_sndmain.cpp_FUN_005773f0 ; 00579f45
-        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005773f0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005773f0 ; 00579f45
+        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005773f0(char * format)
     ADD ESP,0x4                         ; 00579f4a
     RET                                 ; 00579f4d
     LEA EAX,[EDX*0x8 + 0x0]             ; 00579f4e

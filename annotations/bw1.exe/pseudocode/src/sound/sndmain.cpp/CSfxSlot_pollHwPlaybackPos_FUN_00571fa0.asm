@@ -7,7 +7,7 @@
 ; CSfxSlot *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   sound_sndmain.cpp_FUN_00570460 at 00570514
+;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00570460 at 00570514
 ;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00573660 at 00573690
 ;
 ; Referenced Globals:
@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00572030
-;   sound_sndmain.cpp_FUN_005773f0
+;   sound_sndmain.cpp_logSoundError_FUN_005773f0
 ;
 ; *****************************************************************************
 
@@ -67,8 +67,8 @@ section .text
     MOV EDX,dword ptr [EBX + 0x68]      ; 00571ff1
     PUSH EDX                            ; 00571ff4
     PUSH 0x5f3ac3                       ; 00571ff5 | = "Error polling hw playback pos %s\n"
-    CALL sound_sndmain.cpp_FUN_005773f0 ; 00571ffa
-        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005773f0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005773f0 ; 00571ffa
+        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005773f0(char * format)
     ADD ESP,0x8                         ; 00571fff
     XOR EAX,EAX                         ; 00572002
     MOV ESP,EBP                         ; 00572004

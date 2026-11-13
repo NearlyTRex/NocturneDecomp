@@ -320,7 +320,7 @@ void __cdecl core_chain_cpp_CChain_process_FUN_00435c70(CChain *this_ptr,float d
   }
   if ((pSStack_1c != (SChainVertex *)0x0) && (this_ptr->pull_wav_name[0] != '\0')) {
     sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->move_wav_handle);
-    iVar4 = sound_sndmain_cpp_FUN_005735a0(this_ptr->pull_wav_handle);
+    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->pull_wav_handle);
     if (iVar4 == 0) {
       uVar3 = core_sound_cpp_CSound_playTrackedActorSound_FUN_0057d8d0
                         (0x02C82A60,&this_ptr->base,this_ptr->pull_wav_name,
@@ -337,9 +337,9 @@ void __cdecl core_chain_cpp_CChain_process_FUN_00435c70(CChain *this_ptr,float d
     sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->move_wav_handle);
     return;
   }
-  iVar4 = sound_sndmain_cpp_FUN_005735a0(this_ptr->pull_wav_handle);
+  iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->pull_wav_handle);
   if (iVar4 == 0) {
-    iVar4 = sound_sndmain_cpp_FUN_005735a0(this_ptr->move_wav_handle);
+    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->move_wav_handle);
     if (iVar4 == 0) {
       uVar3 = core_sound_cpp_CSound_playTrackedActorSound_FUN_0057d8d0
                         (0x02C82A60,&this_ptr->base,this_ptr->move_wav_name,

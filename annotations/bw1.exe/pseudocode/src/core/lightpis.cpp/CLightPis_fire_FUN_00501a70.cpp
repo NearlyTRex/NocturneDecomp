@@ -200,7 +200,7 @@ int __cdecl core_lightpis_cpp_CLightPis_fire_FUN_00501a70(CLightPis *this_ptr)
         core_sound_cpp_CSound_playActorSound_FUN_0057d8a0
                   (0x02C82A60,(CDemonActor *)this_ptr,"ecre.wav",
                    (CVector3f *)(auStack_a8 + 8));
-        sound_sndmain_cpp_FUN_00573950(this_ptr->sfx_handle,0x40000000);
+        sound_sndmain_cpp_setSfxVolume_FUN_00573950(this_ptr->sfx_handle,0x40000000);
         fVar7 = _DAT_00603170;
         this_ptr->fire_flash_pending = 1;
         this_ptr->hit_enemy = 1;

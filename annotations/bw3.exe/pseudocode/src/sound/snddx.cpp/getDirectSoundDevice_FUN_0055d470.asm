@@ -30,8 +30,8 @@
 ;   sound_snddx.cpp_CDirectSoundDevice_close_FUN_0055ac00
 ;   sound_snddx.cpp_enumerateDirectSoundDevice_FUN_0055d3c0
 ;   sound_snddx.cpp_FUN_0055a670
-;   sound_sndmain.cpp_FUN_0055a560
 ;   sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005586e0
+;   sound_sndmain.cpp_logSoundError_FUN_0055a560
 ;
 ; *****************************************************************************
 
@@ -102,8 +102,8 @@ section .text
     LEA EAX,[ESP + 0x190]               ; 0055d50a
     PUSH EAX                            ; 0055d511
         ;   Label: LAB_0055d511
-    CALL sound_sndmain.cpp_FUN_0055a560 ; 0055d512
-        ;   XREF to: 0055a560 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_0055a560()
+    CALL sound_sndmain.cpp_logSoundError_FUN_0055a560 ; 0055d512
+        ;   XREF to: 0055a560 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_0055a560(char * format)
     ADD ESP,0x4                         ; 0055d517
     PUSH 0x2cf5468                      ; 0055d51a
     CALL sound_snddx.cpp_CDirectSoundDevice_close_FUN_0055ac00 ; 0055d51f
@@ -205,8 +205,8 @@ section .text
     ADD ESP,0x10                        ; 0055d62b
     MOV EAX,ESP                         ; 0055d62e
     PUSH EAX                            ; 0055d630
-    CALL sound_sndmain.cpp_FUN_0055a560 ; 0055d631
-        ;   XREF to: 0055a560 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_0055a560()
+    CALL sound_sndmain.cpp_logSoundError_FUN_0055a560 ; 0055d631
+        ;   XREF to: 0055a560 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_0055a560(char * format)
     ADD ESP,0x4                         ; 0055d636
     PUSH 0x0                            ; 0055d639
     MOV AH,byte ptr [ESP + 0x760]       ; 0055d63b

@@ -77,6 +77,7 @@
 #include "types/structs/SMRGLTextureBasic.h"
 #include "types/structs/SMRGLTextureModel.h"
 #include "types/structs/SMRGLVertex.h"
+#include "types/structs/SMixBuffer.h"
 #include "types/structs/SMorphPart.h"
 #include "types/structs/SMorphPoint.h"
 #include "types/structs/SMotion.h"

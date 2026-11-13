@@ -19554,14 +19554,25 @@
       "005c03a0",
       "005c0880"
     ],
-    "conv":"unknown",
+    "cls":"CSfxSlot",
+    "conv":"__cdecl",
     "instructions":596,
-    "method":"FUN_00571420",
-    "name":"sound_sndmain.cpp_FUN_00571420",
-    "receiver":false,
+    "method":"mix",
+    "name":"sound_sndmain.cpp_CSfxSlot_mix_FUN_00571420",
+    "params":[
+      {
+        "name":"mix_buffer",
+        "type":{
+          "kind":"struct",
+          "name":"SMixBuffer",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",
@@ -19839,8 +19850,8 @@
     ],
     "conv":"__cdecl",
     "instructions":23,
-    "method":"FUN_005735a0",
-    "name":"sound_sndmain.cpp_FUN_005735a0",
+    "method":"isSfxPlaying",
+    "name":"sound_sndmain.cpp_isSfxPlaying_FUN_005735a0",
     "params":[
       {
         "name":"sfx_handle",
@@ -19949,14 +19960,88 @@
       "00573e70",
       "00575d20"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":22,
-    "method":"FUN_00573f20",
-    "name":"sound_sndmain.cpp_FUN_00573f20",
+    "method":"set3DListenerOrient",
+    "name":"sound_sndmain.cpp_set3DListenerOrient_FUN_00573f20",
+    "params":[
+      {
+        "name":"front_x",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"front_y",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"front_z",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"up_x",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"up_y",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"up_z",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"right_x",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"right_y",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"right_z",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",
@@ -19973,14 +20058,40 @@
       "00573e70",
       "00575d20"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":10,
-    "method":"FUN_00573fa0",
-    "name":"sound_sndmain.cpp_FUN_00573fa0",
+    "method":"set3DListenerVelocity",
+    "name":"sound_sndmain.cpp_set3DListenerVelocity_FUN_00573fa0",
+    "params":[
+      {
+        "name":"velocity_x",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"velocity_y",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"velocity_z",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",
@@ -20104,8 +20215,8 @@
     ],
     "conv":"__cdecl",
     "instructions":7,
-    "method":"FUN_00575220",
-    "name":"sound_sndmain.cpp_FUN_00575220",
+    "method":"getAudioSampleRate",
+    "name":"sound_sndmain.cpp_getAudioSampleRate_FUN_00575220",
     "receiver":false,
     "ret":{
       "kind":"builtin",

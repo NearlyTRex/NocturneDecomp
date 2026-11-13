@@ -501,11 +501,12 @@ switchD_0041a7ec_caseD_3:
             (&(this_ptr->base).base.base.model);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433350((CCharacter *)this_ptr,delta_time);
   if ((iStack_40 == 1) &&
-     (iVar7 = sound_sndmain_cpp_FUN_00557170
+     (iVar7 = sound_sndmain_cpp_isWithinListenerRadius_FUN_00557170
                         ((double)(this_ptr->base).base.base.base.location.position.x,
-                         (double)(this_ptr->base).base.base.base.location.position.y), iVar7 != 0))
-  {
-    iVar7 = sound_sndmain_cpp_FUN_00556700((this_ptr->base).sfx_handle);
+                         (double)(this_ptr->base).base.base.base.location.position.y,
+                         (double)(this_ptr->base).base.base.base.location.position.z,100.0),
+     iVar7 != 0)) {
+    iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700((this_ptr->base).sfx_handle);
     if (iVar7 != 0) {
       return;
     }

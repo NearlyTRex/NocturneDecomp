@@ -32,8 +32,8 @@
 ;   engine_ini.cpp_FUN_004f4d10
 ;   engine_ini.cpp_FUN_004f4db0
 ;   sound_sndmain.cpp_closeSoundDevice_FUN_00575670
+;   sound_sndmain.cpp_enableHwSoundMixing_FUN_00575580
 ;   sound_sndmain.cpp_enableSfxChannel_FUN_00573c50
-;   sound_sndmain.cpp_FUN_00575580
 ;   sound_sndmain.cpp_getAudioFormat_FUN_005751c0
 ;   sound_sndmain.cpp_getMaxSwLatency_FUN_00576030
 ;   sound_sndmain.cpp_getRecordingDeviceCount_FUN_00575730
@@ -160,8 +160,8 @@ section .text
     ADD ESP,0xc                         ; 005761c9
     MOV EDX,dword ptr [ESP + 0x384]     ; 005761cc
     PUSH EDX                            ; 005761d3
-    CALL sound_sndmain.cpp_FUN_00575580 ; 005761d4
-        ;   XREF to: 00575580 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00575580()
+    CALL sound_sndmain.cpp_enableHwSoundMixing_FUN_00575580 ; 005761d4
+        ;   XREF to: 00575580 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_enableHwSoundMixing_FUN_00575580(int enable)
     ADD ESP,0x4                         ; 005761d9
     CALL sound_sndmain.cpp_getMaxSwLatency_FUN_00576030 ; 005761dc
         ;   XREF to: 00576030 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getMaxSwLatency_FUN_00576030()

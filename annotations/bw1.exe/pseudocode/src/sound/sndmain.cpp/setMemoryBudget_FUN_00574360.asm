@@ -12,7 +12,7 @@
 ;   undefined4 DAT_00623310
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_0056dfd0
+;   sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_0056dfd0
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 00574369
     PUSH 0x0                            ; 0057436d
     MOV [0x00623310],EAX                ; 0057436f | DAT_00623310
-    CALL sound_sndmain.cpp_FUN_0056dfd0 ; 00574374
-        ;   XREF to: 0056dfd0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_0056dfd0(int requested_bytes)
+    CALL sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_0056dfd0 ; 00574374
+        ;   XREF to: 0056dfd0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_0056dfd0(int requested_bytes)
     ADD ESP,0x4                         ; 00574379
     RET                                 ; 0057437c
 

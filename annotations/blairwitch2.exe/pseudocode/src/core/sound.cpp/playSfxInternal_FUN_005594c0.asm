@@ -68,15 +68,15 @@
 ;   crt_stdio.c_sscanf_FUN_005ba8cc
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_console.cpp_CConsole_printf_FUN_00436710
-;   sound_sndmain.cpp_FUN_00550110
-;   sound_sndmain.cpp_FUN_005506b0
 ;   sound_sndmain.cpp_isSoundMuted_FUN_00550bc0
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005504d0
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00550450
 ;   sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_00550290
 ;   sound_sndmain.cpp_setNextSfxFlags_FUN_00550380
+;   sound_sndmain.cpp_setNextSfxStaticPosition_FUN_00550110
 ;   sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00550170
 ;   sound_sndmain.cpp_setNextSfxUserData_FUN_005502b0
+;   sound_sndmain.cpp_setNextSfxVolume_FUN_00550270
 ;   ... and 1 more
 ;
 ; *****************************************************************************
@@ -307,8 +307,8 @@ section .text
     ADD ESP,0x4                         ; 005596ec
     LEA EAX,[ESP + 0xd0]                ; 005596ef
     PUSH EAX                            ; 005596f6
-    CALL sound_sndmain.cpp_FUN_005506b0 ; 005596f7
-        ;   XREF to: 005506b0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005506b0()
+    CALL sound_sndmain.cpp_startSfx_FUN_005506b0 ; 005596f7
+        ;   XREF to: 005506b0 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_startSfx_FUN_005506b0(char * filename)
     ADD ESP,0x4                         ; 005596fc
     MOV ESI,EAX                         ; 005596ff
     CALL sound_sndmain.cpp_popSfxOptions_FUN_005504d0 ; 00559701
@@ -621,8 +621,8 @@ section .text
     FLD float ptr [EBP + 0x1c]          ; 00559a8f
     SUB ESP,0x8                         ; 00559a92
     FSTP double ptr [ESP]               ; 00559a95
-    CALL sound_sndmain.cpp_FUN_00550110 ; 00559a98
-        ;   XREF to: 00550110 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00550110(double pos_x, double pos_y, double pos_z)
+    CALL sound_sndmain.cpp_setNextSfxStaticPosition_FUN_00550110 ; 00559a98
+        ;   XREF to: 00550110 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxStaticPosition_FUN_00550110(double pos_x, double pos_y, double pos_z)
     ADD ESP,0x18                        ; 00559a9d
     JMP 0x005596be                      ; 00559aa0
         ;   XREF to: 005596be (UNCONDITIONAL_JUMP)  ; LAB_005596be

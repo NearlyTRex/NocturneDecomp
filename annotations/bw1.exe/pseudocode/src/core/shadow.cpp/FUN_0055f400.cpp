@@ -13,7 +13,7 @@ void core_shadow_cpp_FUN_0055f400(int param_1)
   uint uVar2;
   char *pcVar3;
   
-  iVar1 = sound_sndmain_cpp_FUN_005735a0(*(uint *)(param_1 + 0xc2a4));
+  iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(*(uint *)(param_1 + 0xc2a4));
   if (iVar1 == 0) {
     if (*(int *)(param_1 + 0xc2d4) == 1) {
       pcVar3 = "@@shb_alert??.wav" + 2;

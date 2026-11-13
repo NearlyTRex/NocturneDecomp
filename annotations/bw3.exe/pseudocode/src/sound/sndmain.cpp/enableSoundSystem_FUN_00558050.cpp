@@ -70,10 +70,10 @@ int __cdecl sound_sndmain_cpp_enableSoundSystem_FUN_00558050(void)
     iVar3 = (**(code **)(*_DAT_02cf3280 + 4))(_DAT_02cf3280);
     if (iVar3 != 0) {
       _DAT_02cf3284 = 1;
-      sound_sndmain_cpp_FUN_00556fd0();
+      sound_sndmain_cpp_unlockSound_FUN_00556fd0();
       return 1;
     }
   }
-  sound_sndmain_cpp_FUN_00556fd0();
+  sound_sndmain_cpp_unlockSound_FUN_00556fd0();
   return 0;
 }

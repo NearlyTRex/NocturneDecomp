@@ -1,0 +1,215 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 19,
+    "complexity_score": 12,
+    "cross_reference_count": 4,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 31
+  },
+  "cross_references": [
+    {
+      "addr": "0042e8c0",
+      "from_addr": "0042ea9f",
+      "name": "core_charactr.cpp_FUN_0042e8c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0048c2e0",
+      "from_addr": "0048e051",
+      "name": "core_event.cpp_FUN_0048c2e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055ff40",
+      "from_addr": "00560023",
+      "name": "core_sound.cpp_CSound_process_FUN_0055ff40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055f6b0",
+      "from_addr": "0055fa48",
+      "name": "core_sound.cpp_FUN_0055f6b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00556ab0",
+    "address_range": [
+      [
+        "00556ab0",
+        "00556adc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_setSfxVolume_FUN_00556ab0",
+    "signature": "int __cdecl sound_sndmain_cpp_setSfxVolume_FUN_00556ab0(uint sfx_handle,float volume)"
+  },
+  "function_calls": [
+    {
+      "addr": "00552f10",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getSfxSlotFromHandle_FUN_00552f10"
+    },
+    {
+      "addr": "00556fd0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_unlockSound_FUN_00556fd0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "0048e051",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_0048c2e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00560023",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_CSound_process_FUN_0055ff40",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00560134",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_CSound_process_FUN_0055ff40",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00560767",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_CSound_process_FUN_0055ff40",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0042ea9f",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_0042e8c0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0055fa48",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_FUN_0055f6b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5,
+    "instruction_count": 14,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CBRANCH": 1,
+      "COPY": 10,
+      "INT_ADD": 7,
+      "INT_AND": 7,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 6,
+      "INT_OR": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 4,
+      "LOAD": 8,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 63
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00550f20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00573950",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a9ae0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4528
+    },
+    "nocturne.exe": {
+      "addr": "005270d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4528
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "sfx_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "volume",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": []
+}

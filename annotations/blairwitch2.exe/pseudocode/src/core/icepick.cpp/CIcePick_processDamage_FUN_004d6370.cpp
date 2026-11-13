@@ -56,7 +56,7 @@ void __cdecl core_icepick_cpp_CIcePick_processDamage_FUN_004d6370(CIcePick *this
       iVar3 = 0xb;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,iVar3,1);
-    iVar3 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[1]);
+    iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[1]);
     if (iVar3 == 0) {
       uVar2 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"icepick_injured??.wav");

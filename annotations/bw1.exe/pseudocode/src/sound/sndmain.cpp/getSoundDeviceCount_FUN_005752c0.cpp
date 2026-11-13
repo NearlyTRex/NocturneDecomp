@@ -16,7 +16,7 @@ int __cdecl sound_sndmain_cpp_getSoundDeviceCount_FUN_005752c0(void)
     return DAT_006232f8;
   }
   sound_sndmain_cpp_lockSound_FUN_00575d20();
-  sound_sndmain_cpp_FUN_00573e70();
+  sound_sndmain_cpp_unlockSound_FUN_00573e70();
   DAT_006232f8 = 0;
   UVar2 = 0;
   do {

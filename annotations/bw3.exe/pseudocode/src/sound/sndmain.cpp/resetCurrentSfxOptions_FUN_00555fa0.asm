@@ -8,7 +8,7 @@
 ;   undefined4 DAT_02ceb91c
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_00555bf0
+;   sound_sndmain.cpp_CSfxOptions_reset_FUN_00555bf0
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
     SHL EAX,0x5                         ; 00555faf
     ADD EAX,0x2ceb920                   ; 00555fb2
     PUSH EAX                            ; 00555fb7
-    CALL sound_sndmain.cpp_FUN_00555bf0 ; 00555fb8
-        ;   XREF to: 00555bf0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00555bf0(CSfxOptions * this_ptr)
+    CALL sound_sndmain.cpp_CSfxOptions_reset_FUN_00555bf0 ; 00555fb8
+        ;   XREF to: 00555bf0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxOptions_reset_FUN_00555bf0(CSfxOptions * this_ptr)
     ADD ESP,0x4                         ; 00555fbd
     RET                                 ; 00555fc0
 

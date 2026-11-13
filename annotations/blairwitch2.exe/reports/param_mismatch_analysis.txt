@@ -15,13 +15,13 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5943
 Functions with no callers: 2826
-Parameter mismatches detected: 736
-Signature accuracy rate: 76.4%
+Parameter mismatches detected: 714
+Signature accuracy rate: 77.1%
 
 Mismatches by confidence:
-  High confidence:   53 (multiple call sites agree)
-  Medium confidence: 137 (some agreement)
-  Low confidence:    546 (limited data)
+  High confidence:   52 (multiple call sites agree)
+  Medium confidence: 133 (some agreement)
+  Low confidence:    529 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -46,16 +46,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       shape_edittool.cpp_FUN_0048444 at 0048461f: 3 reg [EAX, ECX, EDX], 6 stack (24 bytes, via add_esp)
       shape_edittool.cpp_FUN_0048444 at 00484689: 3 reg [EAX, ECX, EDX], 6 stack (24 bytes, via add_esp)
       shape_edittool.cpp_FUN_0048444 at 00484752: 3 reg [EAX, ECX, EDX], 6 stack (24 bytes, via add_esp)
-
-  sound_sndmain.cpp_FUN_005514f0
-    Declared: 0 params (0 bytes), Estimated: 9 stack slots (36 bytes) [+9]
-    Call sites: 3, Confidence: high
-    File: sound/sndmain.cpp
-    Signature: void sound_sndmain_cpp_FUN_005514f0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9)
-    Sample call sites:
-      core_sound.cpp_updateListeners at 00558fb8: 0 reg [], 9 stack (36 bytes, via add_esp)
-      core_sound.cpp_CSound_configur at 0055ad25: 0 reg [], 9 stack (36 bytes, via add_esp)
-      sound_sndmain.cpp_resetSoundSy at 0055242e: 0 reg [], 9 stack (36 bytes, via add_esp)
 
   core_bodypart.cpp_FUN_00417ba0
     Declared: 0 params (0 bytes), Estimated: 5 stack slots (8 bytes) [+5]
@@ -559,14 +549,12 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
 MEDIUM CONFIDENCE MISMATCHES
 ====================================================================================================
 
-  sound_sndmain.cpp_FUN_0054edb0                     declared:0 est:15 (+15) [2 calls]
   core_dmodel.cpp_FUN_0044ea80                       declared:0 est:10 (+10) [2 calls]
   core_actor.cpp_FUN_004093a0                        declared:0 est:9 (+9) [2 calls]
   shape_edittool.cpp_FUN_00483ea0                    declared:0 est:8 (+8) [7 calls]
   core_charactr.cpp_FUN_00428260                     declared:0 est:7 (+7) [7 calls]
   crt_unknown.c_FUN_005bd180                         declared:0 est:7 (+7) [2 calls]
   crt_unknown.c_FUN_005c6000                         declared:0 est:7 (+7) [2 calls]
-  sound_sndmain.cpp_FUN_005515e0                     declared:0 est:7 (+7) [8 calls]
   core_bugs.cpp_FUN_00420840                         declared:0 est:6 (+6) [2 calls]
   core_motion.cpp_FUN_00503d80                       declared:0 est:6 (+6) [4 calls]
   core_setdir.cpp_FUN_00538d10                       declared:0 est:6 (+6) [7 calls]
@@ -603,20 +591,22 @@ MEDIUM CONFIDENCE MISMATCHES
   engine_ini.cpp_FUN_004d8bc0                        declared:0 est:4 (+4) [2 calls]
   engine_matrix.c_normalizeVector3DFixed_FUN_004e9a6 declared:0 est:4 (+4) [2 calls]
   engine_texture.cpp_FUN_00574a80                    declared:0 est:4 (+4) [2 calls]
-  sound_sndmain.cpp_FUN_0054fd70                     declared:0 est:4 (+4) [2 calls]
   support_codec.cpp_FUN_004338a0                     declared:0 est:4 (+4) [2 calls]
   core_bwspart.cpp_FUN_005a84c0                      declared:0 est:3 (+3) [2 calls]
   core_event.cpp_FUN_00492630                        declared:0 est:3 (+3) [2 calls]
   core_gore.cpp_FUN_004c8010                         declared:0 est:3 (+3) [2 calls]
   core_gore.cpp_FUN_004c88a0                         declared:0 est:3 (+3) [2 calls]
+  core_hero.cpp_FUN_004cf030                         declared:0 est:3 (+3) [7 calls]
+  core_muzzle.cpp_FUN_0059d7f0                       declared:0 est:3 (+3) [27 calls]
+  core_stranger.cpp_FUN_0056bf00                     declared:0 est:3 (+3) [2 calls]
 
-  ... and 87 more
+  ... and 83 more
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  546 functions with low-confidence mismatches
+  529 functions with low-confidence mismatches
   Sample:
     engine_2d.c_FUN_00401590                      declared:0 est:1 (+1)
     engine_2d.c_drawTextRightAlignedColor_FUN_004 declared:3 est:0 (-3)
@@ -636,7 +626,7 @@ MISMATCH DIRECTION ANALYSIS
 Functions where declaration has MORE params than estimated: 35
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 701
+Functions where declaration has FEWER params than estimated: 679
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -646,16 +636,15 @@ Distribution of differences (estimated - declared):
   -3 params: 2 functions
   -2 params: 6 functions
   -1 params: 24 functions
-  +1 params: 149 functions
+  +1 params: 142 functions
   +2 params: 159 functions
-  +3 params: 116 functions
-  +4 params: 109 functions
+  +3 params: 113 functions
+  +4 params: 104 functions
   +5 params: 63 functions
-  +6 params: 47 functions
-  +7 params: 23 functions
-  +8 params: 16 functions
-  +9 params: 11 functions
+  +6 params: 46 functions
+  +7 params: 21 functions
+  +8 params: 15 functions
+  +9 params: 9 functions
   +10 params: 5 functions
   +11 params: 1 functions
-  +15 params: 1 functions
   +28 params: 1 functions

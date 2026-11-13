@@ -18,7 +18,8 @@ void core_game_cpp_FUN_004c4a60(void *param_1,char *param_2,int param_3,uint par
   
   iVar2 = _stricmp(param_2,(char *)((int)param_1 + 0x298));
   if (((iVar2 != 0) || (*(uint *)((int)param_1 + 0x2fc) == 0)) ||
-     (iVar2 = sound_sndmain_cpp_FUN_00556700(*(uint *)((int)param_1 + 0x2fc)), iVar2 == 0)) {
+     (iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(*(uint *)((int)param_1 + 0x2fc)),
+     iVar2 == 0)) {
     bVar4 = *(uint *)((int)param_1 + 0x2fc) != 0;
     if (bVar4) {
       sound_sndmain_cpp_setSfxFade_FUN_00556c10(*(uint *)((int)param_1 + 0x2fc),0.0,4.0,1);
@@ -47,7 +48,7 @@ void core_game_cpp_FUN_004c4a60(void *param_1,char *param_2,int param_3,uint par
       else {
         volume = *(float *)((int)param_1 + 0x308);
       }
-      sound_sndmain_cpp_FUN_00555df0(volume);
+      sound_sndmain_cpp_setNextSfxVolume_FUN_00555df0(volume);
       sound_sndmain_cpp_setNextSfxFlagBits_FUN_00555f20(1);
       sfx_handle = core_sound_cpp_CSound_playSound_FUN_005609b0
                              (0x02CF5680,param_1,(char *)((int)param_1 + 0x298));

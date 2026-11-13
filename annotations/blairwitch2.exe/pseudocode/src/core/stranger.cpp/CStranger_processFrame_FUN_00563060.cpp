@@ -1300,16 +1300,16 @@ LAB_005639ef:
   if ((this_ptr->weapon != (CWeapon *)0x0) && ((this_ptr->weapon->base).is_transparent != 0)) {
     (this_ptr->base).base.base.is_transparent = 1;
   }
-  iVar22 = sound_sndmain_cpp_FUN_00550b70(this_ptr->goggle_sfx_handles[0]);
+  iVar22 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->goggle_sfx_handles[0]);
   if (iVar22 == 0) {
     if (g_CGamePtr->goggles_active != 0) {
       sound_sndmain_cpp_killSfx_FUN_00551050(this_ptr->goggle_sfx_handles[1]);
       sound_sndmain_cpp_pushSfxOptions_FUN_00550450();
       sound_sndmain_cpp_setNextSfxFlagBits_FUN_005503a0(1);
-      uVar21 = sound_sndmain_cpp_FUN_005506b0();
+      uVar21 = sound_sndmain_cpp_startSfx_FUN_005506b0("goggle-on.wav");
       this_ptr->goggle_sfx_handles[1] = uVar21;
       sound_sndmain_cpp_setNextSfxVolume_FUN_00550270(0.0);
-      uVar21 = sound_sndmain_cpp_FUN_005506b0();
+      uVar21 = sound_sndmain_cpp_startSfx_FUN_005506b0("goggle-loop.wav");
       this_ptr->goggle_sfx_handles[0] = uVar21;
       sound_sndmain_cpp_popSfxOptions_FUN_005504d0();
       sound_sndmain_cpp_setSfxFade_FUN_00551080(this_ptr->goggle_sfx_handles[0],1.0,1.0,0);
@@ -1321,7 +1321,7 @@ LAB_005639ef:
     sound_sndmain_cpp_killSfx_FUN_00551050(this_ptr->goggle_sfx_handles[0]);
     sound_sndmain_cpp_pushSfxOptions_FUN_00550450();
     sound_sndmain_cpp_setNextSfxFlagBits_FUN_005503a0(1);
-    sound_sndmain_cpp_FUN_005506b0();
+    sound_sndmain_cpp_startSfx_FUN_005506b0("goggle-off.wav");
     sound_sndmain_cpp_popSfxOptions_FUN_005504d0();
     return;
   }

@@ -38,7 +38,7 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_close_FUN_00557d10(CWavOutDevice *thi
   }
   MVar2 = waveOutClose(_DAT_0264b070);
   if (MVar2 != 0) {
-    sound_sndmain_cpp_FUN_005549c0("waveOutClose failed.");
+    sound_sndmain_cpp_logSoundError_FUN_005549c0("waveOutClose failed.");
     uVar4 = 0;
   }
   _DAT_0264b070 = (HWAVEOUT)0x0;

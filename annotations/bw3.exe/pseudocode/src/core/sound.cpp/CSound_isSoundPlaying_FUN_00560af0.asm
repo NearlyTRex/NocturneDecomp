@@ -21,7 +21,7 @@
 ;   ... and 7 more
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_00556700
+;   sound_sndmain.cpp_isSfxPlaying_FUN_00556700
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 00560af0
         ;   Label: core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0
     PUSH EDX                            ; 00560af4
-    CALL sound_sndmain.cpp_FUN_00556700 ; 00560af5
-        ;   XREF to: 00556700 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00556700(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00556700 ; 00560af5
+        ;   XREF to: 00556700 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00556700(uint sfx_handle)
     ADD ESP,0x4                         ; 00560afa
     RET                                 ; 00560afd
 

@@ -10,7 +10,7 @@
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00553520
-;   sound_sndmain.cpp_FUN_0055a560
+;   sound_sndmain.cpp_logSoundError_FUN_0055a560
 ;
 ; *****************************************************************************
 
@@ -64,8 +64,8 @@ section .text
     JL 0x0055285e                       ; 005528af
         ;   XREF to: 0055285e (CONDITIONAL_JUMP)  ; LAB_0055285e
     PUSH 0x5d2a16                       ; 005528b1
-    CALL sound_sndmain.cpp_FUN_0055a560 ; 005528b6
-        ;   XREF to: 0055a560 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_0055a560()
+    CALL sound_sndmain.cpp_logSoundError_FUN_0055a560 ; 005528b6
+        ;   XREF to: 0055a560 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_0055a560(char * format)
     ADD ESP,0x4                         ; 005528bb
     XOR EAX,EAX                         ; 005528be
         ;   Label: LAB_005528be

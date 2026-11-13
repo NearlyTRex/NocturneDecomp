@@ -22,7 +22,7 @@
 ;   crt_string.c__strncpy_FUN_005b9cf0
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   sound_snddx.cpp_FUN_00554ad0
-;   sound_sndmain.cpp_FUN_005549c0
+;   sound_sndmain.cpp_logSoundError_FUN_005549c0
 ;   wincore_winrun.cpp_FUN_0058ffc0
 ;
 ; *****************************************************************************
@@ -83,8 +83,8 @@ section .text
     ADD ESP,0x10                        ; 005575bf
     MOV EAX,ESP                         ; 005575c2
     PUSH EAX                            ; 005575c4
-    CALL sound_sndmain.cpp_FUN_005549c0 ; 005575c5
-        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005549c0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005549c0 ; 005575c5
+        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005549c0(char * format)
     MOV EAX,0x1                         ; 005575ca
     ADD ESP,0x4                         ; 005575cf
     ADD ESP,0x384                       ; 005575d2
@@ -152,8 +152,8 @@ section .text
     ADD ESP,0x10                        ; 0055767d
     LEA EAX,[ESP + 0x190]               ; 00557680
     PUSH EAX                            ; 00557687
-    CALL sound_sndmain.cpp_FUN_005549c0 ; 00557688
-        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005549c0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005549c0 ; 00557688
+        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005549c0(char * format)
     ADD ESP,0x4                         ; 0055768d
     XOR EAX,EAX                         ; 00557690
     JMP 0x00557623                      ; 00557692

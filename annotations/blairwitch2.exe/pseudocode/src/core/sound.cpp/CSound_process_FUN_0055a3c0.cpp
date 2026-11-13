@@ -69,9 +69,9 @@ void __cdecl core_sound_cpp_CSound_process_FUN_0055a3c0(CSound *this_ptr)
   else {
     iVar3 = core_sound_cpp_CSound_isSoundPlaying_FUN_0055af70(this_ptr,_DAT_0264b294);
     if (iVar3 == 0) {
-      _DAT_0264b294 = sound_sndmain_cpp_FUN_005506b0();
+      _DAT_0264b294 = sound_sndmain_cpp_startSfx_FUN_005506b0("@wind-ctl.wav" + 1);
     }
-    sound_sndmain_cpp_FUN_00550f20(_DAT_0264b294);
+    sound_sndmain_cpp_setSfxVolume_FUN_00550f20(_DAT_0264b294,_DAT_0264b2ac);
   }
   local_150 = 0.0;
   if (((0.0 < g_CWaterPtr->visible_area_sqft) &&
@@ -97,9 +97,9 @@ void __cdecl core_sound_cpp_CSound_process_FUN_0055a3c0(CSound *this_ptr)
   else {
     iVar3 = core_sound_cpp_CSound_isSoundPlaying_FUN_0055af70(this_ptr,_DAT_0264b298);
     if (iVar3 == 0) {
-      _DAT_0264b298 = sound_sndmain_cpp_FUN_005506b0();
+      _DAT_0264b298 = sound_sndmain_cpp_startSfx_FUN_005506b0("water-2.wav");
     }
-    sound_sndmain_cpp_FUN_00550f20(_DAT_0264b298);
+    sound_sndmain_cpp_setSfxVolume_FUN_00550f20(_DAT_0264b298,_DAT_0264b2b0);
   }
   if (_DAT_0264bae0 <= local_3c) {
     _DAT_0264bad8 = _DAT_0264badc;
@@ -164,25 +164,25 @@ void __cdecl core_sound_cpp_CSound_process_FUN_0055a3c0(CSound *this_ptr)
     }
     else {
       local_154 = 0.7;
-      iVar3 = sound_sndmain_cpp_FUN_00550b70(_DAT_0264bb9c);
+      iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(_DAT_0264bb9c);
       if (iVar3 == 0) {
         sound_sndmain_cpp_pushSfxOptions_FUN_00550450();
         sound_sndmain_cpp_setNextSfxVolume_FUN_00550270(0.4);
-        _DAT_0264bb9c = sound_sndmain_cpp_FUN_005506b0();
+        _DAT_0264bb9c = sound_sndmain_cpp_startSfx_FUN_005506b0("trainext.wav");
         sound_sndmain_cpp_popSfxOptions_FUN_005504d0();
       }
     }
-    iVar3 = sound_sndmain_cpp_FUN_00550b70(_DAT_0264bb98);
+    iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(_DAT_0264bb98);
     if (iVar3 == 0) {
       sound_sndmain_cpp_pushSfxOptions_FUN_00550450();
       sound_sndmain_cpp_setNextSfxVolume_FUN_00550270(local_154 * (float)_DAT_005ea8e4);
-      _DAT_0264bb98 = sound_sndmain_cpp_FUN_005506b0();
+      _DAT_0264bb98 = sound_sndmain_cpp_startSfx_FUN_005506b0("railnoiz.wav");
       sound_sndmain_cpp_popSfxOptions_FUN_005504d0();
     }
     else {
       iVar3 = _stricmp(PTR_DAT_0061c064,PTR_DAT_0061c060);
       if (iVar3 != 0) {
-        sound_sndmain_cpp_FUN_00550f20(_DAT_0264bb98);
+        sound_sndmain_cpp_setSfxVolume_FUN_00550f20(_DAT_0264bb98,local_154 * (float)_DAT_005ea8e4);
       }
     }
     sound_sndmain_cpp_popSfxOptions_FUN_005504d0();
@@ -195,7 +195,7 @@ void __cdecl core_sound_cpp_CSound_process_FUN_0055a3c0(CSound *this_ptr)
     local_1c = 0;
     do {
       local_20 = local_1c * 0x10;
-      iVar3 = sound_sndmain_cpp_FUN_00550b70(*(uint *)(local_20 + 0x264baf0));
+      iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(*(uint *)(local_20 + 0x264baf0));
       pCVar2 = pCVar5;
       if (iVar3 != 0) {
         local_6c = _DAT_0264bb84 * local_24;

@@ -53,11 +53,11 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
 ;   core_xform.cpp_FUN_005b5080
-;   sound_sndmain.cpp_FUN_005728e0
-;   sound_sndmain.cpp_FUN_00573950
 ;   sound_sndmain.cpp_killSfx_FUN_00573a80
 ;   sound_sndmain.cpp_popSfxOptions_FUN_00572b40
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0
+;   sound_sndmain.cpp_setNextSfxVolume_FUN_005728e0
+;   sound_sndmain.cpp_setSfxVolume_FUN_00573950
 ;
 ; *****************************************************************************
 
@@ -205,8 +205,8 @@ section .text
     FSTP float ptr [ESP + 0x34]         ; 0042fa7c
     PUSH dword ptr [ESP + 0x34]         ; 0042fa80
     PUSH EAX                            ; 0042fa84
-    CALL sound_sndmain.cpp_FUN_00573950 ; 0042fa85
-        ;   XREF to: 00573950 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00573950()
+    CALL sound_sndmain.cpp_setSfxVolume_FUN_00573950 ; 0042fa85
+        ;   XREF to: 00573950 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxVolume_FUN_00573950(uint sfx_handle, float volume)
     ADD ESP,0x8                         ; 0042fa8a
     TEST EAX,EAX                        ; 0042fa8d
     JZ 0x0042fcae                       ; 0042fa8f
@@ -385,8 +385,8 @@ section .text
         ;   XREF to: 00572ac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0()
         ;   Label: LAB_0042fcae
     PUSH dword ptr [ESP + 0x34]         ; 0042fcb3
-    CALL sound_sndmain.cpp_FUN_005728e0 ; 0042fcb7
-        ;   XREF to: 005728e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_005728e0(float volume)
+    CALL sound_sndmain.cpp_setNextSfxVolume_FUN_005728e0 ; 0042fcb7
+        ;   XREF to: 005728e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxVolume_FUN_005728e0(float volume)
     ADD ESP,0x4                         ; 0042fcbc
     PUSH 0x5d59de                       ; 0042fcbf | = "character-onfire-loop.wav"
     MOV EAX,dword ptr [EBX + 0x154]     ; 0042fcc4

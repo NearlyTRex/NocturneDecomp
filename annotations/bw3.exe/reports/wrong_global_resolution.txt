@@ -4156,7 +4156,19 @@ shape_edittool.cpp_staticInit_FUN_0047b4c0  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-sound_sndmain.cpp_FUN_00552f10  [.cpp]  (2 suspicious globals)
+sound_sndmain.cpp_CSfxSample_pollStream_FUN_00553960  [.cpp]  (2 suspicious globals)
+  File: sound/sndmain.cpp
+
+  DAT_02ce727c
+    Used at lines: 62
+    NOT found in function reference list
+
+  DAT_02ce7284
+    Used at lines: 48, 130, 132, 165, 166, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_getSfxSlotFromHandle_FUN_00552f10  [.cpp]  (2 suspicious globals)
   File: sound/sndmain.cpp
 
   DAT_02ce727c
@@ -4165,30 +4177,6 @@ sound_sndmain.cpp_FUN_00552f10  [.cpp]  (2 suspicious globals)
 
   DAT_02ce7284
     Used at lines: 25
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-sound_sndmain.cpp_FUN_00553960  [.cpp]  (2 suspicious globals)
-  File: sound/sndmain.cpp
-
-  DAT_02ce727c
-    Used at lines: 62
-    NOT found in function reference list
-
-  DAT_02ce7284
-    Used at lines: 48, 129, 131, 164, 165, ...
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-sound_sndmain.cpp_FUN_00556240  [.cpp]  (2 suspicious globals)
-  File: sound/sndmain.cpp
-
-  DAT_02ce727c
-    Used at lines: 163
-    NOT found in function reference list
-
-  DAT_02ce7284
-    Used at lines: 97, 119, 121, 139, 140, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4201,6 +4189,18 @@ sound_sndmain.cpp_isStreamableFile_FUN_005522d0  [.cpp]  (2 suspicious globals)
 
   DAT_005d29d1
     Used at lines: 21
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_startSfx_FUN_00556240  [.cpp]  (2 suspicious globals)
+  File: sound/sndmain.cpp
+
+  DAT_02ce727c
+    Used at lines: 163
+    NOT found in function reference list
+
+  DAT_02ce7284
+    Used at lines: 97, 119, 121, 139, 140, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -5328,7 +5328,7 @@ core_fire.cpp_FUN_004a3920  [.cpp]  (1 suspicious globals)
   File: core/fire.cpp
 
   g_TossPool
-    Used at lines: 20, 21
+    Used at lines: 20, 22, 22
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -6096,7 +6096,7 @@ core_menu.cpp_FUN_004e94f0  [.cpp]  (1 suspicious globals)
   File: core/menu.cpp
 
   g_CMoonInstance
-    Used at lines: 67
+    Used at lines: 61
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -7932,78 +7932,6 @@ sound_sndmain.cpp_CSfxSample_arrdtor64_FUN_0055a640  [.cpp]  (1 suspicious globa
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-sound_sndmain.cpp_FUN_005513f0  [.cpp]  (1 suspicious globals)
-  File: sound/sndmain.cpp
-
-  DAT_02ce739c
-    Used at lines: 32
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-sound_sndmain.cpp_FUN_00551450  [.cpp]  (1 suspicious globals)
-  File: sound/sndmain.cpp
-
-  g_SfxSamples
-    Used at lines: 22, 22, 23, 24, 30
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-sound_sndmain.cpp_FUN_00551ce0  [.cpp]  (1 suspicious globals)
-  File: sound/sndmain.cpp
-
-  g_SfxSamples
-    Used at lines: 19
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-sound_sndmain.cpp_FUN_00556ec0  [.cpp]  (1 suspicious globals)
-  File: sound/sndmain.cpp
-
-  DAT_02ce7284
-    Used at lines: 19
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-sound_sndmain.cpp_FUN_00557260  [.cpp]  (1 suspicious globals)
-  File: sound/sndmain.cpp
-
-  g_SfxSamples
-    Used at lines: 32, 32, 33, 33, 42, ...
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-sound_sndmain.cpp_FUN_00557390  [.cpp]  (1 suspicious globals)
-  File: sound/sndmain.cpp
-
-  g_SfxSamples
-    Used at lines: 17
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-sound_sndmain.cpp_FUN_00557420  [.cpp]  (1 suspicious globals)
-  File: sound/sndmain.cpp
-
-  g_SfxSamples
-    Used at lines: 17
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-sound_sndmain.cpp_FUN_00557570  [.cpp]  (1 suspicious globals)
-  File: sound/sndmain.cpp
-
-  g_SfxSamples
-    Used at lines: 29, 30
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-sound_sndmain.cpp_FUN_00558f20  [.cpp]  (1 suspicious globals)
-  File: sound/sndmain.cpp
-
-  DAT_02ceb91c
-    Used at lines: 49
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 sound_sndmain.cpp_allocateHwSample_FUN_00552850  [.cpp]  (1 suspicious globals)
   File: sound/sndmain.cpp
 
@@ -8028,6 +7956,38 @@ sound_sndmain.cpp_countActiveSfx_FUN_00556f80  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_createUserSample_FUN_00557260  [.cpp]  (1 suspicious globals)
+  File: sound/sndmain.cpp
+
+  g_SfxSamples
+    Used at lines: 30, 30, 31, 31, 40, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_findFreeSfxSample_FUN_00551450  [.cpp]  (1 suspicious globals)
+  File: sound/sndmain.cpp
+
+  g_SfxSamples
+    Used at lines: 22, 22, 23, 24, 30
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_findSfxSampleByName_FUN_00551ce0  [.cpp]  (1 suspicious globals)
+  File: sound/sndmain.cpp
+
+  g_SfxSamples
+    Used at lines: 16
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_flushSoundChanges_FUN_00558f20  [.cpp]  (1 suspicious globals)
+  File: sound/sndmain.cpp
+
+  DAT_02ceb91c
+    Used at lines: 48
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 sound_sndmain.cpp_freeAllSamples_FUN_00557800  [.cpp]  (1 suspicious globals)
   File: sound/sndmain.cpp
 
@@ -8044,11 +8004,35 @@ sound_sndmain.cpp_freeSampleByName_FUN_005574e0  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_getActiveSfxCount_FUN_005513f0  [.cpp]  (1 suspicious globals)
+  File: sound/sndmain.cpp
+
+  DAT_02ce739c
+    Used at lines: 32
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 sound_sndmain.cpp_getFirstActiveSfx_FUN_00556e80  [.cpp]  (1 suspicious globals)
   File: sound/sndmain.cpp
 
   DAT_02ce7284
     Used at lines: 17
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_getNextActiveSfx_FUN_00556ec0  [.cpp]  (1 suspicious globals)
+  File: sound/sndmain.cpp
+
+  DAT_02ce7284
+    Used at lines: 19
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_getSampleInfo_FUN_00557570  [.cpp]  (1 suspicious globals)
+  File: sound/sndmain.cpp
+
+  g_SfxSamples
+    Used at lines: 29, 30
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -8076,11 +8060,19 @@ sound_sndmain.cpp_killSfxByName_FUN_00557470  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_lockSample_FUN_00557390  [.cpp]  (1 suspicious globals)
+  File: sound/sndmain.cpp
+
+  g_SfxSamples
+    Used at lines: 18
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 sound_sndmain.cpp_nextMixingBuffer_FUN_00552bd0  [.cpp]  (1 suspicious globals)
   File: sound/sndmain.cpp
 
   DAT_02ceb91c
-    Used at lines: 76, 88
+    Used at lines: 81, 104
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -8104,7 +8096,15 @@ sound_sndmain.cpp_setSfxChannelVol_FUN_00556c90  [.cpp]  (1 suspicious globals)
   File: sound/sndmain.cpp
 
   DAT_02ceb91c
-    Used at lines: 36
+    Used at lines: 35
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_unlockSample_FUN_00557420  [.cpp]  (1 suspicious globals)
+  File: sound/sndmain.cpp
+
+  g_SfxSamples
+    Used at lines: 17
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

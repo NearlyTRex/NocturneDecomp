@@ -21,7 +21,7 @@
 ;   crt_memory.c_memset_FUN_005a28f0
 ;   crt_string.c_memmove_FUN_005a54c0
 ;   sound_sndmain.cpp_CSfxSlot_compute_FUN_00554430
-;   sound_sndmain.cpp_FUN_00554920
+;   sound_sndmain.cpp_CSfxSlot_mix_FUN_00554920
 ;
 ; *****************************************************************************
 
@@ -141,8 +141,8 @@ section .text
     LEA ESI,[ESP + 0x2c]                ; 00552d19
     PUSH EBX                            ; 00552d1d
     MOVSD.REP ES:EDI,ESI                ; 00552d1e
-    CALL sound_sndmain.cpp_FUN_00554920 ; 00552d20
-        ;   XREF to: 00554920 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00554920()
+    CALL sound_sndmain.cpp_CSfxSlot_mix_FUN_00554920 ; 00552d20
+        ;   XREF to: 00554920 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_mix_FUN_00554920(CSfxSlot * this_ptr, SMixBuffer mix_buffer)
     ADD EBX,0x11c                       ; 00552d25
     ADD ESP,0x30                        ; 00552d2b
     CMP EBX,EBP                         ; 00552d2e

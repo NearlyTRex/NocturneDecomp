@@ -50,7 +50,7 @@ void __cdecl core_demnfolk_cpp_CDemnfolk_processDamage_FUN_0045c7b0(CDemnfolk *t
               (&(this_ptr->base).base.model.base,iVar3,1);
     if (this_ptr->pain_cooldown <= 0.0) {
       this_ptr->pain_cooldown = 2.0;
-      iVar3 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[0]);
+      iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[0]);
       if (iVar3 == 0) {
         (*(((this_ptr->base).base.base.vtable._uh)->_uh).reset)((CHero *)this_ptr);
         core_enemy_cpp_CEnemy_processDamage_FUN_004a0f00(&this_ptr->base,damage_info);

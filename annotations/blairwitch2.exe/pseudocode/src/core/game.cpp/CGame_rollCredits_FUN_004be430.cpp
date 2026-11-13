@@ -95,7 +95,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004be430(CGame *this_ptr)
       sound_sndmain_cpp_pushSfxOptions_FUN_00550450();
       sound_sndmain_cpp_setNextSfxChannel_FUN_00550310(1);
       sound_sndmain_cpp_setNextSfxFlags_FUN_00550380(1);
-      local_2c = sound_sndmain_cpp_FUN_005506b0("XBLAIRMENU.WAV");
+      local_2c = sound_sndmain_cpp_startSfx_FUN_005506b0("XBLAIRMENU.WAV");
       sound_sndmain_cpp_popSfxOptions_FUN_005504d0();
     }
     engine_2d_c_clearInputAndWait_FUN_004032b0();
@@ -146,7 +146,8 @@ LAB_004be5a8:
           local_1158 = local_1158 + local_24;
         } while (iVar6 < local_1c);
       }
-      if ((local_2c != 0) && (iVar6 = sound_sndmain_cpp_FUN_00550b70(local_2c), iVar6 == 0))
+      if ((local_2c != 0) &&
+         (iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(local_2c), iVar6 == 0))
       goto LAB_004be71e;
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_00589560();

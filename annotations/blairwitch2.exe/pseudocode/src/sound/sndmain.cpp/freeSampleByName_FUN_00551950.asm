@@ -8,14 +8,14 @@
 ; int              Stack[0x8]:4   kill_active_slots
 ;
 ; XREF[1]:
-;   sound_sndmain.cpp_FUN_005516d0 at 005516e6
+;   sound_sndmain.cpp_createUserSample_FUN_005516d0 at 005516e6
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005b8130
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_0054d9b0
-;   sound_sndmain.cpp_FUN_00551440
 ;   sound_sndmain.cpp_killSfxByName_FUN_005518e0
 ;   sound_sndmain.cpp_lockSound_FUN_005532f0
+;   sound_sndmain.cpp_unlockSound_FUN_00551440
 ;
 ; *****************************************************************************
 
@@ -56,8 +56,8 @@ section .text
     CMP EBX,0x6b00                      ; 00551992
     JNZ 0x00551965                      ; 00551998
         ;   XREF to: 00551965 (CONDITIONAL_JUMP)  ; LAB_00551965
-    CALL sound_sndmain.cpp_FUN_00551440 ; 0055199a
-        ;   XREF to: 00551440 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00551440()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00551440 ; 0055199a
+        ;   XREF to: 00551440 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00551440()
     POP EDI                             ; 0055199f
     POP ESI                             ; 005519a0
     POP EBX                             ; 005519a1

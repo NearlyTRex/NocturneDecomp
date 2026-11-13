@@ -20,7 +20,7 @@
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
-;   sound_sndmain.cpp_FUN_00556700
+;   sound_sndmain.cpp_isSfxPlaying_FUN_00556700
 ;   sound_sndmain.cpp_killSfx_FUN_00556be0
 ;
 ; *****************************************************************************
@@ -82,8 +82,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0xd058]    ; 004d6058
         ;   Label: LAB_004d6058
     PUSH EAX                            ; 004d605e
-    CALL sound_sndmain.cpp_FUN_00556700 ; 004d605f
-        ;   XREF to: 00556700 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00556700(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00556700 ; 004d605f
+        ;   XREF to: 00556700 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00556700(uint sfx_handle)
     ADD ESP,0x4                         ; 004d6064
     TEST EAX,EAX                        ; 004d6067
     JZ 0x004d6187                       ; 004d6069

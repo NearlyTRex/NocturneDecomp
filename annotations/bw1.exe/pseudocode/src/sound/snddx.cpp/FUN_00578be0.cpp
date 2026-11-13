@@ -34,7 +34,7 @@ void sound_snddx_cpp_FUN_00578be0(uint param_1,int param_2)
     if (error_code != 0) {
       sound_snddx_cpp_FUN_00577500(error_code);
       _sprintf((char *)&piStack_1ac,"DirectSux: Unable to %s.  (%s)");
-      sound_sndmain_cpp_FUN_005773f0(&piStack_1ac);
+      sound_sndmain_cpp_logSoundError_FUN_005773f0((char *)&piStack_1ac);
     }
     *(uint *)(param_2 + 0x2c81dd4) = 0;
   }

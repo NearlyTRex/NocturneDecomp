@@ -149,7 +149,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004d56b0(CHotDemon *this_pt
               iVar5 = 8;
             }
             core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_20,iVar5,1);
-            iVar5 = sound_sndmain_cpp_FUN_00556700(this_ptr->sfx_handles[0]);
+            iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handles[0]);
             if (iVar5 == 0) {
               uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                 ((CDemonActor *)this_ptr,"hotdemon-attack.wav");
@@ -258,7 +258,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004d56b0(CHotDemon *this_pt
               }
               core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
                         (&(this_ptr->base).base.model.base,iVar5,1);
-              iVar5 = sound_sndmain_cpp_FUN_00556700(this_ptr->sfx_handles[0]);
+              iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handles[0]);
               if (iVar5 == 0) {
                 uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                   ((CDemonActor *)this_ptr,"hotdemon-attack.wav");

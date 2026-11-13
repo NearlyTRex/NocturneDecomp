@@ -45,7 +45,7 @@ void __cdecl core_imp_cpp_CImp_processDamage_FUN_004f3f50(CImp *this_ptr,SDamage
   (this_ptr->base).base.hit_points = fVar1;
   if (0.0 < fVar1) {
     core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&this_ptr_00->base,5,1);
-    iVar4 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[1]);
+    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[1]);
     if (iVar4 != 0) goto LAB_004f4052;
     sound_name = "imp-hurt?.wav";
   }

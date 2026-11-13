@@ -84,6 +84,6 @@ void __cdecl core_darkwolf_cpp_CDarkwolf_setup_FUN_00598800(CDarkwolf *this_ptr)
   core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0054c110(pCVar2);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0054c110
             ((CDeformableModelInstance *)(this_ptr->morph_target + 1));
-  sound_sndmain_cpp_FUN_00556230("dog_howl.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("dog_howl.wav");
   return;
 }

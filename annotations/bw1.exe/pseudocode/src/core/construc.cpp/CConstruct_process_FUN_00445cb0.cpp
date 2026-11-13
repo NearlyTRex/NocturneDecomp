@@ -157,7 +157,7 @@ void __cdecl core_construc_cpp_CConstruct_process_FUN_00445cb0(CConstruct *this_
   if ((this_ptr->base).pool_me == 0) {
     if (this_ptr->blown_up == 0) {
       if (iStack_34 != 0xc) {
-        iVar8 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[1]);
+        iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[1]);
         if (iVar8 == 0) {
           uVar12 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                              ((CDemonActor *)this_ptr,"stick-heartbeat.wav @ .2");
@@ -213,7 +213,7 @@ LAB_00445e87:
       }
     }
     else if (this_ptr->blown_up == 1) {
-      iVar8 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[1]);
+      iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[1]);
       if (iVar8 == 0) {
         uVar12 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                            ((CDemonActor *)this_ptr,"stick-heartbeat.wav @ .5");
@@ -259,7 +259,7 @@ LAB_00445e87:
       core_event_cpp_CEventList_executeCommands_FUN_004a1b70(0x01C51D80,this_ptr->death_event);
       core_event_cpp_CEventList_executeCommands_FUN_004a1b70
                 (0x01C51D80,"ConstructKilled");
-      iVar8 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[5]);
+      iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[5]);
       if (iVar8 == 0) {
         uVar12 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                            ((CDemonActor *)this_ptr,"stick-die.wav");
@@ -408,14 +408,14 @@ LAB_004464ed:
     }
     else {
       if (uVar12 < 2) {
-        iVar8 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[2]);
+        iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[2]);
         if (iVar8 == 0) {
           uVar13 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                              ((CDemonActor *)this_ptr,"stick-stump?.wav @ .2");
           this_ptr->sfx_handles[2] = uVar13;
         }
 LAB_0044650c:
-        iVar8 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[3]);
+        iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[3]);
         if (iVar8 == 0) {
           uVar13 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                              ((CDemonActor *)this_ptr,"stick-leg1.wav @ .2");
@@ -516,7 +516,7 @@ LAB_0044650c:
                         (pCStack_48,iVar8 + 5,(int)fVar17);
               uVar12 = this_ptr->sfx_handles[6];
               (this_ptr->base).attack_cooldown = 2.5;
-              iVar8 = sound_sndmain_cpp_FUN_005735a0(uVar12);
+              iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(uVar12);
               if (iVar8 == 0) {
                 uVar12 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                    ((CDemonActor *)this_ptr,"stick-attack?.wav");
@@ -590,11 +590,14 @@ LAB_0044650c:
                              (0x01C51D80,this_ptr->fall_event), iVar8 != 0)))) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
                   (&(this_ptr->base).base.model.base,0xe,1);
-        iVar8 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[5]);
+        iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[5]);
         if ((iVar8 == 0) &&
-           (((iVar8 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[6]), iVar8 == 0 &&
-             (iVar8 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[4]), iVar8 == 0)) &&
-            (iVar8 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[4]), iVar8 == 0)))) {
+           (((iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[6]),
+             iVar8 == 0 &&
+             (iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[4]),
+             iVar8 == 0)) &&
+            (iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[4]),
+            iVar8 == 0)))) {
           uVar12 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                              ((CDemonActor *)this_ptr,"stick-attack1.wav");
           this_ptr->sfx_handles[4] = uVar12;
@@ -608,7 +611,7 @@ LAB_0044650c:
       }
       break;
     case 0xf:
-      iVar8 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[7]);
+      iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[7]);
       if (iVar8 == 0) {
         uVar12 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                            ((CDemonActor *)this_ptr,"stick-leaps.wav");
@@ -689,11 +692,12 @@ switchD_00446df5_caseD_7:
             (&(this_ptr->base).base.model);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433e80((CCharacter *)this_ptr,delta_time);
   if (((iStack_34 == 3) || (iStack_34 == 4)) &&
-     (iVar8 = sound_sndmain_cpp_FUN_00574010
+     (iVar8 = sound_sndmain_cpp_isWithinListenerRadius_FUN_00574010
                         ((double)(this_ptr->base).base.base.location.position.x,
                          (double)(this_ptr->base).base.base.location.position.y,
-                         (double)(this_ptr->base).base.base.location.position.z), iVar8 != 0)) {
-    iVar8 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[0]);
+                         (double)(this_ptr->base).base.base.location.position.z,100.0), iVar8 != 0))
+  {
+    iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handles[0]);
     if ((iVar8 == 0) && (iVar8 = core_actor_cpp_randomChance_FUN_0040cd00(0.3), iVar8 != 0)) {
       uVar12 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                          ((CDemonActor *)this_ptr,"stick-walk_growl1.wav");

@@ -149,7 +149,7 @@ void __cdecl core_doc_cpp_CDoc_processDamage_FUN_004737b0(CDoc *this_ptr,SDamage
     core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(pCStack_18,iVar2,1);
   }
 LAB_00473b7a:
-  iVar2 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handle);
+  iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(this_ptr->sfx_handle);
   if (iVar2 == 0) {
     uVar4 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                       ((CDemonActor *)this_ptr,"generic_doc_hit1?.wav");

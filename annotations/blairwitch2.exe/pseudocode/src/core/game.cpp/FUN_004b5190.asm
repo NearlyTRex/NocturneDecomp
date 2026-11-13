@@ -885,8 +885,8 @@ section .text
     ADD ESP,0xc                         ; 004b5aa4
     PUSH EBX                            ; 004b5aa7
         ;   Label: LAB_004b5aa7
-    CALL sound_sndmain.cpp_FUN_00551330 ; 004b5aa8
-        ;   XREF to: 00551330 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00551330()
+    CALL sound_sndmain.cpp_getNextActiveSfx_FUN_00551330 ; 004b5aa8
+        ;   XREF to: 00551330 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_getNextActiveSfx_FUN_00551330(uint current_sfx_handle)
     ADD ESP,0x4                         ; 004b5aad
     MOV EBX,EAX                         ; 004b5ab0
     TEST EAX,EAX                        ; 004b5ab2

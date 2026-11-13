@@ -27,7 +27,7 @@
 ;   core_xform.cpp_FUN_00591530
 ;   core_xform.cpp_FUN_00594380
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10
-;   sound_sndmain.cpp_FUN_00550b70
+;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005504d0
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00550450
@@ -191,8 +191,8 @@ section .text
     PUSH EDI                            ; 005ab434
     FSTP ST1                            ; 005ab435
     FSTP float ptr [EAX + 0x25a8]       ; 005ab437
-    CALL sound_sndmain.cpp_FUN_00550b70 ; 005ab43d
-        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00550b70(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00550b70 ; 005ab43d
+        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00550b70(uint sfx_handle)
     ADD ESP,0x4                         ; 005ab442
     TEST EAX,EAX                        ; 005ab445
     JNZ 0x005ab4a2                      ; 005ab447

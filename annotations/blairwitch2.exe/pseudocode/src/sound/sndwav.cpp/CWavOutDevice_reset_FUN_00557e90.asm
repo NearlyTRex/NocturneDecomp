@@ -13,8 +13,8 @@
 ;   undefined4 DAT_0264b070
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_005549c0
 ;   sound_sndmain.cpp_killSoundThread_FUN_00553270
+;   sound_sndmain.cpp_logSoundError_FUN_005549c0
 ;   waveOutReset
 ;   waveOutUnprepareHeader
 ;
@@ -65,8 +65,8 @@ section .text
     JZ 0x00557ea2                       ; 00557edf
         ;   XREF to: 00557ea2 (CONDITIONAL_JUMP)  ; LAB_00557ea2
     PUSH 0x5ea57d                       ; 00557ee1 | s_waveOutReset_failed_005ea57c+1
-    CALL sound_sndmain.cpp_FUN_005549c0 ; 00557ee6
-        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005549c0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005549c0 ; 00557ee6
+        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005549c0(char * format)
     XOR ESI,ESI                         ; 00557eeb
     ADD ESP,0x4                         ; 00557eed
     JMP 0x00557ea2                      ; 00557ef0

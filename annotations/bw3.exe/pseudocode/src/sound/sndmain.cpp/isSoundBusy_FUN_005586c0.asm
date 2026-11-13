@@ -6,10 +6,10 @@
 ;
 ; XREF[5]:
 ;   core_sound.cpp_FUN_0055fd30 at 0055fd98
-;   sound_sndmain.cpp_FUN_00556240 at 00556267
 ;   sound_sndmain.cpp_enableSoundSystem_FUN_00558050 at 0055806b
 ;   sound_sndmain.cpp_setMaxSwSoundLatency_FUN_005591b0 at 005591b0
 ;   sound_sndmain.cpp_setSoundOutputMode_FUN_00558290 at 00558296
+;   sound_sndmain.cpp_startSfx_FUN_00556240 at 00556267
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02cf3284

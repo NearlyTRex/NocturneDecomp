@@ -17,8 +17,8 @@
 ;
 ; Called Functions:
 ;   sound_snddx.cpp_enumerateDirectSoundDevice_FUN_0055d3c0
-;   sound_sndmain.cpp_FUN_00556fd0
 ;   sound_sndmain.cpp_lockSound_FUN_00558e90
+;   sound_sndmain.cpp_unlockSound_FUN_00556fd0
 ;   sound_sndwav.cpp_enumerateWavOutDevice_FUN_0055e4a0
 ;
 ; *****************************************************************************
@@ -39,8 +39,8 @@ section .text
         ;   Label: LAB_00558445
     CALL sound_sndmain.cpp_lockSound_FUN_00558e90 ; 00558446
         ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00558e90()
-    CALL sound_sndmain.cpp_FUN_00556fd0 ; 0055844b
-        ;   XREF to: 00556fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00556fd0()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00556fd0 ; 0055844b
+        ;   XREF to: 00556fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00556fd0()
     XOR EBX,EBX                         ; 00558450
     XOR ESI,ESI                         ; 00558452
     IMUL EAX,EBX,0x118                  ; 00558454

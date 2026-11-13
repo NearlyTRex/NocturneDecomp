@@ -2,24 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 46,
+    "complexity_score": 47,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 16,
+    "pseudocode_lines": 17,
     "suspect_count": 2,
     "suspect_types": [
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 85
+    "total_lines": 86
   },
   "cross_references": [
     {
       "addr": "00553960",
       "from_addr": "00553a14",
-      "name": "sound_sndmain.cpp_FUN_00553960",
+      "name": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_00553960",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -50,8 +50,8 @@
     },
     {
       "addr": "0055a560",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_0055a560"
+      "is_variadic": true,
+      "name": "sound_sndmain.cpp_logSoundError_FUN_0055a560"
     }
   ],
   "globals": [
@@ -85,7 +85,7 @@
       {
         "call_addr": "00553a14",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00553960",
+        "caller": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_00553960",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

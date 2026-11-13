@@ -359,7 +359,7 @@ LAB_004e0775:
     (this_ptr->base).attack_cooldown = (this_ptr->base).attack_cooldown - delta_time;
   }
   if (uStack_3c == 1) {
-    iVar4 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[1]);
+    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[1]);
     if (iVar4 == 0) {
       fVar13 = (float10)1;
       fVar11 = (float10)1.4426950408889634 *

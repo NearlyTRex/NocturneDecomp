@@ -33,7 +33,7 @@ void __cdecl core_zombie_cpp_CZombie_processDamage_FUN_005996d0(CZombie *this_pt
     core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,4,1);
     if (this_ptr->pain_cooldown <= 0.0) {
       this_ptr->pain_cooldown = 2.0;
-      iVar2 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[0]);
+      iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[0]);
       if (iVar2 == 0) {
         if (this_ptr->is_female != 0) {
           uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)

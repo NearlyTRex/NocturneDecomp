@@ -271,7 +271,7 @@ void __cdecl sound_sndmain_cpp_getRecordingFormat_FUN_005aba40(int *out_bits_per
 int __cdecl sound_sndmain_cpp_startRecording_FUN_005aba90(void);
 int __cdecl sound_sndmain_cpp_pollRecordingDevice_FUN_005abb10(short *output_buffer,int num_samples);
 int __cdecl sound_sndmain_cpp_stopRecordingDevice_FUN_005abb60(void);
-DWORD __stdcall sound_sndmain_cpp_audioThreadProc_FUN_005abba0(LPVOID lpThreadParam);
+DWORD __cdecl sound_sndmain_cpp_audioThreadProc_FUN_005abba0(LPVOID lpThreadParam);
 int __cdecl sound_sndmain_cpp_startSoundThread_FUN_005abc00(double latency_seconds);
 int __cdecl sound_sndmain_cpp_killSoundThread_FUN_005abcb0(void);
 void __cdecl sound_sndmain_cpp_lockSound_FUN_005abd30(void);

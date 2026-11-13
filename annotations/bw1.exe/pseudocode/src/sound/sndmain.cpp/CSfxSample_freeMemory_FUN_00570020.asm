@@ -9,14 +9,14 @@
 ; XREF[12]:
 ;   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_0056feb0 at 0056ffcb
 ;   sound_sndmain.cpp_CSfxSample_dtor_FUN_0056fe80 at 0056fe86
+;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00570460 at 00570721
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_00571d70 at 00571e88
-;   sound_sndmain.cpp_FUN_0056dfd0 at 0056e07a
-;   sound_sndmain.cpp_FUN_0056e830 at 0056e8a7
-;   sound_sndmain.cpp_FUN_00570460 at 00570721
-;   sound_sndmain.cpp_FUN_00574100 at 0057420f
 ;   sound_sndmain.cpp_allocateHwSample_FUN_0056f360 at 0056f3eb
 ;   sound_sndmain.cpp_closeSoundDevice_FUN_00575670 at 00575687
+;   sound_sndmain.cpp_createUserSample_FUN_00574100 at 0057420f
+;   sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_0056dfd0 at 0056e07a
 ;   sound_sndmain.cpp_freeAllSamples_FUN_005746a0 at 005746b8
+;   sound_sndmain.cpp_freeSampleByName_FUN_00574380 at 005743b4
 ;   ... and 2 more
 ;
 ; Referenced Globals:

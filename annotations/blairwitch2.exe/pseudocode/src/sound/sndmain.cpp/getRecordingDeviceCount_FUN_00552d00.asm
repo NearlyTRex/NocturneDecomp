@@ -5,18 +5,18 @@
 ;
 ;
 ; XREF[4]:
-;   sound_sndmain.cpp_FUN_00552e40 at 00552e58
 ;   sound_sndmain.cpp_findBestRecordingDevice_FUN_00552dc0 at 00552dc8
 ;   sound_sndmain.cpp_getRecordingDeviceInfo_FUN_00552d60 at 00552d67
 ;   sound_sndmain.cpp_readIni_FUN_00553680 at 00553702
+;   sound_sndmain.cpp_selectRecordingDevice_FUN_00552e40 at 00552e58
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061bca8
 ;   undefined4 DAT_0061bcc8
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_00551440
 ;   sound_sndmain.cpp_lockSound_FUN_005532f0
+;   sound_sndmain.cpp_unlockSound_FUN_00551440
 ;   sound_sndwav.cpp_enumerateWavInDevice_FUN_00558a30
 ;
 ; *****************************************************************************
@@ -37,8 +37,8 @@ section .text
         ;   Label: LAB_00552d15
     CALL sound_sndmain.cpp_lockSound_FUN_005532f0 ; 00552d16
         ;   XREF to: 005532f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_005532f0()
-    CALL sound_sndmain.cpp_FUN_00551440 ; 00552d1b
-        ;   XREF to: 00551440 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00551440()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00551440 ; 00552d1b
+        ;   XREF to: 00551440 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00551440()
     XOR ESI,ESI                         ; 00552d20
     XOR EBX,EBX                         ; 00552d22
     IMUL EAX,ESI,0x108                  ; 00552d24

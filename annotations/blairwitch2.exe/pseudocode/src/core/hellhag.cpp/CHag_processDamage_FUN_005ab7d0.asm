@@ -16,7 +16,7 @@
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890
 ;   core_muzzle.cpp_FUN_0059d8e0
 ;   core_sound.cpp_CSound_playActorSound_FUN_0055ae50
-;   sound_sndmain.cpp_FUN_00550b70
+;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;
 ; *****************************************************************************
 
@@ -100,8 +100,8 @@ section .text
         ;   XREF to: 005ab846 (CONDITIONAL_JUMP)  ; LAB_005ab846
     MOV ECX,dword ptr [EBX + 0x1184c]   ; 005ab895
     PUSH ECX                            ; 005ab89b
-    CALL sound_sndmain.cpp_FUN_00550b70 ; 005ab89c
-        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00550b70(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00550b70 ; 005ab89c
+        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00550b70(uint sfx_handle)
     ADD ESP,0x4                         ; 005ab8a1
     TEST EAX,EAX                        ; 005ab8a4
     JNZ 0x005ab846                      ; 005ab8a6

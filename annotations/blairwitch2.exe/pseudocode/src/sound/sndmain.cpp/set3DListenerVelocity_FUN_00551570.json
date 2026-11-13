@@ -1,0 +1,221 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 13,
+    "complexity_score": 53,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 13,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 26
+  },
+  "cross_references": [
+    {
+      "addr": "0055ac50",
+      "from_addr": "0055ad33",
+      "name": "core_sound.cpp_CSound_configure_FUN_0055ac50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055a1d0",
+      "from_addr": "0055a206",
+      "name": "core_sound.cpp_FUN_0055a1d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005523d0",
+      "from_addr": "0055243c",
+      "name": "sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005523d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00551570",
+    "address_range": [
+      [
+        "00551570",
+        "005515a6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_set3DListenerVelocity_FUN_00551570",
+    "signature": "void __cdecl sound_sndmain_cpp_set3DListenerVelocity_FUN_00551570(float velocity_x,float velocity_y,float velocity_z)"
+  },
+  "function_calls": [
+    {
+      "addr": "005532f0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_lockSound_FUN_005532f0"
+    },
+    {
+      "addr": "00551440",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_unlockSound_FUN_00551440"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "026484b8",
+      "name": "DAT_026484b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02649024",
+      "name": "DAT_02649024",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "0055a206",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_FUN_0055a1d0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0055ad33",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_CSound_configure_FUN_0055ac50",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0055243c",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005523d0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.5,
+    "instruction_count": 10,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 1,
+      "COPY": 9,
+      "INT_ADD": 6,
+      "INT_AND": 2,
+      "INT_EQUAL": 2,
+      "INT_MULT": 3,
+      "INT_OR": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 1,
+      "LOAD": 3,
+      "POPCOUNT": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 35
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00573fa0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00557100",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005aa1c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2264
+    },
+    "nocturne.exe": {
+      "addr": "005277b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2264
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "velocity_x",
+        "offset": 4,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "velocity_y",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "velocity_z",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_02649024",
+      "severity": "mild",
+      "text": "DAT_02649024 = DAT_02649024 | 4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_02649024",
+      "severity": "mild",
+      "text": "DAT_02649024 = DAT_02649024 | 4;",
+      "type": "undefined_data"
+    }
+  ]
+}

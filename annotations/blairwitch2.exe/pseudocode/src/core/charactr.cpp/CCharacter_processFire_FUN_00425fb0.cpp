@@ -107,7 +107,7 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_00425fb0(CCharacter *t
       }
       local_54 = (float)this_ptr->fire_count * (float)_DAT_005ccd7e * (float)_DAT_005ccd86 +
                  (float)_DAT_005ccd8e;
-      iVar8 = sound_sndmain_cpp_FUN_00550f20(this_ptr->sfx_handle,local_54);
+      iVar8 = sound_sndmain_cpp_setSfxVolume_FUN_00550f20(this_ptr->sfx_handle,local_54);
       if (iVar8 == 0) {
         sound_sndmain_cpp_pushSfxOptions_FUN_00550450();
         sound_sndmain_cpp_setNextSfxVolume_FUN_00550270(local_54);

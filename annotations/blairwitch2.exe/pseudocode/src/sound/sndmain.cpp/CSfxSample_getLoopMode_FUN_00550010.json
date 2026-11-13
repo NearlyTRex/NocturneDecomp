@@ -20,21 +20,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0054f9c0",
-      "from_addr": "0054fb79",
-      "name": "sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_0054f9c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0054ddf0",
       "from_addr": "0054deb5",
-      "name": "sound_sndmain.cpp_FUN_0054ddf0",
+      "name": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_0054ddf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0054f8a0",
       "from_addr": "0054f8fb",
-      "name": "sound_sndmain.cpp_FUN_0054f8a0",
+      "name": "sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_0054f8a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054f9c0",
+      "from_addr": "0054fb79",
+      "name": "sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_0054f9c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -58,7 +58,7 @@
       {
         "call_addr": "0054deb5",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_0054ddf0",
+        "caller": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_0054ddf0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -69,7 +69,7 @@
       {
         "call_addr": "0054e01e",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_0054ddf0",
+        "caller": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_0054ddf0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -102,7 +102,7 @@
       {
         "call_addr": "0054f8fb",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_0054f8a0",
+        "caller": "sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_0054f8a0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -148,6 +148,12 @@
       "by": "name",
       "class": "identical",
       "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00555b80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8182
     },
     "nocedit.exe": {
       "addr": "005a87d0",

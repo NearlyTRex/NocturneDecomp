@@ -28,6 +28,6 @@ void __cdecl sound_sndmain_cpp_freeSampleByName_FUN_00551950(char *sample_name,i
     }
     iVar2 = iVar2 + 0x1ac;
   } while (iVar2 != 0x6b00);
-  sound_sndmain_cpp_FUN_00551440();
+  sound_sndmain_cpp_unlockSound_FUN_00551440();
   return;
 }

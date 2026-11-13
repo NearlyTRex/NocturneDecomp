@@ -88,7 +88,7 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004b7b90(CFlame *this_ptr,float d
         sound_sndmain_cpp_pushSfxOptions_FUN_00572ac0();
         iVar1 = 2;
         local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.0,1.0);
-        sound_sndmain_cpp_FUN_00572a50((double)local_14,iVar1);
+        sound_sndmain_cpp_setNextSfxTriggerTime_FUN_00572a50((double)local_14,iVar1);
         uVar2 = (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,local_110);
         this_ptr->sfx_handle = uVar2;
         sound_sndmain_cpp_popSfxOptions_FUN_00572b40();

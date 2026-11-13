@@ -18,6 +18,7 @@ void core_fire_cpp_FUN_004a3920(CFireEffect *param_1,CVector3f *param_2,UOrienta
   }
   iVar1 = core_fire_cpp_FUN_004a3a30(param_1,0,param_2,param_3,param_4,param_5);
   g_TossPool[iVar1].sfx_handle = param_6;
-  sound_sndmain_cpp_FUN_00556930(g_TossPool[iVar1].sfx_handle,iVar1 * 1000 + 0x1cf6354);
+  sound_sndmain_cpp_setSfxTrackedFloatPosition_FUN_00556930
+            (g_TossPool[iVar1].sfx_handle,&g_TossPool[iVar1].physics_box.position);
   return;
 }

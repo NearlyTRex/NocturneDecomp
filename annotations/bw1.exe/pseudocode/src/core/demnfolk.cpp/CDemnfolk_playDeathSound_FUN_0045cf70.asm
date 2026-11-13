@@ -21,7 +21,7 @@
 ;   undefined4 DAT_0152c323
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_005735a0
+;   sound_sndmain.cpp_isSfxPlaying_FUN_005735a0
 ;
 ; *****************************************************************************
 
@@ -96,8 +96,8 @@ section .text
         ;   Label: LAB_0045cfe9
     MOV EDX,dword ptr [EBX + 0xc358]    ; 0045cfea
     PUSH EDX                            ; 0045cff0
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 0045cff1
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 0045cff1
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 0045cff6
     TEST EAX,EAX                        ; 0045cff9
     JZ 0x0045d001                       ; 0045cffb

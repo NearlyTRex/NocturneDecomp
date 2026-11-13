@@ -18,8 +18,6 @@
 ;   crt_math.c_round_FUN_005a3120
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   sound_sndmain.cpp_CSfxSample_init_FUN_00555840
-;   sound_sndmain.cpp_FUN_00556ae0
-;   sound_sndmain.cpp_FUN_00556fd0
 ;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005567c0
 ;   sound_sndmain.cpp_getSfxSampleInfo_FUN_00556780
 ;   sound_sndmain.cpp_killSfx_FUN_00556be0
@@ -27,6 +25,8 @@
 ;   sound_sndmain.cpp_popSfxOptions_FUN_00556050
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00555fd0
 ;   sound_sndmain.cpp_setNextSfxTriggerTime_FUN_00555f60
+;   sound_sndmain.cpp_setSfxBaseFrequency_FUN_00556ae0
+;   sound_sndmain.cpp_unlockSound_FUN_00556fd0
 ;
 ; *****************************************************************************
 
@@ -63,8 +63,8 @@ section .text
     FSTP float ptr [ESP + 0xc]          ; 0056bd9b
     PUSH dword ptr [ESP + 0xc]          ; 0056bd9f
     PUSH EDX                            ; 0056bda3
-    CALL sound_sndmain.cpp_FUN_00556ae0 ; 0056bda4
-        ;   XREF to: 00556ae0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00556ae0(uint sfx_handle, float base_frequency)
+    CALL sound_sndmain.cpp_setSfxBaseFrequency_FUN_00556ae0 ; 0056bda4
+        ;   XREF to: 00556ae0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxBaseFrequency_FUN_00556ae0(uint sfx_handle, float base_frequency)
     ADD ESP,0x8                         ; 0056bda9
     TEST EAX,EAX                        ; 0056bdac
     JZ 0x0056bdb7                       ; 0056bdae
@@ -201,8 +201,8 @@ section .text
     CALL sound_sndmain.cpp_killSfx_FUN_00556be0 ; 0056bf4c
         ;   XREF to: 00556be0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00556be0(uint sfx_handle)
     ADD ESP,0x4                         ; 0056bf51
-    CALL sound_sndmain.cpp_FUN_00556fd0 ; 0056bf54
-        ;   XREF to: 00556fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00556fd0()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00556fd0 ; 0056bf54
+        ;   XREF to: 00556fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00556fd0()
     MOV ESP,EBP                         ; 0056bf59
     POP EBP                             ; 0056bf5b
     POP EDI                             ; 0056bf5c

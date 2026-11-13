@@ -30,9 +30,9 @@
 ;   core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0
 ;   crt_math.c_floor_FUN_005c0880
 ;   crt_math.c_round_FUN_005c03a0
-;   sound_sndmain.cpp_FUN_00572a50
 ;   sound_sndmain.cpp_popSfxOptions_FUN_00572b40
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0
+;   sound_sndmain.cpp_setNextSfxTriggerTime_FUN_00572a50
 ;
 ; *****************************************************************************
 
@@ -219,8 +219,8 @@ section .text
     ADD ESP,0x8                         ; 00422266
     SUB ESP,0x8                         ; 00422269
     FSTP double ptr [ESP]               ; 0042226c
-    CALL sound_sndmain.cpp_FUN_00572a50 ; 0042226f
-        ;   XREF to: 00572a50 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572a50(double trigger_time, int trigger_id)
+    CALL sound_sndmain.cpp_setNextSfxTriggerTime_FUN_00572a50 ; 0042226f
+        ;   XREF to: 00572a50 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTriggerTime_FUN_00572a50(double trigger_time, int trigger_id)
     ADD ESP,0xc                         ; 00422274
     LEA EAX,[EBX + 0x2d4]               ; 00422277
     PUSH EAX                            ; 0042227d

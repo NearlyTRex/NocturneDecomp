@@ -30,7 +30,7 @@
 ;   crt_math.c_round_FUN_005b7ff0
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_console.cpp_CConsole_printf_FUN_00436710
-;   sound_sndmain.cpp_FUN_00550b70
+;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
 ;
 ; *****************************************************************************
@@ -152,8 +152,8 @@ section .text
     ADD ESP,0xc                         ; 004c4241
     MOV ESI,dword ptr [EBX + 0x10b50]   ; 004c4244
     PUSH ESI                            ; 004c424a
-    CALL sound_sndmain.cpp_FUN_00550b70 ; 004c424b
-        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00550b70(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00550b70 ; 004c424b
+        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00550b70(uint sfx_handle)
     ADD ESP,0x4                         ; 004c4250
     TEST EAX,EAX                        ; 004c4253
     JNZ 0x004c426f                      ; 004c4255
@@ -320,8 +320,8 @@ section .text
     MOV ESI,dword ptr [EBX + 0x10b4c]   ; 004c4408
         ;   Label: LAB_004c4408
     PUSH ESI                            ; 004c440e
-    CALL sound_sndmain.cpp_FUN_00550b70 ; 004c440f
-        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00550b70(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00550b70 ; 004c440f
+        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00550b70(uint sfx_handle)
     ADD ESP,0x4                         ; 004c4414
     TEST EAX,EAX                        ; 004c4417
     JNZ 0x004c42b9                      ; 004c4419

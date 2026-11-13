@@ -18,45 +18,45 @@
   },
   "cross_references": [
     {
+      "addr": "00570460",
+      "from_addr": "00570718",
+      "name": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_00570460",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00570f30",
       "from_addr": "00571213",
       "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_00570f30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0056fa10",
-      "from_addr": "0056fa9b",
-      "name": "sound_sndmain.cpp_FUN_0056fa10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00570460",
-      "from_addr": "00570718",
-      "name": "sound_sndmain.cpp_FUN_00570460",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00571420",
       "from_addr": "00571565",
-      "name": "sound_sndmain.cpp_FUN_00571420",
+      "name": "sound_sndmain.cpp_CSfxSlot_mix_FUN_00571420",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00571f10",
       "from_addr": "00571f89",
-      "name": "sound_sndmain.cpp_FUN_00571f10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00575db0",
-      "from_addr": "00575f64",
-      "name": "sound_sndmain.cpp_FUN_00575db0",
+      "name": "sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_00571f10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00573c50",
       "from_addr": "00573ca7",
       "name": "sound_sndmain.cpp_enableSfxChannel_FUN_00573c50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00575db0",
+      "from_addr": "00575f64",
+      "name": "sound_sndmain.cpp_flushSoundChanges_FUN_00575db0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056fa10",
+      "from_addr": "0056fa9b",
+      "name": "sound_sndmain.cpp_getSfxSlotFromHandle_FUN_0056fa10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -115,7 +115,7 @@
     {
       "addr": "0056dfd0",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_0056dfd0"
+      "name": "sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_0056dfd0"
     }
   ],
   "globals": [
@@ -233,7 +233,7 @@
       {
         "call_addr": "00570718",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00570460",
+        "caller": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_00570460",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -255,7 +255,7 @@
       {
         "call_addr": "0056fa9b",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_0056fa10",
+        "caller": "sound_sndmain.cpp_getSfxSlotFromHandle_FUN_0056fa10",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -266,7 +266,7 @@
       {
         "call_addr": "0056fabc",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_0056fa10",
+        "caller": "sound_sndmain.cpp_getSfxSlotFromHandle_FUN_0056fa10",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -299,7 +299,7 @@
       {
         "call_addr": "00575f64",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00575db0",
+        "caller": "sound_sndmain.cpp_flushSoundChanges_FUN_00575db0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -321,7 +321,7 @@
       {
         "call_addr": "00571565",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00571420",
+        "caller": "sound_sndmain.cpp_CSfxSlot_mix_FUN_00571420",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

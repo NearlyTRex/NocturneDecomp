@@ -31,7 +31,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_00548090
-;   sound_sndmain.cpp_FUN_00556230
+;   sound_sndmain.cpp_preloadSfx_FUN_00556230
 ;
 ; *****************************************************************************
 
@@ -98,52 +98,52 @@ section .text
         ;   Label: LAB_0059b82e
     PUSH 0x5d9c04                       ; 0059b838 | = "hino_stand_fly.wav"
     MOV dword ptr [EBX + 0xd058],0x0    ; 0059b83d
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059b847
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059b847
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059b84c
     PUSH 0x5d9c17                       ; 0059b84f | = "hino_walk_fly.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059b854
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059b854
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059b859
     PUSH 0x5d9c29                       ; 0059b85c | = "hino_run_fly.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059b861
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059b861
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059b866
     PUSH 0x5d9c3a                       ; 0059b869 | = "hino_reverse.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059b86e
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059b86e
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059b873
     PUSH 0x5d9c4b                       ; 0059b876 | = "hino_attack_fly.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059b87b
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059b87b
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059b880
     PUSH 0x5d9c5f                       ; 0059b883 | = "hino_attack_fly2.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059b888
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059b888
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059b88d
     PUSH 0x5d9c74                       ; 0059b890 | = "hino_damage_fly.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059b895
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059b895
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059b89a
     PUSH 0x5d9c88                       ; 0059b89d | = "hino_die_fly.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059b8a2
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059b8a2
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059b8a7
     PUSH 0x5d9c99                       ; 0059b8aa | = "hino_warning.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059b8af
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059b8af
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059b8b4
     PUSH 0x5d9caa                       ; 0059b8b7 | = "hino_big_attack.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059b8bc
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059b8bc
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059b8c1
     PUSH 0x5d9cbe                       ; 0059b8c4 | = "hino_appear.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059b8c9
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059b8c9
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059b8ce
     PUSH 0x5d9cce                       ; 0059b8d1 | = "hino_disappear.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0059b8d6
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0059b8d6
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0059b8db
     POP EDI                             ; 0059b8de
     POP ESI                             ; 0059b8df

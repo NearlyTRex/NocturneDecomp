@@ -47,10 +47,10 @@
 ;   core_main.c_FUN_005030e0
 ;   crt_memory.c_memset_FUN_005bfb70
 ;   crt_string.c_memmove_FUN_005c25d0
+;   sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_0056f1e0
 ;   sound_sndmain.cpp_convertMixBufToOutput_FUN_0056f890
 ;   sound_sndmain.cpp_CSfxSlot_compute_FUN_00570f30
-;   sound_sndmain.cpp_FUN_0056f1e0
-;   sound_sndmain.cpp_FUN_00571420
+;   sound_sndmain.cpp_CSfxSlot_mix_FUN_00571420
 ;
 ; *****************************************************************************
 
@@ -93,8 +93,8 @@ section .text
     CMP EAX,dword ptr [0x006232f0]      ; 00576c7d | DAT_006232f0
     JNZ 0x00576f2b                      ; 00576c83
         ;   XREF to: 00576f2b (CONDITIONAL_JUMP)  ; LAB_00576f2b
-    CALL sound_sndmain.cpp_FUN_0056f1e0 ; 00576c89
-        ;   XREF to: 0056f1e0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_0056f1e0()
+    CALL sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_0056f1e0 ; 00576c89
+        ;   XREF to: 0056f1e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_0056f1e0()
     MOV ECX,dword ptr [ESP + 0x78]      ; 00576c8e
     XOR EAX,EAX                         ; 00576c92
     TEST ECX,ECX                        ; 00576c94
@@ -228,8 +228,8 @@ section .text
     LEA ESI,[ESP + 0x2c]                ; 00576e0b
     PUSH EBX                            ; 00576e0f | DAT_02c74708
     MOVSD.REP ES:EDI,ESI                ; 00576e10
-    CALL sound_sndmain.cpp_FUN_00571420 ; 00576e12
-        ;   XREF to: 00571420 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00571420()
+    CALL sound_sndmain.cpp_CSfxSlot_mix_FUN_00571420 ; 00576e12
+        ;   XREF to: 00571420 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_mix_FUN_00571420(CSfxSlot * this_ptr, SMixBuffer mix_buffer)
     ADD ESP,0x30                        ; 00576e17
     ADD EBX,0x11c                       ; 00576e1a
     CMP EBX,dword ptr [ESP + 0x54]      ; 00576e20

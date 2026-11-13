@@ -17,6 +17,6 @@ void __cdecl sound_sndmain_cpp_killAllSfx_FUN_00573b00(void)
     sound_sndmain_cpp_CSfxSlot_kill_FUN_00571d70(this_ptr);
     this_ptr = this_ptr + 1;
   } while (this_ptr != (CSfxSlot *)&DAT_02c78cec);
-  sound_sndmain_cpp_FUN_00573e70();
+  sound_sndmain_cpp_unlockSound_FUN_00573e70();
   return;
 }

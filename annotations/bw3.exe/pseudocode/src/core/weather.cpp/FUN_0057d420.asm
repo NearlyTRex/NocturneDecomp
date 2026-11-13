@@ -14,7 +14,7 @@
 ; Called Functions:
 ;   core_fire.cpp_FUN_004a4130
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
-;   sound_sndmain.cpp_FUN_00556230
+;   sound_sndmain.cpp_preloadSfx_FUN_00556230
 ;
 ; *****************************************************************************
 
@@ -41,28 +41,28 @@ section .text
         ;   XREF to: 0046e5e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 0057d44f
     PUSH 0x5d79ab                       ; 0057d452
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0057d457
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0057d457
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0057d45c
     PUSH 0x5d79b4                       ; 0057d45f
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0057d464
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0057d464
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0057d469
     PUSH 0x5d79bf                       ; 0057d46c
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0057d471
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0057d471
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0057d476
     PUSH 0x5d79ca                       ; 0057d479
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0057d47e
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0057d47e
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0057d483
     PUSH 0x5d79d5                       ; 0057d486
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0057d48b
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0057d48b
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0057d490
     PUSH 0x5d79e0                       ; 0057d493
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0057d498
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0057d498
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0057d49d
     PUSH 0x1                            ; 0057d4a0
     MOV ESI,dword ptr [0x005fc5a0]      ; 0057d4a2 | DAT_005fc5a0

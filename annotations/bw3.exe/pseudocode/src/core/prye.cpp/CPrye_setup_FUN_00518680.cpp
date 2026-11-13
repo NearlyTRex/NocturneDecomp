@@ -130,12 +130,12 @@ void __cdecl core_prye_cpp_CPrye_setup_FUN_00518680(CPrye *this_ptr)
   this_ptr->quick_turn_active = 0;
   _DAT_01ed3744 = 0;
   this_ptr->quick_turn_angle = 0.0;
-  sound_sndmain_cpp_FUN_00556230("prye-pain1.wav");
-  sound_sndmain_cpp_FUN_00556230("prye-pain2.wav");
-  sound_sndmain_cpp_FUN_00556230("prye-pain3.wav");
-  sound_sndmain_cpp_FUN_00556230("prye-death1.wav");
-  sound_sndmain_cpp_FUN_00556230("prye-death2.wav");
-  sound_sndmain_cpp_FUN_00556230("prye-death3.wav");
-  sound_sndmain_cpp_FUN_00556230("fall-1.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("prye-pain1.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("prye-pain2.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("prye-pain3.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("prye-death1.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("prye-death2.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("prye-death3.wav");
+  sound_sndmain_cpp_preloadSfx_FUN_00556230("fall-1.wav");
   return;
 }

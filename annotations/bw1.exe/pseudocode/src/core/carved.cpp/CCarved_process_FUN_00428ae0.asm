@@ -1523,8 +1523,8 @@ section .text
     ADD ESP,0x4                         ; 00429c7b
     MOV ESI,dword ptr [EBX + 0xc2e0]    ; 00429c7e
     PUSH ESI                            ; 00429c84
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 00429c85
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 00429c85
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 00429c8a
     TEST EAX,EAX                        ; 00429c8d
     JNZ 0x00429b35                      ; 00429c8f
@@ -1582,8 +1582,8 @@ section .text
         ;   XREF to: 00429d57 (CONDITIONAL_JUMP)  ; LAB_00429d57
     MOV EAX,dword ptr [EBX + 0xc2e0]    ; 00429d40
     PUSH EAX                            ; 00429d46
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 00429d47
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 00429d47
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 00429d4c
     TEST EAX,EAX                        ; 00429d4f
     JZ 0x00429e0c                       ; 00429d51
@@ -1622,8 +1622,8 @@ section .text
         ;   XREF to: 00429e80 (CONDITIONAL_JUMP)  ; LAB_00429e80
     MOV EAX,dword ptr [EBX + 0xc2e0]    ; 00429dd3
     PUSH EAX                            ; 00429dd9
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 00429dda
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 00429dda
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 00429ddf
     TEST EAX,EAX                        ; 00429de2
     JNZ 0x00429dfe                      ; 00429de4

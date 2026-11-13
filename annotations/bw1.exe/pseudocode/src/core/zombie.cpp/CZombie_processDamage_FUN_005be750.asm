@@ -22,7 +22,7 @@
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_005240c0
 ;   core_zombie.cpp_CZombie_dropAndClearTarget_FUN_005bdfa0
 ;   core_zombie.cpp_CZombie_processDismemberment_FUN_005be480
-;   sound_sndmain.cpp_FUN_005735a0
+;   sound_sndmain.cpp_isSfxPlaying_FUN_005735a0
 ;   sound_sndmain.cpp_killSfx_FUN_00573a80
 ;
 ; *****************************************************************************
@@ -177,8 +177,8 @@ section .text
     MOV ECX,dword ptr [EBX + 0xc348]    ; 005be8f1
     PUSH ECX                            ; 005be8f7
     MOV dword ptr [EBX + 0xc340],0x40000000 ; 005be8f8
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 005be902
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 005be902
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 005be907
     TEST EAX,EAX                        ; 005be90a
     JNZ 0x005be859                      ; 005be90c

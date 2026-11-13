@@ -30,7 +30,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0
 ;   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0054c090
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0054c110
-;   sound_sndmain.cpp_FUN_00556230
+;   sound_sndmain.cpp_preloadSfx_FUN_00556230
 ;
 ; *****************************************************************************
 
@@ -195,8 +195,8 @@ section .text
         ;   XREF to: 0054c110 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0054c110(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005989c3
     PUSH 0x5d982c                       ; 005989c6 | = "dog_howl.wav"
-    CALL sound_sndmain.cpp_FUN_00556230 ; 005989cb
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 005989cb
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 005989d0
     POP EDI                             ; 005989d3
     POP ESI                             ; 005989d4

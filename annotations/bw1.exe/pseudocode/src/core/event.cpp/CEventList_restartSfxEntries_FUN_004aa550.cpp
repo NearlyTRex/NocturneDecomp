@@ -20,8 +20,8 @@ void __cdecl core_event_cpp_CEventList_restartSfxEntries_FUN_004aa550(CEventList
     do {
       pSVar3 = (this_ptr->sfx_handles).entries + iVar2;
       sound_sndmain_cpp_pushSfxOptions_FUN_00572ac0();
-      sound_sndmain_cpp_FUN_00572a50(pSVar3->playback_position,1);
-      sound_sndmain_cpp_FUN_00572a10(1);
+      sound_sndmain_cpp_setNextSfxTriggerTime_FUN_00572a50(pSVar3->playback_position,1);
+      sound_sndmain_cpp_setNextSfxFlagBits_FUN_00572a10(1);
       uVar1 = sound_sndmain_cpp_startSfx_FUN_00572d20(filename);
       iVar2 = iVar2 + 1;
       pSVar3->sfx_handle = uVar1;

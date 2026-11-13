@@ -30,9 +30,9 @@
         "00558d6f"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "sound_sndmain.cpp_audioThreadProc_FUN_00558d20",
-    "signature": "undefined4 sound_sndmain_cpp_audioThreadProc_FUN_00558d20(void)"
+    "signature": "DWORD __cdecl sound_sndmain_cpp_audioThreadProc_FUN_00558d20(LPVOID lpThreadParam)"
   },
   "function_calls": [
     {
@@ -70,9 +70,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -129,12 +129,20 @@
     }
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "lpThreadParam",
+        "offset": 4,
+        "size": 4,
+        "type": "LPVOID"
+      }
+    ]
   },
   "suspects": [
     {

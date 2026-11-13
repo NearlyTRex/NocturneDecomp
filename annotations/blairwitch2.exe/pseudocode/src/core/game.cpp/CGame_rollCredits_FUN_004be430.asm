@@ -284,8 +284,8 @@ section .text
     JZ 0x004be702                       ; 004be6f3
         ;   XREF to: 004be702 (CONDITIONAL_JUMP)  ; LAB_004be702
     PUSH EDX                            ; 004be6f5
-    CALL sound_sndmain.cpp_FUN_00550b70 ; 004be6f6
-        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00550b70(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00550b70 ; 004be6f6
+        ;   XREF to: 00550b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00550b70(uint sfx_handle)
     ADD ESP,0x4                         ; 004be6fb
     TEST EAX,EAX                        ; 004be6fe
     JZ 0x004be71e                       ; 004be700
@@ -411,8 +411,8 @@ section .text
         ;   XREF to: 00550380 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxFlags_FUN_00550380(uint flags)
     ADD ESP,0x4                         ; 004be825
     PUSH 0x5d8a91                       ; 004be828 | = "XBLAIRMENU.WAV"
-    CALL sound_sndmain.cpp_FUN_005506b0 ; 004be82d
-        ;   XREF to: 005506b0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005506b0()
+    CALL sound_sndmain.cpp_startSfx_FUN_005506b0 ; 004be82d
+        ;   XREF to: 005506b0 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_startSfx_FUN_005506b0(char * filename)
     ADD ESP,0x4                         ; 004be832
     MOV dword ptr [ESP + 0x112c],EAX    ; 004be835
     CALL sound_sndmain.cpp_popSfxOptions_FUN_005504d0 ; 004be83c

@@ -94,9 +94,10 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041dbe0(CBride *this_ptr,float d
           ;
           if ((this_ptr->base).victim != (CCharacter *)0x0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar14->base,1,1);
-            iVar2 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[0]);
+            iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[0]);
             if ((iVar2 == 0) &&
-               (iVar2 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[1]), iVar2 == 0)) {
+               (iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[1]),
+               iVar2 == 0)) {
               uVar4 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                 ((CDemonActor *)this_ptr,"ub-attack?.wav");
               this_ptr->sfx_handles[1] = uVar4;
@@ -113,9 +114,10 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041dbe0(CBride *this_ptr,float d
           fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(10.0,20.0);
           this_ptr->action_timer = fStack_14;
           core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar14->base,3,1);
-          iVar2 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[0]);
+          iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[0]);
           if ((iVar2 == 0) &&
-             (iVar2 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[1]), iVar2 == 0)) {
+             (iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[1]),
+             iVar2 == 0)) {
             uVar4 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                               ((CDemonActor *)this_ptr,"ub-howl?.wav");
             this_ptr->sfx_handles[1] = uVar4;
@@ -161,9 +163,10 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041dbe0(CBride *this_ptr,float d
               iVar2 = 5;
             }
             core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar14->base,iVar2,1);
-            iVar2 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[0]);
+            iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[0]);
             if ((iVar2 == 0) &&
-               (iVar2 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[1]), iVar2 == 0)) {
+               (iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[1]),
+               iVar2 == 0)) {
               uVar4 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                 ((CDemonActor *)this_ptr,"ub-attack?.wav");
               this_ptr->sfx_handles[1] = uVar4;

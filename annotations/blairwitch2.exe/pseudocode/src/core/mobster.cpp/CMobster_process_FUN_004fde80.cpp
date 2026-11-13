@@ -145,10 +145,10 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004fde80(CMobster *this_ptr,f
     EVar8 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
     if (EVar8 == DEATH_STATE_ALIVE) {
       in_stack_fffffdb4 = (CMobster *)0x4fdf5a;
-      iVar7 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handle);
+      iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handle);
       if (iVar7 == 0) {
         in_stack_fffffdb4 = (CMobster *)0x4fe099;
-        iVar7 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[0]);
+        iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->sfx_handles[0]);
         if (iVar7 == 0) {
           in_stack_fffffdb4 = this_ptr;
           uVar9 = (*((this_ptr->base).base.base.vtable._ub)->playSound)

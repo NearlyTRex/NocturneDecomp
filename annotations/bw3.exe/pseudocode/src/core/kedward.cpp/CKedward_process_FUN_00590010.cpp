@@ -240,7 +240,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
       iVar4 = core_motion_cpp_CMotionController_advance_FUN_004fbb70(&pCStack_34->base,&fStack_90);
       switch(iVar4) {
       case 0x514:
-        iVar6 = sound_sndmain_cpp_FUN_00556700
+        iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                           (*(uint *)((this_ptr->base).base.flames[0x31].off_event + iVar4 * 4 + 0x78
                                     ));
         if (iVar6 == 0) {
@@ -250,7 +250,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
         }
         break;
       case 0x515:
-        iVar6 = sound_sndmain_cpp_FUN_00556700
+        iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                           (*(uint *)((this_ptr->base).base.flames[0x31].off_event + iVar4 * 4 + 0x78
                                     ));
         if (iVar6 == 0) {
@@ -260,7 +260,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
         }
         break;
       case 0x516:
-        iVar6 = sound_sndmain_cpp_FUN_00556700
+        iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                           (*(uint *)((this_ptr->base).base.flames[0x31].off_event + iVar4 * 4 + 0x78
                                     ));
         if (iVar6 == 0) {
@@ -270,7 +270,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
         }
         break;
       case 0x517:
-        iVar6 = sound_sndmain_cpp_FUN_00556700
+        iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                           (*(uint *)((this_ptr->base).base.flames[0x31].off_event + iVar4 * 4 + 0x78
                                     ));
         if (iVar6 == 0) {
@@ -280,7 +280,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
         }
         break;
       case 0x518:
-        iVar6 = sound_sndmain_cpp_FUN_00556700
+        iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                           (*(uint *)((this_ptr->base).base.flames[0x31].off_event + iVar4 * 4 + 0x78
                                     ));
         if (iVar6 == 0) {
@@ -290,7 +290,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
         }
         break;
       case 0x519:
-        iVar6 = sound_sndmain_cpp_FUN_00556700
+        iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                           (*(uint *)((this_ptr->base).base.flames[0x31].off_event + iVar4 * 4 + 0x78
                                     ));
         if (iVar6 == 0) {
@@ -300,7 +300,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
         }
         break;
       case 0x51a:
-        iVar6 = sound_sndmain_cpp_FUN_00556700
+        iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                           (*(uint *)((this_ptr->base).base.flames[0x31].off_event + iVar4 * 4 + 0x78
                                     ));
         if (iVar6 == 0) {
@@ -310,7 +310,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
         }
         break;
       case 0x51b:
-        iVar6 = sound_sndmain_cpp_FUN_00556700
+        iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                           (*(uint *)((this_ptr->base).base.flames[0x31].off_event + iVar4 * 4 + 0x78
                                     ));
         if (iVar6 == 0) {
@@ -320,7 +320,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
         }
         break;
       case 0x51c:
-        iVar6 = sound_sndmain_cpp_FUN_00556700
+        iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                           (*(uint *)((this_ptr->base).base.flames[0x31].off_event + iVar4 * 4 + 0x78
                                     ));
         if (iVar6 == 0) {
@@ -330,7 +330,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
         }
         break;
       case 0x51d:
-        iVar6 = sound_sndmain_cpp_FUN_00556700
+        iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                           (*(uint *)((this_ptr->base).base.flames[0x31].off_event + iVar4 * 4 + 0x78
                                     ));
         if (iVar6 == 0) {
@@ -340,7 +340,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
         }
         break;
       case 0x51e:
-        iVar6 = sound_sndmain_cpp_FUN_00556700
+        iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
                           (*(uint *)((this_ptr->base).base.flames[0x31].off_event + iVar4 * 4 + 0x78
                                     ));
         if (iVar6 == 0) {

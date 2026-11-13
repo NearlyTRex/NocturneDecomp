@@ -52,7 +52,7 @@ void __cdecl core_dracbrid_cpp_FUN_0047de00(CDraculaBride *this_ptr,float delta_
   do {
     local_24 = local_28;
     if (this_ptr == (CDraculaBride *)local_28[0x14]) {
-      iVar2 = sound_sndmain_cpp_FUN_005735a0(*local_28);
+      iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005735a0(*local_28);
       puVar1 = local_28;
       if (iVar2 == 0) {
         local_28[0x14] = 0;

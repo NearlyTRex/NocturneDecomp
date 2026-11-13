@@ -28,20 +28,20 @@ void __cdecl core_sound_cpp_CSound_configure_FUN_005607d0(CSound *this_ptr)
   if (iVar2 == 0) {
     core_sound_cpp_CSound_reset_FUN_00560930(this_ptr);
     sound_sndmain_cpp_set3DListenerOrientRight_FUN_00558860(0.0,0.0,0.0);
-    sound_sndmain_cpp_FUN_00557020(0,0,0,0,0,0);
-    sound_sndmain_cpp_FUN_00557080(0x3f800000,0,0,0,0x3f800000,0,0,0,0x3f800000);
-    sound_sndmain_cpp_FUN_00557100(0,0,0);
+    sound_sndmain_cpp_set3DListenerPos_FUN_00557020(0.0,0.0,0.0);
+    sound_sndmain_cpp_set3DListenerOrient_FUN_00557080(1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0);
+    sound_sndmain_cpp_set3DListenerVelocity_FUN_00557100(0.0,0.0,0.0);
     sound_sndmain_cpp_enableSoundSystem_FUN_00558050();
     sound_sndmain_cpp_pushSfxOptions_FUN_00555fd0();
     sound_sndmain_cpp_setNextSfxChannel_FUN_00555e90(1);
     sound_sndmain_cpp_setNextSfxFlagBits_FUN_00555f20(1);
-    iVar2 = sound_sndmain_cpp_FUN_00558390();
+    iVar2 = sound_sndmain_cpp_getAudioSampleRate_FUN_00558390();
     if (iVar2 < 0x7531) {
-      sound_sndmain_cpp_FUN_00556240("splash-music-22.wav");
+      sound_sndmain_cpp_startSfx_FUN_00556240("splash-music-22.wav");
       sound_sndmain_cpp_popSfxOptions_FUN_00556050();
       return;
     }
-    sound_sndmain_cpp_FUN_00556240("@splash.mp3" + 1);
+    sound_sndmain_cpp_startSfx_FUN_00556240("@splash.mp3" + 1);
     sound_sndmain_cpp_popSfxOptions_FUN_00556050();
   }
   return;
