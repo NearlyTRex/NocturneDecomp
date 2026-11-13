@@ -19,13 +19,13 @@ namespace pause_sound_support {
 // "voice V held H", "enable", in the order they came.
 extern std::vector<std::string> calls;
 
-extern int muted;                 // isSoundMuted
-extern int rate;                  // getAudioSampleRate
-extern bool start_fails;          // startSfx returns 0 and takes no slot
-extern int start_elsewhere;       // >= 0: startSfx takes this slot instead
-extern double position;           // getSfxPlaybackPosition, for every handle
-extern int lock_depth;            // lockSound less unlockSound
-extern int next_serial;           // the serial startSfx hands out next
+extern int muted;           // isSoundMuted
+extern int rate;            // getAudioSampleRate
+extern bool start_fails;    // startSfx returns 0 and takes no slot
+extern int start_elsewhere; // >= 0: startSfx takes this slot instead
+extern double position;     // getSfxPlaybackPosition, for every handle
+extern int lock_depth;      // lockSound less unlockSound
+extern int next_serial;     // the serial startSfx hands out next
 
 // Everything cleared, every slot free.
 void reset();

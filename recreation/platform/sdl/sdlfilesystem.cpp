@@ -168,10 +168,10 @@ std::optional<std::string> CSdlFileSystem::getCacheFolder(std::string_view title
         }
         return std::filesystem::path(value);
     };
-#if defined(_WIN32)
+#ifdef _WIN32
     const std::optional<std::filesystem::path> base = variable("LOCALAPPDATA");
     const std::filesystem::path own = std::filesystem::path(title) / "Cache";
-#elif defined(__APPLE__)
+#elifdef __APPLE__
     const std::optional<std::filesystem::path> home = variable("HOME");
     const std::optional<std::filesystem::path> base =
         home ? std::optional(*home / "Library" / "Caches") : std::nullopt;
