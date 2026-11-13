@@ -15,27 +15,17 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5943
 Functions with no callers: 2826
-Parameter mismatches detected: 714
-Signature accuracy rate: 77.1%
+Parameter mismatches detected: 693
+Signature accuracy rate: 77.8%
 
 Mismatches by confidence:
-  High confidence:   52 (multiple call sites agree)
-  Medium confidence: 133 (some agreement)
-  Low confidence:    529 (limited data)
+  High confidence:   51 (multiple call sites agree)
+  Medium confidence: 131 (some agreement)
+  Low confidence:    511 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
 ====================================================================================================
-
-  core_fire.cpp_FUN_0049db20
-    Declared: 0 params (0 bytes), Estimated: 28 stack slots (100 bytes) [+28]
-    Call sites: 3, Confidence: high
-    File: core/fire.cpp
-    Signature: void core_fire_cpp_FUN_0049db20(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,float param_13,float param_14,float param_15,float param_16,float param_17,float param_18,float param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)
-    Sample call sites:
-      core_weapon.cpp_CWeapon_render at 0058a5c5: 3 reg [EAX, ECX, EDX], 25 stack (100 bytes, via add_esp)
-      core_emitter.cpp_CEmitter_rend at 00487870: 3 reg [EAX, ECX, EDX], 25 stack (100 bytes, via add_esp)
-      core_manpuz.cpp_CMansionPuzzle at 004e7197: 3 reg [EAX, ECX, EDX], 25 stack (100 bytes, via add_esp)
 
   shape_edittool.cpp_FUN_004840f0
     Declared: 0 params (0 bytes), Estimated: 9 stack slots (24 bytes) [+9]
@@ -600,13 +590,13 @@ MEDIUM CONFIDENCE MISMATCHES
   core_muzzle.cpp_FUN_0059d7f0                       declared:0 est:3 (+3) [27 calls]
   core_stranger.cpp_FUN_0056bf00                     declared:0 est:3 (+3) [2 calls]
 
-  ... and 83 more
+  ... and 81 more
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  529 functions with low-confidence mismatches
+  511 functions with low-confidence mismatches
   Sample:
     engine_2d.c_FUN_00401590                      declared:0 est:1 (+1)
     engine_2d.c_drawTextRightAlignedColor_FUN_004 declared:3 est:0 (-3)
@@ -623,28 +613,27 @@ LOW CONFIDENCE MISMATCHES (limited data)
 MISMATCH DIRECTION ANALYSIS
 ====================================================================================================
 
-Functions where declaration has MORE params than estimated: 35
+Functions where declaration has MORE params than estimated: 36
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 679
+Functions where declaration has FEWER params than estimated: 657
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
   -6 params: 1 functions
   -5 params: 1 functions
   -4 params: 1 functions
-  -3 params: 2 functions
+  -3 params: 3 functions
   -2 params: 6 functions
   -1 params: 24 functions
-  +1 params: 142 functions
-  +2 params: 159 functions
-  +3 params: 113 functions
-  +4 params: 104 functions
-  +5 params: 63 functions
-  +6 params: 46 functions
-  +7 params: 21 functions
-  +8 params: 15 functions
-  +9 params: 9 functions
+  +1 params: 138 functions
+  +2 params: 156 functions
+  +3 params: 111 functions
+  +4 params: 100 functions
+  +5 params: 61 functions
+  +6 params: 43 functions
+  +7 params: 20 functions
+  +8 params: 14 functions
+  +9 params: 8 functions
   +10 params: 5 functions
   +11 params: 1 functions
-  +28 params: 1 functions

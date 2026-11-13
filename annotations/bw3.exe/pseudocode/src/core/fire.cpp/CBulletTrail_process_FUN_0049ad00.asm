@@ -7,7 +7,7 @@
 ; CBulletTrail *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_004a1760 at 004a1876
+;   core_fire.cpp_CFireEffect_process_FUN_004a1760 at 004a1876
 ;
 ; *****************************************************************************
 

@@ -24,8 +24,8 @@
 ;   core_motion.cpp_FUN_00524a40
 ;   core_motion.cpp_FUN_00525110
 ;   core_scat.cpp_CScat_blendAimBones_FUN_00542270
+;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
-;   core_skeleton.cpp_FUN_00568100
 ;
 ; *****************************************************************************
 
@@ -178,8 +178,8 @@ section .text
     PUSH dword ptr [ESP + 0x20]         ; 00542225
     PUSH EDI                            ; 00542229
     PUSH ESI                            ; 0054222a
-    CALL core_skeleton.cpp_FUN_00568100 ; 0054222b
-        ;   XREF to: 00568100 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00568100()
+    CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100 ; 0054222b
+        ;   XREF to: 00568100 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
     MOV ECX,dword ptr [EBX + 0x2c98]    ; 00542230
     ADD ESP,0x18                        ; 00542236
     CMP ECX,0x1                         ; 00542239

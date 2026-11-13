@@ -21,7 +21,7 @@
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005474b0
-;   core_skeleton.cpp_FUN_00548e80
+;   core_skeleton.cpp_getDeformableModel_FUN_00548e80
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
         ;   Label: core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00547480
     ADD EAX,0x2260                      ; 00547484
     PUSH EAX                            ; 00547489
-    CALL core_skeleton.cpp_FUN_00548e80 ; 0054748a
-        ;   XREF to: 00548e80 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00548e80()
+    CALL core_skeleton.cpp_getDeformableModel_FUN_00548e80 ; 0054748a
+        ;   XREF to: 00548e80 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_getDeformableModel_FUN_00548e80(char * model_filename)
     ADD ESP,0x4                         ; 0054748f
     PUSH EAX                            ; 00547492
     MOV EDX,dword ptr [ESP + 0x8]       ; 00547493

@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 579,
-    "complexity_score": 466,
+    "complexity_score": 470,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 256,
+    "pseudocode_lines": 260,
     "suspect_count": 18,
     "suspect_types": [
       "stack_alignment_array",
@@ -17,7 +17,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 835
+    "total_lines": 839
   },
   "cross_references": [],
   "function": {
@@ -76,7 +76,7 @@
     {
       "addr": "0054dbd0",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054dbd0"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0"
     },
     {
       "addr": "00441ff0",
@@ -332,7 +332,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 26,
       "match": "in_stack_ffffff28",
       "severity": "moderate",
       "text": "char *in_stack_ffffff28;",
@@ -340,7 +340,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 115,
+      "line": 117,
       "match": "in_stack_ffffff20",
       "severity": "moderate",
       "text": "(*((pCVar4->vtable)._ub)->getBoundingBox)(pCVar4,in_stack_ffffff20);",
@@ -348,7 +348,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 116,
+      "line": 118,
       "match": "&stack0xffffff28",
       "severity": "moderate",
       "text": "puVar10 = (uint *)&stack0xffffff28;",
@@ -356,7 +356,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 141,
+      "line": 143,
       "match": "&stack0xfffffff0",
       "severity": "moderate",
       "text": "*(float *)(&stack0xfffffff0 + (uint)bVar12 * -8 + (uint)bVar12 * -8);",
@@ -364,7 +364,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 181,
+      "line": 183,
       "match": "in_stack_ffffff28",
       "severity": "moderate",
       "text": "in_stack_ffffff28 = \"Picking up %s off ground\\n\";",
@@ -372,7 +372,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 188,
+      "line": 192,
       "match": "in_stack_ffffff28",
       "severity": "moderate",
       "text": "in_stack_ffffff28 = \"Picking up %s waist level\\n\";",
@@ -380,7 +380,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 203,
+      "line": 207,
       "match": "in_stack_ffffff28",
       "severity": "moderate",
       "text": "in_stack_ffffff28 = \"Picking up heavy %s crate\\n\";",
@@ -388,7 +388,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 209,
+      "line": 213,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "afStack_6c[(uint)bVar12 * -2] = *(float *)(&stack0x00000000 + (uint)bVar12 * -8);",
@@ -396,7 +396,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 212,
+      "line": 216,
       "match": "&stack0xffffff90",
       "severity": "moderate",
       "text": "if (&this_ptr_00->carry_object_world_center != (CVector3f *)&stack0xffffff90) {",
@@ -404,7 +404,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 213,
+      "line": 217,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "(this_ptr_00->carry_object_world_center).x = unaff_EBX;",
@@ -412,7 +412,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 217,
+      "line": 221,
       "match": "in_stack_ffffff28",
       "severity": "moderate",
       "text": "in_stack_ffffff28 = \"Picking up heavy %s shelf\\n\";",
@@ -420,7 +420,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 227,
+      "line": 231,
       "match": "in_stack_ffffff28",
       "severity": "moderate",
       "text": "engine_console_cpp_CConsole_printf_FUN_00441ff0(this_ptr_01,in_stack_ffffff28);",
@@ -428,7 +428,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 118,
+      "line": 120,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar9 = 6; iVar9 != 0; iVar9 = iVar9 + -1) {",

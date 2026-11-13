@@ -159,8 +159,10 @@ LAB_0056e2d5:
       fVar3 = (this_ptr->trigger_size).y;
       fVar4 = (this_ptr->trigger_size).z;
       fStack_34 = fVar4 * fVar4 + fVar3 * fVar3 + fVar2 * fVar2;
-      iStack_24 = core_fire_cpp_FUN_004a3790
-                            (0x01C73654,pCVar1,((int)fStack_34 >> 1) + _DAT_01d1a0a4,0,0,0);
+      iStack_24 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004a3790
+                            (0x01C73654,&pCVar1->position,
+                             (float)(((int)fStack_34 >> 1) + _DAT_01d1a0a4),(CVector3f *)0x0,
+                             (float *)0x0,(int *)0x0);
     }
     break;
   case TRIGGER_CAUSE_DAMAGE:

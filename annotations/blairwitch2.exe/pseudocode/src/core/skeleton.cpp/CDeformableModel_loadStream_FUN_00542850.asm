@@ -62,9 +62,9 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
+;   core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00541370
 ;   core_skeleton.cpp_CDeformableModel_allocMemory_FUN_00541250
 ;   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_00544380
-;   core_skeleton.cpp_FUN_00541370
 ;   crt_stdio.c_fgetc_FUN_005b8180
 ;   crt_stdio.c_fscanf_FUN_005b8100
 ;
@@ -227,8 +227,8 @@ section .text
     PUSH EDX                            ; 005429c4
     PUSH EDI                            ; 005429c5
     PUSH EBX                            ; 005429c6
-    CALL core_skeleton.cpp_FUN_00541370 ; 005429c7
-        ;   XREF to: 00541370 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00541370()
+    CALL core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00541370 ; 005429c7
+        ;   XREF to: 00541370 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00541370(CDeformableModel * this_ptr, int lod_index, int vertex_count, int tri_count, ...)
     INC EDI                             ; 005429cc
     ADD ESP,0x14                        ; 005429cd
     JMP 0x00542977                      ; 005429d0
@@ -318,8 +318,8 @@ section .text
     PUSH EDI                            ; 00542a8c
     PUSH 0x0                            ; 00542a8d
     PUSH EBX                            ; 00542a8f
-    CALL core_skeleton.cpp_FUN_00541370 ; 00542a90
-        ;   XREF to: 00541370 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00541370()
+    CALL core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00541370 ; 00542a90
+        ;   XREF to: 00541370 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00541370(CDeformableModel * this_ptr, int lod_index, int vertex_count, int tri_count, ...)
     ADD ESP,0x14                        ; 00542a95
     MOV EDI,ESI                         ; 00542a98
         ;   Label: LAB_00542a98

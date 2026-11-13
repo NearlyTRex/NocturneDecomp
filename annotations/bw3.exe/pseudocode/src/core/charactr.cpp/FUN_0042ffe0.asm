@@ -17,7 +17,7 @@
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b80
 ;   core_charactr.cpp_FUN_004300e0
-;   core_fire.cpp_FUN_004a36e0
+;   core_fire.cpp_CFireEffect_createExplosion_FUN_004a36e0
 ;
 ; *****************************************************************************
 
@@ -94,8 +94,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004300af
     MOVSD ES:EDI,ESI                    ; 004300b0
     MOVSD ES:EDI,ESI                    ; 004300b1
-    CALL core_fire.cpp_FUN_004a36e0     ; 004300b2
-        ;   XREF to: 004a36e0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a36e0()
+    CALL core_fire.cpp_CFireEffect_createExplosion_FUN_004a36e0 ; 004300b2
+        ;   XREF to: 004a36e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createExplosion_FUN_004a36e0(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
     ADD ESP,0x18                        ; 004300b7
     PUSH 0x1                            ; 004300ba
     MOV ECX,dword ptr [ESP + 0x90]      ; 004300bc

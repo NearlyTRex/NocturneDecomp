@@ -18,7 +18,7 @@
 ;   undefined4 DAT_01c976fc
 ;
 ; Called Functions:
-;   core_fire.cpp_FUN_004992b0
+;   core_fire.cpp_CToss_create_FUN_004992b0
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     PUSH EDI                            ; 0049e5f7
     ADD EAX,0x1c97700                   ; 0049e5f8
     PUSH EAX                            ; 0049e5fd
-    CALL core_fire.cpp_FUN_004992b0     ; 0049e5fe
-        ;   XREF to: 004992b0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004992b0()
+    CALL core_fire.cpp_CToss_create_FUN_004992b0 ; 0049e5fe
+        ;   XREF to: 004992b0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CToss_create_FUN_004992b0(CToss * this_ptr, int toss_type, CVector3f * position, UOrientationVector * orientation, ...)
     MOV EBP,dword ptr [0x01c976fc]      ; 0049e603 | DAT_01c976fc
     INC EBP                             ; 0049e609
     ADD ESP,0x18                        ; 0049e60a

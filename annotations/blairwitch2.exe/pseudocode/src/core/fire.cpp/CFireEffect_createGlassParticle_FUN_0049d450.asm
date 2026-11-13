@@ -19,7 +19,7 @@
 ;   undefined4 DAT_01c86e60
 ;
 ; Called Functions:
-;   core_fire.cpp_FUN_00496c60
+;   core_fire.cpp_CGlassParticle_init_FUN_00496c60
 ;
 ; *****************************************************************************
 
@@ -57,8 +57,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x24]      ; 0049d49c
     PUSH ECX                            ; 0049d4a0
     PUSH EAX                            ; 0049d4a1
-    CALL core_fire.cpp_FUN_00496c60     ; 0049d4a2
-        ;   XREF to: 00496c60 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_00496c60()
+    CALL core_fire.cpp_CGlassParticle_init_FUN_00496c60 ; 0049d4a2
+        ;   XREF to: 00496c60 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CGlassParticle_init_FUN_00496c60(CGlassParticle * this_ptr, STriangleVertices * triangle_vertices, CVector3i * uv_u_per_vertex, CVector3i * uv_v_per_vertex, ...)
     ADD ESP,0x18                        ; 0049d4a7
     POP EBP                             ; 0049d4aa
     POP EDI                             ; 0049d4ab

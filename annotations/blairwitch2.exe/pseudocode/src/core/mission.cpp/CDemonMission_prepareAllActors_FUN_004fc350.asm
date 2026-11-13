@@ -22,8 +22,8 @@
 ;
 ; Called Functions:
 ;   core_level.cpp_CLevelLoader_update_FUN_004e1600
-;   core_skeleton.cpp_FUN_00549180
-;   core_skeleton.cpp_FUN_005491b0
+;   core_skeleton.cpp_clearModelAndSkeletonInUseFlags_FUN_00549180
+;   core_skeleton.cpp_freeUnusedModelsAndSkeletons_FUN_005491b0
 ;   support_newmsg.cpp_getLocalizedString_FUN_0050fe80
 ;
 ; *****************************************************************************
@@ -48,8 +48,8 @@ section .text
         ;   XREF to: 004e1600 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004e1600(CLevelLoader * this_ptr, char * text, int clear_screen)
     ADD ESP,0xc                         ; 004fc373
     MOV EBX,dword ptr [ESP + 0x18]      ; 004fc376
-    CALL core_skeleton.cpp_FUN_00549180 ; 004fc37a
-        ;   XREF to: 00549180 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00549180()
+    CALL core_skeleton.cpp_clearModelAndSkeletonInUseFlags_FUN_00549180 ; 004fc37a
+        ;   XREF to: 00549180 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_clearModelAndSkeletonInUseFlags_FUN_00549180()
     MOV EBX,dword ptr [EBX + 0x1114]    ; 004fc37f
     XOR EDI,EDI                         ; 004fc385
     TEST EBX,EBX                        ; 004fc387
@@ -156,8 +156,8 @@ section .text
     POP ESI                             ; 004fc487
     POP EBX                             ; 004fc488
     RET                                 ; 004fc489
-    CALL core_skeleton.cpp_FUN_005491b0 ; 004fc48a
-        ;   XREF to: 005491b0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_005491b0()
+    CALL core_skeleton.cpp_freeUnusedModelsAndSkeletons_FUN_005491b0 ; 004fc48a
+        ;   XREF to: 005491b0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_freeUnusedModelsAndSkeletons_FUN_005491b0()
         ;   Label: LAB_004fc48a
     JMP 0x004fc3c1                      ; 004fc48f
         ;   XREF to: 004fc3c1 (UNCONDITIONAL_JUMP)  ; LAB_004fc3c1

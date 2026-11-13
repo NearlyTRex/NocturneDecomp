@@ -13,7 +13,7 @@
 ;   undefined4 DAT_01bc0d50
 ;
 ; Called Functions:
-;   core_skeleton.cpp_FUN_00569130
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
 ;
 ; *****************************************************************************
 
@@ -44,8 +44,8 @@ section .text
     PUSH EAX                            ; 0047d7c6
     LEA ESI,[ESP + 0x34]                ; 0047d7c7
     MOV dword ptr [ESP + 0x58],ECX      ; 0047d7cb
-    CALL core_skeleton.cpp_FUN_00569130 ; 0047d7cf
-        ;   XREF to: 00569130 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569130()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130 ; 0047d7cf
+        ;   XREF to: 00569130 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     LEA ESI,[ESP + 0x34]                ; 0047d7d4
     ADD ESP,0x8                         ; 0047d7d8
     LEA EAX,[ESP + 0x8]                 ; 0047d7db
@@ -68,8 +68,8 @@ section .text
     PUSH EAX                            ; 0047d807
     LEA ESI,[ESP + 0x40]                ; 0047d808
     LEA EDI,[ESP + 0x4c]                ; 0047d80c
-    CALL core_skeleton.cpp_FUN_00569130 ; 0047d810
-        ;   XREF to: 00569130 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569130()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130 ; 0047d810
+        ;   XREF to: 00569130 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     LEA ESI,[ESP + 0x40]                ; 0047d815
     LEA EAX,[ESP + 0x4c]                ; 0047d819
     ADD ESP,0x8                         ; 0047d81d
@@ -94,8 +94,8 @@ section .text
     PUSH EBP                            ; 0047d84e
     LEA EDI,[ESP + 0x1c]                ; 0047d84f
     ADD EBX,0x18                        ; 0047d853
-    CALL core_skeleton.cpp_FUN_00569130 ; 0047d856
-        ;   XREF to: 00569130 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569130()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130 ; 0047d856
+        ;   XREF to: 00569130 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     LEA ESI,[ESP + 0x28]                ; 0047d85b
     ADD ESP,0x8                         ; 0047d85f
     LEA EAX,[ESP + 0x14]                ; 0047d862

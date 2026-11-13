@@ -13,7 +13,7 @@ void __cdecl core_burncrss_cpp_CBurncross_setup_FUN_004253d0(CBurncross *this_pt
   sound_sndmain_cpp_preloadSfx_FUN_00556230("@wp_nomana.wav" + 1);
   sound_sndmain_cpp_preloadSfx_FUN_00556230("wp_burningcross.wav");
   sound_sndmain_cpp_preloadSfx_FUN_00556230("wp_burningcross_scorch.wav");
-  core_fire_cpp_FUN_004a41d0(0x01C73654);
+  core_fire_cpp_CFireEffect_preloadGunFlameStyle_FUN_004a41d0(0x01C73654,0);
   core_flame_cpp_FUN_004a5ad0();
   return;
 }

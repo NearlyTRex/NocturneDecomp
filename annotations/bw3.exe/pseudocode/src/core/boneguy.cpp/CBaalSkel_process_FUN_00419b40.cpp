@@ -213,7 +213,8 @@ void __cdecl core_boneguy_cpp_CBaalSkel_process_FUN_00419b40(CBaalSkel *this_ptr
       return;
     }
     iVar7 = 0;
-    core_skeleton_cpp_FUN_0054e670();
+    core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_0054e670
+              (&(this_ptr->base).base.base.model);
     pCVar13 = (CVector3f *)this_ptr;
     if (0 < (this_ptr->base).box_count) {
       do {

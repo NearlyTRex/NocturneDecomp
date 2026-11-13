@@ -35,9 +35,9 @@
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
 ;   core_dirmat.cpp_FUN_0045b800
 ;   core_dmodel.cpp_loadModel_FUN_00462420
+;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_004a2090
 ;   core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004a2450
 ;   core_fire.cpp_CFireEffect_createShell_FUN_004a3e70
-;   core_fire.cpp_FUN_004a2090
 ;   core_flamecan.cpp_CFlameCan_ignite_FUN_004a7110
 ;   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004cc5d0
 ;   ... and 10 more
@@ -681,8 +681,8 @@ section .text
     PUSH EAX                            ; 004d185d | g_CDemonSetInstance.collision_impact_position.x
     MOV ECX,dword ptr [0x005fc5a0]      ; 004d185e | DAT_005fc5a0
     PUSH ECX                            ; 004d1864
-    CALL core_fire.cpp_FUN_004a2090     ; 004d1865
-        ;   XREF to: 004a2090 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a2090()
+    CALL core_fire.cpp_CFireEffect_createBulletImpact_FUN_004a2090 ; 004d1865
+        ;   XREF to: 004a2090 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createBulletImpact_FUN_004a2090(CFireEffect * this_ptr, CVector3f * impact_pos, CVector3f * surface_normal, int ground_type, ...)
     ADD ESP,0x18                        ; 004d186a
     JMP 0x004d1209                      ; 004d186d
         ;   XREF to: 004d1209 (UNCONDITIONAL_JUMP)  ; LAB_004d1209

@@ -23,7 +23,7 @@ int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_00543
   float local_78;
   float local_74;
   float local_70;
-  float local_6c;
+  CVector3f local_6c;
   float local_60;
   float local_5c;
   float local_58;
@@ -64,12 +64,13 @@ int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_00543
     core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_00544e60(pCVar1);
     core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00546ae0(pCVar1);
     core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005471f0(pCVar1,0);
-    core_skeleton_cpp_FUN_005469a0(pCVar1,bone_index);
-    local_78 = local_6c;
+    core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
+              (pCVar1,bone_index,&local_6c);
+    local_78 = local_6c.x;
     *(uint *)((int)&stack0xffffff8c + (uint)bVar8 * -8) =
-         *(uint *)(&stack0xffffff98 + (uint)bVar8 * -8);
+         *(uint *)((int)&local_6c + (uint)bVar8 * -8 + 4);
     *(uint *)((int)&stack0xffffff90 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
-         *(uint *)(&stack0xffffff9c + (uint)bVar8 * -8 + (uint)bVar8 * -8);
+         *(uint *)((int)&local_6c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
     local_38 = 0;
     if (0 < this_ptr->num_parts) {
       local_3c = this_ptr;

@@ -22,15 +22,16 @@ void core_schngeis_cpp_FUN_005a3560(CDemonActor *param_1,float param_2)
   byte bVar8;
   float afStackY_117c [1010];
   CVector3f *wind_influence;
-  uint *puVar9;
+  float *pfVar9;
+  uint *puVar10;
   uint uStack_1a0;
   uint uStack_19c;
   uint uStack_198;
   float fStack_194;
   float fStack_190;
   float fStack_18c;
-  uint uStack_188;
-  uint uStack_17c;
+  float fStack_188;
+  float fStack_17c;
   float fStack_170;
   float fStack_16c;
   float fStack_168;
@@ -53,11 +54,12 @@ void core_schngeis_cpp_FUN_005a3560(CDemonActor *param_1,float param_2)
   float fStack_e0;
   float fStack_dc;
   float fStack_d8;
-  uint uStack_d4;
+  CVector3f CStack_d4;
   float fStack_c8;
-  uint uStack_bc;
+  float afStack_c4 [2];
+  CVector3f CStack_bc;
   float fStack_b0;
-  uint uStack_a4;
+  float afStack_ac [5];
   float fStack_98;
   float fStack_94;
   float fStack_90;
@@ -80,7 +82,7 @@ void core_schngeis_cpp_FUN_005a3560(CDemonActor *param_1,float param_2)
   float fStack_24;
   int *piStack_20;
   float fStack_1c;
-  CDemonActor *pCStack_14;
+  CDeformableModelInstance *pCStack_14;
   
   bVar8 = 0;
   piVar1 = &param_1[0x62].particle_systems[2].stop_after_fade;
@@ -89,27 +91,29 @@ void core_schngeis_cpp_FUN_005a3560(CDemonActor *param_1,float param_2)
      (iVar5 = core_muzzle_cpp_FUN_0059daa0(piVar1,"Animation"), iVar5 == 0)) {
     (*(param_1->vtable)._ub[1].getCarrier)(param_1);
   }
-  pCStack_14 = param_1 + 1;
-  core_skeleton_cpp_FUN_00546a90(pCStack_14,param_1[0x67].particle_systems[2].position.z);
-  puVar9 = &stack0xfffffe78;
-  uStack_188 = uStack_d4;
-  *(float *)((int)&stack0xfffffe7c + (uint)bVar8 * 0xfffffffe * 4) =
-       afStack_124[(uint)bVar8 * -2 + 0x15];
-  *(float *)(&stack0xfffffe80 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
-       afStack_124[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x16];
-  core_actor_cpp_FUN_00408d70(param_1,puVar9);
+  pCStack_14 = (CDeformableModelInstance *)(param_1 + 1);
+  core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
+            (pCStack_14,(int)param_1[0x67].particle_systems[2].position.z,&CStack_d4);
+  pfVar9 = &stack0xfffffe78;
+  fStack_188 = CStack_d4.x;
+  *(uint *)((int)&stack0xfffffe7c + (uint)bVar8 * 0xfffffffe * 4) =
+       *(uint *)((int)&CStack_d4 + (uint)bVar8 * -8 + 4);
+  *(uint *)(&stack0xfffffe80 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
+       *(uint *)((int)&CStack_d4 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+  core_actor_cpp_FUN_00408d70(param_1,pfVar9);
   fStack_170 = fStack_c8;
-  *(float *)((int)&stack0xfffffe94 + (uint)bVar8 * -8) = afStack_124[(uint)bVar8 * -2 + 0x18];
+  *(float *)((int)&stack0xfffffe94 + (uint)bVar8 * -8) = afStack_c4[(uint)bVar8 * -2];
   afStack_148[(uint)bVar8 * -2 + (uint)bVar8 * -2 + -8] =
-       afStack_124[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x19];
-  core_skeleton_cpp_FUN_00546a90(pCStack_14,param_1[0x67].particle_systems[2].fade_current);
-  puVar9 = &stack0xfffffe84;
-  uStack_17c = uStack_bc;
-  *(float *)((int)&stack0xfffffe88 + (uint)bVar8 * 0xfffffffe * 4) =
-       afStack_124[(uint)bVar8 * -2 + 0x1b];
-  *(float *)(&stack0xfffffe8c + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
-       afStack_124[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x1c];
-  core_actor_cpp_FUN_00408d70(param_1,puVar9);
+       afStack_c4[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
+  core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
+            (pCStack_14,(int)param_1[0x67].particle_systems[2].fade_current,&CStack_bc);
+  pfVar9 = &stack0xfffffe84;
+  fStack_17c = CStack_bc.x;
+  *(uint *)((int)&stack0xfffffe88 + (uint)bVar8 * 0xfffffffe * 4) =
+       *(uint *)((int)&CStack_bc + (uint)bVar8 * -8 + 4);
+  *(uint *)(&stack0xfffffe8c + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
+       *(uint *)((int)&CStack_bc + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+  core_actor_cpp_FUN_00408d70(param_1,pfVar9);
   fStack_38 = fStack_ec;
   afStack_64[(uint)bVar8 * -2 + 0xc] = afStack_124[(uint)bVar8 * -2 + 0xf];
   afStack_64[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0xd] =
@@ -128,16 +132,16 @@ void core_schngeis_cpp_FUN_005a3560(CDemonActor *param_1,float param_2)
   fStack_88 = CStack_164.y * _DAT_005f01ba;
   fStack_84 = CStack_164.z * _DAT_005f01ba;
   fStack_e0 = CStack_164.x * _DAT_005f01ba;
-  afStack_124[(uint)bVar8 * -2 + 0x12] = afStack_124[(uint)bVar8 * -2 + 0x27];
+  afStack_124[(uint)bVar8 * -2 + 0x12] = afStack_ac[(uint)bVar8 * -2 + 9];
   afStack_124[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x13] =
-       afStack_124[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x28];
+       afStack_ac[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 10];
   fStack_98 = fVar4 + fStack_e0;
   fStack_94 = fStack_16c + fStack_dc;
   fStack_90 = fStack_168 + fStack_d8;
   CStack_140.x = fVar4 + fStack_e0;
-  *(float *)((int)&CStack_140 + (uint)bVar8 * -8 + 4) = afStack_124[(uint)bVar8 * -2 + 0x24];
+  *(float *)((int)&CStack_140 + (uint)bVar8 * -8 + 4) = afStack_ac[(uint)bVar8 * -2 + 6];
   *(float *)((int)&CStack_140 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
-       afStack_124[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x25];
+       afStack_ac[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 7];
   fStack_1c = fVar7;
   if (fVar7 <= 0.0) {
     CStack_164.y = 0.0;
@@ -193,9 +197,9 @@ void core_schngeis_cpp_FUN_005a3560(CDemonActor *param_1,float param_2)
     uStack_19c = 0xbf000000;
     core_actor_cpp_FUN_00408cf0(param_1,&stack0xfffffe60);
     CStack_74.x = fStack_b0;
-    *(float *)((int)&CStack_74 + (uint)bVar8 * -8 + 4) = afStack_124[(uint)bVar8 * -2 + 0x1e];
+    *(float *)((int)&CStack_74 + (uint)bVar8 * -8 + 4) = afStack_ac[(uint)bVar8 * -2];
     *(float *)((int)&CStack_74 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
-         afStack_124[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x1f];
+         afStack_ac[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
     uStack_158 = 0;
     uStack_150 = 0x3f000000;
     uStack_154 = 0x3e4ccccd;
@@ -203,12 +207,12 @@ void core_schngeis_cpp_FUN_005a3560(CDemonActor *param_1,float param_2)
               (&uStack_158,
                param_1[6].footstep_sound_code +
                (int)param_1[0x67].particle_systems[2].position.z * 0x30 + -0x24);
-    puVar9 = &uStack_14c;
+    puVar10 = &uStack_14c;
     uStack_14c = afStack_124[2];
     afStack_148[(uint)bVar8 * -2] = afStack_124[(uint)bVar8 * -2 + 3];
     afStack_148[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
          afStack_124[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4];
-    core_actor_cpp_FUN_00408d70(param_1,puVar9);
+    core_actor_cpp_FUN_00408d70(param_1,puVar10);
     iVar5 = 0x4000;
     wind_influence = &CStack_74;
     fVar7 = 1.5;
@@ -251,7 +255,8 @@ void core_schngeis_cpp_FUN_005a3560(CDemonActor *param_1,float param_2)
          fVar4 = (param_1->location).position.z - *(float *)((int)pvVar3 + 0x28),
          fStack_24 = SQRT(fVar4 * fVar4 + fVar7 * fVar7), _DAT_005ff350 < fStack_24)) &&
         (fStack_24 <= _DAT_005ff354)) &&
-       (pCStack_14 = (CDemonActor *)core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,1.0),
+       (pCStack_14 = (CDeformableModelInstance *)
+                     core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,1.0),
        (float)_DAT_005f01ce < (float)pCStack_14)) {
       core_actor_cpp_FUN_00408de0(param_1,(int)param_1[0x62].particle_systems[0].particles + 0x20);
       afStack_f8[0] = (float)uStack_68;
@@ -260,10 +265,10 @@ void core_schngeis_cpp_FUN_005a3560(CDemonActor *param_1,float param_2)
            afStack_64[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
       afStack_f8[1] = 0.0;
       core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(afStack_124 + 0xb);
-      afStack_64[2] = (float)uStack_a4;
-      afStack_64[(uint)bVar8 * -2 + 3] = afStack_124[(uint)bVar8 * -2 + 0x21];
+      afStack_64[2] = afStack_ac[2];
+      afStack_64[(uint)bVar8 * -2 + 3] = afStack_ac[(uint)bVar8 * -2 + 3];
       afStack_64[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4] =
-           afStack_124[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x22];
+           afStack_ac[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4];
       if (ABS(afStack_64[3]) < (float)_DAT_005f01d6) {
         core_muzzle_cpp_FUN_0059d8e0(piStack_20,"LeapAttack");
         return;

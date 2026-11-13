@@ -26,7 +26,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_005695e0
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_0056acc0
 ;   core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_0056ad90
-;   core_skeleton.cpp_FUN_00567620
+;   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00567620
 ;   core_xform.cpp_FUN_005b7c00
 ;   core_xform.cpp_quaternionFromAngleY_FUN_005b7b30
 ;
@@ -55,8 +55,8 @@ section .text
     MOV EDX,dword ptr [ESI + 0x20058]   ; 00589f46
     PUSH EDX                            ; 00589f4c
     PUSH EBX                            ; 00589f4d
-    CALL core_skeleton.cpp_FUN_00567620 ; 00589f4e
-        ;   XREF to: 00567620 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00567620()
+    CALL core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00567620 ; 00589f4e
+        ;   XREF to: 00567620 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00567620(CDeformableModelInstance * this_ptr, int motion_index, float frame_number, int bone_index)
     MOV EAX,[0x02c83600]                ; 00589f53 | DAT_02c83600
     ADD ESI,0x808                       ; 00589f58
     SHL EAX,0x4                         ; 00589f5e

@@ -13,7 +13,7 @@
 ;   undefined4 DAT_006045f8
 ;
 ; Called Functions:
-;   core_fire.cpp_FUN_004a39a0
+;   core_fire.cpp_CFireEffect_createBindEvilToss_FUN_004a39a0
 ;   core_sound.cpp_CSound_playActorSound_FUN_005609d0
 ;   core_weapon.cpp_CWeapon_fire_FUN_0057b880
 ;
@@ -41,8 +41,8 @@ section .text
     PUSH EDI                            ; 0040f862
     MOV ECX,dword ptr [0x005fc5a0]      ; 0040f863 | DAT_005fc5a0
     PUSH ECX                            ; 0040f869
-    CALL core_fire.cpp_FUN_004a39a0     ; 0040f86a
-        ;   XREF to: 004a39a0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a39a0()
+    CALL core_fire.cpp_CFireEffect_createBindEvilToss_FUN_004a39a0 ; 0040f86a
+        ;   XREF to: 004a39a0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createBindEvilToss_FUN_004a39a0(CFireEffect * this_ptr, CVector3f * position, UOrientationVector * orientation, CVector3f * velocity)
     ADD ESP,0x10                        ; 0040f86f
     PUSH EDI                            ; 0040f872
     PUSH 0x5b633b                       ; 0040f873 | = "wp_bindevil_throw.wav"

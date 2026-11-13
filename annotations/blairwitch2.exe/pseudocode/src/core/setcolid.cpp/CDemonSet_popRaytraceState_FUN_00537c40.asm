@@ -8,7 +8,7 @@
 ;
 ; XREF[3]:
 ;   core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408c30 at 00408cd9
-;   core_fire.cpp_FUN_0049db20 at 0049e0f0
+;   core_fire.cpp_CFireEffect_traceLaser_FUN_0049db20 at 0049e0f0
 ;   core_lightgun.cpp_CLightGun_fire_FUN_004e2e70 at 004e3090
 ;
 ; Referenced Globals:

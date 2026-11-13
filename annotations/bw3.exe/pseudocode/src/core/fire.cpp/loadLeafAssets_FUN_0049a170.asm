@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_loadLeafAssets_FUN_0049a170(void)
+; void __cdecl core_fire_cpp_loadLeafAssets_FUN_0049a170(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x6c]:1  local_6c
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_004a24a0 at 004a2539
+;   core_fire.cpp_CFireEffect_loadAssets_FUN_004a24a0 at 004a2539
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_leaf_d_kfm_005c05a8

@@ -13,6 +13,6 @@ void __cdecl core_storm_cpp_CStorm_setup_FUN_00568c10(CStorm *this_ptr)
   sound_sndmain_cpp_preloadSfx_FUN_00556230("wp_nomana.wav");
   sound_sndmain_cpp_preloadSfx_FUN_00556230("wp_storm.wav");
   core_weather_cpp_FUN_0057d420(0x02D0C1A0,5);
-  core_fire_cpp_FUN_004a4340(0x01C73654,3);
+  core_fire_cpp_CFireEffect_preloadTossAssets_FUN_004a4340(0x01C73654,3);
   return;
 }

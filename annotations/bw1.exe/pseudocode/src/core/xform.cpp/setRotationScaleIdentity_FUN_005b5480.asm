@@ -7,7 +7,7 @@
 ; CMatrix3x4f *    Stack[0x4]:4   matrix
 ;
 ; XREF[1]:
-;   core_skeleton.cpp_FUN_00568e30 at 00568f53
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_00568e30 at 00568f53
 ;
 ; *****************************************************************************
 

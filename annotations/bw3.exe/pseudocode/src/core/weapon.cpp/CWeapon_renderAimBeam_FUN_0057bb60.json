@@ -2,22 +2,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 150,
-    "complexity_score": 210,
+    "complexity_score": 633,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 80,
-    "suspect_count": 10,
+    "pseudocode_lines": 113,
+    "suspect_count": 47,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "raw_address_constant",
       "stack_alignment_array",
+      "stack_param",
       "stack_ref",
       "suspect_float",
       "undefined_data",
+      "unknown_field",
       "unrolled_memcpy"
     ],
-    "total_lines": 230
+    "total_lines": 263
   },
   "cross_references": [
     {
@@ -57,7 +61,7 @@
     {
       "addr": "004a2e20",
       "is_variadic": false,
-      "name": "core_fire.cpp_FUN_004a2e20"
+      "name": "core_fire.cpp_CFireEffect_traceLaser_FUN_004a2e20"
     },
     {
       "addr": "004a2de0",
@@ -270,15 +274,23 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 9,
+      "line": 10,
       "match": "afStackY_1044",
       "severity": "moderate",
       "text": "float afStackY_1044 [971];",
       "type": "stack_alignment_array"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_fffffef4",
+      "severity": "moderate",
+      "text": "byte in_stack_fffffef4 [76];",
+      "type": "stack_param"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 34,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc);",
@@ -286,67 +298,355 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 68,
+      "line": 73,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "SStack_b4.local_origin.x = 1.4013e-45;",
       "type": "suspect_float"
     },
     {
+      "description": "Likely misinterpreted integer as float",
+      "line": 74,
+      "match": "8.05741e-39",
+      "severity": "mild",
+      "text": "fVar10 = 8.05741e-39;",
+      "type": "suspect_float"
+    },
+    {
       "description": "Direct stack address reference",
-      "line": 71,
+      "line": 78,
       "match": "&stack0xfffffef4",
       "severity": "moderate",
       "text": "pfVar3 = (float *)&stack0xfffffef4;",
       "type": "stack_ref"
     },
     {
-      "description": "Raw hex address 0x57bbcd assigned to bare local `uStack_c0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_c0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 28,
-      "match": "0x57bbcd",
+      "description": "Unresolved stack parameter",
+      "line": 85,
+      "match": "in_stack_fffffef4",
       "severity": "moderate",
-      "text": "uStack_c0 = 0x57bbcd;",
-      "type": "raw_address_constant"
+      "text": "auVar5 = in_stack_fffffef4._12_12_;",
+      "type": "stack_param"
     },
     {
-      "description": "Raw hex address 0x57bbf0 assigned to bare local `uStack_c0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_c0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 34,
-      "match": "0x57bbf0",
-      "severity": "moderate",
-      "text": "uStack_c0 = 0x57bbf0;",
-      "type": "raw_address_constant"
+      "description": "Unknown/mangled field access",
+      "line": 85,
+      "match": "._12_12_",
+      "severity": "mild",
+      "text": "auVar5 = in_stack_fffffef4._12_12_;",
+      "type": "unknown_field"
     },
     {
-      "description": "Raw hex address 0x57bc30 assigned to bare local `uStack_c0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_c0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "description": "Unresolved stack parameter",
+      "line": 86,
+      "match": "in_stack_fffffef4",
+      "severity": "moderate",
+      "text": "auVar6 = in_stack_fffffef4._32_12_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 86,
+      "match": "._32_12_",
+      "severity": "mild",
+      "text": "auVar6 = in_stack_fffffef4._32_12_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 87,
+      "match": "in_stack_fffffef4",
+      "severity": "moderate",
+      "text": "auVar7 = in_stack_fffffef4._44_12_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 87,
+      "match": "._44_12_",
+      "severity": "mild",
+      "text": "auVar7 = in_stack_fffffef4._44_12_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 88,
+      "match": "in_stack_fffffef4",
+      "severity": "moderate",
+      "text": "auVar8 = in_stack_fffffef4._56_12_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 88,
+      "match": "._56_12_",
+      "severity": "mild",
+      "text": "auVar8 = in_stack_fffffef4._56_12_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 89,
+      "match": "in_stack_fffffef4",
+      "severity": "moderate",
+      "text": "laser_info.intensity = (float)in_stack_fffffef4._0_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 89,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "laser_info.intensity = (float)in_stack_fffffef4._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 90,
+      "match": "in_stack_fffffef4",
+      "severity": "moderate",
+      "text": "laser_info.beam_width = (float)in_stack_fffffef4._4_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 90,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "laser_info.beam_width = (float)in_stack_fffffef4._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 91,
+      "match": "in_stack_fffffef4",
+      "severity": "moderate",
+      "text": "laser_info.laser_type = in_stack_fffffef4._8_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 91,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "laser_info.laser_type = in_stack_fffffef4._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 92,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "laser_info.color.r = auVar5._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 93,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "laser_info.color.g = auVar5._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 94,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "laser_info.color.b = auVar5._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 95,
+      "match": "in_stack_fffffef4",
+      "severity": "moderate",
+      "text": "laser_info.is_hero_weapon = in_stack_fffffef4._24_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 95,
+      "match": "._24_4_",
+      "severity": "mild",
+      "text": "laser_info.is_hero_weapon = in_stack_fffffef4._24_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 96,
+      "match": "in_stack_fffffef4",
+      "severity": "moderate",
+      "text": "laser_info.is_damaging = in_stack_fffffef4._28_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 96,
+      "match": "._28_4_",
+      "severity": "mild",
+      "text": "laser_info.is_damaging = in_stack_fffffef4._28_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 97,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "laser_info.local_origin.x = (float)auVar6._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 98,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "laser_info.local_origin.y = (float)auVar6._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 99,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "laser_info.local_origin.z = (float)auVar6._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 100,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "laser_info.local_hit_position.x = (float)auVar7._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 101,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "laser_info.local_hit_position.y = (float)auVar7._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 102,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "laser_info.local_hit_position.z = (float)auVar7._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 103,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "laser_info.local_normal.x = (float)auVar8._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 104,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "laser_info.local_normal.y = (float)auVar8._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 105,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "laser_info.local_normal.z = (float)auVar8._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 106,
+      "match": "in_stack_fffffef4",
+      "severity": "moderate",
+      "text": "laser_info.incidence_angle = (float)in_stack_fffffef4._68_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 106,
+      "match": "._68_4_",
+      "severity": "mild",
+      "text": "laser_info.incidence_angle = (float)in_stack_fffffef4._68_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 107,
+      "match": "in_stack_fffffef4",
+      "severity": "moderate",
+      "text": "laser_info.reflectivity = (float)in_stack_fffffef4._72_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 107,
+      "match": "._72_4_",
+      "severity": "mild",
+      "text": "laser_info.reflectivity = (float)in_stack_fffffef4._72_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Pointer value `&CStack_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 43,
-      "match": "0x57bc30",
+      "match": "(int)&CStack_38",
       "severity": "moderate",
-      "text": "uStack_c0 = 0x57bc30;",
-      "type": "raw_address_constant"
+      "text": "*(float *)((int)&CStack_38 + (uint)bVar4 * -8 + 4) = afStack_58[(uint)bVar4 * -2 + 3];",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x57bc55 assigned to bare local `uStack_c0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_c0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 51,
+      "description": "Pointer value `&CStack_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 44,
+      "match": "(int)&CStack_38",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_38 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Raw hex address 0x57bc55 assigned to bare local `uVar9`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar9` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 56,
       "match": "0x57bc55",
       "severity": "moderate",
-      "text": "uStack_c0 = 0x57bc55;",
+      "text": "uVar9 = 0x57bc55;",
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex address 0x57bc6f assigned to bare local `uStack_c0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_c0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 54,
+      "description": "Raw hex address 0x57bc6f assigned to bare local `uVar9`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar9` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 59,
       "match": "0x57bc6f",
       "severity": "moderate",
-      "text": "uStack_c0 = 0x57bc6f;",
+      "text": "uVar9 = 0x57bc6f;",
       "type": "raw_address_constant"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 72,
+      "line": 79,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0x15; iVar1 != 0; iVar1 = iVar1 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 43,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_38 + (uint)bVar4 * -8 + 4) = afStack_58[(uint)bVar4 * -2 + 3];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 44,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_38 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

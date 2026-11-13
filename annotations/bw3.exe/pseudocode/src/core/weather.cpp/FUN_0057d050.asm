@@ -8,8 +8,8 @@
 ;
 ; XREF[7]:
 ;   core_event.cpp_FUN_0048c2e0 at 004909aa
-;   core_fire.cpp_FUN_004a0480 at 004a04fe
-;   core_fire.cpp_FUN_004a0570 at 004a05b0
+;   core_fire.cpp_CStormEffect_activate_FUN_004a0480 at 004a04fe
+;   core_fire.cpp_CStormEffect_process_FUN_004a0570 at 004a05b0
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004bb100 at 004bcd9f
 ;   core_hino.cpp_CHino_process_FUN_0059b960 at 0059c088
 ;   core_set.cpp_CDemonSet_initScene_FUN_00534420 at 0053463e

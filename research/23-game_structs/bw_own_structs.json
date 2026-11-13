@@ -11729,6 +11729,35 @@
       "basis": "as nocedit"
      }
     ]
+   },
+   {
+    "name": "CStormEffect",
+    "size": 12,
+    "base": null,
+    "basis": "BW3-only pool of 4: CFireEffect_createStormEffect 004a3fd0 steps 0xc from 0x1d0ce80, its counter at 0x1d0ce7c wrapping at 4; written by CStormEffect_activate 004a0480, read by CStormEffect_process 004a0570",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "time_remaining",
+      "type": "float",
+      "len": 4,
+      "basis": "activate stores 5.0 (0x40a00000) at 004a0532; process subtracts delta_time and tests against 0"
+     },
+     {
+      "offset": "0x4",
+      "name": "saved_weather_type",
+      "type": "int",
+      "len": 4,
+      "basis": "activate saves the weather's current type here (004a0490) before setting weather 5; process restores it on expiry unless it is 5"
+     },
+     {
+      "offset": "0x8",
+      "name": "sfx_handle",
+      "type": "uint",
+      "len": 4,
+      "basis": "activate stores playActorSound(\"wp_storm.wav\")'s handle (004a0540); process kills it and zeroes the slot"
+     }
+    ]
    }
   ]
  }

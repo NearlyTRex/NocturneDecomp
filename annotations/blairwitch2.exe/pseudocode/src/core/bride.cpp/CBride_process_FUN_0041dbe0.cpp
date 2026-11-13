@@ -39,7 +39,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041dbe0(CBride *this_ptr,float d
   float afStack_170 [2];
   CVector3f CStack_168;
   CVector3f CStack_15c;
-  uint uStack_150;
+  float fStack_150;
   float afStack_14c [5];
   float fStack_138;
   CVector3f CStack_12c;
@@ -49,8 +49,9 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041dbe0(CBride *this_ptr,float d
   float fStack_fc;
   float fStack_f0;
   CVector3f CStack_e4;
-  uint uStack_d8;
-  float afStack_d4 [5];
+  CVector3f CStack_d8;
+  float fStack_cc;
+  float afStack_c8 [2];
   CVector3f CStack_c0;
   float fStack_b4;
   float afStack_b0 [2];
@@ -354,18 +355,19 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041dbe0(CBride *this_ptr,float d
       }
     }
     else if ((uVar4 == 0xe) && ((this_ptr->base).pool_me == 0)) {
-      core_skeleton_cpp_FUN_005469a0(pCVar14,0);
-      puVar9 = &uStack_150;
-      uStack_150 = uStack_d8;
-      afStack_14c[(uint)bVar6 * -2] = afStack_d4[(uint)bVar6 * -2];
+      core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
+                (pCVar14,0,&CStack_d8);
+      pfVar10 = &fStack_150;
+      fStack_150 = CStack_d8.x;
+      afStack_14c[(uint)bVar6 * -2] = *(float *)((int)&CStack_d8 + (uint)bVar6 * -8 + 4);
       afStack_14c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
-           afStack_d4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-      core_actor_cpp_FUN_00408d70(this_ptr,puVar9);
+           *(float *)((int)&CStack_d8 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+      core_actor_cpp_FUN_00408d70(this_ptr,pfVar10);
       blood_type = BLOOD_TYPE_RED;
-      CStack_15c.x = afStack_d4[2];
-      *(float *)((int)&CStack_15c + (uint)bVar6 * -8 + 4) = afStack_d4[(uint)bVar6 * -2 + 3];
+      CStack_15c.x = fStack_cc;
+      *(float *)((int)&CStack_15c + (uint)bVar6 * -8 + 4) = afStack_c8[(uint)bVar6 * -2];
       *(float *)((int)&CStack_15c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-           afStack_d4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
+           afStack_c8[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
       core_gore_cpp_CGore_createBloodPool_FUN_004c9ad0(g_CGorePtr,&CStack_15c,blood_type);
       (*((this_ptr->base).base.base.vtable._ub)->spawnFlies)((CDemonActor *)this_ptr,0x32,25.0);
       (this_ptr->base).pool_me = 1;

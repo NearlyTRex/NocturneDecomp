@@ -497,8 +497,8 @@ section .text
     PUSH EAX                            ; 005a5b30
     LEA ESI,[ESP + 0x148]               ; 005a5b31
     LEA EDI,[ESP + 0xe8]                ; 005a5b38
-    CALL core_skeleton.cpp_FUN_0056ae70 ; 005a5b3f
-        ;   XREF to: 0056ae70 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0056ae70()
+    CALL core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0056ae70 ; 005a5b3f
+        ;   XREF to: 0056ae70 (UNCONDITIONAL_CALL)  ; CBoundingBox3D * core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0056ae70(CDeformableModelInstance * this_ptr, CBoundingBox3D * output_bbox)
     MOV ECX,0x6                         ; 005a5b44
     LEA ESI,[ESP + 0x148]               ; 005a5b49
     ADD ESP,0x4                         ; 005a5b50
@@ -740,8 +740,8 @@ section .text
     PUSH ESI                            ; 005a5df3
     LEA ESI,[ESP + 0x178]               ; 005a5df4
     LEA EDI,[ESP + 0x160]               ; 005a5dfb
-    CALL core_skeleton.cpp_FUN_0056ae70 ; 005a5e02
-        ;   XREF to: 0056ae70 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0056ae70()
+    CALL core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0056ae70 ; 005a5e02
+        ;   XREF to: 0056ae70 (UNCONDITIONAL_CALL)  ; CBoundingBox3D * core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0056ae70(CDeformableModelInstance * this_ptr, CBoundingBox3D * output_bbox)
     MOV ECX,0x6                         ; 005a5e07
     LEA ESI,[ESP + 0x178]               ; 005a5e0c
     ADD ESP,0x4                         ; 005a5e13
@@ -775,8 +775,8 @@ section .text
     PUSH EAX                            ; 005a5e68
     LEA ESI,[ESP + 0xa0]                ; 005a5e69
     LEA EDI,[ESP + 0x100]               ; 005a5e70
-    CALL core_skeleton.cpp_FUN_0056ae70 ; 005a5e77
-        ;   XREF to: 0056ae70 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0056ae70()
+    CALL core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0056ae70 ; 005a5e77
+        ;   XREF to: 0056ae70 (UNCONDITIONAL_CALL)  ; CBoundingBox3D * core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0056ae70(CDeformableModelInstance * this_ptr, CBoundingBox3D * output_bbox)
     MOV ECX,0x6                         ; 005a5e7c
     LEA ESI,[ESP + 0xa0]                ; 005a5e81
     ADD ESP,0x4                         ; 005a5e88
@@ -908,8 +908,8 @@ section .text
     PUSH ESI                            ; 005a6013
     LEA ESI,[ESP + 0x190]               ; 005a6014
     LEA EDI,[ESP + 0xb8]                ; 005a601b
-    CALL core_skeleton.cpp_FUN_0056ae70 ; 005a6022
-        ;   XREF to: 0056ae70 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0056ae70()
+    CALL core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0056ae70 ; 005a6022
+        ;   XREF to: 0056ae70 (UNCONDITIONAL_CALL)  ; CBoundingBox3D * core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0056ae70(CDeformableModelInstance * this_ptr, CBoundingBox3D * output_bbox)
     MOV ECX,0x6                         ; 005a6027
     LEA ESI,[ESP + 0x190]               ; 005a602c
     ADD ESP,0x4                         ; 005a6033
@@ -943,8 +943,8 @@ section .text
     PUSH EAX                            ; 005a6088
     LEA ESI,[ESP + 0x118]               ; 005a6089
     LEA EDI,[ESP + 0x130]               ; 005a6090
-    CALL core_skeleton.cpp_FUN_0056ae70 ; 005a6097
-        ;   XREF to: 0056ae70 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0056ae70()
+    CALL core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0056ae70 ; 005a6097
+        ;   XREF to: 0056ae70 (UNCONDITIONAL_CALL)  ; CBoundingBox3D * core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0056ae70(CDeformableModelInstance * this_ptr, CBoundingBox3D * output_bbox)
     MOV ECX,0x6                         ; 005a609c
     LEA ESI,[ESP + 0x118]               ; 005a60a1
     ADD ESP,0x4                         ; 005a60a8
@@ -1016,8 +1016,8 @@ section .text
     PUSH ECX                            ; 005a616a
     LEA ESI,[ESP + 0xd0]                ; 005a616b
     LEA EDI,[ESP + 0x88]                ; 005a6172
-    CALL core_skeleton.cpp_FUN_0056ae70 ; 005a6179
-        ;   XREF to: 0056ae70 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0056ae70()
+    CALL core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0056ae70 ; 005a6179
+        ;   XREF to: 0056ae70 (UNCONDITIONAL_CALL)  ; CBoundingBox3D * core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0056ae70(CDeformableModelInstance * this_ptr, CBoundingBox3D * output_bbox)
     MOV ECX,0x6                         ; 005a617e
     LEA ESI,[ESP + 0xd0]                ; 005a6183
     ADD ESP,0x4                         ; 005a618a

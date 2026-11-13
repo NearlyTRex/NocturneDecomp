@@ -1,0 +1,126 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 14,
+    "complexity_score": 31,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 6,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 20
+  },
+  "cross_references": [
+    {
+      "addr": "004fc350",
+      "from_addr": "004fc37a",
+      "name": "core_mission.cpp_CDemonMission_prepareAllActors_FUN_004fc350",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00549180",
+    "address_range": [
+      [
+        "00549180",
+        "005491a8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_clearModelAndSkeletonInUseFlags_FUN_00549180",
+    "signature": "void __cdecl core_skeleton_cpp_clearModelAndSkeletonInUseFlags_FUN_00549180(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b77c0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005b77c0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004fc37a",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_prepareAllActors_FUN_004fc350",
+        "estimated_params": 0,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.090909090909091,
+    "instruction_count": 11,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 6,
+      "INT_ADD": 3,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 8,
+      "LOAD": 1,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 45
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0056b830",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005503c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_02628554",
+      "severity": "mild",
+      "text": "memset(&DAT_02628554,0,0xa0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 6,
+      "match": "DAT_02177ff4",
+      "severity": "mild",
+      "text": "memset(&DAT_02177ff4,0,0x100);",
+      "type": "undefined_data"
+    }
+  ]
+}

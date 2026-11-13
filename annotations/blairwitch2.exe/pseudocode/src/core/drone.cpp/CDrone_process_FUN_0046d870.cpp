@@ -52,9 +52,10 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0046d870(CDrone *this_ptr,float d
   float fStack_60;
   CVector3f CStack_54;
   uint uStack_48;
-  float afStack_44 [5];
-  uint uStack_30;
-  float fStack_24;
+  float afStack_44 [2];
+  CVector3f CStack_3c;
+  float fStack_30;
+  float afStack_2c [3];
   CMatrix3x4f *pCStack_20;
   float fStack_1c;
   int iStack_18;
@@ -72,11 +73,11 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0046d870(CDrone *this_ptr,float d
        (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
-  fStack_24 = delta_time * (this_ptr->base).speed;
+  afStack_2c[2] = delta_time * (this_ptr->base).speed;
   this_ptr_00 = &(this_ptr->base).base.model;
-  while (0.0 < fStack_24) {
+  while (0.0 < afStack_2c[2]) {
     iVar4 = core_motion_cpp_CMotionController_advance_FUN_005030c0
-                      (&this_ptr_00->base,afStack_44 + 8);
+                      (&this_ptr_00->base,afStack_2c + 2);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042aa00((CCharacter *)this_ptr,iVar4);
   }
   (this_ptr->base).base.walk_step_speed =
@@ -185,11 +186,12 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0046d870(CDrone *this_ptr,float d
     case 8:
       if (((this_ptr->base).pool_me == 0) &&
          ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
-        core_skeleton_cpp_FUN_005469a0(this_ptr_00);
-        uStack_30 = afStack_44[2];
-        afStack_44[(uint)bVar8 * -2 + 6] = afStack_44[(uint)bVar8 * -2 + 3];
-        afStack_44[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 7] =
-             afStack_44[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4];
+        core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
+                  (this_ptr_00,0,&CStack_3c);
+        fStack_30 = CStack_3c.x;
+        afStack_2c[(uint)bVar8 * -2] = *(float *)((int)&CStack_3c + (uint)bVar8 * -8 + 4);
+        afStack_2c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
+             *(float *)((int)&CStack_3c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
         core_actor_cpp_FUN_00408d70(this_ptr);
         pCVar9 = &CStack_54;
         blood_type = BLOOD_TYPE_ICHOR;

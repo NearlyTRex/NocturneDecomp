@@ -33,7 +33,7 @@
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004d3250
 ;   core_hero.cpp_FUN_004d3210
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
-;   core_skeleton.cpp_FUN_0054dbd0
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
 ;   engine_console.cpp_CConsole_printf_FUN_00441ff0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0047cf40
 ;
@@ -474,15 +474,15 @@ section .text
     PUSH ESI                            ; 00525ed8
     PUSH EDI                            ; 00525ed9
     LEA ESI,[ESP + 0x44]                ; 00525eda
-    CALL core_skeleton.cpp_FUN_0054dbd0 ; 00525ede
-        ;   XREF to: 0054dbd0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054dbd0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0 ; 00525ede
+        ;   XREF to: 0054dbd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 00525ee3
     MOV EBP,dword ptr [0x01ed36ec]      ; 00525ee6 | DAT_01ed36ec
     PUSH EBP                            ; 00525eec
     PUSH EDI                            ; 00525eed
     LEA ESI,[ESP + 0xb0]                ; 00525eee
-    CALL core_skeleton.cpp_FUN_0054dbd0 ; 00525ef5
-        ;   XREF to: 0054dbd0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054dbd0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0 ; 00525ef5
+        ;   XREF to: 0054dbd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 00525efa
     PUSH 0x1                            ; 00525efd
     PUSH 0x20                           ; 00525eff

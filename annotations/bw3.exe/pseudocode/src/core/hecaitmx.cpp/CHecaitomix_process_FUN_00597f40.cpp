@@ -23,13 +23,13 @@ void __cdecl core_hecaitmx_cpp_CHecaitomix_process_FUN_00597f40(CHecaitomix *thi
   float afStackY_1080 [1012];
   CVector3f *pCVar8;
   float fVar9;
-  uint *puVar10;
+  float *pfVar10;
   float max_distance;
   CVector3f CStack_98;
   float fStack_8c;
   float afStack_88 [2];
   CVector3f CStack_80;
-  uint uStack_74;
+  float fStack_74;
   float afStack_70 [4];
   float fStack_60;
   float fStack_5c;
@@ -41,7 +41,7 @@ void __cdecl core_hecaitmx_cpp_CHecaitomix_process_FUN_00597f40(CHecaitomix *thi
   float fStack_44;
   float fStack_40;
   float fStack_3c;
-  uint uStack_38;
+  CVector3f aCStack_38 [2];
   double dStack_20;
   float fStack_18;
   float fStack_14;
@@ -176,13 +176,14 @@ LAB_00598246:
   case 7:
     if (((this_ptr->base).pool_me == 0) &&
        ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
-      core_skeleton_cpp_FUN_0054dbd0(&(this_ptr->base).base.model,0);
-      puVar10 = &uStack_74;
-      uStack_74 = uStack_38;
-      afStack_70[(uint)bVar7 * -2] = afStack_70[(uint)bVar7 * -2 + 0xf];
+      core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
+                (&(this_ptr->base).base.model,0,aCStack_38);
+      pfVar10 = &fStack_74;
+      fStack_74 = aCStack_38[0].x;
+      afStack_70[(uint)bVar7 * -2] = *(float *)((int)aCStack_38 + (uint)bVar7 * -8 + 4);
       afStack_70[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-           afStack_70[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x10];
-      core_actor_cpp_FUN_00408b80(this_ptr,puVar10);
+           *(float *)((int)aCStack_38 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+      core_actor_cpp_FUN_00408b80(this_ptr,pfVar10);
       (this_ptr->base).pool_me = 1;
     }
     goto switchD_00598471_caseD_1;

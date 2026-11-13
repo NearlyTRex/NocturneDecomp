@@ -12,15 +12,15 @@ void __cdecl core_fire_cpp_CFireEffect_createGlassParticle_FUN_004a2780(CFireEff
 
 {
   int iVar1;
-  CGlassParticle *pCVar2;
+  CGlassParticle *this_ptr_00;
   
   iVar1 = _DAT_01cbc0ec + 1;
-  pCVar2 = CGlassParticle_ARRAY_01cbc0f0 + _DAT_01cbc0ec;
+  this_ptr_00 = CGlassParticle_ARRAY_01cbc0f0 + _DAT_01cbc0ec;
   _DAT_01cbc0ec = iVar1;
   if (999 < iVar1) {
     _DAT_01cbc0ec = 0;
   }
-  core_fire_cpp_FUN_0049a650
-            (pCVar2,triangle_vertices,uv_u_per_vertex,uv_v_per_vertex,texture,lifetime);
+  core_fire_cpp_CGlassParticle_init_FUN_0049a650
+            (this_ptr_00,triangle_vertices,uv_u_per_vertex,uv_v_per_vertex,texture,lifetime);
   return;
 }

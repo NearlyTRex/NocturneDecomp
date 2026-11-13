@@ -32,12 +32,12 @@
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0045ab30
 ;   core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0045aae0
+;   core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0
-;   core_fire.cpp_FUN_004a3c50
 ;   core_set.cpp_CDemonSet_addCoronaGlobe_FUN_005372f0
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_00548090
-;   core_skeleton.cpp_FUN_0054dcc0
 ;   core_sound.cpp_CSound_playActorSound_FUN_005609d0
 ;   core_weapon.cpp_CWeapon_process_FUN_0057b160
 ;   crt_math.c_round_FUN_005a3120
@@ -574,8 +574,8 @@ section .text
     PUSH ESI                            ; 004e27ea
     LEA ESI,[ESP + 0x5cc]               ; 004e27eb
     LEA EDI,[ESP + 0xf8]                ; 004e27f2
-    CALL core_skeleton.cpp_FUN_0054dcc0 ; 004e27f9
-        ;   XREF to: 0054dcc0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054dcc0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0 ; 004e27f9
+        ;   XREF to: 0054dcc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 004e27fe
     LEA EAX,[ESP + 0xf0]                ; 004e2801
     LEA ESI,[ESP + 0x5c4]               ; 004e2808
@@ -636,8 +636,8 @@ section .text
     PUSH ESI                            ; 004e28ec
     MOV EDX,dword ptr [0x005fc5a0]      ; 004e28ed | DAT_005fc5a0
     PUSH EDX                            ; 004e28f3
-    CALL core_fire.cpp_FUN_004a3c50     ; 004e28f4
-        ;   XREF to: 004a3c50 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3c50()
+    CALL core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50 ; 004e28f4
+        ;   XREF to: 004a3c50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50(CFireEffect * this_ptr, CVector3f * start_position, CVector3f * end_position, int enable_camera_shake, ...)
     ADD ESP,0x24                        ; 004e28f9
     PUSH ESI                            ; 004e28fc
     PUSH 0x5c6a64                       ; 004e28fd
@@ -807,8 +807,8 @@ section .text
     PUSH EAX                            ; 004e2d26
     MOV ESI,dword ptr [0x005fc5a0]      ; 004e2d27 | DAT_005fc5a0
     PUSH ESI                            ; 004e2d2d
-    CALL core_fire.cpp_FUN_004a3c50     ; 004e2d2e
-        ;   XREF to: 004a3c50 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3c50()
+    CALL core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50 ; 004e2d2e
+        ;   XREF to: 004a3c50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50(CFireEffect * this_ptr, CVector3f * start_position, CVector3f * end_position, int enable_camera_shake, ...)
     MOV EAX,dword ptr [EBX + 0x5c0]     ; 004e2d33
     ADD ESP,0x24                        ; 004e2d39
     DEC EAX                             ; 004e2d3c
@@ -832,8 +832,8 @@ section .text
     PUSH EAX                            ; 004e2ee7
     MOV EDI,dword ptr [0x005fc5a0]      ; 004e2ee8 | DAT_005fc5a0
     PUSH EDI                            ; 004e2eee
-    CALL core_fire.cpp_FUN_004a3c50     ; 004e2eef
-        ;   XREF to: 004a3c50 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3c50()
+    CALL core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50 ; 004e2eef
+        ;   XREF to: 004a3c50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50(CFireEffect * this_ptr, CVector3f * start_position, CVector3f * end_position, int enable_camera_shake, ...)
     ADD ESP,0x24                        ; 004e2ef4
     MOV ESP,EBP                         ; 004e2ef7
     POP EBP                             ; 004e2ef9

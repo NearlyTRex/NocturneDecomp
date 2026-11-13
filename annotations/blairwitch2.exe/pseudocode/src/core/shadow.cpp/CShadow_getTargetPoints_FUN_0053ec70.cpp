@@ -10,24 +10,23 @@ uint __cdecl core_shadow_cpp_CShadow_getTargetPoints_FUN_0053ec70(CShadow *this_
 
 {
   byte bVar1;
-  uint auStackY_100c [1016];
-  uint uStack_24;
-  uint uStack_18;
-  uint uStack_14;
-  uint uStack_10;
+  float afStackY_100c [1016];
+  CVector3f CStack_24;
+  float fStack_18;
+  uint auStack_14 [2];
   
   bVar1 = 0;
-  core_skeleton_cpp_FUN_00546a90(&(this_ptr->base).base.model,this_ptr->bone_indices[0]);
-  uStack_18 = uStack_24;
-  *(uint *)((int)&stack0xffffffec + (uint)bVar1 * -8) =
-       *(uint *)(&stack0xffffffe0 + (uint)bVar1 * -8);
-  *(uint *)((int)&stack0xfffffff0 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-       *(uint *)(&stack0xffffffe4 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-  if (param_2 == &stack0xffffffe8) {
+  core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
+            (&(this_ptr->base).base.model,this_ptr->bone_indices[0],&CStack_24);
+  fStack_18 = CStack_24.x;
+  auStack_14[(uint)bVar1 * -2] = *(uint *)((int)&CStack_24 + (uint)bVar1 * -8 + 4);
+  auStack_14[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
+       *(uint *)((int)&CStack_24 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
+  if ((float *)param_2 == &fStack_18) {
     return 1;
   }
-  *param_2 = uStack_18;
-  param_2[1] = uStack_14;
-  param_2[2] = uStack_10;
+  *param_2 = fStack_18;
+  param_2[1] = auStack_14[0];
+  param_2[2] = auStack_14[1];
   return 1;
 }

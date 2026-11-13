@@ -78,7 +78,7 @@ void __cdecl core_game_cpp_CGame_process_FUN_004bf4b0(CGame *this_ptr)
   if (g_CGamePtr->profile_mode == 1) {
     _DAT_01d22c98 = wincore_winrun_cpp_getTime_FUN_005806a0();
   }
-  core_fire_cpp_FUN_004a1760();
+  core_fire_cpp_CFireEffect_process_FUN_004a1760(0x01C73654);
   if (g_CGamePtr->profile_mode == 1) {
     wincore_winrun_cpp_getTime_FUN_005806a0();
     engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"G%s : %3.2f ms\n" + 1);

@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 418,
-    "complexity_score": 480,
+    "complexity_score": 482,
     "cross_reference_count": 4,
     "function_call_count": 18,
     "global_count": 46,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 185,
+    "pseudocode_lines": 187,
     "suspect_count": 28,
     "suspect_types": [
       "pointer_cast",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 603
+    "total_lines": 605
   },
   "cross_references": [
     {
@@ -62,9 +62,19 @@
       "name": "core_fire.cpp_CBulletHole_render_FUN_00497610"
     },
     {
+      "addr": "004975a0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CBulletHole_setupRenderState_FUN_004975a0"
+    },
+    {
       "addr": "0049ad20",
       "is_variadic": false,
       "name": "core_fire.cpp_CBulletTrail_render_FUN_0049ad20"
+    },
+    {
+      "addr": "0049c8e0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CExplosion_render_FUN_0049c8e0"
     },
     {
       "addr": "004995a0",
@@ -85,6 +95,11 @@
       "addr": "0049b1d0",
       "is_variadic": false,
       "name": "core_fire.cpp_CLaserBeam_render_FUN_0049b1d0"
+    },
+    {
+      "addr": "0049f520",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CLightningBolt_render_FUN_0049f520"
     },
     {
       "addr": "0049a480",
@@ -112,29 +127,14 @@
       "name": "core_fire.cpp_CStake_render_FUN_00497dc0"
     },
     {
+      "addr": "0049d500",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CToss_render_FUN_0049d500"
+    },
+    {
       "addr": "004a0680",
       "is_variadic": false,
       "name": "core_fire.cpp_CTrail_render_FUN_004a0680"
-    },
-    {
-      "addr": "004975a0",
-      "is_variadic": false,
-      "name": "core_fire.cpp_FUN_004975a0"
-    },
-    {
-      "addr": "0049c8e0",
-      "is_variadic": false,
-      "name": "core_fire.cpp_FUN_0049c8e0"
-    },
-    {
-      "addr": "0049d500",
-      "is_variadic": false,
-      "name": "core_fire.cpp_FUN_0049d500"
-    },
-    {
-      "addr": "0049f520",
-      "is_variadic": false,
-      "name": "core_fire.cpp_FUN_0049f520"
     },
     {
       "addr": "005375c0",
@@ -608,7 +608,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 33,
       "match": "(int *)((int)g_StakePool",
       "severity": "moderate",
       "text": "if (*(int *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c) == 0) {",
@@ -616,7 +616,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 35,
       "match": "(CStake *)((int)g_StakePool",
       "severity": "moderate",
       "text": "((CStake *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c));",
@@ -624,7 +624,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 47,
       "match": "DAT_01cf3b84",
       "severity": "mild",
       "text": "} while (this_ptr_00 != (CRock *)&DAT_01cf3b84);",
@@ -632,7 +632,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 54,
       "match": "DAT_01cf5088",
       "severity": "mild",
       "text": "} while (this_ptr_01 != (CLeaf *)&DAT_01cf5088);",
@@ -640,7 +640,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 61,
       "match": "DAT_01cbb9b8",
       "severity": "mild",
       "text": "} while (pCVar2 != (CFirefly *)&DAT_01cbb9b8);",
@@ -648,7 +648,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 69,
       "match": "DAT_01cf2780",
       "severity": "mild",
       "text": "} while (this_ptr_02 != (CFireball *)&DAT_01cf2780);",
@@ -656,7 +656,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 72,
+      "line": 74,
       "match": "DAT_01d03b88",
       "severity": "mild",
       "text": "} while (this_ptr_03 != (CShell *)&DAT_01d03b88);",
@@ -664,23 +664,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 73,
+      "line": 75,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "iVar5 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc);",
+      "text": "iVar4 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 79,
+      "line": 81,
       "match": "DAT_01c8aea8",
       "severity": "mild",
-      "text": "core_fire_cpp_FUN_004975a0(&DAT_01c8aea8);",
+      "text": "core_fire_cpp_CBulletHole_setupRenderState_FUN_004975a0((CBulletHole *)&DAT_01c8aea8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 84,
+      "line": 86,
       "match": "DAT_01c8aea8",
       "severity": "mild",
       "text": "core_fire_cpp_CBulletHole_render_FUN_00497610((CBulletHole *)(&DAT_01c8aea8 + iVar1));",
@@ -688,7 +688,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 90,
+      "line": 92,
       "match": "DAT_01c74ea0",
       "severity": "mild",
       "text": "this_ptr_04 = (CSmokeParticle *)&DAT_01c74ea0;",
@@ -696,7 +696,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 91,
+      "line": 93,
       "match": "DAT_01c74ea0",
       "severity": "mild",
       "text": "core_fire_cpp_CSmokeParticle_setupRenderState_FUN_00496c60((CSmokeParticle *)&DAT_01c74ea0);",
@@ -704,7 +704,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 97,
+      "line": 99,
       "match": "DAT_01c8aea0",
       "severity": "mild",
       "text": "} while (this_ptr_04 != (CSmokeParticle *)&DAT_01c8aea0);",
@@ -712,7 +712,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 100,
       "match": "DAT_01cbb9bc",
       "severity": "mild",
       "text": "this_ptr_05 = (CMuzzleFlash *)&DAT_01cbb9bc;",
@@ -720,7 +720,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 104,
+      "line": 106,
       "match": "DAT_01cbc0ec",
       "severity": "mild",
       "text": "} while (this_ptr_05 != (CMuzzleFlash *)&DAT_01cbc0ec);",
@@ -728,7 +728,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 121,
+      "line": 123,
       "match": "DAT_01cba2b4",
       "severity": "mild",
       "text": "} while (this_ptr_07 != (CSpark *)&DAT_01cba2b4);",
@@ -736,7 +736,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 129,
+      "line": 131,
       "match": "DAT_01cbb9b8",
       "severity": "mild",
       "text": "} while (pCVar2 != (CFirefly *)&DAT_01cbb9b8);",
@@ -744,7 +744,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 136,
+      "line": 138,
       "match": "DAT_01cefd10",
       "severity": "mild",
       "text": "} while (this_ptr_08 != (CGlassParticle *)&DAT_01cefd10);",
@@ -752,7 +752,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 143,
+      "line": 145,
       "match": "DAT_01cefe7c",
       "severity": "mild",
       "text": "} while (this_ptr_09 != (CBulletTrail *)&DAT_01cefe7c);",
@@ -760,63 +760,63 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 148,
+      "line": 150,
       "match": "DAT_01cf61d0",
       "severity": "mild",
-      "text": "} while (puVar3 != &DAT_01cf61d0);",
+      "text": "} while (this_ptr_10 != (CExplosion *)&DAT_01cf61d0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 153,
+      "line": 155,
       "match": "DAT_01cfaff4",
       "severity": "mild",
-      "text": "} while (pCVar4 != (CToss *)&DAT_01cfaff4);",
+      "text": "} while (this_ptr_11 != (CToss *)&DAT_01cfaff4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 158,
+      "line": 160,
       "match": "DAT_01d00eac",
       "severity": "mild",
-      "text": "} while (this_ptr_10 != (CGunFlame *)&DAT_01d00eac);",
+      "text": "} while (this_ptr_12 != (CGunFlame *)&DAT_01d00eac);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 163,
+      "line": 165,
       "match": "DAT_01d01ab0",
       "severity": "mild",
-      "text": "} while (puVar3 != &DAT_01d01ab0);",
+      "text": "} while (this_ptr_13 != (CLightningBolt *)&DAT_01d01ab0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 168,
+      "line": 170,
       "match": "DAT_01d028c4",
       "severity": "mild",
-      "text": "} while (this_ptr_11 != (CTrail *)&DAT_01d028c4);",
+      "text": "} while (this_ptr_14 != (CTrail *)&DAT_01d028c4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 175,
+      "line": 177,
       "match": "DAT_01d07b8c",
       "severity": "mild",
-      "text": "} while (&this_ptr_12->base != (CParticle *)&DAT_01d07b8c);",
+      "text": "} while (&this_ptr_15->base != (CParticle *)&DAT_01d07b8c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 182,
+      "line": 184,
       "match": "DAT_01d0bb90",
       "severity": "mild",
-      "text": "} while (&this_ptr_13->base != (CParticle *)&DAT_01d0bb90);",
+      "text": "} while (&this_ptr_16->base != (CParticle *)&DAT_01d0bb90);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 186,
+      "line": 188,
       "match": "DAT_01d0ce7c",
       "severity": "mild",
       "text": "} while (puVar3 != &DAT_01d0ce7c);",

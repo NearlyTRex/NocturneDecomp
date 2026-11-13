@@ -21,7 +21,7 @@
 ;
 ; XREF[5]:
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0054dd10 at 0054dd88
-;   core_skeleton.cpp_FUN_0054d9c0 at 0054daa5
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0054d9c0 at 0054daa5
 ;   core_skeleton.cpp_computeBoneModelMatrices_FUN_0054fcc0 at 0054fd35
 ;   core_xform.cpp_lerpMatrix3x4_FUN_005854a0 at 00585589
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_00585740 at 00585751

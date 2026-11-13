@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_004a24a0 at 004a252f
+;   core_fire.cpp_CFireEffect_loadAssets_FUN_004a24a0 at 004a252f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_fball_kfm_005c0550

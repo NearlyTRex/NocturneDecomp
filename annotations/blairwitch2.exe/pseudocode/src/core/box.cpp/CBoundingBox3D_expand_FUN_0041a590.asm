@@ -15,8 +15,8 @@
 ;   core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_0044ee60 at 0044ef31
 ;   core_morph.cpp_CMorph_getReady_FUN_005b71d0 at 005b7295
 ;   core_setcolid.cpp_FUN_00536490 at 0053661e
+;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_005487d0 at 005488d7
 ;   core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_00544930 at 00544a30
-;   core_skeleton.cpp_FUN_005487d0 at 005488d7
 ;   core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_00560cb0 at 00560e08
 ;   ... and 3 more
 ;

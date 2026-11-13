@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 CVector3f * __cdecl core_ghoul_cpp_CGhoul_getTargetPoint_FUN_004c3da0(CGhoul *this_ptr,CVector3f *out_point)
@@ -14,35 +13,35 @@ CVector3f * __cdecl core_ghoul_cpp_CGhoul_getTargetPoint_FUN_004c3da0(CGhoul *th
 {
   int iVar1;
   CVector3f *unaff_ESI;
-  uint *puVar2;
-  uint *puVar3;
-  byte bVar4;
-  uint auStackY_1000 [989];
-  uint auStack_84 [12];
-  uint auStack_54 [12];
+  CMatrix3x4f *pCVar2;
+  float *pfVar3;
+  uint *puVar4;
+  byte bVar5;
+  float afStackY_1000 [989];
+  CMatrix3x4f CStack_54;
   uint uStack_24;
   uint uStack_20;
   uint uStack_1c;
   float fStack_18;
   uint auStack_14 [2];
   
-  bVar4 = 0;
-  core_skeleton_cpp_FUN_00546790(&(this_ptr->base).base.model,_DAT_01cb821c);
-  puVar3 = auStack_54;
-  puVar2 = auStack_84;
+  bVar5 = 0;
+  core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_00546790
+            (&(this_ptr->base).base.model,_DAT_01cb821c,&CStack_54);
+  pCVar2 = &CStack_54;
+  pfVar3 = (float *)&stack0xffffff7c;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = *puVar3;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
+    *pfVar3 = pCVar2->m[0].w;
+    pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar5 * -2 + 1) * 4);
+    pfVar3 = pfVar3 + (uint)bVar5 * -2 + 1;
   }
   uStack_24 = 0;
   uStack_20 = 0x3f333333;
   uStack_1c = 0x3e99999a;
-  core_xform_cpp_FUN_00591530(&uStack_24,auStack_84);
-  puVar3 = (uint *)((int)unaff_ESI + (uint)bVar4 * -8 + 4);
+  core_xform_cpp_FUN_00591530(&uStack_24,&stack0xffffff7c);
+  puVar4 = (uint *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);
   unaff_ESI->x = fStack_18;
-  *puVar3 = *(uint *)((int)auStack_14 + (uint)bVar4 * 0xfffffff8);
-  puVar3[(uint)bVar4 * -2 + 1] = auStack_14[(uint)bVar4 * 0xfffffffe + (uint)bVar4 * 0xfffffffe + 1]
-  ;
+  *puVar4 = auStack_14[(uint)bVar5 * -2];
+  puVar4[(uint)bVar5 * -2 + 1] = auStack_14[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
   return unaff_ESI;
 }

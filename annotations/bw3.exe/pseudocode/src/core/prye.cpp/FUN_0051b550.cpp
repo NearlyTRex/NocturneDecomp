@@ -14,23 +14,21 @@ void core_prye_cpp_FUN_0051b550(CHero *param_1,float param_2)
   CLadder *this_ptr;
   CDemonActor *pCVar1;
   float fVar2;
-  CMotionController *pCVar3;
+  CDeformableModelInstance *pCVar3;
   uint bone_index;
-  uint uVar4;
-  EGroundType EVar5;
+  EGroundType EVar4;
+  int iVar5;
   int iVar6;
-  int iVar7;
-  float *pfVar8;
-  CVector3f *pCVar9;
-  float *pfVar10;
-  byte bVar11;
-  float10 fVar12;
+  float *pfVar7;
+  CVector3f *pCVar8;
+  float *pfVar9;
+  byte bVar10;
+  float10 fVar11;
   float afStackY_10d0 [978];
   CHero *this_ptr_00;
   CVector3f *in_stack_fffffe7c;
   EGroundType in_stack_fffffe80;
   float in_stack_fffffe84;
-  uint *puVar13;
   SDamageInfo *this_ptr_01;
   float fStack_154;
   float local_144;
@@ -40,52 +38,53 @@ void core_prye_cpp_FUN_0051b550(CHero *param_1,float param_2)
   CHero *local_128;
   SDamageInfo local_124;
   uint local_e8;
-  float fStack_e4;
+  uint uStack_e4;
   CVector3f CStack_e0;
   float local_d4 [6];
   byte auStack_bc [8];
   byte auStack_b4 [12];
-  float afStack_a8 [5];
+  float afStack_a8 [2];
+  CVector3f local_a0;
   uint local_94;
-  uint local_7c;
+  uint auStack_90 [5];
+  float local_7c;
   float afStack_78 [4];
   float local_68;
   float local_64;
-  uint local_58;
+  CVector3f local_58;
   float local_4c;
-  float local_48;
-  float local_44;
-  float afStack_3c [2];
+  float local_48 [5];
   CVector3f *local_34;
   CVector3f *local_30;
   CCharacter *local_2c;
   CCharacter *local_28;
-  CMotionController *local_24;
+  CDeformableModelInstance *local_24;
   int local_20;
   int local_1c;
   int local_18;
   UActorVTable local_14;
   
-  bVar11 = 0;
-  local_24 = &(param_1->base).model.base;
+  bVar10 = 0;
+  local_24 = &(param_1->base).model;
   local_30 = (CVector3f *)&param_1->target_orientation;
   local_34 = &param_1->target_position;
   do {
-    bone_index = core_motion_cpp_CMotionController_advance_FUN_004fbb70(local_24,&param_2);
+    bone_index = core_motion_cpp_CMotionController_advance_FUN_004fbb70(&local_24->base,&param_2);
     if (bone_index < 0x12) {
       if (bone_index < 6) {
         if (bone_index < 2) {
           if (bone_index == 1) {
 LAB_0051b5c3:
-            uVar4 = _DAT_01ed36f8;
+            iVar5 = _DAT_01ed36f8;
             if (bone_index == 7) {
-              uVar4 = _DAT_01ed36fc;
+              iVar5 = _DAT_01ed36fc;
             }
-            core_skeleton_cpp_FUN_0054dbd0(local_24,uVar4);
-            auStack_b4._8_4_ = afStack_a8[2];
-            afStack_a8[(uint)bVar11 * -2] = afStack_a8[(uint)bVar11 * -2 + 3];
-            afStack_a8[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
-                 afStack_a8[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
+            core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
+                      (local_24,iVar5,&local_a0);
+            auStack_b4._8_4_ = local_a0.x;
+            afStack_a8[(uint)bVar10 * -2] = *(float *)((int)&local_a0 + (uint)bVar10 * -8 + 4);
+            afStack_a8[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
+                 *(float *)((int)&local_a0 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
             this_ptr = param_1->ladder_to_climb;
             if (this_ptr == (CLadder *)0x0) {
               if (param_1[1].base.base.orient_matrix.m[2].x == 0.0) {
@@ -173,23 +172,22 @@ LAB_0051bbd6:
                    (**(code **)(*(int *)((int)fVar2 + 0x154) + 0x44))(fVar2,0x3f800000);
               core_actor_cpp_FUN_00408b80(param_1,auStack_bc);
               in_stack_fffffe7c = &CStack_e0;
-              pCVar9 = &CStack_e0;
-              pfVar8 = local_d4;
+              pCVar8 = &CStack_e0;
+              pfVar7 = local_d4;
             }
             else {
               local_14 = (param_1->base).base.vtable;
-              EVar5 = (*((this_ptr->base).vtable._ub)->getGroundType)(&this_ptr->base);
-              core_actor_cpp_FUN_00408b80(param_1,afStack_a8,EVar5);
-              pCVar9 = (CVector3f *)auStack_b4;
-              pfVar8 = afStack_78 + 0xf;
+              EVar4 = (*((this_ptr->base).vtable._ub)->getGroundType)(&this_ptr->base);
+              core_actor_cpp_FUN_00408b80(param_1,afStack_a8,EVar4);
+              pCVar8 = (CVector3f *)auStack_b4;
+              pfVar7 = local_48 + 3;
             }
-            pfVar10 = (float *)((int)pCVar9 + ((uint)bVar11 * -2 + 1) * 4);
-            pCVar9->x = *pfVar8;
+            pfVar9 = (float *)((int)pCVar8 + ((uint)bVar10 * -2 + 1) * 4);
+            pCVar8->x = *pfVar7;
             this_ptr_00 = param_1;
-            *pfVar10 = pfVar8[(uint)bVar11 * -2 + 1];
-            pfVar10[(uint)bVar11 * -2 + 1] = (pfVar8 + (uint)bVar11 * -2 + 1)[(uint)bVar11 * -2 + 1]
-            ;
-            (*(code *)local_24->state_index)
+            *pfVar9 = pfVar7[(uint)bVar10 * -2 + 1];
+            pfVar9[(uint)bVar10 * -2 + 1] = (pfVar7 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1];
+            (*(code *)(local_24->base).state_index)
                       ((CDemonActor *)this_ptr_00,in_stack_fffffe7c,in_stack_fffffe80,
                        in_stack_fffffe84);
           }
@@ -214,19 +212,19 @@ LAB_0051c08c:
                       (g_CEditorToolsPtr,"Object to pick up is now NULL\nprye.cpp line %d",0xa5c);
           }
           else {
-            iVar6 = (*((pCVar1->vtable)._ub)->canPickup)(pCVar1,(CDemonActor *)param_1);
-            if (iVar6 == 0) {
+            iVar5 = (*((pCVar1->vtable)._ub)->canPickup)(pCVar1,(CDemonActor *)param_1);
+            if (iVar5 == 0) {
               param_1->object_to_pick_up = (CDemonActor *)0x0;
             }
             else {
               pCVar1 = param_1->object_to_pick_up;
               if ((pCVar1 != (CDemonActor *)0x0) &&
-                 (iVar7 = (*((pCVar1->vtable)._ub)->canPickup)(pCVar1,(CDemonActor *)param_1),
-                 iVar7 == 4)) {
+                 (iVar6 = (*((pCVar1->vtable)._ub)->canPickup)(pCVar1,(CDemonActor *)param_1),
+                 iVar6 == 4)) {
                 (param_1->base).layer_action_t = 0.0;
                 (param_1->base).layer_action_index = 0x11;
               }
-              if (iVar6 == 2) {
+              if (iVar5 == 2) {
                 if (param_1->action_pending != 0) {
                   shape_edittool_cpp_FUN_0047cee0
                             (g_CEditorToolsPtr,"actionPending = %d\nprye.cpp line %d");
@@ -241,8 +239,8 @@ LAB_0051c08c:
           if (bone_index != 3) goto LAB_0051c08c;
           pCVar1 = (param_1->base).carry_hands[1].carry_actor;
           core_prye_cpp_FUN_00520da0(param_1);
-          iVar6 = param_1->action_pending;
-          if (iVar6 == 2) {
+          iVar5 = param_1->action_pending;
+          if (iVar5 == 2) {
             if (pCVar1 != (CDemonActor *)0x0) {
               (*((pCVar1->vtable)._ub)->setPositionAndOrientation)(pCVar1,local_34,local_30);
             }
@@ -250,14 +248,14 @@ LAB_0051b6b9:
             param_1->action_pending = 0;
           }
           else {
-            if (iVar6 == 6) goto LAB_0051b6b9;
+            if (iVar5 == 6) goto LAB_0051b6b9;
             in_stack_fffffe84 = 7.504374e-39;
             shape_edittool_cpp_FUN_0047cee0
-                      (g_CEditorToolsPtr,"?actionPending = %d\nprye.cpp line %d" + 1,iVar6,0xa38);
+                      (g_CEditorToolsPtr,"?actionPending = %d\nprye.cpp line %d" + 1,iVar5,0xa38);
           }
-          iVar6 = (param_1->base).layer_action_index;
+          iVar5 = (param_1->base).layer_action_index;
           param_1->target_actor = (CDemonActor *)0x0;
-          if (iVar6 == 0x11) {
+          if (iVar5 == 0x11) {
             (param_1->base).layer_action_t = 0.0;
             (param_1->base).layer_action_index = 0;
           }
@@ -272,25 +270,26 @@ LAB_0051b6b9:
                              ((param_1->base).grabbed_by,g_CEnemyClassInfo.name_hash);
         local_2c = local_28;
         if (local_28 != (CCharacter *)0x0) {
-          core_skeleton_cpp_FUN_0054dbd0(local_24,_DAT_01ed370c);
-          puVar13 = &local_7c;
-          local_7c = local_58;
-          afStack_78[(uint)bVar11 * -2] = afStack_78[(uint)bVar11 * -2 + 9];
-          afStack_78[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
-               afStack_78[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 10];
-          core_actor_cpp_FUN_00408b80(param_1,puVar13);
+          core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
+                    (local_24,_DAT_01ed370c,&local_58);
+          pfVar7 = &local_7c;
+          local_7c = local_58.x;
+          afStack_78[(uint)bVar10 * -2] = *(float *)((int)&local_58 + (uint)bVar10 * -8 + 4);
+          afStack_78[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
+               *(float *)((int)&local_58 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+          core_actor_cpp_FUN_00408b80(param_1,pfVar7);
           this_ptr_01 = (SDamageInfo *)&stack0xfffffea0;
           local_e8 = local_94;
-          (&fStack_e4)[(uint)bVar11 * -2] = afStack_a8[(uint)bVar11 * -2 + 6];
-          *(float *)((int)&CStack_e0 + (uint)bVar11 * -8 + (uint)bVar11 * -8) =
-               afStack_a8[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 7];
+          (&uStack_e4)[(uint)bVar10 * -2] = auStack_90[(uint)bVar10 * -2];
+          *(uint *)((int)&CStack_e0 + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
+               auStack_90[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
           core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(this_ptr_01);
           local_14 = (UActorVTable)core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(1.0,3.0);
           core_actor_cpp_FUN_00408bf0(local_28,&local_e8);
           CStack_e0.y = local_64;
-          local_d4[(uint)bVar11 * -2 + -1] = afStack_78[(uint)bVar11 * -2 + 6];
-          local_d4[(uint)bVar11 * -2 + (uint)bVar11 * -2] =
-               afStack_78[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 7];
+          local_d4[(uint)bVar10 * -2 + -1] = afStack_78[(uint)bVar10 * -2 + 6];
+          local_d4[(uint)bVar10 * -2 + (uint)bVar10 * -2] =
+               afStack_78[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7];
           if (&local_144 != &CStack_e0.y) {
             local_144 = CStack_e0.y;
             local_140 = CStack_e0.z;
@@ -301,24 +300,24 @@ LAB_0051b6b9:
           (*(((local_2c->base).vtable._uc)->_uc).processDamage)
                     (local_2c,(SDamageInfo *)&stack0xfffffea0);
           if (0.0 < fStack_154) {
-            fVar12 = (float10)fStack_154 * (float10)_DAT_005cd2ff;
+            fVar11 = (float10)fStack_154 * (float10)_DAT_005cd2ff;
             round();
             core_gore_cpp_CGore_spawnBloodBurst_FUN_004ce9c0
-                      (g_CGorePtr,&CStack_e0,(CVector3f *)0x0,(int)ROUND(fVar12) + 1,BLOOD_TYPE_RED)
+                      (g_CGorePtr,&CStack_e0,(CVector3f *)0x0,(int)ROUND(fVar11) + 1,BLOOD_TYPE_RED)
             ;
           }
         }
         local_20 = 0;
         for (local_1c = 0; local_1c < g_CDemonSetPtr->enemy_count; local_1c = local_1c + 1) {
           local_18 = *(int *)((int)g_CDemonSetPtr->enemies + local_20);
-          iVar6 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
-          local_4c = *(float *)(iVar6 + 0x20) - *(float *)(local_18 + 0x20);
-          local_48 = *(float *)(iVar6 + 0x24) - *(float *)(local_18 + 0x24);
-          local_44 = *(float *)(iVar6 + 0x28) - *(float *)(local_18 + 0x28);
+          iVar5 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
+          local_4c = *(float *)(iVar5 + 0x20) - *(float *)(local_18 + 0x20);
+          local_48[0] = *(float *)(iVar5 + 0x24) - *(float *)(local_18 + 0x24);
+          local_48[1] = *(float *)(iVar5 + 0x28) - *(float *)(local_18 + 0x28);
           afStack_78[2] = local_4c;
-          afStack_78[(uint)bVar11 * -2 + 3] = afStack_78[(uint)bVar11 * -2 + 0xc];
-          afStack_78[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4] =
-               afStack_78[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0xd];
+          afStack_78[(uint)bVar10 * -2 + 3] = local_48[(uint)bVar10 * -2];
+          afStack_78[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4] =
+               local_48[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
           if (SQRT(local_68 * local_68 +
                    afStack_78[2] * afStack_78[2] + afStack_78[3] * afStack_78[3]) <=
               (float)_DAT_005cd30f) {
@@ -384,9 +383,9 @@ LAB_0051b6b9:
             shape_edittool_cpp_FUN_0047cee0
                       (g_CEditorToolsPtr,"doorToOpen == NULL\nprye.cpp line %d",0xb19);
           }
-          iVar6 = core_hero_cpp_CHero_tryOpenDoor_FUN_004d3250(param_1);
-          if (iVar6 == 0) {
-            core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(local_24,0,1);
+          iVar5 = core_hero_cpp_CHero_tryOpenDoor_FUN_004d3250(param_1);
+          if (iVar5 == 0) {
+            core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&local_24->base,0,1);
           }
         }
       }

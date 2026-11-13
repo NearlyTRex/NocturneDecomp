@@ -106,9 +106,7 @@ int core_event_cpp_FUN_0048c2e0(CEventList *param_1,char *param_2)
   int local_1f0;
   CLocation local_1ec;
   CVector3f local_1dc;
-  float local_1d0;
-  float local_1cc;
-  float local_1c8;
+  CVector3f local_1d0;
   CVector3f local_1c4 [2];
   byte local_1ac [12];
   CVector3f local_1a0;
@@ -130,8 +128,8 @@ int core_event_cpp_FUN_0048c2e0(CEventList *param_1,char *param_2)
   int local_150;
   int local_14c;
   int local_148;
-  uint local_144;
-  uint local_140;
+  float local_144;
+  float local_140;
   int local_13c;
   int local_138;
   int local_134;
@@ -779,9 +777,9 @@ LAB_0048c367:
                     else {
                       pCVar1 = &(pCVar7->base).location;
                       if ((CLocation *)&local_1d0 != pCVar1) {
-                        local_1d0 = (pCVar1->position).x;
-                        local_1cc = (pCVar7->base).location.position.y;
-                        local_1c8 = (pCVar7->base).location.position.z;
+                        local_1d0.x = (pCVar1->position).x;
+                        local_1d0.y = (pCVar7->base).location.position.y;
+                        local_1d0.z = (pCVar7->base).location.position.z;
                       }
                     }
                   }
@@ -794,7 +792,7 @@ LAB_0048c367:
                   while (((&DAT_006074b8)[(byte)(*local_16c + 1)] & 2) != 0) {
                     local_16c = local_16c + 1;
                   }
-                  local_140 = 0x40800000;
+                  local_140 = 4.0;
                   if (*local_16c == 0x2c) {
                     local_148 = -1;
                     sscanf((char *)local_16c,", %f %n");
@@ -815,8 +813,8 @@ LAB_0048c367:
                   }
                   local_16c = local_16c + 1;
                   if (local_170 != 0) {
-                    core_fire_cpp_FUN_004a36e0
-                              (0x01C73654,&local_1d0,local_144,0x44bb8000,local_140,0);
+                    core_fire_cpp_CFireEffect_createExplosion_FUN_004a36e0
+                              (0x01C73654,&local_1d0,local_144,1500.0,local_140,0);
                   }
                 }
                 else {
@@ -2205,7 +2203,8 @@ LAB_0048c717:
                                                   if (local_170 != 0) {
                                                     core_gore_cpp_CGore_reset_FUN_004ce560
                                                               (g_CGorePtr);
-                                                    core_fire_cpp_FUN_004a1480();
+                                                    core_fire_cpp_CFireEffect_init_FUN_004a1480
+                                                              (0x01C73654);
                                                     local_b4 = 0x01D81080->current_set_index;
                                                     for (iVar5 = 0; this_ptr_00 = 0x01D81080,
                                                         iVar5 < 0x01D81080->num_sets;

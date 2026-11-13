@@ -18,9 +18,8 @@ void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_0051ff60(CScat *this_ptr)
   float fVar5;
   float fVar6;
   CSkeleton *this_ptr_00;
-  uint uVar7;
   char *motion_name;
-  int iVar8;
+  int iVar7;
   float local_28;
   
   local_28 = 1.0;
@@ -46,16 +45,17 @@ void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_0051ff60(CScat *this_ptr)
     if (1.0 < local_28) {
       local_28 = 1.0;
     }
-    iVar8 = 1;
+    iVar7 = 1;
     motion_name = (this_ptr->base).base.layer_actions[(this_ptr->base).base.layer_action_index].
                   motion_name;
     pCVar1 = &(this_ptr->base).base.model;
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(pCVar1);
-    iVar8 = core_motion_cpp_CMotionList_findMotionIndex_FUN_00502f10
-                      (&this_ptr_00->motion_list,motion_name,iVar8);
-    uVar7 = core_motion_cpp_FUN_00503f50(pCVar1,iVar8,(this_ptr->base).base.layer_action_t);
-    core_skeleton_cpp_FUN_00545a60
-              (pCVar1,iVar8,uVar7,local_28,_DAT_01e620a8,core_skeleton_cpp_FUN_00544cc0);
+    iVar7 = core_motion_cpp_CMotionList_findMotionIndex_FUN_00502f10
+                      (&this_ptr_00->motion_list,motion_name,iVar7);
+    fVar2 = (float)core_motion_cpp_FUN_00503f50(pCVar1,iVar7,(this_ptr->base).base.layer_action_t);
+    core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00545a60
+              (pCVar1,iVar7,fVar2,local_28,_DAT_01e620a8,
+               core_skeleton_cpp_blendWeightCallback_FUN_00544cc0);
     if ((this_ptr->base).base.layer_action_index == 1) {
       core_scat_cpp_FUN_00520140(this_ptr,1);
       return;

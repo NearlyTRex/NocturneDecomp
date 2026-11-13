@@ -24,7 +24,7 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_00547cb0(CSkeleton *this
   int local_1c;
   int local_18;
   
-  core_skeleton_cpp_FUN_00547b90(this_ptr,1);
+  core_skeleton_cpp_CSkeleton_free_FUN_00547b90(this_ptr,1);
   do {
     iVar1 = _fgetc(file_handle);
     if (iVar1 < 0) break;

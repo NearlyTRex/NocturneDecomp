@@ -41,10 +41,9 @@ void __cdecl core_baal_cpp_CBaal_process_FUN_005968a0(CBaal *this_ptr,float delt
   float fStack_144;
   float fStack_140;
   float fStack_13c;
-  uint uStack_138;
-  float afStack_134 [5];
-  float fStack_120;
-  float fStack_11c;
+  CVector3f CStack_138;
+  float fStack_12c;
+  float afStack_128 [4];
   float fStack_118;
   uint uStack_114;
   float fStack_108;
@@ -103,13 +102,13 @@ void __cdecl core_baal_cpp_CBaal_process_FUN_005968a0(CBaal *this_ptr,float delt
          (this_ptr->base).base.base.location.position.y - (pCVar1->base).location.position.y;
     fStack_148 = (this_ptr->base).base.base.location.position.z - (pCVar1->base).location.position.z
     ;
-    fStack_120 = afStack_158[2];
-    afStack_134[(uint)bVar10 * -2 + 6] = afStack_158[(uint)bVar10 * -2 + 3];
-    afStack_134[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7] =
+    afStack_128[2] = afStack_158[2];
+    afStack_128[(uint)bVar10 * -2 + 3] = afStack_158[(uint)bVar10 * -2 + 3];
+    afStack_128[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4] =
          afStack_158[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
-    if (afStack_158 + 5 != afStack_134 + 5) {
-      fStack_144 = fStack_120;
-      fStack_140 = fStack_11c;
+    if (afStack_158 + 5 != afStack_128 + 2) {
+      fStack_144 = afStack_128[2];
+      fStack_140 = afStack_128[3];
       fStack_13c = fStack_118;
     }
     fStack_28 = fStack_13c * fStack_13c + fStack_144 * fStack_144 + fStack_140 * fStack_140;
@@ -293,13 +292,13 @@ LAB_00596f96:
           afStack_d4[0] = *(float *)(iVar3 + 0x24) - (pCStack_30->position).y;
           afStack_d4[1] = *(float *)(iVar3 + 0x28) - (pCStack_30->position).z;
           afStack_fc[0] = fStack_d8;
-          afStack_134[(uint)bVar10 * -2 + 0xf] = afStack_d4[(uint)bVar10 * -2];
-          afStack_134[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x10] =
+          afStack_128[(uint)bVar10 * -2 + 0xc] = afStack_d4[(uint)bVar10 * -2];
+          afStack_128[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd] =
                afStack_d4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
-          core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(afStack_134 + 0xe);
+          core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(afStack_128 + 0xb);
           fStack_108 = fStack_a8;
-          afStack_134[(uint)bVar10 * -2 + 0xc] = afStack_a4[(uint)bVar10 * -2];
-          afStack_134[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd] =
+          afStack_128[(uint)bVar10 * -2 + 9] = afStack_a4[(uint)bVar10 * -2];
+          afStack_128[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 10] =
                afStack_a4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
           fStack_44 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0
                                 (fStack_104 - (this_ptr->base).base.base.orient.vec.y);
@@ -477,9 +476,9 @@ LAB_005974b3:
                 core_xform_cpp_FUN_00583260(&DAT_02cfd900,pCStack_34 + this_ptr->bone_indices[1]);
                 pfVar12 = afStack_a4 + 2;
                 afStack_a4[2] = (float)uStack_114;
-                afStack_a4[(uint)bVar10 * -2 + 3] = afStack_134[(uint)bVar10 * -2 + 9];
+                afStack_a4[(uint)bVar10 * -2 + 3] = afStack_128[(uint)bVar10 * -2 + 6];
                 afStack_a4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4] =
-                     afStack_134[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 10];
+                     afStack_128[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7];
                 core_actor_cpp_FUN_00408b80(this_ptr,pfVar12);
                 pCVar11 = &CStack_90;
                 CStack_90.x = fStack_84;
@@ -509,21 +508,22 @@ LAB_005974b3:
         case 9:
           if (((this_ptr->base).pool_me == 0) &&
              ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
-            core_skeleton_cpp_FUN_0054dbd0(pCStack_1c,0);
+            core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
+                      (pCStack_1c,0,&CStack_138);
             pfVar12 = afStack_80 + 2;
-            afStack_80[2] = (float)uStack_138;
-            afStack_80[(uint)bVar10 * -2 + 3] = afStack_134[(uint)bVar10 * -2];
+            afStack_80[2] = CStack_138.x;
+            afStack_80[(uint)bVar10 * -2 + 3] = *(float *)((int)&CStack_138 + (uint)bVar10 * -8 + 4)
+            ;
             afStack_80[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4] =
-                 afStack_134[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+                 *(float *)((int)&CStack_138 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
             core_actor_cpp_FUN_00408b80(this_ptr,pfVar12);
             blood_type = BLOOD_TYPE_RED;
             pCVar11 = &CStack_b4;
-            CStack_b4.x = afStack_134[2];
-            *(float *)((int)&CStack_b4 + (uint)bVar10 * -8 + 4) = afStack_134[(uint)bVar10 * -2 + 3]
-            ;
+            CStack_b4.x = fStack_12c;
+            *(float *)((int)&CStack_b4 + (uint)bVar10 * -8 + 4) = afStack_128[(uint)bVar10 * -2];
             this_ptr_03 = g_CGorePtr;
             *(float *)((int)&CStack_b4 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-                 afStack_134[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
+                 afStack_128[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
             core_gore_cpp_CGore_createBloodPool_FUN_004cec40(this_ptr_03,pCVar11,blood_type);
             (this_ptr->base).pool_me = 1;
           }
@@ -541,9 +541,9 @@ switchD_005976af_caseD_6:
         fStack_ec = pCStack_2c->y * delta_time;
         fStack_e8 = pCStack_2c->z * delta_time;
         afStack_5c[2] = fStack_f0;
-        afStack_5c[(uint)bVar10 * -2 + 3] = afStack_134[(uint)bVar10 * -2 + 0x12];
+        afStack_5c[(uint)bVar10 * -2 + 3] = afStack_128[(uint)bVar10 * -2 + 0xf];
         afStack_5c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4] =
-             afStack_134[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x13];
+             afStack_128[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x10];
         afStack_d4[2] = afStack_5c[2] + pCStack_20->x;
         afStack_d4[3] = afStack_5c[3] + pCStack_20->y;
         fStack_c4 = fStack_4c + pCStack_20->z;

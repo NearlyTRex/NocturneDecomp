@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 54,
+    "complexity_score": 10,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 9,
-    "suspect_count": 4,
-    "suspect_types": [
-      "unnamed_param"
-    ],
-    "total_lines": 28
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 29
   },
   "cross_references": [],
   "function": {
@@ -25,18 +23,18 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeleton.cpp_CDeformableModelInstance_renderSkeleton_FUN_005488f0",
-    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderSkeleton_FUN_005488f0(CDeformableModelInstance *this_ptr,undefined4 param_2,undefined4 param_3)"
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderSkeleton_FUN_005488f0(CDeformableModelInstance *this_ptr,int color,int render_flags)"
   },
   "function_calls": [
+    {
+      "addr": "005424b0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_005424b0"
+    },
     {
       "addr": "00547810",
       "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00547810"
-    },
-    {
-      "addr": "005424b0",
-      "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_005424b0"
     }
   ],
   "globals": [],
@@ -111,52 +109,19 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "color",
         "offset": 8,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "render_flags",
         "offset": 12,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderSkeleton_FUN_005488f0(CDeformableModelInstance *this_ptr,uint param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderSkeleton_FUN_005488f0(CDeformableModelInstance *this_ptr,uint param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_005424b0(pCVar1,param_2,pCVar2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_005424b0(pCVar1,param_2,pCVar2,param_3);",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

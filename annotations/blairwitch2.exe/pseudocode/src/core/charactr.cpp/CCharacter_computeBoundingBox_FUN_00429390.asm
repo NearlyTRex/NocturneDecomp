@@ -21,7 +21,7 @@
 ;   core_mimic.cpp_CMimic_process_FUN_004f08a0 at 004f092b
 ;
 ; Called Functions:
-;   core_skeleton.cpp_FUN_005487d0
+;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_005487d0
 ;
 ; *****************************************************************************
 
@@ -48,8 +48,8 @@ section .text
         ;   Label: LAB_004293b2
     LEA ESI,[ESP + 0x4]                 ; 004293b3
     LEA EDI,[ESP + 0x1c]                ; 004293b7
-    CALL core_skeleton.cpp_FUN_005487d0 ; 004293bb
-        ;   XREF to: 005487d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_005487d0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_005487d0 ; 004293bb
+        ;   XREF to: 005487d0 (UNCONDITIONAL_CALL)  ; CBoundingBox3D * core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_005487d0(CDeformableModelInstance * this_ptr, CBoundingBox3D * output_bbox)
     MOV ECX,0x6                         ; 004293c0
     LEA ESI,[ESP + 0x4]                 ; 004293c5
     ADD ESP,0x4                         ; 004293c9

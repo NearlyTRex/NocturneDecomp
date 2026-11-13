@@ -8,7 +8,7 @@
 ;   core_basicene.cpp_FUN_0059f0e0 at 0059f324
 ;
 ; Called Functions:
-;   core_skeleton.cpp_FUN_00545a60
+;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
     PUSH EDI                            ; 0059f3f8
     ADD EBX,0x2b4                       ; 0059f3f9
     PUSH EBX                            ; 0059f3ff
-    CALL core_skeleton.cpp_FUN_00545a60 ; 0059f400
-        ;   XREF to: 00545a60 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00545a60()
+    CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60 ; 0059f400
+        ;   XREF to: 00545a60 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
     ADD ESP,0x18                        ; 0059f405
     POP ESI                             ; 0059f408
     POP EDI                             ; 0059f409

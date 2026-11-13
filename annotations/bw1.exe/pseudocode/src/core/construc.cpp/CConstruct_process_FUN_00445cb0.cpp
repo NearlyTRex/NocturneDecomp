@@ -99,17 +99,20 @@ void __cdecl core_construc_cpp_CConstruct_process_FUN_00445cb0(CConstruct *this_
   float fStack_124;
   float fStack_120;
   float fStack_11c;
-  uint uStack_110;
+  float fStack_110;
   float fStack_104;
   CVector3f CStack_f8;
   float fStack_ec;
   float afStack_e8 [4];
   float fStack_d8;
   uint uStack_d4;
-  uint uStack_c8;
+  CVector3f CStack_c8;
   CVector3f CStack_bc;
-  uint uStack_b0;
-  float afStack_ac [6];
+  CVector3f CStack_b0;
+  uint uStack_a4;
+  uint uStack_a0;
+  uint uStack_9c;
+  float fStack_98;
   float afStack_94 [4];
   float fStack_84;
   CVector3f CStack_80;
@@ -166,21 +169,25 @@ void __cdecl core_construc_cpp_CConstruct_process_FUN_00445cb0(CConstruct *this_
           fStack_40 = 0.4;
         }
         pCStack_14 = &(this_ptr->base).base.model;
-        core_skeleton_cpp_FUN_00569130();
-        afStack_238[2] = (float)uStack_c8;
-        afStack_238[(uint)bVar16 * -2 + 3] = afStack_e8[(uint)bVar16 * -2 + 9];
+        core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
+                  (pCStack_14,DAT_007dc5b0,&CStack_c8);
+        afStack_238[2] = CStack_c8.x;
+        afStack_238[(uint)bVar16 * -2 + 3] = *(float *)((int)&CStack_c8 + (uint)bVar16 * -8 + 4);
         afStack_238[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 4] =
-             afStack_e8[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 10];
+             *(float *)((int)&CStack_c8 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
         core_actor_cpp_FUN_00408b40();
+        pCVar2 = pCStack_14;
         fStack_14c = fStack_11c;
         afStack_1b4[(uint)bVar16 * -2 + 0x1b] = afStack_1b4[(uint)bVar16 * -2 + 0x27];
+        fVar17 = (float)DAT_007dc5b4;
         afStack_1b4[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x1c] =
              afStack_1b4[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x28];
-        core_skeleton_cpp_FUN_00569130();
-        uStack_110 = uStack_b0;
-        afStack_1b4[(uint)bVar16 * -2 + 0x2a] = afStack_ac[(uint)bVar16 * -2];
+        core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
+                  (pCVar2,(int)fVar17,&CStack_b0);
+        fStack_110 = CStack_b0.x;
+        afStack_1b4[(uint)bVar16 * -2 + 0x2a] = *(float *)((int)&CStack_b0 + (uint)bVar16 * -8 + 4);
         afStack_1b4[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x2b] =
-             afStack_ac[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1];
+             *(float *)((int)&CStack_b0 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
         core_actor_cpp_FUN_00408b40();
         fVar17 = fStack_14c;
         fStack_140 = fStack_218;
@@ -273,12 +280,12 @@ LAB_00445e87:
       core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004b5b30
                 (0x01C57074,&pCVar14->position,0.5,&CStack_278,0xffff);
       do {
-        afStack_ac[2] = 0.0;
-        afStack_ac[4] = 0.0;
+        uStack_a4 = 0;
+        uStack_9c = 0;
         iVar8 = iVar8 + 1;
-        afStack_ac[3] = 1.0;
+        uStack_a0 = 0x3f800000;
         core_fire_cpp_CFireEffect_createFirefly_FUN_004b5fa0
-                  (0x01C57074,pCVar14,afStack_ac + 2,4000,0xffdc,1,35000,1.0,0.2);
+                  (0x01C57074,pCVar14,&uStack_a4,4000,0xffdc,1,35000,1.0,0.2);
       } while (iVar8 < 10);
       core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_004328c0
                 (*(CCharacter **)(_DAT_01d06ab4 * 4 + 0x1d06aa4));
@@ -320,7 +327,7 @@ LAB_00445e87:
         afStack_1b4[(uint)bVar16 * -2 + 0xf] = afStack_1b4[(uint)bVar16 * -2 + 0xc];
         afStack_1b4[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x10] =
              afStack_1b4[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0xd];
-        afStack_ac[5] = fStack_17c * *pfStack_24;
+        fStack_98 = fStack_17c * *pfStack_24;
         afStack_94[0] = fStack_178 * *pfStack_24;
         afStack_94[1] = fStack_174 * *pfStack_24;
         fStack_224 = fStack_17c * *pfStack_24;
@@ -379,7 +386,8 @@ LAB_00445e87:
       return;
     }
     iVar8 = 0;
-    core_skeleton_cpp_FUN_00569ae0();
+    core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_00569ae0
+              (&(this_ptr->base).base.model);
     pCVar15 = this_ptr;
     if (0 < this_ptr->box_count) {
       do {

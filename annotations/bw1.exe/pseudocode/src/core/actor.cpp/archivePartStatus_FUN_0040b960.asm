@@ -43,8 +43,8 @@
 ; Called Functions:
 ;   core_actor.cpp_adjustIndentationLevel_FUN_0040ad60
 ;   core_actor.cpp_handleActorPropertyParseError_FUN_0040b090
-;   core_skeleton.cpp_FUN_00569ae0
-;   core_skeleton.cpp_FUN_00569b00
+;   core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_00569b00
+;   core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_00569ae0
 ;   crt_stdio.c_fgetc_FUN_005c0530
 ;   crt_stdio.c_fscanf_FUN_005c04b0
 ;   crt_unknown.c_FUN_005c03c0
@@ -87,8 +87,8 @@ section .text
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0040b9ae
     PUSH EBP                            ; 0040b9b1
-    CALL core_skeleton.cpp_FUN_00569ae0 ; 0040b9b2
-        ;   XREF to: 00569ae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569ae0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_00569ae0 ; 0040b9b2
+        ;   XREF to: 00569ae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_00569ae0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0040b9b7
     MOV EAX,dword ptr [ESP]             ; 0040b9ba
     XOR EBX,EBX                         ; 0040b9bd
@@ -127,8 +127,8 @@ section .text
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 0040ba11
     PUSH EBP                            ; 0040ba14
-    CALL core_skeleton.cpp_FUN_00569b00 ; 0040ba15
-        ;   XREF to: 00569b00 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_00569b00(CDeformableModelInstance * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_00569b00 ; 0040ba15
+        ;   XREF to: 00569b00 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_00569b00(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0040ba1a
     MOV ESI,dword ptr [ESP]             ; 0040ba1d
     XOR EBX,EBX                         ; 0040ba20

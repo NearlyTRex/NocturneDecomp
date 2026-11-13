@@ -136,9 +136,9 @@ LAB_0046ecd2:
       local_18 = (float)core_motion_cpp_FUN_00525110(pCVar10,iVar13,local_18);
     }
     local_28 = local_18;
-    core_skeleton_cpp_FUN_00568100
+    core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00568100
               (&(this_ptr->base).base.model,local_24,local_18,local_f0,_DAT_01b68858,
-               core_skeleton_cpp_FUN_00567360);
+               core_skeleton_cpp_blendWeightCallback_FUN_00567360);
     if ((this_ptr->base).base.layer_action_index == 0) {
       local_30 = (CDeformableModelInstance *)
                  (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations;

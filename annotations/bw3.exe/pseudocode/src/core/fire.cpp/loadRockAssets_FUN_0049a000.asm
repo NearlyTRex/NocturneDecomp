@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_004a24a0 at 004a2534
+;   core_fire.cpp_CFireEffect_loadAssets_FUN_004a24a0 at 004a2534
 ;
 ; *****************************************************************************
 

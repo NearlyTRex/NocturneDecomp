@@ -59,7 +59,7 @@ section .text
     CALL core_fire.cpp_loadRockAssets_FUN_004aefb0 ; 004b5b07
         ;   XREF to: 004aefb0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_loadRockAssets_FUN_004aefb0()
     CALL core_fire.cpp_loadLeafAssets_FUN_004af120 ; 004b5b0c
-        ;   XREF to: 004af120 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_loadLeafAssets_FUN_004af120()
+        ;   XREF to: 004af120 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_loadLeafAssets_FUN_004af120()
     CALL core_fire.cpp_loadDynamiteAssets_FUN_004b1f80 ; 004b5b11
         ;   XREF to: 004b1f80 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_loadDynamiteAssets_FUN_004b1f80()
     CALL core_fire.cpp_loadGunFlameAssets_FUN_004b2af0 ; 004b5b16

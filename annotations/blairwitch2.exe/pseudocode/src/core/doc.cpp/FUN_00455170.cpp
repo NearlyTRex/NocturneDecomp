@@ -28,15 +28,15 @@ void core_doc_cpp_FUN_00455170(int param_1,SPose *param_2)
   bVar2 = 0;
   this_ptr = (CDeformableModelInstance *)(param_1 + 0x2b4);
   core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_00548620(this_ptr,&SStack_1ae4);
-  core_skeleton_cpp_FUN_00544f80
-            (this_ptr,*(uint *)(param_1 + 0x256ec),
-             *(float *)(param_1 + 0x256bc) * (float)_DAT_005d01d7,0xffffffff);
+  core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_00544f80
+            (this_ptr,*(int *)(param_1 + 0x256ec),
+             *(float *)(param_1 + 0x256bc) * (float)_DAT_005d01d7,-1);
   core_xform_cpp_FUN_005940b0(_DAT_01b4d258 * 0x10 + param_1 + 0x964);
   local_1c = afStack_34[3];
   afStack_34[(uint)bVar2 * -2 + 7] = afStack_34[(uint)bVar2 * -2 + 4];
   afStack_34[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 8] =
        afStack_34[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 5];
-  blend_callback = core_skeleton_cpp_FUN_00544cc0;
+  blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_00544cc0;
   bone_index = -1;
   local_10 = -local_18;
   blend_weight = 1.0;

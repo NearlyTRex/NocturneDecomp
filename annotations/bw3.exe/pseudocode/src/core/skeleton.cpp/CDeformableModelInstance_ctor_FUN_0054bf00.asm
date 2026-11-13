@@ -8,7 +8,7 @@
 ;
 ; XREF[7]:
 ;   core_charactr.cpp_CCharacter_ctor_FUN_0042ac20 at 0042ac3a
-;   core_fire.cpp_FUN_004a4340 at 004a4361
+;   core_fire.cpp_CFireEffect_preloadTossAssets_FUN_004a4340 at 004a4361
 ;   core_flashlit.cpp_CFlashlight_getMuzzlePoint_FUN_004a7600 at 004a760d
 ;   core_rifle.cpp_CRifle_getMuzzlePoint_FUN_00527ca0 at 00527cb4
 ;   core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0054a3c0 at 0054a40e

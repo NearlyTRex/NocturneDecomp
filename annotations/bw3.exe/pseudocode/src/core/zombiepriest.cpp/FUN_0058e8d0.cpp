@@ -136,9 +136,9 @@ void core_zombiepriest_cpp_FUN_0058e8d0(int param_1,float param_2)
       }
       core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90
                 ((CDeformableModelInstance *)(param_1 + 0x158),iVar1,6.0,fVar5,_DAT_02d24998,
-                 core_skeleton_cpp_FUN_0054bef0);
+                 core_skeleton_cpp_blendWeightCallback_FUN_0054bef0);
       core_xform_cpp_quaternionFromAngleX_FUN_00585cd0(afStack_8c[3]);
-      pcVar7 = core_skeleton_cpp_FUN_0054bef0;
+      pcVar7 = core_skeleton_cpp_blendWeightCallback_FUN_0054bef0;
       local_a0.w = local_90;
       pfVar6 = (float *)((int)&local_a0 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
       *(float *)((int)&local_a0 + (uint)bVar4 * -8 + 4) = afStack_8c[(uint)bVar4 * -2];
@@ -150,7 +150,7 @@ void core_zombiepriest_cpp_FUN_0058e8d0(int param_1,float param_2)
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0054e170
                 (local_18,&local_a0,*(float *)(param_1 + 0xd10c),iVar1,pcVar7);
       core_xform_cpp_quaternionFromAngleY_FUN_00585d10(local_7c + (float)_DAT_005d8c20);
-      pcVar7 = core_skeleton_cpp_FUN_0054bef0;
+      pcVar7 = core_skeleton_cpp_blendWeightCallback_FUN_0054bef0;
       local_a0.w = local_b0;
       puVar3 = (uint *)((int)&local_a0 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
       *(uint *)((int)&local_a0 + (uint)bVar4 * -8 + 4) =

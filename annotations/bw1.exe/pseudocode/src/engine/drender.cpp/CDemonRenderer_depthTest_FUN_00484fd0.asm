@@ -13,7 +13,7 @@
 ;   core_fire.cpp_CRainDrop_render_FUN_004b46e0 at 004b4736
 ;   core_fire.cpp_CShell_render_FUN_004b4090 at 004b40f1
 ;   core_fire.cpp_CSmokeParticle_render_FUN_004ac0b0 at 004ac102
-;   core_fire.cpp_FUN_004ad140 at 004ad1a2
+;   core_fire.cpp_CSpark_render_FUN_004ad140 at 004ad1a2
 ;   core_weather.cpp_CWeather_renderParticles_FUN_005ae890 at 005aea46
 ;
 ; Referenced Globals:

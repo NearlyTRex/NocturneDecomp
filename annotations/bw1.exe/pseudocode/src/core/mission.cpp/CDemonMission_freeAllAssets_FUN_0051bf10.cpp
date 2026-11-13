@@ -11,7 +11,7 @@ void __cdecl core_mission_cpp_CDemonMission_freeAllAssets_FUN_0051bf10(CDemonMis
 {
   engine_texture_cpp_FUN_00597c30();
   core_dmodel_cpp_freeAllModels_FUN_00468830();
-  core_skeleton_cpp_FUN_0056b610();
-  core_skeleton_cpp_FUN_0056b740();
+  core_skeleton_cpp_freeAllModels_FUN_0056b610();
+  core_skeleton_cpp_freeAllSkeletons_FUN_0056b740();
   return;
 }

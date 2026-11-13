@@ -614,6 +614,7 @@ annotations/bw1.exe/pseudocode/src/core/fire.cpp/CFirefly_ctor_FUN_004b7780.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CFirefly_dtor_FUN_004b77a0.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CGlassParticle_arrdtor256_FUN_004b7950.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CGlassParticle_dtor_FUN_004b76c0.cpp
+annotations/bw1.exe/pseudocode/src/core/fire.cpp/CGlassParticle_onCollision_FUN_004afc60.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CGunFlame_ctor_FUN_004b75d0.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CGunFlame_dtor_FUN_004b75e0.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CGunFlame_reset_FUN_004b2b40.cpp
@@ -637,6 +638,7 @@ annotations/bw1.exe/pseudocode/src/core/fire.cpp/CPopcorn_dtor_FUN_004b7550.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CRainDrop_arrdtor256_FUN_004b7870.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CRainDrop_ctor_FUN_004b7500.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CRainDrop_dtor_FUN_004b7520.cpp
+annotations/bw1.exe/pseudocode/src/core/fire.cpp/CRainDrop_onCollision_FUN_004b4360.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CRock_arrdtor64_FUN_004b7910.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CRock_ctor_FUN_004b7720.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CRock_dtor_FUN_004b7740.cpp
@@ -650,6 +652,7 @@ annotations/bw1.exe/pseudocode/src/core/fire.cpp/CSmokeParticle_reset_FUN_004abe
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CSpark_arrdtor256_FUN_004b7990.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CSpark_ctor_FUN_004b77b0.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CSpark_dtor_FUN_004b77d0.cpp
+annotations/bw1.exe/pseudocode/src/core/fire.cpp/CSpark_onCollision_FUN_004ad850.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CStake_arrdtor256_FUN_004b79b0.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CStake_process_FUN_004acf20.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CToss_arrdtor20_FUN_004b78d0.cpp
@@ -658,9 +661,6 @@ annotations/bw1.exe/pseudocode/src/core/fire.cpp/CTrail_ctor_FUN_004b7590.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CTrail_dtor_FUN_004b75a0.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CTrail_process_FUN_004b3cd0.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/CTrail_reset_FUN_004b3c70.cpp
-annotations/bw1.exe/pseudocode/src/core/fire.cpp/FUN_004ad850.cpp
-annotations/bw1.exe/pseudocode/src/core/fire.cpp/FUN_004afc60.cpp
-annotations/bw1.exe/pseudocode/src/core/fire.cpp/FUN_004b4360.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/SLaserInfo_ctor_FUN_004b63e0.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/loadDebrisAssets_FUN_004b1630.cpp
 annotations/bw1.exe/pseudocode/src/core/fire.cpp/loadDynamiteAssets_FUN_004b1f80.cpp
@@ -1256,10 +1256,12 @@ annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_bl
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_dismemberPart_FUN_0056a7d0.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_dtor_FUN_005673f0.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_free_FUN_005674d0.cpp
+annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_getSkeletonPtr_FUN_00569f30.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_offsetAllBonePositions_FUN_005693d0.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_preCache_FUN_00569b20.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_rayIntersect_FUN_0056a870.cpp
+annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_renderSkeleton_FUN_0056af90.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_renderWithOptions_FUN_00569810.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_shatter_FUN_0056ac60.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_skinAndInitWRecip_FUN_005699c0.cpp
@@ -1280,11 +1282,13 @@ annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_arrdtor40_FUN_005
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_calculateFrameDataSize_FUN_00563670.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_ctor_FUN_00562dd0.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_dtor_FUN_00562e30.cpp
+annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_free_FUN_00562f70.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_getBoneAngleAtFrame_FUN_00563580.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_getHierarchyDistance_FUN_00563630.cpp
-annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/FUN_0056b780.cpp
+annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/blendWeightCallback_FUN_00567360.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/calculateDistanceSquared_FUN_0056b950.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/distancePointToLineSegment_FUN_00562be0.cpp
+annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/getMemoryStats_FUN_0056b780.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/skipToEndOfLine_FUN_00562bc0.cpp
 annotations/bw1.exe/pseudocode/src/core/skeleton.cpp/staticInit_FUN_00562b70.cpp
 annotations/bw1.exe/pseudocode/src/core/slew.cpp/staticInit_FUN_0056b9f0.cpp

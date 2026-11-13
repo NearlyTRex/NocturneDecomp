@@ -26,7 +26,6 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004d3a70(CHotDemon *this_pt
   float *pfVar9;
   CVector3f *pCVar10;
   float fVar11;
-  uint *puVar12;
   EBloodType blood_type;
   SDamageInfo *damage_info;
   float max_distance;
@@ -51,13 +50,12 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004d3a70(CHotDemon *this_pt
   float fStack_d0;
   float fStack_cc;
   CVector3f CStack_c8;
-  uint uStack_bc;
+  float fStack_bc;
   float afStack_b8 [4];
   float fStack_a8;
-  uint uStack_a4;
+  CVector3f CStack_a4;
   float fStack_98;
-  uint uStack_8c;
-  float fStack_88;
+  float afStack_94 [5];
   uint uStack_80;
   float fStack_74;
   float fStack_70;
@@ -96,7 +94,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004d3a70(CHotDemon *this_pt
   fStack_34 = delta_time * (this_ptr->base).speed;
   pCVar1 = &(this_ptr->base).base.model;
   while (0.0 < fStack_34) {
-    iVar5 = core_motion_cpp_CMotionController_advance_FUN_005030c0(&pCVar1->base,afStack_b8 + 0x21);
+    iVar5 = core_motion_cpp_CMotionController_advance_FUN_005030c0(&pCVar1->base,afStack_94 + 0x18);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042aa00((CCharacter *)this_ptr,iVar5);
   }
   fVar11 = (this_ptr->base).speed;
@@ -128,20 +126,20 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004d3a70(CHotDemon *this_pt
         fStack_48 = (pCVar4->base).location.position.z -
                     (this_ptr->base).base.base.location.position.z;
         fStack_128 = fStack_50;
-        afStack_124[(uint)bVar8 * -2] = afStack_b8[(uint)bVar8 * -2 + 0x1b];
+        afStack_124[(uint)bVar8 * -2] = afStack_94[(uint)bVar8 * -2 + 0x12];
         afStack_124[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
-             afStack_b8[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x1c];
+             afStack_94[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x13];
         fStack_38 = SQRT(afStack_124[1] * afStack_124[1] +
                          fStack_128 * fStack_128 + afStack_124[0] * afStack_124[0]);
         fStack_2c = fStack_38;
         if (fStack_38 < 0x40000000) {
           core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&fStack_128);
-          uStack_8c = uStack_80;
-          afStack_b8[(uint)bVar8 * -2 + 0xc] = afStack_b8[(uint)bVar8 * -2 + 0xf];
-          afStack_b8[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0xd] =
-               afStack_b8[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x10];
+          afStack_94[2] = (float)uStack_80;
+          afStack_94[(uint)bVar8 * -2 + 3] = afStack_94[(uint)bVar8 * -2 + 6];
+          afStack_94[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4] =
+               afStack_94[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 7];
           fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                                (fStack_88 - (this_ptr->base).base.base.orient.vec.y);
+                                (afStack_94[3] - (this_ptr->base).base.base.orient.vec.y);
           if (ABS(fStack_14) < (float)_DAT_005da661) {
             if (iStack_1c == 0) {
               iVar5 = 2;
@@ -238,14 +236,14 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004d3a70(CHotDemon *this_pt
             fStack_6c = (pCVar4->base).location.position.z -
                         (this_ptr->base).base.base.location.position.z;
             fStack_ec = fStack_74;
-            afStack_e8[(uint)bVar8 * -2] = afStack_b8[(uint)bVar8 * -2 + 0x12];
+            afStack_e8[(uint)bVar8 * -2] = afStack_94[(uint)bVar8 * -2 + 9];
             afStack_e8[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
-                 afStack_b8[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x13];
+                 afStack_94[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 10];
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&fStack_ec);
             uStack_68 = uStack_44;
-            afStack_b8[(uint)bVar8 * -2 + 0x15] = afStack_b8[(uint)bVar8 * -2 + 0x1e];
-            afStack_b8[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x16] =
-                 afStack_b8[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x1f];
+            afStack_94[(uint)bVar8 * -2 + 0xc] = afStack_94[(uint)bVar8 * -2 + 0x15];
+            afStack_94[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0xd] =
+                 afStack_94[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x16];
             fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                                   (fStack_64 - (this_ptr->base).base.base.orient.vec.y);
             if (ABS(fStack_14) < (float)_DAT_005da661) {
@@ -311,18 +309,19 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004d3a70(CHotDemon *this_pt
     case 0xb:
       if (((this_ptr->base).pool_me == 0) &&
          ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
-        core_skeleton_cpp_FUN_005469a0(&(this_ptr->base).base.model,0);
-        puVar12 = &uStack_bc;
-        uStack_bc = uStack_a4;
-        afStack_b8[(uint)bVar8 * -2] = afStack_b8[(uint)bVar8 * -2 + 6];
+        core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
+                  (&(this_ptr->base).base.model,0,&CStack_a4);
+        pfVar9 = &fStack_bc;
+        fStack_bc = CStack_a4.x;
+        afStack_b8[(uint)bVar8 * -2] = *(float *)((int)&CStack_a4 + (uint)bVar8 * -8 + 4);
         afStack_b8[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
-             afStack_b8[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 7];
-        core_actor_cpp_FUN_00408d70(this_ptr,puVar12);
+             *(float *)((int)&CStack_a4 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+        core_actor_cpp_FUN_00408d70(this_ptr,pfVar9);
         blood_type = BLOOD_TYPE_RED;
         CStack_164.x = fStack_98;
-        *(float *)((int)&CStack_164 + (uint)bVar8 * -8 + 4) = afStack_b8[(uint)bVar8 * -2 + 9];
+        *(float *)((int)&CStack_164 + (uint)bVar8 * -8 + 4) = afStack_94[(uint)bVar8 * -2];
         *(float *)((int)&CStack_164 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
-             afStack_b8[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 10];
+             afStack_94[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
         core_gore_cpp_CGore_createBloodPool_FUN_004c9ad0(g_CGorePtr,&CStack_164,blood_type);
         (this_ptr->base).pool_me = 1;
       }
@@ -365,9 +364,9 @@ switchD_004d42c8_caseD_3:
     fStack_58 = (this_ptr->base).base.velocity.y * delta_time;
     fStack_54 = (this_ptr->base).base.velocity.z * delta_time;
     afStack_b8[2] = fStack_5c;
-    afStack_b8[(uint)bVar8 * -2 + 3] = afStack_b8[(uint)bVar8 * -2 + 0x18];
+    afStack_b8[(uint)bVar8 * -2 + 3] = afStack_94[(uint)bVar8 * -2 + 0xf];
     afStack_b8[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4] =
-         afStack_b8[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x19];
+         afStack_94[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x10];
     pCVar10 = &(this_ptr->base).base.position_delta;
     fStack_158 = afStack_b8[2] + pCVar10->x;
     afStack_154[0] = afStack_b8[3] + (this_ptr->base).base.position_delta.y;

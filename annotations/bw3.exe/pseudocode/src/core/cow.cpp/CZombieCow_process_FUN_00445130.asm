@@ -369,8 +369,8 @@ section .text
     PUSH ESI                            ; 004454a8
     LEA ESI,[EBP + 0x56]                ; 004454a9
     LEA EDI,[EBP + 0x4a]                ; 004454ac
-    CALL core_skeleton.cpp_FUN_0054dbd0 ; 004454af
-        ;   XREF to: 0054dbd0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054dbd0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0 ; 004454af
+        ;   XREF to: 0054dbd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 004454b4
     LEA EAX,[EBP + 0x4a]                ; 004454b7
     LEA ESI,[EBP + 0x56]                ; 004454ba

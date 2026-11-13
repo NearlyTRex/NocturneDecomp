@@ -21,13 +21,13 @@ void __cdecl core_bride_cpp_CBride_processDamage_FUN_0041ead0(CBride *this_ptr,S
   int iVar3;
   int iVar4;
   float flame_scale;
-  uint *puVar5;
+  float *pfVar5;
   int include_hero;
   float fStack_60;
   CVector3f CStack_54;
-  uint uStack_48;
+  float fStack_48;
   float afStack_44 [5];
-  uint uStack_30;
+  CVector3f CStack_30;
   CVector3f CStack_24;
   
   bVar2 = 0;
@@ -48,13 +48,14 @@ void __cdecl core_bride_cpp_CBride_processDamage_FUN_0041ead0(CBride *this_ptr,S
     } while (iVar3 < 5);
   }
   if (damage_info->damage_type == DAMAGE_TYPE_BURN) {
-    core_skeleton_cpp_FUN_00546a90(&(this_ptr->base).base.model,0);
-    puVar5 = &uStack_48;
-    uStack_48 = uStack_30;
-    afStack_44[(uint)bVar2 * -2] = afStack_44[(uint)bVar2 * -2 + 6];
+    core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
+              (&(this_ptr->base).base.model,0,&CStack_30);
+    pfVar5 = &fStack_48;
+    fStack_48 = CStack_30.x;
+    afStack_44[(uint)bVar2 * -2] = *(float *)((int)&CStack_30 + (uint)bVar2 * -8 + 4);
     afStack_44[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
-         afStack_44[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 7];
-    core_actor_cpp_FUN_00408d70(this_ptr,puVar5);
+         *(float *)((int)&CStack_30 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+    core_actor_cpp_FUN_00408d70(this_ptr,pfVar5);
     include_hero = 0;
     flame_scale = 10.0;
     iVar4 = 0;

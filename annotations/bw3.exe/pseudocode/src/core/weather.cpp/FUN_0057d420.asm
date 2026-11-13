@@ -12,7 +12,7 @@
 ;   undefined4 DAT_005fc5a0
 ;
 ; Called Functions:
-;   core_fire.cpp_FUN_004a4130
+;   core_fire.cpp_CFireEffect_preloadLightningBoltStyle_FUN_004a4130
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
 ;   sound_sndmain.cpp_preloadSfx_FUN_00556230
 ;
@@ -67,8 +67,8 @@ section .text
     PUSH 0x1                            ; 0057d4a0
     MOV ESI,dword ptr [0x005fc5a0]      ; 0057d4a2 | DAT_005fc5a0
     PUSH ESI                            ; 0057d4a8
-    CALL core_fire.cpp_FUN_004a4130     ; 0057d4a9
-        ;   XREF to: 004a4130 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a4130()
+    CALL core_fire.cpp_CFireEffect_preloadLightningBoltStyle_FUN_004a4130 ; 0057d4a9
+        ;   XREF to: 004a4130 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_preloadLightningBoltStyle_FUN_004a4130(CFireEffect * this_ptr, int bolt_style)
     ADD ESP,0x8                         ; 0057d4ae
     POP EBX                             ; 0057d4b1
     POP ESI                             ; 0057d4b2

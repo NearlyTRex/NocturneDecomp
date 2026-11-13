@@ -41,7 +41,7 @@
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00559220
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_005592d0
 ;   core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_00557230
-;   core_skeleton.cpp_FUN_00569040
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
 ;   crt_math.c_acos_FUN_005c1d04
 ;   crt_memory.c___arrinit_FUN_005c0357
@@ -243,8 +243,8 @@ section .text
     PUSH EAX                            ; 0047274a
     LEA ESI,[ESP + 0x150]               ; 0047274b
     LEA EDI,[ESP + 0x12c]               ; 00472752
-    CALL core_skeleton.cpp_FUN_00569040 ; 00472759
-        ;   XREF to: 00569040 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569040()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040 ; 00472759
+        ;   XREF to: 00569040 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     LEA ESI,[ESP + 0x150]               ; 0047275e
     LEA EAX,[ESP + 0x12c]               ; 00472765
     ADD ESP,0x8                         ; 0047276c
@@ -395,8 +395,8 @@ section .text
     PUSH EAX                            ; 00472976
     LEA ESI,[ESP + 0x18c]               ; 00472977
     LEA EDI,[ESP + 0x144]               ; 0047297e
-    CALL core_skeleton.cpp_FUN_00569040 ; 00472985
-        ;   XREF to: 00569040 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569040()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040 ; 00472985
+        ;   XREF to: 00569040 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     LEA ESI,[ESP + 0x18c]               ; 0047298a
     LEA EDX,[ESP + 0x144]               ; 00472991
     ADD ESP,0x8                         ; 00472998

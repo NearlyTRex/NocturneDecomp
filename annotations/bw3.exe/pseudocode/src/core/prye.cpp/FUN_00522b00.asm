@@ -41,7 +41,7 @@
 ;   core_setcolid.cpp_CDemonSet_init_FUN_0053ebe0
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_0053ec90
 ;   core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_0053cbf0
-;   core_skeleton.cpp_FUN_0054dbd0
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250
 ;   crt_math.c_acos_FUN_005a4b74
 ;   crt_memory.c___arrinit_FUN_005a30d7
@@ -245,8 +245,8 @@ section .text
     PUSH EAX                            ; 00522dbf
     LEA ESI,[ESP + 0x12c]               ; 00522dc0
     LEA EDI,[ESP + 0x1b0]               ; 00522dc7
-    CALL core_skeleton.cpp_FUN_0054dbd0 ; 00522dce
-        ;   XREF to: 0054dbd0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054dbd0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0 ; 00522dce
+        ;   XREF to: 0054dbd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     LEA ESI,[ESP + 0x12c]               ; 00522dd3
     LEA EAX,[ESP + 0x1b0]               ; 00522dda
     ADD ESP,0x8                         ; 00522de1
@@ -398,8 +398,8 @@ section .text
     PUSH EAX                            ; 00522fed
     LEA ESI,[ESP + 0x150]               ; 00522fee
     LEA EDI,[ESP + 0x1bc]               ; 00522ff5
-    CALL core_skeleton.cpp_FUN_0054dbd0 ; 00522ffc
-        ;   XREF to: 0054dbd0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054dbd0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0 ; 00522ffc
+        ;   XREF to: 0054dbd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     LEA ESI,[ESP + 0x150]               ; 00523001
     LEA EDX,[ESP + 0x1bc]               ; 00523008
     ADD ESP,0x8                         ; 0052300f

@@ -18,6 +18,7 @@ void __cdecl core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004a2450(CFireEffec
   if (0x13 < _DAT_01cbb9b8) {
     _DAT_01cbb9b8 = 0;
   }
-  core_fire_cpp_FUN_0049a390((CMuzzleFlash *)(&DAT_01cbb9bc + iVar1),position,rotation_matrix);
+  core_fire_cpp_CMuzzleFlash_init_FUN_0049a390
+            ((CMuzzleFlash *)(&DAT_01cbb9bc + iVar1),position,rotation_matrix);
   return;
 }

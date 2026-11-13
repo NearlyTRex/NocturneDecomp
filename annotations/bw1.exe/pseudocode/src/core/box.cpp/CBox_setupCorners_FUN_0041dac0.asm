@@ -15,7 +15,7 @@
 ;   core_box.cpp_CBox_loadFromFile_FUN_00420140 at 0042023b
 ;   core_boxactor.cpp_FUN_00421e80 at 00421fe6
 ;   core_fire.cpp_CStake_spawn_FUN_004acb60 at 004acdb2
-;   core_fire.cpp_FUN_004b1c50 at 004b1d2c
+;   core_fire.cpp_CToss_create_FUN_004b1c50 at 004b1d2c
 ;   core_simbox.cpp_CSimBox_setup_FUN_00562660 at 00562722
 ;   core_weapon.cpp_FUN_005ade40 at 005adf7d
 ;

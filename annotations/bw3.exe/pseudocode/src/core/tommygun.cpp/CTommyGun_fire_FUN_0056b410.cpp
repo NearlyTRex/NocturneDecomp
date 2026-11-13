@@ -171,7 +171,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_0056b410(CTommyGun *this_ptr)
         if (this_ptr_02 == (CTrigger *)0x0) {
           if (pCStack_20 == (CCrate *)0x0) {
             if (this_ptr_03 == (CFlameCan *)0x0) {
-              core_fire_cpp_FUN_004a2090
+              core_fire_cpp_CFireEffect_createBulletImpact_FUN_004a2090
                         (0x01C73654,&g_CDemonSetPtr->collision_impact_position,
                          &g_CDemonSetPtr->collision_normal,g_CDemonSetPtr->ground_type,
                          g_CDemonSetPtr->collision_actor,0);

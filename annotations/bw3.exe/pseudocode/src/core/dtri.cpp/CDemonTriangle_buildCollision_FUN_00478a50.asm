@@ -15,7 +15,7 @@
 ;   core_dtri.cpp_buildClipTriangleFan_FUN_0047ae10 at 0047ae4e
 ;   core_setcolid.cpp_FUN_0053bc80 at 0053c106
 ;   core_setcolid.cpp_FUN_0053da90 at 0053dba4
-;   core_skeleton.cpp_FUN_0054ac50 at 0054adb3
+;   core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0054ac50 at 0054adb3
 ;   core_stairs.cpp_CStairs_buildCollision_FUN_00568730 at 00568826
 ;   core_wateract.cpp_CWaterActor_customRayIntersect_FUN_00578d30 at 00578e0e
 ;

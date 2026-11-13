@@ -46,7 +46,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
-;   core_fire.cpp_FUN_004a3790
+;   core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004a3790
 ;   core_flamecan.cpp_CFlameCan_ignite_FUN_004a7110
 ;   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004cc5d0
 ;   core_glass.cpp_FUN_004cc040
@@ -327,8 +327,8 @@ section .text
     PUSH EAX                            ; 005356f6
     MOV ECX,dword ptr [0x005fc5a0]      ; 005356f7 | DAT_005fc5a0
     PUSH ECX                            ; 005356fd
-    CALL core_fire.cpp_FUN_004a3790     ; 005356fe
-        ;   XREF to: 004a3790 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3790()
+    CALL core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004a3790 ; 005356fe
+        ;   XREF to: 004a3790 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004a3790(CFireEffect * this_ptr, CVector3f * position, float radius, CVector3f * out_force_dir, ...)
     ADD ESP,0x18                        ; 00535703
     TEST EAX,EAX                        ; 00535706
     JZ 0x0053572e                       ; 00535708
@@ -367,8 +367,8 @@ section .text
     MOV EDX,dword ptr [0x005fc5a0]      ; 00535756 | DAT_005fc5a0
     PUSH EDX                            ; 0053575c
     MOV dword ptr [ESP + 0x8c],EAX      ; 0053575d
-    CALL core_fire.cpp_FUN_004a3790     ; 00535764
-        ;   XREF to: 004a3790 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3790()
+    CALL core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004a3790 ; 00535764
+        ;   XREF to: 004a3790 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004a3790(CFireEffect * this_ptr, CVector3f * position, float radius, CVector3f * out_force_dir, ...)
     ADD ESP,0x18                        ; 00535769
     TEST EAX,EAX                        ; 0053576c
     JZ 0x0053578b                       ; 0053576e
@@ -415,8 +415,8 @@ section .text
     MOV EAX,[0x005fc5a0]                ; 005357c8 | DAT_005fc5a0
     PUSH EAX                            ; 005357cd
     MOV dword ptr [ESP + 0x78],ECX      ; 005357ce
-    CALL core_fire.cpp_FUN_004a3790     ; 005357d2
-        ;   XREF to: 004a3790 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3790()
+    CALL core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004a3790 ; 005357d2
+        ;   XREF to: 004a3790 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004a3790(CFireEffect * this_ptr, CVector3f * position, float radius, CVector3f * out_force_dir, ...)
     ADD ESP,0x18                        ; 005357d7
     TEST EAX,EAX                        ; 005357da
     JZ 0x005357eb                       ; 005357dc
@@ -446,8 +446,8 @@ section .text
     PUSH EAX                            ; 00535812
     MOV EAX,[0x005fc5a0]                ; 00535813 | DAT_005fc5a0
     PUSH EAX                            ; 00535818
-    CALL core_fire.cpp_FUN_004a3790     ; 00535819
-        ;   XREF to: 004a3790 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3790()
+    CALL core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004a3790 ; 00535819
+        ;   XREF to: 004a3790 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004a3790(CFireEffect * this_ptr, CVector3f * position, float radius, CVector3f * out_force_dir, ...)
     ADD ESP,0x18                        ; 0053581e
     TEST EAX,EAX                        ; 00535821
     JZ 0x0053582e                       ; 00535823

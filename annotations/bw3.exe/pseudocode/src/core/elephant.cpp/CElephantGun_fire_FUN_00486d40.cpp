@@ -197,10 +197,10 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_00486d40(CElephantGun *this_
                 if (pCStack_34 == (CFlameCan *)0x0) {
                   in_stack_fffffe5c = (CDemonSet *)g_CDemonSetPtr->collision_actor;
                   in_stack_fffffe58 = (CDemonActor *)g_CDemonSetPtr->ground_type;
-                  core_fire_cpp_FUN_004a2090
+                  core_fire_cpp_CFireEffect_createBulletImpact_FUN_004a2090
                             (0x01C73654,&g_CDemonSetPtr->collision_impact_position,
-                             &g_CDemonSetPtr->collision_normal,in_stack_fffffe58,in_stack_fffffe5c,0
-                            );
+                             &g_CDemonSetPtr->collision_normal,(int)in_stack_fffffe58,
+                             (CDemonActor *)in_stack_fffffe5c,0);
                   break;
                 }
                 pCVar5 = (CDemonSet *)0x4874f8;

@@ -9,7 +9,7 @@
 ; undefined8       Stack[-0x10]:8  local_10
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_004a1760 at 004a195c
+;   core_fire.cpp_CFireEffect_process_FUN_004a1760 at 004a195c
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01d2130c

@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040cab0 at 0040cd0b
-;   core_fire.cpp_FUN_004a2090 at 004a22a5
+;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_004a2090 at 004a22a5
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004cf960 = 004cf9b1

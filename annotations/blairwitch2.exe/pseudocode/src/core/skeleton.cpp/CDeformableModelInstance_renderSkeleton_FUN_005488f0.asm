@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderSkeleton_FUN_005488f0(CDeformableModelInstance *this_ptr,undefined4 param_2,undefined4 param_3)
+; void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderSkeleton_FUN_005488f0(CDeformableModelInstance *this_ptr,int color,int render_flags)
 ;
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
+; int              Stack[0x8]:4   color
+; int              Stack[0xc]:4   render_flags
 ;
 ; Called Functions:
+;   core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_005424b0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00547810
-;   core_skeleton.cpp_FUN_005424b0
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
         ;   XREF to: 00547810 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00547810(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0054890c
     PUSH EAX                            ; 0054890f
-    CALL core_skeleton.cpp_FUN_005424b0 ; 00548910
-        ;   XREF to: 005424b0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_005424b0()
+    CALL core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_005424b0 ; 00548910
+        ;   XREF to: 005424b0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_005424b0(CDeformableModel * this_ptr, int color, CMatrix3x4f * bone_matrices, int render_flags)
     ADD ESP,0x10                        ; 00548915
     POP EBX                             ; 00548918
     RET                                 ; 00548919

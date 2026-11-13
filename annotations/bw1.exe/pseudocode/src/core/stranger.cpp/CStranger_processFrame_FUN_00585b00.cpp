@@ -153,7 +153,8 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_00585b00(CStranger *th
   CVector3f CStack_c0;
   float afStack_b4 [6];
   float fStack_9c;
-  float afStack_98 [7];
+  float afStack_98 [2];
+  CVector3f CStack_90;
   uint uStack_7c;
   float afStack_78 [2];
   CDeformableModelInstance *pCStack_70;
@@ -679,15 +680,16 @@ LAB_0058763b:
           pCStack_3c = (CCharacter *)(this_ptr->base).base.grabbed_by;
           pCStack_18 = (pCStack_3c->base).vtable._uc;
           pCStack_50 = &(this_ptr->base).base.model;
-          core_skeleton_cpp_FUN_00569130(pCStack_50);
+          core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
+                    (pCStack_50,0,&CStack_90);
           pCVar14 = pCStack_18;
           this_ptr_02 = pCStack_3c;
           pCVar29 = &CStack_c0;
-          CStack_c0.x = afStack_98[2];
-          afStack_b4[(uint)bVar27 * -2 + -2] = afStack_98[(uint)bVar27 * -2 + 3];
+          CStack_c0.x = CStack_90.x;
+          afStack_b4[(uint)bVar27 * -2 + -2] = *(float *)((int)&CStack_90 + (uint)bVar27 * -8 + 4);
           actor = this_ptr;
           afStack_b4[(uint)bVar27 * -2 + (uint)bVar27 * -2 + -1] =
-               afStack_98[(uint)bVar27 * -2 + (uint)bVar27 * -2 + 4];
+               *(float *)((int)&CStack_90 + (uint)bVar27 * -8 + (uint)bVar27 * -8 + 8);
           iVar22 = (*(pCVar14->_uc).attractActorToward)(this_ptr_02,(CDemonActor *)actor,pCVar29);
           if (iVar22 == 0) {
             (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
@@ -796,13 +798,13 @@ LAB_0058763b:
             fStack_12c = 0.0;
             core_actor_cpp_FUN_00408b40();
             afStack_98[1] = afStack_20c[1];
-            afStack_98[(uint)bVar27 * -2 + 2] = afStack_20c[(uint)bVar27 * -2 + 2];
-            afStack_98[(uint)bVar27 * -2 + (uint)bVar27 * -2 + 3] =
+            *(float *)((int)&CStack_90 + (uint)bVar27 * -8) = afStack_20c[(uint)bVar27 * -2 + 2];
+            *(float *)((int)&CStack_90 + (uint)bVar27 * -8 + (uint)bVar27 * -8 + 4) =
                  afStack_20c[(uint)bVar27 * -2 + (uint)bVar27 * -2 + 3];
             pfVar23 = &this_ptr->interact_blend;
             fStack_1d8 = afStack_98[1] - (this_ptr->base).base.base.location.position.x;
-            fStack_1d4 = afStack_98[2] - (this_ptr->base).base.base.location.position.y;
-            fStack_1d0 = afStack_98[3] - (this_ptr->base).base.base.location.position.z;
+            fStack_1d4 = CStack_90.x - (this_ptr->base).base.base.location.position.y;
+            fStack_1d0 = CStack_90.y - (this_ptr->base).base.base.location.position.z;
             afStack_29c[1] = fStack_1d8;
             afStack_29c[(uint)bVar27 * -2 + 2] = afStack_1e8[(uint)bVar27 * -2 + 5];
             afStack_29c[(uint)bVar27 * -2 + (uint)bVar27 * -2 + 3] =

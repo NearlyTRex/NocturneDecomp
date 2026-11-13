@@ -21,7 +21,7 @@
 ;   core_actor.cpp_FUN_00408cf0
 ;   core_actor.cpp_FUN_00408d70
 ;   core_dirmat.cpp_FUN_00449530
-;   core_fire.cpp_FUN_0049db20
+;   core_fire.cpp_CFireEffect_traceLaser_FUN_0049db20
 ;   core_fire.cpp_SLaserInfo_ctor_FUN_0049dae0
 ;   core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004e7570
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00537e00
@@ -212,8 +212,8 @@ section .text
     PUSH EAX                            ; 004e718f
     MOV ESI,dword ptr [0x00614d30]      ; 004e7190 | DAT_00614d30
     PUSH ESI                            ; 004e7196
-    CALL core_fire.cpp_FUN_0049db20     ; 004e7197
-        ;   XREF to: 0049db20 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_0049db20()
+    CALL core_fire.cpp_CFireEffect_traceLaser_FUN_0049db20 ; 004e7197
+        ;   XREF to: 0049db20 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_traceLaser_FUN_0049db20(CFireEffect * this_ptr, CVector3f * origin, CVector3f * direction, SLaserInfo laser_info, ...)
     ADD ESP,0x64                        ; 004e719c
     MOV EDI,dword ptr [0x0061b5a8]      ; 004e719f | g_CDemonSetPtr
     PUSH EDI                            ; 004e71a5

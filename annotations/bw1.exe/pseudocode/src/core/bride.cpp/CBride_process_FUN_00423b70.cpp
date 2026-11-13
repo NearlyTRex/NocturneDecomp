@@ -68,7 +68,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423b70(CBride *this_ptr,float d
   float afStack_84 [3];
   float afStack_78 [3];
   uint uStack_6c;
-  uint uStack_60;
+  CVector3f CStack_60;
   double dStack_54;
   double dStack_4c;
   double dStack_44;
@@ -374,12 +374,13 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423b70(CBride *this_ptr,float d
       }
     }
     else if ((uVar6 == 0xe) && ((this_ptr->base).pool_me == 0)) {
-      core_skeleton_cpp_FUN_00569040(pCVar1,0);
+      core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
+                (pCVar1,0,&CStack_60);
       pfVar11 = afStack_bc + 0x11;
-      afStack_78[0] = (float)uStack_60;
-      afStack_bc[(uint)bVar8 * -2 + 0x12] = afStack_bc[(uint)bVar8 * -2 + 0x18];
+      afStack_78[0] = CStack_60.x;
+      afStack_bc[(uint)bVar8 * -2 + 0x12] = *(float *)((int)&CStack_60 + (uint)bVar8 * -8 + 4);
       afStack_bc[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x13] =
-           afStack_bc[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x19];
+           *(float *)((int)&CStack_60 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
       core_actor_cpp_FUN_00408b40(this_ptr,pfVar11);
       blood_type = BLOOD_TYPE_RED;
       CStack_fc.x = fStack_144;

@@ -42,7 +42,7 @@
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00537e00
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_00537eb0
 ;   core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_00535e10
-;   core_skeleton.cpp_FUN_005469a0
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;   crt_memory.c___arrinit_FUN_005b7f5f
 ;
@@ -245,8 +245,8 @@ section .text
     PUSH EAX                            ; 0056c1c1
     LEA ESI,[ESP + 0xf0]                ; 0056c1c2
     LEA EDI,[ESP + 0x144]               ; 0056c1c9
-    CALL core_skeleton.cpp_FUN_005469a0 ; 0056c1d0
-        ;   XREF to: 005469a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_005469a0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0 ; 0056c1d0
+        ;   XREF to: 005469a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     LEA ESI,[ESP + 0xf0]                ; 0056c1d5
     LEA EAX,[ESP + 0x144]               ; 0056c1dc
     ADD ESP,0x8                         ; 0056c1e3
@@ -401,8 +401,8 @@ section .text
     PUSH EAX                            ; 0056c416
     LEA ESI,[ESP + 0x12c]               ; 0056c417
     LEA EDI,[ESP + 0x114]               ; 0056c41e
-    CALL core_skeleton.cpp_FUN_005469a0 ; 0056c425
-        ;   XREF to: 005469a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_005469a0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0 ; 0056c425
+        ;   XREF to: 005469a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     LEA ESI,[ESP + 0x12c]               ; 0056c42a
     LEA EDX,[ESP + 0x114]               ; 0056c431
     ADD ESP,0x8                         ; 0056c438

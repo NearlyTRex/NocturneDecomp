@@ -12,12 +12,12 @@
 ;   core_dcamera.cpp_CDemonCamera_testVisibility_FUN_004512f0 at 0045132f
 ;   core_fire.cpp_CCrater_render_FUN_0049d980 at 0049d9f0
 ;   core_fire.cpp_CFirefly_render_FUN_00498b40 at 00498b99
+;   core_fire.cpp_CLightningBolt_render_FUN_0049f520 at 0049f9cc
 ;   core_fire.cpp_CPopcorn_render_FUN_004a0cd0 at 004a0d16
 ;   core_fire.cpp_CRainDrop_render_FUN_004a1040 at 004a1086
 ;   core_fire.cpp_CShell_render_FUN_004a09f0 at 004a0a41
 ;   core_fire.cpp_CSmokeParticle_render_FUN_00496f60 at 00496fa2
-;   core_fire.cpp_FUN_004980b0 at 0049811e
-;   core_fire.cpp_FUN_0049f520 at 0049f9cc
+;   core_fire.cpp_CSpark_render_FUN_004980b0 at 0049811e
 ;   ... and 7 more
 ;
 ; Referenced Globals:

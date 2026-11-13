@@ -34,7 +34,7 @@
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
 ;   core_crate.cpp_FUN_0043a350
 ;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_0049cd50
-;   core_fire.cpp_FUN_0049d120
+;   core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_0049d120
 ;   core_flamecan.cpp_CFlameCan_ignite_FUN_004a08d0
 ;   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004c72d0
 ;   core_glass.cpp_FUN_004c6d40
@@ -281,8 +281,8 @@ section .text
     FADD float ptr [0x005d2b56]         ; 00485eb2 | DAT_005d2b56
     PUSH EAX                            ; 00485eb8
     FSTP float ptr [ESP + 0x130]        ; 00485eb9
-    CALL core_fire.cpp_FUN_0049d120     ; 00485ec0
-        ;   XREF to: 0049d120 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_0049d120(CFireEffect * this_ptr, CVector3f * position, CMatrix3x3f * rotation_matrix)
+    CALL core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_0049d120 ; 00485ec0
+        ;   XREF to: 0049d120 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_0049d120(CFireEffect * this_ptr, CVector3f * position, CMatrix3x3f * rotation_matrix)
     ADD ESP,0xc                         ; 00485ec5
     LEA EAX,[ESP + 0xe4]                ; 00485ec8
     PUSH EAX                            ; 00485ecf

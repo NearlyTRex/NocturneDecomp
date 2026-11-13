@@ -18,7 +18,7 @@
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0 at 004c8b7f
 ;   core_mobster.cpp_CMobster_aimTommyGun_FUN_0051def0 at 0051e204
 ;   core_scat.cpp_CScat_blendAimBones_FUN_00542270 at 005422b6
-;   core_skeleton.cpp_FUN_00569440 at 00569550
+;   core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_00569440 at 00569550
 ;   core_stranger.cpp_CStranger_applyArmAimRotation_FUN_0058aab0 at 0058aaf1
 ;   ... and 4 more
 ;

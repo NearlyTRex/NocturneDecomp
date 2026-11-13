@@ -18,8 +18,8 @@
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20 at 004afbfe
 ;   core_hpatrol.cpp_CPatrolPoint_process_FUN_0059c680 at 0059c7a5
 ;   core_scat.cpp_FUN_00520140 at 00520287
+;   core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_00546da0 at 00546ed5
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40 at 00547079
-;   core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_005461c0 at 005465d8
 ;   ... and 6 more
 ;
 ; *****************************************************************************

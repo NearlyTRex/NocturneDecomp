@@ -30,16 +30,16 @@ void __cdecl core_stranger_cpp_FUN_00567430(CStranger *this_ptr,SPose *out_pose)
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_00548620(this_ptr_00,&SStack_1ae4)
   ;
-  core_skeleton_cpp_FUN_00544f80
+  core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_00544f80
             (this_ptr_00,this_ptr->turn_motion_index,
-             this_ptr->turn_blend_weight * (float)_DAT_005eb865,0xffffffff);
+             this_ptr->turn_blend_weight * (float)_DAT_005eb865,-1);
   core_xform_cpp_FUN_005940b0
             ((this_ptr->base).base.model.bone_transform.pose_data.bone_rotations + _DAT_0264be30);
   local_1c = afStack_34[3];
   afStack_34[(uint)bVar2 * -2 + 7] = afStack_34[(uint)bVar2 * -2 + 4];
   afStack_34[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 8] =
        afStack_34[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 5];
-  blend_callback = core_skeleton_cpp_FUN_00544cc0;
+  blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_00544cc0;
   bone_index = -1;
   local_10 = -local_18;
   blend_weight = 1.0;

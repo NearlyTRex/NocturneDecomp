@@ -90,9 +90,9 @@
 ;   core_motion.cpp_FUN_00525110
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_005695e0
 ;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_00568d60
+;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_005675a0
-;   core_skeleton.cpp_FUN_00567620
-;   core_skeleton.cpp_FUN_00568100
+;   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00567620
 ;   core_xform.cpp_FUN_005b7ed0
 ;   core_xform.cpp_multiplyQuaternion_FUN_005b77b0
 ;   core_xform.cpp_quaternionFromAngleX_FUN_005b7af0
@@ -422,8 +422,8 @@ section .text
     PUSH dword ptr [EBP + 0x3e]         ; 004c8d3d
     PUSH EAX                            ; 004c8d40
     PUSH ESI                            ; 004c8d41
-    CALL core_skeleton.cpp_FUN_00568100 ; 004c8d42
-        ;   XREF to: 00568100 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00568100()
+    CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100 ; 004c8d42
+        ;   XREF to: 00568100 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
     FLD float ptr [EBX + 0x1ffb4]       ; 004c8d47
     ADD ESP,0x18                        ; 004c8d4d
     FCOMP float ptr [0x00600d58]        ; 004c8d50 | DAT_00600d58
@@ -504,8 +504,8 @@ section .text
     PUSH dword ptr [EBP + 0x76]         ; 004c8e43
     PUSH EAX                            ; 004c8e46
     PUSH ESI                            ; 004c8e47
-    CALL core_skeleton.cpp_FUN_00567620 ; 004c8e48
-        ;   XREF to: 00567620 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00567620()
+    CALL core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00567620 ; 004c8e48
+        ;   XREF to: 00567620 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00567620(CDeformableModelInstance * this_ptr, int motion_index, float frame_number, int bone_index)
     ADD ESP,0x10                        ; 004c8e4d
     MOV dword ptr [EBX + 0x2498],0x0    ; 004c8e50
     JMP 0x004c8a30                      ; 004c8e5a
@@ -614,8 +614,8 @@ section .text
     PUSH dword ptr [EBP + 0x42]         ; 004c8f6a
     PUSH ECX                            ; 004c8f6d
     PUSH ESI                            ; 004c8f6e
-    CALL core_skeleton.cpp_FUN_00568100 ; 004c8f6f
-        ;   XREF to: 00568100 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00568100()
+    CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100 ; 004c8f6f
+        ;   XREF to: 00568100 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
     FLD float ptr [EBX + 0x1ffb4]       ; 004c8f74
     ADD ESP,0x18                        ; 004c8f7a
     FCOMP float ptr [0x00600d58]        ; 004c8f7d | DAT_00600d58
@@ -672,8 +672,8 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 004c9013
     PUSH EAX                            ; 004c9019
     MOV dword ptr [EBP + 0x7a],EAX      ; 004c901a
-    CALL core_skeleton.cpp_FUN_00568100 ; 004c901d
-        ;   XREF to: 00568100 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00568100()
+    CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100 ; 004c901d
+        ;   XREF to: 00568100 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
     FLD float ptr [0x005e10cc]          ; 004c9022 | DAT_005e10cc
     FLD float ptr [0x01cc90f8]          ; 004c9028 | DAT_01cc90f8
     FMUL ST1                            ; 004c902e
@@ -794,8 +794,8 @@ section .text
     PUSH dword ptr [EBP + 0x4e]         ; 004c9185
     PUSH EAX                            ; 004c9188
     PUSH ESI                            ; 004c9189
-    CALL core_skeleton.cpp_FUN_00567620 ; 004c918a
-        ;   XREF to: 00567620 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00567620()
+    CALL core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00567620 ; 004c918a
+        ;   XREF to: 00567620 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00567620(CDeformableModelInstance * this_ptr, int motion_index, float frame_number, int bone_index)
     ADD ESP,0x10                        ; 004c918f
     MOV dword ptr [EBX + 0x2498],0x0    ; 004c9192
     JMP 0x004c8a30                      ; 004c919c

@@ -55,9 +55,9 @@
 ;   core_fire.cpp_CFirefly_process_FUN_00494ec0 at 00494f1d
 ;   core_fire.cpp_CGlassParticle_process_FUN_00497250 at 00497281
 ;   core_fire.cpp_CLeaf_process_FUN_004967d0 at 004967df
+;   core_fire.cpp_CRock_process_FUN_00496620 at 0049662e
+;   core_fire.cpp_CShell_process_FUN_0049b7f0 at 0049b80c
 ;   core_fire.cpp_CSpark_process_FUN_004945b0 at 00494608
-;   core_fire.cpp_FUN_00496620 at 0049662e
-;   core_fire.cpp_FUN_0049b7f0 at 0049b80c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e159a

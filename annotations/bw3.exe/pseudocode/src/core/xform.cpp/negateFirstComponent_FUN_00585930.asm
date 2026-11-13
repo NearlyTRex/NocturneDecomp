@@ -12,7 +12,7 @@
 ; XREF[3]:
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90 at 0054d30b
 ;   core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0054d3f0 at 0054d7ee
-;   core_skeleton.cpp_FUN_0054c1b0 at 0054c6ed
+;   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0054c1b0 at 0054c6ed
 ;
 ; *****************************************************************************
 

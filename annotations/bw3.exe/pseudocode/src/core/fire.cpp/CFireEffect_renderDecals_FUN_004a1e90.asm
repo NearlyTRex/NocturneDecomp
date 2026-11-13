@@ -22,9 +22,9 @@
 ;
 ; Called Functions:
 ;   core_fire.cpp_CBulletHole_render_FUN_00497610
+;   core_fire.cpp_CBulletHole_setupRenderState_FUN_004975a0
 ;   core_fire.cpp_CCrater_render_FUN_0049d980
 ;   core_fire.cpp_CStake_render_FUN_00497dc0
-;   core_fire.cpp_FUN_004975a0
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     PUSH EBP                            ; 004a1e93
     MOV EBP,dword ptr [ESP + 0x1c]      ; 004a1e94
     PUSH 0x1c8aea8                      ; 004a1e98
-    CALL core_fire.cpp_FUN_004975a0     ; 004a1e9d
-        ;   XREF to: 004975a0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004975a0()
+    CALL core_fire.cpp_CBulletHole_setupRenderState_FUN_004975a0 ; 004a1e9d
+        ;   XREF to: 004975a0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CBulletHole_setupRenderState_FUN_004975a0(CBulletHole * this_ptr)
     ADD ESP,0x4                         ; 004a1ea2
     CMP dword ptr [ESP + 0x18],0x0      ; 004a1ea5
     JZ 0x004a1f75                       ; 004a1eaa

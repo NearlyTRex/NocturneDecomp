@@ -15,7 +15,7 @@
 ;   core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_004e5080 at 004e54a1
 ;   core_setcolid.cpp_FUN_00534ea0 at 00535326
 ;   core_setcolid.cpp_FUN_00536cb0 at 00536dc4
-;   core_skeleton.cpp_FUN_00543a40 at 00543ba3
+;   core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_00543a40 at 00543ba3
 ;   core_stairs.cpp_CStairs_buildCollision_FUN_00562240 at 00562336
 ;   core_wateract.cpp_CWaterActor_customRayIntersect_FUN_00587900 at 005879de
 ;

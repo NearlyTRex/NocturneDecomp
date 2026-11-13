@@ -28,17 +28,17 @@
 ;   ... and 35 more
 ;
 ; Called Functions:
+;   core_fire.cpp_CBulletHole_process_FUN_00493cf0
 ;   core_fire.cpp_CBulletTrail_process_FUN_00497330
 ;   core_fire.cpp_CCrater_process_FUN_00499930
 ;   core_fire.cpp_CExplosion_process_FUN_00498e80
 ;   core_fire.cpp_CGunFlame_process_FUN_0049a3a0
 ;   core_fire.cpp_CLightningBolt_process_FUN_0049ab90
 ;   core_fire.cpp_CMuzzleFlash_process_FUN_00496a60
+;   core_fire.cpp_CSmokeParticle_process_FUN_004935b0
 ;   core_fire.cpp_CStake_process_FUN_00494580
 ;   core_fire.cpp_CToss_process_FUN_004993f0
 ;   core_fire.cpp_CTrail_process_FUN_0049b330
-;   core_fire.cpp_FUN_004935b0
-;   core_fire.cpp_FUN_00493cf0
 ;   core_fire.cpp_initProcess_FUN_00499ee0
 ;   core_fire.cpp_updateTextureAnimCounts_FUN_00498c30
 ;   core_muzzle.cpp_CMuzzleEffect_process_FUN_0059d420
@@ -277,8 +277,8 @@ section .text
     MOV ESI,0x1c558e8                   ; 0049c61a
     PUSH ESI                            ; 0049c61f
         ;   Label: LAB_0049c61f
-    CALL core_fire.cpp_FUN_00493cf0     ; 0049c620
-        ;   XREF to: 00493cf0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_00493cf0()
+    CALL core_fire.cpp_CBulletHole_process_FUN_00493cf0 ; 0049c620
+        ;   XREF to: 00493cf0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CBulletHole_process_FUN_00493cf0(CBulletHole * this_ptr)
     INC EBX                             ; 0049c625
     MOV EDX,dword ptr [0x01c558e0]      ; 0049c626 | DAT_01c558e0
     ADD ESP,0x4                         ; 0049c62c
@@ -424,8 +424,8 @@ section .text
     RET                                 ; 0049c76f
     PUSH EBX                            ; 0049c770 | DAT_01c3f90c
         ;   Label: LAB_0049c770
-    CALL core_fire.cpp_FUN_004935b0     ; 0049c771
-        ;   XREF to: 004935b0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004935b0()
+    CALL core_fire.cpp_CSmokeParticle_process_FUN_004935b0 ; 0049c771
+        ;   XREF to: 004935b0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CSmokeParticle_process_FUN_004935b0(CSmokeParticle * this_ptr)
     ADD ESP,0x4                         ; 0049c776
     JMP 0x0049c45b                      ; 0049c779
         ;   XREF to: 0049c45b (UNCONDITIONAL_JUMP)  ; LAB_0049c45b

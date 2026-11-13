@@ -21,8 +21,8 @@
 ;   ... and 3 more
 ;
 ; Called Functions:
+;   core_skeleton.cpp_CDeformableModel_skinVertices_FUN_00541640
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00547810
-;   core_skeleton.cpp_FUN_00541640
 ;
 ; *****************************************************************************
 
@@ -44,8 +44,8 @@ section .text
         ;   XREF to: 00547810 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00547810(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00547215
     PUSH EAX                            ; 00547218
-    CALL core_skeleton.cpp_FUN_00541640 ; 00547219
-        ;   XREF to: 00541640 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_00541640(CDeformableModel * this_ptr, int lod_index, CMatrix3x4f * bone_matrices, int * output_buffer, ...)
+    CALL core_skeleton.cpp_CDeformableModel_skinVertices_FUN_00541640 ; 00547219
+        ;   XREF to: 00541640 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_skinVertices_FUN_00541640(CDeformableModel * this_ptr, int lod_index, CMatrix3x4f * bone_matrices, int * output_buffer, ...)
     ADD ESP,0x14                        ; 0054721e
     MOV EAX,dword ptr [ESP + 0xc]       ; 00547221
     MOV dword ptr [EBX + 0x2230],EAX    ; 00547225

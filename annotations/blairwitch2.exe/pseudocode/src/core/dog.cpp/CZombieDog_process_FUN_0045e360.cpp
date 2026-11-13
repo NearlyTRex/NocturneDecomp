@@ -26,7 +26,6 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0045e360(CZombieDog *this_ptr,f
   CVector3f *pCVar10;
   float fVar11;
   SDamageInfo *damage_info;
-  uint *puVar12;
   EBloodType blood_type;
   float max_distance;
   SDamageInfo SStack_158;
@@ -43,7 +42,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0045e360(CZombieDog *this_ptr,f
   float fStack_d4;
   float afStack_d0 [2];
   CVector3f CStack_c8;
-  uint uStack_bc;
+  float fStack_bc;
   float afStack_b8 [2];
   CVector3f CStack_b0;
   float fStack_a4;
@@ -58,11 +57,9 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0045e360(CZombieDog *this_ptr,f
   float fStack_70;
   float fStack_6c;
   float fStack_68;
-  uint uStack_5c;
+  CVector3f CStack_5c;
   float fStack_50;
-  float fStack_4c;
-  float fStack_48;
-  float afStack_44 [5];
+  float afStack_4c [7];
   float fStack_30;
   float fStack_2c;
   float fStack_28;
@@ -224,10 +221,10 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0045e360(CZombieDog *this_ptr,f
                 (&DAT_0265370c,
                  (this_ptr->base).base.model.bone_transform.bone_model_matrices +
                  this_ptr->bone_indices[1]);
-      pfVar9 = afStack_a0 + 0x17;
-      afStack_44[0] = afStack_118[2];
-      afStack_a0[(uint)bVar8 * -2 + 0x18] = afStack_118[(uint)bVar8 * -2 + 3];
-      afStack_a0[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x19] =
+      pfVar9 = afStack_4c + 2;
+      afStack_4c[2] = afStack_118[2];
+      afStack_4c[(uint)bVar8 * -2 + 3] = afStack_118[(uint)bVar8 * -2 + 3];
+      afStack_4c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4] =
            afStack_118[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4];
       core_actor_cpp_FUN_00408d70(this_ptr,pfVar9);
       pCVar10 = &CStack_b0;
@@ -247,13 +244,14 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0045e360(CZombieDog *this_ptr,f
     case 7:
       if (((this_ptr->base).pool_me == 0) &&
          ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
-        core_skeleton_cpp_FUN_005469a0(&(this_ptr->base).base.model,0);
-        puVar12 = &uStack_bc;
-        uStack_bc = uStack_5c;
-        afStack_b8[(uint)bVar8 * -2] = afStack_a0[(uint)bVar8 * -2 + 0x12];
+        core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
+                  (&(this_ptr->base).base.model,0,&CStack_5c);
+        pfVar9 = &fStack_bc;
+        fStack_bc = CStack_5c.x;
+        afStack_b8[(uint)bVar8 * -2] = *(float *)((int)&CStack_5c + (uint)bVar8 * -8 + 4);
         afStack_b8[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
-             afStack_a0[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x13];
-        core_actor_cpp_FUN_00408d70(this_ptr,puVar12);
+             *(float *)((int)&CStack_5c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+        core_actor_cpp_FUN_00408d70(this_ptr,pfVar9);
         blood_type = BLOOD_TYPE_RED;
         CStack_c8.x = afStack_a0[2];
         *(float *)((int)&CStack_c8 + (uint)bVar8 * -8 + 4) = afStack_a0[(uint)bVar8 * -2 + 3];
@@ -306,12 +304,12 @@ switchD_0045eaa0_caseD_5:
     }
     core_charactr_cpp_FUN_00423a10(this_ptr,delta_time);
     fStack_50 = (this_ptr->base).base.velocity.x * delta_time;
-    fStack_4c = (this_ptr->base).base.velocity.y * delta_time;
-    fStack_48 = (this_ptr->base).base.velocity.z * delta_time;
+    afStack_4c[0] = (this_ptr->base).base.velocity.y * delta_time;
+    afStack_4c[1] = (this_ptr->base).base.velocity.z * delta_time;
     fStack_8c = fStack_50;
-    afStack_a0[(uint)bVar8 * -2 + 6] = afStack_a0[(uint)bVar8 * -2 + 0x15];
+    afStack_a0[(uint)bVar8 * -2 + 6] = afStack_4c[(uint)bVar8 * -2];
     afStack_a0[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 7] =
-         afStack_a0[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x16];
+         afStack_4c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
     pCVar10 = &(this_ptr->base).base.position_delta;
     fStack_74 = fStack_8c + pCVar10->x;
     fStack_70 = fStack_88 + (this_ptr->base).base.position_delta.y;

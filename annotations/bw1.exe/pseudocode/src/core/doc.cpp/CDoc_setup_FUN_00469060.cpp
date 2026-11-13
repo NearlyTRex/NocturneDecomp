@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_doc_cpp_CDoc_setup_FUN_00469060(CDoc *this_ptr)
@@ -19,13 +18,10 @@ void __cdecl core_doc_cpp_CDoc_setup_FUN_00469060(CDoc *this_ptr)
   float afStackY_1028 [1015];
   char *pcVar3;
   int iVar4;
-  float fStack_40;
-  float fStack_34;
+  CVector3f CStack_40;
+  CVector3f CStack_34;
   float fStack_28;
-  float fStack_24;
-  float fStack_20;
-  float fStack_1c;
-  float fStack_18;
+  float afStack_24 [4];
   float fStack_14;
   
   bVar2 = 0;
@@ -88,26 +84,26 @@ void __cdecl core_doc_cpp_CDoc_setup_FUN_00469060(CDoc *this_ptr)
   iVar4 = core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0(pCVar1,pcVar3,iVar4);
   core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_005675f0
             (this_ptr_00,iVar4,22.0);
-  core_skeleton_cpp_FUN_00569040(this_ptr_00,_DAT_01b6884c);
-  fStack_28 = fStack_40;
-  (&stack0xffffffdc)[(uint)bVar2 * 0xfffffffe] =
-       (float)*(uint *)(&stack0xffffffc4 + (uint)bVar2 * -8);
-  *(uint *)((int)&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-       *(uint *)(&stack0xffffffc8 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-  if (&this_ptr->ref_r_hand_bone_pos != (CVector3f *)&stack0xffffffd8) {
+  core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
+            (this_ptr_00,_DAT_01b6884c,&CStack_40);
+  fStack_28 = CStack_40.x;
+  afStack_24[(uint)bVar2 * -2] = *(float *)((int)&CStack_40 + (uint)bVar2 * -8 + 4);
+  afStack_24[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
+       *(float *)((int)&CStack_40 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+  if (&this_ptr->ref_r_hand_bone_pos != (CVector3f *)&fStack_28) {
     (this_ptr->ref_r_hand_bone_pos).x = fStack_28;
-    (this_ptr->ref_r_hand_bone_pos).y = fStack_24;
-    (this_ptr->ref_r_hand_bone_pos).z = fStack_20;
+    (this_ptr->ref_r_hand_bone_pos).y = afStack_24[0];
+    (this_ptr->ref_r_hand_bone_pos).z = afStack_24[1];
   }
-  core_skeleton_cpp_FUN_00569040(&(this_ptr->base).base.model,_DAT_01b68824);
-  fStack_1c = fStack_34;
-  (&stack0xffffffe8)[(uint)bVar2 * 0xfffffffe] =
-       (float)*(uint *)(&stack0xffffffd0 + (uint)bVar2 * -8);
-  *(uint *)((int)&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-       *(uint *)(&stack0xffffffd4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-  if (&this_ptr->ref_r_upperarm_bone_pos != (CVector3f *)&stack0xffffffe4) {
-    (this_ptr->ref_r_upperarm_bone_pos).x = fStack_1c;
-    (this_ptr->ref_r_upperarm_bone_pos).y = fStack_18;
+  core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
+            (&(this_ptr->base).base.model,_DAT_01b68824,&CStack_34);
+  afStack_24[2] = CStack_34.x;
+  afStack_24[(uint)bVar2 * -2 + 3] = *(float *)((int)&CStack_34 + (uint)bVar2 * -8 + 4);
+  afStack_24[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4] =
+       *(float *)((int)&CStack_34 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+  if (&this_ptr->ref_r_upperarm_bone_pos != (CVector3f *)(afStack_24 + 2)) {
+    (this_ptr->ref_r_upperarm_bone_pos).x = afStack_24[2];
+    (this_ptr->ref_r_upperarm_bone_pos).y = afStack_24[3];
     (this_ptr->ref_r_upperarm_bone_pos).z = fStack_14;
   }
   core_doc_cpp_FUN_0046caa0(this_ptr);

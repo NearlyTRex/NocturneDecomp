@@ -10,7 +10,7 @@
 ;   undefined4 DAT_005fc5a0
 ;
 ; Called Functions:
-;   core_fire.cpp_FUN_004a3920
+;   core_fire.cpp_CFireEffect_createToss_FUN_004a3920
 ;   core_weapon.cpp_CWeapon_fire_FUN_0057b880
 ;
 ; *****************************************************************************
@@ -42,8 +42,8 @@ section .text
     PUSH EAX                            ; 0047b160
     MOV ECX,dword ptr [0x005fc5a0]      ; 0047b161 | DAT_005fc5a0
     PUSH ECX                            ; 0047b167
-    CALL core_fire.cpp_FUN_004a3920     ; 0047b168
-        ;   XREF to: 004a3920 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3920()
+    CALL core_fire.cpp_CFireEffect_createToss_FUN_004a3920 ; 0047b168
+        ;   XREF to: 004a3920 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createToss_FUN_004a3920(CFireEffect * this_ptr, CVector3f * position, UOrientationVector * orientation, CVector3f * velocity, ...)
     MOV dword ptr [EBX + 0x5a4],0x0     ; 0047b16d
     MOV dword ptr [EBX + 0x594],0xbf800000 ; 0047b177
     MOV EAX,0x1                         ; 0047b181

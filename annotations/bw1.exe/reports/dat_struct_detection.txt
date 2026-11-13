@@ -88,10 +88,10 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_0061c3ec  value=0x61C3EC (6407148)  refs=3
     CFireEffect_loadAssets
       PUSH 0x61c3ec                       ; 004b5ad5 | DAT_0061c3ec
-    FUN_004ad140
-      PUSH 0x61c3ec                       ; 004ad1b9 | DAT_0061c3ec
-    FUN_004ae640
+    CFireball_render
       PUSH 0x61c3ec                       ; 004aee44 | DAT_0061c3ec
+    CSpark_render
+      PUSH 0x61c3ec                       ; 004ad1b9 | DAT_0061c3ec
 
   DAT_0062716c  value=0x62716C (6451564)  refs=3
     FUN_005cb688
@@ -128,14 +128,14 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_0061c404  value=0x61C404 (6407172)  refs=2
     CFireEffect_loadAssets
       PUSH 0x61c404                       ; 004b5ae9 | DAT_0061c404
-    FUN_004ad140
+    CSpark_render
       PUSH 0x61c404                       ; 004ad671 | DAT_0061c404
 
   DAT_0061c41c  value=0x61C41C (6407196)  refs=2
-    FUN_004ad140
-      PUSH 0x61c41c                       ; 004ad682 | DAT_0061c41c
-    FUN_004ae640
+    CFireball_render
       PUSH 0x61c41c                       ; 004aee33 | DAT_0061c41c
+    CSpark_render
+      PUSH 0x61c41c                       ; 004ad682 | DAT_0061c41c
 
   DAT_0061ee2c  value=0x61EE2C (6417964)  refs=2
     CFootstep_render
@@ -291,6 +291,10 @@ Consider removing the Ghidra label and leaving the raw number.
     CExplosion_render
       ADD EAX,0x61c524                    ; 004b18be | DAT_0061c524
 
+  DAT_0061c4ac  value=0x61C4AC (6407340)  refs=1
+    CFireball_render
+      PUSH 0x61c4ac                       ; 004ae954 | DAT_0061c4ac
+
   DAT_0061c44c  value=0x61C44C (6407244)  refs=1
     CFirefly_render
       PUSH 0x61c44c                       ; 004adb70 | DAT_0061c44c
@@ -332,12 +336,8 @@ Consider removing the Ghidra label and leaving the raw number.
       ADD EAX,0x61c014                    ; 004ac15e | DAT_0061c014
 
   DAT_0061c434  value=0x61C434 (6407220)  refs=1
-    FUN_004ad140
+    CSpark_render
       PUSH 0x61c434                       ; 004ad693 | DAT_0061c434
-
-  DAT_0061c4ac  value=0x61C4AC (6407340)  refs=1
-    FUN_004ae640
-      PUSH 0x61c4ac                       ; 004ae954 | DAT_0061c4ac
 
   DAT_0061cda8  value=0x61CDA8 (6409640)  refs=1
     CFlame_renderTransparent

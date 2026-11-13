@@ -36,7 +36,7 @@ float __cdecl core_gabriela_cpp_CGabriella_scoreTargetVisibility_FUN_004b11a0(CG
 void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004b1530(CGabriella *this_ptr,float delta_time,int is_holstering);
 void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004b1bf0(CGabriella *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_gabriela_cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004b1e00(CGabriella *this_ptr,float delta_time,int has_carried_objects);
-void core_gabriela_cpp_FUN_004b20d0(int param_1,float param_2,float *param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
+void core_gabriela_cpp_FUN_004b20d0(int param_1,float param_2,float *param_3,int param_4,int param_5,undefined4 param_6);
 CMatrix3x4f * __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004b22c0(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 int __cdecl core_gabriela_cpp_CGabriella_isWeaponDrawn_FUN_004b27f0(CGabriella *this_ptr);
 void __cdecl core_gabriela_cpp_CGabriella_drawWeapon_FUN_004b2810(CGabriella *this_ptr,int drawn);

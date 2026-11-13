@@ -119,7 +119,8 @@ void core_prye_cpp_FUN_0051ee10(int param_1,int param_2)
     ;
     local_18 = local_30;
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90
-              (pCVar1,iVar8,local_30,local_240,local_24,core_skeleton_cpp_FUN_0054bef0);
+              (pCVar1,iVar8,local_30,local_240,local_24,
+               core_skeleton_cpp_blendWeightCallback_FUN_0054bef0);
     core_xform_cpp_quaternionFromAngleY_FUN_00585d10(*(uint *)(local_20 + 0xc));
     puVar7 = afStack_1f8 + 0xb;
     local_1cc[0] = local_ec;
@@ -181,7 +182,7 @@ void core_prye_cpp_FUN_0051ee10(int param_1,int param_2)
          (afStack_138 + (uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x11)[(uint)bVar5 * -2 + 1];
     core_xform_cpp_multiplyQuaternion_FUN_00585990(&local_18c);
     iVar8 = local_2c;
-    blend_callback = core_skeleton_cpp_FUN_0054bef0;
+    blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_0054bef0;
     local_19c.w = local_9c;
     pfVar3 = (float *)((int)&local_19c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
     *(float *)((int)&local_19c + (uint)bVar5 * -8 + 4) = afStack_138[(uint)bVar5 * -2 + 0x28];

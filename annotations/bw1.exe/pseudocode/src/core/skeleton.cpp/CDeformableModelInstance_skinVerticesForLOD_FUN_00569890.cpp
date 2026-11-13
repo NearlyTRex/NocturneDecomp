@@ -20,8 +20,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0
   bone_matrices = (this_ptr->bone_transform).bone_model_matrices;
   lod_index_00 = lod_index;
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0(this_ptr);
-  core_skeleton_cpp_FUN_00563cb0(this_ptr_00,lod_index_00,bone_matrices,&output_buffer->x,part_data)
-  ;
+  core_skeleton_cpp_CDeformableModel_skinVertices_FUN_00563cb0
+            (this_ptr_00,lod_index_00,bone_matrices,&output_buffer->x,part_data);
   this_ptr->cached_skinned_lod_index = lod_index;
   return;
 }

@@ -10,7 +10,7 @@
 ; undefined8       Stack[-0xc]:8  local_c
 ;
 ; XREF[3]:
-;   core_skeleton.cpp_FUN_0056a4b0 at 0056a52f
+;   core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_0056a4b0 at 0056a52f
 ;   core_trigger.cpp_FUN_0059bee0 at 0059bf80
 ;   wincore_winrun.cpp_sleep_FUN_005b3860 at 005b388b
 ;

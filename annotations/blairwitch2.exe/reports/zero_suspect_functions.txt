@@ -662,6 +662,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CFirefly_ctor_FUN_0049e
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CFirefly_dtor_FUN_0049eed0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CGlassParticle_arrdtor256_FUN_0049f0a0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CGlassParticle_dtor_FUN_0049edf0.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CGlassParticle_onCollision_FUN_004972c0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CGunFlame_ctor_FUN_0049ed00.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CGunFlame_dtor_FUN_0049ed10.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CGunFlame_reset_FUN_0049a1a0.cpp
@@ -687,6 +688,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CPopcorn_dtor_FUN_0049e
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CRainDrop_arrdtor256_FUN_0049efc0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CRainDrop_ctor_FUN_0049ec30.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CRainDrop_dtor_FUN_0049ec50.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CRainDrop_onCollision_FUN_0049b9c0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CRock_arrdtor64_FUN_0049f060.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CRock_ctor_FUN_0049ee50.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CRock_dtor_FUN_0049ee70.cpp
@@ -700,6 +702,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CSmokeParticle_reset_FU
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CSpark_arrdtor256_FUN_0049f0e0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CSpark_ctor_FUN_0049eee0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CSpark_dtor_FUN_0049ef00.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CSpark_onCollision_FUN_00494eb0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CStake_arrdtor256_FUN_0049f100.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CStake_process_FUN_00494580.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CToss_arrdtor20_FUN_0049f020.cpp
@@ -708,15 +711,12 @@ annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CTrail_ctor_FUN_0049ecc
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CTrail_dtor_FUN_0049ecd0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CTrail_process_FUN_0049b330.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/CTrail_reset_FUN_0049b2d0.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/FUN_00494eb0.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/FUN_00496780.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/FUN_004972c0.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/FUN_0049b9c0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/SLaserInfo_ctor_FUN_0049dae0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/loadDebrisAssets_FUN_00498c90.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/loadDynamiteAssets_FUN_004995e0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/loadFireBallAssets_FUN_00495900.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/loadGunFlashAssets_FUN_00496c40.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/loadLeafAssets_FUN_00496780.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/loadRockAssets_FUN_00496610.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/fire.cpp/loadStakeAssets_FUN_00494130.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/flame.cpp/CFlame_archive_FUN_004a0460.cpp
@@ -1375,10 +1375,12 @@ annotations/blairwitch2.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelIns
 annotations/blairwitch2.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_dismemberPart_FUN_00548130.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_dtor_FUN_00544d50.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_free_FUN_00544e30.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_getSkeletonPtr_FUN_00547890.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_offsetAllBonePositions_FUN_00546d30.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_preCache_FUN_00547480.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_rayIntersect_FUN_005481d0.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_renderSkeleton_FUN_005488f0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_renderWithOptions_FUN_00547170.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_shatter_FUN_005485c0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/skeleton.cpp/CDeformableModelInstance_skinAndInitWRecip_FUN_00547320.cpp
@@ -1400,10 +1402,12 @@ annotations/blairwitch2.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_arrdtor40
 annotations/blairwitch2.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_calculateFrameDataSize_FUN_00541000.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_ctor_FUN_005407e0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_dtor_FUN_00540840.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_free_FUN_00540980.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_getBoneAngleAtFrame_FUN_00540f10.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_getHierarchyDistance_FUN_00540fc0.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/skeleton.cpp/FUN_005490d0.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/skeleton.cpp/blendWeightCallback_FUN_00544cc0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/skeleton.cpp/distancePointToLineSegment_FUN_005405f0.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/skeleton.cpp/getMemoryStats_FUN_005490d0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/skeleton.cpp/skipToEndOfLine_FUN_005405d0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/skeleton.cpp/staticInit_FUN_00540580.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/slew.cpp/staticInit_FUN_00549370.cpp

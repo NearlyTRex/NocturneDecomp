@@ -2,23 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 192,
+    "complexity_score": 211,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 37,
-    "suspect_count": 12,
+    "pseudocode_lines": 36,
+    "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
+      "stack_ref",
       "unaffected_reg",
       "unrolled_memcpy",
-      "warning_overlapping_globals",
-      "warning_type_propagation"
+      "warning_overlapping_globals"
     ],
-    "total_lines": 82
+    "total_lines": 81
   },
   "cross_references": [],
   "function": {
@@ -38,7 +38,7 @@
     {
       "addr": "0054d9c0",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054d9c0"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0054d9c0"
     },
     {
       "addr": "00583260",
@@ -141,16 +141,8 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "Overlapping global symbols",
-      "line": 3,
+      "line": 2,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
@@ -158,7 +150,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 9,
+      "line": 8,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "CVector3f *unaff_ESI;",
@@ -167,17 +159,41 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 13,
-      "match": "auStackY_1000",
+      "match": "afStackY_1000",
       "severity": "moderate",
-      "text": "uint auStackY_1000 [989];",
+      "text": "float afStackY_1000 [989];",
       "type": "stack_alignment_array"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 25,
+      "match": "&stack0xffffff7c",
+      "severity": "moderate",
+      "text": "pfVar3 = (float *)&stack0xffffff7c;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(CMatrix3x4f *)((int)pCVar2",
+      "severity": "moderate",
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 34,
+      "match": "&stack0xffffff7c",
+      "severity": "moderate",
+      "text": "core_xform_cpp_FUN_00583260(&uStack_24,&stack0xffffff7c);",
+      "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
       "line": 35,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "puVar3 = (uint *)((int)unaff_ESI + (uint)bVar4 * -8 + 4);",
+      "text": "puVar4 = (uint *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
       "type": "unaffected_reg"
     },
     {
@@ -185,7 +201,7 @@
       "line": 35,
       "match": "(uint *)((int)unaff_ESI",
       "severity": "moderate",
-      "text": "puVar3 = (uint *)((int)unaff_ESI + (uint)bVar4 * -8 + 4);",
+      "text": "puVar4 = (uint *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -197,27 +213,27 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(uint *)((int)auStack_14",
-      "severity": "moderate",
-      "text": "*puVar3 = *(uint *)((int)auStack_14 + (uint)bVar4 * 0xfffffff8);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 40,
+      "line": 39,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
+      "description": "Pointer value `pCVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 28,
+      "match": "(int)pCVar2",
+      "severity": "moderate",
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Pointer value `unaff_ESI` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 35,
       "match": "(int)unaff_ESI",
       "severity": "moderate",
-      "text": "puVar3 = (uint *)((int)unaff_ESI + (uint)bVar4 * -8 + 4);",
+      "text": "puVar4 = (uint *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {

@@ -17,12 +17,12 @@ void core_charactr_cpp_FUN_0042ffe0(int param_1,uint param_2,uint param_3)
   uint *puVar3;
   byte bVar4;
   float afStackY_103c [1000];
-  uint uVar5;
-  uint uVar6;
-  uint uVar7;
-  uint uVar8;
-  float *pfVar9;
-  uint uVar10;
+  CFireEffect *this_ptr;
+  CVector3f *position;
+  float scale;
+  float gore_multiplier;
+  float radius;
+  float *pfVar5;
   float local_6c;
   float fStack_68;
   float fStack_64;
@@ -30,10 +30,9 @@ void core_charactr_cpp_FUN_0042ffe0(int param_1,uint param_2,uint param_3)
   float fStack_5c;
   float fStack_58;
   float fStack_54;
-  uint uStack_48;
-  uint uStack_3c;
-  float fStack_30;
-  float fStack_2c;
+  CVector3f CStack_48;
+  float fStack_3c;
+  float afStack_38 [4];
   float fStack_28;
   float fStack_24;
   float fStack_20;
@@ -51,36 +50,35 @@ void core_charactr_cpp_FUN_0042ffe0(int param_1,uint param_2,uint param_3)
     puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
     puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
   }
-  fStack_30 = local_6c + fStack_60;
-  fStack_2c = fStack_68 + fStack_5c;
+  afStack_38[2] = local_6c + fStack_60;
+  afStack_38[3] = fStack_68 + fStack_5c;
   fStack_28 = fStack_64 + fStack_58;
   fStack_18 = local_6c + fStack_60;
-  *(uint *)((int)&stack0xffffffec + (uint)bVar4 * -8) =
-       *(uint *)((int)&stack0xffffffd4 + (uint)bVar4 * -8);
-  *(uint *)((int)&stack0xfffffff0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-       *(uint *)((int)&stack0xffffffd8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-  pfVar9 = &stack0xffffffac;
+  afStack_38[(uint)bVar4 * -2 + 9] = afStack_38[(uint)bVar4 * -2 + 3];
+  afStack_38[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 10] =
+       afStack_38[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
+  pfVar5 = &stack0xffffffac;
   fStack_24 = fStack_18 * _DAT_005b839a;
   fStack_20 = fStack_14 * _DAT_005b839a;
   fStack_1c = fStack_10 * _DAT_005b839a;
   fStack_54 = fStack_18 * _DAT_005b839a;
-  *(uint *)((int)&stack0xffffffb0 + (uint)bVar4 * 0xfffffffe * 4) =
-       *(uint *)((int)&stack0xffffffe0 + (uint)bVar4 * -8);
-  *(uint *)(&stack0xffffffb4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-       *(uint *)((int)&stack0xffffffe4 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-  core_actor_cpp_FUN_00408b80(param_1,pfVar9);
-  uVar10 = 0;
-  uVar8 = 0x40800000;
-  uVar7 = 0x44bb8000;
-  puVar2 = &stack0xffffffb8;
-  uVar6 = 0x40000000;
-  uStack_48 = uStack_3c;
-  *(uint *)((int)&stack0xffffffbc + (uint)bVar4 * 0xfffffffe * 4) =
-       *(uint *)(&stack0xffffffc8 + (uint)bVar4 * -8);
-  uVar5 = 0x01C73654;
-  *(uint *)(&stack0xffffffc0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-       *(uint *)(&stack0xffffffcc + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-  core_fire_cpp_FUN_004a36e0(uVar5,puVar2,uVar6,uVar7,uVar8,uVar10);
+  *(float *)((int)&stack0xffffffb0 + (uint)bVar4 * 0xfffffffe * 4) =
+       afStack_38[(uint)bVar4 * -2 + 6];
+  afStack_38[(uint)bVar4 * -2 + (uint)bVar4 * -2 + -5] =
+       afStack_38[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
+  core_actor_cpp_FUN_00408b80(param_1,pfVar5);
+  iVar1 = 0;
+  radius = 4.0;
+  gore_multiplier = 1500.0;
+  position = &CStack_48;
+  scale = 2.0;
+  CStack_48.x = fStack_3c;
+  *(float *)((int)&CStack_48 + (uint)bVar4 * -8 + 4) = afStack_38[(uint)bVar4 * -2];
+  this_ptr = 0x01C73654;
+  *(float *)((int)&CStack_48 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+       afStack_38[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+  core_fire_cpp_CFireEffect_createExplosion_FUN_004a36e0
+            (this_ptr,position,scale,gore_multiplier,radius,iVar1);
   core_charactr_cpp_FUN_004300e0(param_1,param_2,param_3,1);
   return;
 }

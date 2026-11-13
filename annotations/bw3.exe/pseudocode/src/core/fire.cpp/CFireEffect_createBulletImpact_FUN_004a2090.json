@@ -1,0 +1,645 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 325,
+    "complexity_score": 250,
+    "cross_reference_count": 8,
+    "function_call_count": 9,
+    "global_count": 19,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 140,
+    "suspect_count": 8,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "stack_alignment_array",
+      "undefined_data",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 465
+  },
+  "cross_references": [
+    {
+      "addr": "00410490",
+      "from_addr": "00411444",
+      "name": "core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00424550",
+      "from_addr": "00424dcd",
+      "name": "core_burncrss.cpp_CBurncross_fire_FUN_00424550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00486d40",
+      "from_addr": "0048754b",
+      "name": "core_elephant.cpp_CElephantGun_fire_FUN_00486d40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ae850",
+      "from_addr": "004aef94",
+      "name": "core_flintlck.cpp_CFlintlock_fire_FUN_004ae850",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d0fc0",
+      "from_addr": "004d1865",
+      "name": "core_gun.cpp_CGun_fire_FUN_004d0fc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e1070",
+      "from_addr": "004e1ffd",
+      "name": "core_lightsta.cpp_CLightStaff_fire_FUN_004e1070",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00527d70",
+      "from_addr": "005284b7",
+      "name": "core_rifle.cpp_CRifle_fire_FUN_00527d70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056b410",
+      "from_addr": "0056bcfa",
+      "name": "core_tommygun.cpp_CTommyGun_fire_FUN_0056b410",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a2090",
+    "address_range": [
+      [
+        "004a2090",
+        "004a21c7"
+      ],
+      [
+        "004a21d0",
+        "004a23b4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_fire.cpp_CFireEffect_createBulletImpact_FUN_004a2090",
+    "signature": "void __cdecl core_fire_cpp_CFireEffect_createBulletImpact_FUN_004a2090(CFireEffect *this_ptr,CVector3f *impact_pos,CVector3f *surface_normal,int ground_type,CDemonActor *hit_actor,int decal_type)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cf40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_randomChance_FUN_0040cf40"
+    },
+    {
+      "addr": "0044f4d0",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_isSphereVisible_FUN_0044f4d0"
+    },
+    {
+      "addr": "004a1420",
+      "is_variadic": false,
+      "name": "core_fire.cpp_allocateBulletHole_FUN_004a1420"
+    },
+    {
+      "addr": "00497290",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CBulletHole_init_FUN_00497290"
+    },
+    {
+      "addr": "004a23c0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0"
+    },
+    {
+      "addr": "00496d60",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CSmokeParticle_init_FUN_00496d60"
+    },
+    {
+      "addr": "004cf9a0",
+      "is_variadic": false,
+      "name": "core_ground.cpp_getGroundTypeCode_FUN_004cf9a0"
+    },
+    {
+      "addr": "00560a70",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70"
+    },
+    {
+      "addr": "005a28c0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004a2034",
+      "name": "switchdataD_004a2034",
+      "type": "undefined1*",
+      "value": "004a21d0"
+    },
+    {
+      "addr": "004a205c",
+      "name": "switchdataD_004a205c",
+      "type": "undefined1*",
+      "value": "004a21f1"
+    },
+    {
+      "addr": "005c0980",
+      "name": "s_ric_s_wav_005c0980",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c098d",
+      "name": "s_ric_s_wav_005c098d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c099a",
+      "name": "s_ric_s_wav_005c099a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c09a7",
+      "name": "s_ric_s_wav_005c09a7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c09b8",
+      "name": "DAT_005c09b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fdbf8",
+      "name": "DAT_005fdbf8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fdbfc",
+      "name": "DAT_005fdbfc",
+      "type": "undefined2",
+      "value": null
+    },
+    {
+      "addr": "006045f8",
+      "name": "DAT_006045f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c74e9c",
+      "name": "DAT_01c74e9c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c74ea0",
+      "name": "DAT_01c74ea0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c8aea0",
+      "name": "DAT_01c8aea0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c8aea8",
+      "name": "DAT_01c8aea8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c8aeac",
+      "name": "DAT_01c8aeac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c8aeb0",
+      "name": "DAT_01c8aeb0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c8aee8",
+      "name": "DAT_01c8aee8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c8aeec",
+      "name": "DAT_01c8aeec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c8aef0",
+      "name": "DAT_01c8aef0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "00411444",
+        "call_type": "direct",
+        "caller": "core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "00424dcd",
+        "call_type": "direct",
+        "caller": "core_burncrss.cpp_CBurncross_fire_FUN_00424550",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0048754b",
+        "call_type": "direct",
+        "caller": "core_elephant.cpp_CElephantGun_fire_FUN_00486d40",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004aef94",
+        "call_type": "direct",
+        "caller": "core_flintlck.cpp_CFlintlock_fire_FUN_004ae850",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004d1865",
+        "call_type": "direct",
+        "caller": "core_gun.cpp_CGun_fire_FUN_004d0fc0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004e1ffd",
+        "call_type": "direct",
+        "caller": "core_lightsta.cpp_CLightStaff_fire_FUN_004e1070",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "005284b7",
+        "call_type": "direct",
+        "caller": "core_rifle.cpp_CRifle_fire_FUN_00527d70",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0056bcfa",
+        "call_type": "direct",
+        "caller": "core_tommygun.cpp_CTommyGun_fire_FUN_0056b410",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.7992277992278,
+    "instruction_count": 259,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "BOOL_OR": 4,
+      "BRANCH": 4,
+      "BRANCHIND": 2,
+      "CALL": 18,
+      "CALLIND": 1,
+      "CBRANCH": 25,
+      "COPY": 339,
+      "FLOAT2FLOAT": 13,
+      "FLOAT_ADD": 2,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 109,
+      "INT_AND": 116,
+      "INT_CARRY": 20,
+      "INT_EQUAL": 103,
+      "INT_LEFT": 4,
+      "INT_LESS": 16,
+      "INT_MULT": 13,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 5,
+      "INT_SBORROW": 16,
+      "INT_SCARRY": 23,
+      "INT_SEXT": 3,
+      "INT_SLESS": 51,
+      "INT_SUB": 96,
+      "INT_XOR": 3,
+      "INT_ZEXT": 14,
+      "LOAD": 69,
+      "POPCOUNT": 51,
+      "RETURN": 6,
+      "STORE": 83,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 1243
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0049cd50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3878
+    },
+    "bw1.exe": {
+      "addr": "004b56a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3878
+    },
+    "nocedit.exe": {
+      "addr": "004c76a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3314
+    },
+    "nocturne.exe": {
+      "addr": "0048ab60",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3314
+    }
+  },
+  "stack_frame": {
+    "frame_size": 140,
+    "local_size": 116,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      },
+      {
+        "is_param": true,
+        "name": "impact_pos",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "surface_normal",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "ground_type",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "hit_actor",
+        "offset": 20,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "decal_type",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer",
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004a2099",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      },
+      {
+        "address": "004a21d5",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 13,
+      "match": "afStackY_1024",
+      "severity": "moderate",
+      "text": "float afStackY_1024 [998];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_01c8aea8",
+      "severity": "mild",
+      "text": "local_14 = (float *)&DAT_01c8aea8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 68,
+      "match": "DAT_01c74ea0",
+      "severity": "mild",
+      "text": "((CSmokeParticle *)(&DAT_01c74ea0 + iVar2),impact_pos,0.3,(CVector3f *)0x0,0xffff);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 82,
+      "match": "DAT_005fdbf8",
+      "severity": "mild",
+      "text": "puVar3 = &DAT_005fdbf8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 87,
+      "match": "(char *)((int)pcVar4",
+      "severity": "moderate",
+      "text": "pcVar4 = (char *)((int)pcVar4 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pcVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 87,
+      "match": "(int)pcVar4",
+      "severity": "moderate",
+      "text": "pcVar4 = (char *)((int)pcVar4 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 84,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

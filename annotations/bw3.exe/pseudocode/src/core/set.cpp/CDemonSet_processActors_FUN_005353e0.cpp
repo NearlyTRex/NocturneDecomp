@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_set_cpp_CDemonSet_processActors_FUN_005353e0(CDemonSet *this_ptr)
@@ -25,17 +24,12 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_005353e0(CDemonSet *this_p
   CDemonSet *pCVar6;
   uint *puVar7;
   byte bVar8;
-  float afStackY_104c [993];
+  CPathMap *apCStackY_104c [993];
   CPathMap *delta_time;
-  float fStack_a4;
-  float fStack_9c;
-  float fStack_98;
-  float fStack_94;
+  CVector3f aCStack_9c [3];
   EDamageType EStack_78;
-  float fStack_6c;
-  float fStack_68;
-  float local_64;
-  CPathMap *local_58;
+  CVector3f CStack_6c;
+  CPathMap *apCStack_60 [3];
   float fStack_54;
   float afStack_50 [2];
   int local_48;
@@ -68,7 +62,7 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_005353e0(CDemonSet *this_p
   _DAT_0203ad30 = 0;
   delta_time = (CPathMap *)g_CGamePtr->delta_time_float;
   if (0.0 < (float)delta_time) {
-    local_58 = delta_time;
+    apCStack_60[2] = delta_time;
     core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_0053eda0(this_ptr);
     iVar2 = 0;
     pCVar6 = this_ptr;
@@ -95,10 +89,10 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_005353e0(CDemonSet *this_p
               iVar4 = pCVar5->health;
               if (iVar4 == local_28) {
                 puVar7 = (uint *)((int)pCVar5 + (uint)bVar8 * -8 + 0x34);
-                local_64 = (pCVar5->orient).vec.x;
-                *(uint *)((int)&stack0xffffffa0 + (uint)bVar8 * 0xfffffffe * 4) = *puVar7;
-                *(uint *)(&stack0xffffffa4 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
-                     puVar7[(uint)bVar8 * -2 + 1];
+                CStack_6c.z = (pCVar5->orient).vec.x;
+                apCStack_60[(uint)bVar8 * -2] = (CPathMap *)*puVar7;
+                apCStack_60[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
+                     (CPathMap *)puVar7[(uint)bVar8 * -2 + 1];
                 DAT_007df974 = pCVar5;
                 if (g_CGamePtr->profile_mode == 2) {
                   local_2c = wincore_winrun_cpp_getTime_FUN_005806a0();
@@ -121,7 +115,7 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_005353e0(CDemonSet *this_p
                   delta_time = this_ptr_00;
                 }
                 if (((fStack_54 == (DAT_007df974->orient).vec.y) &&
-                    ((float)local_58 == (DAT_007df974->orient).vec.x)) &&
+                    ((float)apCStack_60[2] == (DAT_007df974->orient).vec.x)) &&
                    (afStack_50[0] == (DAT_007df974->orient).vec.z)) {
                   DAT_007df974 = (CDemonActor *)0x0;
                 }
@@ -153,8 +147,8 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_005353e0(CDemonSet *this_p
             (fVar3 = (float)(*(((this_ptr_01->base).vtable._uc)->_uc).getDeathState)(this_ptr_01),
             fVar3 == 0.0)) &&
            (afStack_50[0] = fVar3,
-           iVar4 = core_fire_cpp_FUN_004a3790
-                             (0x01C73654,&(this_ptr_01->base).location,0,&stack0xffffff94,
+           iVar4 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004a3790
+                             (0x01C73654,&(this_ptr_01->base).location.position,0.0,&CStack_6c,
                               afStack_50,&local_48), iVar4 != 0)) {
           if (local_48 == 1) {
             pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c840
@@ -166,12 +160,11 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_005353e0(CDemonSet *this_p
           }
           else if (local_48 == 0) {
             core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0((SDamageInfo *)&stack0xffffff58);
-            fStack_a4 = afStack_50[0];
             EStack_78 = DAMAGE_TYPE_FALL_APART;
-            if (&stack0xffffff64 != &stack0xffffff94) {
-              fStack_9c = fStack_6c;
-              fStack_98 = fStack_68;
-              fStack_94 = local_64;
+            if (aCStack_9c != &CStack_6c) {
+              aCStack_9c[0].x = CStack_6c.x;
+              aCStack_9c[0].y = CStack_6c.y;
+              aCStack_9c[0].z = CStack_6c.z;
             }
             (*(((local_34->base).vtable._uc)->_uc).processDamage)
                       (local_34,(SDamageInfo *)&stack0xffffff58);
@@ -182,7 +175,9 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_005353e0(CDemonSet *this_p
                                 (pCVar6->actors[0],g_CGlassClassInfo.name_hash);
         if (this_ptr_02 != (CGlass *)0x0) {
           pCStack_3c = &(this_ptr_02->base).location;
-          iVar4 = core_fire_cpp_FUN_004a3790(0x01C73654,pCStack_3c,0,0,0);
+          iVar4 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004a3790
+                            (0x01C73654,&pCStack_3c->position,0.0,(CVector3f *)0x0,(float *)0x0,
+                             (int *)0x0);
           if ((iVar4 != 0) &&
              (iVar4 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004cc5d0(this_ptr_02),
              iVar4 != 0)) {
@@ -196,8 +191,9 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_005353e0(CDemonSet *this_p
             (this_ptr_03->trigger_cause == TRIGGER_CAUSE_DAMAGE)) &&
            (this_ptr_03->damage_actor_wildcard_name[0] == '\0')) {
           afStack_50[0] = 0.0;
-          iVar4 = core_fire_cpp_FUN_004a3790
-                            (0x01C73654,&(this_ptr_03->base).location,0,0,afStack_50);
+          iVar4 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004a3790
+                            (0x01C73654,&(this_ptr_03->base).location.position,0.0,
+                             (CVector3f *)0x0,afStack_50,(int *)0x0);
           if (iVar4 != 0) {
             core_trigger_cpp_CTrigger_applyDamage_FUN_0056ee20(this_ptr_03,afStack_50[0]);
           }
@@ -206,8 +202,9 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_005353e0(CDemonSet *this_p
                       core_actor_cpp_castToClassHash_FUN_0040c840
                                 (pCVar6->actors[0],g_CFlameCanClassInfo.name_hash);
         if ((this_ptr_04 != (CFlameCan *)0x0) &&
-           (iVar4 = core_fire_cpp_FUN_004a3790(0x01C73654,&(this_ptr_04->base).location,0,0,0),
-           iVar4 != 0)) {
+           (iVar4 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004a3790
+                              (0x01C73654,&(this_ptr_04->base).location.position,0.0,
+                               (CVector3f *)0x0,(float *)0x0,(int *)0x0), iVar4 != 0)) {
           core_flamecan_cpp_CFlameCan_ignite_FUN_004a7110(this_ptr_04);
         }
         iVar2 = iVar2 + 1;

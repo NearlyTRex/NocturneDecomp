@@ -24,27 +24,27 @@
 // =============================================================================
 
 // undefined1* constants
-static undefined1* DAT_00600008 = (undefined1*)core_fire_cpp_FUN_004b4190;
+static undefined1* DAT_00600008 = (undefined1*)core_fire_cpp_CShell_process_FUN_004b4190;
 static undefined1* DAT_0060000C = (undefined1*)core_fire_cpp_CShell_render_FUN_004b4090;
 static undefined1* DAT_00600010 = (undefined1*)core_fire_cpp_CShell_onCollision_FUN_004b4230;
 static undefined1* DAT_00600028 = (undefined1*)core_fire_cpp_CGlassParticle_process_FUN_004afbf0;
 static undefined1* DAT_0060002C = (undefined1*)core_fire_cpp_CGlassParticle_render_FUN_004af9f0;
-static undefined1* DAT_00600030 = (undefined1*)core_fire_cpp_FUN_004afc60;
+static undefined1* DAT_00600030 = (undefined1*)core_fire_cpp_CGlassParticle_onCollision_FUN_004afc60;
 static undefined1* DAT_00600048 = (undefined1*)core_fire_cpp_CLeaf_process_FUN_004af170;
 static undefined1* DAT_0060004C = (undefined1*)core_fire_cpp_CLeaf_render_FUN_004af270;
 static undefined1* DAT_00600050 = (undefined1*)core_fire_cpp_CLeaf_onCollision_FUN_004af330;
-static undefined1* DAT_00600068 = (undefined1*)core_fire_cpp_FUN_004aefc0;
-static undefined1* DAT_0060006C = (undefined1*)core_fire_cpp_FUN_004af040;
-static undefined1* DAT_00600070 = (undefined1*)core_fire_cpp_FUN_004ad850;
+static undefined1* DAT_00600068 = (undefined1*)core_fire_cpp_CRock_process_FUN_004aefc0;
+static undefined1* DAT_0060006C = (undefined1*)core_fire_cpp_CRock_render_FUN_004af040;
+static undefined1* DAT_00600070 = (undefined1*)core_fire_cpp_CSpark_onCollision_FUN_004ad850;
 static undefined1* DAT_00600088 = (undefined1*)core_fire_cpp_CFireball_process_FUN_004ae300;
-static undefined1* DAT_0060008C = (undefined1*)core_fire_cpp_FUN_004ae640;
+static undefined1* DAT_0060008C = (undefined1*)core_fire_cpp_CFireball_render_FUN_004ae640;
 static undefined1* DAT_00600090 = (undefined1*)core_fire_cpp_CFireball_onCollision_FUN_004aee60;
 static undefined1* DAT_006000A8 = (undefined1*)core_fire_cpp_CFirefly_process_FUN_004ad860;
 static undefined1* DAT_006000AC = (undefined1*)core_fire_cpp_CFirefly_render_FUN_004adaf0;
-static undefined1* DAT_006000B0 = (undefined1*)core_fire_cpp_FUN_004ad850;
+static undefined1* DAT_006000B0 = (undefined1*)core_fire_cpp_CSpark_onCollision_FUN_004ad850;
 static undefined1* DAT_006000C8 = (undefined1*)core_fire_cpp_CSpark_process_FUN_004acf50;
-static undefined1* DAT_006000CC = (undefined1*)core_fire_cpp_FUN_004ad140;
-static undefined1* DAT_006000D0 = (undefined1*)core_fire_cpp_FUN_004ad850;
+static undefined1* DAT_006000CC = (undefined1*)core_fire_cpp_CSpark_render_FUN_004ad140;
+static undefined1* DAT_006000D0 = (undefined1*)core_fire_cpp_CSpark_onCollision_FUN_004ad850;
 static undefined1* DAT_006016D8 = (undefined1*)core_particle_cpp_FUN_00532250;
 static undefined1* DAT_006016DC = (undefined1*)core_gore_cpp_FUN_004e3f40;
 static undefined1* DAT_006016E0 = (undefined1*)core_gore_cpp_CBloodParticle_onCollision_FUN_004e4730;

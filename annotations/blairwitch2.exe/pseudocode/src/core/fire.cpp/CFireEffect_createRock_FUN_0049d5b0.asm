@@ -12,7 +12,7 @@
 ; XREF[3]:
 ;   core_drip.cpp_CDrip_process_FUN_0046d110 at 0046d488
 ;   core_emitter.cpp_CEmitter_process_FUN_00486cb0 at 004871c5
-;   core_fire.cpp_FUN_00498d30 at 00498e5a
+;   core_fire.cpp_CExplosion_activate_FUN_00498d30 at 00498e5a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c93cd4

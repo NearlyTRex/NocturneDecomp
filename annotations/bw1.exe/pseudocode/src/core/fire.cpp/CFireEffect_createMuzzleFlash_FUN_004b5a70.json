@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 42,
+    "complexity_score": 43,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 12,
+    "pseudocode_lines": 13,
     "suspect_count": 2,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 43
+    "total_lines": 44
   },
   "cross_references": [
     {
@@ -69,7 +69,7 @@
     {
       "addr": "004af340",
       "is_variadic": false,
-      "name": "core_fire.cpp_FUN_004af340"
+      "name": "core_fire.cpp_CMuzzleFlash_init_FUN_004af340"
     }
   ],
   "globals": [
@@ -186,6 +186,12 @@
     "pcode_op_count": 187
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0049d120",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
     "bw3.exe": {
       "addr": "004a2450",
       "by": "name",
@@ -246,10 +252,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 15,
       "match": "DAT_01c9f1bc",
       "severity": "mild",
-      "text": "core_fire_cpp_FUN_004af340((CMuzzleFlash *)(&DAT_01c9f1bc + iVar1),position,rotation_matrix);",
+      "text": "((CMuzzleFlash *)(&DAT_01c9f1bc + iVar1),position,rotation_matrix);",
       "type": "undefined_data"
     }
   ]

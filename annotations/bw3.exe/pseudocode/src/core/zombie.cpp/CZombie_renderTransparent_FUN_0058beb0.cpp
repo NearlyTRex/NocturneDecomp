@@ -10,16 +10,16 @@ int __cdecl core_zombie_cpp_CZombie_renderTransparent_FUN_0058beb0(CZombie *this
 
 {
   int iVar1;
-  uint *puVar2;
-  uint *puVar3;
+  CMatrix3x4f *pCVar2;
+  float *pfVar3;
   byte bVar4;
   float afStackY_10dc [990];
   CVector3f *position;
   CVector3f *rotation;
   float fov;
-  float *pfVar5;
-  byte *puVar6;
   float falloff;
+  CMatrix3x4f CStack_154;
+  float afStack_124 [12];
   CVector3f CStack_f4;
   float fStack_e8;
   float afStack_e4 [9];
@@ -46,25 +46,26 @@ int __cdecl core_zombie_cpp_CZombie_renderTransparent_FUN_0058beb0(CZombie *this
   
   bVar4 = 0;
   if (((this_ptr->base).base.was_rendered_opaque != 0) && (this_ptr->is_miner_zombie != 0)) {
-    core_skeleton_cpp_FUN_0054d9c0(&(this_ptr->base).base.model,this_ptr->bone_indices[0]);
-    puVar2 = (uint *)&stack0xfffffeac;
-    puVar3 = (uint *)&stack0xfffffedc;
+    core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0054d9c0
+              (&(this_ptr->base).base.model,this_ptr->bone_indices[0],&CStack_154);
+    pCVar2 = &CStack_154;
+    pfVar3 = afStack_124;
     for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar3 = *puVar2;
-      puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-      puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+      *pfVar3 = pCVar2->m[0].w;
+      pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
+      pfVar3 = pfVar3 + (uint)bVar4 * -2 + 1;
     }
     afStack_e4[3] = 0.5;
     afStack_e4[4] = 0.5;
     afStack_e4[2] = 0.0;
-    core_xform_cpp_FUN_00583260(afStack_e4 + 2,&stack0xfffffedc);
-    pfVar5 = afStack_c0 + 2;
+    core_xform_cpp_FUN_00583260(afStack_e4 + 2,afStack_124);
+    pfVar3 = afStack_c0 + 2;
     afStack_c0[2] = afStack_e4[8];
     afStack_c0[(uint)bVar4 * -2 + 3] = afStack_c0[(uint)bVar4 * -2];
     afStack_c0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
          afStack_c0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-    core_actor_cpp_FUN_00408b80(this_ptr,pfVar5);
-    puVar6 = &stack0xfffffedc;
+    core_actor_cpp_FUN_00408b80(this_ptr,pfVar3);
+    pfVar3 = afStack_124;
     uStack_a0 = 0;
     uStack_9c = 0;
     uStack_98 = 0;
@@ -72,14 +73,14 @@ int __cdecl core_zombie_cpp_CZombie_renderTransparent_FUN_0058beb0(CZombie *this
     *(float *)((int)&CStack_f4 + (uint)bVar4 * -8 + 4) = afStack_60[(uint)bVar4 * -2 + 3];
     *(float *)((int)&CStack_f4 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
          afStack_60[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
-    core_xform_cpp_FUN_00583260(afStack_c0 + 8,puVar6);
-    pfVar5 = afStack_90 + 5;
+    core_xform_cpp_FUN_00583260(afStack_c0 + 8,pfVar3);
+    pfVar3 = afStack_90 + 5;
     afStack_7c[0] = (float)uStack_ac;
     afStack_90[(uint)bVar4 * -2 + 6] = afStack_c0[(uint)bVar4 * -2 + 6];
     afStack_90[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7] =
          afStack_c0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
-    core_actor_cpp_FUN_00408b00(this_ptr,pfVar5);
-    puVar6 = &stack0xfffffedc;
+    core_actor_cpp_FUN_00408b00(this_ptr,pfVar3);
+    pfVar3 = afStack_124;
     afStack_e4[7] = 1.0;
     afStack_e4[5] = 0.0;
     afStack_e4[6] = 0.0;
@@ -87,13 +88,13 @@ int __cdecl core_zombie_cpp_CZombie_renderTransparent_FUN_0058beb0(CZombie *this
     afStack_60[(uint)bVar4 * -2 + 0xc] = afStack_60[(uint)bVar4 * -2 + 0x12];
     afStack_60[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0xd] =
          afStack_60[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0x13];
-    core_xform_cpp_FUN_00583260(afStack_e4 + 5,puVar6);
-    pfVar5 = afStack_60 + 8;
+    core_xform_cpp_FUN_00583260(afStack_e4 + 5,pfVar3);
+    pfVar3 = afStack_60 + 8;
     afStack_40[0] = (float)uStack_94;
     afStack_60[(uint)bVar4 * -2 + 9] = afStack_90[(uint)bVar4 * -2];
     afStack_60[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 10] =
          afStack_90[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-    core_actor_cpp_FUN_00408b00(this_ptr,pfVar5);
+    core_actor_cpp_FUN_00408b00(this_ptr,pfVar3);
     fStack_28 = afStack_90[2];
     afStack_60[(uint)bVar4 * -2 + 0xf] = afStack_90[(uint)bVar4 * -2 + 3];
     afStack_60[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0x10] =

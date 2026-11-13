@@ -1949,10 +1949,10 @@ static undefined1* DAT_005FF848 = (undefined1*)shape_edittool_cpp_CPickList_clea
 static undefined1* DAT_005FF84C = (undefined1*)shape_edittool_cpp_CPickList_handleInput_FUN_0049a9b0;
 static undefined1* DAT_005FFFC8 = (undefined1*)core_particle_cpp_FUN_00532250;
 static undefined1* DAT_005FFFCC = (undefined1*)core_fire_cpp_CRainDrop_render_FUN_004b46e0;
-static undefined1* DAT_005FFFD0 = (undefined1*)core_fire_cpp_FUN_004b4360;
+static undefined1* DAT_005FFFD0 = (undefined1*)core_fire_cpp_CRainDrop_onCollision_FUN_004b4360;
 static undefined1* DAT_005FFFE8 = (undefined1*)core_particle_cpp_FUN_00532250;
 static undefined1* DAT_005FFFEC = (undefined1*)core_fire_cpp_CPopcorn_render_FUN_004b4370;
-static undefined1* DAT_005FFFF0 = (undefined1*)core_fire_cpp_FUN_004b4360;
+static undefined1* DAT_005FFFF0 = (undefined1*)core_fire_cpp_CRainDrop_onCollision_FUN_004b4360;
 
 // undefined4 constants
 static undefined4 DAT_005faa1c = 0x006E6F63;

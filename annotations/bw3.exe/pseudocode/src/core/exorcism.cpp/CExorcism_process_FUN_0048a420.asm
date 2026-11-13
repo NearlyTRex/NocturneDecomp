@@ -28,7 +28,7 @@
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0045aae0
 ;   core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0
-;   core_fire.cpp_FUN_004a3c50
+;   core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50
 ;   core_set.cpp_CDemonSet_addCoronaGlobe_FUN_005372f0
 ;   core_sound.cpp_CSound_playActorSound_FUN_005609d0
 ;   core_weapon.cpp_CWeapon_process_FUN_0057b160
@@ -413,8 +413,8 @@ section .text
     FADD float ptr [ESP + 0x25c]        ; 0048aa2b
     PUSH EDX                            ; 0048aa32
     FSTP float ptr [ESP + 0x17c]        ; 0048aa33
-    CALL core_fire.cpp_FUN_004a3c50     ; 0048aa3a
-        ;   XREF to: 004a3c50 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3c50()
+    CALL core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50 ; 0048aa3a
+        ;   XREF to: 004a3c50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50(CFireEffect * this_ptr, CVector3f * start_position, CVector3f * end_position, int enable_camera_shake, ...)
     LEA EAX,[ESP + 0x210]               ; 0048aa3f
     ADD ESP,0x24                        ; 0048aa46
     LEA EDX,[ESP + 0x9c]                ; 0048aa49
@@ -535,8 +535,8 @@ section .text
     FADD float ptr [ESP + 0x270]        ; 0048ac5b
     PUSH ECX                            ; 0048ac62
     FSTP float ptr [ESP + 0x1a0]        ; 0048ac63
-    CALL core_fire.cpp_FUN_004a3c50     ; 0048ac6a
-        ;   XREF to: 004a3c50 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3c50()
+    CALL core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50 ; 0048ac6a
+        ;   XREF to: 004a3c50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50(CFireEffect * this_ptr, CVector3f * start_position, CVector3f * end_position, int enable_camera_shake, ...)
     ADD ESP,0x24                        ; 0048ac6f
     PUSH 0xffff                         ; 0048ac72
     PUSH 0x3e800000                     ; 0048ac77
@@ -550,8 +550,8 @@ section .text
     PUSH EAX                            ; 0048ac98
     MOV ESI,dword ptr [0x005fc5a0]      ; 0048ac99 | DAT_005fc5a0
     PUSH ESI                            ; 0048ac9f
-    CALL core_fire.cpp_FUN_004a3c50     ; 0048aca0
-        ;   XREF to: 004a3c50 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3c50()
+    CALL core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50 ; 0048aca0
+        ;   XREF to: 004a3c50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50(CFireEffect * this_ptr, CVector3f * start_position, CVector3f * end_position, int enable_camera_shake, ...)
     ADD ESP,0x24                        ; 0048aca5
     LEA EAX,[ESP + 0x150]               ; 0048aca8
     PUSH EAX                            ; 0048acaf

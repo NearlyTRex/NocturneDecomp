@@ -36,7 +36,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderFlames_FUN_004303c0(CCharacter *
 void __cdecl core_charactr_cpp_CCharacter_addDamageDecal_FUN_00430440(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_igniteBone_FUN_004308a0(CCharacter *this_ptr,CVector3f *position,int fire_type,int flame_type,float flame_scale,int include_hero);
 void core_charactr_cpp_FUN_00430960(int param_1);
-void core_charactr_cpp_FUN_00430a90(int param_1,int param_2,undefined4 param_3,float param_4);
+void core_charactr_cpp_FUN_00430a90(int param_1,int param_2,int param_3,float param_4);
 void __cdecl core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_00430b60(CCharacter *this_ptr,int part_index,int bone_index,float chance);
 CBoundingBox3D * __cdecl core_charactr_cpp_CCharacter_getBoundingBox_FUN_00430c10(CCharacter *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_charactr_cpp_CCharacter_shatter_FUN_00430c40(CCharacter *this_ptr);

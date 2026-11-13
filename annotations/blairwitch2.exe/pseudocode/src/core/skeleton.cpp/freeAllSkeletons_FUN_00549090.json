@@ -1,0 +1,169 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 26,
+    "complexity_score": 37,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 12,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 38
+  },
+  "cross_references": [
+    {
+      "addr": "004e4e20",
+      "from_addr": "004e4e6e",
+      "name": "core_main.c_FUN_004e4e20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fcf50",
+      "from_addr": "004fcf5f",
+      "name": "core_mission.cpp_CDemonMission_freeAllAssets_FUN_004fcf50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00549090",
+    "address_range": [
+      [
+        "00549090",
+        "005490cd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_freeAllSkeletons_FUN_00549090",
+    "signature": "void __cdecl core_skeleton_cpp_freeAllSkeletons_FUN_00549090(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00540980",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_free_FUN_00540980"
+    },
+    {
+      "addr": "00548f80",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_freeAllModels_FUN_00548f80"
+    },
+    {
+      "addr": "005b77c0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005b77c0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004e4e6e",
+        "call_type": "direct",
+        "caller": "core_main.c_FUN_004e4e20",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "004fcf5f",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_freeAllAssets_FUN_004fcf50",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.15,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 3,
+      "CBRANCH": 1,
+      "COPY": 14,
+      "INT_ADD": 7,
+      "INT_AND": 8,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 11,
+      "LOAD": 3,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 10
+    },
+    "pcode_op_count": 83
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0056b740",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005502d0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a1ea0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7778
+    },
+    "nocturne.exe": {
+      "addr": "0051f730",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7778
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_02628554",
+      "severity": "mild",
+      "text": "} while (this_ptr != (CSkeleton *)&DAT_02628554);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_02628554",
+      "severity": "mild",
+      "text": "memset(&DAT_02628554,0,0xa0);",
+      "type": "undefined_data"
+    }
+  ]
+}

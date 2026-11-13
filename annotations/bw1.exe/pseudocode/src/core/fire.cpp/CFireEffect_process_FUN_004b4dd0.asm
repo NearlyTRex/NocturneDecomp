@@ -28,17 +28,17 @@
 ;   ... and 33 more
 ;
 ; Called Functions:
+;   core_fire.cpp_CBulletHole_process_FUN_004ac690
 ;   core_fire.cpp_CBulletTrail_process_FUN_004afcd0
 ;   core_fire.cpp_CCrater_process_FUN_004b22d0
 ;   core_fire.cpp_CExplosion_process_FUN_004b1820
 ;   core_fire.cpp_CGunFlame_process_FUN_004b2d40
 ;   core_fire.cpp_CLightningBolt_process_FUN_004b3530
 ;   core_fire.cpp_CMuzzleFlash_process_FUN_004af400
+;   core_fire.cpp_CSmokeParticle_process_FUN_004abf50
 ;   core_fire.cpp_CStake_process_FUN_004acf20
 ;   core_fire.cpp_CToss_process_FUN_004b1d90
 ;   core_fire.cpp_CTrail_process_FUN_004b3cd0
-;   core_fire.cpp_FUN_004abf50
-;   core_fire.cpp_FUN_004ac690
 ;   core_fire.cpp_initProcess_FUN_004b2880
 ;   core_fire.cpp_updateTextureAnimCounts_FUN_004b15d0
 ;
@@ -265,8 +265,8 @@ section .text
     MOV ESI,0x1c6eaa8                   ; 004b4fa3
     PUSH ESI                            ; 004b4fa8
         ;   Label: LAB_004b4fa8
-    CALL core_fire.cpp_FUN_004ac690     ; 004b4fa9
-        ;   XREF to: 004ac690 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004ac690()
+    CALL core_fire.cpp_CBulletHole_process_FUN_004ac690 ; 004b4fa9
+        ;   XREF to: 004ac690 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CBulletHole_process_FUN_004ac690(CBulletHole * this_ptr)
     INC EBX                             ; 004b4fae
     MOV EDX,dword ptr [0x01c6eaa0]      ; 004b4faf | DAT_01c6eaa0
     ADD ESP,0x4                         ; 004b4fb5
@@ -411,8 +411,8 @@ section .text
     RET                                 ; 004b50ef
     PUSH EBX                            ; 004b50f0 | DAT_01c58acc
         ;   Label: LAB_004b50f0
-    CALL core_fire.cpp_FUN_004abf50     ; 004b50f1
-        ;   XREF to: 004abf50 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004abf50()
+    CALL core_fire.cpp_CSmokeParticle_process_FUN_004abf50 ; 004b50f1
+        ;   XREF to: 004abf50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CSmokeParticle_process_FUN_004abf50(CSmokeParticle * this_ptr)
     ADD ESP,0x4                         ; 004b50f6
     JMP 0x004b4dfb                      ; 004b50f9
         ;   XREF to: 004b4dfb (UNCONDITIONAL_JUMP)  ; LAB_004b4dfb

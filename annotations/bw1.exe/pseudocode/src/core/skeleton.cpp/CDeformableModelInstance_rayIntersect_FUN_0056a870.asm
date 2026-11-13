@@ -15,9 +15,9 @@
 ;   core_actor.cpp_FUN_00409170 at 004095ca
 ;
 ; Called Functions:
+;   core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_005660c0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0
 ;   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_00569890
-;   core_skeleton.cpp_FUN_005660c0
 ;
 ; *****************************************************************************
 
@@ -58,8 +58,8 @@ section .text
         ;   XREF to: 00569eb0 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0056a8b4
     PUSH EAX                            ; 0056a8b7
-    CALL core_skeleton.cpp_FUN_005660c0 ; 0056a8b8
-        ;   XREF to: 005660c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_005660c0()
+    CALL core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_005660c0 ; 0056a8b8
+        ;   XREF to: 005660c0 (UNCONDITIONAL_CALL)  ; float core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_005660c0(CDeformableModel * this_ptr, int lod_index, CVector3f * ray_origin, CVector3f * ray_direction, ...)
     MOV dword ptr [ESP + 0x1c],EAX      ; 0056a8bd
     FLD float ptr [ESP + 0x1c]          ; 0056a8c1
     ADD ESP,0x18                        ; 0056a8c5

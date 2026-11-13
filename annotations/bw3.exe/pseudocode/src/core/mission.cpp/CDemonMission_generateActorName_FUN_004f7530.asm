@@ -12,7 +12,7 @@
 ;
 ; XREF[8]:
 ;   core_bodypart.cpp_createBodyPart_FUN_00414550 at 00414611
-;   core_fire.cpp_FUN_0049cca0 at 0049cccd
+;   core_fire.cpp_spawnDiseaseBugs_FUN_0049cca0 at 0049cccd
 ;   core_game.cpp_giveHeroWeapon_FUN_004bafd0 at 004bafed
 ;   core_gore.cpp_FUN_004ced40 at 004cedfc
 ;   core_hero.cpp_FUN_004d4be0 at 004d4c39

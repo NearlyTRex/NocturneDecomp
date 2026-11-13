@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 600,
-    "complexity_score": 755,
+    "complexity_score": 765,
     "cross_reference_count": 0,
     "function_call_count": 22,
     "global_count": 27,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 295,
-    "suspect_count": 42,
+    "suspect_count": 43,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -77,14 +77,14 @@
       "name": "core_crate.cpp_FUN_004461c0"
     },
     {
+      "addr": "004a2090",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createBulletImpact_FUN_004a2090"
+    },
+    {
       "addr": "004a2450",
       "is_variadic": false,
       "name": "core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004a2450"
-    },
-    {
-      "addr": "004a2090",
-      "is_variadic": false,
-      "name": "core_fire.cpp_FUN_004a2090"
     },
     {
       "addr": "004a7110",
@@ -525,15 +525,15 @@
       "line": 195,
       "match": "in_stack_fffffe58",
       "severity": "moderate",
-      "text": "&g_CDemonSetPtr->collision_normal,in_stack_fffffe58,in_stack_fffffe5c,0",
+      "text": "&g_CDemonSetPtr->collision_normal,(int)in_stack_fffffe58,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 195,
+      "line": 196,
       "match": "in_stack_fffffe5c",
       "severity": "moderate",
-      "text": "&g_CDemonSetPtr->collision_normal,in_stack_fffffe58,in_stack_fffffe5c,0",
+      "text": "(CDemonActor *)in_stack_fffffe5c,0);",
       "type": "stack_param"
     },
     {
@@ -630,6 +630,14 @@
       "match": "(int)pCStack_40",
       "severity": "moderate",
       "text": "fStack_30 = ((1.0 - (float)pCVar9) * fVar4) / (float)(int)pCStack_40;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `in_stack_fffffe58` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 195,
+      "match": "(int)in_stack_fffffe58",
+      "severity": "moderate",
+      "text": "&g_CDemonSetPtr->collision_normal,(int)in_stack_fffffe58,",
       "type": "pointer_truncation"
     },
     {

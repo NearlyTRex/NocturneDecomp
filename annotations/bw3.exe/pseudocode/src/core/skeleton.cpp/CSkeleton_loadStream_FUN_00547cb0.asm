@@ -38,7 +38,7 @@
 ;   core_main.c_FUN_004e4330
 ;   core_motion.cpp_CMotionList_load_FUN_004fb280
 ;   core_skeleton.cpp_CSkeleton_allocMemory_FUN_00547a80
-;   core_skeleton.cpp_FUN_00547b90
+;   core_skeleton.cpp_CSkeleton_free_FUN_00547b90
 ;   crt_stdio.c_fgetc_FUN_005a32b0
 ;   crt_stdio.c_fscanf_FUN_005a3230
 ;
@@ -55,8 +55,8 @@ section .text
     PUSH 0x1                            ; 00547cb7
     MOV EDX,dword ptr [ESP + 0x2c]      ; 00547cb9
     PUSH EDX                            ; 00547cbd
-    CALL core_skeleton.cpp_FUN_00547b90 ; 00547cbe
-        ;   XREF to: 00547b90 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00547b90()
+    CALL core_skeleton.cpp_CSkeleton_free_FUN_00547b90 ; 00547cbe
+        ;   XREF to: 00547b90 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CSkeleton_free_FUN_00547b90(CSkeleton * this_ptr, int free_motion_list)
     ADD ESP,0x8                         ; 00547cc3
     MOV ECX,0xffffffff                  ; 00547cc6
     MOV EBX,dword ptr [ESP + 0x2c]      ; 00547ccb

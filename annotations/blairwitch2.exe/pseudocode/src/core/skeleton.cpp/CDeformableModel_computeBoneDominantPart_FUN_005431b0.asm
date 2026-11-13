@@ -44,10 +44,10 @@
 ;   core_main.c_FUN_004e4500
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00546ae0
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_00544cd0
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
 ;   core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005474b0
 ;   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_00544e60
 ;   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005471f0
-;   core_skeleton.cpp_FUN_005469a0
 ;   crt_memory.c_operator_new_FUN_005b8be2
 ;
 ; *****************************************************************************
@@ -128,8 +128,8 @@ section .text
     PUSH EBX                            ; 00543264
     LEA ESI,[ESP + 0x18]                ; 00543265
     LEA EDI,[ESP + 0xc]                 ; 00543269
-    CALL core_skeleton.cpp_FUN_005469a0 ; 0054326d
-        ;   XREF to: 005469a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_005469a0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0 ; 0054326d
+        ;   XREF to: 005469a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 00543272
     LEA ESI,[ESP + 0x10]                ; 00543275
     MOV EAX,dword ptr [ESP + 0x80]      ; 00543279

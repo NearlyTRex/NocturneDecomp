@@ -11,7 +11,8 @@
 void __cdecl core_fire_cpp_CFireEffect_createExplosion_FUN_0049e360(CFireEffect *this_ptr,CVector3f *position,float scale,float gore_multiplier,float radius)
 
 {
-  core_fire_cpp_FUN_00498d30(_DAT_01c975e0 * 0x1c + 0x1c975e4,position,scale,gore_multiplier);
+  core_fire_cpp_CExplosion_activate_FUN_00498d30
+            ((CExplosion *)(_DAT_01c975e0 * 0x1c + 0x1c975e4),position,scale,gore_multiplier);
   _DAT_01c975e0 = _DAT_01c975e0 + 1;
   if (9 < _DAT_01c975e0) {
     _DAT_01c975e0 = 0;

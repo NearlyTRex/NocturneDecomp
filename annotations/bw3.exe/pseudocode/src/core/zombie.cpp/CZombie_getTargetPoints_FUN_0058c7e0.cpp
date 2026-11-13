@@ -16,29 +16,29 @@ int __cdecl core_zombie_cpp_CZombie_getTargetPoints_FUN_0058c7e0(CZombie *this_p
   CVector3f *pCVar2;
   byte bVar3;
   float afStackY_1088 [1016];
-  float fStack_a0;
+  CVector3f CStack_a0;
   CVector3f CStack_94;
-  float fStack_88;
-  float afStack_84 [2];
+  CVector3f CStack_88;
   CVector3f CStack_7c;
   CVector3f CStack_70;
-  float fStack_64;
-  float afStack_60 [5];
+  CVector3f CStack_64;
+  CVector3f CStack_58;
   CVector3f CStack_4c;
   CVector3f CStack_40;
-  float fStack_34;
-  float afStack_30 [2];
+  CVector3f CStack_34;
   CVector3f CStack_28;
   int iStack_1c;
   CDeformableModelInstance *pCStack_18;
   int iStack_14;
   
   bVar3 = 0;
-  core_skeleton_cpp_FUN_0054dcc0(&(this_ptr->base).base.model,this_ptr->bone_indices[9]);
-  CStack_7c.x = fStack_88;
-  *(float *)((int)&CStack_7c + (uint)bVar3 * -8 + 4) = afStack_84[(uint)bVar3 * -2];
-  *(float *)((int)&CStack_7c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
-       afStack_84[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
+  core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0
+            (&(this_ptr->base).base.model,this_ptr->bone_indices[9],&CStack_88);
+  CStack_7c.x = CStack_88.x;
+  *(uint *)((int)&CStack_7c + (uint)bVar3 * -8 + 4) =
+       *(uint *)((int)&CStack_88 + (uint)bVar3 * -8 + 4);
+  *(uint *)((int)&CStack_7c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+       *(uint *)((int)&CStack_88 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
   if (&CStack_7c != out_points_array) {
     out_points_array->x = CStack_7c.x;
     out_points_array->y = CStack_7c.y;
@@ -51,11 +51,13 @@ int __cdecl core_zombie_cpp_CZombie_getTargetPoints_FUN_0058c7e0(CZombie *this_p
     switch((iStack_1c + (this_ptr->base).base.base.direction_hint) % 4) {
     case 0:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] != 0) {
-        core_skeleton_cpp_FUN_0054dcc0(pCStack_18,this_ptr->bone_indices[5]);
-        CStack_40.x = fStack_34;
-        *(float *)((int)&CStack_40 + (uint)bVar3 * -8 + 4) = afStack_30[(uint)bVar3 * -2];
-        *(float *)((int)&CStack_40 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
-             afStack_30[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
+        core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0
+                  (pCStack_18,this_ptr->bone_indices[5],&CStack_34);
+        CStack_40.x = CStack_34.x;
+        *(uint *)((int)&CStack_40 + (uint)bVar3 * -8 + 4) =
+             *(uint *)((int)&CStack_34 + (uint)bVar3 * -8 + 4);
+        *(uint *)((int)&CStack_40 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+             *(uint *)((int)&CStack_34 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
         if (&CStack_70 != &CStack_40) {
           CStack_70.x = CStack_40.x;
           CStack_70.y = CStack_40.y;
@@ -77,11 +79,13 @@ LAB_0058c92b:
       break;
     case 1:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[2]] != 0) {
-        core_skeleton_cpp_FUN_0054dcc0(pCStack_18,this_ptr->bone_indices[6]);
-        CStack_94.x = afStack_60[2];
-        *(float *)((int)&CStack_94 + (uint)bVar3 * -8 + 4) = afStack_60[(uint)bVar3 * -2 + 3];
-        *(float *)((int)&CStack_94 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
-             afStack_60[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4];
+        core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0
+                  (pCStack_18,this_ptr->bone_indices[6],&CStack_58);
+        CStack_94.x = CStack_58.x;
+        *(uint *)((int)&CStack_94 + (uint)bVar3 * -8 + 4) =
+             *(uint *)((int)&CStack_58 + (uint)bVar3 * -8 + 4);
+        *(uint *)((int)&CStack_94 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+             *(uint *)((int)&CStack_58 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
         if (&CStack_70 != &CStack_94) {
           CStack_70.x = CStack_94.x;
           CStack_70.y = CStack_94.y;
@@ -94,13 +98,14 @@ LAB_0058c92b:
       break;
     case 2:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[6]] != 0) {
-        core_skeleton_cpp_FUN_0054dcc0(pCStack_18,this_ptr->bone_indices[0]);
+        core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0
+                  (pCStack_18,this_ptr->bone_indices[0],&CStack_a0);
         pCVar2 = out_points_array + iStack_14;
-        CStack_28.x = fStack_a0;
+        CStack_28.x = CStack_a0.x;
         *(uint *)((int)&CStack_28 + (uint)bVar3 * -8 + 4) =
-             *(uint *)(&stack0xffffff64 + (uint)bVar3 * -8);
+             *(uint *)((int)&CStack_a0 + (uint)bVar3 * -8 + 4);
         *(uint *)((int)&CStack_28 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
-             *(uint *)(&stack0xffffff68 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
+             *(uint *)((int)&CStack_a0 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
         if (pCVar2 == &CStack_28) goto LAB_0058c92b;
         pCVar2->x = CStack_28.x;
         pCVar2->y = CStack_28.y;
@@ -112,11 +117,13 @@ LAB_0058c928:
       break;
     case 3:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[5]] != 0) {
-        core_skeleton_cpp_FUN_0054dcc0(pCStack_18,this_ptr->bone_indices[10]);
-        CStack_4c.x = fStack_64;
-        *(float *)((int)&CStack_4c + (uint)bVar3 * -8 + 4) = afStack_60[(uint)bVar3 * -2];
-        *(float *)((int)&CStack_4c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
-             afStack_60[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
+        core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0
+                  (pCStack_18,this_ptr->bone_indices[10],&CStack_64);
+        CStack_4c.x = CStack_64.x;
+        *(uint *)((int)&CStack_4c + (uint)bVar3 * -8 + 4) =
+             *(uint *)((int)&CStack_64 + (uint)bVar3 * -8 + 4);
+        *(uint *)((int)&CStack_4c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+             *(uint *)((int)&CStack_64 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
         pCVar2 = out_points_array + iStack_14;
         if (pCVar2 != &CStack_4c) {
           pCVar2->x = CStack_4c.x;

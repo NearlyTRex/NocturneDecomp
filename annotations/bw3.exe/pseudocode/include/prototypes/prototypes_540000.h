@@ -98,7 +98,7 @@ int core_shadow_cpp_FUN_00545710(CCharacter *param_1);
 void core_shadow_cpp_FUN_00545910(CEnemy *param_1);
 void core_shadow_cpp_FUN_005459b0(CEnemy *param_1,SDamageInfo *param_2);
 undefined4 core_shadow_cpp_FUN_00545bd0(int param_1);
-undefined4 core_shadow_cpp_FUN_00545c10(int param_1,undefined4 *param_2);
+undefined4 core_shadow_cpp_FUN_00545c10(int param_1,float *param_2);
 void core_shadow_cpp_FUN_00545c80(CCharacter *param_1);
 void core_shadow_cpp_FUN_00545e70(void);
 undefined4 core_shadow_cpp_FUN_00545e90(void);
@@ -148,7 +148,7 @@ float __cdecl core_skeleton_cpp_distancePointToLineSegment_FUN_00547800(CVector3
 CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_ctor_FUN_005479f0(CSkeleton *this_ptr);
 CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_dtor_FUN_00547a50(CSkeleton *this_ptr,uint flags);
 void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_00547a80(CSkeleton *this_ptr,int bone_count,int frame_count);
-void core_skeleton_cpp_FUN_00547b90(int param_1,int param_2);
+void __cdecl core_skeleton_cpp_CSkeleton_free_FUN_00547b90(CSkeleton *this_ptr,int free_motion_list);
 void __cdecl core_skeleton_cpp_CSkeleton_load_FUN_00547c20(CSkeleton *this_ptr,char *filename);
 void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_00547cb0(CSkeleton *this_ptr,_FILE *file_handle);
 int __cdecl core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(CSkeleton *this_ptr,char *bone_name,int assert_if_not_found);
@@ -160,20 +160,20 @@ CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModel_ctor_FUN_00548230(
 CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModel_dtor_FUN_00548350(CDeformableModel *this_ptr,uint flags);
 void __cdecl core_skeleton_cpp_CDeformableModel_free_FUN_00548370(CDeformableModel *this_ptr);
 void __cdecl core_skeleton_cpp_CDeformableModel_allocMemory_FUN_00548460(CDeformableModel *this_ptr,int num_lods,int num_texture_sets,int num_textures,int num_parts);
-void core_skeleton_cpp_FUN_00548580(CDeformableModel *param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00548580(CDeformableModel *this_ptr,int lod_index,int vertex_count,int tri_count,int cap_tri_count);
 void __cdecl core_skeleton_cpp_CDeformableModel_setModelName_FUN_00548710(CDeformableModel *this_ptr,char *model_name);
 void __cdecl core_skeleton_cpp_CDeformableModel_captureTextures_FUN_00548750(CDeformableModel *this_ptr);
 CSkeleton * __cdecl core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_005487e0(CDeformableModel *this_ptr);
 CVector3f * __cdecl core_skeleton_cpp_CDeformableModel_getVertexPoolPtr_FUN_00548830(CDeformableModel *this_ptr,int index);
-void __cdecl core_skeleton_cpp_FUN_00548850(CDeformableModel *this_ptr,int lod_index,CMatrix3x4f *bone_matrices,int *output_buffer,SPartInstanceData *part_data);
-undefined4 * core_skeleton_cpp_FUN_00548a30(int param_1,int param_2,int param_3,int param_4);
+void __cdecl core_skeleton_cpp_CDeformableModel_skinVertices_FUN_00548850(CDeformableModel *this_ptr,int lod_index,CMatrix3x4f *bone_matrices,int *output_buffer,SPartInstanceData *part_data);
+CVector3f * __stack4_esi core_skeleton_cpp_CDeformableModel_skinSingleVertex_FUN_00548a30(CDeformableModel *this_ptr,int lod_index,int vertex_index,CMatrix3x4f *bone_matrices,CVector3f *output_pos);
 void __cdecl core_skeleton_cpp_CDeformableModel_rotateVertices_FUN_00548ba0(CDeformableModel *this_ptr,int lod_index,int *input_vertices);
 void __cdecl core_skeleton_cpp_CDeformableModel_lightVertices_FUN_00548bd0(CDeformableModel *this_ptr,int lod_index,CVector3i *skinned_vertices);
 void __cdecl core_skeleton_cpp_CDeformableModel_initVertexWRecip_FUN_00548c10(CDeformableModel *this_ptr,int lod_index,CVector3i *lod_vertices);
 void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_00548c70(CDeformableModel *this_ptr,int lod_index,int *part_visibility_flags,int *texture_set_indices,int render_flags,int skip_texture_capture);
 void __cdecl core_skeleton_cpp_CDeformableModel_renderWireframe_FUN_00549620(CDeformableModel *this_ptr,int lod_level);
-CSkeleton * core_skeleton_cpp_FUN_005496c0(CDeformableModel *param_1,undefined4 param_2,int param_3,byte param_4);
-void core_skeleton_cpp_FUN_005498d0(void);
+void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_005496c0(CDeformableModel *this_ptr,int color,CMatrix3x4f *bone_matrices,int render_flags);
+void __cdecl core_skeleton_cpp_CDeformableModel_renderBones_FUN_005498d0(CDeformableModel *this_ptr,CMatrix3x4f *bone_matrices);
 void __cdecl core_skeleton_cpp_CDeformableModel_load_FUN_005499d0(CDeformableModel *this_ptr,char *filename);
 void __cdecl core_skeleton_cpp_CDeformableModel_loadStream_FUN_00549a60(CDeformableModel *this_ptr,_FILE *file_handle);
 void __cdecl core_skeleton_cpp_CDeformableModel_bindSkeleton_FUN_0054a2c0(CDeformableModel *this_ptr,CSkeleton *skeleton_ptr);
@@ -182,7 +182,7 @@ int __cdecl core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310(CDefo
 int __cdecl core_skeleton_cpp_CDeformableModel_getBonePart_FUN_0054a3a0(CDeformableModel *this_ptr,int bone_index);
 int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_0054a3c0(CDeformableModel *this_ptr,int bone_index);
 void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0054a6a0(CDeformableModel *this_ptr,int lod_index,CBodyPart *body_part_ptr,int part_index,CVector3i *skinned_vertices,int texture_set_index);
-float core_skeleton_cpp_FUN_0054ac50(int param_1,int param_2,CVector3f *param_3,CVector3f *param_4,int *param_5,byte *param_6);
+float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0054ac50(CDeformableModel *this_ptr,int lod_index,CVector3f *ray_origin,CVector3f *ray_direction,CVector3i *skinned_vertices,byte *part_visibility_flags);
 int __cdecl core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0054af10(CDeformableModel *this_ptr,CBoundingBox3D *bounding_box);
 void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_0054afb0(CDeformableModel *this_ptr,CVector3f *center_position,CVector3f *orientation_vector,int lod_index,CVector3i *skinned_vertices,int *part_visibility_flags,int *texture_set_indices);
 void __cdecl core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0054b5b0(CDeformableModel *this_ptr);
@@ -190,7 +190,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_00
 void __cdecl core_skeleton_cpp_CDeformableModel_computeFarthestChildBones_FUN_0054bd10(CDeformableModel *this_ptr);
 int __cdecl core_skeleton_cpp_CDeformableModel_findMaxWeightBone_FUN_0054bde0(CDeformableModel *this_ptr,int lod_level,int triangle_index);
 int __cdecl core_skeleton_cpp_CDeformableModel_calculateMemorySize_FUN_0054bea0(CDeformableModel *this_ptr);
-undefined4 core_skeleton_cpp_FUN_0054bef0(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+float __cdecl core_skeleton_cpp_blendWeightCallback_FUN_0054bef0(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *instance);
 CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0054bf00(CDeformableModelInstance *this_ptr);
 CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0054bf80(CDeformableModelInstance *this_ptr,uint flags);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_allocPointList_FUN_0054bfe0(CDeformableModelInstance *this_ptr);
@@ -199,7 +199,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0054
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0054c110(CDeformableModelInstance *this_ptr);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130(CDeformableModelInstance *this_ptr);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0054c180(CDeformableModelInstance *this_ptr,int motion_index,float frame_number);
-void core_skeleton_cpp_FUN_0054c1b0(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4);
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0054c1b0(CDeformableModelInstance *this_ptr,int motion_index,float frame_number,int bone_index);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90(CDeformableModelInstance *this_ptr,int target_motion_index,float target_frame_number ,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *callback_func);
 template<typename T_func0>
 inline void core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90(CDeformableModelInstance *this_ptr,int target_motion_index,float target_frame_number,float blend_weight,int bone_index,T_func0 callback_func) {
@@ -221,15 +221,15 @@ template<typename T_func0>
 inline void core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0054d8f0(CDeformableModelInstance *this_ptr,CQuaternion4f *source_quaternions,float blend_weight,int bone_index,T_func0 blend_callback) {
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0054d8f0(this_ptr, source_quaternions, blend_weight, bone_index, (CDeformableModel_MotionBlendWeightFunc *)blend_callback);
 }
-void core_skeleton_cpp_FUN_0054d9c0(CDeformableModelInstance *param_1,int param_2);
-void core_skeleton_cpp_FUN_0054dbd0(CDeformableModelInstance *param_1,int param_2);
-void core_skeleton_cpp_FUN_0054dcc0(int param_1,int param_2);
+CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0054d9c0(CDeformableModelInstance *this_ptr,int bone_index,CMatrix3x4f *out_matrix);
+CVector3f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0(CDeformableModelInstance *this_ptr,int bone_index,CVector3f *out_position);
+CVector3f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0(CDeformableModelInstance *this_ptr,int bone_index,CVector3f *out_position);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0054dd10(CDeformableModelInstance *this_ptr);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_offsetAllBonePositions_FUN_0054df60(CDeformableModelInstance *this_ptr,CVector3f *offset_vector);
-void core_skeleton_cpp_FUN_0054dfd0(CDeformableModelInstance *param_1,float *param_2,float param_3,int param_4,undefined4 param_5,CDeformableModel_MotionBlendWeightFunc *param_6);
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0054dfd0(CDeformableModelInstance *this_ptr,CVector3f *target_position,float blend_weight,int bone_index,CQuaternion4f *base_orientation,CDeformableModel_MotionBlendWeightFunc *blend_callback);
 template<typename T_func0>
-inline void core_skeleton_cpp_FUN_0054dfd0(CDeformableModelInstance *param_1,float *param_2,float param_3,int param_4,undefined4 param_5,T_func0 param_6) {
-    core_skeleton_cpp_FUN_0054dfd0(param_1, param_2, param_3, param_4, param_5, (CDeformableModel_MotionBlendWeightFunc *)param_6);
+inline void core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0054dfd0(CDeformableModelInstance *this_ptr,CVector3f *target_position,float blend_weight,int bone_index,CQuaternion4f *base_orientation,T_func0 blend_callback) {
+    core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0054dfd0(this_ptr, target_position, blend_weight, bone_index, base_orientation, (CDeformableModel_MotionBlendWeightFunc *)blend_callback);
 }
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0054e170(CDeformableModelInstance *this_ptr,CQuaternion4f *rotation_quat,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback);
 template<typename T_func0>
@@ -239,32 +239,32 @@ inline void core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_0054e340(CDeformableModelInstance *this_ptr,float scale_factor,int target_bone_index);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0(CDeformableModelInstance *this_ptr,int lod_index,uint render_flags,int lighting_mode ,int render_pass);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0054e420(CDeformableModelInstance *this_ptr,int lod_index);
-void core_skeleton_cpp_FUN_0054e460(CDeformableModelInstance *param_1,undefined4 param_2,undefined4 param_3);
+CVector3f * __stack3_esi core_skeleton_cpp_CDeformableModelInstance_skinSingleVertex_FUN_0054e460(CDeformableModelInstance *this_ptr,int lod_index,int vertex_index,CVector3f *output_pos);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_0054e4b0(CDeformableModelInstance *this_ptr,int lod_index);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_skinAndLightVertices_FUN_0054e500(CDeformableModelInstance *this_ptr,int lod_index);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_0054e550(CDeformableModelInstance *this_ptr,int lod_index);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_0054e5a0(CDeformableModelInstance *this_ptr,int render_flags,int skip_texture_capture);
-void core_skeleton_cpp_FUN_0054e670(int param_1);
-void __cdecl core_skeleton_cpp_FUN_0054e690(CDeformableModelInstance *this_ptr);
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_0054e670(CDeformableModelInstance *this_ptr);
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_0054e690(CDeformableModelInstance *this_ptr);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0054e6b0(CDeformableModelInstance *this_ptr);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_0054e6e0(CDeformableModelInstance *this_ptr,CDeformableModel *model_ptr);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_0054e850(CDeformableModelInstance *this_ptr);
 CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40(CDeformableModelInstance *this_ptr);
 CSkeleton * __cdecl core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(CDeformableModelInstance *this_ptr);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance *this_ptr,char *model_name);
-float core_skeleton_cpp_FUN_0054eb40(CDeformableModelInstance *param_1,int param_2,float param_3,float param_4,undefined4 param_5,undefined4 param_6,CDeformableModelInstance *param_7,undefined4 param_8,undefined4 param_9,int param_10,CDeformableModelInstance *param_11);
-void __cdecl core_skeleton_cpp_FUN_0054edb0(CDeformableModelInstance *this_ptr,int motion_index,float animation_time,SPose *output_bone_data);
-void core_skeleton_cpp_FUN_0054efa0(int param_1,undefined4 param_2,undefined4 param_3,float param_4);
-void core_skeleton_cpp_FUN_0054f040(CDeformableModelInstance *param_1,float param_2,float param_3);
+int __cdecl core_skeleton_cpp_CDeformableModelInstance_findPatchToFrame_FUN_0054eb40(CDeformableModelInstance *this_ptr,int source_motion_index,float source_frame,int target_motion_index);
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_0054edb0(CDeformableModelInstance *this_ptr,int motion_index,float animation_time,SPose *output_bone_data);
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_0054efa0(CDeformableModelInstance *this_ptr,float start_frame,float end_frame,float scale_factor);
+CVector3f * __stack3_esi core_skeleton_cpp_CDeformableModelInstance_getRootMotionDelta_FUN_0054f040(CDeformableModelInstance *this_ptr,float start_frame,float end_frame,CVector3f *output_buffer);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_0054f360(CDeformableModelInstance *this_ptr,CBodyPart *body_part,int part_index);
 float __cdecl core_skeleton_cpp_CDeformableModelInstance_rayIntersect_FUN_0054f400(CDeformableModelInstance *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction);
 int __cdecl core_skeleton_cpp_CDeformableModelInstance_findClosestBone_FUN_0054f480(CDeformableModelInstance *this_ptr,CVector3f *point);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_shatter_FUN_0054f7f0(CDeformableModelInstance *this_ptr,CVector3f *center_position,CVector3f *orientation_vector,int desired_lod_index);
 SPose * __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_0054f850(CDeformableModelInstance *this_ptr,SPose *bone_transform);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_0054f920(CDeformableModelInstance *this_ptr,SPose *bone_transform);
-undefined4 * core_skeleton_cpp_FUN_0054fa00(CDeformableModelInstance *param_1);
-void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderSkeleton_FUN_0054fb20(CDeformableModelInstance *this_ptr,undefined4 param_2,undefined4 param_3);
+CBoundingBox3D * __stack_esi core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0054fa00(CDeformableModelInstance *this_ptr,CBoundingBox3D *output_bbox);
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderSkeleton_FUN_0054fb20(CDeformableModelInstance *this_ptr,int color,int render_flags);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0054fb70(CDeformableModelInstance *this_ptr,int u_offset,int v_offset);
 void __cdecl core_skeleton_cpp_computeBoneModelMatrices_FUN_0054fcc0(SPose *bone_data,CDeformableModelInstance *instance_ptr);
-void core_skeleton_cpp_FUN_0054fef0(SPose *param_1,float *param_2,float *param_3,float param_4,CDeformableModelInstance *param_5);
+void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_0054fef0(SPose *result_pose,SPose *bone_data_out,SPose *bone_data_in,float blend_weight,CDeformableModelInstance *instance_ptr);
 

@@ -108,10 +108,9 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004c65f0(CGabriella *this_
   float fStack_dc;
   float afStack_d8 [4];
   float afStack_c8 [5];
-  float fStack_b4;
+  CVector3f CStack_b4;
   float fStack_a8;
-  float fStack_a4;
-  float fStack_a0;
+  float afStack_a4 [2];
   CVector3f CStack_9c;
   float fStack_90;
   float afStack_8c [4];
@@ -263,15 +262,17 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004c65f0(CGabriella *this_
       pCStack_5c = (CCharacter *)(this_ptr->base).base.grabbed_by;
       pCStack_14 = (pCStack_5c->base).vtable._uc;
       pCStack_34 = &(this_ptr->base).base.model;
-      core_skeleton_cpp_FUN_00569130(pCStack_34,0);
+      core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
+                (pCStack_34,0,&CStack_b4);
       pCVar13 = pCStack_14;
       this_ptr_03 = pCStack_5c;
       pCVar20 = &CStack_294;
-      CStack_294.x = fStack_b4;
-      *(float *)((int)&CStack_294 + (uint)bVar18 * -8 + 4) = afStack_c8[(uint)bVar18 * -2 + 6];
+      CStack_294.x = CStack_b4.x;
+      *(uint *)((int)&CStack_294 + (uint)bVar18 * -8 + 4) =
+           *(uint *)((int)&CStack_b4 + (uint)bVar18 * -8 + 4);
       actor = this_ptr;
-      *(float *)((int)&CStack_294 + (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8) =
-           afStack_c8[(uint)bVar18 * -2 + (uint)bVar18 * -2 + 7];
+      *(uint *)((int)&CStack_294 + (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8) =
+           *(uint *)((int)&CStack_b4 + (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8);
       iVar10 = (*(pCVar13->_uc).attractActorToward)(this_ptr_03,(CDemonActor *)actor,pCVar20);
       if (iVar10 == 0) {
         (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
@@ -421,12 +422,12 @@ LAB_004c73cb:
       pCVar13 = (CCharacter_full_vtable *)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_188)
       ;
       fStack_a8 = fStack_2d0 - fStack_2dc;
-      fStack_a4 = fStack_2cc - fStack_2d8;
-      fStack_a0 = fStack_2c8 - fStack_2d4;
+      afStack_a4[0] = fStack_2cc - fStack_2d8;
+      afStack_a4[1] = fStack_2c8 - fStack_2d4;
       fStack_90 = fStack_2d0 - fStack_2dc;
-      afStack_8c[(uint)bVar18 * -2] = afStack_c8[(uint)bVar18 * -2 + 9];
+      afStack_8c[(uint)bVar18 * -2] = afStack_a4[(uint)bVar18 * -2];
       afStack_8c[(uint)bVar18 * -2 + (uint)bVar18 * -2 + 1] =
-           afStack_c8[(uint)bVar18 * -2 + (uint)bVar18 * -2 + 10];
+           afStack_a4[(uint)bVar18 * -2 + (uint)bVar18 * -2 + 1];
       fStack_120 = fStack_90 * _DAT_005e0fe0;
       fStack_11c = afStack_8c[0] * _DAT_005e0fe0;
       fStack_118 = afStack_8c[1] * _DAT_005e0fe0;

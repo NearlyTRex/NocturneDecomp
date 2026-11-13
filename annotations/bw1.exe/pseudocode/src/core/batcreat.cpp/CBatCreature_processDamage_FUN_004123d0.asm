@@ -22,7 +22,7 @@
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
-;   core_skeleton.cpp_FUN_00569130
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_005735a0
 ;   sound_sndmain.cpp_killSfx_FUN_00573a80
 ;
@@ -63,8 +63,8 @@ section .text
     PUSH EAX                            ; 00412422
     LEA ESI,[ESP + 0x14]                ; 00412423
     LEA EDI,[ESP + 0x44]                ; 00412427
-    CALL core_skeleton.cpp_FUN_00569130 ; 0041242b
-        ;   XREF to: 00569130 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569130()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130 ; 0041242b
+        ;   XREF to: 00569130 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 00412430
     LEA EAX,[ESP + 0x3c]                ; 00412433
     LEA ESI,[ESP + 0xc]                 ; 00412437

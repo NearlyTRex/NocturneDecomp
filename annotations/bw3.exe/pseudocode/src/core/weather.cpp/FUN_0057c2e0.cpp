@@ -17,7 +17,7 @@ void core_weather_cpp_FUN_0057c2e0(CDemonActor *param_1,float param_2,int param_
   CDemonActor *pCVar3;
   int iVar4;
   uint *puVar5;
-  CLocation *position;
+  CLocation *start_position;
   uint *puVar6;
   byte bVar7;
   float afStackY_10a8 [975];
@@ -122,10 +122,11 @@ code_r0x0057c51b:
             SStack_154.ammo_type = AMMO_TYPE_MANA;
             SStack_154.damage_type = DAMAGE_TYPE_ATTACK_ELECTROCUTE;
             (*(((local_20->base).vtable._uc)->_uc).processDamage)(local_20,&SStack_154);
-            position = &(pCVar1->base).location;
-            core_fire_cpp_FUN_004a3bd0(0x01C73654,position,0x41f00000,1,0);
+            start_position = &(pCVar1->base).location;
+            core_fire_cpp_CFireEffect_createLightningBolt_FUN_004a3bd0
+                      (0x01C73654,&start_position->position,30.0,1,0.0);
             core_sound_cpp_CSound_playActorSound_FUN_005609d0
-                      (0x02CF5680,param_1,"light?.wav",&position->position);
+                      (0x02CF5680,param_1,"light?.wav",&start_position->position);
             (&(param_1->orient_matrix).m[0].x)[param_1->health] = (float)local_20;
             param_1->health = param_1->health + 1;
             goto LAB_0057c5a8;
@@ -188,7 +189,8 @@ LAB_0057c3b7:
       local_84.z = local_b4.z;
     }
     if (param_3 != 0) {
-      core_fire_cpp_FUN_004a3bd0(0x01C73654,&local_84,local_30,0,0);
+      core_fire_cpp_CFireEffect_createLightningBolt_FUN_004a3bd0
+                (0x01C73654,&local_84,local_30,0,0.0);
       core_sound_cpp_CSound_playActorSound_FUN_005609d0
                 (0x02CF5680,param_1,"light?.wav",&local_84);
     }

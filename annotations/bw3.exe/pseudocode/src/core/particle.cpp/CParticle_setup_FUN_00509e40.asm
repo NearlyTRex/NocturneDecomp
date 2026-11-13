@@ -12,10 +12,10 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[5]:
+;   core_fire.cpp_CGlassParticle_init_FUN_0049a650 at 0049a9c5
 ;   core_fire.cpp_CLeaf_init_FUN_0049a140 at 0049a157
 ;   core_fire.cpp_CRock_setup_FUN_00499fe0 at 00499ff6
 ;   core_fire.cpp_CShell_setup_FUN_004a0960 at 004a0978
-;   core_fire.cpp_FUN_0049a650 at 0049a9c5
 ;   core_gore.cpp_CBloodParticle_setup_FUN_004ccac0 at 004ccae6
 ;
 ; Referenced Globals:

@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 103,
-    "complexity_score": 401,
+    "complexity_score": 418,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 246,
-    "suspect_count": 12,
+    "pseudocode_lines": 248,
+    "suspect_count": 13,
     "suspect_types": [
+      "fast_sqrt_inline",
       "pointer_cast",
       "raw_address_pointer_store",
       "stack_alignment_array",
@@ -18,7 +19,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 349
+    "total_lines": 351
   },
   "cross_references": [],
   "function": {
@@ -242,7 +243,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 178,
+      "line": 180,
       "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "pCVar5 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar10);",
@@ -250,7 +251,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 199,
+      "line": 201,
       "match": "(CTrigger **)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "actor_ptr = *(CTrigger **)((int)g_CDemonSetPtr->actors + iVar10);",
@@ -263,6 +264,14 @@
       "severity": "moderate",
       "text": "for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Inlined fast sqrt bit-trick (bias `_DAT_01d1a0a4`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01d1a0a4` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "line": 155,
+      "match": "iStack_24 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004a3790 (0x01C7365",
+      "severity": "moderate",
+      "text": "iStack_24 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004a3790 (0x01C73654,&pCVar1->position, (float)(((int)fStac",
+      "type": "fast_sqrt_inline"
     }
   ],
   "vtable_info": {

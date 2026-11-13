@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_004a2090 at 004a2241
+;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_004a2090 at 004a2241
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c8aea0

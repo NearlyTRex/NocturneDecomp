@@ -8,8 +8,8 @@
 ; CDeformableModelInstance * Stack[0x8]:4   instance_ptr
 ;
 ; XREF[2]:
-;   core_skeleton.cpp_FUN_0054eb40 at 0054ebc7
-;   core_skeleton.cpp_FUN_0054fef0 at 00550090
+;   core_skeleton.cpp_CDeformableModelInstance_findPatchToFrame_FUN_0054eb40 at 0054ebc7
+;   core_skeleton.cpp_blendBoneTransformData_FUN_0054fef0 at 00550090
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0

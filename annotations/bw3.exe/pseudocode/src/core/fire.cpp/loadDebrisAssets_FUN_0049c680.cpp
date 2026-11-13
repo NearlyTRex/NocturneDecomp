@@ -29,6 +29,6 @@ void __cdecl core_fire_cpp_loadDebrisAssets_FUN_0049c680(void)
             ((CKeyFramedModelInstance *)0x1c74870);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00462580
             ((CKeyFramedModelInstance *)0x1c749ec);
-  core_fire_cpp_FUN_004a42f0(0x01C73654,0);
+  core_fire_cpp_CFireEffect_preloadExplosionStyle_FUN_004a42f0(0x01C73654,0);
   return;
 }

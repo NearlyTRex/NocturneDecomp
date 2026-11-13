@@ -10,9 +10,9 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[3]:
+;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60 at 005460db
 ;   core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_005461c0 at 005465be
-;   core_skeleton.cpp_FUN_00544f80 at 005454bd
-;   core_skeleton.cpp_FUN_00545a60 at 005460db
+;   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80 at 005454bd
 ;
 ; *****************************************************************************
 

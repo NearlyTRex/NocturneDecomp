@@ -19,7 +19,6 @@ void __cdecl core_doc_cpp_CDoc_updateArmRecoilBlend_FUN_00473c10(CDoc *this_ptr,
   byte bVar5;
   float afStackY_1100 [991];
   float *pfVar6;
-  uint *puVar7;
   float local_15c;
   float local_158;
   float fStack_150;
@@ -40,25 +39,23 @@ void __cdecl core_doc_cpp_CDoc_updateArmRecoilBlend_FUN_00473c10(CDoc *this_ptr,
   float local_dc;
   float local_d8;
   float local_d4;
-  uint local_d0;
+  CVector3f local_d0;
   float local_c4;
-  float local_b8 [4];
+  float afStack_c0 [6];
   float afStack_a8 [4];
   float local_98;
   float local_94;
   uint local_90;
   uint local_8c;
-  uint local_88;
+  float local_88;
   float afStack_84 [4];
   float local_74;
   float local_70;
   float afStack_6c [4];
   uint local_5c;
-  uint local_58;
+  CVector3f local_58;
   float local_4c;
-  float local_48;
-  float local_44;
-  float local_40;
+  float local_48 [8];
   float local_28;
   float local_24;
   int local_20;
@@ -108,30 +105,31 @@ void __cdecl core_doc_cpp_CDoc_updateArmRecoilBlend_FUN_00473c10(CDoc *this_ptr,
     core_setcolid_cpp_CDemonSet_ignore_FUN_00559250(g_CDemonSetPtr,(CDemonActor *)this_ptr);
     local_28 = 1.5;
     local_24 = 3.5;
-    local_b8[0] = 0.0;
-    local_b8[1] = 0.0;
-    local_b8[2] = 3.5;
-    core_actor_cpp_FUN_00408ac0(this_ptr,local_114 + 0x17);
-    local_4c = local_b8[3];
-    afStack_6c[(uint)bVar5 * -2 + 9] = afStack_a8[(uint)bVar5 * -2];
-    afStack_6c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 10] =
+    afStack_c0[2] = 0.0;
+    afStack_c0[3] = 0.0;
+    afStack_c0[4] = 3.5;
+    core_actor_cpp_FUN_00408ac0(this_ptr,afStack_c0 + 2);
+    local_4c = afStack_c0[5];
+    local_48[(uint)bVar5 * -2] = afStack_a8[(uint)bVar5 * -2];
+    local_48[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
          afStack_a8[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-    if (afStack_84 + 2 != afStack_6c + 8) {
+    if (afStack_84 + 2 != &local_4c) {
       afStack_84[2] = local_4c;
-      afStack_84[3] = local_48;
-      local_74 = local_44;
+      afStack_84[3] = local_48[0];
+      local_74 = local_48[1];
     }
-    core_skeleton_cpp_FUN_00569040(&(this_ptr->base).base.model,_DAT_01b68818);
+    core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
+              (&(this_ptr->base).base.model,_DAT_01b68818,&local_d0);
     pfVar6 = local_114 + 8;
-    local_f4[0] = (float)local_d0;
-    local_114[(uint)bVar5 * -2 + 9] = local_114[(uint)bVar5 * -2 + 0x12];
+    local_f4[0] = local_d0.x;
+    local_114[(uint)bVar5 * -2 + 9] = *(float *)((int)&local_d0 + (uint)bVar5 * -8 + 4);
     local_114[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 10] =
-         local_114[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x13];
+         *(float *)((int)&local_d0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
     core_actor_cpp_FUN_00408b40(this_ptr,pfVar6);
-    local_118 = local_40;
-    local_114[(uint)bVar5 * -2] = afStack_6c[(uint)bVar5 * -2 + 0xc];
+    local_118 = local_48[2];
+    local_114[(uint)bVar5 * -2] = local_48[(uint)bVar5 * -2 + 3];
     local_114[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-         afStack_6c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0xd];
+         local_48[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
     if (&local_124 != &local_118) {
       local_124 = local_118;
       local_120 = local_114[0];
@@ -155,17 +153,18 @@ void __cdecl core_doc_cpp_CDoc_updateArmRecoilBlend_FUN_00473c10(CDoc *this_ptr,
     {
       local_158 = fVar2;
     }
-    core_skeleton_cpp_FUN_00569040(&(this_ptr->base).base.model,_DAT_01b6881c);
-    puVar7 = &local_88;
-    local_88 = local_58;
-    afStack_84[(uint)bVar5 * -2] = afStack_6c[(uint)bVar5 * -2 + 6];
+    core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
+              (&(this_ptr->base).base.model,_DAT_01b6881c,&local_58);
+    pfVar6 = &local_88;
+    local_88 = local_58.x;
+    afStack_84[(uint)bVar5 * -2] = *(float *)((int)&local_58 + (uint)bVar5 * -8 + 4);
     afStack_84[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-         afStack_6c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7];
-    core_actor_cpp_FUN_00408b40(this_ptr,puVar7);
+         *(float *)((int)&local_58 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+    core_actor_cpp_FUN_00408b40(this_ptr,pfVar6);
     afStack_a8[2] = local_c4;
-    afStack_a8[(uint)bVar5 * -2 + 3] = local_114[(uint)bVar5 * -2 + 0x15];
+    afStack_a8[(uint)bVar5 * -2 + 3] = afStack_c0[(uint)bVar5 * -2];
     afStack_a8[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
-         local_114[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x16];
+         afStack_c0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
     if (&local_124 != afStack_a8 + 2) {
       local_124 = afStack_a8[2];
       local_120 = afStack_a8[3];

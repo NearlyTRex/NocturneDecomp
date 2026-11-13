@@ -29,8 +29,8 @@ void __cdecl core_doc_cpp_CDoc_setup_FUN_00450620(CDoc *this_ptr)
   float fStack_38;
   float fStack_34;
   float fStack_30;
-  float fStack_2c;
-  float fStack_20;
+  CVector3f CStack_2c;
+  CVector3f CStack_20;
   CSkeleton *pCStack_14;
   
   bVar4 = 0;
@@ -94,23 +94,25 @@ void __cdecl core_doc_cpp_CDoc_setup_FUN_00450620(CDoc *this_ptr)
   iVar6 = core_motion_cpp_CMotionList_findMotionIndex_FUN_00502f10(pCVar2,pcVar5,iVar6);
   core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_00544f50
             (this_ptr_00,iVar6,22.0);
-  core_skeleton_cpp_FUN_005469a0(this_ptr_00,_DAT_01b4d290);
-  fStack_44 = fStack_2c;
+  core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
+            (this_ptr_00,_DAT_01b4d290,&CStack_2c);
+  fStack_44 = CStack_2c.x;
   (&stack0xffffffc0)[(uint)bVar4 * 0xfffffffe] =
-       (float)*(uint *)(&stack0xffffffd8 + (uint)bVar4 * -8);
+       (float)*(uint *)((int)&CStack_2c + (uint)bVar4 * -8 + 4);
   *(uint *)((int)&stack0xffffffc4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-       *(uint *)(&stack0xffffffdc + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+       *(uint *)((int)&CStack_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   if (&this_ptr->ref_r_hand_bone_pos != (CVector3f *)&stack0xffffffbc) {
     (this_ptr->ref_r_hand_bone_pos).x = fStack_44;
     (this_ptr->ref_r_hand_bone_pos).y = fStack_40;
     (this_ptr->ref_r_hand_bone_pos).z = fStack_3c;
   }
-  core_skeleton_cpp_FUN_005469a0(&(this_ptr->base).base.model,_DAT_01b4d268);
-  fStack_38 = fStack_20;
+  core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
+            (&(this_ptr->base).base.model,_DAT_01b4d268,&CStack_20);
+  fStack_38 = CStack_20.x;
   (&stack0xffffffcc)[(uint)bVar4 * 0xfffffffe] =
-       (float)*(uint *)(&stack0xffffffe4 + (uint)bVar4 * -8);
+       (float)*(uint *)((int)&CStack_20 + (uint)bVar4 * -8 + 4);
   *(uint *)((int)&stack0xffffffd0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-       *(uint *)(&stack0xffffffe8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+       *(uint *)((int)&CStack_20 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   if (&this_ptr->ref_r_upperarm_bone_pos != (CVector3f *)&stack0xffffffc8) {
     (this_ptr->ref_r_upperarm_bone_pos).x = fStack_38;
     (this_ptr->ref_r_upperarm_bone_pos).y = fStack_34;

@@ -41,8 +41,8 @@
 ;   core_actor.cpp_FUN_00408d70
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
 ;   core_main.c_FUN_004e4500
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
-;   core_skeleton.cpp_FUN_00546a90
 ;
 ; *****************************************************************************
 
@@ -89,8 +89,8 @@ section .text
     PUSH EBX                            ; 00571570
     LEA ESI,[ESP + 0x50]                ; 00571571
     LEA EDI,[ESP + 0x8c]                ; 00571575
-    CALL core_skeleton.cpp_FUN_00546a90 ; 0057157c
-        ;   XREF to: 00546a90 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00546a90()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90 ; 0057157c
+        ;   XREF to: 00546a90 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 00571581
     LEA EAX,[ESP + 0x84]                ; 00571584
     LEA ESI,[ESP + 0x48]                ; 0057158b
@@ -113,8 +113,8 @@ section .text
     PUSH EBX                            ; 005715b9
     LEA ESI,[ESP + 0x44]                ; 005715ba
     LEA EDI,[ESP + 0x80]                ; 005715be
-    CALL core_skeleton.cpp_FUN_00546a90 ; 005715c5
-        ;   XREF to: 00546a90 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00546a90()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90 ; 005715c5
+        ;   XREF to: 00546a90 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 005715ca
     LEA EAX,[ESP + 0x78]                ; 005715cd
     LEA ESI,[ESP + 0x3c]                ; 005715d1

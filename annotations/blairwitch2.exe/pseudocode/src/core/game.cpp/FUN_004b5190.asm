@@ -780,8 +780,8 @@ section .text
     ADD ESP,0xc                         ; 004b598d
     LEA EAX,[EBP + 0xfffff9ae]          ; 004b5990
     PUSH EAX                            ; 004b5996
-    CALL core_skeleton.cpp_FUN_005490d0 ; 004b5997
-        ;   XREF to: 005490d0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_005490d0(char * output_buffer)
+    CALL core_skeleton.cpp_getMemoryStats_FUN_005490d0 ; 004b5997
+        ;   XREF to: 005490d0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_getMemoryStats_FUN_005490d0(char * output_buffer)
     MOV EAX,[0x006141bc]                ; 004b599c | DAT_006141bc
     ADD ESP,0x4                         ; 004b59a1
     SUB EAX,0x2c                        ; 004b59a4

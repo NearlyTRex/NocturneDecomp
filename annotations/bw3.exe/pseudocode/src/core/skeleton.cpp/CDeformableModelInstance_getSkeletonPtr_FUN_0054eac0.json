@@ -278,6 +278,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0054dfd0",
+      "from_addr": "0054e004",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0054dfd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0054e170",
       "from_addr": "0054e183",
       "name": "core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0054e170",
@@ -302,6 +308,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0054edb0",
+      "from_addr": "0054edc0",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_0054edb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0054dd10",
       "from_addr": "0054dd1c",
       "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0054dd10",
@@ -320,9 +332,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0054eb40",
+      "from_addr": "0054eb85",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_findPatchToFrame_FUN_0054eb40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054d9c0",
+      "from_addr": "0054d9e1",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0054d9c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054dbd0",
+      "from_addr": "0054dc10",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0054f850",
       "from_addr": "0054f879",
       "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_0054f850",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054f040",
+      "from_addr": "0054f07b",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_0054f040",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -358,49 +394,13 @@
     {
       "addr": "0054c1b0",
       "from_addr": "0054c1c6",
-      "name": "core_skeleton.cpp_FUN_0054c1b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0054d9c0",
-      "from_addr": "0054d9e1",
-      "name": "core_skeleton.cpp_FUN_0054d9c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0054dbd0",
-      "from_addr": "0054dc10",
-      "name": "core_skeleton.cpp_FUN_0054dbd0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0054dfd0",
-      "from_addr": "0054e004",
-      "name": "core_skeleton.cpp_FUN_0054dfd0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0054eb40",
-      "from_addr": "0054eb85",
-      "name": "core_skeleton.cpp_FUN_0054eb40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0054edb0",
-      "from_addr": "0054edc0",
-      "name": "core_skeleton.cpp_FUN_0054edb0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0054f040",
-      "from_addr": "0054f07b",
-      "name": "core_skeleton.cpp_FUN_0054f040",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0054c1b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0054fef0",
       "from_addr": "0054fffa",
-      "name": "core_skeleton.cpp_FUN_0054fef0",
+      "name": "core_skeleton.cpp_blendBoneTransformData_FUN_0054fef0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -550,7 +550,7 @@
       {
         "call_addr": "0054c1c6",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_0054c1b0",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0054c1b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -561,7 +561,7 @@
       {
         "call_addr": "0054c77c",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_0054c1b0",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0054c1b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -41,8 +41,8 @@
 ;   core_actor.cpp_FUN_00408b40
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042c010
 ;   core_main.c_FUN_005030e0
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
-;   core_skeleton.cpp_FUN_00569130
 ;
 ; *****************************************************************************
 
@@ -89,8 +89,8 @@ section .text
     PUSH EBX                            ; 005941b0
     LEA ESI,[ESP + 0x50]                ; 005941b1
     LEA EDI,[ESP + 0x8c]                ; 005941b5
-    CALL core_skeleton.cpp_FUN_00569130 ; 005941bc
-        ;   XREF to: 00569130 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569130()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130 ; 005941bc
+        ;   XREF to: 00569130 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 005941c1
     LEA EAX,[ESP + 0x84]                ; 005941c4
     LEA ESI,[ESP + 0x48]                ; 005941cb
@@ -113,8 +113,8 @@ section .text
     PUSH EBX                            ; 005941f9
     LEA ESI,[ESP + 0x44]                ; 005941fa
     LEA EDI,[ESP + 0x80]                ; 005941fe
-    CALL core_skeleton.cpp_FUN_00569130 ; 00594205
-        ;   XREF to: 00569130 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569130()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130 ; 00594205
+        ;   XREF to: 00569130 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 0059420a
     LEA EAX,[ESP + 0x78]                ; 0059420d
     LEA ESI,[ESP + 0x3c]                ; 00594211

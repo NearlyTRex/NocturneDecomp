@@ -16,7 +16,7 @@
 ;   undefined4 DAT_01cb4f5c
 ;
 ; Called Functions:
-;   core_fire.cpp_FUN_004b1fb0
+;   core_fire.cpp_CCrater_activate_FUN_004b1fb0
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     SUB EAX,EDX                         ; 004b6f46
     ADD EAX,0x1cb4f60                   ; 004b6f48
     PUSH EAX                            ; 004b6f4d
-    CALL core_fire.cpp_FUN_004b1fb0     ; 004b6f4e
-        ;   XREF to: 004b1fb0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004b1fb0()
+    CALL core_fire.cpp_CCrater_activate_FUN_004b1fb0 ; 004b6f4e
+        ;   XREF to: 004b1fb0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CCrater_activate_FUN_004b1fb0(CCrater * this_ptr, CVector3f * center_position, float radius)
     MOV ECX,dword ptr [0x01cb4f5c]      ; 004b6f53 | DAT_01cb4f5c
     INC ECX                             ; 004b6f59
     ADD ESP,0xc                         ; 004b6f5a

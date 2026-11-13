@@ -28,6 +28,7 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_0045ca30(CDoc *this_ptr)
   float afStackY_1090 [41];
   CDoc *apCStackY_fec [958];
   CBoundingBox3D *in_stack_ffffff20;
+  float *pfVar13;
   CConsole *this_ptr_01;
   char *in_stack_ffffff28;
   uint auStack_c8 [2];
@@ -37,8 +38,9 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_0045ca30(CDoc *this_ptr)
   float fStack_b4;
   float fStack_b0;
   float fStack_ac;
-  uint uStack_a8;
-  float afStack_a4 [7];
+  float fStack_a8;
+  float afStack_a4 [4];
+  CVector3f CStack_94;
   uint uStack_88;
   float afStack_84 [5];
   float afStack_6c [4];
@@ -50,9 +52,9 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_0045ca30(CDoc *this_ptr)
   float fStack_48;
   float fStack_44;
   float fStack_40;
-  float afStack_3c [6];
-  uint uStack_24;
-  float afStack_20 [4];
+  float afStack_3c [5];
+  CVector3f CStack_28;
+  float afStack_1c [3];
   
   this_ptr_00 = this_ptr;
   uVar5 = g_CDoorClassInfo.name_hash;
@@ -138,12 +140,12 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_0045ca30(CDoc *this_ptr)
         (this_ptr_00->carry_object_bbox).max.y = fStack_b0;
         (this_ptr_00->carry_object_bbox).max.z = fStack_ac;
       }
-      afStack_20[2] =
+      afStack_1c[1] =
            (this_ptr_00->carry_object_bbox).min.x + (this_ptr_00->carry_object_bbox).max.x;
-      afStack_20[3] =
+      afStack_1c[2] =
            (this_ptr_00->carry_object_bbox).min.y + (this_ptr_00->carry_object_bbox).max.y;
-      fStack_48 = afStack_20[2];
-      afStack_6c[(uint)bVar12 * -2 + 10] = afStack_20[(uint)bVar12 * -2 + 3];
+      fStack_48 = afStack_1c[1];
+      afStack_6c[(uint)bVar12 * -2 + 10] = afStack_1c[(uint)bVar12 * -2 + 2];
       afStack_6c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 0xb] =
            *(float *)(&stack0xfffffff0 + (uint)bVar12 * -8 + (uint)bVar12 * -8);
       fStack_54 = fStack_48 * _DAT_005d07b7;
@@ -154,12 +156,12 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_0045ca30(CDoc *this_ptr)
       afStack_6c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 0xe] =
            afStack_6c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 8];
       core_actor_cpp_FUN_00408d70((this_ptr_00->base).object_to_pick_up,afStack_6c + 0xc);
-      puVar10 = &uStack_24;
-      uStack_24 = uStack_a8;
-      afStack_20[(uint)bVar12 * -2] = afStack_a4[(uint)bVar12 * -2];
-      afStack_20[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
+      pfVar13 = &CStack_28.y;
+      CStack_28.y = fStack_a8;
+      afStack_1c[(uint)bVar12 * -2 + -1] = afStack_a4[(uint)bVar12 * -2];
+      afStack_1c[(uint)bVar12 * -2 + (uint)bVar12 * -2] =
            afStack_a4[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1];
-      core_actor_cpp_FUN_00408de0(this_ptr_00,puVar10);
+      core_actor_cpp_FUN_00408de0(this_ptr_00,pfVar13);
       afStack_6c[3] = afStack_84[0];
       afStack_6c[(uint)bVar12 * -2 + 4] = afStack_84[(uint)bVar12 * -2 + 1];
       afStack_6c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 5] =
@@ -189,8 +191,10 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_0045ca30(CDoc *this_ptr)
             this_ptr_01 = g_CConsolePtr;
           }
           else {
-            core_skeleton_cpp_FUN_005469a0();
-            core_skeleton_cpp_FUN_005469a0();
+            core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
+                      (pCVar2,_DAT_01b4d290,&CStack_94);
+            core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
+                      (pCVar2,_DAT_01b4d268,&CStack_28);
             core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar2->base,0x15,1);
             in_stack_ffffff28 = "Picking up %s waist level\n";
             this_ptr_01 = g_CConsolePtr;

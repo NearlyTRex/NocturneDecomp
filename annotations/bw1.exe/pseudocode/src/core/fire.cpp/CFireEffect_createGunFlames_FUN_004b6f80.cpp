@@ -12,8 +12,9 @@ void __cdecl core_fire_cpp_CFireEffect_createGunFlames_FUN_004b6f80(CFireEffect 
 
 {
   for (; 0 < flame_count; flame_count = flame_count + -1) {
-    core_fire_cpp_FUN_004b2b50
-              (&DAT_01cb5824 + _DAT_01cb5820 * 0x24,position,euler_angles,flame_type);
+    core_fire_cpp_CGunFlame_activate_FUN_004b2b50
+              ((CGunFlame *)(&DAT_01cb5824 + _DAT_01cb5820 * 0x24),position,euler_angles,flame_type)
+    ;
     _DAT_01cb5820 = _DAT_01cb5820 + 1;
     if (499 < _DAT_01cb5820) {
       _DAT_01cb5820 = 0;

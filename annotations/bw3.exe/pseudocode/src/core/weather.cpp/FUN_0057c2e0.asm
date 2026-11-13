@@ -70,7 +70,7 @@
 ;   core_dtrace.cpp_FUN_00477d90
 ;   core_dtrace.cpp_FUN_00477db0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
-;   core_fire.cpp_FUN_004a3bd0
+;   core_fire.cpp_CFireEffect_createLightningBolt_FUN_004a3bd0
 ;   core_sound.cpp_CSound_playActorSound_FUN_005609d0
 ;   core_weather.cpp_FUN_0057c2c0
 ;
@@ -275,8 +275,8 @@ section .text
     PUSH ESI                            ; 0057c572
     MOV EDI,dword ptr [0x005fc5a0]      ; 0057c573 | DAT_005fc5a0
     PUSH EDI                            ; 0057c579
-    CALL core_fire.cpp_FUN_004a3bd0     ; 0057c57a
-        ;   XREF to: 004a3bd0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3bd0()
+    CALL core_fire.cpp_CFireEffect_createLightningBolt_FUN_004a3bd0 ; 0057c57a
+        ;   XREF to: 004a3bd0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBolt_FUN_004a3bd0(CFireEffect * this_ptr, CVector3f * start_position, float start_width, int enable_camera_shake, ...)
     ADD ESP,0x14                        ; 0057c57f
     PUSH ESI                            ; 0057c582
     PUSH 0x5d7943                       ; 0057c583 | = "light?.wav"
@@ -460,8 +460,8 @@ section .text
     PUSH EAX                            ; 0057c80e
     MOV ECX,dword ptr [0x005fc5a0]      ; 0057c80f | DAT_005fc5a0
     PUSH ECX                            ; 0057c815
-    CALL core_fire.cpp_FUN_004a3bd0     ; 0057c816
-        ;   XREF to: 004a3bd0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3bd0()
+    CALL core_fire.cpp_CFireEffect_createLightningBolt_FUN_004a3bd0 ; 0057c816
+        ;   XREF to: 004a3bd0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBolt_FUN_004a3bd0(CFireEffect * this_ptr, CVector3f * start_position, float start_width, int enable_camera_shake, ...)
     ADD ESP,0x14                        ; 0057c81b
     LEA EAX,[ESP + 0xd4]                ; 0057c81e
     PUSH EAX                            ; 0057c825

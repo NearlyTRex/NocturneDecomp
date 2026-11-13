@@ -278,6 +278,7 @@
 #include "types/classes/CStairs.h"
 #include "types/classes/CStake.h"
 #include "types/classes/CStorm.h"
+#include "types/classes/CStormEffect.h"
 #include "types/classes/CStrList.h"
 #include "types/classes/CStrList_vtable.h"
 #include "types/classes/CStyler.h"

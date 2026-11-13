@@ -133,7 +133,7 @@ LAB_0051e8aa:
     local_24 = (float)local_18;
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90
               (&(this_ptr->base).base.model,local_20,(float)local_18,local_e8,_DAT_01ed3720,
-               core_skeleton_cpp_FUN_0054bef0);
+               core_skeleton_cpp_blendWeightCallback_FUN_0054bef0);
     if ((this_ptr->base).base.layer_action_index == 0) {
       local_34 = (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations;
       core_xform_cpp_slerpQuaternion_FUN_00585b20

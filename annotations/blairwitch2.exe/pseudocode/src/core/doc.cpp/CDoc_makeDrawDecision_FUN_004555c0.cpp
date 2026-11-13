@@ -50,7 +50,7 @@ void __cdecl core_doc_cpp_CDoc_makeDrawDecision_FUN_004555c0(CDoc *this_ptr)
   CDeformableModelInstance *local_40;
   int local_3c;
   uint local_38;
-  uint local_34;
+  float local_34;
   float local_30;
   uint local_2c;
   float local_28;
@@ -125,8 +125,9 @@ LAB_00455742:
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(pCVar11);
     local_3c = core_motion_cpp_CMotionList_findMotionIndex_FUN_00502f10
                          (&this_ptr_00->motion_list,motion_name,iVar3);
-    local_34 = core_motion_cpp_FUN_00503f50(pCVar11,local_3c,(this_ptr->base).base.layer_action_t);
-    local_14 = (float)local_34;
+    local_34 = (float)core_motion_cpp_FUN_00503f50
+                                (pCVar11,local_3c,(this_ptr->base).base.layer_action_t);
+    local_14 = local_34;
     core_actor_cpp_castToClassHash_FUN_0040c8f0
               (&(this_ptr->base).inventories[0].selected_weapons
                 [(this_ptr->base).inventories[0].current_group]->base,g_CGunClassInfo.name_hash);
@@ -159,8 +160,9 @@ LAB_00455742:
     pCVar11 = &(this_ptr->base).base.model;
     local_14 = (float)core_motion_cpp_FUN_005038a0(pCVar11,0x13);
     local_1c = (1.0 - local_14) * local_1c;
-    core_skeleton_cpp_FUN_00545a60
-              (pCVar11,local_3c,local_34,local_1c,iVar3,core_skeleton_cpp_FUN_00544cc0);
+    core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00545a60
+              (pCVar11,local_3c,local_34,local_1c,iVar3,
+               core_skeleton_cpp_blendWeightCallback_FUN_00544cc0);
     iVar3 = (this_ptr->base).base.layer_action_index;
     if ((iVar3 == 0) || (iVar3 == 1)) {
       core_xform_cpp_slerpQuaternion_FUN_00593df0
@@ -298,7 +300,7 @@ LAB_00455742:
                               (float10)1);
       local_48 = (float)fVar9;
       core_xform_cpp_quaternionFromAngleY_FUN_00593fe0(local_48);
-      pcVar14 = core_skeleton_cpp_FUN_00544cc0;
+      pcVar14 = core_skeleton_cpp_blendWeightCallback_FUN_00544cc0;
       fVar13 = 1.0;
       pCVar12 = &local_b8;
       pCVar11 = &(this_ptr->base).base.model;
@@ -312,7 +314,7 @@ LAB_00455742:
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40
                 (pCVar11,pCVar12,fVar13,iVar3,pcVar14);
       core_xform_cpp_quaternionFromAngleY_FUN_00593fe0(-local_48);
-      pcVar14 = core_skeleton_cpp_FUN_00544cc0;
+      pcVar14 = core_skeleton_cpp_blendWeightCallback_FUN_00544cc0;
       pCVar12 = &local_b8;
       fVar13 = 1.0;
       local_b8.w = local_98;

@@ -57,7 +57,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_004a25f0 at 004a26ca
+;   core_fire.cpp_CFireEffect_createStake_FUN_004a25f0 at 004a26ca
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c0514

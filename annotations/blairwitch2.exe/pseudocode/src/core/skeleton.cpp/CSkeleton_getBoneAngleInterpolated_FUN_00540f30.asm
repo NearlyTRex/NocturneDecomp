@@ -15,9 +15,9 @@
 ; undefined        Stack[-0x20]:1  local_20
 ;
 ; XREF[3]:
-;   core_skeleton.cpp_FUN_00544f80 at 005450a0
-;   core_skeleton.cpp_FUN_00545a60 at 00545b60
-;   core_skeleton.cpp_FUN_00547b80 at 00547bec
+;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60 at 00545b60
+;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_00547b80 at 00547bec
+;   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80 at 005450a0
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CSkeleton_getBoneAngleAtFrame_FUN_00540f10

@@ -48,7 +48,7 @@ void __cdecl core_actor_cpp_archivePartStatus_FUN_0040b960(CDeformableModelInsta
     }
   } while (iVar2 != 10);
   _fscanf(DAT_007c3034,&DAT_005d2b1e);
-  core_skeleton_cpp_FUN_00569ae0(model_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_00569ae0(model_ptr);
   iVar2 = 0;
   if (0 < local_14) {
     do {
@@ -61,7 +61,7 @@ void __cdecl core_actor_cpp_archivePartStatus_FUN_0040b960(CDeformableModelInsta
     } while (iVar2 < local_14);
   }
   _fscanf(DAT_007c3034,&DAT_005d2b42);
-  core_skeleton_cpp_FUN_00569b00(model_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_00569b00(model_ptr);
   iVar2 = 0;
   if (0 < local_14) {
     do {

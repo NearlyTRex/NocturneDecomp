@@ -102,7 +102,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004b7f90(CGame *this_ptr)
   g_CDemonLightInstance.light_enabled_flag = 0;
   core_set_cpp_CDemonSet_initScene_FUN_00534420(g_CDemonSetPtr);
   if (_DAT_01d226c8 == 0) {
-    core_fire_cpp_FUN_004a1480(0x01C73654);
+    core_fire_cpp_CFireEffect_init_FUN_004a1480(0x01C73654);
   }
   else {
     _DAT_01d226c8 = 0;

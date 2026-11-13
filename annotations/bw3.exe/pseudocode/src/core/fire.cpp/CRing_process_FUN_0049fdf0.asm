@@ -67,7 +67,7 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_004a1760 at 004a1a86
+;   core_fire.cpp_CFireEffect_process_FUN_004a1760 at 004a1a86
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c0908
@@ -92,8 +92,8 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_charactr.cpp_FUN_0042fbd0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
+;   core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0
-;   core_fire.cpp_FUN_004a3c50
 ;   crt_math.c_round_FUN_005a3120
 ;
 ; *****************************************************************************
@@ -275,8 +275,8 @@ section .text
     PUSH EAX                            ; 0049ffcc
     MOV EDX,dword ptr [0x005fc5a0]      ; 0049ffcd | DAT_005fc5a0
     PUSH EDX                            ; 0049ffd3
-    CALL core_fire.cpp_FUN_004a3c50     ; 0049ffd4
-        ;   XREF to: 004a3c50 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3c50()
+    CALL core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50 ; 0049ffd4
+        ;   XREF to: 004a3c50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50(CFireEffect * this_ptr, CVector3f * start_position, CVector3f * end_position, int enable_camera_shake, ...)
         ;   Label: LAB_0049ffd4
     ADD ESP,0x24                        ; 0049ffd9
     MOV ECX,dword ptr [EBP + 0x66]      ; 0049ffdc

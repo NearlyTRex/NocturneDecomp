@@ -44,7 +44,8 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
   float fStack_154;
   CVector3f CStack_150;
   uint uStack_144;
-  float afStack_140 [5];
+  float afStack_140 [2];
+  CVector3f CStack_138;
   CVector3f CStack_12c;
   float fStack_120;
   float afStack_11c [5];
@@ -83,7 +84,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
   float fStack_28;
   int iStack_24;
   float fStack_20;
-  CMotionController *pCStack_1c;
+  CDeformableModelInstance *pCStack_1c;
   float fStack_18;
   CVector3f *pCStack_14;
   
@@ -166,7 +167,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
   fVar13 = (this_ptr->base).speed;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   core_charactr_cpp_FUN_0042b2a0(this_ptr,delta_time * fVar13);
-  pCStack_1c = &(this_ptr->base).base.model.base;
+  pCStack_1c = &(this_ptr->base).base.model;
   iVar6 = core_motion_cpp_FUN_005035c0(pCStack_1c);
   iVar6 = *(int *)(iVar6 + 0x24);
   iStack_24 = iVar6;
@@ -205,7 +206,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
                                    (afStack_140[0] - (this_ptr->base).base.base.orient.vec.y);
             if (ABS((float)pCStack_14) < (float)_DAT_005e77fd) {
               this_ptr->attack_hit_count = 0;
-              core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(pCStack_1c,9,1);
+              core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCStack_1c->base,9,1);
             }
           }
           if (fStack_28 < this_ptr->guard_distance) {
@@ -222,7 +223,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         pCVar3 = (this_ptr->base).victim;
         if (pCVar3 == (CCharacter *)0x0) {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(pCStack_1c,1,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCStack_1c->base,1,1);
         }
         else {
           if (this_ptr == (CSmiley *)pCVar3->grabbed_by) {
@@ -268,13 +269,13 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
         }
       }
       else {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(pCStack_1c,1,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCStack_1c->base,1,1);
       }
       break;
     case 6:
       if ((this_ptr->base).victim == (CCharacter *)0x0) {
         (**(code **)(iRam000002b0 + 0xf8))(0);
-        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(pCStack_1c,1,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCStack_1c->base,1,1);
       }
       else {
         core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(&SStack_1ec);
@@ -305,12 +306,13 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
     case 8:
       if (((this_ptr->base).pool_me == 0) &&
          ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
-        core_skeleton_cpp_FUN_005469a0(pCStack_1c,0);
+        core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
+                  (pCStack_1c,0,&CStack_138);
         pfVar10 = afStack_e0 + 5;
-        afStack_cc[0] = afStack_140[2];
-        afStack_e0[(uint)bVar9 * -2 + 6] = afStack_140[(uint)bVar9 * -2 + 3];
+        afStack_cc[0] = CStack_138.x;
+        afStack_e0[(uint)bVar9 * -2 + 6] = *(float *)((int)&CStack_138 + (uint)bVar9 * -8 + 4);
         afStack_e0[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7] =
-             afStack_140[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
+             *(float *)((int)&CStack_138 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
         core_actor_cpp_FUN_00408d70(this_ptr,pfVar10);
         blood_type = BLOOD_TYPE_RED;
         CStack_150.x = afStack_50[2];
@@ -324,10 +326,10 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
     case 9:
       pCVar3 = (this_ptr->base).victim;
       if (pCVar3 == (CCharacter *)0x0) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(pCStack_1c,1,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCStack_1c->base,1,1);
       }
       else if (pCVar3->grabbed_by == (CDemonActor *)0x0) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(pCStack_1c,1,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCStack_1c->base,1,1);
       }
       else {
         EVar5 = (*(((pCVar3->base).vtable._uc)->_uc).getDeathState)(pCVar3);
@@ -360,7 +362,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
         else {
           pCVar3 = (this_ptr->base).victim;
           (*(((pCVar3->base).vtable._uc)->_uc).releaseFromGrab)(pCVar3);
-          core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(pCStack_1c,1,1);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCStack_1c->base,1,1);
         }
       }
       break;
@@ -370,7 +372,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_00549ba0(CSmiley *this_ptr,floa
       if (EVar5 != DEATH_STATE_ALIVE) {
         pCVar3 = (this_ptr->base).victim;
         (*(((pCVar3->base).vtable._uc)->_uc).releaseFromGrab)(pCVar3);
-        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(pCStack_1c,1,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCStack_1c->base,1,1);
       }
     }
     goto switchD_0054a4fd_caseD_3;

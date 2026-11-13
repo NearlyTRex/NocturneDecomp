@@ -56,7 +56,7 @@
 ;   core_enemy.cpp_FUN_004a0980
 ;   core_main.c_FUN_005030e0
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_005695e0
-;   core_skeleton.cpp_FUN_00568100
+;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
 ;   core_xform.cpp_FUN_005b5080
 ;   core_xform.cpp_quaternionFromAngleX_FUN_005b7af0
@@ -307,8 +307,8 @@ section .text
     PUSH 0x6                            ; 0051e1a8
     PUSH EAX                            ; 0051e1aa
         ;   Label: LAB_0051e1aa
-    CALL core_skeleton.cpp_FUN_00568100 ; 0051e1ab
-        ;   XREF to: 00568100 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00568100()
+    CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100 ; 0051e1ab
+        ;   XREF to: 00568100 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
     ADD ESP,0x18                        ; 0051e1b0
     PUSH dword ptr [ESP + 0x44]         ; 0051e1b3
     LEA ESI,[ESP + 0x1c]                ; 0051e1b7

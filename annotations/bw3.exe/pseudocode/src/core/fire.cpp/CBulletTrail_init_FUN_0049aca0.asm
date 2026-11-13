@@ -11,7 +11,7 @@
 ; float            Stack[0x14]:4   segment_length
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_004a27e0 at 004a2824
+;   core_fire.cpp_CFireEffect_createBulletTrail_FUN_004a27e0 at 004a2824
 ;
 ; *****************************************************************************
 

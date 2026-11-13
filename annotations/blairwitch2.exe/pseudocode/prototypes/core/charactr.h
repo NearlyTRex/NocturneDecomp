@@ -151,7 +151,7 @@ void FUN_00426f30(int param_1);
 
 // Original: core_charactr.cpp_FUN_00427060
 // Address: 00427060
-void FUN_00427060(int param_1,int param_2,undefined4 param_3,float param_4);
+void FUN_00427060(int param_1,int param_2,int param_3,float param_4);
 
 // Original: core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_00427130
 // Address: 00427130
@@ -355,7 +355,7 @@ int __cdecl CCharacter::advanceLayerAction(CCharacter *this_ptr,float *remaining
 
 // Original: core_charactr.cpp_FUN_0042a2d0
 // Address: 0042a2d0
-void FUN_0042a2d0(int param_1,undefined4 param_2,undefined4 param_3);
+void FUN_0042a2d0(int param_1,float param_2,int param_3);
 
 // Original: core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330
 // Address: 0042a330

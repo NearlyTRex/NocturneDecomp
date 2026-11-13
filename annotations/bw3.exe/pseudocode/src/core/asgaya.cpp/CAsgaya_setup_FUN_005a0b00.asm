@@ -13,8 +13,8 @@
 ;
 ; Called Functions:
 ;   core_charactr.cpp_FUN_0042f280
-;   core_fire.cpp_FUN_004a4130
-;   core_fire.cpp_FUN_004a41d0
+;   core_fire.cpp_CFireEffect_preloadGunFlameStyle_FUN_004a41d0
+;   core_fire.cpp_CFireEffect_preloadLightningBoltStyle_FUN_004a4130
 ;   core_npc.cpp_CNPC_setup_FUN_00509020
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0054dd10
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
@@ -68,14 +68,14 @@ section .text
         ;   Label: LAB_005a0b80
     MOV ECX,dword ptr [0x005fc5a0]      ; 005a0b82 | DAT_005fc5a0
     PUSH ECX                            ; 005a0b88
-    CALL core_fire.cpp_FUN_004a4130     ; 005a0b89
-        ;   XREF to: 004a4130 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a4130()
+    CALL core_fire.cpp_CFireEffect_preloadLightningBoltStyle_FUN_004a4130 ; 005a0b89
+        ;   XREF to: 004a4130 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_preloadLightningBoltStyle_FUN_004a4130(CFireEffect * this_ptr, int bolt_style)
     ADD ESP,0x8                         ; 005a0b8e
     PUSH 0x4                            ; 005a0b91
     MOV ESI,dword ptr [0x005fc5a0]      ; 005a0b93 | DAT_005fc5a0
     PUSH ESI                            ; 005a0b99
-    CALL core_fire.cpp_FUN_004a41d0     ; 005a0b9a
-        ;   XREF to: 004a41d0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a41d0()
+    CALL core_fire.cpp_CFireEffect_preloadGunFlameStyle_FUN_004a41d0 ; 005a0b9a
+        ;   XREF to: 004a41d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_preloadGunFlameStyle_FUN_004a41d0(CFireEffect * this_ptr, int flame_style)
     ADD ESP,0x8                         ; 005a0b9f
     PUSH 0x1                            ; 005a0ba2
     CALL core_charactr.cpp_FUN_0042f280 ; 005a0ba4

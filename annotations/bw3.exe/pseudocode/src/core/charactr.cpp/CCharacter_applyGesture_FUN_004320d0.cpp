@@ -51,7 +51,7 @@ void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_004320d0(CCharacter *
     }
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90
               (&this_ptr->model,this_ptr->gesture_motion_index,this_ptr->gesture_frame,local_c,
-               this_ptr->gesture_branch_root,core_skeleton_cpp_FUN_0054bef0);
+               this_ptr->gesture_branch_root,core_skeleton_cpp_blendWeightCallback_FUN_0054bef0);
   }
   return;
 }

@@ -278,7 +278,7 @@ void core_game_cpp_FUN_004ce580(CGame *param_1)
         engine_2d_c_drawText_FUN_00401fe0(acStack_2d4,0,DAT_0061b49c + -0x42);
         engine_texture_cpp_getTextureCacheStats_FUN_00597cd0(acStack_2d4);
         engine_2d_c_drawText_FUN_00401fe0(acStack_2d4,0,DAT_0061b49c + -0x37);
-        core_skeleton_cpp_FUN_0056b780(acStack_2d4);
+        core_skeleton_cpp_getMemoryStats_FUN_0056b780(acStack_2d4);
         engine_2d_c_drawText_FUN_00401fe0(acStack_2d4,0,DAT_0061b49c + -0x2c);
         engine_2d_c_drawText_FUN_00401fe0(param_1->debug_info_string,0,DAT_0061b49c + -0x21);
         if (_DAT_02c83370 != 0) {

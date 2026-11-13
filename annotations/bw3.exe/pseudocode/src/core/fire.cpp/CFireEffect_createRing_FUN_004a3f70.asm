@@ -10,7 +10,7 @@
 ; undefined4       Stack[0x10]:4   param_4
 ;
 ; XREF[2]:
-;   core_fire.cpp_FUN_0049d090 at 0049d310
+;   core_fire.cpp_CToss_process_FUN_0049d090 at 0049d310
 ;   core_firestff.cpp_CFirestaff_fire_FUN_004a4d00 at 004a4d52
 ;
 ; Referenced Globals:

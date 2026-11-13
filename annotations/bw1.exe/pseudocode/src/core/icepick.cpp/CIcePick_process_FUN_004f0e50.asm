@@ -224,8 +224,8 @@ section .text
     PUSH EAX                            ; 004f10b6
     LEA ESI,[ESP + 0xa0]                ; 004f10b7
     MOV dword ptr [ESP + 0xb4],EAX      ; 004f10be
-    CALL core_skeleton.cpp_FUN_00569130 ; 004f10c5
-        ;   XREF to: 00569130 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569130()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130 ; 004f10c5
+        ;   XREF to: 00569130 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 004f10ca
     LEA EAX,[ESP + 0x50]                ; 004f10cd
     PUSH EAX                            ; 004f10d1

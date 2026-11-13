@@ -58,8 +58,8 @@
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
 ;   core_event.cpp_CEventList_loadState_FUN_00495490
 ;   core_event.cpp_FUN_00494880
+;   core_fire.cpp_CFireEffect_init_FUN_004a1480
 ;   core_fire.cpp_CFireEffect_load_FUN_004a4030
-;   core_fire.cpp_FUN_004a1480
 ;   core_fldnotes.cpp_CFieldNotes_clear_FUN_004ab7a0
 ;   core_fldnotes.cpp_CFieldNotes_loadState_FUN_004ac900
 ;   core_gore.cpp_CGore_load_FUN_004cf010
@@ -694,8 +694,8 @@ section .text
         ;   XREF to: 004be8a4 (CONDITIONAL_JUMP)  ; LAB_004be8a4
     MOV EBP,dword ptr [0x005fc5a0]      ; 004be6d6 | DAT_005fc5a0
     PUSH EBP                            ; 004be6dc
-    CALL core_fire.cpp_FUN_004a1480     ; 004be6dd
-        ;   XREF to: 004a1480 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a1480()
+    CALL core_fire.cpp_CFireEffect_init_FUN_004a1480 ; 004be6dd
+        ;   XREF to: 004a1480 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_init_FUN_004a1480(CFireEffect * this_ptr)
     ADD ESP,0x4                         ; 004be6e2
     CMP dword ptr [ESP + 0x540],0x6     ; 004be6e5
         ;   Label: LAB_004be6e5

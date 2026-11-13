@@ -10,7 +10,7 @@
 ;   undefined4 DAT_005fc5a0
 ;
 ; Called Functions:
-;   core_fire.cpp_FUN_004a41d0
+;   core_fire.cpp_CFireEffect_preloadGunFlameStyle_FUN_004a41d0
 ;   core_flame.cpp_FUN_004a5ad0
 ;   core_weapon.cpp_CWeapon_setup_FUN_0057af40
 ;   sound_sndmain.cpp_preloadSfx_FUN_00556230
@@ -40,8 +40,8 @@ section .text
     PUSH 0x0                            ; 00425404
     MOV ECX,dword ptr [0x005fc5a0]      ; 00425406 | DAT_005fc5a0
     PUSH ECX                            ; 0042540c
-    CALL core_fire.cpp_FUN_004a41d0     ; 0042540d
-        ;   XREF to: 004a41d0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a41d0()
+    CALL core_fire.cpp_CFireEffect_preloadGunFlameStyle_FUN_004a41d0 ; 0042540d
+        ;   XREF to: 004a41d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_preloadGunFlameStyle_FUN_004a41d0(CFireEffect * this_ptr, int flame_style)
     ADD ESP,0x8                         ; 00425412
     PUSH 0x0                            ; 00425415
     CALL core_flame.cpp_FUN_004a5ad0    ; 00425417

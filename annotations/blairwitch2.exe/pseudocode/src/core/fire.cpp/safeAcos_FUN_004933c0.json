@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 80,
+    "complexity_score": 33,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 20,
-    "suspect_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 18,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 58
+    "total_lines": 56
   },
   "cross_references": [],
   "function": {
@@ -24,10 +23,10 @@
         "0049340f"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_fire.cpp_safeAcos_FUN_004933c0",
-    "signature": "float core_fire_cpp_safeAcos_FUN_004933c0(void)"
+    "signature": "float __cdecl core_fire_cpp_safeAcos_FUN_004933c0(float value)"
   },
   "function_calls": [
     {
@@ -48,9 +47,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -114,12 +113,20 @@
     }
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "value",
+        "offset": 4,
+        "size": 4,
+        "type": "float"
+      }
+    ]
   },
   "stack_patterns": {
     "note": "Function contains stack manipulation that may cause decompiler artifacts.",
@@ -146,38 +153,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "float in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "if (in_stack_00000004 <= (float)_DAT_005d5332) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "if (in_stack_00000004 < 1.0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "fVar1 = (float10)in_stack_00000004;",
-      "type": "stack_param"
     }
   ]
 }

@@ -9,7 +9,7 @@ PASS-BY-VALUE STRUCT ARGUMENTS REPORT
 engine_3d.c_clipAndDrawLine2D_FUN_00407b30
   Params: arg1=SRenderVertex (0x30), arg2=SRenderVertex (0x30)
   Call sites (10):
-    core_skeleton.cpp_FUN_005496c0           @ 0x005497e6   2x SRenderVertex
+    core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_005496c0 @ 0x005497e6   2x SRenderVertex
     engine_3d.c_drawLine2DFromIndices_FUN_00407ab0 @ 0x00407b15   2x SRenderVertex
     engine_3d.c_drawLineStrip2D_FUN_00404440 @ 0x004044c6   2x SRenderVertex
     shape_edittool.cpp_FUN_00480f00          @ 0x00480ff8   2x SRenderVertex
@@ -60,7 +60,7 @@ core_actor.cpp_archiveString_FUN_0040b680
 
 --------------------------------------------------------------------------------
 
-core_fire.cpp_FUN_004a2e20
+core_fire.cpp_CFireEffect_traceLaser_FUN_004a2e20
   Params: arg1=?struct_84 (0x54)
   Call sites (1):
     core_weapon.cpp_CWeapon_renderAimBeam_FUN_0057bb60 @ 0x0057bcf4   1x ?struct_84 (0x54)
@@ -75,7 +75,7 @@ These callers need their local frame size (SUB ESP) increased to cover
 the dynamic stack allocations for pass-by-value arguments.
 
   core_actor.cpp_archiveLocalizedString_FUN_0040b7a0 current: 0x12c  required: 0x258  (+0x12c for by-value args)
-  core_skeleton.cpp_FUN_005496c0                     current: 0x64  required: 0xc4  (+0x60 for by-value args)
+  core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_005496c0 current: 0x64  required: 0xc4  (+0x60 for by-value args)
   engine_3d.c_drawLine2DFromIndices_FUN_00407ab0     current: 0x60  required: 0xc0  (+0x60 for by-value args)
   engine_3d.c_drawLine3DFromIndices_FUN_00407db0     current: 0x60  required: 0xc0  (+0x60 for by-value args)
   engine_3d.c_drawLineStrip2D_FUN_00404440           current: 0x60  required: 0xc0  (+0x60 for by-value args)

@@ -1,0 +1,20 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void __cdecl core_fire_cpp_CStormEffect_reset_FUN_004a0470(CStormEffect *this_ptr)
+;
+; Parameters:
+; CStormEffect *   Stack[0x4]:4   this_ptr
+;
+; XREF[1]:
+;   core_fire.cpp_CFireEffect_init_FUN_004a1480 at 004a1748
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,dword ptr [ESP + 0x4]       ; 004a0470
+        ;   Label: core_fire.cpp_CStormEffect_reset_FUN_004a0470
+    MOV dword ptr [EAX],0x0             ; 004a0474
+    RET                                 ; 004a047a
+

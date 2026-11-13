@@ -82,7 +82,8 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
   float fStack_184;
   CVector3f CStack_178;
   float fStack_16c;
-  float afStack_168 [5];
+  float afStack_168 [2];
+  CVector3f CStack_160;
   float fStack_154;
   float fStack_150;
   float fStack_14c;
@@ -559,7 +560,7 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
             afStack_144[(uint)bVar8 * -2] = afStack_1bc[(uint)bVar8 * -2 + 3];
             afStack_144[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
                  afStack_1bc[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4];
-            if (afStack_168 + 5 != &fStack_148) {
+            if (&fStack_154 != &fStack_148) {
               fStack_154 = fStack_148;
               fStack_150 = afStack_144[0];
               fStack_14c = afStack_144[1];
@@ -657,12 +658,14 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
         case 8:
           if (((this_ptr->base).pool_me == 0) &&
              ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
-            core_skeleton_cpp_FUN_0054dbd0(pCStack_34,0);
+            core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
+                      (pCStack_34,0,&CStack_160);
             pfVar14 = afStack_fc + 0x11;
-            afStack_b8[0] = afStack_168[2];
-            afStack_fc[(uint)bVar8 * -2 + 0x12] = afStack_168[(uint)bVar8 * -2 + 3];
+            afStack_b8[0] = CStack_160.x;
+            afStack_fc[(uint)bVar8 * -2 + 0x12] =
+                 *(float *)((int)&CStack_160 + (uint)bVar8 * -8 + 4);
             afStack_fc[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x13] =
-                 afStack_168[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4];
+                 *(float *)((int)&CStack_160 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
             core_actor_cpp_FUN_00408b80(this_ptr,pfVar14);
             blood_type = BLOOD_TYPE_RED;
             CStack_10c.x = fStack_dc;

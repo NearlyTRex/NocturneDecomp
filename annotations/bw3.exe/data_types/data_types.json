@@ -873,6 +873,10 @@
       "type":"function_definition"
     },
     {
+      "name":"CStormEffect",
+      "type":"struct"
+    },
+    {
       "name":"CStrList_clear",
       "type":"function_definition"
     },
@@ -32652,6 +32656,39 @@
       "importable":true,
       "len":1428,
       "name":"CStorm",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"BW3-only pool of 4: CFireEffect_createStormEffect 004a3fd0 steps 0xc from 0x1d0ce80, its counter at 0x1d0ce7c wrapping at 4; written by CStormEffect_activate 004a0480, read by CStormEffect_process 004a0570",
+      "fields":[
+        {
+          "comment":"activate stores 5.0 (0x40a00000) at 004a0532; process subtracts delta_time and tests against 0",
+          "len":4,
+          "name":"time_remaining",
+          "offset":0,
+          "type":"float"
+        },
+        {
+          "comment":"activate saves the weather's current type here (004a0490) before setting weather 5; process restores it on expiry unless it is 5",
+          "len":4,
+          "name":"saved_weather_type",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "comment":"activate stores playActorSound(\"wp_storm.wav\")'s handle (004a0540); process kills it and zeroes the slot",
+          "len":4,
+          "name":"sfx_handle",
+          "offset":8,
+          "type":"uint"
+        }
+      ],
+      "importable":true,
+      "len":12,
+      "name":"CStormEffect",
       "pack":false,
       "type":"struct"
     },

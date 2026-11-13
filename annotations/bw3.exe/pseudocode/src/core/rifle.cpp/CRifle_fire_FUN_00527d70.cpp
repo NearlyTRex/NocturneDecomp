@@ -151,7 +151,7 @@ int __cdecl core_rifle_cpp_CRifle_fire_FUN_00527d70(CRifle *this_ptr)
         if (this_ptr_02 == (CTrigger *)0x0) {
           if (pCStack_14 == (CCharacter *)0x0) {
             if (pCStack_18 == (CFlameCan *)0x0) {
-              core_fire_cpp_FUN_004a2090
+              core_fire_cpp_CFireEffect_createBulletImpact_FUN_004a2090
                         (0x01C73654,&g_CDemonSetPtr->collision_impact_position,
                          &g_CDemonSetPtr->collision_normal,g_CDemonSetPtr->ground_type,
                          g_CDemonSetPtr->collision_actor,0);

@@ -30,7 +30,6 @@ void __cdecl core_yow_cpp_CYow_process_FUN_00586500(CYow *this_ptr,float param_2
   float fVar12;
   int iVar13;
   SDamageInfo *damage_info;
-  uint *puVar14;
   EBloodType blood_type;
   float max_distance;
   SDamageInfo SStack_15c;
@@ -50,14 +49,15 @@ void __cdecl core_yow_cpp_CYow_process_FUN_00586500(CYow *this_ptr,float param_2
   float fStack_cc;
   float fStack_c8;
   float fStack_c4;
-  uint uStack_c0;
+  CVector3f CStack_c0;
   float fStack_b4;
+  float afStack_b0 [2];
   CVector3f CStack_a8;
   float fStack_9c;
   float afStack_98 [2];
   CVector3f CStack_90;
   CVector3f CStack_84;
-  uint uStack_78;
+  float fStack_78;
   float afStack_74 [2];
   CVector3f CStack_6c;
   float fStack_60;
@@ -300,20 +300,21 @@ LAB_00586c35:
     case 0x15:
       if (((this_ptr->base).pool_me == 0) &&
          ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
-        core_skeleton_cpp_FUN_0054dbd0(&(this_ptr->base).base.model,0);
-        puVar14 = &uStack_78;
-        uStack_78 = uStack_c0;
-        afStack_74[(uint)bVar9 * -2] = afStack_11c[(uint)bVar9 * -2 + 0x18];
+        core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
+                  (&(this_ptr->base).base.model,0,&CStack_c0);
+        pfVar10 = &fStack_78;
+        fStack_78 = CStack_c0.x;
+        afStack_74[(uint)bVar9 * -2] = *(float *)((int)&CStack_c0 + (uint)bVar9 * -8 + 4);
         afStack_74[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
-             afStack_11c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0x19];
-        core_actor_cpp_FUN_00408b80(this_ptr,puVar14);
+             *(float *)((int)&CStack_c0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
+        core_actor_cpp_FUN_00408b80(this_ptr,pfVar10);
         blood_type = BLOOD_TYPE_RED;
         pCVar11 = &CStack_a8;
         CStack_a8.x = fStack_b4;
-        *(float *)((int)&CStack_a8 + (uint)bVar9 * -8 + 4) = afStack_11c[(uint)bVar9 * -2 + 0x1b];
+        *(float *)((int)&CStack_a8 + (uint)bVar9 * -8 + 4) = afStack_b0[(uint)bVar9 * -2];
         this_ptr_01 = g_CGorePtr;
         *(float *)((int)&CStack_a8 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
-             afStack_11c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0x1c];
+             afStack_b0[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
         core_gore_cpp_CGore_createBloodPool_FUN_004cec40(this_ptr_01,pCVar11,blood_type);
         this_ptr_00 = 0x01C6E360;
         (this_ptr->base).pool_me = 1;

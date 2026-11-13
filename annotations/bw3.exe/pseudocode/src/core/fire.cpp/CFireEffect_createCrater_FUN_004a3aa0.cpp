@@ -11,7 +11,8 @@
 void __cdecl core_fire_cpp_CFireEffect_createCrater_FUN_004a3aa0(CFireEffect *this_ptr,CVector3f *position,float radius)
 
 {
-  core_fire_cpp_FUN_0049d590(_DAT_01cfaff4 * 0x70 + 0x1cfaff8,position,radius);
+  core_fire_cpp_CCrater_activate_FUN_0049d590
+            ((CCrater *)(_DAT_01cfaff4 * 0x70 + 0x1cfaff8),position,radius);
   _DAT_01cfaff4 = _DAT_01cfaff4 + 1;
   if (_DAT_01cfaff4 < 0x14) {
     return;

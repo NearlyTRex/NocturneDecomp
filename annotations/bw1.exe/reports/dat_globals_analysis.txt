@@ -13,10 +13,10 @@ Current type breakdown:
   undefined8                     20
   undefined2                     4
 
-DAT_ globals with type hints: 1403 / 3603
+DAT_ globals with type hints: 1404 / 3603
 
 --------------------------------------------------------------------------------
-HIGH CONFIDENCE INFERENCES (1149)
+HIGH CONFIDENCE INFERENCES (1150)
 --------------------------------------------------------------------------------
   DAT_005d27fd                    addr=005d27fd    current=undefined4      likely=float           refs=1
     nearby: s_core_actor_cpp_005d2801 (TerminatedCString) at offset -4
@@ -1254,6 +1254,8 @@ HIGH CONFIDENCE INFERENCES (1149)
   DAT_007c8a30                    addr=007c8a30    current=undefined4      likely=SRenderVertex *  refs=1
   DAT_007c9030                    addr=007c9030    current=undefined4      likely=SRenderVertex *  refs=2
   DAT_007c9630                    addr=007c9630    current=undefined4      likely=SRenderVertex *  refs=1
+  DAT_007dc5b4                    addr=007dc5b4    current=undefined4      likely=float           refs=2
+    nearby: g_CConstructClassInfo (CDemonActorType) at offset -56
   DAT_00a1c9e4                    addr=00a1c9e4    current=undefined4      likely=float           refs=2
   DAT_00a1c9e8                    addr=00a1c9e8    current=undefined4      likely=float           refs=2
   DAT_00a1c9ec                    addr=00a1c9ec    current=undefined4      likely=float           refs=2
@@ -2169,7 +2171,7 @@ LOW CONFIDENCE INFERENCES (0)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
-NO TYPE HINTS (2200)
+NO TYPE HINTS (2199)
 --------------------------------------------------------------------------------
   DAT_005d82cf                    addr=005d82cf    type=undefined1      refs=1  nearby: s_chase_wav_2_005d82d3 at -4
   DAT_005d82d0                    addr=005d82d0    type=undefined1      refs=1  nearby: s_chase_wav_2_005d82d3 at -3
@@ -2816,7 +2818,6 @@ NO TYPE HINTS (2200)
   DAT_007db5ac                    addr=007db5ac    type=undefined4      refs=1  nearby: g_CColonelClassInfo at -8
   DAT_007db5b0                    addr=007db5b0    type=undefined4      refs=1  nearby: g_CColonelClassInfo at -4
   DAT_007dc5b0                    addr=007dc5b0    type=undefined4      refs=3  nearby: g_CConstructClassInfo at -60
-  DAT_007dc5b4                    addr=007dc5b4    type=undefined4      refs=2  nearby: g_CConstructClassInfo at -56
   DAT_007dc5b8                    addr=007dc5b8    type=undefined4      refs=2  nearby: g_CConstructClassInfo at -52
   DAT_007dc5bc                    addr=007dc5bc    type=undefined4      refs=1  nearby: g_CConstructClassInfo at -48
   DAT_007dc5c0                    addr=007dc5c0    type=undefined4      refs=2  nearby: g_CConstructClassInfo at -44
@@ -4486,6 +4487,7 @@ They appear only as inline constant values.
   DAT_00629074                    value=0x629074        refs=1
   DAT_006290a4                    value=0x6290A4        refs=1
   DAT_0061c524                    value=0x61C524        refs=1
+  DAT_0061c4ac                    value=0x61C4AC        refs=1
   DAT_0061c44c                    value=0x61C44C        refs=1
   DAT_0061c464                    value=0x61C464        refs=1
   DAT_0061c47c                    value=0x61C47C        refs=1
@@ -4497,7 +4499,6 @@ They appear only as inline constant values.
   DAT_0061cb54                    value=0x61CB54        refs=1
   DAT_0061c014                    value=0x61C014        refs=1
   DAT_0061c434                    value=0x61C434        refs=1
-  DAT_0061c4ac                    value=0x61C4AC        refs=1
   DAT_0061cda8                    value=0x61CDA8        refs=1
   DAT_005e61c6                    value=0x5E61C6        refs=1
   DAT_00626308                    value=0x626308        refs=1

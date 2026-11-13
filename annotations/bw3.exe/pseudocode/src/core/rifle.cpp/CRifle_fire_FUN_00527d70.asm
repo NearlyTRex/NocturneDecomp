@@ -31,8 +31,8 @@
 ;   core_actor.cpp_FUN_00408bf0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   core_crate.cpp_FUN_004461c0
+;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_004a2090
 ;   core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004a2450
-;   core_fire.cpp_FUN_004a2090
 ;   core_flamecan.cpp_CFlameCan_ignite_FUN_004a7110
 ;   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004cc5d0
 ;   core_glass.cpp_FUN_004cc040
@@ -593,8 +593,8 @@ section .text
     PUSH EAX                            ; 005284af | g_CDemonSetInstance.collision_impact_position.x
     MOV ESI,dword ptr [0x005fc5a0]      ; 005284b0 | DAT_005fc5a0
     PUSH ESI                            ; 005284b6
-    CALL core_fire.cpp_FUN_004a2090     ; 005284b7
-        ;   XREF to: 004a2090 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a2090()
+    CALL core_fire.cpp_CFireEffect_createBulletImpact_FUN_004a2090 ; 005284b7
+        ;   XREF to: 004a2090 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createBulletImpact_FUN_004a2090(CFireEffect * this_ptr, CVector3f * impact_pos, CVector3f * surface_normal, int ground_type, ...)
     ADD ESP,0x18                        ; 005284bc
     JMP 0x00528153                      ; 005284bf
         ;   XREF to: 00528153 (UNCONDITIONAL_JUMP)  ; LAB_00528153

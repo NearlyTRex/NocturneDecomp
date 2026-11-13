@@ -88,8 +88,8 @@ section .text
     PUSH EAX                            ; 00591fa7
     LEA EDI,[EBP + 0xfffffe7a]          ; 00591fa8
     MOV dword ptr [EBP + 0x76],EAX      ; 00591fae
-    CALL core_skeleton.cpp_FUN_0054dcc0 ; 00591fb1
-        ;   XREF to: 0054dcc0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054dcc0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0 ; 00591fb1
+        ;   XREF to: 0054dcc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 00591fb6
     LEA EAX,[EBP + 0xfffffe7a]          ; 00591fb9
     LEA ESI,[EBP + -0x2a]               ; 00591fbf
@@ -119,8 +119,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x76]      ; 0059200b
     PUSH EDI                            ; 0059200e
     LEA ESI,[EBP + 0xffffff0a]          ; 0059200f
-    CALL core_skeleton.cpp_FUN_0054dcc0 ; 00592015
-        ;   XREF to: 0054dcc0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054dcc0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0 ; 00592015
+        ;   XREF to: 0054dcc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     LEA EDI,[EBP + 0xfffffe86]          ; 0059201a
     ADD ESP,0x8                         ; 00592020
     LEA EAX,[EBP + 0xfffffe86]          ; 00592023
@@ -152,8 +152,8 @@ section .text
     PUSH EDX                            ; 0059207b
     LEA ESI,[EBP + 0xfffffe02]          ; 0059207c
     LEA EDI,[EBP + 0xffffff16]          ; 00592082
-    CALL core_skeleton.cpp_FUN_0054dcc0 ; 00592088
-        ;   XREF to: 0054dcc0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054dcc0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0 ; 00592088
+        ;   XREF to: 0054dcc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 0059208d
     LEA EAX,[EBP + 0xffffff16]          ; 00592090
     LEA ESI,[EBP + 0xfffffe02]          ; 00592096
@@ -184,8 +184,8 @@ section .text
     PUSH ESI                            ; 005920e8
     LEA ESI,[EBP + 0xffffff2e]          ; 005920e9
     LEA EDI,[EBP + 0xfffffe9e]          ; 005920ef
-    CALL core_skeleton.cpp_FUN_0054dcc0 ; 005920f5
-        ;   XREF to: 0054dcc0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054dcc0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0 ; 005920f5
+        ;   XREF to: 0054dcc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 005920fa
     LEA EAX,[EBP + 0xfffffe9e]          ; 005920fd
     LEA ESI,[EBP + 0xffffff2e]          ; 00592103
@@ -987,8 +987,8 @@ section .text
     PUSH EDX                            ; 00592ac0
     LEA ESI,[EBP + -0x1e]               ; 00592ac1
     LEA EDI,[EBP + 0xffffff5e]          ; 00592ac4
-    CALL core_skeleton.cpp_FUN_0054dbd0 ; 00592aca
-        ;   XREF to: 0054dbd0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054dbd0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0 ; 00592aca
+        ;   XREF to: 0054dbd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 00592acf
     LEA EAX,[EBP + 0xffffff5e]          ; 00592ad2
     LEA ESI,[EBP + -0x1e]               ; 00592ad8

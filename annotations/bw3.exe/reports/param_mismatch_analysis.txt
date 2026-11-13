@@ -15,13 +15,13 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5428
 Functions with no callers: 2542
-Parameter mismatches detected: 745
-Signature accuracy rate: 74.2%
+Parameter mismatches detected: 696
+Signature accuracy rate: 75.9%
 
 Mismatches by confidence:
-  High confidence:   39 (multiple call sites agree)
-  Medium confidence: 140 (some agreement)
-  Low confidence:    566 (limited data)
+  High confidence:   38 (multiple call sites agree)
+  Medium confidence: 131 (some agreement)
+  Low confidence:    527 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -136,16 +136,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_game.cpp_FUN_004be8d0 at 004be9c2: 2 reg [EAX, ECX], 3 stack (12 bytes, via add_esp)
       core_inivar.cpp_readIniData_FU at 004d8ecb: 2 reg [EAX, EBX], 3 stack (12 bytes, via add_esp)
       core_inivar.cpp_readIniData_FU at 004d8ee6: 1 reg [EAX], 3 stack (12 bytes, via add_esp)
-
-  core_fire.cpp_FUN_004a4340
-    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
-    Call sites: 3, Confidence: high
-    File: core/fire.cpp
-    Signature: void core_fire_cpp_FUN_004a4340(undefined4 param_1,int param_2)
-    Sample call sites:
-      core_bindevil.cpp_CBindEvil_se at 0040f930: 1 reg [ECX], 2 stack (8 bytes, via push_count)
-      core_disease.cpp_CDisease_setu at 0045c100: 1 reg [ECX], 2 stack (8 bytes, via push_count)
-      core_storm.cpp_CStorm_setup_FU at 00568c52: 1 reg [EBX], 2 stack (8 bytes, via push_count)
 
   core_xform.cpp_FUN_00585de0
     Declared: 0 params (0 bytes), Estimated: 3 stack slots (4 bytes) [+3]
@@ -419,14 +409,10 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
 MEDIUM CONFIDENCE MISMATCHES
 ====================================================================================================
 
-  core_fire.cpp_FUN_004a2e20                         declared:0 est:28 (+28) [2 calls]
   core_dmodel.cpp_FUN_00461300                       declared:0 est:10 (+10) [2 calls]
   core_inv.cpp_FUN_004dbe70                          declared:0 est:10 (+10) [2 calls]
   core_actor.cpp_FUN_004091b0                        declared:0 est:9 (+9) [2 calls]
-  core_fire.cpp_FUN_004a2090                         declared:0 est:9 (+9) [8 calls]
   core_setcolid.cpp_FUN_0053de10                     declared:0 est:9 (+9) [8 calls]
-  core_fire.cpp_FUN_004a3790                         declared:0 est:8 (+8) [4 calls]
-  core_fire.cpp_FUN_004a3fd0                         declared:0 est:8 (+8) [2 calls]
   shape_edittool.cpp_FUN_004850a0                    declared:0 est:8 (+8) [7 calls]
   crt_unknown.c_FUN_005a82c0                         declared:0 est:7 (+7) [2 calls]
   crt_unknown.c_FUN_005b1090                         declared:0 est:7 (+7) [2 calls]
@@ -469,14 +455,18 @@ MEDIUM CONFIDENCE MISMATCHES
   engine_matrix.c_normalizeVector3DFixed_FUN_004e614 declared:0 est:4 (+4) [2 calls]
   engine_texture.cpp_FUN_0056a690                    declared:0 est:4 (+4) [2 calls]
   support_codec.cpp_FUN_00440210                     declared:0 est:4 (+4) [2 calls]
+  cockpit_ckptutil.c_setLineBlendingDisabled_FUN_004 declared:0 est:3 (+3) [1 calls]
+  core_armour.cpp_FUN_00410370                       declared:0 est:3 (+3) [50 calls]
+  core_boneguy.cpp_hsvToRgb_FUN_00417240             declared:0 est:3 (+3) [2 calls]
+  core_firestff.cpp_FUN_004a5930                     declared:0 est:3 (+3) [2 calls]
 
-  ... and 90 more
+  ... and 81 more
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  566 functions with low-confidence mismatches
+  527 functions with low-confidence mismatches
   Sample:
     engine_2d.c_FUN_00401590                      declared:0 est:1 (+1)
     engine_2d.c_drawTextRightAlignedColor_FUN_004 declared:3 est:0 (-3)
@@ -493,29 +483,27 @@ LOW CONFIDENCE MISMATCHES (limited data)
 MISMATCH DIRECTION ANALYSIS
 ====================================================================================================
 
-Functions where declaration has MORE params than estimated: 34
+Functions where declaration has MORE params than estimated: 35
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 711
+Functions where declaration has FEWER params than estimated: 661
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
   -6 params: 1 functions
   -5 params: 2 functions
   -4 params: 1 functions
-  -3 params: 2 functions
+  -3 params: 3 functions
   -2 params: 6 functions
   -1 params: 22 functions
-  +1 params: 135 functions
-  +2 params: 169 functions
-  +3 params: 126 functions
-  +4 params: 106 functions
-  +5 params: 62 functions
-  +6 params: 45 functions
-  +7 params: 24 functions
-  +8 params: 22 functions
-  +9 params: 9 functions
-  +10 params: 8 functions
-  +11 params: 3 functions
-  +12 params: 1 functions
-  +28 params: 1 functions
+  +1 params: 129 functions
+  +2 params: 158 functions
+  +3 params: 118 functions
+  +4 params: 103 functions
+  +5 params: 59 functions
+  +6 params: 41 functions
+  +7 params: 23 functions
+  +8 params: 14 functions
+  +9 params: 7 functions
+  +10 params: 7 functions
+  +11 params: 2 functions

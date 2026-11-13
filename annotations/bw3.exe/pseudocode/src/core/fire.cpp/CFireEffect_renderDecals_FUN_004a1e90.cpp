@@ -16,7 +16,7 @@ void __cdecl core_fire_cpp_CFireEffect_renderDecals_FUN_004a1e90(CFireEffect *th
   int iVar2;
   CStake *pCVar3;
   
-  core_fire_cpp_FUN_004975a0(&DAT_01c8aea8);
+  core_fire_cpp_CBulletHole_setupRenderState_FUN_004975a0((CBulletHole *)&DAT_01c8aea8);
   if (render_mode == 0) {
     iVar2 = 0;
     if (0 < _DAT_01c8aea0) {

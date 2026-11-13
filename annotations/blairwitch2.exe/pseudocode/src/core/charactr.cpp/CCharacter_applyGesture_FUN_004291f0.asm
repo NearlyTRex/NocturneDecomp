@@ -25,9 +25,9 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_00503860
+;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80
-;   core_skeleton.cpp_FUN_00545a60
 ;
 ; *****************************************************************************
 
@@ -109,8 +109,8 @@ section .text
     PUSH EDX                            ; 004292db
     ADD EBX,0x2b4                       ; 004292dc
     PUSH EBX                            ; 004292e2
-    CALL core_skeleton.cpp_FUN_00545a60 ; 004292e3
-        ;   XREF to: 00545a60 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00545a60()
+    CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60 ; 004292e3
+        ;   XREF to: 00545a60 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
     ADD ESP,0x18                        ; 004292e8
     POP ESI                             ; 004292eb
     POP EDI                             ; 004292ec

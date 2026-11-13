@@ -133,9 +133,9 @@ LAB_00567a5a:
     local_18 = (float)core_motion_cpp_FUN_00503f50(pCVar11,iVar3,local_18);
   }
   local_24 = local_18;
-  core_skeleton_cpp_FUN_00545a60
+  core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00545a60
             (&(this_ptr->base).base.model,local_20,local_18,local_f8,_DAT_0264be74,
-             core_skeleton_cpp_FUN_00544cc0);
+             core_skeleton_cpp_blendWeightCallback_FUN_00544cc0);
   if ((this_ptr->base).base.layer_action_index == 0) {
     local_30 = (CDeformableModelInstance *)
                (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations;
@@ -257,7 +257,7 @@ LAB_00567a5a:
                            (float10)1);
   local_34 = (float)fVar10;
   core_xform_cpp_quaternionFromAngleY_FUN_00593fe0(local_34);
-  pcVar15 = core_skeleton_cpp_FUN_00544cc0;
+  pcVar15 = core_skeleton_cpp_blendWeightCallback_FUN_00544cc0;
   pCVar13 = &local_a0;
   fVar2 = 1.0;
   pCVar12 = &(this_ptr->base).base.model;
@@ -272,7 +272,7 @@ LAB_00567a5a:
   core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40
             (pCVar11,pCVar13,fVar2,iVar3,pcVar15);
   core_xform_cpp_quaternionFromAngleY_FUN_00593fe0(-local_34);
-  pcVar15 = core_skeleton_cpp_FUN_00544cc0;
+  pcVar15 = core_skeleton_cpp_blendWeightCallback_FUN_00544cc0;
   pCVar13 = &local_a0;
   fVar2 = 1.0;
   local_a0.w = local_b0;

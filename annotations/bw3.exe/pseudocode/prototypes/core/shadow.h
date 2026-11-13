@@ -79,7 +79,7 @@ undefined4 FUN_00545bd0(int param_1);
 
 // Original: core_shadow.cpp_FUN_00545c10
 // Address: 00545c10
-undefined4 FUN_00545c10(int param_1,undefined4 *param_2);
+undefined4 FUN_00545c10(int param_1,float *param_2);
 
 // Original: core_shadow.cpp_FUN_00545c80
 // Address: 00545c80

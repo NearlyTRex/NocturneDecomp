@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b00
-;   core_fire.cpp_FUN_004a3a00
+;   core_fire.cpp_CFireEffect_createStormToss_FUN_004a3a00
 ;   core_sound.cpp_CSound_playActorSound_FUN_005609d0
 ;   core_weapon.cpp_CWeapon_fire_FUN_0057b880
 ;
@@ -90,8 +90,8 @@ section .text
     PUSH EBP                            ; 00568bf9
     MOV ECX,dword ptr [0x005fc5a0]      ; 00568bfa | DAT_005fc5a0
     PUSH ECX                            ; 00568c00
-    CALL core_fire.cpp_FUN_004a3a00     ; 00568c01
-        ;   XREF to: 004a3a00 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3a00()
+    CALL core_fire.cpp_CFireEffect_createStormToss_FUN_004a3a00 ; 00568c01
+        ;   XREF to: 004a3a00 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createStormToss_FUN_004a3a00(CFireEffect * this_ptr, CVector3f * position, UOrientationVector * orientation, CVector3f * velocity)
     ADD ESP,0x10                        ; 00568c06
     JMP 0x00568b8c                      ; 00568c09
         ;   XREF to: 00568b8c (UNCONDITIONAL_JUMP)  ; LAB_00568b8c

@@ -9,6 +9,6 @@
 CFireEffect * __cdecl core_fire_cpp_CFireEffect_ctor_FUN_004a1460(CFireEffect *this_ptr)
 
 {
-  core_fire_cpp_FUN_004a1480(this_ptr);
+  core_fire_cpp_CFireEffect_init_FUN_004a1480(this_ptr);
   return this_ptr;
 }

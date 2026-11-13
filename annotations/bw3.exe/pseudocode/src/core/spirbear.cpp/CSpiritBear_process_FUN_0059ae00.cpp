@@ -47,10 +47,9 @@ void __cdecl core_spirbear_cpp_CSpiritBear_process_FUN_0059ae00(CSpiritBear *thi
   float fStack_48;
   float fStack_44;
   float afStack_40 [3];
-  uint uStack_34;
+  CVector3f CStack_34;
   float fStack_28;
-  float fStack_24;
-  float fStack_20;
+  float afStack_24 [4];
   uint uStack_14;
   
   bVar11 = 0;
@@ -71,12 +70,13 @@ void __cdecl core_spirbear_cpp_CSpiritBear_process_FUN_0059ae00(CSpiritBear *thi
   if ((((1 < (int)EVar8) && ((this_ptr->base).base.base.lifecycle_state == ACTOR_CREATED)) &&
       (this_ptr->pool_me == 0)) &&
      ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
-    core_skeleton_cpp_FUN_0054dbd0(pCVar2,0);
+    core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
+              (pCVar2,0,&CStack_34);
     pfVar14 = afStack_60 + 8;
-    afStack_40[0] = (float)uStack_34;
-    afStack_60[(uint)bVar11 * -2 + 9] = afStack_60[(uint)bVar11 * -2 + 0xc];
+    afStack_40[0] = CStack_34.x;
+    afStack_60[(uint)bVar11 * -2 + 9] = *(float *)((int)&CStack_34 + (uint)bVar11 * -8 + 4);
     afStack_60[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 10] =
-         afStack_60[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0xd];
+         *(float *)((int)&CStack_34 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
     core_actor_cpp_FUN_00408b80(this_ptr,pfVar14);
     blood_type = BLOOD_TYPE_RED;
     pCVar12 = &CStack_70;
@@ -192,13 +192,13 @@ LAB_0059af83:
   fStack_48 = fStack_a8 + (this_ptr->base).base.position_delta.y;
   fStack_44 = fStack_a4 + (this_ptr->base).base.position_delta.z;
   fStack_28 = fStack_4c;
-  afStack_60[(uint)bVar11 * -2 + 0xf] = afStack_60[(uint)bVar11 * -2 + 6];
-  afStack_60[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x10] =
+  afStack_24[(uint)bVar11 * -2] = afStack_60[(uint)bVar11 * -2 + 6];
+  afStack_24[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
        afStack_60[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 7];
   pCVar3 = &(this_ptr->base).base.model.accumulated_root_motion;
   fStack_64 = fStack_28 + pCVar3->x;
-  afStack_60[0] = fStack_24 + (this_ptr->base).base.model.accumulated_root_motion.y;
-  afStack_60[1] = fStack_20 + (this_ptr->base).base.model.accumulated_root_motion.z;
+  afStack_60[0] = afStack_24[0] + (this_ptr->base).base.model.accumulated_root_motion.y;
+  afStack_60[1] = afStack_24[1] + (this_ptr->base).base.model.accumulated_root_motion.z;
   CStack_94.x = fStack_64;
   *(float *)((int)&CStack_94 + (uint)bVar11 * -8 + 4) = afStack_60[(uint)bVar11 * -2];
   *(float *)((int)&CStack_94 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =

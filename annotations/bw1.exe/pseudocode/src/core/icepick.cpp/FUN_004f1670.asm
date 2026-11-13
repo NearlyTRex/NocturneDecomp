@@ -24,7 +24,7 @@
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_00524a00
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_005240c0
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_005695e0
-;   core_skeleton.cpp_FUN_00568100
+;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100
 ;   core_xform.cpp_quaternionFromAngleX_FUN_005b7af0
 ;
 ; *****************************************************************************
@@ -74,8 +74,8 @@ section .text
     PUSH 0x0                            ; 004f16eb
     PUSH EAX                            ; 004f16ed
     PUSH ESI                            ; 004f16ee
-    CALL core_skeleton.cpp_FUN_00568100 ; 004f16ef
-        ;   XREF to: 00568100 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00568100()
+    CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100 ; 004f16ef
+        ;   XREF to: 00568100 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
     FLD float ptr [EBX + 0xc204]        ; 004f16f4
     FMUL float ptr [0x005e53bf]         ; 004f16fa | DAT_005e53bf
     FMUL double ptr [0x005e53b7]        ; 004f1700 | DAT_005e53b7

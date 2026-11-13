@@ -292,7 +292,7 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_0053f170(CShotgun *this_ptr)
   *(uint *)((int)&CStack_a8 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
        *(uint *)((int)&CStack_e4 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   CStack_a8.y = CStack_a8.y + _DAT_005e67fd;
-  core_fire_cpp_FUN_0049d120(0x01C3DEB4,&CStack_a8,rotation_matrix);
+  core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0049d120(0x01C3DEB4,&CStack_a8,rotation_matrix);
   core_sound_cpp_CSound_playActorSound_FUN_0055ae50
             (0x0264B290,(CDemonActor *)this_ptr,"shotgun.wav",&CStack_e4);
   (this_ptr->base).fire_cooldown_timer = 0.666;

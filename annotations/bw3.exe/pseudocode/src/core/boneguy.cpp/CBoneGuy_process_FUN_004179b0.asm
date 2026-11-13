@@ -333,8 +333,8 @@ section .text
         ;   Label: LAB_00417cfd
     PUSH EAX                            ; 00417d03
     XOR EDI,EDI                         ; 00417d04
-    CALL core_skeleton.cpp_FUN_0054e670 ; 00417d06
-        ;   XREF to: 0054e670 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054e670()
+    CALL core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_0054e670 ; 00417d06
+        ;   XREF to: 0054e670 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_0054e670(CDeformableModelInstance * this_ptr)
     MOV EDX,dword ptr [EBX + 0xd0e8]    ; 00417d0b
     ADD ESP,0x4                         ; 00417d11
     TEST EDX,EDX                        ; 00417d14

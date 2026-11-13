@@ -50,7 +50,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_00593150(CSvetlana *this_pt
   float fStack_44;
   float fStack_40;
   float fStack_3c;
-  uint uStack_38;
+  CVector3f CStack_38;
   CCharacter *pCStack_24;
   float fStack_20;
   float fStack_1c;
@@ -281,12 +281,13 @@ switchD_005935af_caseD_4:
   }
   pCStack_24 = (CCharacter *)(this_ptr->base).base.grabbed_by;
   pCStack_14 = (pCStack_24->base).vtable._uc;
-  core_skeleton_cpp_FUN_00569130(&(this_ptr->base).base.model,0);
+  core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
+            (&(this_ptr->base).base.model,0,&CStack_38);
   pCVar13 = (CVector3f *)(afStack_bc + 3);
-  CStack_b0.x = (float)uStack_38;
-  afStack_bc[(uint)bVar10 * -2 + 4] = afStack_7c[(uint)bVar10 * -2 + 0x12];
+  CStack_b0.x = CStack_38.x;
+  afStack_bc[(uint)bVar10 * -2 + 4] = *(float *)((int)&CStack_38 + (uint)bVar10 * -8 + 4);
   afStack_bc[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 5] =
-       afStack_7c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x13];
+       *(float *)((int)&CStack_38 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
   iVar4 = (*(pCStack_14->_uc).attractActorToward)(pCStack_24,(CDemonActor *)this_ptr,pCVar13);
   if (iVar4 == 0) {
     (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
@@ -306,7 +307,7 @@ LAB_00593467:
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_005675a0(pCVar11);
   EVar6 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
   if (EVar6 == DEATH_STATE_ALIVE) {
-    blend_callback = core_skeleton_cpp_FUN_00567360;
+    blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_00567360;
     fVar12 = this_ptr->head_blend_weight;
     iVar4 = _DAT_02c83708;
     core_xform_cpp_FUN_005b7ed0(&this_ptr->head_euler_angles);

@@ -12,15 +12,16 @@ int __cdecl core_biggs_cpp_CBiggs_getTargetPoints_FUN_00415070(CBiggs *this_ptr,
   byte bVar1;
   float afStackY_100c [1016];
   CVector3f CStack_24;
-  float fStack_18;
-  uint auStack_14 [2];
+  CVector3f CStack_18;
   
   bVar1 = 0;
-  core_skeleton_cpp_FUN_00569130(&(this_ptr->base).base.model,0);
-  CStack_24.x = fStack_18;
-  *(uint *)((int)&CStack_24 + (uint)bVar1 * -8 + 4) = auStack_14[(uint)bVar1 * -2];
+  core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
+            (&(this_ptr->base).base.model,0,&CStack_18);
+  CStack_24.x = CStack_18.x;
+  *(uint *)((int)&CStack_24 + (uint)bVar1 * -8 + 4) =
+       *(uint *)((int)&CStack_18 + (uint)bVar1 * -8 + 4);
   *(uint *)((int)&CStack_24 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
-       auStack_14[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1];
+       *(uint *)((int)&CStack_18 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
   if (out_points_array == &CStack_24) {
     return 1;
   }

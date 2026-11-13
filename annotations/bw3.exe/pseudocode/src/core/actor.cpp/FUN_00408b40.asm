@@ -14,8 +14,8 @@
 ;   core_charactr.cpp_FUN_00432330 at 00432835
 ;   core_charactr.cpp_FUN_00433220 at 0043329c
 ;   core_demnfolk.cpp_CDemnfolk_process_FUN_00455080 at 00455a29
-;   core_fire.cpp_FUN_00497290 at 004974f2
-;   core_fire.cpp_FUN_004a2e20 at 004a34c9
+;   core_fire.cpp_CBulletHole_init_FUN_00497290 at 004974f2
+;   core_fire.cpp_CFireEffect_traceLaser_FUN_004a2e20 at 004a34c9
 ;   core_flies.cpp_CFlies_process_FUN_004ad950 at 004ad9f1
 ;   ... and 7 more
 ;

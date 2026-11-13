@@ -149,7 +149,8 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005766b0(CCryptVessel *thi
         if (0.0 <= fVar5) {
           return;
         }
-        core_fire_cpp_FUN_004a36e0(0x01C73654,pCVar2,0x41000000,0x44bb8000,0x40800000,0);
+        core_fire_cpp_CFireEffect_createExplosion_FUN_004a36e0
+                  (0x01C73654,&pCVar2->position,8.0,1500.0,4.0,0);
         pCVar3 = this_ptr->start_loc;
         this_ptr->timer = 1.0;
         (pCVar2->position).x = (pCVar3->base).location.position.x;

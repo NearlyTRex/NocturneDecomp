@@ -22,6 +22,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0056ae70",
+      "from_addr": "0056ae8a",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0056ae70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00569f30",
       "from_addr": "00569f3e",
       "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30",
@@ -46,21 +52,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00564b20",
-      "from_addr": "00564b2c",
-      "name": "core_skeleton.cpp_FUN_00564b20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00564d40",
       "from_addr": "00564d4c",
-      "name": "core_skeleton.cpp_FUN_00564d40",
+      "name": "core_skeleton.cpp_CDeformableModel_renderBones_FUN_00564d40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0056ae70",
-      "from_addr": "0056ae8a",
-      "name": "core_skeleton.cpp_FUN_0056ae70",
+      "addr": "00564b20",
+      "from_addr": "00564b2c",
+      "name": "core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_00564b20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -159,7 +159,7 @@
       {
         "call_addr": "0056ae8a",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_0056ae70",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0056ae70",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -181,7 +181,7 @@
       {
         "call_addr": "00564b2c",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00564b20",
+        "caller": "core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_00564b20",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -192,7 +192,7 @@
       {
         "call_addr": "00564d4c",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00564d40",
+        "caller": "core_skeleton.cpp_CDeformableModel_renderBones_FUN_00564d40",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

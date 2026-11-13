@@ -182,7 +182,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderFlames_FUN_0042f6f0(CCharacter *
 void __cdecl core_charactr_cpp_CCharacter_addDamageDecal_FUN_0042f770(CCharacter *this_ptr);
 void core_charactr_cpp_FUN_0042fbd0(CCharacter *param_1,CVector3f *param_2,undefined4 param_3,EFlameType param_4,float param_5,int param_6,float param_7);
 void core_charactr_cpp_FUN_0042fc90(int param_1);
-void core_charactr_cpp_FUN_0042fdc0(int param_1,int param_2,undefined4 param_3,float param_4);
+void core_charactr_cpp_FUN_0042fdc0(int param_1,int param_2,int param_3,float param_4);
 void __cdecl core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_0042fe90(CCharacter *this_ptr,int part_index,int bone_index,float chance);
 CBoundingBox3D * __cdecl core_charactr_cpp_CCharacter_getBoundingBox_FUN_0042ff40(CCharacter *this_ptr,CBoundingBox3D *out_box);
 void core_charactr_cpp_FUN_0042ff70(CDemonActor *param_1);

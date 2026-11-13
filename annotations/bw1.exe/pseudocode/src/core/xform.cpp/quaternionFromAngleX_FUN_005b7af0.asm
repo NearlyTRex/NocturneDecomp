@@ -18,7 +18,7 @@
 ;   core_icepick.cpp_FUN_004f1670 at 004f173d
 ;   core_mobster.cpp_CMobster_aimTommyGun_FUN_0051def0 at 0051e1bf
 ;   core_scat.cpp_CScat_blendAimBones_FUN_00542270 at 0054239a
-;   core_skeleton.cpp_FUN_00569440 at 00569529
+;   core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_00569440 at 00569529
 ;   core_stranger.cpp_CStranger_applyArmAimRotation_FUN_0058aab0 at 0058ac31
 ;   ... and 3 more
 ;

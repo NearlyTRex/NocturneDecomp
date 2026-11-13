@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
-;   core_fire.cpp_FUN_004a36e0
+;   core_fire.cpp_CFireEffect_createExplosion_FUN_004a36e0
 ;   core_flame.cpp_CFlame_process_FUN_004a5b10
 ;   core_vessel.cpp_isStartLocTriggered_FUN_00576690
 ;
@@ -452,8 +452,8 @@ section .text
     PUSH ESI                            ; 00576b9b
     MOV EAX,[0x005fc5a0]                ; 00576b9c | DAT_005fc5a0
     PUSH EAX                            ; 00576ba1
-    CALL core_fire.cpp_FUN_004a36e0     ; 00576ba2
-        ;   XREF to: 004a36e0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a36e0()
+    CALL core_fire.cpp_CFireEffect_createExplosion_FUN_004a36e0 ; 00576ba2
+        ;   XREF to: 004a36e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createExplosion_FUN_004a36e0(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
     MOV EDX,dword ptr [EBX + 0x3a8]     ; 00576ba7
     MOV dword ptr [EBX + 0x3bc],0x3f800000 ; 00576bad
     MOV EAX,dword ptr [EDX + 0x20]      ; 00576bb7

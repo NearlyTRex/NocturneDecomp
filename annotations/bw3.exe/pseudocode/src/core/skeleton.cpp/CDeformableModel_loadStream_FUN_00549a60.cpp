@@ -25,14 +25,14 @@ void __cdecl core_skeleton_cpp_CDeformableModel_loadStream_FUN_00549a60(CDeforma
   int local_5c;
   int local_58;
   int local_54;
-  uint local_50;
-  uint local_4c;
-  uint local_48;
+  int local_50;
+  int local_4c;
+  int local_48;
   int local_44;
   int local_40;
-  uint local_3c;
-  uint local_38;
-  uint local_34;
+  int local_3c;
+  int local_38;
+  int local_34;
   uchar local_30;
   uchar local_2c;
   int local_28;
@@ -67,7 +67,8 @@ LAB_00549ac4:
       iVar2 = _fscanf(file_handle,"%d,%d,%d,%d,%d,%d\n");
       if (iVar2 != 6) goto LAB_00549aa1;
       core_skeleton_cpp_CDeformableModel_allocMemory_FUN_00548460(this_ptr,1,1,local_44,local_40);
-      core_skeleton_cpp_FUN_00548580(this_ptr,0,local_50,local_4c,local_48);
+      core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00548580
+                (this_ptr,0,local_50,local_4c,local_48);
     }
     else {
       if (local_64 < 5) {
@@ -96,7 +97,8 @@ LAB_00549ac4:
       for (iVar2 = 0; iVar2 < this_ptr->num_lods; iVar2 = iVar2 + 1) {
         iVar3 = _fscanf(file_handle,"%d,%d,%d,%d,%d\n");
         if (iVar3 != 5) goto LAB_00549aa1;
-        core_skeleton_cpp_FUN_00548580(this_ptr,iVar2,local_3c,local_38,local_34);
+        core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00548580
+                  (this_ptr,iVar2,local_3c,local_38,local_34);
       }
     }
     do {

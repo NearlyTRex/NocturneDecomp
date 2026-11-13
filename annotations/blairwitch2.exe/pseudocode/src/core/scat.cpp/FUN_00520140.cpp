@@ -165,7 +165,7 @@ void __cdecl core_scat_cpp_FUN_00520140(CScat *this_ptr,int hand_index)
        [(uint)bVar4 * -2 + 1];
   core_xform_cpp_multiplyQuaternion_FUN_00593c60(&stack0xffffff24);
   iVar1 = local_18;
-  blend_callback = core_skeleton_cpp_FUN_00544cc0;
+  blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_00544cc0;
   local_2c.w = local_6c;
   puVar2 = (uint *)((int)&local_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   *(uint *)((int)&local_2c + (uint)bVar4 * -8 + 4) = auStack_88[(uint)bVar4 * 0xfffffffe + 8];

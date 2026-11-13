@@ -13,6 +13,6 @@ void __cdecl core_charactr_cpp_CCharacter_markResourcesInUse_FUN_0042c7a0(CChara
   if ((this_ptr->model).model_name[0] == '\0') {
     return;
   }
-  core_skeleton_cpp_FUN_0056b8c0((this_ptr->model).model_name);
+  core_skeleton_cpp_markModelInUse_FUN_0056b8c0((this_ptr->model).model_name);
   return;
 }

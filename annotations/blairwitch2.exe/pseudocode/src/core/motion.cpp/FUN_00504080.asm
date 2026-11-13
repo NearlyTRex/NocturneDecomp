@@ -14,9 +14,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_skeleton.cpp_FUN_00544f80 at 00544fbd
-;   core_skeleton.cpp_FUN_00545a60 at 00545aa2
-;   core_skeleton.cpp_FUN_00547b80 at 00547bb6
+;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60 at 00545aa2
+;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_00547b80 at 00547bb6
+;   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80 at 00544fbd
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005b7ff0

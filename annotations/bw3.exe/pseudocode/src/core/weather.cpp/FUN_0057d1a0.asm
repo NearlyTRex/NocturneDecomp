@@ -22,7 +22,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_fire.cpp_FUN_004a0480 at 004a0517
+;   core_fire.cpp_CStormEffect_activate_FUN_004a0480 at 004a0517
 ;   core_hino.cpp_CHino_process_FUN_0059b960 at 0059c0a5
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00534890 at 00534bc9
 ;

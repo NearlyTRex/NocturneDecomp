@@ -21,15 +21,15 @@ void __cdecl core_batcreat_cpp_CBatCreature_processDamage_FUN_004123d0(CBatCreat
   int iVar4;
   int flame_type;
   float fVar5;
-  uint *puVar6;
+  float *pfVar6;
   int include_hero;
   CVector3f CStack_60;
-  uint uStack_54;
-  float afStack_50 [5];
-  float fStack_3c;
+  CVector3f CStack_54;
+  float fStack_48;
+  float afStack_44 [5];
   CVector3f CStack_30;
-  uint uStack_24;
-  float afStack_20 [4];
+  float fStack_24;
+  uint auStack_20 [4];
   
   bVar3 = 0;
   sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handles[2]);
@@ -38,10 +38,10 @@ void __cdecl core_batcreat_cpp_CBatCreature_processDamage_FUN_004123d0(CBatCreat
     damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005d38c9;
     core_actor_cpp_FUN_00408b40(this_ptr,&damage_info->impact_direction);
     iVar4 = 0;
-    CStack_60.x = fStack_3c;
-    *(float *)((int)&CStack_60 + (uint)bVar3 * -8 + 4) = afStack_50[(uint)bVar3 * -2 + 6];
+    CStack_60.x = afStack_44[2];
+    *(float *)((int)&CStack_60 + (uint)bVar3 * -8 + 4) = afStack_44[(uint)bVar3 * -2 + 3];
     *(float *)((int)&CStack_60 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
-         afStack_50[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 7];
+         afStack_44[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4];
     do {
       iVar4 = iVar4 + 1;
       core_fire_cpp_CFireEffect_createSpark_FUN_004b59e0
@@ -49,23 +49,24 @@ void __cdecl core_batcreat_cpp_CBatCreature_processDamage_FUN_004123d0(CBatCreat
     } while (iVar4 < 5);
   }
   if (damage_info->damage_type == DAMAGE_TYPE_BURN) {
-    core_skeleton_cpp_FUN_00569130(&(this_ptr->base).base.model,0);
-    puVar6 = &uStack_24;
-    uStack_24 = uStack_54;
-    afStack_20[(uint)bVar3 * -2] = afStack_50[(uint)bVar3 * -2];
-    afStack_20[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
-         afStack_50[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
-    core_actor_cpp_FUN_00408b40(this_ptr,puVar6);
+    core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
+              (&(this_ptr->base).base.model,0,&CStack_54);
+    pfVar6 = &fStack_24;
+    fStack_24 = CStack_54.x;
+    auStack_20[(uint)bVar3 * -2] = *(uint *)((int)&CStack_54 + (uint)bVar3 * -8 + 4);
+    auStack_20[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
+         *(uint *)((int)&CStack_54 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+    core_actor_cpp_FUN_00408b40(this_ptr,pfVar6);
     include_hero = 0;
     fVar5 = 10.0;
     flame_type = 0;
     iVar4 = 0;
     position = &CStack_30;
-    CStack_30.x = afStack_50[2];
-    *(float *)((int)&CStack_30 + (uint)bVar3 * -8 + 4) = afStack_50[(uint)bVar3 * -2 + 3];
+    CStack_30.x = fStack_48;
+    *(float *)((int)&CStack_30 + (uint)bVar3 * -8 + 4) = afStack_44[(uint)bVar3 * -2];
     this_ptr_01 = this_ptr;
     *(float *)((int)&CStack_30 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
-         afStack_50[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4];
+         afStack_44[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
     core_charactr_cpp_CCharacter_igniteBone_FUN_004308a0
               ((CCharacter *)this_ptr_01,position,iVar4,flame_type,fVar5,include_hero);
   }

@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b00
-;   core_fire.cpp_FUN_004a2e20
+;   core_fire.cpp_CFireEffect_traceLaser_FUN_004a2e20
 ;   core_fire.cpp_SLaserInfo_ctor_FUN_004a2de0
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_0053ec10
 ;   core_setcolid.cpp_CDemonSet_init_FUN_0053ebe0
@@ -114,8 +114,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00488a8d
     MOVSD ES:EDI,ESI                    ; 00488a8e
     MOVSD ES:EDI,ESI                    ; 00488a8f
-    CALL core_fire.cpp_FUN_004a2e20     ; 00488a90
-        ;   XREF to: 004a2e20 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a2e20()
+    CALL core_fire.cpp_CFireEffect_traceLaser_FUN_004a2e20 ; 00488a90
+        ;   XREF to: 004a2e20 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_traceLaser_FUN_004a2e20(CFireEffect * this_ptr, CVector3f * origin, CVector3f * direction, SLaserInfo laser_info, ...)
     ADD ESP,0x64                        ; 00488a95
     MOV EBX,dword ptr [0x00603b28]      ; 00488a98 | g_CDemonSetPtr
     PUSH EBX                            ; 00488a9e | g_CDemonSetInstance

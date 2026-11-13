@@ -7,7 +7,7 @@
 ; CDeformableModel * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_skeleton.cpp_FUN_00550310 at 00550373
+;   core_skeleton.cpp_getMemoryStats_FUN_00550310 at 00550373
 ;
 ; *****************************************************************************
 

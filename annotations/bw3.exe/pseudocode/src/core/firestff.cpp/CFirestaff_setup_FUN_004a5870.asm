@@ -10,7 +10,7 @@
 ;   undefined4 DAT_005fc5a0
 ;
 ; Called Functions:
-;   core_fire.cpp_FUN_004a42c0
+;   core_fire.cpp_CFireEffect_preloadRingAssets_FUN_004a42c0
 ;   core_flame.cpp_FUN_004a5ad0
 ;   core_weapon.cpp_CWeapon_setup_FUN_0057af40
 ;   sound_sndmain.cpp_preloadSfx_FUN_00556230
@@ -40,8 +40,8 @@ section .text
     PUSH 0x0                            ; 004a58a4
     MOV ECX,dword ptr [0x005fc5a0]      ; 004a58a6 | DAT_005fc5a0
     PUSH ECX                            ; 004a58ac
-    CALL core_fire.cpp_FUN_004a42c0     ; 004a58ad
-        ;   XREF to: 004a42c0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a42c0()
+    CALL core_fire.cpp_CFireEffect_preloadRingAssets_FUN_004a42c0 ; 004a58ad
+        ;   XREF to: 004a42c0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_preloadRingAssets_FUN_004a42c0(CFireEffect * this_ptr, int variant)
     ADD ESP,0x8                         ; 004a58b2
     PUSH 0x0                            ; 004a58b5
     CALL core_flame.cpp_FUN_004a5ad0    ; 004a58b7

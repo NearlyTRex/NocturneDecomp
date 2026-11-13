@@ -19,14 +19,14 @@ void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_0051b2b0(CDemon
   iVar5 = 0;
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Setting up actors");
   core_level_cpp_CLevelLoader_update_FUN_004fe9c0(0x01D1BD1C,pcVar1,iVar5);
-  core_skeleton_cpp_FUN_0056b830();
+  core_skeleton_cpp_clearModelAndSkeletonInUseFlags_FUN_0056b830();
   iVar5 = 0;
   for (pCVar3 = this_ptr->first_actor; pCVar3 != (CDemonActor *)0x0; pCVar3 = pCVar3->next_actor) {
     iVar5 = iVar5 + 1;
     (*((pCVar3->vtable)._ub)->markResourcesInUse)(pCVar3);
   }
   if (this_ptr->is_in_editor == 0) {
-    core_skeleton_cpp_FUN_0056b860();
+    core_skeleton_cpp_freeUnusedModelsAndSkeletons_FUN_0056b860();
   }
   pCVar3 = this_ptr->first_actor;
   iVar4 = 0;

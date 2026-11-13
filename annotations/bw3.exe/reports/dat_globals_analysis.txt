@@ -13,10 +13,10 @@ Current type breakdown:
   undefined8                     19
   undefined2                     4
 
-DAT_ globals with type hints: 1278 / 3197
+DAT_ globals with type hints: 1279 / 3197
 
 --------------------------------------------------------------------------------
-HIGH CONFIDENCE INFERENCES (1027)
+HIGH CONFIDENCE INFERENCES (1028)
 --------------------------------------------------------------------------------
   DAT_005b5849                    addr=005b5849    current=undefined4      likely=float           refs=1
     nearby: s_core_actor_cpp_005b584d (TerminatedCString) at offset -4
@@ -1037,6 +1037,8 @@ HIGH CONFIDENCE INFERENCES (1027)
   DAT_007e5364                    addr=007e5364    current=undefined4      likely=SRenderVertex *  refs=1
   DAT_007e5964                    addr=007e5964    current=undefined4      likely=SRenderVertex *  refs=2
   DAT_007e5f64                    addr=007e5f64    current=undefined4      likely=SRenderVertex *  refs=1
+  DAT_007f8e68                    addr=007f8e68    current=undefined4      likely=float           refs=2
+    nearby: g_CConstructClassInfo (CDemonActorType) at offset -56
   DAT_00a39294                    addr=00a39294    current=undefined4      likely=float           refs=1
   DAT_00a39298                    addr=00a39298    current=undefined4      likely=float           refs=1
   DAT_00a3929c                    addr=00a3929c    current=undefined4      likely=float           refs=1
@@ -1179,8 +1181,8 @@ HIGH CONFIDENCE INFERENCES (1027)
   DAT_01cba2b4                    addr=01cba2b4    current=undefined4      likely=CSpark *        refs=2
     nearby: CFirefly_ARRAY_01cba2b8[0].base.lifetime_remaining (undefined4) at offset -40
   DAT_01cbb9b8                    addr=01cbb9b8    current=undefined4      likely=CFirefly *      refs=1
-  DAT_01cbb9bc                    addr=01cbb9bc    current=undefined4      likely=CMuzzleFlash *  refs=4
-  DAT_01cbc0ec                    addr=01cbc0ec    current=undefined4      likely=CMuzzleFlash *  refs=2
+  DAT_01cbb9bc                    addr=01cbb9bc    current=undefined4      likely=uint *          refs=4
+  DAT_01cbc0ec                    addr=01cbc0ec    current=undefined4      likely=uint *          refs=2
     nearby: CGlassParticle_ARRAY_01cbc0f0[0].base.lifetime_remaining (undefined4) at offset -40
   DAT_01cefd10                    addr=01cefd10    current=undefined4      likely=CGlassParticle *  refs=1
   DAT_01cefe7c                    addr=01cefe7c    current=undefined4      likely=CBulletTrail *  refs=2
@@ -1198,15 +1200,15 @@ HIGH CONFIDENCE INFERENCES (1027)
   DAT_01cf61d0                    addr=01cf61d0    current=undefined4      likely=CExplosion *    refs=2
   DAT_01cfaff4                    addr=01cfaff4    current=undefined4      likely=CToss *         refs=2
   DAT_01cfb8b8                    addr=01cfb8b8    current=undefined4      likely=CCrater *       refs=2
-  DAT_01d00eac                    addr=01d00eac    current=undefined4      likely=CGunFlame *     refs=3
+  DAT_01d00eac                    addr=01d00eac    current=undefined4      likely=CExplosion *    refs=3
   DAT_01d01ab0                    addr=01d01ab0    current=undefined4      likely=CLightningBolt *  refs=2
   DAT_01d028c4                    addr=01d028c4    current=undefined4      likely=CTrail *        refs=2
     nearby: g_ShellPool[0].base.lifetime_remaining (undefined4) at offset -40
   DAT_01d03b88                    addr=01d03b88    current=undefined4      likely=CShell *        refs=2
     nearby: g_PopcornPool[0].base.lifetime_remaining (undefined4) at offset -40
-  DAT_01d07b8c                    addr=01d07b8c    current=undefined4      likely=CParticle *     refs=2
+  DAT_01d07b8c                    addr=01d07b8c    current=undefined4      likely=CPopcorn *      refs=2
     nearby: g_RainDropPool[0].base.lifetime_remaining (undefined4) at offset -40
-  DAT_01d0bb90                    addr=01d0bb90    current=undefined4      likely=CParticle *     refs=2
+  DAT_01d0bb90                    addr=01d0bb90    current=undefined4      likely=CRainDrop *     refs=2
   DAT_01d0ce7c                    addr=01d0ce7c    current=undefined4      likely=CLightningBolt *  refs=2
     nearby: g_CFirestaffClassInfo.name_hash (undefined4) at offset -108
   DAT_01d0d010                    addr=01d0d010    current=undefined4      likely=char *          refs=7
@@ -1926,7 +1928,7 @@ LOW CONFIDENCE INFERENCES (0)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
-NO TYPE HINTS (1919)
+NO TYPE HINTS (1918)
 --------------------------------------------------------------------------------
   DAT_005c601d                    addr=005c601d    type=undefined1      refs=1  nearby: s_You_ve_received_d_health_005c6021 at -4
   DAT_005c6b1f                    addr=005c6b1f    type=undefined4      refs=1  nearby: s_falloff_005c6b2b at -12
@@ -2497,7 +2499,6 @@ NO TYPE HINTS (1919)
   DAT_007e65b0                    addr=007e65b0    type=undefined4      refs=1
   DAT_007e65f4                    addr=007e65f4    type=undefined4      refs=1
   DAT_007f8e64                    addr=007f8e64    type=undefined4      refs=3  nearby: g_CConstructClassInfo at -60
-  DAT_007f8e68                    addr=007f8e68    type=undefined4      refs=2  nearby: g_CConstructClassInfo at -56
   DAT_007f8e6c                    addr=007f8e6c    type=undefined4      refs=2  nearby: g_CConstructClassInfo at -52
   DAT_007f8e70                    addr=007f8e70    type=undefined4      refs=1  nearby: g_CConstructClassInfo at -48
   DAT_007f8e74                    addr=007f8e74    type=undefined4      refs=2  nearby: g_CConstructClassInfo at -44
@@ -3933,9 +3934,9 @@ They appear only as inline constant values.
   DAT_005f2840                    value=0x5F2840        refs=2
   DAT_005fc97c                    value=0x5FC97C        refs=2
   DAT_005fc994                    value=0x5FC994        refs=2
+  DAT_005fc9c4                    value=0x5FC9C4        refs=2
   DAT_005fd804                    value=0x5FD804        refs=2
   DAT_005fd8dc                    value=0x5FD8DC        refs=2
-  DAT_005fc9c4                    value=0x5FC9C4        refs=2
   DAT_005fc9dc                    value=0x5FC9DC        refs=2
   DAT_005fde88                    value=0x5FDE88        refs=2
   DAT_005fed34                    value=0x5FED34        refs=2
@@ -3978,6 +3979,7 @@ They appear only as inline constant values.
   DAT_005fd5f4                    value=0x5FD5F4        refs=1
   DAT_0060b074                    value=0x60B074        refs=1
   DAT_0060b0a4                    value=0x60B0A4        refs=1
+  DAT_005fca9c                    value=0x5FCA9C        refs=1
   DAT_005fca3c                    value=0x5FCA3C        refs=1
   DAT_005fca54                    value=0x5FCA54        refs=1
   DAT_005fca6c                    value=0x5FCA6C        refs=1
@@ -3991,7 +3993,6 @@ They appear only as inline constant values.
   DAT_005fc9f4                    value=0x5FC9F4        refs=1
   DAT_005fca0c                    value=0x5FCA0C        refs=1
   DAT_005fca24                    value=0x5FCA24        refs=1
-  DAT_005fca9c                    value=0x5FCA9C        refs=1
   DAT_005fde70                    value=0x5FDE70        refs=1
   DAT_005c601c                    value=0x5C601C        refs=1
   DAT_005c6b27                    value=0x5C6B27        refs=1

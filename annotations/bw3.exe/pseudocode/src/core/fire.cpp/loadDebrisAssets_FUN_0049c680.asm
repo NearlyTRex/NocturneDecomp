@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_004a24a0 at 004a2552
+;   core_fire.cpp_CFireEffect_loadAssets_FUN_004a24a0 at 004a2552
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_debris01_kfm_005c0648
@@ -18,7 +18,7 @@
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00462580
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
-;   core_fire.cpp_FUN_004a42f0
+;   core_fire.cpp_CFireEffect_preloadExplosionStyle_FUN_004a42f0
 ;
 ; *****************************************************************************
 
@@ -73,8 +73,8 @@ section .text
     PUSH 0x0                            ; 0049c71b
     MOV EDX,dword ptr [0x005fc5a0]      ; 0049c71d | DAT_005fc5a0
     PUSH EDX                            ; 0049c723
-    CALL core_fire.cpp_FUN_004a42f0     ; 0049c724
-        ;   XREF to: 004a42f0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a42f0()
+    CALL core_fire.cpp_CFireEffect_preloadExplosionStyle_FUN_004a42f0 ; 0049c724
+        ;   XREF to: 004a42f0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_preloadExplosionStyle_FUN_004a42f0(CFireEffect * this_ptr, int explosion_type)
     ADD ESP,0x8                         ; 0049c729
     RET                                 ; 0049c72c
 

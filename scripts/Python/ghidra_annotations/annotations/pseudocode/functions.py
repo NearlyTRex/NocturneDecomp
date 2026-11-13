@@ -611,6 +611,7 @@ def analyze_call_site(listing, call_addr, caller_func, uses_register_params=True
         '__stack_esi': {'ESI'},
         '__stack2_esi': {'ESI'},
         '__stack3_esi': {'ESI'},
+        '__stack4_esi': {'ESI'},
         '__stack5_esi': {'ESI'},
         '__stackdbl_esi': {'ESI'},
         '__stack_esi_edi': {'ESI', 'EDI'},
@@ -629,7 +630,7 @@ def analyze_call_site(listing, call_addr, caller_func, uses_register_params=True
     # Conventions where the CALLER cleans up with ADD ESP (extrapop="unknown")
     CALLER_CLEANUP_CONVENTIONS = {'__cdecl', '__crtmath', '__fastcall',
                                   '__stack_esi', '__stackdbl_esi', '__stack2_esi', '__stack3_esi',
-                                  '__stack5_esi',
+                                  '__stack4_esi', '__stack5_esi',
                                   '__stack_esi_edi', '__stack2_esi_edi',
                                   None, 'unknown', ''}
 
@@ -962,7 +963,7 @@ def estimate_call_site_params(currentProgram, function, vtable_data=None):
     REGISTER_PARAM_CONVENTIONS = {'__watcallRegister', '__softfp_double',
                                    '__esi', '__edx', '__edi_esi_ebx',
                                    '__stack_esi', '__stackdbl_esi', '__stack2_esi',
-                                   '__stack3_esi', '__stack5_esi',
+                                   '__stack3_esi', '__stack4_esi', '__stack5_esi',
                                    '__stack_esi_edi', '__stack2_esi_edi'}
     STACK_ONLY_CONVENTIONS = {'__watcallStack', '__stdcall', '__cdecl', '__syscall', '__crtmath', '__thiscall'}
     FPU_REGISTER_CONVENTIONS = {'__fpustack', '__fpustack_safe', '__fpureg', '__fpureg_safe', '__fpu_thunk'}

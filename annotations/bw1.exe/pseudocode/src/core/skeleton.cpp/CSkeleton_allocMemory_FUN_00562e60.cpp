@@ -14,7 +14,7 @@ void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_00562e60(CSkeleton *thi
   CQuaternion4f *pCVar1;
   CVector3f *pCVar2;
   
-  core_skeleton_cpp_FUN_00562f70(this_ptr,0);
+  core_skeleton_cpp_CSkeleton_free_FUN_00562f70(this_ptr,0);
   if (100 < bone_count) {
     _DAT_01d1d400 = "..\\core\\skeleton.cpp";
     _DAT_01d1d404 = 200;

@@ -28,7 +28,7 @@ void __cdecl core_spireagl_cpp_CSpiritEagle_process_FUN_00599540(CSpiritEagle *t
   byte bVar13;
   float afStackY_106c [1012];
   char *state_name;
-  uint *puVar14;
+  float *pfVar14;
   EBloodType blood_type;
   float fStack_84;
   CVector3f CStack_78;
@@ -36,8 +36,9 @@ void __cdecl core_spireagl_cpp_CSpiritEagle_process_FUN_00599540(CSpiritEagle *t
   float afStack_68 [4];
   float fStack_58;
   CVector3f CStack_54;
-  uint uStack_48;
-  float afStack_44 [5];
+  float fStack_48;
+  float afStack_44 [2];
+  CVector3f CStack_3c;
   CVector3f CStack_30;
   float fStack_1c;
   uint uStack_18;
@@ -60,13 +61,14 @@ void __cdecl core_spireagl_cpp_CSpiritEagle_process_FUN_00599540(CSpiritEagle *t
   EVar6 = (*(((this_ptr->base).base.vtable._uc)->_uc).getDeathState)(&this_ptr->base);
   if ((((1 < (int)EVar6) && ((this_ptr->base).base.lifecycle_state == ACTOR_CREATED)) &&
       (this_ptr->pool_me == 0)) && ((this_ptr->base).base.standing_platform == (CPlatform *)0x0)) {
-    core_skeleton_cpp_FUN_0054dbd0(pCVar11,0);
-    puVar14 = &uStack_48;
-    uStack_48 = afStack_44[2];
-    afStack_44[(uint)bVar13 * -2] = afStack_44[(uint)bVar13 * -2 + 3];
+    core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
+              (pCVar11,0,&CStack_3c);
+    pfVar14 = &fStack_48;
+    fStack_48 = CStack_3c.x;
+    afStack_44[(uint)bVar13 * -2] = *(float *)((int)&CStack_3c + (uint)bVar13 * -8 + 4);
     afStack_44[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1] =
-         afStack_44[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 4];
-    core_actor_cpp_FUN_00408b80(this_ptr,puVar14);
+         *(float *)((int)&CStack_3c + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
+    core_actor_cpp_FUN_00408b80(this_ptr,pfVar14);
     blood_type = BLOOD_TYPE_RED;
     CStack_54.x = fStack_84;
     *(uint *)((int)&CStack_54 + (uint)bVar13 * -8 + 4) =

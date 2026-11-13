@@ -41,6 +41,11 @@
   },
   "function_calls": [
     {
+      "addr": "00493cf0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CBulletHole_process_FUN_00493cf0"
+    },
+    {
       "addr": "00497330",
       "is_variadic": false,
       "name": "core_fire.cpp_CBulletTrail_process_FUN_00497330"
@@ -71,6 +76,11 @@
       "name": "core_fire.cpp_CMuzzleFlash_process_FUN_00496a60"
     },
     {
+      "addr": "004935b0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CSmokeParticle_process_FUN_004935b0"
+    },
+    {
       "addr": "00494580",
       "is_variadic": false,
       "name": "core_fire.cpp_CStake_process_FUN_00494580"
@@ -84,16 +94,6 @@
       "addr": "0049b330",
       "is_variadic": false,
       "name": "core_fire.cpp_CTrail_process_FUN_0049b330"
-    },
-    {
-      "addr": "004935b0",
-      "is_variadic": false,
-      "name": "core_fire.cpp_FUN_004935b0"
-    },
-    {
-      "addr": "00493cf0",
-      "is_variadic": false,
-      "name": "core_fire.cpp_FUN_00493cf0"
     },
     {
       "addr": "00499ee0",
@@ -478,6 +478,12 @@
       "class": "logic-change",
       "ratio": 0.9593
     },
+    "bw3.exe": {
+      "addr": "004a1760",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9329
+    },
     "nocedit.exe": {
       "addr": "004c6ec0",
       "by": "name",
@@ -538,7 +544,7 @@
       "line": 31,
       "match": "DAT_01c3f8e0",
       "severity": "mild",
-      "text": "piVar2 = (int *)&DAT_01c3f8e0;",
+      "text": "this_ptr_00 = (CSmokeParticle *)&DAT_01c3f8e0;",
       "type": "undefined_data"
     },
     {
@@ -546,7 +552,7 @@
       "line": 39,
       "match": "DAT_01c558e0",
       "severity": "mild",
-      "text": "} while (piVar2 != (int *)&DAT_01c558e0);",
+      "text": "} while (this_ptr_00 != (CSmokeParticle *)&DAT_01c558e0);",
       "type": "undefined_data"
     },
     {
@@ -554,7 +560,7 @@
       "line": 46,
       "match": "DAT_01c848f4",
       "severity": "mild",
-      "text": "} while (this_ptr_00 != (CSpark *)&DAT_01c848f4);",
+      "text": "} while (this_ptr_01 != (CSpark *)&DAT_01c848f4);",
       "type": "undefined_data"
     },
     {
@@ -562,7 +568,7 @@
       "line": 53,
       "match": "DAT_01c85ff8",
       "severity": "mild",
-      "text": "} while (pCVar3 != (CFirefly *)&DAT_01c85ff8);",
+      "text": "} while (pCVar2 != (CFirefly *)&DAT_01c85ff8);",
       "type": "undefined_data"
     },
     {
@@ -570,7 +576,7 @@
       "line": 54,
       "match": "DAT_01c86730",
       "severity": "mild",
-      "text": "this_ptr_01 = (CMuzzleEffect *)&DAT_01c86730;",
+      "text": "this_ptr_02 = (CMuzzleEffect *)&DAT_01c86730;",
       "type": "undefined_data"
     },
     {
@@ -578,7 +584,7 @@
       "line": 55,
       "match": "DAT_01c85ffc",
       "severity": "mild",
-      "text": "this_ptr_16 = (CMuzzleFlash *)&DAT_01c85ffc;",
+      "text": "this_ptr_17 = (CMuzzleFlash *)&DAT_01c85ffc;",
       "type": "undefined_data"
     },
     {
@@ -586,7 +592,7 @@
       "line": 65,
       "match": "DAT_01c86e60",
       "severity": "mild",
-      "text": "} while (this_ptr_01 != (CMuzzleEffect *)&DAT_01c86e60);",
+      "text": "} while (this_ptr_02 != (CMuzzleEffect *)&DAT_01c86e60);",
       "type": "undefined_data"
     },
     {
@@ -594,7 +600,7 @@
       "line": 83,
       "match": "DAT_01c91264",
       "severity": "mild",
-      "text": "} while (this_ptr_03 != (CGlassParticle *)&DAT_01c91264);",
+      "text": "} while (this_ptr_04 != (CGlassParticle *)&DAT_01c91264);",
       "type": "undefined_data"
     },
     {
@@ -602,7 +608,7 @@
       "line": 90,
       "match": "DAT_01c913d0",
       "severity": "mild",
-      "text": "} while (this_ptr_04 != (CBulletTrail *)&DAT_01c913d0);",
+      "text": "} while (this_ptr_05 != (CBulletTrail *)&DAT_01c913d0);",
       "type": "undefined_data"
     },
     {
@@ -610,7 +616,7 @@
       "line": 97,
       "match": "DAT_01c93cd4",
       "severity": "mild",
-      "text": "} while (this_ptr_05 != (CFireball *)&DAT_01c93cd4);",
+      "text": "} while (this_ptr_06 != (CFireball *)&DAT_01c93cd4);",
       "type": "undefined_data"
     },
     {
@@ -618,7 +624,7 @@
       "line": 104,
       "match": "DAT_01c950d8",
       "severity": "mild",
-      "text": "} while (this_ptr_06 != (CRock *)&DAT_01c950d8);",
+      "text": "} while (this_ptr_07 != (CRock *)&DAT_01c950d8);",
       "type": "undefined_data"
     },
     {
@@ -626,7 +632,7 @@
       "line": 111,
       "match": "DAT_01c965dc",
       "severity": "mild",
-      "text": "} while (this_ptr_07 != (CLeaf *)&DAT_01c965dc);",
+      "text": "} while (this_ptr_08 != (CLeaf *)&DAT_01c965dc);",
       "type": "undefined_data"
     },
     {
@@ -634,7 +640,7 @@
       "line": 118,
       "match": "DAT_01c85ff8",
       "severity": "mild",
-      "text": "} while (pCVar3 != (CFirefly *)&DAT_01c85ff8);",
+      "text": "} while (pCVar2 != (CFirefly *)&DAT_01c85ff8);",
       "type": "undefined_data"
     },
     {
@@ -642,7 +648,7 @@
       "line": 121,
       "match": "DAT_01c558e8",
       "severity": "mild",
-      "text": "puVar6 = &DAT_01c558e8;",
+      "text": "this_ptr_18 = (CBulletHole *)&DAT_01c558e8;",
       "type": "undefined_data"
     },
     {
@@ -650,7 +656,7 @@
       "line": 132,
       "match": "DAT_01c976fc",
       "severity": "mild",
-      "text": "} while (this_ptr_08 != (CExplosion *)&DAT_01c976fc);",
+      "text": "} while (this_ptr_09 != (CExplosion *)&DAT_01c976fc);",
       "type": "undefined_data"
     },
     {
@@ -658,7 +664,7 @@
       "line": 137,
       "match": "DAT_01c9c4d0",
       "severity": "mild",
-      "text": "} while (this_ptr_09 != (CToss *)&DAT_01c9c4d0);",
+      "text": "} while (this_ptr_10 != (CToss *)&DAT_01c9c4d0);",
       "type": "undefined_data"
     },
     {
@@ -666,7 +672,7 @@
       "line": 142,
       "match": "DAT_01c9cd94",
       "severity": "mild",
-      "text": "} while (this_ptr_10 != (CCrater *)&DAT_01c9cd94);",
+      "text": "} while (this_ptr_11 != (CCrater *)&DAT_01c9cd94);",
       "type": "undefined_data"
     },
     {
@@ -674,7 +680,7 @@
       "line": 143,
       "match": "DAT_01c9cd98",
       "severity": "mild",
-      "text": "this_ptr_11 = (CGunFlame *)&DAT_01c9cd98;",
+      "text": "this_ptr_12 = (CGunFlame *)&DAT_01c9cd98;",
       "type": "undefined_data"
     },
     {
@@ -682,7 +688,7 @@
       "line": 154,
       "match": "DAT_01ca13e8",
       "severity": "mild",
-      "text": "} while (this_ptr_11 != (CGunFlame *)&DAT_01ca13e8);",
+      "text": "} while (this_ptr_12 != (CGunFlame *)&DAT_01ca13e8);",
       "type": "undefined_data"
     },
     {
@@ -690,7 +696,7 @@
       "line": 159,
       "match": "DAT_01ca15a4",
       "severity": "mild",
-      "text": "} while (this_ptr_12 != (CLightningBolt *)&DAT_01ca15a4);",
+      "text": "} while (this_ptr_13 != (CLightningBolt *)&DAT_01ca15a4);",
       "type": "undefined_data"
     },
     {
@@ -698,7 +704,7 @@
       "line": 164,
       "match": "DAT_01ca23b8",
       "severity": "mild",
-      "text": "} while (this_ptr_13 != (CTrail *)&DAT_01ca23b8);",
+      "text": "} while (this_ptr_14 != (CTrail *)&DAT_01ca23b8);",
       "type": "undefined_data"
     },
     {
@@ -706,7 +712,7 @@
       "line": 169,
       "match": "DAT_01ca367c",
       "severity": "mild",
-      "text": "} while (this_ptr_14 != (CShell *)&DAT_01ca367c);",
+      "text": "} while (this_ptr_15 != (CShell *)&DAT_01ca367c);",
       "type": "undefined_data"
     },
     {
@@ -714,15 +720,15 @@
       "line": 176,
       "match": "DAT_01ca7680",
       "severity": "mild",
-      "text": "} while (&this_ptr_15->base != (CParticle *)&DAT_01ca7680);",
+      "text": "} while (&this_ptr_16->base != (CParticle *)&DAT_01ca7680);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
       "line": 180,
-      "match": "(CDemonActorType *)((int)pCVar4",
+      "match": "(CDemonActorType *)((int)pCVar3",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)((CDemonActorType *)((int)pCVar4 + 0x3c))->class_name + 4))(pCVar4);",
+      "text": "(**(code **)(*(int *)((CDemonActorType *)((int)pCVar3 + 0x3c))->class_name + 4))(pCVar3);",
       "type": "pointer_cast"
     },
     {
@@ -730,47 +736,47 @@
       "line": 180,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)((CDemonActorType *)((int)pCVar4 + 0x3c))->class_name + 4))(pCVar4);",
+      "text": "(**(code **)(*(int *)((CDemonActorType *)((int)pCVar3 + 0x3c))->class_name + 4))(pCVar3);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 182,
-      "match": "(CDemonActorType *)((int)pCVar4",
+      "match": "(CDemonActorType *)((int)pCVar3",
       "severity": "moderate",
-      "text": "pCVar4 = (CRainDrop *)(((CDemonActorType *)((int)pCVar4 + 0x3c))->class_name + 4);",
+      "text": "pCVar3 = (CRainDrop *)(((CDemonActorType *)((int)pCVar3 + 0x3c))->class_name + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 180,
-      "match": "(int)pCVar4",
+      "match": "(int)pCVar3",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)((CDemonActorType *)((int)pCVar4 + 0x3c))->class_name + 4))(pCVar4);",
+      "text": "(**(code **)(*(int *)((CDemonActorType *)((int)pCVar3 + 0x3c))->class_name + 4))(pCVar3);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 182,
-      "match": "(int)pCVar4",
+      "match": "(int)pCVar3",
       "severity": "moderate",
-      "text": "pCVar4 = (CRainDrop *)(((CDemonActorType *)((int)pCVar4 + 0x3c))->class_name + 4);",
+      "text": "pCVar3 = (CRainDrop *)(((CDemonActorType *)((int)pCVar3 + 0x3c))->class_name + 4);",
       "type": "pointer_truncation"
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
       "line": 180,
-      "match": "(CDemonActorType *)((int)pCVar4 + 0x3c)",
+      "match": "(CDemonActorType *)((int)pCVar3 + 0x3c)",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)((CDemonActorType *)((int)pCVar4 + 0x3c))->class_name + 4))(pCVar4);",
+      "text": "(**(code **)(*(int *)((CDemonActorType *)((int)pCVar3 + 0x3c))->class_name + 4))(pCVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
       "line": 182,
-      "match": "(CDemonActorType *)((int)pCVar4 + 0x3c)",
+      "match": "(CDemonActorType *)((int)pCVar3 + 0x3c)",
       "severity": "moderate",
-      "text": "pCVar4 = (CRainDrop *)(((CDemonActorType *)((int)pCVar4 + 0x3c))->class_name + 4);",
+      "text": "pCVar3 = (CRainDrop *)(((CDemonActorType *)((int)pCVar3 + 0x3c))->class_name + 4);",
       "type": "pointer_cast"
     }
   ]

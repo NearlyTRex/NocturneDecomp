@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_fire_cpp_safeAcos_FUN_00496c10(void)
+; float __cdecl core_fire_cpp_safeAcos_FUN_00496c10(float value)
 ;
+; Parameters:
+; float            Stack[0x4]:4   value
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c04b0

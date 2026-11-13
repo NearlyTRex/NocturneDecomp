@@ -60,10 +60,9 @@ void __cdecl core_sentinel_cpp_CSentinel_process_FUN_0054bc90(CSentinel *this_pt
   uint uStack_170;
   float afStack_16c [4];
   float fStack_15c;
-  uint uStack_158;
+  CVector3f CStack_158;
   float fStack_14c;
-  float fStack_140;
-  float fStack_13c;
+  float afStack_148 [4];
   float fStack_138;
   float fStack_134;
   float fStack_130;
@@ -141,9 +140,9 @@ LAB_0054bcec:
         afStack_214[3] = 0.0;
         core_actor_cpp_FUN_00408b40(this_ptr,afStack_214 + 2);
         fStack_200 = fStack_11c;
-        afStack_1fc[(uint)bVar10 * -2] = afStack_16c[(uint)bVar10 * -2 + 0x15];
+        afStack_1fc[(uint)bVar10 * -2] = afStack_148[(uint)bVar10 * -2 + 0xc];
         afStack_1fc[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
-             afStack_16c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x16];
+             afStack_148[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd];
         pCVar3 = (this_ptr->base).victim;
         fVar15 = fStack_200 - (pCVar3->base).location.position.x;
         fVar17 = afStack_1fc[1] - (pCVar3->base).location.position.z;
@@ -331,10 +330,10 @@ switchD_0054c14a_caseD_2:
             fStack_1a4 = (pCVar3->base).location.position.z -
                          (this_ptr->base).base.base.location.position.z;
             afStack_128[0] = fStack_1ac;
-            afStack_16c[(uint)bVar10 * -2 + 0x12] = afStack_1d8[(uint)bVar10 * -2 + 0xc];
-            afStack_16c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x13] =
+            afStack_148[(uint)bVar10 * -2 + 9] = afStack_1d8[(uint)bVar10 * -2 + 0xc];
+            afStack_148[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 10] =
                  afStack_1d8[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd];
-            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(afStack_16c + 0x11);
+            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(afStack_148 + 8);
             uStack_218 = afStack_1fc[2];
             afStack_214[(uint)bVar10 * -2] = afStack_1fc[(uint)bVar10 * -2 + 3];
             afStack_214[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
@@ -388,16 +387,16 @@ switchD_0054c14a_caseD_3:
                   ((CCharacter *)this_ptr,&(((this_ptr->base).victim)->base).location.position,
                    pCVar9,pCVar14,fVar15,fVar17);
         pCVar3 = (this_ptr->base).victim;
-        fStack_140 = (this_ptr->base).base.base.location.position.x -
-                     (pCVar3->base).location.position.x;
-        fStack_13c = (this_ptr->base).base.base.location.position.y -
-                     (pCVar3->base).location.position.y;
+        afStack_148[2] =
+             (this_ptr->base).base.base.location.position.x - (pCVar3->base).location.position.x;
+        afStack_148[3] =
+             (this_ptr->base).base.base.location.position.y - (pCVar3->base).location.position.y;
         fStack_138 = (this_ptr->base).base.base.location.position.z -
                      (pCVar3->base).location.position.z;
-        fStack_134 = fStack_140;
-        afStack_16c[(uint)bVar10 * -2 + 0xf] = afStack_16c[(uint)bVar10 * -2 + 0xc];
-        afStack_16c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x10] =
-             afStack_16c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd];
+        fStack_134 = afStack_148[2];
+        afStack_148[(uint)bVar10 * -2 + 6] = afStack_148[(uint)bVar10 * -2 + 3];
+        afStack_148[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7] =
+             afStack_148[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
         if (_DAT_00604e54 <=
             SQRT(fStack_12c * fStack_12c + fStack_134 * fStack_134 + fStack_130 * fStack_130)) {
           iVar4 = core_actor_cpp_randomChance_FUN_0040cd00(0.1);
@@ -445,10 +444,10 @@ switchD_0054c14a_caseD_4:
       fVar15 = 1.0;
       fStack_14 = SStack_290.damage_amount;
       core_xform_cpp_FUN_005b5080(&DAT_02c8af28,pCStack_44 + _DAT_01e82104);
-      pfVar12 = afStack_16c + 0x17;
+      pfVar12 = afStack_148 + 0xe;
       afStack_110[0] = (float)uStack_bc;
-      afStack_16c[(uint)bVar10 * -2 + 0x18] = afStack_f4[(uint)bVar10 * -2 + 0xf];
-      afStack_16c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x19] =
+      afStack_148[(uint)bVar10 * -2 + 0xf] = afStack_f4[(uint)bVar10 * -2 + 0xf];
+      afStack_148[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x10] =
            afStack_f4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x10];
       core_actor_cpp_FUN_00408b40(this_ptr,pfVar12);
       pCVar14 = &CStack_68;
@@ -484,20 +483,21 @@ switchD_0054c14a_caseD_4:
 switchD_0054c14a_caseD_9:
       if (((this_ptr->base).pool_me == 0) &&
          ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
-        core_skeleton_cpp_FUN_00569040(&(this_ptr->base).base.model,0);
+        core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
+                  (&(this_ptr->base).base.model,0,&CStack_158);
         pfVar12 = afStack_f4 + 0x11;
-        afStack_b0[0] = (float)uStack_158;
-        afStack_f4[(uint)bVar10 * -2 + 0x12] = afStack_16c[(uint)bVar10 * -2 + 6];
+        afStack_b0[0] = CStack_158.x;
+        afStack_f4[(uint)bVar10 * -2 + 0x12] = *(float *)((int)&CStack_158 + (uint)bVar10 * -8 + 4);
         afStack_f4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x13] =
-             afStack_16c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7];
+             *(float *)((int)&CStack_158 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
         core_actor_cpp_FUN_00408b40(this_ptr,pfVar12);
         blood_type = BLOOD_TYPE_RED;
         pCVar14 = &CStack_17c;
         CStack_17c.x = fStack_14c;
-        *(float *)((int)&CStack_17c + (uint)bVar10 * -8 + 4) = afStack_16c[(uint)bVar10 * -2 + 9];
+        *(float *)((int)&CStack_17c + (uint)bVar10 * -8 + 4) = afStack_148[(uint)bVar10 * -2];
         this_ptr_01 = g_CGorePtr;
         *(float *)((int)&CStack_17c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-             afStack_16c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 10];
+             afStack_148[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
         core_gore_cpp_CGore_createBloodPool_FUN_004e62e0(this_ptr_01,pCVar14,blood_type);
         (this_ptr->base).pool_me = 1;
       }

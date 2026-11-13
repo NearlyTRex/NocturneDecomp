@@ -11,10 +11,10 @@ void __cdecl core_charactr_cpp_CCharacter_computeBoundingBox_FUN_00429390(CChara
 {
   CVector3f *pCVar1;
   int iVar2;
-  float *pfVar3;
+  CBoundingBox3D *pCVar3;
   float *pfVar4;
   byte bVar5;
-  float local_3c [6];
+  CBoundingBox3D local_3c;
   float local_24;
   float local_20;
   float local_1c;
@@ -24,12 +24,13 @@ void __cdecl core_charactr_cpp_CCharacter_computeBoundingBox_FUN_00429390(CChara
   
   bVar5 = 0;
   if ((this_ptr->model).model_name[0] != '\0') {
-    core_skeleton_cpp_FUN_005487d0(&this_ptr->model);
-    pfVar3 = local_3c;
+    core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_005487d0
+              (&this_ptr->model,&local_3c);
+    pCVar3 = &local_3c;
     pfVar4 = &local_24;
     for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *pfVar4 = *pfVar3;
-      pfVar3 = pfVar3 + (uint)bVar5 * -2 + 1;
+      *pfVar4 = (pCVar3->min).x;
+      pCVar3 = (CBoundingBox3D *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
       pfVar4 = pfVar4 + (uint)bVar5 * -2 + 1;
     }
     if (&this_ptr->cached_bounding_box != (CBoundingBox3D *)&local_24) {

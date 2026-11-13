@@ -46,7 +46,7 @@
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00559220
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_005592d0
 ;   core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_00557230
-;   core_skeleton.cpp_FUN_00569040
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
 ;   crt_memory.c___arrinit_FUN_005c0357
 ;
@@ -249,8 +249,8 @@ section .text
     PUSH EAX                            ; 0058ee11
     LEA ESI,[ESP + 0xf0]                ; 0058ee12
     LEA EDI,[ESP + 0x144]               ; 0058ee19
-    CALL core_skeleton.cpp_FUN_00569040 ; 0058ee20
-        ;   XREF to: 00569040 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569040()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040 ; 0058ee20
+        ;   XREF to: 00569040 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     LEA ESI,[ESP + 0xf0]                ; 0058ee25
     LEA EAX,[ESP + 0x144]               ; 0058ee2c
     ADD ESP,0x8                         ; 0058ee33
@@ -405,8 +405,8 @@ section .text
     PUSH EAX                            ; 0058f066
     LEA ESI,[ESP + 0x12c]               ; 0058f067
     LEA EDI,[ESP + 0x114]               ; 0058f06e
-    CALL core_skeleton.cpp_FUN_00569040 ; 0058f075
-        ;   XREF to: 00569040 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569040()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040 ; 0058f075
+        ;   XREF to: 00569040 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     LEA ESI,[ESP + 0x12c]               ; 0058f07a
     LEA EDX,[ESP + 0x114]               ; 0058f081
     ADD ESP,0x8                         ; 0058f088

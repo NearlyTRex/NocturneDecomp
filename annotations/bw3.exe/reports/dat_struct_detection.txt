@@ -64,28 +64,28 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x7e2b34                       ; 0042b103 | DAT_007e2b34
 
   DAT_005fc9ac  value=0x5FC9AC (6277548)  refs=3
-    FUN_004980b0
-      PUSH 0x5fc9ac                       ; 00498145 | DAT_005fc9ac
-    FUN_00499690
-      PUSH 0x5fc9ac                       ; 00499e94 | DAT_005fc9ac
-    FUN_004a24a0
+    CFireEffect_loadAssets
       PUSH 0x5fc9ac                       ; 004a24e0 | DAT_005fc9ac
+    CFireball_render
+      PUSH 0x5fc9ac                       ; 00499e94 | DAT_005fc9ac
+    CSpark_render
+      PUSH 0x5fc9ac                       ; 00498145 | DAT_005fc9ac
 
   DAT_005fdaa4  value=0x5FDAA4 (6281892)  refs=3
-    FUN_0049f380
-      MOV EAX,0x5fdaa4                    ; 0049f3e6 | DAT_005fdaa4
-    FUN_0049f520
-      ADD EAX,0x5fdaa4                    ; 0049f905 | DAT_005fdaa4
-    FUN_004a4130
+    CFireEffect_preloadLightningBoltStyle
       MOV EAX,0x5fdaa4                    ; 004a41b5 | DAT_005fdaa4
+    CLightningBolt_render
+      ADD EAX,0x5fdaa4                    ; 0049f905 | DAT_005fdaa4
+    loadLightningBoltAssets
+      MOV EAX,0x5fdaa4                    ; 0049f3e6 | DAT_005fdaa4
 
   DAT_005fdb34  value=0x5FDB34 (6282036)  refs=3
-    FUN_0049f380
-      MOV EAX,0x5fdb34                    ; 0049f3d5 | DAT_005fdb34
-    FUN_0049f520
-      ADD EAX,0x5fdb34                    ; 0049f8d7 | DAT_005fdb34
-    FUN_004a4130
+    CFireEffect_preloadLightningBoltStyle
       MOV EAX,0x5fdb34                    ; 004a4194 | DAT_005fdb34
+    CLightningBolt_render
+      ADD EAX,0x5fdb34                    ; 0049f8d7 | DAT_005fdb34
+    loadLightningBoltAssets
+      MOV EAX,0x5fdb34                    ; 0049f3d5 | DAT_005fdb34
 
   DAT_006084b6  value=0x6084B6 (6325430)  refs=3
     FUN_005ae4f8
@@ -162,38 +162,38 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_005fc97c  value=0x5FC97C (6277500)  refs=2
     CBulletHole_render
       PUSH 0x5fc97c                       ; 00497904 | DAT_005fc97c
-    FUN_004a24a0
+    CFireEffect_loadAssets
       PUSH 0x5fc97c                       ; 004a24b8 | DAT_005fc97c
 
   DAT_005fc994  value=0x5FC994 (6277524)  refs=2
     CBulletHole_render
       PUSH 0x5fc994                       ; 004978f3 | DAT_005fc994
-    FUN_004a24a0
+    CFireEffect_loadAssets
       PUSH 0x5fc994                       ; 004a24cc | DAT_005fc994
 
+  DAT_005fc9c4  value=0x5FC9C4 (6277572)  refs=2
+    CFireEffect_loadAssets
+      PUSH 0x5fc9c4                       ; 004a24f4 | DAT_005fc9c4
+    CSpark_render
+      PUSH 0x5fc9c4                       ; 00498655 | DAT_005fc9c4
+
   DAT_005fd804  value=0x5FD804 (6281220)  refs=2
+    CFireEffect_preloadGunFlameStyle
+      MOV EAX,0x5fd804                    ; 004a4264 | DAT_005fd804
     CGunFlame_render
       ADD EAX,0x5fd804                    ; 0049e55c | DAT_005fd804
-    FUN_004a41d0
-      MOV EAX,0x5fd804                    ; 004a4264 | DAT_005fd804
 
   DAT_005fd8dc  value=0x5FD8DC (6281436)  refs=2
+    CFireEffect_preloadGunFlameStyle
+      MOV EAX,0x5fd8dc                    ; 004a4253 | DAT_005fd8dc
     CGunFlame_render
       ADD EAX,0x5fd8dc                    ; 0049eef8 | DAT_005fd8dc
-    FUN_004a41d0
-      MOV EAX,0x5fd8dc                    ; 004a4253 | DAT_005fd8dc
-
-  DAT_005fc9c4  value=0x5FC9C4 (6277572)  refs=2
-    FUN_004980b0
-      PUSH 0x5fc9c4                       ; 00498655 | DAT_005fc9c4
-    FUN_004a24a0
-      PUSH 0x5fc9c4                       ; 004a24f4 | DAT_005fc9c4
 
   DAT_005fc9dc  value=0x5FC9DC (6277596)  refs=2
-    FUN_004980b0
-      PUSH 0x5fc9dc                       ; 00498666 | DAT_005fc9dc
-    FUN_00499690
+    CFireball_render
       PUSH 0x5fc9dc                       ; 00499e83 | DAT_005fc9dc
+    CSpark_render
+      PUSH 0x5fc9dc                       ; 00498666 | DAT_005fc9dc
 
   DAT_005fde88  value=0x5FDE88 (6282888)  refs=2
     CFlame_renderTransparent
@@ -373,6 +373,10 @@ Consider removing the Ghidra label and leaving the raw number.
     CCrater_render
       PUSH 0x60b0a4                       ; 0049da9c | DAT_0060b0a4
 
+  DAT_005fca9c  value=0x5FCA9C (6277788)  refs=1
+    CFireball_render
+      PUSH 0x5fca9c                       ; 004999a4 | DAT_005fca9c
+
   DAT_005fca3c  value=0x5FCA3C (6277692)  refs=1
     CFirefly_render
       PUSH 0x5fca3c                       ; 00498bc0 | DAT_005fca3c
@@ -414,20 +418,16 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x5fdbdc                       ; 004a124e | DAT_005fdbdc
 
   DAT_005fc9f4  value=0x5FC9F4 (6277620)  refs=1
-    FUN_004980b0
+    CSpark_render
       PUSH 0x5fc9f4                       ; 00498677 | DAT_005fc9f4
 
   DAT_005fca0c  value=0x5FCA0C (6277644)  refs=1
-    FUN_004980b0
+    CSpark_render
       PUSH 0x5fca0c                       ; 00498688 | DAT_005fca0c
 
   DAT_005fca24  value=0x5FCA24 (6277668)  refs=1
-    FUN_004980b0
+    CSpark_render
       PUSH 0x5fca24                       ; 00498699 | DAT_005fca24
-
-  DAT_005fca9c  value=0x5FCA9C (6277788)  refs=1
-    FUN_00499690
-      PUSH 0x5fca9c                       ; 004999a4 | DAT_005fca9c
 
   DAT_005fde70  value=0x5FDE70 (6282864)  refs=1
     CFlame_renderTransparent
@@ -4135,6 +4135,7 @@ ISOLATED DAT_ GLOBALS (100 - not part of any cluster)
   DAT_01b4b848                    addr=01b4b848    type=undefined4      refs=2
   DAT_005fc964                    addr=005fc964    type=undefined4      refs=2
   DAT_00780000                    addr=00780000    type=undefined4      refs=2
+  DAT_01cf61d0                    addr=01cf61d0    type=undefined4      refs=2
   DAT_01cfaff4                    addr=01cfaff4    type=undefined4      refs=2
   DAT_01cefe7c                    addr=01cefe7c    type=undefined4      refs=2  near: g_FireballPool[0].base.lifetime_remaining(-40)
   DAT_01cba2b4                    addr=01cba2b4    type=undefined4      refs=2  near: CFirefly_ARRAY_01cba2b8[0].base.lifetime_remaining(-40)
@@ -4146,9 +4147,8 @@ ISOLATED DAT_ GLOBALS (100 - not part of any cluster)
   DAT_01cf2780                    addr=01cf2780    type=undefined4      refs=2  near: g_RockPool[0].base.lifetime_remaining(-40)
   DAT_01d028c4                    addr=01d028c4    type=undefined4      refs=2  near: g_ShellPool[0].base.lifetime_remaining(-40)
   DAT_01cb4eb0                    addr=01cb4eb0    type=undefined4      refs=2  near: g_SparkPool[0].base.lifetime_remaining(-40)
-  DAT_01d01ab0                    addr=01d01ab0    type=undefined4      refs=2
-  DAT_01cf61d0                    addr=01cf61d0    type=undefined4      refs=2
   DAT_01d0ce7c                    addr=01d0ce7c    type=undefined4      refs=2  near: g_CFirestaffClassInfo.name_hash(-108)
+  DAT_01d01ab0                    addr=01d01ab0    type=undefined4      refs=2
   DAT_01d5be80                    addr=01d5be80    type=undefined4      refs=2 [likely float]
   DAT_02701528                    addr=02701528    type=undefined4      refs=2 [likely float]
   DAT_02cf5850                    addr=02cf5850    type=undefined4      refs=2  near: g_CStrListInstance(+16)

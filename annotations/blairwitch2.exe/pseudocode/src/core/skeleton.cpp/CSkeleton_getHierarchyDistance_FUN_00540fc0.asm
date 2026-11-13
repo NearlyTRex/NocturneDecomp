@@ -11,11 +11,11 @@
 ; XREF[7]:
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40 at 00546fb2
 ;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_005466c0 at 00546718
+;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60 at 00545b04
 ;   core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_005461c0 at 0054625d
 ;   core_skeleton.cpp_CDeformableModelInstance_copyBoneRotations_FUN_00546650 at 0054667e
 ;   core_skeleton.cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_00547110 at 00547136
-;   core_skeleton.cpp_FUN_00544f80 at 00545014
-;   core_skeleton.cpp_FUN_00545a60 at 00545b04
+;   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80 at 00545014
 ;
 ; *****************************************************************************
 

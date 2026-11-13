@@ -14,7 +14,7 @@ void __cdecl core_lightsta_cpp_CLightStaff_setup_FUN_004e3eb0(CLightStaff *this_
   sound_sndmain_cpp_preloadSfx_FUN_00556230("wp_lightningstaff.wav");
   sound_sndmain_cpp_preloadSfx_FUN_00556230("wp_lightningstaff_loop.wav");
   sound_sndmain_cpp_preloadSfx_FUN_00556230("wp_lightningstaff_arc.wav");
-  core_fire_cpp_FUN_004a4130(0x01C73654);
+  core_fire_cpp_CFireEffect_preloadLightningBoltStyle_FUN_004a4130(0x01C73654,3);
   core_charactr_cpp_FUN_0042f280();
   return;
 }

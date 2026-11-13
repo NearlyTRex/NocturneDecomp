@@ -6,24 +6,21 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 int __cdecl core_demnfolk_cpp_CDemnfolk_renderTransparent_FUN_00458200(CDemnfolk *this_ptr)
 
 {
   int iVar1;
-  uint *puVar2;
-  uint *puVar3;
+  CMatrix3x4f *pCVar2;
+  float *pfVar3;
   byte bVar4;
   float afStackY_10dc [990];
   CVector3f *position;
   CVector3f *rotation;
   float fov;
-  byte *puVar5;
-  float *pfVar6;
+  uint *puVar5;
+  byte *puVar6;
   float falloff;
-  uint auStack_154 [12];
-  uint auStack_124 [12];
+  CMatrix3x4f CStack_124;
   uint uStack_f4;
   float afStack_f0 [2];
   CVector3f CStack_e8;
@@ -50,25 +47,26 @@ int __cdecl core_demnfolk_cpp_CDemnfolk_renderTransparent_FUN_00458200(CDemnfolk
   
   bVar4 = 0;
   if (((this_ptr->base).base.was_rendered_opaque != 0) && (this_ptr->is_miner_zombie != 0)) {
-    core_skeleton_cpp_FUN_0054d9c0(&(this_ptr->base).base.model,this_ptr->bone_indices[0]);
-    puVar2 = auStack_124;
-    puVar3 = auStack_154;
+    core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0054d9c0
+              (&(this_ptr->base).base.model,this_ptr->bone_indices[0],&CStack_124);
+    pCVar2 = &CStack_124;
+    pfVar3 = (float *)&stack0xfffffeac;
     for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar3 = *puVar2;
-      puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-      puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+      *pfVar3 = pCVar2->m[0].w;
+      pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
+      pfVar3 = pfVar3 + (uint)bVar4 * -2 + 1;
     }
     uStack_d8 = 0x3f000000;
     uStack_d4 = 0x3f000000;
     uStack_dc = 0;
-    core_xform_cpp_FUN_00583260(&uStack_dc,auStack_154);
-    puVar5 = (byte *)&uStack_f4;
+    core_xform_cpp_FUN_00583260(&uStack_dc,&stack0xfffffeac);
+    puVar5 = &uStack_f4;
     uStack_f4 = afStack_cc[5];
-    *(float *)((int)afStack_f0 + (uint)bVar4 * 0xfffffff8) = afStack_b4[(uint)bVar4 * -2];
-    afStack_cc[(uint)bVar4 * -2 + (uint)bVar4 * -2 + -8] =
+    afStack_f0[(uint)bVar4 * -2] = afStack_b4[(uint)bVar4 * -2];
+    afStack_f0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
          afStack_b4[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
     core_actor_cpp_FUN_00408b80(this_ptr,puVar5);
-    puVar5 = (byte *)auStack_154;
+    puVar6 = &stack0xfffffeac;
     afStack_94[0] = 0.0;
     afStack_94[1] = 0.0;
     afStack_94[2] = 0.0;
@@ -76,14 +74,14 @@ int __cdecl core_demnfolk_cpp_CDemnfolk_renderTransparent_FUN_00458200(CDemnfolk
     *(float *)((int)&CStack_e8 + (uint)bVar4 * -8 + 4) = afStack_b4[(uint)bVar4 * -2 + 3];
     *(float *)((int)&CStack_e8 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
          afStack_b4[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
-    core_xform_cpp_FUN_00583260(afStack_b4 + 8,puVar5);
-    pfVar6 = afStack_84 + 5;
+    core_xform_cpp_FUN_00583260(afStack_b4 + 8,puVar6);
+    pfVar3 = afStack_84 + 5;
     afStack_70[0] = (float)uStack_a0;
     afStack_84[(uint)bVar4 * -2 + 6] = afStack_b4[(uint)bVar4 * -2 + 6];
     afStack_84[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7] =
          afStack_b4[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
-    core_actor_cpp_FUN_00408b00(this_ptr,pfVar6);
-    puVar5 = (byte *)auStack_154;
+    core_actor_cpp_FUN_00408b00(this_ptr,pfVar3);
+    puVar6 = &stack0xfffffeac;
     afStack_cc[4] = 1.0;
     afStack_cc[2] = 0.0;
     afStack_cc[3] = 0.0;
@@ -91,13 +89,13 @@ int __cdecl core_demnfolk_cpp_CDemnfolk_renderTransparent_FUN_00458200(CDemnfolk
     afStack_cc[(uint)bVar4 * -2] = afStack_54[(uint)bVar4 * -2 + 0xc];
     afStack_cc[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
          afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0xd];
-    core_xform_cpp_FUN_00583260(afStack_cc + 2,puVar5);
-    pfVar6 = afStack_54 + 8;
+    core_xform_cpp_FUN_00583260(afStack_cc + 2,puVar6);
+    pfVar3 = afStack_54 + 8;
     afStack_34[0] = afStack_94[3];
     afStack_54[(uint)bVar4 * -2 + 9] = afStack_84[(uint)bVar4 * -2];
     afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 10] =
          afStack_84[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-    core_actor_cpp_FUN_00408b00(this_ptr,pfVar6);
+    core_actor_cpp_FUN_00408b00(this_ptr,pfVar3);
     fStack_1c = afStack_84[2];
     afStack_54[(uint)bVar4 * -2 + 0xf] = afStack_84[(uint)bVar4 * -2 + 3];
     afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0x10] =

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_004a24a0 at 004a2543
+;   core_fire.cpp_CFireEffect_loadAssets_FUN_004a24a0 at 004a2543
 ;
 ; Referenced Globals:
 ;   undefined4 s_gunflash_kfm_005c05bf+1

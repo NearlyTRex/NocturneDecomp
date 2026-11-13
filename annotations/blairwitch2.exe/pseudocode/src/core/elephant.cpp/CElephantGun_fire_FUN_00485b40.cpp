@@ -298,7 +298,7 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_00485b40(CElephantGun *this_
   *(uint *)((int)&CStack_6c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
        *(uint *)((int)&CStack_a8 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
   CStack_6c.y = CStack_6c.y + _DAT_005d2b56;
-  core_fire_cpp_FUN_0049d120(0x01C3DEB4,&CStack_6c,rotation_matrix);
+  core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0049d120(0x01C3DEB4,&CStack_6c,rotation_matrix);
   core_sound_cpp_CSound_playActorSound_FUN_0055ae50
             (0x0264B290,(CDemonActor *)this_ptr,"elephantgun.wav",&CStack_a8);
   (this_ptr->base).fire_cooldown_timer = 1.0;

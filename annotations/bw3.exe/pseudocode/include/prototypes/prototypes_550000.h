@@ -32,14 +32,14 @@
 // FUNCTION PROTOTYPES - Range 0x550000
 // =============================================================================
 
-CDeformableModel * core_skeleton_cpp_FUN_005500b0(char *param_1);
-void __cdecl core_skeleton_cpp_FUN_005501a0(void);
+CDeformableModel * __cdecl core_skeleton_cpp_getDeformableModel_FUN_005500b0(char *model_filename);
+void __cdecl core_skeleton_cpp_freeAllModels_FUN_005501a0(void);
 CSkeleton * __cdecl core_skeleton_cpp_loadSkeleton_FUN_005501e0(char *filename);
-void __cdecl core_skeleton_cpp_FUN_005502d0(void);
-void __cdecl core_skeleton_cpp_FUN_00550310(char *output_buffer);
-void core_skeleton_cpp_FUN_005503c0(void);
-void core_skeleton_cpp_FUN_005503f0(void);
-void core_skeleton_cpp_FUN_00550450(char *param_1);
+void __cdecl core_skeleton_cpp_freeAllSkeletons_FUN_005502d0(void);
+void __cdecl core_skeleton_cpp_getMemoryStats_FUN_00550310(char *output_buffer);
+void __cdecl core_skeleton_cpp_clearModelAndSkeletonInUseFlags_FUN_005503c0(void);
+void __cdecl core_skeleton_cpp_freeUnusedModelsAndSkeletons_FUN_005503f0(void);
+void __cdecl core_skeleton_cpp_markModelInUse_FUN_00550450(char *model_filename);
 float __cdecl core_skeleton_cpp_calculateDistanceSquared_FUN_005504e0(CVector3f *point1,CVector3f *point2);
 SVert * __cdecl core_skeleton_cpp_SVert_ctor_FUN_00550520(SVert *this_ptr);
 CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_arrdtor40_FUN_00550540(CSkeleton *this_ptr,uint flags);

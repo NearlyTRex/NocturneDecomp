@@ -15,7 +15,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0054d3f0 at 0054d48d
 ;   core_skeleton.cpp_CDeformableModelInstance_copyBoneRotations_FUN_0054d880 at 0054d8ae
 ;   core_skeleton.cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_0054e340 at 0054e366
-;   core_skeleton.cpp_FUN_0054c1b0 at 0054c244
+;   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0054c1b0 at 0054c244
 ;
 ; *****************************************************************************
 

@@ -15,8 +15,8 @@ void core_main_c_FUN_00503a30(void)
   core_mission_cpp_CDemonMission_clearMission_FUN_0051a3a0(0x01D2C900);
   core_sound_cpp_shutdownSoundSystem_FUN_0057cb90();
   core_dmodel_cpp_freeAllModels_FUN_00468830();
-  core_skeleton_cpp_FUN_0056b610();
-  core_skeleton_cpp_FUN_0056b740();
+  core_skeleton_cpp_freeAllModels_FUN_0056b610();
+  core_skeleton_cpp_freeAllSkeletons_FUN_0056b740();
   core_marquee_cpp_FUN_00507340();
   wincore_winrun_cpp_endPeriod_FUN_005b2410();
   engine_2d_c_cleanupGraphicsSystem_FUN_00401120();

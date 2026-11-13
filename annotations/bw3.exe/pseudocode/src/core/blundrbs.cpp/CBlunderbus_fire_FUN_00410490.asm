@@ -31,11 +31,11 @@
 ;   core_actor.cpp_FUN_00408bf0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
+;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_004a2090
 ;   core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_004a2010
 ;   core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004a2450
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004a2560
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0
-;   core_fire.cpp_FUN_004a2090
 ;   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004cc5d0
 ;   core_glass.cpp_FUN_004cc040
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004ce9c0
@@ -1112,8 +1112,8 @@ section .text
     PUSH ECX                            ; 00411435
     LEA ESI,[ESP + 0x2e4]               ; 00411436
     LEA EDI,[ESP + 0x380]               ; 0041143d
-    CALL core_fire.cpp_FUN_004a2090     ; 00411444
-        ;   XREF to: 004a2090 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a2090()
+    CALL core_fire.cpp_CFireEffect_createBulletImpact_FUN_004a2090 ; 00411444
+        ;   XREF to: 004a2090 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createBulletImpact_FUN_004a2090(CFireEffect * this_ptr, CVector3f * impact_pos, CVector3f * surface_normal, int ground_type, ...)
     MOV EAX,[0x00603b28]                ; 00411449 | g_CDemonSetPtr
     LEA EBX,[ESP + 0x350]               ; 0041144e
     ADD ESP,0x18                        ; 00411455

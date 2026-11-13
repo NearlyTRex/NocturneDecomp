@@ -9,7 +9,7 @@
 ;
 ; Called Functions:
 ;   core_morph.cpp_FUN_004fb1f0
-;   core_skeleton.cpp_FUN_00547b90
+;   core_skeleton.cpp_CSkeleton_free_FUN_00547b90
 ;   crt_unknown.c_FUN_005a5ff7
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     PUSH 0x1                            ; 00547a5a
     MOV EDX,dword ptr [ESP + 0x8]       ; 00547a5c
     PUSH EDX                            ; 00547a60
-    CALL core_skeleton.cpp_FUN_00547b90 ; 00547a61
-        ;   XREF to: 00547b90 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00547b90()
+    CALL core_skeleton.cpp_CSkeleton_free_FUN_00547b90 ; 00547a61
+        ;   XREF to: 00547b90 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CSkeleton_free_FUN_00547b90(CSkeleton * this_ptr, int free_motion_list)
     ADD ESP,0x8                         ; 00547a66
     PUSH 0x1                            ; 00547a69
     MOV ECX,dword ptr [ESP + 0x8]       ; 00547a6b

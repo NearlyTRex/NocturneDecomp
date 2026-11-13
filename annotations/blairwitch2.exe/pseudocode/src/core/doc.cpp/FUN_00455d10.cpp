@@ -223,7 +223,7 @@ LAB_00455d67:
   pfVar2[(uint)bVar7 * -2 + 1] = afStack_17c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 9];
   (pfVar2 + (uint)bVar7 * -2 + 1)[(uint)bVar7 * -2 + 1] =
        (afStack_17c + (uint)bVar7 * -2 + (uint)bVar7 * -2 + 9)[(uint)bVar7 * -2 + 1];
-  blend_callback = core_skeleton_cpp_FUN_00544cc0;
+  blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_00544cc0;
   fVar8 = param_1[0xde].particle_systems[1].position.x;
   iVar5 = local_24;
   core_xform_cpp_multiplyQuaternion_FUN_00593c60(&local_180,&local_210);

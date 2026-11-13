@@ -8,13 +8,13 @@
 ;
 ; XREF[8]:
 ;   core_cloth.cpp_FUN_005ae680 at 005ae9b2
+;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_005487d0 at 005487ea
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890 at 0054789e
 ;   core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_00544930 at 0054493c
 ;   core_skeleton.cpp_CDeformableModel_computeFarthestChildBones_FUN_00544ae0 at 00544af0
 ;   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_00544380 at 005443d4
-;   core_skeleton.cpp_FUN_005424b0 at 005424bc
-;   core_skeleton.cpp_FUN_005426c0 at 005426cc
-;   core_skeleton.cpp_FUN_005487d0 at 005487ea
+;   core_skeleton.cpp_CDeformableModel_renderBones_FUN_005426c0 at 005426cc
+;   core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_005424b0 at 005424bc
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005e6dad

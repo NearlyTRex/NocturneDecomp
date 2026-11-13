@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_00544380 at 005443c8
-;   core_skeleton.cpp_FUN_00548e80 at 00548f0f
+;   core_skeleton.cpp_getDeformableModel_FUN_00548e80 at 00548f0f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0060b280

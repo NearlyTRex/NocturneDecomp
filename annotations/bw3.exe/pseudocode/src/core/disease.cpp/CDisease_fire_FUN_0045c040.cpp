@@ -15,8 +15,9 @@ int __cdecl core_disease_cpp_CDisease_fire_FUN_0045c040(CDisease *this_ptr)
   iVar1 = core_weapon_cpp_CWeapon_fire_FUN_0057b880(&this_ptr->base);
   position = &(this_ptr->base).base.location;
   if (iVar1 != 0) {
-    core_fire_cpp_FUN_004a39d0
-              (0x01C73654,position,&(this_ptr->base).base.orient,&this_ptr->toss_velocity);
+    core_fire_cpp_CFireEffect_createDiseaseToss_FUN_004a39d0
+              (0x01C73654,&position->position,&(this_ptr->base).base.orient,
+               &this_ptr->toss_velocity);
     core_sound_cpp_CSound_playActorSound_FUN_005609d0
               (0x02CF5680,(CDemonActor *)this_ptr,"wp_disease_throw.wav",
                &position->position);

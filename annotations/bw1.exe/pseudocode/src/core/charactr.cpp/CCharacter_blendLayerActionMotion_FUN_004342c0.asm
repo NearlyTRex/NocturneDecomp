@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   blend_mode
 ;
 ; Called Functions:
-;   core_skeleton.cpp_FUN_00568100
+;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     PUSH ESI                            ; 00434300
     ADD ECX,0x158                       ; 00434301
     PUSH ECX                            ; 00434307
-    CALL core_skeleton.cpp_FUN_00568100 ; 00434308
-        ;   XREF to: 00568100 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00568100()
+    CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100 ; 00434308
+        ;   XREF to: 00568100 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
     ADD ESP,0x18                        ; 0043430d
     POP ESI                             ; 00434310
     POP EBX                             ; 00434311

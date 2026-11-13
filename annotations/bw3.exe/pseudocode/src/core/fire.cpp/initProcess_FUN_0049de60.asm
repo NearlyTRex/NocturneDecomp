@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_004a1760 at 004a19be
+;   core_fire.cpp_CFireEffect_process_FUN_004a1760 at 004a19be
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_fire_cpp_005c0816

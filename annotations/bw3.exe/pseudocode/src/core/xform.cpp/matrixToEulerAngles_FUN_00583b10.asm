@@ -37,7 +37,7 @@
 ;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042e3a0 at 0042e441
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00431d10 at 00431eb5
 ;   core_course.cpp_CCourse_evaluate_FUN_00444ac0 at 00444b24
-;   core_fire.cpp_FUN_00497290 at 0049749f
+;   core_fire.cpp_CBulletHole_init_FUN_00497290 at 0049749f
 ;   core_ladder.cpp_CLadder_cacheRelativePosition_FUN_004dfa70 at 004dfb65
 ;   core_ladder.cpp_CLadder_updatePositionFromMaster_FUN_004df930 at 004dfa17
 ;   ... and 12 more

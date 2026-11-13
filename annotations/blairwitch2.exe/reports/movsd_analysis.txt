@@ -76,7 +76,7 @@ FIXABLE 5x MOVSD SITES (20 bytes copy, 1 sites)
 ----------------------------------------------------------------------------------------------------
 FIXABLE 4x MOVSD SITES (16 bytes copy, 252 sites)
 ----------------------------------------------------------------------------------------------------
-  FUN_00544f80                                                            22 sites  ~858 bytes
+  CDeformableModelInstance_updateMotion_FUN_00544f80                      22 sites  ~858 bytes
     0x005450d7  4x MOVSD (16 bytes copy, 11 bytes borrowable)
     0x00545323  4x MOVSD (16 bytes copy, 11 bytes borrowable)
     0x005453b2  4x MOVSD (16 bytes copy, 11 bytes borrowable)
@@ -238,7 +238,7 @@ FIXABLE 4x MOVSD SITES (16 bytes copy, 252 sites)
     0x00567e60  4x MOVSD (16 bytes copy, 9 bytes borrowable)
     0x00567f76  4x MOVSD (16 bytes copy, 5 bytes borrowable)
     0x00567fbc  4x MOVSD (16 bytes copy, 5 bytes borrowable)
-  FUN_00545a60                                                             8 sites  ~312 bytes
+  CDeformableModelInstance_blendMotion_FUN_00545a60                        8 sites  ~312 bytes
     0x00545b7e  4x MOVSD (16 bytes copy, 5 bytes borrowable)
     0x00545ba6  4x MOVSD (16 bytes copy, 10 bytes borrowable)
     0x00545f3b  4x MOVSD (16 bytes copy, 8 bytes borrowable)
@@ -282,7 +282,7 @@ FIXABLE 4x MOVSD SITES (16 bytes copy, 252 sites)
     0x00429bad  4x MOVSD (16 bytes copy, 8 bytes borrowable)
     0x00429bca  4x MOVSD (16 bytes copy, 10 bytes borrowable)
     0x00429c08  4x MOVSD (16 bytes copy, 8 bytes borrowable)
-  FUN_00546da0                                                             4 sites  ~156 bytes
+  CDeformableModelInstance_aimBoneAtTarget_FUN_00546da0                    4 sites  ~156 bytes
     0x00546e95  4x MOVSD (16 bytes copy, 8 bytes borrowable)
     0x00546ebc  4x MOVSD (16 bytes copy, 8 bytes borrowable)
     0x00546ee1  4x MOVSD (16 bytes copy, 8 bytes borrowable)
@@ -364,15 +364,15 @@ FIXABLE 4x MOVSD SITES (16 bytes copy, 252 sites)
     0x0052d855  4x MOVSD (16 bytes copy, 11 bytes borrowable)
   CDeformableModelInstance_blendBoneRotations_FUN_005466c0                 1 sites  ~39 bytes
     0x00546786  4x MOVSD (16 bytes copy, 10 bytes borrowable)
+  CDeformableModelInstance_computeBoneTransformsForFrame_FUN_00547b80      1 sites  ~39 bytes
+    0x00547c00  4x MOVSD (16 bytes copy, 8 bytes borrowable)
   CDeformableModelInstance_copyBoneRotations_FUN_00546650                  1 sites  ~39 bytes
     0x00546694  4x MOVSD (16 bytes copy, 10 bytes borrowable)
   CDeformableModelInstance_getBoneTransform_FUN_00548620                   1 sites  ~39 bytes
     0x00548683  4x MOVSD (16 bytes copy, 7 bytes borrowable)
   CDeformableModelInstance_setBoneTransform_FUN_005486f0                   1 sites  ~39 bytes
     0x0054875e  4x MOVSD (16 bytes copy, 7 bytes borrowable)
-  FUN_00547b80                                                             1 sites  ~39 bytes
-    0x00547c00  4x MOVSD (16 bytes copy, 8 bytes borrowable)
-  FUN_00548cc0                                                             1 sites  ~39 bytes
+  blendBoneTransformData_FUN_00548cc0                                      1 sites  ~39 bytes
     0x00548e1f  4x MOVSD (16 bytes copy, 8 bytes borrowable)
   FUN_00567430                                                             1 sites  ~39 bytes
     0x005674f0  4x MOVSD (16 bytes copy, 5 bytes borrowable)
@@ -1216,7 +1216,7 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 2779 sites)
     0x005afc56  3x MOVSD (12 bytes copy, 5 bytes borrowable)
     0x005afcba  3x MOVSD (12 bytes copy, 5 bytes borrowable)
     0x005afd20  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  FUN_0049db20                                                            13 sites  ~429 bytes
+  CFireEffect_traceLaser_FUN_0049db20                                     13 sites  ~429 bytes
     0x0049db7f  3x MOVSD (12 bytes copy, 7 bytes borrowable)
     0x0049dbc3  3x MOVSD (12 bytes copy, 7 bytes borrowable)
     0x0049dc32  3x MOVSD (12 bytes copy, 10 bytes borrowable)
@@ -2013,7 +2013,7 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 2779 sites)
     0x0049d981  3x MOVSD (12 bytes copy, 5 bytes borrowable)
     0x0049d9bc  3x MOVSD (12 bytes copy, 5 bytes borrowable)
     0x0049da48  3x MOVSD (12 bytes copy, 7 bytes borrowable)
-  FUN_00496c60                                                             7 sites  ~231 bytes
+  CGlassParticle_init_FUN_00496c60                                         7 sites  ~231 bytes
     0x00496ca5  3x MOVSD (12 bytes copy, 7 bytes borrowable)
     0x00496ce7  3x MOVSD (12 bytes copy, 9 bytes borrowable)
     0x00496d2c  3x MOVSD (12 bytes copy, 5 bytes borrowable)
@@ -2211,7 +2211,7 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 2779 sites)
     0x0053fc16  3x MOVSD (12 bytes copy, 7 bytes borrowable)
     0x0053fc2c  3x MOVSD (12 bytes copy, 7 bytes borrowable)
     0x0053fd31  3x MOVSD (12 bytes copy, 7 bytes borrowable)
-  FUN_00545a60                                                             6 sites  ~198 bytes
+  CDeformableModelInstance_blendMotion_FUN_00545a60                        6 sites  ~198 bytes
     0x00545c42  3x MOVSD (12 bytes copy, 6 bytes borrowable)
     0x00545ca8  3x MOVSD (12 bytes copy, 10 bytes borrowable)
     0x00545d02  3x MOVSD (12 bytes copy, 6 bytes borrowable)
@@ -2618,26 +2618,26 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 2779 sites)
     0x005a2c1a  3x MOVSD (12 bytes copy, 7 bytes borrowable)
     0x005a2c5f  3x MOVSD (12 bytes copy, 9 bytes borrowable)
     0x005a2cec  3x MOVSD (12 bytes copy, 7 bytes borrowable)
+  CCrater_activate_FUN_00499610                                            4 sites  ~132 bytes
+    0x00499716  3x MOVSD (12 bytes copy, 5 bytes borrowable)
+    0x00499769  3x MOVSD (12 bytes copy, 5 bytes borrowable)
+    0x004997bd  3x MOVSD (12 bytes copy, 5 bytes borrowable)
+    0x0049980f  3x MOVSD (12 bytes copy, 5 bytes borrowable)
+  CFireball_render_FUN_00495ca0                                            4 sites  ~132 bytes
+    0x004960a4  3x MOVSD (12 bytes copy, 5 bytes borrowable)
+    0x004960b2  3x MOVSD (12 bytes copy, 10 bytes borrowable)
+    0x0049613b  3x MOVSD (12 bytes copy, 5 bytes borrowable)
+    0x004961c5  3x MOVSD (12 bytes copy, 6 bytes borrowable)
   CFirefly_render_FUN_00495150                                             4 sites  ~132 bytes
     0x004952c5  3x MOVSD (12 bytes copy, 8 bytes borrowable)
     0x004952e1  3x MOVSD (12 bytes copy, 6 bytes borrowable)
     0x00495359  3x MOVSD (12 bytes copy, 5 bytes borrowable)
     0x004953dd  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  FUN_004947a0                                                             4 sites  ~132 bytes
+  CSpark_render_FUN_004947a0                                               4 sites  ~132 bytes
     0x004948f7  3x MOVSD (12 bytes copy, 10 bytes borrowable)
     0x00494914  3x MOVSD (12 bytes copy, 10 bytes borrowable)
     0x00494984  3x MOVSD (12 bytes copy, 5 bytes borrowable)
     0x00494a08  3x MOVSD (12 bytes copy, 6 bytes borrowable)
-  FUN_00495ca0                                                             4 sites  ~132 bytes
-    0x004960a4  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-    0x004960b2  3x MOVSD (12 bytes copy, 10 bytes borrowable)
-    0x0049613b  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-    0x004961c5  3x MOVSD (12 bytes copy, 6 bytes borrowable)
-  FUN_00499610                                                             4 sites  ~132 bytes
-    0x00499716  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-    0x00499769  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-    0x004997bd  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-    0x0049980f  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CFlies_process_FUN_004a6c30                                              4 sites  ~132 bytes
     0x004a6c98  3x MOVSD (12 bytes copy, 7 bytes borrowable)
     0x004a6cdd  3x MOVSD (12 bytes copy, 9 bytes borrowable)
@@ -2743,16 +2743,16 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 2779 sites)
     0x005463a8  3x MOVSD (12 bytes copy, 10 bytes borrowable)
     0x00546404  3x MOVSD (12 bytes copy, 10 bytes borrowable)
     0x00546465  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  FUN_00541820                                                             4 sites  ~132 bytes
-    0x00541893  3x MOVSD (12 bytes copy, 7 bytes borrowable)
-    0x0054189c  3x MOVSD (12 bytes copy, 7 bytes borrowable)
-    0x00541907  3x MOVSD (12 bytes copy, 7 bytes borrowable)
-    0x0054194d  3x MOVSD (12 bytes copy, 7 bytes borrowable)
-  FUN_00547e10                                                             4 sites  ~132 bytes
+  CDeformableModelInstance_getRootMotionDelta_FUN_00547e10                 4 sites  ~132 bytes
     0x00547e35  3x MOVSD (12 bytes copy, 7 bytes borrowable)
     0x00547e3e  3x MOVSD (12 bytes copy, 5 bytes borrowable)
     0x00547f74  3x MOVSD (12 bytes copy, 7 bytes borrowable)
     0x00547fce  3x MOVSD (12 bytes copy, 7 bytes borrowable)
+  CDeformableModel_skinSingleVertex_FUN_00541820                           4 sites  ~132 bytes
+    0x00541893  3x MOVSD (12 bytes copy, 7 bytes borrowable)
+    0x0054189c  3x MOVSD (12 bytes copy, 7 bytes borrowable)
+    0x00541907  3x MOVSD (12 bytes copy, 7 bytes borrowable)
+    0x0054194d  3x MOVSD (12 bytes copy, 7 bytes borrowable)
   FUN_00565f30                                                             4 sites  ~132 bytes
     0x00565f65  3x MOVSD (12 bytes copy, 8 bytes borrowable)
     0x00565f7d  3x MOVSD (12 bytes copy, 6 bytes borrowable)
@@ -2912,6 +2912,10 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 2779 sites)
     0x004882c4  3x MOVSD (12 bytes copy, 9 bytes borrowable)
     0x004882fb  3x MOVSD (12 bytes copy, 5 bytes borrowable)
     0x0048830a  3x MOVSD (12 bytes copy, 5 bytes borrowable)
+  CGunFlame_activate_FUN_0049a1b0                                          3 sites  ~99 bytes
+    0x0049a23a  3x MOVSD (12 bytes copy, 8 bytes borrowable)
+    0x0049a2f0  3x MOVSD (12 bytes copy, 5 bytes borrowable)
+    0x0049a35e  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CGunFlame_render_FUN_0049a500                                            3 sites  ~99 bytes
     0x0049a59b  3x MOVSD (12 bytes copy, 10 bytes borrowable)
     0x0049a60b  3x MOVSD (12 bytes copy, 10 bytes borrowable)
@@ -2920,10 +2924,6 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 2779 sites)
     0x0049948b  3x MOVSD (12 bytes copy, 9 bytes borrowable)
     0x004994c8  3x MOVSD (12 bytes copy, 7 bytes borrowable)
     0x00499502  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  FUN_0049a1b0                                                             3 sites  ~99 bytes
-    0x0049a23a  3x MOVSD (12 bytes copy, 8 bytes borrowable)
-    0x0049a2f0  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-    0x0049a35e  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CFlame_renderTransparent_FUN_0049f850                                    3 sites  ~99 bytes
     0x0049f987  3x MOVSD (12 bytes copy, 9 bytes borrowable)
     0x0049f9e9  3x MOVSD (12 bytes copy, 10 bytes borrowable)
@@ -3012,35 +3012,35 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 2779 sites)
     0x0053788e  3x MOVSD (12 bytes copy, 10 bytes borrowable)
     0x005378ca  3x MOVSD (12 bytes copy, 6 bytes borrowable)
     0x00537984  3x MOVSD (12 bytes copy, 10 bytes borrowable)
+  CDeformableModelInstance_aimBoneAtTarget_FUN_00546da0                    3 sites  ~99 bytes
+    0x00546e02  3x MOVSD (12 bytes copy, 5 bytes borrowable)
+    0x00546e4f  3x MOVSD (12 bytes copy, 10 bytes borrowable)
+    0x00546e77  3x MOVSD (12 bytes copy, 10 bytes borrowable)
+  CDeformableModelInstance_computeBoneTransformsForFrame_FUN_00547b80      3 sites  ~99 bytes
+    0x00547c81  3x MOVSD (12 bytes copy, 6 bytes borrowable)
+    0x00547ccc  3x MOVSD (12 bytes copy, 7 bytes borrowable)
+    0x00547d09  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_00547620     3 sites  ~99 bytes
     0x00547693  3x MOVSD (12 bytes copy, 7 bytes borrowable)
     0x0054777a  3x MOVSD (12 bytes copy, 9 bytes borrowable)
     0x005477ab  3x MOVSD (12 bytes copy, 5 bytes borrowable)
+  CDeformableModelInstance_updateMotion_FUN_00544f80                       3 sites  ~99 bytes
+    0x00545178  3x MOVSD (12 bytes copy, 10 bytes borrowable)
+    0x005451d1  3x MOVSD (12 bytes copy, 9 bytes borrowable)
+    0x00545231  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CDeformableModel_computePartDominantBones_FUN_00544380                   3 sites  ~99 bytes
     0x00544621  3x MOVSD (12 bytes copy, 5 bytes borrowable)
     0x005446b7  3x MOVSD (12 bytes copy, 5 bytes borrowable)
     0x00544777  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  FUN_00541640                                                             3 sites  ~99 bytes
-    0x005416ff  3x MOVSD (12 bytes copy, 6 bytes borrowable)
-    0x00541742  3x MOVSD (12 bytes copy, 7 bytes borrowable)
-    0x005417aa  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  FUN_005424b0                                                             3 sites  ~99 bytes
+  CDeformableModel_renderSkeleton_FUN_005424b0                             3 sites  ~99 bytes
     0x00542517  3x MOVSD (12 bytes copy, 7 bytes borrowable)
     0x00542639  3x MOVSD (12 bytes copy, 8 bytes borrowable)
     0x00542660  3x MOVSD (12 bytes copy, 8 bytes borrowable)
-  FUN_00544f80                                                             3 sites  ~99 bytes
-    0x00545178  3x MOVSD (12 bytes copy, 10 bytes borrowable)
-    0x005451d1  3x MOVSD (12 bytes copy, 9 bytes borrowable)
-    0x00545231  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  FUN_00546da0                                                             3 sites  ~99 bytes
-    0x00546e02  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-    0x00546e4f  3x MOVSD (12 bytes copy, 10 bytes borrowable)
-    0x00546e77  3x MOVSD (12 bytes copy, 10 bytes borrowable)
-  FUN_00547b80                                                             3 sites  ~99 bytes
-    0x00547c81  3x MOVSD (12 bytes copy, 6 bytes borrowable)
-    0x00547ccc  3x MOVSD (12 bytes copy, 7 bytes borrowable)
-    0x00547d09  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  FUN_00548cc0                                                             3 sites  ~99 bytes
+  CDeformableModel_skinVertices_FUN_00541640                               3 sites  ~99 bytes
+    0x005416ff  3x MOVSD (12 bytes copy, 6 bytes borrowable)
+    0x00541742  3x MOVSD (12 bytes copy, 7 bytes borrowable)
+    0x005417aa  3x MOVSD (12 bytes copy, 5 bytes borrowable)
+  blendBoneTransformData_FUN_00548cc0                                      3 sites  ~99 bytes
     0x00548d33  3x MOVSD (12 bytes copy, 7 bytes borrowable)
     0x00548d64  3x MOVSD (12 bytes copy, 7 bytes borrowable)
     0x00548d9d  3x MOVSD (12 bytes copy, 7 bytes borrowable)
@@ -3230,7 +3230,7 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 2779 sites)
   CFireEffect_createTrailFromPoints_FUN_0049e850                           2 sites  ~66 bytes
     0x0049e890  3x MOVSD (12 bytes copy, 7 bytes borrowable)
     0x0049e8eb  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  FUN_004935b0                                                             2 sites  ~66 bytes
+  CSmokeParticle_process_FUN_004935b0                                      2 sites  ~66 bytes
     0x00493675  3x MOVSD (12 bytes copy, 9 bytes borrowable)
     0x004936d8  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CFlame_process_FUN_0049f2e0                                              2 sites  ~66 bytes
@@ -3359,21 +3359,21 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 2779 sites)
   CShotgun_process_FUN_0053f060                                            2 sites  ~66 bytes
     0x0053f0bd  3x MOVSD (12 bytes copy, 8 bytes borrowable)
     0x0053f0d5  3x MOVSD (12 bytes copy, 5 bytes borrowable)
+  CDeformableModelInstance_accumulateScaledRootMotion_FUN_00547d70         2 sites  ~66 bytes
+    0x00547d96  3x MOVSD (12 bytes copy, 7 bytes borrowable)
+    0x00547dc7  3x MOVSD (12 bytes copy, 9 bytes borrowable)
+  CDeformableModelInstance_computeBoundingBoxFromBones_FUN_005487d0        2 sites  ~66 bytes
+    0x005488ad  3x MOVSD (12 bytes copy, 7 bytes borrowable)
+    0x005488c9  3x MOVSD (12 bytes copy, 7 bytes borrowable)
+  CDeformableModelInstance_findPatchToFrame_FUN_00547910                   2 sites  ~66 bytes
+    0x00547a88  3x MOVSD (12 bytes copy, 6 bytes borrowable)
+    0x00547ae1  3x MOVSD (12 bytes copy, 10 bytes borrowable)
+  CDeformableModelInstance_getBoneModelPosition_FUN_005469a0               2 sites  ~66 bytes
+    0x005469c7  3x MOVSD (12 bytes copy, 7 bytes borrowable)
+    0x005469d0  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CDeformableModel_shatter_FUN_00543d80                                    2 sites  ~66 bytes
     0x00543e86  3x MOVSD (12 bytes copy, 6 bytes borrowable)
     0x00543ec7  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  FUN_005469a0                                                             2 sites  ~66 bytes
-    0x005469c7  3x MOVSD (12 bytes copy, 7 bytes borrowable)
-    0x005469d0  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  FUN_00547910                                                             2 sites  ~66 bytes
-    0x00547a88  3x MOVSD (12 bytes copy, 6 bytes borrowable)
-    0x00547ae1  3x MOVSD (12 bytes copy, 10 bytes borrowable)
-  FUN_00547d70                                                             2 sites  ~66 bytes
-    0x00547d96  3x MOVSD (12 bytes copy, 7 bytes borrowable)
-    0x00547dc7  3x MOVSD (12 bytes copy, 9 bytes borrowable)
-  FUN_005487d0                                                             2 sites  ~66 bytes
-    0x005488ad  3x MOVSD (12 bytes copy, 7 bytes borrowable)
-    0x005488c9  3x MOVSD (12 bytes copy, 7 bytes borrowable)
   CSmiley_attractActorToward_FUN_0054a640                                  2 sites  ~66 bytes
     0x0054a6c3  3x MOVSD (12 bytes copy, 8 bytes borrowable)
     0x0054a6df  3x MOVSD (12 bytes copy, 7 bytes borrowable)
@@ -3580,8 +3580,12 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 2779 sites)
     0x0048818b  3x MOVSD (12 bytes copy, 10 bytes borrowable)
   CEnemy_updateVictim_FUN_00488450                                         1 sites  ~33 bytes
     0x00488772  3x MOVSD (12 bytes copy, 7 bytes borrowable)
+  CBulletHole_process_FUN_00493cf0                                         1 sites  ~33 bytes
+    0x00493d25  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CBulletHole_render_FUN_00493dd0                                          1 sites  ~33 bytes
     0x00494090  3x MOVSD (12 bytes copy, 5 bytes borrowable)
+  CExplosion_activate_FUN_00498d30                                         1 sites  ~33 bytes
+    0x00498e2e  3x MOVSD (12 bytes copy, 8 bytes borrowable)
   CExplosion_render_FUN_00498ed0                                           1 sites  ~33 bytes
     0x00498f64  3x MOVSD (12 bytes copy, 10 bytes borrowable)
   CFireEffect_createBulletImpact_FUN_0049cd50                              1 sites  ~33 bytes
@@ -3594,26 +3598,22 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 2779 sites)
     0x0049a116  3x MOVSD (12 bytes copy, 7 bytes borrowable)
   CLightningBolt_render_FUN_0049abd0                                       1 sites  ~33 bytes
     0x0049ad58  3x MOVSD (12 bytes copy, 5 bytes borrowable)
+  CMuzzleFlash_init_FUN_004969a0                                           1 sites  ~33 bytes
+    0x00496a21  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CPopcorn_render_FUN_0049b9d0                                             1 sites  ~33 bytes
     0x0049ba6e  3x MOVSD (12 bytes copy, 10 bytes borrowable)
   CRainDrop_render_FUN_0049bd40                                            1 sites  ~33 bytes
     0x0049bde4  3x MOVSD (12 bytes copy, 10 bytes borrowable)
+  CShell_process_FUN_0049b7f0                                              1 sites  ~33 bytes
+    0x0049b853  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CSmokeParticle_setupRenderState_FUN_00493410                             1 sites  ~33 bytes
     0x0049347d  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CSpark_setupRenderState_FUN_00494670                                     1 sites  ~33 bytes
     0x00494717  3x MOVSD (12 bytes copy, 9 bytes borrowable)
+  CToss_create_FUN_004992b0                                                1 sites  ~33 bytes
+    0x00499377  3x MOVSD (12 bytes copy, 8 bytes borrowable)
   CTrail_render_FUN_0049b380                                               1 sites  ~33 bytes
     0x0049b43f  3x MOVSD (12 bytes copy, 10 bytes borrowable)
-  FUN_00493cf0                                                             1 sites  ~33 bytes
-    0x00493d25  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  FUN_004969a0                                                             1 sites  ~33 bytes
-    0x00496a21  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  FUN_00498d30                                                             1 sites  ~33 bytes
-    0x00498e2e  3x MOVSD (12 bytes copy, 8 bytes borrowable)
-  FUN_004992b0                                                             1 sites  ~33 bytes
-    0x00499377  3x MOVSD (12 bytes copy, 8 bytes borrowable)
-  FUN_0049b7f0                                                             1 sites  ~33 bytes
-    0x0049b853  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CFlame_renderBackground_FUN_004a0210                                     1 sites  ~33 bytes
     0x004a0391  3x MOVSD (12 bytes copy, 7 bytes borrowable)
   CFlashlight_getMuzzlePoint_FUN_004a1110                                  1 sites  ~33 bytes
@@ -3690,20 +3690,20 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 2779 sites)
     0x00540115  3x MOVSD (12 bytes copy, 7 bytes borrowable)
   CDeformableModelInstance_computeBoneTransforms_FUN_00546ae0              1 sites  ~33 bytes
     0x00546bab  3x MOVSD (12 bytes copy, 6 bytes borrowable)
+  CDeformableModelInstance_getBoneModelMatrix_FUN_00546790                 1 sites  ~33 bytes
+    0x00546839  3x MOVSD (12 bytes copy, 10 bytes borrowable)
   CDeformableModelInstance_initializeFromModel_FUN_005474b0                1 sites  ~33 bytes
     0x00547530  3x MOVSD (12 bytes copy, 5 bytes borrowable)
+  CDeformableModelInstance_skinSingleVertex_FUN_00547230                   1 sites  ~33 bytes
+    0x00547268  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CDeformableModel_computeBoneDominantPart_FUN_005431b0                    1 sites  ~33 bytes
     0x00543280  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CDeformableModel_dismember_FUN_00543490                                  1 sites  ~33 bytes
     0x0054374f  3x MOVSD (12 bytes copy, 6 bytes borrowable)
-  FUN_005426c0                                                             1 sites  ~33 bytes
-    0x00542715  3x MOVSD (12 bytes copy, 7 bytes borrowable)
-  FUN_00543a40                                                             1 sites  ~33 bytes
+  CDeformableModel_exactRayTrace_FUN_00543a40                              1 sites  ~33 bytes
     0x00543c3c  3x MOVSD (12 bytes copy, 8 bytes borrowable)
-  FUN_00546790                                                             1 sites  ~33 bytes
-    0x00546839  3x MOVSD (12 bytes copy, 10 bytes borrowable)
-  FUN_00547230                                                             1 sites  ~33 bytes
-    0x00547268  3x MOVSD (12 bytes copy, 5 bytes borrowable)
+  CDeformableModel_renderBones_FUN_005426c0                                1 sites  ~33 bytes
+    0x00542715  3x MOVSD (12 bytes copy, 7 bytes borrowable)
   computeBoneModelMatrices_FUN_00548a90                                    1 sites  ~33 bytes
     0x00548b58  3x MOVSD (12 bytes copy, 6 bytes borrowable)
   FUN_0055a1d0                                                             1 sites  ~33 bytes
@@ -4011,7 +4011,7 @@ NO ARTIFACTS 3x MOVSD SITES (12 bytes copy, 117 sites — decompiler handles OK)
     0x00532176  3x MOVSD (12 bytes copy)
   transformToWorldSpace_FUN_00531f60                                       1 sites
     0x0053201f  3x MOVSD (12 bytes copy)
-  FUN_00546a90                                                             1 sites
+  CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90         1 sites
     0x00546acd  3x MOVSD (12 bytes copy)
   FUN_00559ab0                                                             1 sites
     0x00559af0  3x MOVSD (12 bytes copy)
@@ -4047,7 +4047,7 @@ NO ARTIFACTS 2x MOVSD SITES (8 bytes copy, 4 sites — decompiler handles OK)
 ----------------------------------------------------------------------------------------------------
 UNFIXABLE 4x MOVSD SITES (16 bytes copy, 2 sites)
 ----------------------------------------------------------------------------------------------------
-  FUN_00544f80                                                             2 sites
+  CDeformableModelInstance_updateMotion_FUN_00544f80                       2 sites
     0x0054543d  4x MOVSD (16 bytes copy)  branch target inside patch range
     0x0054587f  4x MOVSD (16 bytes copy)  only 4 bytes available (need 5)
 
@@ -4520,7 +4520,7 @@ FIXABLE REP MOVSD STRUCT COPIES (554 sites)
   CSimBox_getBoundingBox_FUN_00540410                                      2 sites
     0x00540438  REP MOVSD 6 dwords (24 bytes)
     0x00540443  REP MOVSD 6 dwords (24 bytes)
-  FUN_00546790                                                             2 sites
+  CDeformableModelInstance_getBoneModelMatrix_FUN_00546790                 2 sites
     0x0054680c  REP MOVSD 12 dwords (48 bytes)
     0x005468a0  REP MOVSD 12 dwords (48 bytes)
   CSpike_getBoundingBox_FUN_00560b10                                       2 sites
@@ -4730,18 +4730,18 @@ FIXABLE REP MOVSD STRUCT COPIES (554 sites)
     0x00493be4  REP MOVSD 12 dwords (48 bytes)
   CFireEffect_createBulletImpact_FUN_0049cd50                              1 sites
     0x0049cece  REP MOVSD 12 dwords (48 bytes)
+  CFireball_render_FUN_00495ca0                                            1 sites
+    0x00495d3a  REP MOVSD 6 dwords (24 bytes)
+  CGlassParticle_init_FUN_00496c60                                         1 sites
+    0x00496ef7  REP MOVSD 6 dwords (24 bytes)
   CLeaf_render_FUN_004968d0                                                1 sites
     0x00496919  REP MOVSD 6 dwords (24 bytes)
+  CRock_render_FUN_004966a0                                                1 sites
+    0x004966e9  REP MOVSD 6 dwords (24 bytes)
   CStake_render_FUN_004944c0                                               1 sites
     0x00494518  REP MOVSD 6 dwords (24 bytes)
   CStake_spawn_FUN_004941c0                                                1 sites
     0x0049436b  REP MOVSD 6 dwords (24 bytes)
-  FUN_00495ca0                                                             1 sites
-    0x00495d3a  REP MOVSD 6 dwords (24 bytes)
-  FUN_004966a0                                                             1 sites
-    0x004966e9  REP MOVSD 6 dwords (24 bytes)
-  FUN_00496c60                                                             1 sites
-    0x00496ef7  REP MOVSD 6 dwords (24 bytes)
   CFlame_renderBackground_FUN_004a0210                                     1 sites
     0x004a0284  REP MOVSD 6 dwords (24 bytes)
   CFlame_renderTransparent_FUN_0049f850                                    1 sites
@@ -4894,12 +4894,12 @@ FIXABLE REP MOVSD STRUCT COPIES (554 sites)
     0x005400b0  REP MOVSD 6 dwords (24 bytes)
   CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40           1 sites
     0x005470fd  REP MOVSD 12 dwords (48 bytes)
+  CDeformableModelInstance_computeBoundingBoxFromBones_FUN_005487d0        1 sites
+    0x00548877  REP MOVSD 6 dwords (24 bytes)
+  CDeformableModelInstance_getBoneModelPosition_FUN_005469a0               1 sites
+    0x00546a6c  REP MOVSD 12 dwords (48 bytes)
   CDeformableModelInstance_getBoneTransform_FUN_00548620                   1 sites
     0x005486b5  REP MOVSD 12 dwords (48 bytes)
-  FUN_005469a0                                                             1 sites
-    0x00546a6c  REP MOVSD 12 dwords (48 bytes)
-  FUN_005487d0                                                             1 sites
-    0x00548877  REP MOVSD 6 dwords (24 bytes)
   CSpike_renderOpaque_FUN_00560a90                                         1 sites
     0x00560ac8  REP MOVSD 6 dwords (24 bytes)
   CSpike_testCollisionWithCharacters_FUN_00560cb0                          1 sites
@@ -5386,10 +5386,10 @@ REP MOVSD — PASS-BY-VALUE (37 sites)
     0x00407f62  REP MOVSD 12 dwords (48 bytes)
     0x00407f93  REP MOVSD 12 dwords (48 bytes)
     0x00407fa3  REP MOVSD 12 dwords (48 bytes)
-  FUN_0049db20                                                             2 sites
+  CFireEffect_traceLaser_FUN_0049db20                                      2 sites
     0x0049e0da  REP MOVSD 21 dwords (84 bytes)
     0x0049e188  REP MOVSD 21 dwords (84 bytes)
-  FUN_005424b0                                                             2 sites
+  CDeformableModel_renderSkeleton_FUN_005424b0                             2 sites
     0x005425bf  REP MOVSD 12 dwords (48 bytes)
     0x005425d4  REP MOVSD 12 dwords (48 bytes)
   drawLineStrip2D_FUN_00404590                                             2 sites

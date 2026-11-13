@@ -253,7 +253,7 @@ int __cdecl core_burncrss_cpp_CBurncross_fire_FUN_00424550(CBurncross *this_ptr)
     }
     if (this_ptr_00 == (CGlass *)0x0) {
       if (this_ptr_01 == (CTrigger *)0x0) {
-        core_fire_cpp_FUN_004a2090
+        core_fire_cpp_CFireEffect_createBulletImpact_FUN_004a2090
                   (0x01C73654,&g_CDemonSetPtr->collision_impact_position,
                    &g_CDemonSetPtr->collision_normal,g_CDemonSetPtr->ground_type,
                    g_CDemonSetPtr->collision_actor,1);

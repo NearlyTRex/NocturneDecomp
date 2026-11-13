@@ -178,7 +178,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0040f6bf: MOV ESI,ESP
 
   core_bird.cpp_CBird_process_FUN_0040fb40
-    File: core/bird.cpp, Suspects: 28
+    File: core/bird.cpp, Suspects: 32
     - [stack_alignment] at 0040fb4c: AND ESP,0xfffffff8
 
   core_bird.cpp_FUN_00410030
@@ -267,5 +267,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 29.5 suspects/function
+  With stack patterns:    avg 29.2 suspects/function
   Without stack patterns: avg 6.9 suspects/function

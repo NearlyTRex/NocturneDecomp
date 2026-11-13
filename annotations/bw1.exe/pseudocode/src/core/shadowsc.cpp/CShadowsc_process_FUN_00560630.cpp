@@ -47,10 +47,9 @@ void __cdecl core_shadowsc_cpp_CShadowsc_process_FUN_00560630(CShadowsc *this_pt
   float fStack_a0;
   float afStack_9c [4];
   float fStack_8c;
-  uint uStack_88;
+  CVector3f CStack_88;
   uint uStack_7c;
-  float fStack_70;
-  float fStack_6c;
+  float afStack_78 [4];
   float fStack_68;
   float fStack_64;
   float fStack_60;
@@ -169,10 +168,10 @@ void __cdecl core_shadowsc_cpp_CShadowsc_process_FUN_00560630(CShadowsc *this_pt
       fStack_5c = (this_ptr->base).base.base.location.position.z -
                   (pCVar4->base).location.position.z;
       afStack_f0[2] = fStack_64;
-      afStack_f0[(uint)bVar7 * -2 + 3] = afStack_9c[(uint)bVar7 * -2 + 0xf];
+      afStack_f0[(uint)bVar7 * -2 + 3] = afStack_78[(uint)bVar7 * -2 + 6];
       pCVar10 = pCStack_20;
       afStack_f0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
-           afStack_9c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x10];
+           afStack_78[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7];
       fStack_2c = SQRT(fStack_e0 * fStack_e0 +
                        afStack_f0[2] * afStack_f0[2] + afStack_f0[3] * afStack_f0[3]);
       fStack_1c = fStack_2c;
@@ -246,9 +245,9 @@ LAB_00560d8f:
                  this_ptr->bone_indices[4]);
       pfVar9 = afStack_cc + 5;
       afStack_b8[0] = (float)uStack_7c;
-      afStack_cc[(uint)bVar7 * -2 + 6] = afStack_9c[(uint)bVar7 * -2 + 9];
+      afStack_cc[(uint)bVar7 * -2 + 6] = afStack_78[(uint)bVar7 * -2];
       afStack_cc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] =
-           afStack_9c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10];
+           afStack_78[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
       core_actor_cpp_FUN_00408b40(this_ptr,pfVar9);
       pCVar11 = &CStack_ac;
       CStack_ac.x = fStack_a0;
@@ -275,12 +274,13 @@ LAB_00560d8f:
     case 7:
       if (((this_ptr->base).pool_me == 0) &&
          ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
-        core_skeleton_cpp_FUN_00569040(&(this_ptr->base).base.model,0);
+        core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
+                  (&(this_ptr->base).base.model,0,&CStack_88);
         pfVar9 = afStack_cc + 2;
-        afStack_cc[2] = (float)uStack_88;
-        afStack_cc[(uint)bVar7 * -2 + 3] = afStack_9c[(uint)bVar7 * -2 + 6];
+        afStack_cc[2] = CStack_88.x;
+        afStack_cc[(uint)bVar7 * -2 + 3] = *(float *)((int)&CStack_88 + (uint)bVar7 * -8 + 4);
         afStack_cc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
-             afStack_9c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7];
+             *(float *)((int)&CStack_88 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
         core_actor_cpp_FUN_00408b40(this_ptr,pfVar9);
         (this_ptr->base).pool_me = 1;
         this_ptr->fade_alpha = 0;
@@ -371,17 +371,17 @@ switchD_00560f6e_caseD_5:
     afStack_f0[0] = (this_ptr->base).base.velocity.y * delta_time;
     afStack_f0[1] = (this_ptr->base).base.velocity.z * delta_time;
     fStack_58 = fStack_f4;
-    afStack_9c[(uint)bVar7 * -2 + 0x12] = afStack_f0[(uint)bVar7 * -2];
-    afStack_9c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x13] =
+    afStack_78[(uint)bVar7 * -2 + 9] = afStack_f0[(uint)bVar7 * -2];
+    afStack_78[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10] =
          afStack_f0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
     pCVar11 = &(this_ptr->base).base.position_delta;
-    fStack_70 = fStack_58 + pCVar11->x;
-    fStack_6c = fStack_54 + (this_ptr->base).base.position_delta.y;
+    afStack_78[2] = fStack_58 + pCVar11->x;
+    afStack_78[3] = fStack_54 + (this_ptr->base).base.position_delta.y;
     fStack_68 = fStack_50 + (this_ptr->base).base.position_delta.z;
-    fStack_d0 = fStack_70;
-    afStack_cc[(uint)bVar7 * -2] = afStack_9c[(uint)bVar7 * -2 + 0xc];
+    fStack_d0 = afStack_78[2];
+    afStack_cc[(uint)bVar7 * -2] = afStack_78[(uint)bVar7 * -2 + 3];
     afStack_cc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-         afStack_9c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0xd];
+         afStack_78[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
     pCVar2 = &(this_ptr->base).base.model.accumulated_root_motion;
     afStack_114[2] = fStack_d0 + pCVar2->x;
     afStack_114[3] = afStack_cc[0] + (this_ptr->base).base.model.accumulated_root_motion.y;

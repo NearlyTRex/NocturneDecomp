@@ -11,7 +11,7 @@
 ;   core_actor.cpp_FUN_00408d70
 ;   core_charactr.cpp_CCharacter_renderTransparent_FUN_004268b0
 ;   core_dlight.cpp_renderConeLightGeometry_FUN_0044d060
-;   core_skeleton.cpp_FUN_00546790
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_00546790
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;   core_xform.cpp_FUN_00591530
 ;
@@ -40,8 +40,8 @@ section .text
     PUSH EAX                            ; 00598fdc
     LEA ESI,[EBP + 0xffffff6a]          ; 00598fdd
     LEA EDI,[EBP + 0xffffff3a]          ; 00598fe3
-    CALL core_skeleton.cpp_FUN_00546790 ; 00598fe9
-        ;   XREF to: 00546790 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00546790()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_00546790 ; 00598fe9
+        ;   XREF to: 00546790 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_00546790(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix)
     MOV ECX,0xc                         ; 00598fee
     ADD ESP,0x8                         ; 00598ff3
     LEA EAX,[EBP + 0xffffff3a]          ; 00598ff6

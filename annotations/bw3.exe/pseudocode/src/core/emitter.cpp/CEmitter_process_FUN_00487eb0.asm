@@ -39,8 +39,8 @@
 ;   core_fire.cpp_CFireEffect_createFirefly_FUN_004a29d0
 ;   core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0
 ;   core_fire.cpp_CFireEffect_createLeaf_FUN_004a2930
-;   core_fire.cpp_CFireEffect_createPopcorn_FUN_004a3ed0
-;   core_fire.cpp_CFireEffect_createRock_FUN_004a28e0
+;   core_fire.cpp_CFireEffect_createLightningBolt_FUN_004a3bd0
+;   core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50
 ;   ... and 12 more
 ;
 ; *****************************************************************************
@@ -636,8 +636,8 @@ section .text
     PUSH ESI                            ; 00488647
     MOV EDI,dword ptr [0x005fc5a0]      ; 00488648 | DAT_005fc5a0
     PUSH EDI                            ; 0048864e
-    CALL core_fire.cpp_FUN_004a3bd0     ; 0048864f
-        ;   XREF to: 004a3bd0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3bd0()
+    CALL core_fire.cpp_CFireEffect_createLightningBolt_FUN_004a3bd0 ; 0048864f
+        ;   XREF to: 004a3bd0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBolt_FUN_004a3bd0(CFireEffect * this_ptr, CVector3f * start_position, float start_width, int enable_camera_shake, ...)
     LEA EAX,[ESP + 0xb0]                ; 00488654
     ADD ESP,0x14                        ; 0048865b
     CMP EAX,ESI                         ; 0048865e
@@ -805,8 +805,8 @@ section .text
     PUSH EAX                            ; 004888a5
     MOV ECX,dword ptr [0x005fc5a0]      ; 004888a6 | DAT_005fc5a0
     PUSH ECX                            ; 004888ac
-    CALL core_fire.cpp_FUN_004a3c50     ; 004888ad
-        ;   XREF to: 004a3c50 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3c50()
+    CALL core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50 ; 004888ad
+        ;   XREF to: 004a3c50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50(CFireEffect * this_ptr, CVector3f * start_position, CVector3f * end_position, int enable_camera_shake, ...)
     ADD ESP,0x24                        ; 004888b2
     JMP 0x0048804b                      ; 004888b5
         ;   XREF to: 0048804b (UNCONDITIONAL_JUMP)  ; caseD_a

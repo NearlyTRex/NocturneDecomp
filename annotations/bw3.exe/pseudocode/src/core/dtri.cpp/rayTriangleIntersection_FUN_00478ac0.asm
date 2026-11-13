@@ -27,7 +27,7 @@
 ; XREF[5]:
 ;   core_dmodel.cpp_FUN_004618a0 at 00461aca
 ;   core_dtri.cpp_FUN_004795c0 at 004797e3
-;   core_skeleton.cpp_FUN_0054ac50 at 0054adc8
+;   core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0054ac50 at 0054adc8
 ;   core_stairs.cpp_CStairs_customRayIntersect_FUN_00568570 at 005685bb
 ;   core_wateract.cpp_CWaterActor_customRayIntersect_FUN_00578d30 at 00578e23
 ;

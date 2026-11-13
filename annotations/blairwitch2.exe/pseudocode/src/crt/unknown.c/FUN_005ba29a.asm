@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_skeleton.cpp_FUN_00541370 at 00541420
+;   core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00541370 at 00541420
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005ba242

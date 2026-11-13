@@ -35,7 +35,7 @@
 ;   core_bmppuzzl.cpp_processActivePuzzle_FUN_00411a90
 ;   core_dfilter.cpp_CFilterFX_process_FUN_00459e90
 ;   core_event.cpp_CEventList_process_FUN_0048c020
-;   core_fire.cpp_FUN_004a1760
+;   core_fire.cpp_CFireEffect_process_FUN_004a1760
 ;   core_fldnotes.cpp_CFieldNotes_process_FUN_004ac6b0
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004bb100
 ;   core_game.cpp_CGame_saveClockTime_FUN_004b4430
@@ -270,8 +270,8 @@ section .text
     MOV ECX,dword ptr [0x005fc5a0]      ; 004bf76a | DAT_005fc5a0
         ;   Label: LAB_004bf76a
     PUSH ECX                            ; 004bf770
-    CALL core_fire.cpp_FUN_004a1760     ; 004bf771
-        ;   XREF to: 004a1760 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a1760()
+    CALL core_fire.cpp_CFireEffect_process_FUN_004a1760 ; 004bf771
+        ;   XREF to: 004a1760 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_process_FUN_004a1760(CFireEffect * this_ptr)
     MOV EAX,[0x005fe9dc]                ; 004bf776 | g_CGamePtr
     MOV EDI,dword ptr [EAX + 0x230]     ; 004bf77b | g_CGameInstance.profile_mode
     ADD ESP,0x4                         ; 004bf781

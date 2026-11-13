@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00546ae0
-;   core_skeleton.cpp_FUN_00544f80
+;   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     PUSH EDX                            ; 00544f5b
     MOV ECX,dword ptr [ESP + 0x14]      ; 00544f5c
     PUSH ECX                            ; 00544f60
-    CALL core_skeleton.cpp_FUN_00544f80 ; 00544f61
-        ;   XREF to: 00544f80 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00544f80()
+    CALL core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80 ; 00544f61
+        ;   XREF to: 00544f80 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80(CDeformableModelInstance * this_ptr, int motion_index, float frame_number, int bone_index)
     ADD ESP,0x10                        ; 00544f66
     MOV EBX,dword ptr [ESP + 0x8]       ; 00544f69
     PUSH EBX                            ; 00544f6d

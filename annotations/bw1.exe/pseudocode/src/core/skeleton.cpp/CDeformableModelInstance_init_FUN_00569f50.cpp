@@ -23,8 +23,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50(CDefor
     pcVar2 = pcVar2 + 2;
   } while (cVar1 != '\0');
   this_ptr->model_ptr = (CDeformableModel *)0x0;
-  core_skeleton_cpp_FUN_00569ae0(this_ptr);
-  core_skeleton_cpp_FUN_00569b00(this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_00569ae0(this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_00569b00(this_ptr);
   this_ptr->cached_skinned_lod_index = -1;
   return;
 }

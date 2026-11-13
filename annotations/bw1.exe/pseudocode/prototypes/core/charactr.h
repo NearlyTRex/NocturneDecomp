@@ -163,7 +163,7 @@ void FUN_00430960(int param_1);
 
 // Original: core_charactr.cpp_FUN_00430a90
 // Address: 00430a90
-void FUN_00430a90(int param_1,int param_2,undefined4 param_3,float param_4);
+void FUN_00430a90(int param_1,int param_2,int param_3,float param_4);
 
 // Original: core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_00430b60
 // Address: 00430b60

@@ -81,7 +81,8 @@ void __cdecl core_shadow_cpp_CShadow_process_FUN_0055de50(CShadow *this_ptr,floa
   uint uStack_170;
   float fStack_16c;
   float fStack_168;
-  float afStack_164 [5];
+  float afStack_164 [2];
+  CVector3f CStack_15c;
   CVector3f CStack_150;
   float fStack_144;
   float afStack_140 [4];
@@ -115,7 +116,7 @@ void __cdecl core_shadow_cpp_CShadow_process_FUN_0055de50(CShadow *this_ptr,floa
   float fStack_6c;
   float fStack_68;
   float fStack_64;
-  float fStack_60;
+  CVector3f CStack_60;
   CVector3f CStack_54;
   float fStack_48;
   float fStack_44;
@@ -192,12 +193,14 @@ LAB_0055e58a:
         else {
           iVar10 = this_ptr->bone_indices[4];
         }
-        core_skeleton_cpp_FUN_00569040(&(this_ptr->base).base.model,iVar10);
+        core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
+                  (&(this_ptr->base).base.model,iVar10,&CStack_15c);
         fVar21 = 0.1;
-        CStack_21c.x = afStack_164[2];
-        *(float *)((int)&CStack_21c + (uint)bVar14 * -8 + 4) = afStack_164[(uint)bVar14 * -2 + 3];
-        *(float *)((int)&CStack_21c + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =
-             afStack_164[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 4];
+        CStack_21c.x = CStack_15c.x;
+        *(uint *)((int)&CStack_21c + (uint)bVar14 * -8 + 4) =
+             *(uint *)((int)&CStack_15c + (uint)bVar14 * -8 + 4);
+        *(uint *)((int)&CStack_21c + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =
+             *(uint *)((int)&CStack_15c + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);
         (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
                   ((CDemonActor *)this_ptr,&CStack_21c,fVar21);
       }
@@ -236,12 +239,14 @@ LAB_0055e58a:
       else {
         iVar10 = this_ptr->bone_indices[4];
       }
-      core_skeleton_cpp_FUN_00569040(&(this_ptr->base).base.model,iVar10);
+      core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
+                (&(this_ptr->base).base.model,iVar10,&CStack_60);
       fVar21 = 0.1;
-      CStack_150.x = fStack_60;
-      *(float *)((int)&CStack_150 + (uint)bVar14 * -8 + 4) = afStack_b0[(uint)bVar14 * -2 + 0x15];
-      *(float *)((int)&CStack_150 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =
-           afStack_b0[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 0x16];
+      CStack_150.x = CStack_60.x;
+      *(uint *)((int)&CStack_150 + (uint)bVar14 * -8 + 4) =
+           *(uint *)((int)&CStack_60 + (uint)bVar14 * -8 + 4);
+      *(uint *)((int)&CStack_150 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =
+           *(uint *)((int)&CStack_60 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);
       (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
                 ((CDemonActor *)this_ptr,&CStack_150,fVar21);
     }

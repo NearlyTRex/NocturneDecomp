@@ -50,7 +50,7 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004d4c50(CIcePick *this_ptr,f
   float fStack_34;
   float fStack_30;
   float fStack_2c;
-  float fStack_28;
+  CVector3f CStack_28;
   CCharacter_full_vtable *pCStack_1c;
   float fStack_18;
   CDeformableModelInstance *pCStack_14;
@@ -295,14 +295,16 @@ LAB_004d4d65:
   pCVar8 = (CCharacter *)(this_ptr->base).base.grabbed_by;
   pCStack_1c = (pCVar8->base).vtable._uc;
   pCStack_14 = &(this_ptr->base).base.model;
-  core_skeleton_cpp_FUN_00546a90(pCStack_14,0);
+  core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
+            (pCStack_14,0,&CStack_28);
   pCVar4 = pCStack_1c;
   pCVar14 = &CStack_70;
-  CStack_70.x = fStack_28;
-  *(float *)((int)&CStack_70 + (uint)bVar11 * -8 + 4) = afStack_54[(uint)bVar11 * -2 + 0xc];
+  CStack_70.x = CStack_28.x;
+  *(uint *)((int)&CStack_70 + (uint)bVar11 * -8 + 4) =
+       *(uint *)((int)&CStack_28 + (uint)bVar11 * -8 + 4);
   actor = this_ptr;
-  *(float *)((int)&CStack_70 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
-       afStack_54[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0xd];
+  *(uint *)((int)&CStack_70 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
+       *(uint *)((int)&CStack_28 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
   iVar5 = (*(pCVar4->_uc).attractActorToward)(pCVar8,(CDemonActor *)actor,pCVar14);
   if (iVar5 == 0) {
     (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
@@ -331,7 +333,7 @@ LAB_004d4f1a:
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_00544f00(pCVar12);
   EVar7 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
   if (EVar7 == DEATH_STATE_ALIVE) {
-    blend_callback = core_skeleton_cpp_FUN_00544cc0;
+    blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_00544cc0;
     fVar13 = this_ptr->head_look_blend_weight;
     iVar5 = _DAT_01cee0b4;
     core_xform_cpp_FUN_00594380(&this_ptr->head_look_euler);

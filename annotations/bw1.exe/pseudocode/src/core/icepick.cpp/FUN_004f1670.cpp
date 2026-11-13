@@ -44,9 +44,9 @@ void __cdecl core_icepick_cpp_FUN_004f1670(CIcePick *this_ptr,float delta_time)
     this_ptr_00 = &(this_ptr->base).base.model;
     this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_00524a00(&this_ptr_00->base);
     iVar4 = core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0(this_ptr_01,motion_name,iVar4);
-    core_skeleton_cpp_FUN_00568100
-              (this_ptr_00,iVar4,0,this_ptr->shoot_blend_weight,_DAT_01d06cb4,
-               core_skeleton_cpp_FUN_00567360);
+    core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00568100
+              (this_ptr_00,iVar4,0.0,this_ptr->shoot_blend_weight,_DAT_01d06cb4,
+               core_skeleton_cpp_blendWeightCallback_FUN_00567360);
     this_ptr->aim_pitch =
          (this_ptr->base).player_input.look_up_down_speed * _DAT_005e53bf * (float)_DAT_005e53b7 *
          delta_time + this_ptr->aim_pitch;
@@ -59,7 +59,7 @@ void __cdecl core_icepick_cpp_FUN_004f1670(CIcePick *this_ptr,float delta_time)
       this_ptr->aim_pitch = 0.7853982;
     }
     core_xform_cpp_quaternionFromAngleX_FUN_005b7af0(this_ptr->aim_pitch);
-    blend_callback = core_skeleton_cpp_FUN_00567360;
+    blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_00567360;
     local_1c.w = local_2c;
     puVar2 = (uint *)((int)&local_1c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
     *(uint *)((int)&local_1c + (uint)bVar3 * -8 + 4) =

@@ -30,7 +30,7 @@
 ;   core_actor.cpp_FUN_00408b80
 ;   core_actor.cpp_randomChance_FUN_0040cf40
 ;   core_gore.cpp_CGore_spawnBloodParticles_FUN_004ce8a0
-;   core_skeleton.cpp_FUN_0054dcc0
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0
 ;
 ; *****************************************************************************
 
@@ -64,8 +64,8 @@ section .text
     PUSH EAX                            ; 0042fec8
     LEA ESI,[ESP + 0x1c]                ; 0042fec9
     LEA EDI,[ESP + 0x40]                ; 0042fecd
-    CALL core_skeleton.cpp_FUN_0054dcc0 ; 0042fed1
-        ;   XREF to: 0054dcc0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054dcc0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0 ; 0042fed1
+        ;   XREF to: 0054dcc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 0042fed6
     LEA EAX,[ESP + 0x38]                ; 0042fed9
     LEA ESI,[ESP + 0x14]                ; 0042fedd

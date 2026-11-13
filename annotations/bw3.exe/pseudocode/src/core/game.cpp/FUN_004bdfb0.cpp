@@ -273,7 +273,7 @@ LAB_004be22a:
           core_gore_cpp_CGore_load_FUN_004cf010(g_CGorePtr,file_handle);
         }
         if (local_38 < 7) {
-          core_fire_cpp_FUN_004a1480(0x01C73654);
+          core_fire_cpp_CFireEffect_init_FUN_004a1480(0x01C73654);
         }
         else {
           core_fire_cpp_CFireEffect_load_FUN_004a4030(0x01C73654,file_handle);

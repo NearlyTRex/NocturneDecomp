@@ -13,8 +13,8 @@
 ; XREF[5]:
 ;   core_actor.cpp_CDemonActor_playSoundWithDelay_FUN_00408ca0 at 00408cba
 ;   core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490 at 004115a3
-;   core_fire.cpp_FUN_004a2090 at 004a23a6
-;   core_fire.cpp_FUN_004a25f0 at 004a2727
+;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_004a2090 at 004a23a6
+;   core_fire.cpp_CFireEffect_createStake_FUN_004a25f0 at 004a2727
 ;   core_flintlck.cpp_CFlintlock_fire_FUN_004ae850 at 004af0fd
 ;
 ; Called Functions:

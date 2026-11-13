@@ -40,11 +40,9 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004cc990(CHaystack *this_pt
   float afStack_60 [3];
   uint uStack_54;
   uint uStack_48;
-  float fStack_3c;
+  CVector3f CStack_3c;
   float fStack_30;
-  float fStack_2c;
-  float fStack_28;
-  float fStack_24;
+  float afStack_2c [3];
   CCharacter *pCStack_20;
   float fStack_1c;
   float fStack_18;
@@ -216,12 +214,12 @@ switchD_004cce93_caseD_4:
     afStack_74[3] = (this_ptr->base).base.velocity.y * delta_time;
     fStack_64 = (this_ptr->base).base.velocity.z * delta_time;
     fStack_30 = afStack_74[2];
-    afStack_74[(uint)bVar10 * -2 + 0x12] = afStack_74[(uint)bVar10 * -2 + 3];
-    afStack_74[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x13] =
+    afStack_2c[(uint)bVar10 * -2] = afStack_74[(uint)bVar10 * -2 + 3];
+    afStack_2c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
          afStack_74[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
     CStack_84.x = CStack_84.x + fStack_30;
-    CStack_84.y = CStack_84.y + fStack_2c;
-    CStack_84.z = CStack_84.z + fStack_28;
+    CStack_84.y = CStack_84.y + afStack_2c[0];
+    CStack_84.z = CStack_84.z + afStack_2c[1];
     core_charactr_cpp_FUN_00423a60((CCharacter *)this_ptr,pCVar13);
   }
   else {
@@ -245,25 +243,27 @@ switchD_004cce93_caseD_4:
       if (_DAT_005d993a < fStack_1c) {
         fStack_1c = fStack_1c + _DAT_005d993e;
       }
-      fStack_24 = delta_time * _DAT_005d9936;
-      fStack_18 = -fStack_24;
+      afStack_2c[2] = delta_time * _DAT_005d9936;
+      fStack_18 = -afStack_2c[2];
       if (fStack_1c < fStack_18) {
         fStack_1c = fStack_18;
       }
-      if (fStack_24 < fStack_1c) {
-        fStack_1c = fStack_24;
+      if (afStack_2c[2] < fStack_1c) {
+        fStack_1c = afStack_2c[2];
       }
       (this_ptr->base).base.base.orient.vec.y = (this_ptr->base).base.base.orient.vec.y + fStack_1c;
       core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0((CDemonActor *)this_ptr);
     }
     pCStack_20 = (CCharacter *)(this_ptr->base).base.grabbed_by;
     pCStack_14 = (pCStack_20->base).vtable._uc;
-    core_skeleton_cpp_FUN_00546a90(&(this_ptr->base).base.model,0);
+    core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
+              (&(this_ptr->base).base.model,0,&CStack_3c);
     pCVar13 = &CStack_9c;
-    CStack_9c.x = fStack_3c;
-    *(float *)((int)&CStack_9c + (uint)bVar10 * -8 + 4) = afStack_74[(uint)bVar10 * -2 + 0xf];
-    *(float *)((int)&CStack_9c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-         afStack_74[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x10];
+    CStack_9c.x = CStack_3c.x;
+    *(uint *)((int)&CStack_9c + (uint)bVar10 * -8 + 4) =
+         *(uint *)((int)&CStack_3c + (uint)bVar10 * -8 + 4);
+    *(uint *)((int)&CStack_9c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+         *(uint *)((int)&CStack_3c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
     iVar5 = (*(pCStack_14->_uc).attractActorToward)(pCStack_20,(CDemonActor *)this_ptr,pCVar13);
     if (iVar5 == 0) {
       (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
@@ -285,7 +285,7 @@ LAB_004ccc1d:
   EVar6 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
   if ((EVar6 == DEATH_STATE_ALIVE) &&
      (iVar5 = core_motion_cpp_FUN_005035c0(pCVar11), *(int *)(iVar5 + 0x24) != 0x13)) {
-    blend_callback = core_skeleton_cpp_FUN_00544cc0;
+    blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_00544cc0;
     fVar12 = this_ptr->head_look_blend_weight;
     iVar5 = _DAT_01cede20;
     core_xform_cpp_FUN_00594380(&this_ptr->head_look_euler);

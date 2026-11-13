@@ -9,14 +9,14 @@
 ; CVector3i *      Stack[0xc]:4   rotation
 ;
 ; XREF[10]:
+;   core_fire.cpp_CFireball_render_FUN_004ae640 at 004ae6a0
 ;   core_fire.cpp_CFirefly_render_FUN_004adaf0 at 004addcb
 ;   core_fire.cpp_CLeaf_render_FUN_004af270 at 004af29c
 ;   core_fire.cpp_CPopcorn_render_FUN_004b4370 at 004b4425
 ;   core_fire.cpp_CRainDrop_render_FUN_004b46e0 at 004b4798
+;   core_fire.cpp_CRock_render_FUN_004af040 at 004af06c
 ;   core_fire.cpp_CSmokeParticle_render_FUN_004ac0b0 at 004ac193
-;   core_fire.cpp_FUN_004ad140 at 004ad3e2
-;   core_fire.cpp_FUN_004ae640 at 004ae6a0
-;   core_fire.cpp_FUN_004af040 at 004af06c
+;   core_fire.cpp_CSpark_render_FUN_004ad140 at 004ad3e2
 ;   core_flame.cpp_CFlame_renderTransparent_FUN_004b8100 at 004b8251
 ;   core_gore.cpp_FUN_004e3f40 at 004e3fc3
 ;

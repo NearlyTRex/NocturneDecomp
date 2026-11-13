@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 int __cdecl core_charactr_cpp_CCharacter_processMotion_FUN_00434a80(CCharacter *this_ptr,int bone_index)
 
 {
@@ -19,12 +21,12 @@ int __cdecl core_charactr_cpp_CCharacter_processMotion_FUN_00434a80(CCharacter *
   CVector3f *pCVar6;
   int iVar7;
   float fVar8;
-  float local_70;
-  float local_64;
+  CVector3f local_70;
+  CVector3f local_64;
   CVector3f local_58;
   CVector3f local_4c;
-  float local_40;
-  float afStack_3c [5];
+  CVector3f local_40;
+  CVector3f local_34;
   CVector3f local_28;
   CVector3f local_1c;
   
@@ -39,12 +41,14 @@ int __cdecl core_charactr_cpp_CCharacter_processMotion_FUN_00434a80(CCharacter *
       if (-1 < bone_index) {
         fVar8 = 0.5;
         pCVar1 = (this_ptr->base).vtable._ub;
-        core_skeleton_cpp_FUN_00569040(this_ptr_00,bone_index);
+        core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
+                  (this_ptr_00,bone_index,&local_34);
         pCVar6 = &local_4c;
-        local_4c.x = afStack_3c[2];
-        *(float *)((int)&local_4c + (uint)bVar4 * -8 + 4) = afStack_3c[(uint)bVar4 * -2 + 3];
-        *(float *)((int)&local_4c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-             afStack_3c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
+        local_4c.x = local_34.x;
+        *(uint *)((int)&local_4c + (uint)bVar4 * -8 + 4) =
+             *(uint *)((int)&local_34 + (uint)bVar4 * -8 + 4);
+        *(uint *)((int)&local_4c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+             *(uint *)((int)&local_34 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
         uVar3 = (*pCVar1->processFootstepAtOffset)(&this_ptr->base,pCVar6,fVar8);
         return uVar3;
       }
@@ -59,13 +63,14 @@ int __cdecl core_charactr_cpp_CCharacter_processMotion_FUN_00434a80(CCharacter *
       if (-1 < bone_index) {
         fVar8 = 0.5;
         pCVar1 = (this_ptr->base).vtable._ub;
-        core_skeleton_cpp_FUN_00569040(this_ptr_00,bone_index);
+        core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
+                  (this_ptr_00,bone_index,&local_70);
         pCVar6 = &local_1c;
-        local_1c.x = local_70;
+        local_1c.x = local_70.x;
         *(uint *)((int)&local_1c + (uint)bVar4 * -8 + 4) =
-             *(uint *)(&stack0xffffff94 + (uint)bVar4 * -8);
+             *(uint *)((int)&local_70 + (uint)bVar4 * -8 + 4);
         *(uint *)((int)&local_1c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-             *(uint *)(&stack0xffffff98 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+             *(uint *)((int)&local_70 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
         uVar3 = (*pCVar1->processFootstepAtOffset)(&this_ptr->base,pCVar6,fVar8);
         return uVar3;
       }
@@ -82,12 +87,14 @@ int __cdecl core_charactr_cpp_CCharacter_processMotion_FUN_00434a80(CCharacter *
         if (-1 < bone_index) {
           fVar8 = 0.7;
           pCVar1 = (this_ptr->base).vtable._ub;
-          core_skeleton_cpp_FUN_00569040(this_ptr_00,bone_index);
+          core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
+                    (this_ptr_00,bone_index,&local_40);
           pCVar6 = &local_58;
-          local_58.x = local_40;
-          *(float *)((int)&local_58 + (uint)bVar4 * -8 + 4) = afStack_3c[(uint)bVar4 * -2];
-          *(float *)((int)&local_58 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-               afStack_3c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+          local_58.x = local_40.x;
+          *(uint *)((int)&local_58 + (uint)bVar4 * -8 + 4) =
+               *(uint *)((int)&local_40 + (uint)bVar4 * -8 + 4);
+          *(uint *)((int)&local_58 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+               *(uint *)((int)&local_40 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
           uVar3 = (*pCVar1->processFootstepAtOffset)(&this_ptr->base,pCVar6,fVar8);
           return uVar3;
         }
@@ -106,13 +113,14 @@ int __cdecl core_charactr_cpp_CCharacter_processMotion_FUN_00434a80(CCharacter *
         if (-1 < bone_index) {
           fVar8 = 0.7;
           pCVar1 = (this_ptr->base).vtable._ub;
-          core_skeleton_cpp_FUN_00569040(this_ptr_00,bone_index);
+          core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
+                    (this_ptr_00,bone_index,&local_64);
           pCVar6 = &local_28;
-          local_28.x = local_64;
+          local_28.x = local_64.x;
           *(uint *)((int)&local_28 + (uint)bVar4 * -8 + 4) =
-               *(uint *)(&stack0xffffffa0 + (uint)bVar4 * -8);
+               *(uint *)((int)&local_64 + (uint)bVar4 * -8 + 4);
           *(uint *)((int)&local_28 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-               *(uint *)(&stack0xffffffa4 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+               *(uint *)((int)&local_64 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
           uVar3 = (*pCVar1->processFootstepAtOffset)(&this_ptr->base,pCVar6,fVar8);
           return uVar3;
         }

@@ -72,8 +72,8 @@
 ;   core_motion.cpp_FUN_00503e60
 ;   core_motion.cpp_FUN_00503f50
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40
+;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
-;   core_skeleton.cpp_FUN_00545a60
 ;   core_xform.cpp_quaternionFromAngleX_FUN_00593fa0
 ;   core_xform.cpp_quaternionFromAngleY_FUN_00593fe0
 ;   core_xform.cpp_slerpQuaternion_FUN_00593df0
@@ -365,8 +365,8 @@ section .text
     PUSH dword ptr [EBP + 0x5a]         ; 004558e2
     PUSH EAX                            ; 004558e5
     PUSH EDI                            ; 004558e6
-    CALL core_skeleton.cpp_FUN_00545a60 ; 004558e7
-        ;   XREF to: 00545a60 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00545a60()
+    CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60 ; 004558e7
+        ;   XREF to: 00545a60 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
     MOV EDX,dword ptr [EBX + 0x2d04]    ; 004558ec
     ADD ESP,0x18                        ; 004558f2
     TEST EDX,EDX                        ; 004558f5

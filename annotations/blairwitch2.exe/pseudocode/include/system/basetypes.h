@@ -70,6 +70,7 @@
 #define __stackdbl_esi
 #define __stack2_esi
 #define __stack3_esi
+#define __stack4_esi
 #define __stack_esi_edi
 #define __stack2_esi_edi
 #define __esi

@@ -10,10 +10,10 @@ CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_dtor_FUN_00540840(CSkeleton *thi
 
 {
   CSkeleton *pCVar1;
-  uint unaff_retaddr;
+  CSkeleton *unaff_retaddr;
   
   FUN_005badc7(0xc);
-  core_skeleton_cpp_FUN_00540980(unaff_retaddr,1);
+  core_skeleton_cpp_CSkeleton_free_FUN_00540980(unaff_retaddr,1);
   pCVar1 = (CSkeleton *)core_moon_cpp_FUN_00502790(unaff_retaddr,1);
   return pCVar1;
 }

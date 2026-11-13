@@ -123,7 +123,7 @@ void __cdecl CGabriella::updateClavicleCollisionAvoidance(CGabriella *this_ptr,f
 
 // Original: core_gabriela.cpp_FUN_004b20d0
 // Address: 004b20d0
-void FUN_004b20d0(int param_1,float param_2,float *param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
+void FUN_004b20d0(int param_1,float param_2,float *param_3,int param_4,int param_5,undefined4 param_6);
 
 // Original: core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004b22c0
 // Address: 004b22c0

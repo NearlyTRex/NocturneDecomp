@@ -22,7 +22,6 @@
 #include "types/classes/CLeaf.h"
 #include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CMuzzleFlash.h"
-#include "types/classes/CParticle.h"
 #include "types/classes/CQuaternion4f.h"
 #include "types/classes/CRock.h"
 #include "types/classes/CRuleList.h"
@@ -30,9 +29,12 @@
 #include "types/classes/CSpark.h"
 #include "types/classes/CStake.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
 #include "types/enums/ECollisionType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
+#include "types/structs/SMRGLTextureBasic.h"
+#include "types/structs/STriangleVertices.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x4A0000
@@ -147,14 +149,14 @@ void __cdecl core_filmreel_cpp_CFilmProjector_archive_FUN_004ab9a0(CFilmProjecto
 CFilmReel * __cdecl core_filmreel_cpp_CFilmReel_dtor_FUN_004ab9f0(CFilmReel *this_ptr,uint flags);
 CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_dtor_FUN_004aba40(CFilmProjector *this_ptr,uint flags);
 void __cdecl core_fire_cpp_staticInit_FUN_004aba90(void);
-float core_fire_cpp_safeAcos_FUN_004abd60(void);
+float __cdecl core_fire_cpp_safeAcos_FUN_004abd60(float value);
 void __cdecl core_fire_cpp_CSmokeParticle_setupRenderState_FUN_004abdb0(CSmokeParticle *this_ptr);
 void __cdecl core_fire_cpp_CSmokeParticle_reset_FUN_004abea0(CSmokeParticle *this_ptr);
 void __cdecl core_fire_cpp_CSmokeParticle_init_FUN_004abeb0(CSmokeParticle *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence,int alpha_value);
-void core_fire_cpp_FUN_004abf50(undefined4 *param_1);
+void __cdecl core_fire_cpp_CSmokeParticle_process_FUN_004abf50(CSmokeParticle *this_ptr);
 void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004ac0b0(CSmokeParticle *this_ptr);
 void __cdecl core_fire_cpp_CBulletHole_init_FUN_004ac3e0(CBulletHole *this_ptr,CVector3f *hit_position,CVector3f *surface_normal,CDemonActor *hit_actor);
-void core_fire_cpp_FUN_004ac690(undefined4 *param_1);
+void __cdecl core_fire_cpp_CBulletHole_process_FUN_004ac690(CBulletHole *this_ptr);
 void __cdecl core_fire_cpp_CBulletHole_setupRenderState_FUN_004ac6f0(CBulletHole *this_ptr);
 void __cdecl core_fire_cpp_CBulletHole_render_FUN_004ac770(CBulletHole *this_ptr);
 void __cdecl core_fire_cpp_loadStakeAssets_FUN_004acad0(void);
@@ -164,33 +166,33 @@ void __cdecl core_fire_cpp_CStake_render_FUN_004ace60(CStake *this_ptr);
 void __cdecl core_fire_cpp_CStake_process_FUN_004acf20(CStake *this_ptr);
 void __cdecl core_fire_cpp_CSpark_process_FUN_004acf50(CSpark *this_ptr);
 void __cdecl core_fire_cpp_CSpark_setupRenderState_FUN_004ad010(CSpark *this_ptr);
-void core_fire_cpp_FUN_004ad140(CVector3f *param_1);
-undefined4 core_fire_cpp_FUN_004ad850(void);
+void __cdecl core_fire_cpp_CSpark_render_FUN_004ad140(CSpark *this_ptr);
+int __cdecl core_fire_cpp_CSpark_onCollision_FUN_004ad850(CSpark *this_ptr,CVector3f *collision_normal);
 void __cdecl core_fire_cpp_CFirefly_process_FUN_004ad860(CFirefly *this_ptr);
 void __cdecl core_fire_cpp_CFirefly_setupRenderState_FUN_004ad9c0(CFirefly *this_ptr);
 void __cdecl core_fire_cpp_CFirefly_render_FUN_004adaf0(CFirefly *this_ptr);
 void __cdecl core_fire_cpp_loadFireBallAssets_FUN_004ae2a0(void);
 void __cdecl core_fire_cpp_CFireball_process_FUN_004ae300(CFireball *this_ptr);
 void __cdecl core_fire_cpp_CFireball_setupRenderState_FUN_004ae550(CFireball *this_ptr);
-void core_fire_cpp_FUN_004ae640(CVector3f *param_1);
+void __cdecl core_fire_cpp_CFireball_render_FUN_004ae640(CFireball *this_ptr);
 int __cdecl core_fire_cpp_CFireball_onCollision_FUN_004aee60(CFireball *this_ptr,CVector3f *collision_normal);
 void __cdecl core_fire_cpp_CRock_setup_FUN_004aef90(CRock *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr);
 void __cdecl core_fire_cpp_loadRockAssets_FUN_004aefb0(void);
-void core_fire_cpp_FUN_004aefc0(int param_1);
-void core_fire_cpp_FUN_004af040(CVector3f *param_1);
+void __cdecl core_fire_cpp_CRock_process_FUN_004aefc0(CRock *this_ptr);
+void __cdecl core_fire_cpp_CRock_render_FUN_004af040(CRock *this_ptr);
 void __cdecl core_fire_cpp_CLeaf_init_FUN_004af0f0(CLeaf *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4,float param_5);
-void core_fire_cpp_loadLeafAssets_FUN_004af120(void);
+void __cdecl core_fire_cpp_loadLeafAssets_FUN_004af120(void);
 void __cdecl core_fire_cpp_CLeaf_process_FUN_004af170(CLeaf *this_ptr);
 void __cdecl core_fire_cpp_CLeaf_render_FUN_004af270(CLeaf *this_ptr);
 undefined4 __cdecl core_fire_cpp_CLeaf_onCollision_FUN_004af330(CLeaf *this_ptr);
-void __cdecl core_fire_cpp_FUN_004af340(CMuzzleFlash *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix);
+void __cdecl core_fire_cpp_CMuzzleFlash_init_FUN_004af340(CMuzzleFlash *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix);
 void __cdecl core_fire_cpp_CMuzzleFlash_process_FUN_004af400(CMuzzleFlash *this_ptr);
 void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_004af430(CMuzzleFlash *this_ptr);
 void __cdecl core_fire_cpp_loadGunFlashAssets_FUN_004af5e0(void);
-void core_fire_cpp_FUN_004af600(CParticle *param_1,float *param_2,int *param_3,float *param_4,float *param_5,float param_6);
+void __cdecl core_fire_cpp_CGlassParticle_init_FUN_004af600(CGlassParticle *this_ptr,STriangleVertices *triangle_vertices,CVector3i *uv_u_per_vertex,CVector3i *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime);
 void __cdecl core_fire_cpp_CGlassParticle_render_FUN_004af9f0(CGlassParticle *this_ptr);
 void __cdecl core_fire_cpp_CGlassParticle_process_FUN_004afbf0(CGlassParticle *this_ptr);
-undefined4 core_fire_cpp_FUN_004afc60(void);
+int __cdecl core_fire_cpp_CGlassParticle_onCollision_FUN_004afc60(CGlassParticle *this_ptr,CVector3f *collision_normal);
 void __cdecl core_fire_cpp_CBulletTrail_init_FUN_004afc70(CBulletTrail *this_ptr,CVector3f *start_position,CVector3f *end_position,CKeyFramedModel *model_ptr,float segment_length);
 void __cdecl core_fire_cpp_CBulletTrail_process_FUN_004afcd0(CBulletTrail *this_ptr);
 void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004afcf0(CBulletTrail *this_ptr);

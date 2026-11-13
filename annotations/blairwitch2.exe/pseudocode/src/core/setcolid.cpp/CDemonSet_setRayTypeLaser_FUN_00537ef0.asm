@@ -12,7 +12,7 @@
 ;
 ; XREF[4]:
 ;   core_doc.cpp_FUN_0045ab40 at 0045ac8c
-;   core_fire.cpp_FUN_0049db20 at 0049db66
+;   core_fire.cpp_CFireEffect_traceLaser_FUN_0049db20 at 0049db66
 ;   core_lightgun.cpp_CLightGun_fire_FUN_004e2e70 at 004e2ffd
 ;   core_stranger.cpp_CStranger_aimLeftPistol_FUN_0056ca10 at 0056cb5c
 ;

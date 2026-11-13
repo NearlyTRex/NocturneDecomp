@@ -22,7 +22,7 @@
 ;   core_icepick.cpp_CIcePick_process_FUN_004f0e50 at 004f11c6
 ;   core_scat.cpp_CScat_blendAimBones_FUN_00542270 at 005424da
 ;   core_scat.cpp_CScat_process_FUN_00540df0 at 0054123b
-;   core_skeleton.cpp_FUN_00569440 at 005695bf
+;   core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_00569440 at 005695bf
 ;   core_stranger.cpp_CStranger_applyArmAimRotation_FUN_0058aab0 at 0058ad8d
 ;   ... and 2 more
 ;

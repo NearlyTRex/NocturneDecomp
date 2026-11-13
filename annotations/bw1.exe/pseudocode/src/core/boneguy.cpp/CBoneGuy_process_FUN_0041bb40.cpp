@@ -226,7 +226,8 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bb40(CBoneGuy *this_ptr,f
       return;
     }
     iVar8 = 0;
-    core_skeleton_cpp_FUN_00569ae0();
+    core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_00569ae0
+              (&(this_ptr->base).base.model);
     pCVar12 = this_ptr;
     if (0 < this_ptr->box_count) {
       do {

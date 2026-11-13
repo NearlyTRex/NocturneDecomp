@@ -9,7 +9,7 @@
 ; CVector3f *      Stack[0xc]:4   velocity
 ;
 ; XREF[2]:
-;   core_fire.cpp_FUN_0049d090 at 0049d48d
+;   core_fire.cpp_CToss_process_FUN_0049d090 at 0049d48d
 ;   core_weather.cpp_FUN_0057bda0 at 0057bf8f
 ;
 ; Referenced Globals:

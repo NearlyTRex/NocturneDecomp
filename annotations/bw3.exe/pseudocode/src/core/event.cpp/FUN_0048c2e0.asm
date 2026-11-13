@@ -2043,8 +2043,8 @@ section .text
     PUSH EAX                            ; 0048d2b7
     MOV EDX,dword ptr [0x005fc5a0]      ; 0048d2b8 | DAT_005fc5a0
     PUSH EDX                            ; 0048d2be
-    CALL core_fire.cpp_FUN_004a36e0     ; 0048d2bf
-        ;   XREF to: 004a36e0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a36e0()
+    CALL core_fire.cpp_CFireEffect_createExplosion_FUN_004a36e0 ; 0048d2bf
+        ;   XREF to: 004a36e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createExplosion_FUN_004a36e0(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
     ADD ESP,0x18                        ; 0048d2c4
     JMP 0x0048c7d2                      ; 0048d2c7
         ;   XREF to: 0048c7d2 (UNCONDITIONAL_JUMP)  ; caseD_6
@@ -5622,8 +5622,8 @@ section .text
     ADD ESP,0x4                         ; 0048f4b0
     MOV ESI,dword ptr [0x005fc5a0]      ; 0048f4b3 | DAT_005fc5a0
     PUSH ESI                            ; 0048f4b9
-    CALL core_fire.cpp_FUN_004a1480     ; 0048f4ba
-        ;   XREF to: 004a1480 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a1480()
+    CALL core_fire.cpp_CFireEffect_init_FUN_004a1480 ; 0048f4ba
+        ;   XREF to: 004a1480 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_init_FUN_004a1480(CFireEffect * this_ptr)
     MOV EAX,[0x00600530]                ; 0048f4bf | DAT_00600530
     XOR EDI,EDI                         ; 0048f4c4
     MOV EAX,dword ptr [EAX]             ; 0048f4c6 | DAT_01d81080

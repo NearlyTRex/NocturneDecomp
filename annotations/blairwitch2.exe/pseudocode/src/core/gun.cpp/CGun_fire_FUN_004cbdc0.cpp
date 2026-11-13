@@ -264,7 +264,7 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004cbdc0(CGun *this_ptr)
   *(float *)((int)&CStack_c4 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
        afStack_118[(uint)bVar4 * -2 + (uint)bVar4 * -2 + -1];
   CStack_c4.y = CStack_c4.y + _DAT_005d97ee;
-  core_fire_cpp_FUN_0049d120(0x01C3DEB4,&CStack_c4,rotation_matrix);
+  core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0049d120(0x01C3DEB4,&CStack_c4,rotation_matrix);
   core_sound_cpp_CSound_playActorSound_FUN_0055ae50
             (0x0264B290,(CDemonActor *)this_ptr,"45.wav",&CStack_124);
   (this_ptr->base).fire_cooldown_timer = 0.333;

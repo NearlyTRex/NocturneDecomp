@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_fire.cpp_CFireEffect_createFireball_FUN_004a2830 at 004a28b4
-;   core_fire.cpp_FUN_004a3920 at 004a3992
+;   core_fire.cpp_CFireEffect_createToss_FUN_004a3920 at 004a3992
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_00552f10

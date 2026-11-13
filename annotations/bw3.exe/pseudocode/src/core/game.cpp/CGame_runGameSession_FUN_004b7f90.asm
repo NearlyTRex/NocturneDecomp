@@ -41,7 +41,7 @@
 ;   core_bmppuzzl.cpp_releasePuzzleGraphics_FUN_00411a40
 ;   core_dlight.cpp_CDemonLight_init_FUN_0045c2a0
 ;   core_event.cpp_FUN_004946f0
-;   core_fire.cpp_FUN_004a1480
+;   core_fire.cpp_CFireEffect_init_FUN_004a1480
 ;   core_game.cpp_CGame_beginFadeOut_FUN_004bd660
 ;   core_game.cpp_CGame_clearOverlay_FUN_004b4710
 ;   core_game.cpp_CGame_fadeIn_FUN_004bd8d0
@@ -601,8 +601,8 @@ section .text
     MOV ESI,dword ptr [0x005fc5a0]      ; 004b8664 | DAT_005fc5a0
         ;   Label: LAB_004b8664
     PUSH ESI                            ; 004b866a
-    CALL core_fire.cpp_FUN_004a1480     ; 004b866b
-        ;   XREF to: 004a1480 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a1480()
+    CALL core_fire.cpp_CFireEffect_init_FUN_004a1480 ; 004b866b
+        ;   XREF to: 004a1480 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_init_FUN_004a1480(CFireEffect * this_ptr)
     ADD ESP,0x4                         ; 004b8670
     JMP 0x004b8260                      ; 004b8673
         ;   XREF to: 004b8260 (UNCONDITIONAL_JUMP)  ; LAB_004b8260

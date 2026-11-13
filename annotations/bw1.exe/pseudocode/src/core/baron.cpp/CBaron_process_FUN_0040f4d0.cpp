@@ -202,7 +202,7 @@ switchD_0040fa5f_default:
   core_charactr_cpp_CCharacter_preProcess_FUN_0042e160((CCharacter *)this_ptr);
   pCVar5 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_005675a0(pCVar5);
-  blend_callback = core_skeleton_cpp_FUN_00567360;
+  blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_00567360;
   fVar6 = this_ptr->head_blend_weight;
   iVar2 = DAT_007c3498;
   core_xform_cpp_FUN_005b7ed0(&this_ptr->head_rotation);

@@ -7,7 +7,7 @@
 ; CLightningBolt * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_004a1760 at 004a19e4
+;   core_fire.cpp_CFireEffect_process_FUN_004a1760 at 004a19e4
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01d2130c

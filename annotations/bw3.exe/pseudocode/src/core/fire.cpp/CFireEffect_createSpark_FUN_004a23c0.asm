@@ -17,11 +17,11 @@
 ;   core_burncrss.cpp_CBurncross_fire_FUN_00424550 at 00424bda
 ;   core_dynamite.cpp_CDynamite_process_FUN_0047b270 at 0047b455
 ;   core_emitter.cpp_CEmitter_process_FUN_00487eb0 at 00487fe0
+;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_004a2090 at 004a227c
 ;   core_fire.cpp_CFireball_onCollision_FUN_00499eb0 at 00499f00
 ;   core_fire.cpp_CFireball_process_FUN_00499350 at 00499461
 ;   core_fire.cpp_CRing_process_FUN_0049fdf0 at 004a0364
-;   core_fire.cpp_FUN_0049d090 at 0049d41d
-;   core_fire.cpp_FUN_004a2090 at 004a227c
+;   core_fire.cpp_CToss_process_FUN_0049d090 at 0049d41d
 ;   core_flame.cpp_CFlame_process_FUN_004a5b10 at 004a5b89
 ;   ... and 11 more
 ;

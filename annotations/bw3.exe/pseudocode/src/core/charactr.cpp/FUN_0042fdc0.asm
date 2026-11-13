@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_FUN_0042fdc0(int param_1,int param_2,undefined4 param_3,float param_4)
+; void core_charactr_cpp_FUN_0042fdc0(int param_1,int param_2,int param_3,float param_4)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x58]:1  local_58
@@ -28,7 +28,7 @@
 ;   core_actor.cpp_FUN_00408b80
 ;   core_actor.cpp_randomChance_FUN_0040cf40
 ;   core_gore.cpp_CGore_spawnBloodParticles_FUN_004ce8a0
-;   core_skeleton.cpp_FUN_0054dcc0
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0
 ;
 ; *****************************************************************************
 
@@ -62,8 +62,8 @@ section .text
     PUSH EAX                            ; 0042fdf8
     LEA ESI,[ESP + 0x10]                ; 0042fdf9
     LEA EDI,[ESP + 0x40]                ; 0042fdfd
-    CALL core_skeleton.cpp_FUN_0054dcc0 ; 0042fe01
-        ;   XREF to: 0054dcc0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054dcc0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0 ; 0042fe01
+        ;   XREF to: 0054dcc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 0042fe06
     LEA EAX,[ESP + 0x38]                ; 0042fe09
     LEA ESI,[ESP + 0x8]                 ; 0042fe0d

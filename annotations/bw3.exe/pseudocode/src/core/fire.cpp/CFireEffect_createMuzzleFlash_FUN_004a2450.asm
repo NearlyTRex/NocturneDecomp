@@ -20,7 +20,7 @@
 ;   undefined4 DAT_01cbb9b8
 ;
 ; Called Functions:
-;   core_fire.cpp_FUN_0049a390
+;   core_fire.cpp_CMuzzleFlash_init_FUN_0049a390
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x14]      ; 004a2489
     PUSH EDI                            ; 004a248d
     PUSH EAX                            ; 004a248e
-    CALL core_fire.cpp_FUN_0049a390     ; 004a248f
-        ;   XREF to: 0049a390 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_0049a390(CMuzzleFlash * this_ptr, CVector3f * position, CMatrix3x3f * rotation_matrix)
+    CALL core_fire.cpp_CMuzzleFlash_init_FUN_0049a390 ; 004a248f
+        ;   XREF to: 0049a390 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CMuzzleFlash_init_FUN_0049a390(CMuzzleFlash * this_ptr, CVector3f * position, CMatrix3x3f * rotation_matrix)
     ADD ESP,0xc                         ; 004a2494
     POP EDI                             ; 004a2497
     POP ESI                             ; 004a2498

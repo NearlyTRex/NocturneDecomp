@@ -30,10 +30,9 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_00509120(CNPC *this_ptr,float delta_t
   CVector3f CStack_74;
   float fStack_68;
   float afStack_64 [5];
-  uint uStack_50;
+  CVector3f CStack_50;
   float fStack_44;
-  float fStack_38;
-  float fStack_34;
+  float afStack_40 [4];
   float fStack_30;
   float fStack_2c;
   float fStack_28;
@@ -66,19 +65,20 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_00509120(CNPC *this_ptr,float delta_t
   EVar6 = (*(((this_ptr->base).base.vtable._uc)->_uc).getDeathState)(&this_ptr->base);
   if ((((1 < (int)EVar6) && ((this_ptr->base).base.lifecycle_state == ACTOR_CREATED)) &&
       (this_ptr->pool_me == 0)) && ((this_ptr->base).base.standing_platform == (CPlatform *)0x0)) {
-    core_skeleton_cpp_FUN_0054dbd0(pCVar1,0);
+    core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
+              (pCVar1,0,&CStack_50);
     pfVar10 = afStack_64 + 2;
-    afStack_64[2] = (float)uStack_50;
-    afStack_64[(uint)bVar7 * -2 + 3] = afStack_64[(uint)bVar7 * -2 + 6];
+    afStack_64[2] = CStack_50.x;
+    afStack_64[(uint)bVar7 * -2 + 3] = *(float *)((int)&CStack_50 + (uint)bVar7 * -8 + 4);
     afStack_64[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
-         afStack_64[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7];
+         *(float *)((int)&CStack_50 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
     core_actor_cpp_FUN_00408b80(this_ptr,pfVar10);
     blood_type = BLOOD_TYPE_RED;
     pCVar8 = &CStack_80;
     CStack_80.x = fStack_44;
-    *(float *)((int)&CStack_80 + (uint)bVar7 * -8 + 4) = afStack_64[(uint)bVar7 * -2 + 9];
+    *(float *)((int)&CStack_80 + (uint)bVar7 * -8 + 4) = afStack_40[(uint)bVar7 * -2];
     *(float *)((int)&CStack_80 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-         afStack_64[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10];
+         afStack_40[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
     core_gore_cpp_CGore_createBloodPool_FUN_004cec40(g_CGorePtr,pCVar8,blood_type);
     this_ptr->pool_me = 1;
     uStack_14 = 1;
@@ -151,25 +151,25 @@ LAB_005092c8:
   afStack_64[0] = (this_ptr->base).velocity.y * delta_time;
   afStack_64[1] = (this_ptr->base).velocity.z * delta_time;
   fStack_20 = fStack_68;
-  afStack_64[(uint)bVar7 * -2 + 0x12] = afStack_64[(uint)bVar7 * -2];
-  afStack_64[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x13] =
+  afStack_40[(uint)bVar7 * -2 + 9] = afStack_64[(uint)bVar7 * -2];
+  afStack_40[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10] =
        afStack_64[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
   pCVar8 = &(this_ptr->base).position_delta;
   fStack_2c = fStack_20 + pCVar8->x;
   fStack_28 = fStack_1c + (this_ptr->base).position_delta.y;
   fStack_24 = fStack_18 + (this_ptr->base).position_delta.z;
   fStack_8c = fStack_2c;
-  *(float *)((int)&stack0xffffff78 + (uint)bVar7 * -8) = afStack_64[(uint)bVar7 * -2 + 0xf];
+  *(float *)((int)&stack0xffffff78 + (uint)bVar7 * -8) = afStack_40[(uint)bVar7 * -2 + 6];
   *(float *)((int)&stack0xffffff7c + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
-       afStack_64[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x10];
+       afStack_40[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7];
   pCVar2 = &(this_ptr->base).model.accumulated_root_motion;
-  fStack_38 = fStack_8c + pCVar2->x;
-  fStack_34 = fStack_88 + (this_ptr->base).model.accumulated_root_motion.y;
+  afStack_40[2] = fStack_8c + pCVar2->x;
+  afStack_40[3] = fStack_88 + (this_ptr->base).model.accumulated_root_motion.y;
   fStack_30 = fStack_84 + (this_ptr->base).model.accumulated_root_motion.z;
-  CStack_74.x = fStack_38;
-  *(float *)((int)&CStack_74 + (uint)bVar7 * -8 + 4) = afStack_64[(uint)bVar7 * -2 + 0xc];
+  CStack_74.x = afStack_40[2];
+  *(float *)((int)&CStack_74 + (uint)bVar7 * -8 + 4) = afStack_40[(uint)bVar7 * -2 + 3];
   *(float *)((int)&CStack_74 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-       afStack_64[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0xd];
+       afStack_40[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
   (this_ptr->base).position_delta.z = 0.0;
   (this_ptr->base).position_delta.y = (this_ptr->base).position_delta.z;
   pCVar8->x = (this_ptr->base).position_delta.y;

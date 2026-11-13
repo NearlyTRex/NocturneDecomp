@@ -16,7 +16,7 @@
 ; XREF[3]:
 ;   core_prye.cpp_FUN_0051c1c0 at 0051cb74
 ;   core_prye.cpp_FUN_0051ee10 at 0051f0e8
-;   core_skeleton.cpp_FUN_0054dfd0 at 0054e14f
+;   core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0054dfd0 at 0054e14f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d2024

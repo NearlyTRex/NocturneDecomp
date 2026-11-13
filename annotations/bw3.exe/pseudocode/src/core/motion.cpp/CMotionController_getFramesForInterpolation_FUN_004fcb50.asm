@@ -15,8 +15,8 @@
 ;
 ; XREF[3]:
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90 at 0054ccd2
-;   core_skeleton.cpp_FUN_0054c1b0 at 0054c1ed
-;   core_skeleton.cpp_FUN_0054edb0 at 0054ede6
+;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_0054edb0 at 0054ede6
+;   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0054c1b0 at 0054c1ed
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005a3120

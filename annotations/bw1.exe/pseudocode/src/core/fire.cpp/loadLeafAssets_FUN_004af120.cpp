@@ -1,12 +1,12 @@
 // Name: core_fire.cpp_loadLeafAssets_FUN_004af120
 // Address: 004af120
 // Address Range: [[004af120, 004af165]]
-// Convention: unknown
-// Signature: void core_fire_cpp_loadLeafAssets_FUN_004af120(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_fire_cpp_loadLeafAssets_FUN_004af120(void)
 
 #include "nocturne.h"
 
-void core_fire_cpp_loadLeafAssets_FUN_004af120(void)
+void __cdecl core_fire_cpp_loadLeafAssets_FUN_004af120(void)
 
 {
   CKeyFramedModelInstance *this_ptr;

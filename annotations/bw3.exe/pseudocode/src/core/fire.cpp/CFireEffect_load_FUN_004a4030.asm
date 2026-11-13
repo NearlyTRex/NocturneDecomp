@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   core_fire.cpp_CCrater_load_FUN_0049dbe0
-;   core_fire.cpp_FUN_004a1480
+;   core_fire.cpp_CFireEffect_init_FUN_004a1480
 ;   crt_stdio.c_fgets_FUN_005a3f00
 ;   crt_stdio.c_fscanf_FUN_005a3230
 ;
@@ -36,8 +36,8 @@ section .text
     XOR EDX,EDX                         ; 004a4047
     PUSH ECX                            ; 004a4049
     MOV dword ptr [ESP + 0x104],EDX     ; 004a404a
-    CALL core_fire.cpp_FUN_004a1480     ; 004a4051
-        ;   XREF to: 004a1480 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a1480()
+    CALL core_fire.cpp_CFireEffect_init_FUN_004a1480 ; 004a4051
+        ;   XREF to: 004a1480 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_init_FUN_004a1480(CFireEffect * this_ptr)
     ADD ESP,0x4                         ; 004a4056
     PUSH EDI                            ; 004a4059
     PUSH 0xff                           ; 004a405a

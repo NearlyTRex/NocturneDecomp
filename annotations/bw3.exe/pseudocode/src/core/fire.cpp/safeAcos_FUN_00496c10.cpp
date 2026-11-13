@@ -1,27 +1,25 @@
 // Name: core_fire.cpp_safeAcos_FUN_00496c10
 // Address: 00496c10
 // Address Range: [[00496c10, 00496c5f]]
-// Convention: unknown
-// Signature: float core_fire_cpp_safeAcos_FUN_00496c10(void)
+// Convention: __cdecl
+// Signature: float __cdecl core_fire_cpp_safeAcos_FUN_00496c10(float value)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-float core_fire_cpp_safeAcos_FUN_00496c10(void)
+float __cdecl core_fire_cpp_safeAcos_FUN_00496c10(float value)
 
 {
   float10 fVar1;
-  float in_stack_00000004;
   uint uStack_8;
   
-  if (in_stack_00000004 <= (float)_DAT_005c04b0) {
+  if (value <= (float)_DAT_005c04b0) {
     uStack_8 = 3.1415927;
   }
   else {
-    if (in_stack_00000004 < 1.0) {
-      fVar1 = (float10)in_stack_00000004;
+    if (value < 1.0) {
+      fVar1 = (float10)value;
       acos();
       return (float)fVar1;
     }

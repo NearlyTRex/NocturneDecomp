@@ -204,7 +204,7 @@ LAB_00580072:
   *(float *)((int)&CStack_6c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
        afStack_98[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4];
   CStack_6c.y = CStack_6c.y + _DAT_005ed828;
-  core_fire_cpp_FUN_0049d120(0x01C3DEB4,&CStack_6c,rotation_matrix);
+  core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0049d120(0x01C3DEB4,&CStack_6c,rotation_matrix);
   this_ptr->fire_sound_frames = 2;
   (this_ptr->base).fire_cooldown_timer = this_ptr->fire_delay_time;
   return 1;

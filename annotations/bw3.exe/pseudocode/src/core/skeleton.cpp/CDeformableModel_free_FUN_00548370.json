@@ -16,6 +16,12 @@
   },
   "cross_references": [
     {
+      "addr": "00548580",
+      "from_addr": "005486ce",
+      "name": "core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00548580",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00548460",
       "from_addr": "00548475",
       "name": "core_skeleton.cpp_CDeformableModel_allocMemory_FUN_00548460",
@@ -28,21 +34,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00548580",
-      "from_addr": "005486ce",
-      "name": "core_skeleton.cpp_FUN_00548580",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005501a0",
       "from_addr": "005501ae",
-      "name": "core_skeleton.cpp_FUN_005501a0",
+      "name": "core_skeleton.cpp_freeAllModels_FUN_005501a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005503f0",
       "from_addr": "00550438",
-      "name": "core_skeleton.cpp_FUN_005503f0",
+      "name": "core_skeleton.cpp_freeUnusedModelsAndSkeletons_FUN_005503f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -88,7 +88,7 @@
       {
         "call_addr": "005486ce",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00548580",
+        "caller": "core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00548580",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -99,7 +99,7 @@
       {
         "call_addr": "005501ae",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_005501a0",
+        "caller": "core_skeleton.cpp_freeAllModels_FUN_005501a0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -110,7 +110,7 @@
       {
         "call_addr": "00550438",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_005503f0",
+        "caller": "core_skeleton.cpp_freeUnusedModelsAndSkeletons_FUN_005503f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

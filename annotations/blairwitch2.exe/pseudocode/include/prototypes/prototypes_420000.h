@@ -86,7 +86,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderFlames_FUN_00426990(CCharacter *
 void __cdecl core_charactr_cpp_CCharacter_addDamageDecal_FUN_00426a10(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_igniteBone_FUN_00426e70(CCharacter *this_ptr,CVector3f *position,int fire_type,int flame_type,float flame_scale,int include_hero);
 void core_charactr_cpp_FUN_00426f30(int param_1);
-void core_charactr_cpp_FUN_00427060(int param_1,int param_2,undefined4 param_3,float param_4);
+void core_charactr_cpp_FUN_00427060(int param_1,int param_2,int param_3,float param_4);
 void __cdecl core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_00427130(CCharacter *this_ptr,int part_index,int bone_index,float chance);
 CBoundingBox3D * __cdecl core_charactr_cpp_CCharacter_getBoundingBox_FUN_004271e0(CCharacter *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_charactr_cpp_CCharacter_shatter_FUN_00427210(CCharacter *this_ptr);
@@ -137,7 +137,7 @@ void __cdecl core_charactr_cpp_CCharacter_spawnFlies_FUN_00429e60(CCharacter *th
 void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00429e90(CCharacter *this_ptr,float delta_time);
 undefined4 core_charactr_cpp_FUN_00429f20(CCharacter *param_1,float param_2,char *param_3);
 int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042a0c0(CCharacter *this_ptr,float *remaining_time,int target_bone_index);
-void core_charactr_cpp_FUN_0042a2d0(int param_1,undefined4 param_2,undefined4 param_3);
+void core_charactr_cpp_FUN_0042a2d0(int param_1,float param_2,int param_3);
 void __cdecl core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a330(CCharacter *this_ptr,int from_bone_index,int to_bone_index,char *motion_name,int direction);
 void __cdecl core_charactr_cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042a3d0(CCharacter *this_ptr);
 float __cdecl core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(CCharacter *this_ptr,int state_index);

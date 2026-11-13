@@ -27,6 +27,7 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00445130(CZombieCow *this_ptr,f
   CVector3f *pCVar11;
   float fVar12;
   SDamageInfo *damage_info;
+  float *pfVar13;
   EBloodType blood_type;
   float max_distance;
   SDamageInfo SStack_10c;
@@ -47,13 +48,11 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00445130(CZombieCow *this_ptr,f
   uint uStack_58;
   float afStack_54 [2];
   CVector3f CStack_4c;
-  uint uStack_40;
-  float afStack_3c [5];
+  float fStack_40;
+  float afStack_3c [2];
+  CVector3f CStack_34;
   float fStack_28;
-  float fStack_24;
-  float fStack_20;
-  float fStack_1c;
-  float fStack_18;
+  float afStack_24 [4];
   float fStack_14;
   
   bVar9 = 0;
@@ -66,11 +65,11 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00445130(CZombieCow *this_ptr,f
        (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
-  fStack_1c = delta_time * (this_ptr->base).speed;
+  afStack_24[2] = delta_time * (this_ptr->base).speed;
   this_ptr_00 = &(this_ptr->base).base.model;
-  while (0.0 < fStack_1c) {
+  while (0.0 < afStack_24[2]) {
     iVar4 = core_motion_cpp_CMotionController_advance_FUN_004fbb70
-                      (&this_ptr_00->base,afStack_3c + 8);
+                      (&this_ptr_00->base,afStack_24 + 2);
     core_charactr_cpp_CCharacter_processMotion_FUN_00433fb0((CCharacter *)this_ptr,iVar4);
   }
   fVar12 = (this_ptr->base).speed;
@@ -112,7 +111,7 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00445130(CZombieCow *this_ptr,f
         }
       }
       else {
-        fStack_18 = 0x40900000;
+        afStack_24[3] = 0x40900000;
         (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
         (this_ptr->base).base.model.accumulated_root_motion.y =
              (this_ptr->base).base.model.accumulated_root_motion.z;
@@ -170,13 +169,14 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00445130(CZombieCow *this_ptr,f
     case 5:
       if (((this_ptr->base).pool_me == 0) &&
          ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
-        core_skeleton_cpp_FUN_0054dbd0(this_ptr_00,0);
-        puVar10 = &uStack_40;
-        uStack_40 = afStack_3c[2];
-        afStack_3c[(uint)bVar9 * -2] = afStack_3c[(uint)bVar9 * -2 + 3];
+        core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
+                  (this_ptr_00,0,&CStack_34);
+        pfVar13 = &fStack_40;
+        fStack_40 = CStack_34.x;
+        afStack_3c[(uint)bVar9 * -2] = *(float *)((int)&CStack_34 + (uint)bVar9 * -8 + 4);
         afStack_3c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
-             afStack_3c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
-        core_actor_cpp_FUN_00408b80(this_ptr,puVar10);
+             *(float *)((int)&CStack_34 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
+        core_actor_cpp_FUN_00408b80(this_ptr,pfVar13);
         blood_type = BLOOD_TYPE_RED;
         CStack_4c.x = fStack_b8;
         *(float *)((int)&CStack_4c + (uint)bVar9 * -8 + 4) = afStack_cc[(uint)bVar9 * -2 + 6];
@@ -239,13 +239,13 @@ switchD_004456a3_caseD_3:
     afStack_90[0] = afStack_6c[0] + (this_ptr->base).base.position_delta.y;
     afStack_90[1] = afStack_6c[1] + (this_ptr->base).base.position_delta.z;
     fStack_28 = fStack_94;
-    afStack_3c[(uint)bVar9 * -2 + 6] = afStack_90[(uint)bVar9 * -2];
-    afStack_3c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7] =
+    afStack_24[(uint)bVar9 * -2] = afStack_90[(uint)bVar9 * -2];
+    afStack_24[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
          afStack_90[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
     pCVar1 = &(this_ptr->base).base.model.accumulated_root_motion;
     fStack_ac = fStack_28 + pCVar1->x;
-    fStack_a8 = fStack_24 + (this_ptr->base).base.model.accumulated_root_motion.y;
-    fStack_a4 = fStack_20 + (this_ptr->base).base.model.accumulated_root_motion.z;
+    fStack_a8 = afStack_24[0] + (this_ptr->base).base.model.accumulated_root_motion.y;
+    fStack_a4 = afStack_24[1] + (this_ptr->base).base.model.accumulated_root_motion.z;
     CStack_7c.x = fStack_ac;
     *(float *)((int)&CStack_7c + (uint)bVar9 * -8 + 4) = afStack_cc[(uint)bVar9 * -2 + 9];
     *(float *)((int)&CStack_7c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =

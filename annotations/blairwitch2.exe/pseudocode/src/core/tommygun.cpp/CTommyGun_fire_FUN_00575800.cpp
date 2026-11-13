@@ -277,7 +277,8 @@ LAB_00575a8f:
         afStack_124[(uint)bVar6 * -2 + (uint)bVar6 * -2 + -1] =
              afStack_cc[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7];
         CStack_130.y = CStack_130.y + _DAT_005ecc9c;
-        core_fire_cpp_FUN_0049d120(0x01C3DEB4,&CStack_130,&(this_ptr->base).base.orient_matrix);
+        core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0049d120
+                  (0x01C3DEB4,&CStack_130,&(this_ptr->base).base.orient_matrix);
         CStack_f4.x = 5.0;
         CStack_f4.y = 6.0;
         CStack_f4.z = -6.0;

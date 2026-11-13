@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 396,
-    "complexity_score": 616,
+    "complexity_score": 618,
     "cross_reference_count": 2,
     "function_call_count": 13,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 201,
+    "pseudocode_lines": 203,
     "suspect_count": 37,
     "suspect_types": [
       "param_count_too_few",
@@ -20,7 +20,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 597
+    "total_lines": 599
   },
   "cross_references": [
     {
@@ -103,7 +103,7 @@
     {
       "addr": "004a3bd0",
       "is_variadic": false,
-      "name": "core_fire.cpp_FUN_004a3bd0"
+      "name": "core_fire.cpp_CFireEffect_createLightningBolt_FUN_004a3bd0"
     },
     {
       "addr": "005609d0",
@@ -695,23 +695,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 121,
+      "line": 122,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x02CF5680,param_1,\"light?.wav\",&position->position);",
+      "text": "(0x02CF5680,param_1,\"light?.wav\",&start_position->position);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 122,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&(param_1->orient_matrix).m[0].x)[param_1->health] = (float)local_20;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 122,
+      "line": 123,
       "match": "param_1",
       "severity": "mild",
       "text": "(&(param_1->orient_matrix).m[0].x)[param_1->health] = (float)local_20;",
@@ -722,12 +714,12 @@
       "line": 123,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->health = param_1->health + 1;",
+      "text": "(&(param_1->orient_matrix).m[0].x)[param_1->health] = (float)local_20;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 123,
+      "line": 124,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->health = param_1->health + 1;",
@@ -735,7 +727,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 129,
+      "line": 124,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->health = param_1->health + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 130,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->health <= iVar4) goto code_r0x0057c51b;",
@@ -743,7 +743,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 162,
+      "line": 163,
       "match": "param_1",
       "severity": "mild",
       "text": "(&local_118,(CVector3f *)(param_1->actor_name + 0x14));",
@@ -751,7 +751,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 171,
+      "line": 172,
       "match": "param_1",
       "severity": "mild",
       "text": "local_48 = local_a8 + *(float *)(param_1->actor_name + 8);",
@@ -759,7 +759,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 172,
+      "line": 173,
       "match": "param_1",
       "severity": "mild",
       "text": "local_44 = local_a4 + *(float *)(param_1->actor_name + 0xc);",
@@ -767,7 +767,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 173,
+      "line": 174,
       "match": "param_1",
       "severity": "mild",
       "text": "local_40 = local_a0 + *(float *)(param_1->actor_name + 0x10);",
@@ -775,7 +775,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 183,
+      "line": 184,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 != 0) {",
@@ -783,7 +783,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 186,
+      "line": 188,
       "match": "param_1",
       "severity": "mild",
       "text": "(0x02CF5680,param_1,\"light?.wav\",&local_84);",
@@ -791,7 +791,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 192,
+      "line": 194,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->orient).vec.x = local_18;",
@@ -799,7 +799,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 193,
+      "line": 195,
       "match": "param_1",
       "severity": "mild",
       "text": "local_158 = (param_1->orient).vec.x;",
@@ -807,7 +807,7 @@
     },
     {
       "description": "Raw hex address 0x1c6e360 assigned to bare local `this_ptr`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 191,
+      "line": 193,
       "match": "0x1c6e360",
       "severity": "moderate",
       "text": "this_ptr = 0x01C6E360;",
@@ -823,7 +823,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 179,
+      "line": 180,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_84.x = local_b4.x;",
@@ -831,7 +831,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via pointer arithmetic on its own `actor_name` field (which decays to a pointer), `+ CONST`; `offsetof(actor_name) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar3`. Replace those `pCVar3->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
-      "line": 128,
+      "line": 129,
       "match": "pCVar3 = (T *)(pCVar3->actor_name + CONST)",
       "severity": "moderate",
       "text": "pCVar3 = (CDemonActor *)(pCVar3->actor_name + 4);",

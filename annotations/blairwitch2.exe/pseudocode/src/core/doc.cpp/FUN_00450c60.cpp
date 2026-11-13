@@ -84,10 +84,11 @@ void core_doc_cpp_FUN_00450c60(CHero *param_1,float param_2)
   float local_45c;
   float local_458;
   CVector3f local_454;
-  float local_448;
-  float afStack_444 [4];
+  CVector3f local_448;
+  uint local_43c;
+  float local_438;
   uint local_434;
-  float local_430;
+  uint local_430;
   float local_42c [5];
   float local_418;
   float local_40c;
@@ -103,7 +104,7 @@ void core_doc_cpp_FUN_00450c60(CHero *param_1,float param_2)
   UOrientationVector local_3b8;
   float local_3ac;
   float local_3a8 [5];
-  float local_394;
+  uint local_394;
   uint local_388;
   float local_37c;
   uint local_370;
@@ -319,8 +320,8 @@ void core_doc_cpp_FUN_00450c60(CHero *param_1,float param_2)
     local_42c[(uint)bVar26 * -2] = local_3a8[(uint)bVar26 * -2 + 6];
     local_42c[(uint)bVar26 * -2 + (uint)bVar26 * -2 + 1] =
          local_3a8[(uint)bVar26 * -2 + (uint)bVar26 * -2 + 7];
-    if ((float *)pcVar2 != afStack_444 + 5) {
-      *(float *)pcVar2 = local_430;
+    if (pcVar2 != (char *)&local_430) {
+      *(uint *)pcVar2 = local_430;
       *(float *)(param_1[1].base.base.create_event + 0x4c) = local_42c[0];
       *(float *)(param_1[1].base.base.create_event + 0x50) = local_42c[1];
     }
@@ -758,15 +759,17 @@ LAB_004526f0:
           local_9c = (CCharacter *)(param_1->base).grabbed_by;
           local_28 = (local_9c->base).vtable._uc;
           local_6c = &(param_1->base).model.base;
-          core_skeleton_cpp_FUN_00546a90();
+          core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
+                    ((CDeformableModelInstance *)local_6c,0,&local_448);
           pCVar12 = local_28;
           pCVar32 = local_9c;
           pCVar35 = &local_2b0;
-          local_2b0.x = local_448;
-          *(float *)((int)&local_2b0 + (uint)bVar26 * -8 + 4) = afStack_444[(uint)bVar26 * -2];
+          local_2b0.x = local_448.x;
+          *(uint *)((int)&local_2b0 + (uint)bVar26 * -8 + 4) =
+               *(uint *)((int)&local_448 + (uint)bVar26 * -8 + 4);
           pCVar33 = param_1;
-          *(float *)((int)&local_2b0 + (uint)bVar26 * -8 + (uint)bVar26 * -8 + 8) =
-               afStack_444[(uint)bVar26 * -2 + (uint)bVar26 * -2 + 1];
+          *(uint *)((int)&local_2b0 + (uint)bVar26 * -8 + (uint)bVar26 * -8 + 8) =
+               *(uint *)((int)&local_448 + (uint)bVar26 * -8 + (uint)bVar26 * -8 + 8);
           iVar20 = (*(pCVar12->_uc).attractActorToward)(pCVar32,(CDemonActor *)pCVar33,pCVar35);
           this_ptr_01 = local_6c;
           if (iVar20 == 0) {
@@ -1475,11 +1478,11 @@ LAB_004514a7:
             pCVar21 = (CMatrix3x4f *)((int)pCVar21 + ((uint)bVar26 * -2 + 1) * 4);
             pfVar23 = pfVar23 + (uint)bVar26 * -2 + 1;
           }
-          afStack_444[3] = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(1.0,2.0);
-          afStack_444[2] = 0.0;
+          local_438 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(1.0,2.0);
+          local_43c = 0;
           local_434 = 0;
-          local_84 = afStack_444[3];
-          local_14 = afStack_444[3];
+          local_84 = local_438;
+          local_14 = local_438;
           core_xform_cpp_FUN_00591530();
           pfVar23 = local_2a0 + 0x26;
           local_208 = 0.0;

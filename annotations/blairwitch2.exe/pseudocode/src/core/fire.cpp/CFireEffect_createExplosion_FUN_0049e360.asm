@@ -24,8 +24,8 @@
 ;   undefined4 DAT_01c975e0
 ;
 ; Called Functions:
+;   core_fire.cpp_CExplosion_activate_FUN_00498d30
 ;   core_fire.cpp_CFireEffect_createCrater_FUN_0049e630
-;   core_fire.cpp_FUN_00498d30
 ;   core_sound.cpp_CSound_playActorSound_FUN_0055ae50
 ;
 ; *****************************************************************************
@@ -47,8 +47,8 @@ section .text
     PUSH EBX                            ; 0049e37e
     ADD EAX,0x1c975e4                   ; 0049e37f
     PUSH EAX                            ; 0049e384
-    CALL core_fire.cpp_FUN_00498d30     ; 0049e385
-        ;   XREF to: 00498d30 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_00498d30()
+    CALL core_fire.cpp_CExplosion_activate_FUN_00498d30 ; 0049e385
+        ;   XREF to: 00498d30 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CExplosion_activate_FUN_00498d30(CExplosion * this_ptr, CVector3f * position, float scale, float gore_multiplier)
     MOV EDX,dword ptr [0x01c975e0]      ; 0049e38a | DAT_01c975e0
     INC EDX                             ; 0049e390
     ADD ESP,0x10                        ; 0049e391

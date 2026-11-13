@@ -6,7 +6,7 @@
 ;
 ; XREF[3]:
 ;   core_cloth.cpp_FUN_005b0ce0 at 005b0edd
-;   core_skeleton.cpp_FUN_005424b0 at 0054267c
+;   core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_005424b0 at 0054267c
 ;   shape_edittool.cpp_FUN_0047ff50 at 0047ffe0
 ;
 ; Referenced Globals:

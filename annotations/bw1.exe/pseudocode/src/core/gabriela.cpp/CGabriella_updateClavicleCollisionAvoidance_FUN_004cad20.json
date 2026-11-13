@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 227,
-    "complexity_score": 526,
+    "complexity_score": 527,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 121,
+    "pseudocode_lines": 122,
     "suspect_count": 37,
     "suspect_types": [
       "pointer_cast",
@@ -18,7 +18,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 348
+    "total_lines": 349
   },
   "cross_references": [
     {
@@ -64,7 +64,7 @@
     {
       "addr": "00568100",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00568100"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100"
     }
   ],
   "globals": [
@@ -297,7 +297,7 @@
       "line": 69,
       "match": "in_stack_ffffff50",
       "severity": "moderate",
-      "text": "(*((pCVar2->vtable)._ub)->getBoundingBox)(pCVar2,in_stack_ffffff50);",
+      "text": "(*((pCVar1->vtable)._ub)->getBoundingBox)(pCVar1,in_stack_ffffff50);",
       "type": "stack_param"
     },
     {
@@ -305,7 +305,7 @@
       "line": 70,
       "match": "&stack0xffffff58",
       "severity": "moderate",
-      "text": "puVar5 = (uint *)&stack0xffffff58;",
+      "text": "puVar4 = (uint *)&stack0xffffff58;",
       "type": "stack_ref"
     },
     {
@@ -313,7 +313,7 @@
       "line": 71,
       "match": "&stack0xffffffa0",
       "severity": "moderate",
-      "text": "puVar6 = &stack0xffffffa0;",
+      "text": "puVar5 = &stack0xffffffa0;",
       "type": "stack_ref"
     },
     {
@@ -321,7 +321,7 @@
       "line": 81,
       "match": "&stack0xffffffe0",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar7 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar6 * -8) =",
       "type": "stack_ref"
     },
     {
@@ -329,7 +329,7 @@
       "line": 82,
       "match": "&stack0xffffffbc",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffbc + (uint)bVar7 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffbc + (uint)bVar6 * -8);",
       "type": "stack_ref"
     },
     {
@@ -337,7 +337,7 @@
       "line": 83,
       "match": "&stack0xffffffe4",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffe4 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffffe4 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =",
       "type": "stack_ref"
     },
     {
@@ -345,7 +345,7 @@
       "line": 84,
       "match": "&stack0xffffffc0",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffc0 + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffc0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
       "type": "stack_ref"
     },
     {
@@ -369,7 +369,7 @@
       "line": 95,
       "match": "in_stack_ffffff58",
       "severity": "moderate",
-      "text": "(*((pCVar2->vtable)._ub)->getBoundingBox)(pCVar2,in_stack_ffffff58);",
+      "text": "(*((pCVar1->vtable)._ub)->getBoundingBox)(pCVar1,in_stack_ffffff58);",
       "type": "stack_param"
     },
     {
@@ -377,7 +377,7 @@
       "line": 96,
       "match": "&stack0xffffff90",
       "severity": "moderate",
-      "text": "puVar5 = (uint *)&stack0xffffff90;",
+      "text": "puVar4 = (uint *)&stack0xffffff90;",
       "type": "stack_ref"
     },
     {
@@ -385,7 +385,7 @@
       "line": 97,
       "match": "&stack0xffffff70",
       "severity": "moderate",
-      "text": "puVar6 = (uint *)&stack0xffffff70;",
+      "text": "puVar5 = (uint *)&stack0xffffff70;",
       "type": "stack_ref"
     },
     {
@@ -393,7 +393,7 @@
       "line": 107,
       "match": "&stack0xffffffd0",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffd0 + (uint)bVar7 * -8) =",
+      "text": "*(uint *)(&stack0xffffffd0 + (uint)bVar6 * -8) =",
       "type": "stack_ref"
     },
     {
@@ -401,7 +401,7 @@
       "line": 108,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffdc + (uint)bVar7 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffdc + (uint)bVar6 * -8);",
       "type": "stack_ref"
     },
     {
@@ -409,7 +409,7 @@
       "line": 109,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =",
+      "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =",
       "type": "stack_ref"
     },
     {
@@ -417,7 +417,7 @@
       "line": 110,
       "match": "&stack0xffffffe0",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
       "type": "stack_ref"
     },
     {
@@ -441,7 +441,7 @@
       "line": 81,
       "match": "(int)&stack0xffffffe0",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar7 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar6 * -8) =",
       "type": "pointer_truncation"
     },
     {
@@ -449,7 +449,7 @@
       "line": 82,
       "match": "(int)&stack0xffffffbc",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffbc + (uint)bVar7 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffbc + (uint)bVar6 * -8);",
       "type": "pointer_truncation"
     },
     {
@@ -457,7 +457,7 @@
       "line": 83,
       "match": "(int)&stack0xffffffe4",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffe4 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffffe4 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =",
       "type": "pointer_truncation"
     },
     {
@@ -465,7 +465,7 @@
       "line": 84,
       "match": "(int)&stack0xffffffc0",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffc0 + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffc0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
       "type": "pointer_truncation"
     },
     {
@@ -473,7 +473,7 @@
       "line": 108,
       "match": "(int)&stack0xffffffdc",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffdc + (uint)bVar7 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffdc + (uint)bVar6 * -8);",
       "type": "pointer_truncation"
     },
     {
@@ -481,7 +481,7 @@
       "line": 110,
       "match": "(int)&stack0xffffffe0",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
       "type": "pointer_truncation"
     },
     {
@@ -489,7 +489,7 @@
       "line": 72,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "text": "for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
@@ -497,7 +497,7 @@
       "line": 98,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "text": "for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
@@ -505,7 +505,7 @@
       "line": 81,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar7 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar6 * -8) =",
       "type": "pointer_cast"
     },
     {
@@ -513,7 +513,7 @@
       "line": 82,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffbc + (uint)bVar7 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffbc + (uint)bVar6 * -8);",
       "type": "pointer_cast"
     },
     {
@@ -521,7 +521,7 @@
       "line": 83,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffe4 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffffe4 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =",
       "type": "pointer_cast"
     },
     {
@@ -529,7 +529,7 @@
       "line": 84,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffc0 + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffc0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
       "type": "pointer_cast"
     },
     {
@@ -537,7 +537,7 @@
       "line": 108,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffdc + (uint)bVar7 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffdc + (uint)bVar6 * -8);",
       "type": "pointer_cast"
     },
     {
@@ -545,7 +545,7 @@
       "line": 110,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
       "type": "pointer_cast"
     }
   ]

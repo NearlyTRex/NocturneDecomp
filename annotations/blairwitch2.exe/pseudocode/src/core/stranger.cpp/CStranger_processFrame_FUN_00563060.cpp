@@ -81,7 +81,7 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_00563060(CStranger *th
   uint uStack_384;
   float fStack_36c;
   float afStack_368 [5];
-  float fStack_354;
+  CVector3f CStack_354;
   float fStack_340;
   CVector3f aCStack_33c [2];
   float fStack_324;
@@ -675,16 +675,17 @@ LAB_00564b9f:
           pCStack_3c = (CCharacter *)(this_ptr->base).base.grabbed_by;
           pCStack_14 = (pCStack_3c->base).vtable._uc;
           pCStack_4c = &(this_ptr->base).base.model;
-          core_skeleton_cpp_FUN_00546a90(pCStack_4c);
+          core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
+                    (pCStack_4c,0,&CStack_354);
           pCVar14 = pCStack_14;
           this_ptr_02 = pCStack_3c;
           pCVar29 = &CStack_210;
-          CStack_210.x = fStack_354;
-          *(float *)((int)aCStack_204 + (uint)bVar27 * -8 + -8) = afStack_368[(uint)bVar27 * -2 + 6]
-          ;
+          CStack_210.x = CStack_354.x;
+          *(uint *)((int)aCStack_204 + (uint)bVar27 * -8 + -8) =
+               *(uint *)((int)&CStack_354 + (uint)bVar27 * -8 + 4);
           actor = this_ptr;
-          *(float *)((int)aCStack_204 + (uint)bVar27 * -8 + (uint)bVar27 * -8 + -4) =
-               afStack_368[(uint)bVar27 * -2 + (uint)bVar27 * -2 + 7];
+          *(uint *)((int)aCStack_204 + (uint)bVar27 * -8 + (uint)bVar27 * -8 + -4) =
+               *(uint *)((int)&CStack_354 + (uint)bVar27 * -8 + (uint)bVar27 * -8 + 8);
           iVar22 = (*(pCVar14->_uc).attractActorToward)(this_ptr_02,(CDemonActor *)actor,pCVar29);
           if (iVar22 == 0) {
             (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;

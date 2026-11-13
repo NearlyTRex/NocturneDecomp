@@ -16,7 +16,7 @@
 ;   core_demnfolk.cpp_CDemnfolk_process_FUN_00459100 at 00459b04
 ;   core_doc.cpp_FUN_00469550 at 00469ec7
 ;   core_fire.cpp_CBulletHole_init_FUN_004ac3e0 at 004ac63b
-;   core_fire.cpp_FUN_004b6420 at 004b66d0
+;   core_fire.cpp_CFireEffect_traceLaser_FUN_004b6420 at 004b66d0
 ;   ... and 10 more
 ;
 ; Called Functions:

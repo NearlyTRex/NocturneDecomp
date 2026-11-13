@@ -31,8 +31,8 @@ void __cdecl core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_0056d3d0(CStra
   float local_e4;
   float local_e0;
   float local_dc [3];
-  uint local_d0;
-  uint local_c4;
+  CVector3f local_d0;
+  CVector3f local_c4;
   float local_b8;
   float local_b4;
   float local_b0;
@@ -110,16 +110,17 @@ void __cdecl core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_0056d3d0(CStra
     afStack_54[(uint)bVar4 * -2 + 6] = afStack_54[(uint)bVar4 * -2];
     afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7] =
          afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-    if (afStack_fc + 0x11 != afStack_54 + 5) {
+    if (&local_b8 != afStack_54 + 5) {
       local_b8 = local_40;
       local_b4 = local_3c;
       local_b0 = local_38;
     }
-    core_skeleton_cpp_FUN_005469a0(&(this_ptr->base).base.model,_DAT_0264be34);
-    local_a8[2] = (float)local_c4;
-    local_a8[(uint)bVar4 * -2 + 3] = afStack_fc[(uint)bVar4 * -2 + 0xf];
+    core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
+              (&(this_ptr->base).base.model,_DAT_0264be34,&local_c4);
+    local_a8[2] = local_c4.x;
+    local_a8[(uint)bVar4 * -2 + 3] = *(float *)((int)&local_c4 + (uint)bVar4 * -8 + 4);
     local_a8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
-         afStack_fc[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0x10];
+         *(float *)((int)&local_c4 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     core_actor_cpp_FUN_00408d70(this_ptr,local_a8 + 2);
     local_e8 = afStack_120[2];
     afStack_fc[(uint)bVar4 * -2 + 6] = afStack_120[(uint)bVar4 * -2 + 3];
@@ -148,12 +149,13 @@ void __cdecl core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_0056d3d0(CStra
     {
       local_154 = fVar1;
     }
-    core_skeleton_cpp_FUN_005469a0(&(this_ptr->base).base.model,_DAT_0264be38);
+    core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
+              (&(this_ptr->base).base.model,_DAT_0264be38,&local_d0);
     pfVar5 = afStack_fc + 8;
-    local_dc[0] = (float)local_d0;
-    afStack_fc[(uint)bVar4 * -2 + 9] = afStack_fc[(uint)bVar4 * -2 + 0xc];
+    local_dc[0] = local_d0.x;
+    afStack_fc[(uint)bVar4 * -2 + 9] = *(float *)((int)&local_d0 + (uint)bVar4 * -8 + 4);
     afStack_fc[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 10] =
-         afStack_fc[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0xd];
+         *(float *)((int)&local_d0 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     core_actor_cpp_FUN_00408d70(this_ptr,pfVar5);
     afStack_54[2] = local_124;
     afStack_54[(uint)bVar4 * -2 + 3] = afStack_120[(uint)bVar4 * -2];

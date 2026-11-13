@@ -572,8 +572,8 @@ section .text
     PUSH ECX                            ; 0059bf59
     LEA ESI,[EBP + 0xfffffef6]          ; 0059bf5a
     LEA EDI,[EBP + -0x1a]               ; 0059bf60
-    CALL core_skeleton.cpp_FUN_0054dbd0 ; 0059bf63
-        ;   XREF to: 0054dbd0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054dbd0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0 ; 0059bf63
+        ;   XREF to: 0054dbd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 0059bf68
     LEA EAX,[EBP + -0x1a]               ; 0059bf6b
     LEA ESI,[EBP + 0xfffffef6]          ; 0059bf6e
@@ -883,8 +883,8 @@ section .text
     PUSH EAX                            ; 0059c34c
     MOV ESI,dword ptr [0x005fc5a0]      ; 0059c34d | DAT_005fc5a0
     PUSH ESI                            ; 0059c353
-    CALL core_fire.cpp_FUN_004a3bd0     ; 0059c354
-        ;   XREF to: 004a3bd0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3bd0()
+    CALL core_fire.cpp_CFireEffect_createLightningBolt_FUN_004a3bd0 ; 0059c354
+        ;   XREF to: 004a3bd0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBolt_FUN_004a3bd0(CFireEffect * this_ptr, CVector3f * start_position, float start_width, int enable_camera_shake, ...)
     MOV EAX,[0x01d5ba14]                ; 0059c359 | DAT_01d5ba14
     MOV EAX,dword ptr [EAX*0x4 + 0x1d5ba04] ; 0059c35e
     LEA ESI,[EBP + 0xfffffe4e]          ; 0059c365
@@ -1170,8 +1170,8 @@ section .text
     PUSH EAX                            ; 0059c744
     MOV ESI,dword ptr [0x005fc5a0]      ; 0059c745 | DAT_005fc5a0
     PUSH ESI                            ; 0059c74b
-    CALL core_fire.cpp_FUN_004a3bd0     ; 0059c74c
-        ;   XREF to: 004a3bd0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3bd0()
+    CALL core_fire.cpp_CFireEffect_createLightningBolt_FUN_004a3bd0 ; 0059c74c
+        ;   XREF to: 004a3bd0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBolt_FUN_004a3bd0(CFireEffect * this_ptr, CVector3f * start_position, float start_width, int enable_camera_shake, ...)
     MOV EAX,[0x01d5ba14]                ; 0059c751 | DAT_01d5ba14
     MOV EAX,dword ptr [EAX*0x4 + 0x1d5ba04] ; 0059c756
     LEA ESI,[EBP + 0xfffffe42]          ; 0059c75d
@@ -1757,8 +1757,8 @@ section .text
     FADD float ptr [0x005d9e24]         ; 0059ce20 | DAT_005d9e24
     PUSH EDI                            ; 0059ce26
     FSTP float ptr [EBP + -0x46]        ; 0059ce27
-    CALL core_fire.cpp_FUN_004a3c50     ; 0059ce2a
-        ;   XREF to: 004a3c50 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3c50()
+    CALL core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50 ; 0059ce2a
+        ;   XREF to: 004a3c50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50(CFireEffect * this_ptr, CVector3f * start_position, CVector3f * end_position, int enable_camera_shake, ...)
     ADD ESP,0x24                        ; 0059ce2f
     JMP 0x0059cdb2                      ; 0059ce32
         ;   XREF to: 0059cdb2 (UNCONDITIONAL_JUMP)  ; LAB_0059cdb2
@@ -1810,8 +1810,8 @@ section .text
     FADD float ptr [0x005d9e24]         ; 0059cecb | DAT_005d9e24
     PUSH EDX                            ; 0059ced1
     FSTP float ptr [EBP + 0xffffff12]   ; 0059ced2
-    CALL core_fire.cpp_FUN_004a3c50     ; 0059ced8
-        ;   XREF to: 004a3c50 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3c50()
+    CALL core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50 ; 0059ced8
+        ;   XREF to: 004a3c50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50(CFireEffect * this_ptr, CVector3f * start_position, CVector3f * end_position, int enable_camera_shake, ...)
     ADD ESP,0x24                        ; 0059cedd
     JMP 0x0059ce54                      ; 0059cee0
         ;   XREF to: 0059ce54 (UNCONDITIONAL_JUMP)  ; LAB_0059ce54
@@ -1891,8 +1891,8 @@ section .text
     PUSH EDI                            ; 0059cfa7
     MOV EAX,[0x005fc5a0]                ; 0059cfa8 | DAT_005fc5a0
     PUSH EAX                            ; 0059cfad
-    CALL core_fire.cpp_FUN_004a3c50     ; 0059cfae
-        ;   XREF to: 004a3c50 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3c50()
+    CALL core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50 ; 0059cfae
+        ;   XREF to: 004a3c50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50(CFireEffect * this_ptr, CVector3f * start_position, CVector3f * end_position, int enable_camera_shake, ...)
     MOV EAX,dword ptr [ESI]             ; 0059cfb3
     MOV dword ptr [EDI],EAX             ; 0059cfb5
     MOV EAX,dword ptr [ESI + 0x4]       ; 0059cfb7

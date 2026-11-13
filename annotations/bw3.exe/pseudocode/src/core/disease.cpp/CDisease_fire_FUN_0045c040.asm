@@ -13,7 +13,7 @@
 ;   undefined4 DAT_006045f8
 ;
 ; Called Functions:
-;   core_fire.cpp_FUN_004a39d0
+;   core_fire.cpp_CFireEffect_createDiseaseToss_FUN_004a39d0
 ;   core_sound.cpp_CSound_playActorSound_FUN_005609d0
 ;   core_weapon.cpp_CWeapon_fire_FUN_0057b880
 ;
@@ -41,8 +41,8 @@ section .text
     PUSH EDI                            ; 0045c062
     MOV ECX,dword ptr [0x005fc5a0]      ; 0045c063 | DAT_005fc5a0
     PUSH ECX                            ; 0045c069
-    CALL core_fire.cpp_FUN_004a39d0     ; 0045c06a
-        ;   XREF to: 004a39d0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a39d0()
+    CALL core_fire.cpp_CFireEffect_createDiseaseToss_FUN_004a39d0 ; 0045c06a
+        ;   XREF to: 004a39d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createDiseaseToss_FUN_004a39d0(CFireEffect * this_ptr, CVector3f * position, UOrientationVector * orientation, CVector3f * velocity)
     ADD ESP,0x10                        ; 0045c06f
     PUSH EDI                            ; 0045c072
     PUSH 0x5bb1c4                       ; 0045c073 | = "wp_disease_throw.wav"

@@ -106,8 +106,8 @@ section .text
     PUSH EAX                            ; 00445d5b
     LEA ESI,[EBP + -0x3e]               ; 00445d5c
     MOV dword ptr [EBP + 0x76],EAX      ; 00445d5f
-    CALL core_skeleton.cpp_FUN_00569130 ; 00445d62
-        ;   XREF to: 00569130 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569130()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130 ; 00445d62
+        ;   XREF to: 00569130 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 00445d67
     LEA EAX,[EBP + 0xfffffe5a]          ; 00445d6a
     LEA ESI,[EBP + -0x3e]               ; 00445d70
@@ -131,8 +131,8 @@ section .text
     PUSH EDX                            ; 00445d9e
     LEA ESI,[EBP + -0x26]               ; 00445d9f
     LEA EDI,[EBP + 0xffffff7a]          ; 00445da2
-    CALL core_skeleton.cpp_FUN_00569130 ; 00445da8
-        ;   XREF to: 00569130 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569130()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130 ; 00445da8
+        ;   XREF to: 00569130 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 00445dad
     LEA EAX,[EBP + 0xffffff7a]          ; 00445db0
     LEA ESI,[EBP + -0x26]               ; 00445db6
@@ -659,8 +659,8 @@ section .text
         ;   Label: LAB_00446431
     PUSH EAX                            ; 00446437
     XOR EDI,EDI                         ; 00446438
-    CALL core_skeleton.cpp_FUN_00569ae0 ; 0044643a
-        ;   XREF to: 00569ae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569ae0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_00569ae0 ; 0044643a
+        ;   XREF to: 00569ae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_00569ae0(CDeformableModelInstance * this_ptr)
     MOV EAX,dword ptr [EBX + 0xc394]    ; 0044643f
     ADD ESP,0x4                         ; 00446445
     TEST EAX,EAX                        ; 00446448

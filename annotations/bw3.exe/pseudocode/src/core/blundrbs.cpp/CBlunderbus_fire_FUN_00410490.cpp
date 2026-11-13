@@ -325,7 +325,7 @@ int __cdecl core_blundrbs_cpp_CBlunderbus_fire_FUN_00410490(CBlunderbus *this_pt
         }
         if (this_ptr_01 == (CGlass *)0x0) {
           if (this_ptr_02 == (CTrigger *)0x0) {
-            core_fire_cpp_FUN_004a2090
+            core_fire_cpp_CFireEffect_createBulletImpact_FUN_004a2090
                       (0x01C73654,&g_CDemonSetPtr->collision_impact_position,
                        &g_CDemonSetPtr->collision_normal,g_CDemonSetPtr->ground_type,
                        g_CDemonSetPtr->collision_actor,0);

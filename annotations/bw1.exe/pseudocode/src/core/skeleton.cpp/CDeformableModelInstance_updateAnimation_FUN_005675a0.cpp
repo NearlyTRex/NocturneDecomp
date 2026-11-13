@@ -11,14 +11,14 @@
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_005675a0(CDeformableModelInstance *this_ptr)
 
 {
-  core_skeleton_cpp_FUN_00567620
-            (this_ptr,(this_ptr->base).current_motion_index,(this_ptr->base).current_frame_number,
-             0xffffffff);
+  core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_00567620
+            (this_ptr,(this_ptr->base).current_motion_index,(this_ptr->base).current_frame_number,-1
+            );
   if ((this_ptr->base).tween_progress <= (float)_DAT_005f24c9) {
     return;
   }
-  core_skeleton_cpp_FUN_00568100
+  core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00568100
             (this_ptr,(this_ptr->base).tween_target_motion,(this_ptr->base).tween_target_frame,
-             (this_ptr->base).tween_progress,0xffffffff,core_skeleton_cpp_FUN_00567360);
+             (this_ptr->base).tween_progress,-1,core_skeleton_cpp_blendWeightCallback_FUN_00567360);
   return;
 }

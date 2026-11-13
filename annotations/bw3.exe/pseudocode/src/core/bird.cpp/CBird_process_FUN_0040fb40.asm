@@ -35,7 +35,7 @@
 ;   core_gore.cpp_CGore_createBloodPool_FUN_004cec40
 ;   core_motion.cpp_CMotionController_advance_FUN_004fbb70
 ;   core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004fc160
-;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
 ;   ... and 3 more
 ;
 ; *****************************************************************************
@@ -125,8 +125,8 @@ section .text
     PUSH ESI                            ; 0040fbf2
     LEA ESI,[ESP + 0x54]                ; 0040fbf3
     LEA EDI,[ESP + 0x48]                ; 0040fbf7
-    CALL core_skeleton.cpp_FUN_0054dbd0 ; 0040fbfb
-        ;   XREF to: 0054dbd0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054dbd0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0 ; 0040fbfb
+        ;   XREF to: 0054dbd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 0040fc00
     LEA EAX,[ESP + 0x40]                ; 0040fc03
     LEA ESI,[ESP + 0x4c]                ; 0040fc07

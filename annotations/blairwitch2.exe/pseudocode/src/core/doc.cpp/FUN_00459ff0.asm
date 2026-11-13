@@ -42,7 +42,7 @@
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00537e00
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_00537eb0
 ;   core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_00535e10
-;   core_skeleton.cpp_FUN_005469a0
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;   crt_memory.c___arrinit_FUN_005b7f5f
 ;
@@ -242,8 +242,8 @@ section .text
     PUSH EAX                            ; 0045a2a7
     LEA ESI,[ESP + 0xd8]                ; 0045a2a8
     LEA EDI,[ESP + 0x15c]               ; 0045a2af
-    CALL core_skeleton.cpp_FUN_005469a0 ; 0045a2b6
-        ;   XREF to: 005469a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_005469a0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0 ; 0045a2b6
+        ;   XREF to: 005469a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     LEA ESI,[ESP + 0xd8]                ; 0045a2bb
     LEA EAX,[ESP + 0x15c]               ; 0045a2c2
     ADD ESP,0x8                         ; 0045a2c9
@@ -399,8 +399,8 @@ section .text
     PUSH EAX                            ; 0045a4e7
     LEA ESI,[ESP + 0xfc]                ; 0045a4e8
     LEA EDI,[ESP + 0x144]               ; 0045a4ef
-    CALL core_skeleton.cpp_FUN_005469a0 ; 0045a4f6
-        ;   XREF to: 005469a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_005469a0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0 ; 0045a4f6
+        ;   XREF to: 005469a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     LEA ESI,[ESP + 0xfc]                ; 0045a4fb
     LEA EAX,[ESP + 0x144]               ; 0045a502
     ADD ESP,0x8                         ; 0045a509

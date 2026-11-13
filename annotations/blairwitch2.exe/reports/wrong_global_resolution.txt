@@ -1408,7 +1408,7 @@ core_setdir.cpp_staticInit_FUN_005382f0  [.cpp]  (4 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_skeleton.cpp_FUN_005491b0  [.cpp]  (4 suspicious globals)
+core_skeleton.cpp_freeUnusedModelsAndSkeletons_FUN_005491b0  [.cpp]  (4 suspicious globals)
   File: core/skeleton.cpp
 
   DAT_02177ff4
@@ -4132,6 +4132,18 @@ core_dtrace.cpp_staticInit_FUN_004723e0  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_fire.cpp_CFireEffect_hasActiveMuzzleFlash_FUN_0049eb50  [.cpp]  (2 suspicious globals)
+  File: core/fire.cpp
+
+  DAT_01c86058
+    Used at lines: 27
+    NOT found in function reference list
+
+  DAT_01c86730
+    Used at lines: 23
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_fire.cpp_CFireEffect_renderDecals_FUN_0049cb50  [.cpp]  (2 suspicious globals)
   File: core/fire.cpp
 
@@ -4153,18 +4165,6 @@ core_fire.cpp_CGlassParticle_ctor_FUN_0049edc0  [.cpp]  (2 suspicious globals)
 
   g_CVectorTypeInfo
     Used at lines: 16
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_fire.cpp_FUN_0049eb50  [.cpp]  (2 suspicious globals)
-  File: core/fire.cpp
-
-  DAT_01c86058
-    Used at lines: 27
-    NOT found in function reference list
-
-  DAT_01c86730
-    Used at lines: 23
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4244,11 +4244,11 @@ core_ghoul.cpp_CGhoul_process_FUN_004c1bb0  [.cpp]  (2 suspicious globals)
   File: core/ghoul.cpp
 
   DAT_01cb81c8
-    Used at lines: 1003
+    Used at lines: 1016
     NOT found in function reference list
 
   DAT_01cb81d4
-    Used at lines: 787
+    Used at lines: 799
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4444,7 +4444,19 @@ core_skeleton.cpp_CDeformableModel_ctor_FUN_00541020  [.cpp]  (2 suspicious glob
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_skeleton.cpp_FUN_00548f80  [.cpp]  (2 suspicious globals)
+core_skeleton.cpp_clearModelAndSkeletonInUseFlags_FUN_00549180  [.cpp]  (2 suspicious globals)
+  File: core/skeleton.cpp
+
+  DAT_02177ff4
+    Used at lines: 13
+    NOT found in function reference list
+
+  DAT_02628554
+    Used at lines: 12
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_skeleton.cpp_freeAllModels_FUN_00548f80  [.cpp]  (2 suspicious globals)
   File: core/skeleton.cpp
 
   DAT_02177ff4
@@ -4456,7 +4468,7 @@ core_skeleton.cpp_FUN_00548f80  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_skeleton.cpp_FUN_00549090  [.cpp]  (2 suspicious globals)
+core_skeleton.cpp_freeAllSkeletons_FUN_00549090  [.cpp]  (2 suspicious globals)
   File: core/skeleton.cpp
 
   DAT_02628554
@@ -4465,18 +4477,6 @@ core_skeleton.cpp_FUN_00549090  [.cpp]  (2 suspicious globals)
 
   g_SkeletonPool
     Used at lines: 14
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_skeleton.cpp_FUN_00549180  [.cpp]  (2 suspicious globals)
-  File: core/skeleton.cpp
-
-  DAT_02177ff4
-    Used at lines: 13
-    NOT found in function reference list
-
-  DAT_02628554
-    Used at lines: 12
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -5400,7 +5400,7 @@ core_doc.cpp_FUN_00453d80  [.cpp]  (1 suspicious globals)
   File: core/doc.cpp
 
   g_CDocClassInfo
-    Used at lines: 297
+    Used at lines: 298
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -5724,6 +5724,14 @@ core_fire.cpp_CFireEffect_createMuzzleEffect_FUN_0049d170  [.cpp]  (1 suspicious
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_0049d120  [.cpp]  (1 suspicious globals)
+  File: core/fire.cpp
+
+  DAT_01c85ffc
+    Used at lines: 22
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_fire.cpp_CFireEffect_createRainDrop_FUN_0049ea20  [.cpp]  (1 suspicious globals)
   File: core/fire.cpp
 
@@ -5945,14 +5953,6 @@ core_fire.cpp_CToss_arrdtor20_FUN_0049f020  [.cpp]  (1 suspicious globals)
 
   g_CTossTypeInfo
     Used at lines: 14
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_fire.cpp_FUN_0049d120  [.cpp]  (1 suspicious globals)
-  File: core/fire.cpp
-
-  DAT_01c85ffc
-    Used at lines: 21
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -7516,11 +7516,27 @@ core_simbox.cpp_CSimBox_getActorType_FUN_0053ffa0  [.cpp]  (1 suspicious globals
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_00547e10  [.cpp]  (1 suspicious globals)
+  File: core/skeleton.cpp
+
+  DAT_0265370c
+    Used at lines: 99
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_skeleton.cpp_CDeformableModel_arrdtor64_FUN_00549350  [.cpp]  (1 suspicious globals)
   File: core/skeleton.cpp
 
   g_CDeformableModelTypeInfo
     Used at lines: 14
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_00543a40  [.cpp]  (1 suspicious globals)
+  File: core/skeleton.cpp
+
+  g_DeformableModelPool
+    Used at lines: 85
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -7532,38 +7548,6 @@ core_skeleton.cpp_CSkeleton_arrdtor40_FUN_00549330  [.cpp]  (1 suspicious global
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_skeleton.cpp_FUN_00543a40  [.cpp]  (1 suspicious globals)
-  File: core/skeleton.cpp
-
-  g_DeformableModelPool
-    Used at lines: 85
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_skeleton.cpp_FUN_00547e10  [.cpp]  (1 suspicious globals)
-  File: core/skeleton.cpp
-
-  DAT_0265370c
-    Used at lines: 99
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_skeleton.cpp_FUN_005490d0  [.cpp]  (1 suspicious globals)
-  File: core/skeleton.cpp
-
-  g_SkeletonPool
-    Used at lines: 15
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_skeleton.cpp_FUN_00549210  [.cpp]  (1 suspicious globals)
-  File: core/skeleton.cpp
-
-  g_SkeletonPool
-    Used at lines: 22
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 core_skeleton.cpp_SVert_ctor_FUN_00549310  [.cpp]  (1 suspicious globals)
   File: core/skeleton.cpp
 
@@ -7572,11 +7556,27 @@ core_skeleton.cpp_SVert_ctor_FUN_00549310  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_skeleton.cpp_getMemoryStats_FUN_005490d0  [.cpp]  (1 suspicious globals)
+  File: core/skeleton.cpp
+
+  g_SkeletonPool
+    Used at lines: 15
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_skeleton.cpp_loadSkeleton_FUN_00548fc0  [.cpp]  (1 suspicious globals)
   File: core/skeleton.cpp
 
   g_SkeletonPool
     Used at lines: 20, 25, 35, 37
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_skeleton.cpp_markModelInUse_FUN_00549210  [.cpp]  (1 suspicious globals)
+  File: core/skeleton.cpp
+
+  g_SkeletonPool
+    Used at lines: 22
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

@@ -70,7 +70,7 @@
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408d70
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
-;   core_skeleton.cpp_FUN_00546a90
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
 ;   core_sound.cpp_CSound_findRandomSoundFile_FUN_005593d0
 ;   core_spline.cpp_FUN_00561310
 ;   core_spline.cpp_FUN_00561540
@@ -140,8 +140,8 @@ section .text
     PUSH EAX                            ; 00465481
     LEA ESI,[ESP + 0x124]               ; 00465482
     LEA EDI,[ESP + 0x13c]               ; 00465489
-    CALL core_skeleton.cpp_FUN_00546a90 ; 00465490
-        ;   XREF to: 00546a90 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00546a90()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90 ; 00465490
+        ;   XREF to: 00546a90 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     LEA ESI,[ESP + 0x124]               ; 00465495
     ADD ESP,0x8                         ; 0046549c
     LEA EAX,[ESP + 0x134]               ; 0046549f

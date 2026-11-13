@@ -7,7 +7,7 @@
 ; CLightningBolt * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_004a1480 at 004a167c
+;   core_fire.cpp_CFireEffect_init_FUN_004a1480 at 004a167c
 ;
 ; *****************************************************************************
 

@@ -22,11 +22,10 @@ void __cdecl core_prye_cpp_CPrye_setup_FUN_00518680(CPrye *this_ptr)
   float fStack_40;
   float fStack_3c;
   float fStack_38;
-  float fStack_34;
+  CVector3f CStack_34;
   float fStack_28;
-  float fStack_24;
-  float fStack_20;
-  float fStack_1c;
+  float afStack_24 [2];
+  CVector3f CStack_1c;
   
   bVar2 = 0;
   core_hero_cpp_CHero_setup_FUN_004d26b0(&this_ptr->base);
@@ -96,23 +95,24 @@ void __cdecl core_prye_cpp_CPrye_setup_FUN_00518680(CPrye *this_ptr)
   iVar4 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004fb9c0(pCVar1,pcVar3,iVar4);
   core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0054c180
             (this_ptr_00,iVar4,22.0);
-  core_skeleton_cpp_FUN_0054dbd0(this_ptr_00,_DAT_01ed3714);
-  fStack_28 = fStack_34;
-  (&stack0xffffffdc)[(uint)bVar2 * 0xfffffffe] =
-       (float)*(uint *)(&stack0xffffffd0 + (uint)bVar2 * -8);
-  *(uint *)((int)&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-       *(uint *)(&stack0xffffffd4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-  if (&this_ptr->ref_r_hand_bone_pos != (CVector3f *)&stack0xffffffd8) {
+  core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
+            (this_ptr_00,_DAT_01ed3714,&CStack_34);
+  fStack_28 = CStack_34.x;
+  afStack_24[(uint)bVar2 * -2] = *(float *)((int)&CStack_34 + (uint)bVar2 * -8 + 4);
+  afStack_24[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
+       *(float *)((int)&CStack_34 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+  if (&this_ptr->ref_r_hand_bone_pos != (CVector3f *)&fStack_28) {
     (this_ptr->ref_r_hand_bone_pos).x = fStack_28;
-    (this_ptr->ref_r_hand_bone_pos).y = fStack_24;
-    (this_ptr->ref_r_hand_bone_pos).z = fStack_20;
+    (this_ptr->ref_r_hand_bone_pos).y = afStack_24[0];
+    (this_ptr->ref_r_hand_bone_pos).z = afStack_24[1];
   }
-  core_skeleton_cpp_FUN_0054dbd0(&(this_ptr->base).base.model,_DAT_01ed36ec);
-  fStack_40 = fStack_1c;
+  core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
+            (&(this_ptr->base).base.model,_DAT_01ed36ec,&CStack_1c);
+  fStack_40 = CStack_1c.x;
   (&stack0xffffffc4)[(uint)bVar2 * 0xfffffffe] =
-       (float)*(uint *)(&stack0xffffffe8 + (uint)bVar2 * -8);
+       (float)*(uint *)((int)&CStack_1c + (uint)bVar2 * -8 + 4);
   *(uint *)((int)&stack0xffffffc8 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-       *(uint *)(&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8);
+       *(uint *)((int)&CStack_1c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
   if (&this_ptr->ref_r_upperarm_bone_pos != (CVector3f *)&stack0xffffffc0) {
     (this_ptr->ref_r_upperarm_bone_pos).x = fStack_40;
     (this_ptr->ref_r_upperarm_bone_pos).y = fStack_3c;

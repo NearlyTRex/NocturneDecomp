@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_loadLeafAssets_FUN_004af120(void)
+; void __cdecl core_fire_cpp_loadLeafAssets_FUN_004af120(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x6c]:1  local_6c

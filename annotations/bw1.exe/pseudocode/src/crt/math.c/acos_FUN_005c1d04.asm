@@ -12,7 +12,7 @@
 ;   core_doc.cpp_FUN_00472260 at 004722ad
 ;   core_doc.cpp_FUN_004722f0 at 004723b0
 ;   core_doc.cpp_FUN_004724a0 at 00472dcf
-;   core_fire.cpp_FUN_004b6420 at 004b6c2a
+;   core_fire.cpp_CFireEffect_traceLaser_FUN_004b6420 at 004b6c2a
 ;   core_fire.cpp_safeAcos_FUN_004abd60 at 004abd9f
 ;   core_stranger.cpp_CStranger_aimLeftPistol_FUN_0058f660 at 0058fb8a
 ;   ... and 7 more

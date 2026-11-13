@@ -9,9 +9,10 @@
 void __cdecl core_charactr_cpp_CCharacter_blendLayerActionMotion_FUN_004342c0(CCharacter *this_ptr,float blend_weight,int blend_mode)
 
 {
-  core_skeleton_cpp_FUN_00568100
+  core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00568100
             (&this_ptr->model,this_ptr->layer_actions[this_ptr->layer_action_count].motion_index,
              (float)this_ptr->layer_actions[this_ptr->layer_action_count].frame_count *
-             this_ptr->layer_action_t,blend_weight,blend_mode,core_skeleton_cpp_FUN_00567360);
+             this_ptr->layer_action_t,blend_weight,blend_mode,
+             core_skeleton_cpp_blendWeightCallback_FUN_00567360);
   return;
 }

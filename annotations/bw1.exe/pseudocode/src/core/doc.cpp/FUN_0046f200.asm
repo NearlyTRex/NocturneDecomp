@@ -58,8 +58,8 @@
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_005240c0
 ;   core_motion.cpp_FUN_00525110
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_005695e0
+;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
-;   core_skeleton.cpp_FUN_00568100
 ;   core_xform.cpp_multiplyQuaternion_FUN_005b77b0
 ;   core_xform.cpp_negateFirstComponent_FUN_005b7750
 ;   core_xform.cpp_quaternionFromAngleX_FUN_005b7af0
@@ -180,8 +180,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x1e4]     ; 0046f345
     PUSH ECX                            ; 0046f34c
     LEA EDI,[ESP + 0x1bc]               ; 0046f34d
-    CALL core_skeleton.cpp_FUN_00568100 ; 0046f354
-        ;   XREF to: 00568100 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00568100()
+    CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100 ; 0046f354
+        ;   XREF to: 00568100 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
     ADD ESP,0x18                        ; 0046f359
     FLD float ptr [ESI + 0x8]           ; 0046f35c
     PUSH dword ptr [ESI + 0xc]          ; 0046f35f

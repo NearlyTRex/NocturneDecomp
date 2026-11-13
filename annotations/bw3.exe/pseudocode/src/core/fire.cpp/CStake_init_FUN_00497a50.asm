@@ -9,7 +9,7 @@
 ; CVector3f *      Stack[0xc]:4   orientation
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_004a25f0 at 004a2759
+;   core_fire.cpp_CFireEffect_createStake_FUN_004a25f0 at 004a2759
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550

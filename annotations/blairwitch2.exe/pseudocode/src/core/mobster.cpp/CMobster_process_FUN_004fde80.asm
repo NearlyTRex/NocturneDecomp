@@ -828,8 +828,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x6a]      ; 004fe78f
     PUSH EDI                            ; 004fe792
     LEA ESI,[EBP + 0xfffffeca]          ; 004fe793
-    CALL core_skeleton.cpp_FUN_005469a0 ; 004fe799
-        ;   XREF to: 005469a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_005469a0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0 ; 004fe799
+        ;   XREF to: 005469a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     LEA EDI,[EBP + -0xa]                ; 004fe79e
     ADD ESP,0x8                         ; 004fe7a1
     LEA EAX,[EBP + -0xa]                ; 004fe7a4

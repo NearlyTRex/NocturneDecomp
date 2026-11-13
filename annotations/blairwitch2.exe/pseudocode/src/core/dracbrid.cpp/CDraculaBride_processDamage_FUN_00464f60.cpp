@@ -21,16 +21,16 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_00464f60(CDracula
   int iVar2;
   int flame_type;
   float fVar3;
-  uint *puVar4;
+  float *pfVar4;
   int include_hero;
-  uint uStack_64;
+  CVector3f CStack_64;
   float fStack_58;
   float afStack_54 [2];
   CVector3f CStack_4c;
   float fStack_40;
   float afStack_3c [2];
   CVector3f CStack_34;
-  uint uStack_28;
+  float fStack_28;
   int aiStack_24 [4];
   int iStack_14;
   
@@ -55,13 +55,14 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_00464f60(CDracula
     iStack_14 = 1;
   }
   if (damage_info->damage_type == DAMAGE_TYPE_BURN) {
-    core_skeleton_cpp_FUN_00546a90(&(this_ptr->base).base.model,0);
-    puVar4 = &uStack_28;
-    uStack_28 = uStack_64;
-    aiStack_24[(uint)bVar1 * -2] = *(int *)(&stack0xffffffa0 + (uint)bVar1 * -8);
+    core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
+              (&(this_ptr->base).base.model,0,&CStack_64);
+    pfVar4 = &fStack_28;
+    fStack_28 = CStack_64.x;
+    aiStack_24[(uint)bVar1 * -2] = *(int *)((int)&CStack_64 + (uint)bVar1 * -8 + 4);
     aiStack_24[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
-         *(int *)(&stack0xffffffa4 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-    core_actor_cpp_FUN_00408d70(this_ptr,puVar4);
+         *(int *)((int)&CStack_64 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
+    core_actor_cpp_FUN_00408d70(this_ptr,pfVar4);
     include_hero = 0;
     fVar3 = 10.0;
     flame_type = 0;

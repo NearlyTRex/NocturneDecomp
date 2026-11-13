@@ -197,7 +197,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00413979: AND ESP,0xfffffff8
 
   core_batman.cpp_CBatman_getTargetPoints_FUN_004141c0
-    File: core/batman.cpp, Suspects: 22
+    File: core/batman.cpp, Suspects: 32
     - [alt_frame_pointer] at 00414243: MOV ESI,ESP
 
   core_battery.cpp_CBattery_getBoundingBox_FUN_00414600
@@ -213,7 +213,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00414b39: AND ESP,0xfffffff8
 
   core_bird.cpp_CBird_process_FUN_00415340
-    File: core/bird.cpp, Suspects: 28
+    File: core/bird.cpp, Suspects: 32
     - [stack_alignment] at 0041534c: AND ESP,0xfffffff8
 
   core_bird.cpp_FUN_00415830
@@ -273,5 +273,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 27.9 suspects/function
+  With stack patterns:    avg 27.4 suspects/function
   Without stack patterns: avg 6.8 suspects/function
