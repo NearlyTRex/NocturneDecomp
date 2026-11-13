@@ -83,6 +83,12 @@ struct Stand {
     int render_alpha = 0;
     int blend = -1;
     NocturneLayout layout = {1.0f, 0, 0}; // nocturne_layout
+    // The mode nocturne_front_end_mode calls for, the screen's own size where
+    // 0; and whether nocturne_front_end_set_mode takes it, the screen then
+    // being that size.
+    int front_end_width = 0;
+    int front_end_height = 0;
+    int front_end_takes = 1;
 
     // --- the pick list ---------------------------------------------------------
     std::vector<std::string> rows; // CStrList_add, for the last list built

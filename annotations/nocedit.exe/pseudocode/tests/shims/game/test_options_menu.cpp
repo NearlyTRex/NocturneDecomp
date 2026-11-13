@@ -334,6 +334,47 @@ NOCTURNE_TEST(the_resolution_steps_and_applies) {
     CHECK_EQ(game->game_pixy, 600);
 }
 
+// Outside a mission, a mode the front end now calls for is taken at once and
+// an external renderer made again at it; a mode the screen refuses leaves the
+// renderer alone. From a mission's pause only the window follows.
+NOCTURNE_TEST(a_new_front_end_mode_applies_outside_a_mission) {
+    stand.reset();
+    stand.front_end_width = 800;
+    stand.front_end_height = 600;
+    display({});
+    CHECK_EQ(stand.count("frontEndSetMode"), 1); // the next frame finds it taken
+    CHECK_EQ(stand.count("resetGraphics"), 1);
+    CHECK_EQ(g_WindowWidth, 800);
+    CHECK_EQ(g_WindowHeight, 600);
+
+    // A height alone is a new mode too; with no external renderer there is
+    // nothing to make again.
+    stand.reset();
+    g_UseExternalRenderer = 0;
+    stand.front_end_height = 600;
+    graphics({});
+    CHECK_EQ(stand.count("frontEndSetMode"), 1);
+    CHECK_EQ(stand.count("resetGraphics"), 0);
+    CHECK_EQ(g_WindowHeight, 600);
+
+    stand.reset();
+    stand.front_end_width = 800;
+    stand.front_end_height = 600;
+    stand.front_end_takes = 0;
+    display({});
+    CHECK(stand.count("frontEndSetMode") >= 1);
+    CHECK_EQ(stand.count("resetGraphics"), 0);
+    CHECK_EQ(g_WindowWidth, 640);
+
+    stand.reset();
+    stand.front_end_width = 800;
+    stand.front_end_height = 600;
+    stand.presses = {pick(OPT_DISPLAY)};
+    nocturne_options_menu(1);
+    CHECK_EQ(stand.count("frontEndSetMode"), 0);
+    CHECK_EQ(g_WindowWidth, 640);
+}
+
 // Acceleration on loads the renderer, the built-in one where none is named,
 // and lists its cards; off lets it go with them.
 NOCTURNE_TEST(acceleration_loads_and_lets_go) {

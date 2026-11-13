@@ -307,6 +307,10 @@ foreach(_module IN LISTS NOCTURNE_RECREATION_MODULES)
         # The package layer's TOML readers take toml++ tables, and its archive tests make
         # archives with libarchive.
         target_link_libraries(${_target} PRIVATE tomlplusplus::tomlplusplus nocturne_libarchive)
+    elseif(_module STREQUAL "core")
+        # Its loader tests read PODs and packages from archives made with libarchive
+        # (tests/mocks/engine/testarchive.h).
+        target_link_libraries(${_target} PRIVATE nocturne_libarchive)
     endif()
     # A test runs in well under a second; one stuck in a loop is ended before ctest, which holds
     # each test's output, fills the memory with it.

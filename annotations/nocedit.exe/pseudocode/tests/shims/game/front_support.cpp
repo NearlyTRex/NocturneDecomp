@@ -113,6 +113,7 @@ void Stand::reset() {
     g_InputDisabled = 0;
     g_WindowHeight = 480;
     g_UseDirect3D = 0;
+    g_UseExternalRenderer = 1;
     g_MenuLeftRightPressed = 0;
     g_GraphicsCardCount = 0;
     std::memset(g_GraphicsCardVendorIDs, 0, sizeof(g_GraphicsCardVendorIDs));
@@ -937,11 +938,17 @@ NocturneLayout nocturne_layout(void) {
     return stand.layout;
 }
 void nocturne_front_end_mode(int *width, int *height) {
-    *width = g_WindowWidth;
-    *height = g_WindowHeight;
+    *width = stand.front_end_width != 0 ? stand.front_end_width : g_WindowWidth;
+    *height = stand.front_end_height != 0 ? stand.front_end_height : g_WindowHeight;
 }
 int nocturne_front_end_set_mode(void) {
-    return 1;
+    front_support::log("frontEndSetMode");
+    if (stand.front_end_takes != 0)
+        nocturne_front_end_mode(&g_WindowWidth, &g_WindowHeight);
+    return stand.front_end_takes;
+}
+void __cdecl engine_2d_c_resetGraphicsSystem_FUN_00402a70(void) {
+    front_support::log("resetGraphics");
 }
 void nocturne_layout_display(struct CAlphaBitmap *, int, int, int) {}
 void __cdecl engine_2d_c_reinitializeGraphicsSystem_FUN_00402a80(void) {}
