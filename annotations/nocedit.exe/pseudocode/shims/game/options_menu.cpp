@@ -9,6 +9,7 @@
 
 #include "game/options_menu.h"
 
+#include "core/front_end_layout.h"
 #include "core/menu_page.h"
 #include "gl/display_settings.h"
 #include "nocturne.h"
@@ -130,11 +131,30 @@ void step_halo(int step) {
     g_CGamePtr->halo_mode = (from + kHaloModes + step) % kHaloModes;
 }
 
+// Set while Options runs from a mission's pause menu: the mission sets its own
+// mode as it loads, so only the window follows a pick there.
+bool s_in_mission = false;
+
+// The mode the front end now calls for: a new resolution, or acceleration
+// turned on or off. The layout, the text's scale and the widescreen framing all
+// follow the screen's size, so they change with it. A mode the screen refuses
+// leaves the one it has; the renderer is made again at the new size.
+void apply_front_end_mode() {
+    int width = 0;
+    int height = 0;
+    nocturne_front_end_mode(&width, &height);
+    if (width == g_WindowWidth && height == g_WindowHeight)
+        return;
+    if (nocturne_front_end_set_mode() != 0 && g_UseExternalRenderer != 0)
+        engine_2d_c_resetGraphicsSystem_FUN_00402a70();
+}
+
 // --- Graphic Options ------------------------------------------------------------
 
 // The card rules and the software ceiling decide the mode on either page: the
 // Display page picks it, and the Graphic page's acceleration and card bound it.
-// A mode either changes is applied to the window at once.
+// A mode either changes is applied to the window at once, and outside a
+// mission to the screen as well.
 class ModePage : public Page {
 public:
     void build(Lines &) override {
@@ -154,6 +174,8 @@ public:
     Outcome end_frame() override {
         if (g_CGamePtr->game_pixx != width_ || g_CGamePtr->game_pixy != height_)
             nocturne_window_set_size(g_CGamePtr->game_pixx, g_CGamePtr->game_pixy);
+        if (!s_in_mission)
+            apply_front_end_mode();
         return Page::end_frame();
     }
 
@@ -543,8 +565,10 @@ extern "C" void nocturne_options_menu(int initialize_systems) {
         core_moon_cpp_CMoon_init_FUN_00529ae0(&g_CMoonInstance);
     }
     core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
+    s_in_mission = initialize_systems != 0;
     Options page(initialize_systems);
     nocturne_menu::run(page);
+    s_in_mission = false;
     if (initialize_systems != 0) {
         core_moon_cpp_CMoon_free_FUN_00529ce0(&g_CMoonInstance);
         if (nocturne_pause_sound_held() != 0)
