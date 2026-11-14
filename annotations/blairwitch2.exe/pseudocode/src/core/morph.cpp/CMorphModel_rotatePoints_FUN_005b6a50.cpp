@@ -86,7 +86,7 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_005b6a50(CMorphModel *t
       input->x = (int)ROUND(local_58 * _DAT_006013a0);
       input->y = (int)ROUND(local_54 * _DAT_006013a0);
       input->z = (int)ROUND(local_50 * _DAT_006013a0);
-      engine_special_cpp_FUN_0055d723
+      engine_special_cpp_transformAndProjectPoint_FUN_0055d723
                 ((SProjectedVertex *)
                  ((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).transformed_x + local_14
                  ),input);

@@ -17,12 +17,12 @@
 ;   core_game.cpp_CGame_rollCredits_FUN_004c02a0 at 004c058b
 ;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b8c87
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b7ee0 at 004b7f63
-;   core_game.cpp_FUN_004bec20 at 004bedfd
+;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004bec20 at 004bedfd
 ;   core_level.cpp_FUN_004e0000 at 004e005b
 ;   core_main.c_FUN_004e4400 at 004e4442
 ;   core_main.c_initializeGameSystems_FUN_004e44e0 at 004e4ae6
-;   core_menu.cpp_FUN_004e85a0 at 004e89f8
-;   core_menu.cpp_FUN_004e8f80 at 004e926d
+;   core_menu.cpp_adjustMouseSensitivity_FUN_004e80f0 at 004e82d6
+;   core_menu.cpp_calibrateGamepad_FUN_004e7dc0 at 004e7ea6
 ;   ... and 28 more
 ;
 ; Referenced Globals:
@@ -50,7 +50,7 @@
 ;   wincore_wddvmem.cpp_closeScreenDevice_FUN_0057a4b0
 ;   wincore_wddvmem.cpp_openScreenDevice_FUN_0057a3c0
 ;   wincore_wddvmem.cpp_videoRestore_FUN_0057ab70
-;   wincore_winrun.cpp_FUN_00580f70
+;   wincore_winrun.cpp_processWindowMessages_FUN_00580f70
 ;
 ; *****************************************************************************
 
@@ -140,8 +140,8 @@ section .text
     XOR EDI,EDI                         ; 0057a971
         ;   Label: LAB_0057a971
     MOV dword ptr [0x02d0bcf4],EDI      ; 0057a973 | DAT_02d0bcf4
-    CALL wincore_winrun.cpp_FUN_00580f70 ; 0057a979
-        ;   XREF to: 00580f70 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_FUN_00580f70()
+    CALL wincore_winrun.cpp_processWindowMessages_FUN_00580f70 ; 0057a979
+        ;   XREF to: 00580f70 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_00580f70()
     MOV ESP,EBP                         ; 0057a97e
     POP EBP                             ; 0057a980
     POP EDI                             ; 0057a981
@@ -155,8 +155,8 @@ section .text
     ADD ESP,0x4                         ; 0057a98c
     XOR EDI,EDI                         ; 0057a98f
     MOV dword ptr [0x02d0bcf4],EDI      ; 0057a991 | DAT_02d0bcf4
-    CALL wincore_winrun.cpp_FUN_00580f70 ; 0057a997
-        ;   XREF to: 00580f70 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_FUN_00580f70()
+    CALL wincore_winrun.cpp_processWindowMessages_FUN_00580f70 ; 0057a997
+        ;   XREF to: 00580f70 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_00580f70()
     MOV ESP,EBP                         ; 0057a99c
     POP EBP                             ; 0057a99e
     POP EDI                             ; 0057a99f
@@ -273,8 +273,8 @@ section .text
     ADD ESP,0x4                         ; 0057aae6
     XOR EDI,EDI                         ; 0057aae9
     MOV dword ptr [0x02d0bcf4],EDI      ; 0057aaeb | DAT_02d0bcf4
-    CALL wincore_winrun.cpp_FUN_00580f70 ; 0057aaf1
-        ;   XREF to: 00580f70 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_FUN_00580f70()
+    CALL wincore_winrun.cpp_processWindowMessages_FUN_00580f70 ; 0057aaf1
+        ;   XREF to: 00580f70 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_00580f70()
     MOV ESP,EBP                         ; 0057aaf6
     POP EBP                             ; 0057aaf8
     POP EDI                             ; 0057aaf9

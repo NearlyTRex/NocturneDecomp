@@ -631,7 +631,7 @@ switchD_004f3a18_caseD_5:
     (this_ptr->base).base.model.accumulated_root_motion.y =
          (this_ptr->base).base.model.accumulated_root_motion.z;
     pCVar1->x = (this_ptr->base).base.model.accumulated_root_motion.y;
-    core_charactr_cpp_FUN_0042d750((CCharacter *)this_ptr,&CStack_dc);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042d750((CCharacter *)this_ptr,&CStack_dc);
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_0042e160((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_005675a0

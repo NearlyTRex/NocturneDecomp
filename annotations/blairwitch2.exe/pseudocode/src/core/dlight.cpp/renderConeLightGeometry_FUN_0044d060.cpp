@@ -94,7 +94,7 @@ void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_0044d060(CVector3f *pos
       local_84.x = (int)ROUND(*pfVar3 * _DAT_005f5050);
       local_84.y = (int)ROUND(pfVar3[1] * _DAT_005f5050);
       local_84.z = (int)ROUND(pfVar3[2] * _DAT_005f5050);
-      engine_special_cpp_FUN_0055d723
+      engine_special_cpp_transformAndProjectPoint_FUN_0055d723
                 ((SProjectedVertex *)*(uint *)((ulonglong)uVar11 >> 0x20),&local_84);
       local_90 = local_40 * local_24;
       local_8c = local_40 * local_20;
@@ -102,7 +102,7 @@ void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_0044d060(CVector3f *pos
       local_78.x = (int)ROUND(local_90 * _DAT_005f5050);
       local_78.y = (int)ROUND(local_8c * _DAT_005f5050);
       local_78.z = (int)ROUND(local_40 * _DAT_005f5050);
-      engine_special_cpp_FUN_0055d723
+      engine_special_cpp_transformAndProjectPoint_FUN_0055d723
                 (&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_78);
       local_90 = local_1c * local_24;
       local_8c = local_1c * local_20;
@@ -110,7 +110,7 @@ void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_0044d060(CVector3f *pos
       local_6c.x = (int)ROUND(local_90 * _DAT_005f5050);
       local_6c.y = (int)ROUND(local_8c * _DAT_005f5050);
       local_6c.z = (int)ROUND(local_1c * _DAT_005f5050);
-      engine_special_cpp_FUN_0055d723
+      engine_special_cpp_transformAndProjectPoint_FUN_0055d723
                 (&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_6c);
       local_90 = local_1c * local_2c;
       local_8c = local_1c * local_28;
@@ -118,8 +118,8 @@ void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_0044d060(CVector3f *pos
       local_60[0].x = (int)ROUND(local_90 * _DAT_005f5050);
       local_60[0].y = (int)ROUND(local_8c * _DAT_005f5050);
       local_60[0].z = (int)ROUND(local_1c * _DAT_005f5050);
-      engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,local_60)
-      ;
+      engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+                (&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,local_60);
       this_ptr = DAT_0060b280;
       DAT_0060b280->vertex_buffer_ptr->a = local_38;
       this_ptr->vertex_buffer_ptr->b = 0xffff;

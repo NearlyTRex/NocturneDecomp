@@ -82,23 +82,27 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_0049c8e0(CExplosion *this_ptr)
     local_60.y = (int)ROUND(afStack_2c[3] * _DAT_005df8e4);
     local_60.z = (int)ROUND(_DAT_005df8e4 * 0.0);
     local_18 = afStack_2c[2];
-    engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_60);
+    engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+              (&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_60);
     local_8 = local_10;
     afStack_2c[2] = (float)local_10;
     local_3c.x = (int)ROUND(afStack_2c[2] * _DAT_005df8e4);
     local_3c.y = (int)ROUND(afStack_2c[3] * _DAT_005df8e4);
     local_3c.z = (int)ROUND(local_1c * _DAT_005df8e4);
-    engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_3c);
+    engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+              (&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_3c);
     afStack_2c[3] = -this_ptr->scale * (float)_DAT_005c06b8 * (float)_DAT_005c06a0;
     local_48.x = (int)ROUND(afStack_2c[2] * _DAT_005df8e4);
     local_48.y = (int)ROUND(afStack_2c[3] * _DAT_005df8e4);
     local_48.z = (int)ROUND(local_1c * _DAT_005df8e4);
-    engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_48);
+    engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+              (&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_48);
     afStack_2c[2] = local_18;
     local_54.x = (int)ROUND(local_18 * _DAT_005df8e4);
     local_54.y = (int)ROUND(afStack_2c[3] * _DAT_005df8e4);
     local_54.z = (int)ROUND(local_1c * _DAT_005df8e4);
-    engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_54);
+    engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+              (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_54);
     pCVar5 = DAT_005f2afc;
     DAT_005f2afc->vertex_buffer_ptr->u = 0x20000;
     pCVar5->vertex_buffer_ptr->v = 0x20000;

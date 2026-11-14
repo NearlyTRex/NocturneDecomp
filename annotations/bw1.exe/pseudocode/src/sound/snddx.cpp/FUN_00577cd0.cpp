@@ -22,7 +22,7 @@ uint sound_snddx_cpp_FUN_00577cd0(void)
   if (_DAT_02c81d9c != (int *)0x0) {
     uVar2 = (**(code **)(*_DAT_02c81d9c + 0x48))(_DAT_02c81d9c);
     if (uVar2 != 0) {
-      sound_snddx_cpp_FUN_00577500(uVar2);
+      sound_snddx_cpp_getDirectSoundErrorString_FUN_00577500(uVar2);
       _sprintf(acStack_198,"DirectSux: Unable to %s.  (%s)");
       uVar4 = 0;
       sound_sndmain_cpp_logSoundError_FUN_005773f0(acStack_198);
@@ -31,7 +31,7 @@ uint sound_snddx_cpp_FUN_00577cd0(void)
   if (_DAT_02c81d98 != (int *)0x0) {
     uVar2 = (**(code **)(*_DAT_02c81d98 + 0x48))(_DAT_02c81d98);
     if (uVar2 != 0) {
-      sound_snddx_cpp_FUN_00577500(uVar2);
+      sound_snddx_cpp_getDirectSoundErrorString_FUN_00577500(uVar2);
       _sprintf(acStack_328,"DirectSux: Unable to %s.  (%s)");
       uVar4 = 0;
       sound_sndmain_cpp_logSoundError_FUN_005773f0(acStack_328);
@@ -39,7 +39,7 @@ uint sound_snddx_cpp_FUN_00577cd0(void)
   }
   iVar3 = 0;
   do {
-    iVar1 = sound_snddx_cpp_FUN_00577880(iVar3);
+    iVar1 = sound_snddx_cpp_releaseSfxHardwareBuffers_FUN_00577880(iVar3);
     if (iVar1 == 0) {
       uVar4 = 0;
     }

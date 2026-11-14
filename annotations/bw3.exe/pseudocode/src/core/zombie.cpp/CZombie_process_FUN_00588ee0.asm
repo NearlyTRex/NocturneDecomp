@@ -34,13 +34,13 @@
 ;   core_actor.cpp_randomChance_FUN_0040cf40
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042ccf0
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processDamageDecals_FUN_0042fc90
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
 ;   core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_0042fe90
-;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
 ;   ... and 32 more
 ;
 ; *****************************************************************************
@@ -356,8 +356,8 @@ section .text
     JNZ 0x0058926c                      ; 0058925c
         ;   XREF to: 0058926c (CONDITIONAL_JUMP)  ; LAB_0058926c
     PUSH EBX                            ; 0058925e
-    CALL core_zombie.cpp_FUN_0058cc20   ; 0058925f
-        ;   XREF to: 0058cc20 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_FUN_0058cc20(CZombie * this_ptr)
+    CALL core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20 ; 0058925f
+        ;   XREF to: 0058cc20 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20(CZombie * this_ptr)
     ADD ESP,0x4                         ; 00589264
     JMP 0x00588fbb                      ; 00589267
         ;   XREF to: 00588fbb (UNCONDITIONAL_JUMP)  ; LAB_00588fbb
@@ -400,8 +400,8 @@ section .text
     JZ 0x0058931e                       ; 005892d5
         ;   XREF to: 0058931e (CONDITIONAL_JUMP)  ; LAB_0058931e
     PUSH EBX                            ; 005892d7
-    CALL core_zombie.cpp_FUN_0058cc20   ; 005892d8
-        ;   XREF to: 0058cc20 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_FUN_0058cc20(CZombie * this_ptr)
+    CALL core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20 ; 005892d8
+        ;   XREF to: 0058cc20 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20(CZombie * this_ptr)
     ADD ESP,0x4                         ; 005892dd
     JMP 0x00588fbb                      ; 005892e0
         ;   XREF to: 00588fbb (UNCONDITIONAL_JUMP)  ; LAB_00588fbb
@@ -421,8 +421,8 @@ section .text
     JBE 0x0058931e                      ; 0058930e
         ;   XREF to: 0058931e (CONDITIONAL_JUMP)  ; LAB_0058931e
     PUSH EBX                            ; 00589310
-    CALL core_zombie.cpp_FUN_0058cc20   ; 00589311
-        ;   XREF to: 0058cc20 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_FUN_0058cc20(CZombie * this_ptr)
+    CALL core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20 ; 00589311
+        ;   XREF to: 0058cc20 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20(CZombie * this_ptr)
     ADD ESP,0x4                         ; 00589316
     JMP 0x00588fbb                      ; 00589319
         ;   XREF to: 00588fbb (UNCONDITIONAL_JUMP)  ; LAB_00588fbb
@@ -484,8 +484,8 @@ section .text
     CALL dword ptr [ESI + 0xf0]         ; 005893d3
     ADD ESP,0x4                         ; 005893d9
     PUSH EBX                            ; 005893dc
-    CALL core_zombie.cpp_FUN_0058cc20   ; 005893dd
-        ;   XREF to: 0058cc20 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_FUN_0058cc20(CZombie * this_ptr)
+    CALL core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20 ; 005893dd
+        ;   XREF to: 0058cc20 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20(CZombie * this_ptr)
     ADD ESP,0x4                         ; 005893e2
     PUSH 0x5d8507                       ; 005893e5 | = "ghoul-eat-?.wav"
         ;   Label: LAB_005893e5
@@ -1032,8 +1032,8 @@ section .text
     JZ 0x00589ae2                       ; 00589ad7
         ;   XREF to: 00589ae2 (CONDITIONAL_JUMP)  ; LAB_00589ae2
     PUSH EBX                            ; 00589ad9
-    CALL core_zombie.cpp_FUN_0058cc20   ; 00589ada
-        ;   XREF to: 0058cc20 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_FUN_0058cc20(CZombie * this_ptr)
+    CALL core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20 ; 00589ada
+        ;   XREF to: 0058cc20 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20(CZombie * this_ptr)
     ADD ESP,0x4                         ; 00589adf
     LEA EAX,[EBX + 0x249c]              ; 00589ae2
         ;   Label: LAB_00589ae2
@@ -1346,8 +1346,8 @@ section .text
         ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00589e8e
     PUSH EBX                            ; 00589e91
-    CALL core_zombie.cpp_FUN_0058cc20   ; 00589e92
-        ;   XREF to: 0058cc20 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_FUN_0058cc20(CZombie * this_ptr)
+    CALL core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20 ; 00589e92
+        ;   XREF to: 0058cc20 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20(CZombie * this_ptr)
     ADD ESP,0x4                         ; 00589e97
     MOV dword ptr [EBX + 0x2508],0x0    ; 00589e9a
     JMP 0x00589afa                      ; 00589ea4
@@ -1841,8 +1841,8 @@ section .text
     JZ 0x0058a49d                       ; 0058a492
         ;   XREF to: 0058a49d (CONDITIONAL_JUMP)  ; LAB_0058a49d
     PUSH EBX                            ; 0058a494
-    CALL core_zombie.cpp_FUN_0058cc20   ; 0058a495
-        ;   XREF to: 0058cc20 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_FUN_0058cc20(CZombie * this_ptr)
+    CALL core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20 ; 0058a495
+        ;   XREF to: 0058cc20 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20(CZombie * this_ptr)
     ADD ESP,0x4                         ; 0058a49a
     FLD float ptr [0x005e6778]          ; 0058a49d | DAT_005e6778
         ;   Label: LAB_0058a49d
@@ -1854,8 +1854,8 @@ section .text
     JBE 0x00589dd4                      ; 0058a4b1
         ;   XREF to: 00589dd4 (CONDITIONAL_JUMP)  ; caseD_11
     PUSH EBX                            ; 0058a4b7
-    CALL core_zombie.cpp_FUN_0058cc20   ; 0058a4b8
-        ;   XREF to: 0058cc20 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_FUN_0058cc20(CZombie * this_ptr)
+    CALL core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20 ; 0058a4b8
+        ;   XREF to: 0058cc20 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20(CZombie * this_ptr)
     ADD ESP,0x4                         ; 0058a4bd
     MOV EAX,dword ptr [EBX + 0xd13c]    ; 0058a4c0
     PUSH EAX                            ; 0058a4c6
@@ -1966,8 +1966,8 @@ section .text
     MOV dword ptr [EBX + 0xd13c],EAX    ; 0058a622
     PUSH EBX                            ; 0058a628
         ;   Label: LAB_0058a628
-    CALL core_zombie.cpp_FUN_0058cc20   ; 0058a629
-        ;   XREF to: 0058cc20 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_FUN_0058cc20(CZombie * this_ptr)
+    CALL core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20 ; 0058a629
+        ;   XREF to: 0058cc20 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20(CZombie * this_ptr)
     ADD ESP,0x4                         ; 0058a62e
     JMP 0x00589dd4                      ; 0058a631
         ;   XREF to: 00589dd4 (UNCONDITIONAL_JUMP)  ; caseD_11
@@ -2376,8 +2376,8 @@ section .text
         ;   XREF to: 00589dd4 (CONDITIONAL_JUMP)  ; caseD_11
     PUSH EBX                            ; 0058aaf1
         ;   Label: LAB_0058aaf1
-    CALL core_zombie.cpp_FUN_0058cc20   ; 0058aaf2
-        ;   XREF to: 0058cc20 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_FUN_0058cc20(CZombie * this_ptr)
+    CALL core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20 ; 0058aaf2
+        ;   XREF to: 0058cc20 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20(CZombie * this_ptr)
     ADD ESP,0x4                         ; 0058aaf7
     JMP 0x00589dd4                      ; 0058aafa
         ;   XREF to: 00589dd4 (UNCONDITIONAL_JUMP)  ; caseD_11
@@ -2491,8 +2491,8 @@ section .text
     MOV dword ptr [EBP + 0x62],EAX      ; 0058ac5c
     LEA EAX,[EBX + 0x158]               ; 0058ac5f
     PUSH EAX                            ; 0058ac65
-    CALL core_motion.cpp_FUN_004fc930   ; 0058ac66
-        ;   XREF to: 004fc930 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_004fc930(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930 ; 0058ac66
+        ;   XREF to: 004fc930 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930(CMotionController * this_ptr)
     FLD1                                ; 0058ac6b
     MOV dword ptr [EBP + 0x76],EAX      ; 0058ac6d
     ADD ESP,0x4                         ; 0058ac70
@@ -2523,8 +2523,8 @@ section .text
         ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0058acbb
     PUSH EBX                            ; 0058acbe
-    CALL core_zombie.cpp_FUN_0058cc20   ; 0058acbf
-        ;   XREF to: 0058cc20 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_FUN_0058cc20(CZombie * this_ptr)
+    CALL core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20 ; 0058acbf
+        ;   XREF to: 0058cc20 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20(CZombie * this_ptr)
     ADD ESP,0x4                         ; 0058acc4
     JMP 0x00589dd4                      ; 0058acc7
         ;   XREF to: 00589dd4 (UNCONDITIONAL_JUMP)  ; caseD_11
@@ -2711,8 +2711,8 @@ section .text
     LEA EAX,[EBP + 0xfffffcc6]          ; 0058af0a
     PUSH EAX                            ; 0058af10
     PUSH EBX                            ; 0058af11
-    CALL core_charactr.cpp_FUN_0042c230 ; 0058af12
-        ;   XREF to: 0042c230 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042c230(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230 ; 0058af12
+        ;   XREF to: 0042c230 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 0058af17
     JMP 0x00589b68                      ; 0058af1a
         ;   XREF to: 00589b68 (UNCONDITIONAL_JUMP)  ; LAB_00589b68

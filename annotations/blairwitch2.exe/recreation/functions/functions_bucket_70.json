@@ -5912,19 +5912,12 @@
       "005b7ff0",
       "005b84d0"
     ],
+    "cls":"CCourse",
     "conv":"__cdecl",
     "instructions":266,
-    "method":"FUN_00438cf0",
-    "name":"core_course.cpp_FUN_00438cf0",
+    "method":"interpolate",
+    "name":"core_course.cpp_CCourse_interpolate_FUN_00438cf0",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CCourse",
-          "ptr":1
-        }
-      },
       {
         "name":"time",
         "type":{
@@ -5950,7 +5943,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -6583,19 +6576,12 @@
     "calls":[
       "00445620"
     ],
+    "cls":"CDemonCube",
     "conv":"__cdecl",
     "instructions":118,
-    "method":"FUN_00446df0",
-    "name":"core_dcube.cpp_FUN_00446df0",
+    "method":"testCylinderGroundCollision",
+    "name":"core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_00446df0",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CDemonCube",
-          "ptr":1
-        }
-      },
       {
         "name":"cylinder_position",
         "type":{
@@ -6637,7 +6623,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"int",
@@ -9229,14 +9215,14 @@
       "004ab560",
       "004e4500"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":21,
-    "method":"FUN_0047a4f0",
-    "name":"shape_edittool.cpp_FUN_0047a4f0",
+    "method":"initEditorFontMetrics",
+    "name":"shape_edittool.cpp_initEditorFontMetrics_FUN_0047a4f0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -9503,8 +9489,8 @@
     ],
     "conv":"__cdecl",
     "instructions":461,
-    "method":"FUN_0047c0f0",
-    "name":"shape_edittool.cpp_FUN_0047c0f0",
+    "method":"showMultiChoiceDialog",
+    "name":"shape_edittool.cpp_showMultiChoiceDialog_FUN_0047c0f0",
     "params":[
       {
         "name":"str_list",
@@ -12835,19 +12821,12 @@
       "005ba1e0",
       "005baab0"
     ],
+    "cls":"CGame",
     "conv":"__cdecl",
     "instructions":598,
-    "method":"FUN_004bbf70",
-    "name":"core_game.cpp_FUN_004bbf70",
+    "method":"loadGame",
+    "name":"core_game.cpp_CGame_loadGame_FUN_004bbf70",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CGame",
-          "ptr":1
-        }
-      },
       {
         "name":"save_filename",
         "type":{
@@ -12865,7 +12844,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -13803,19 +13782,12 @@
       "00546f40",
       "00593fa0"
     ],
+    "cls":"CIcePick",
     "conv":"__cdecl",
     "instructions":90,
-    "method":"FUN_004d5470",
-    "name":"core_icepick.cpp_FUN_004d5470",
+    "method":"updateShootBlend",
+    "name":"core_icepick.cpp_CIcePick_updateShootBlend_FUN_004d5470",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CIcePick",
-          "ptr":1
-        }
-      },
       {
         "name":"delta_time",
         "type":{
@@ -13825,7 +13797,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -14430,14 +14402,15 @@
       "00449280",
       "0044d570"
     ],
-    "conv":"unknown",
+    "cls":"CLightGun",
+    "conv":"__cdecl",
     "instructions":58,
-    "method":"FUN_004e2bf0",
-    "name":"core_lightgun.cpp_FUN_004e2bf0",
-    "receiver":false,
+    "method":"updateBeamLight",
+    "name":"core_lightgun.cpp_CLightGun_updateBeamLight_FUN_004e2bf0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/lightgun.cpp",
@@ -15068,8 +15041,8 @@
     ],
     "conv":"__cdecl",
     "instructions":379,
-    "method":"FUN_004ecc70",
-    "name":"core_menu.cpp_FUN_004ecc70",
+    "method":"configureCustomKeys",
+    "name":"core_menu.cpp_configureCustomKeys_FUN_004ecc70",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -16270,8 +16243,8 @@
     ],
     "conv":"unknown",
     "instructions":292,
-    "method":"FUN_00500970",
-    "name":"engine_model.c_FUN_00500970",
+    "method":"getMRGLBounds",
+    "name":"engine_model.c_getMRGLBounds_FUN_00500970",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -21228,21 +21201,12 @@
       "005b9924",
       "005b9989"
     ],
+    "cls":"CStranger",
     "conv":"__cdecl",
     "instructions":1285,
-    "method":"FUN_00565ff0",
-    "name":"core_stranger.cpp_FUN_00565ff0",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CStranger",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"updateProceduralAnimation",
+    "name":"core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00565ff0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",

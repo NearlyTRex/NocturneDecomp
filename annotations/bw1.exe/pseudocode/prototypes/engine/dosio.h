@@ -77,9 +77,9 @@ void __cdecl splitPath(char *full_path,char *drive,char *directory,char *filenam
 // Address: 004795b0
 void __cdecl makePath(char *full_path,char *drive,char *directory,char *filename,char *extension);
 
-// Original: engine_dosio.cpp_FUN_004795e0
+// Original: engine_dosio.cpp_ensureTrailingSlash_FUN_004795e0
 // Address: 004795e0
-void __cdecl FUN_004795e0(char *input_path,char *drive,char *output_path);
+void __cdecl ensureTrailingSlash(char *input_path,char *drive,char *output_path);
 
 // Original: engine_dosio.cpp_changeFileExtension_FUN_004796b0
 // Address: 004796b0

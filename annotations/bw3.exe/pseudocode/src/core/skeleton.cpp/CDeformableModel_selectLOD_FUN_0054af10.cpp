@@ -22,7 +22,7 @@ int __cdecl core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0054af10(CDeformabl
   if ((this_ptr->num_lods < 2) || (g_CGamePtr->letterbox_mode != 0)) {
     return 0;
   }
-  fVar2 = core_box_cpp_FUN_0041e100(bounding_box);
+  fVar2 = core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041e100(bounding_box);
   fVar4 = (float10)fVar2;
   round();
   iVar1 = extraout_ECX + -1;

@@ -206,7 +206,8 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423b70(CBride *this_ptr,float d
         if (pCVar5 == (CDemonActor *)0x0) {
           fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.2,0.5);
           (this_ptr->base).attack_cooldown = fStack_14;
-          fStack_20 = core_motion_cpp_FUN_00525020(&pCVar1->base);
+          fStack_20 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00525020
+                                (&pCVar1->base);
           dStack_34 = (double)fStack_20;
           fStack_14 = fStack_20;
           if (fStack_20 <= (float)_DAT_005d4f58) {
@@ -291,7 +292,8 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423b70(CBride *this_ptr,float d
         if (pCVar5 == (CDemonActor *)0x0) {
           fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.2,0.5);
           (this_ptr->base).attack_cooldown = fStack_14;
-          fStack_18 = core_motion_cpp_FUN_00525020(&pCVar1->base);
+          fStack_18 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00525020
+                                (&pCVar1->base);
           dStack_44 = (double)fStack_18;
           fStack_14 = fStack_18;
           if (fStack_18 <= (float)_DAT_005d4f38) {
@@ -456,7 +458,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423b70(CBride *this_ptr,float d
         CStack_cc.y = CStack_cc.y + (this_ptr->base).base.model.accumulated_root_motion.y;
         CStack_cc.z = CStack_cc.z + (this_ptr->base).base.model.accumulated_root_motion.z;
       }
-      core_charactr_cpp_FUN_0042d750((CCharacter *)this_ptr,&CStack_cc);
+      core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042d750((CCharacter *)this_ptr,&CStack_cc);
     }
     core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_005675a0
               (&(this_ptr->base).base.model);

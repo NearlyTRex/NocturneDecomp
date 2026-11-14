@@ -30,13 +30,13 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_00424430
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00424470
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042aa00
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_00423000
 ;   core_charactr.cpp_FUN_00423a10
-;   core_charactr.cpp_FUN_00423a60
 ;   core_charactr.cpp_FUN_0042b2a0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
 ;   ... and 12 more
@@ -999,8 +999,8 @@ section .text
     FST float ptr [EDX + 0x4]           ; 0054a624
     PUSH EBX                            ; 0054a627
     FSTP float ptr [EDX]                ; 0054a628
-    CALL core_charactr.cpp_FUN_00423a60 ; 0054a62a
-        ;   XREF to: 00423a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00423a60(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60 ; 0054a62a
+        ;   XREF to: 00423a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 0054a62f
     JMP 0x00549ef5                      ; 0054a632
         ;   XREF to: 00549ef5 (UNCONDITIONAL_JUMP)  ; LAB_00549ef5

@@ -20,7 +20,7 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004d8e70(void)
     _DAT_01d71de4 = 0x57;
     core_main_c_FUN_004e4330("Please copy Blair Witch 3 to your hard drive");
   }
-  engine_ini_cpp_FUN_004d8a20(&local_210,".\\system\\bw3.ini",(char *)0x0);
+  engine_ini_cpp_CIniFile_ctor_FUN_004d8a20(&local_210,".\\system\\bw3.ini",(char *)0x0);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004d8ae0(&local_210,"Graphics");
   engine_ini_cpp_FUN_004d8c30(&local_210,"gamePIXX",g_CGamePtr);
   engine_ini_cpp_FUN_004d8c30(&local_210,"gamePIXY",&g_CGamePtr->game_pixy);

@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[10]:
-;   core_menu.cpp_FUN_004ed260 at 004ee016
-;   core_sound.cpp_FUN_0055a100 at 0055a13c
+;   core_menu.cpp_configureSoundOptions_FUN_004ed260 at 004ee016
+;   core_sound.cpp_CSound_findAllSoundFiles_FUN_0055a100 at 0055a13c
 ;   sound_snddx.cpp_FUN_00555560 at 00555809
 ;   sound_snddx.cpp_FUN_00555a80 at 00555a87
 ;   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_0054d840 at 0054d872

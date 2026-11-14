@@ -159,7 +159,7 @@ void FUN_0045bba0(int param_1);
 
 // Original: core_doc.cpp_FUN_0045bdc0
 // Address: 0045bdc0
-void FUN_0045bdc0(CCharacter *param_1,float param_2);
+void FUN_0045bdc0(CHero *param_1,float param_2);
 
 // Original: core_doc.cpp_FUN_0045c960
 // Address: 0045c960

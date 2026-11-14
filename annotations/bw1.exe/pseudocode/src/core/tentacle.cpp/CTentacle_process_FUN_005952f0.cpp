@@ -128,9 +128,10 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005952f0(CTentacle *this_pt
                                   (pCVar1,(CDemonActor *)this_ptr,1), iVar4 != 0)) {
               pCVar1 = (this_ptr->base).victim;
               this_ptr->target_blend = 0.0;
-              core_xform_cpp_FUN_005b5760
+              core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
                         (&CStack_184,&(pCVar1->base).location.position,&(pCVar1->base).orient.vec);
-              core_xform_cpp_FUN_005b5620(&CStack_244,pCStack_1c,pCStack_24);
+              core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005b5620
+                        (&CStack_244,pCStack_1c,pCStack_24);
               core_xform_cpp_inverse_FUN_005b6380(auStack_124);
               pCVar13 = &CStack_154;
               pfVar11 = afStack_1b4;

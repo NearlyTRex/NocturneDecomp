@@ -34,12 +34,12 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
 ;   core_actor.cpp_randomChance_FUN_0040cf40
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
 ;   core_charactr.cpp_FUN_0042c1e0
-;   core_charactr.cpp_FUN_0042c230
 ;   core_charactr.cpp_FUN_00434850
 ;   ... and 21 more
 ;
@@ -421,8 +421,8 @@ section .text
     FST float ptr [EDX + 0x4]           ; 0057db6e
     PUSH EBX                            ; 0057db71
     FSTP float ptr [EDX]                ; 0057db72
-    CALL core_charactr.cpp_FUN_0042c230 ; 0057db74
-        ;   XREF to: 0042c230 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042c230(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230 ; 0057db74
+        ;   XREF to: 0042c230 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 0057db79
     PUSH EBX                            ; 0057db7c
         ;   Label: LAB_0057db7c

@@ -54,9 +54,9 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
 ;   core_morph.cpp_CMorph_render_FUN_005b76a0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
-;   core_motion.cpp_FUN_005042e0
+;   core_motion.cpp_CMotionController_render_FUN_005042e0
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_00547170
-;   core_xform.cpp_FUN_00591c10
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
 ;   core_xform.cpp_FUN_00592720
 ;   core_xform.cpp_matrixToEulerAngles_FUN_00591de0
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005916b0
@@ -213,8 +213,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004f1a1d
     MOVSD ES:EDI,ESI                    ; 004f1a1e
     MOVSD ES:EDI,ESI                    ; 004f1a1f
-    CALL core_xform.cpp_FUN_00591c10    ; 004f1a20
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591c10()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 004f1a20
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10()
     MOV ESI,dword ptr [0x01d097c4]      ; 004f1a25 | DAT_01d097c4
     LEA EAX,[ESI*0x4 + 0x0]             ; 004f1a2b
     SUB EAX,ESI                         ; 004f1a32
@@ -298,8 +298,8 @@ section .text
     PUSH EBX                            ; 004f1afa
     LEA ESI,[EBX + 0x2b4]               ; 004f1afb
     PUSH ESI                            ; 004f1b01
-    CALL core_motion.cpp_FUN_005042e0   ; 004f1b02
-        ;   XREF to: 005042e0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_FUN_005042e0(CMotionController * this_ptr, CDemonActor * actor)
+    CALL core_motion.cpp_CMotionController_render_FUN_005042e0 ; 004f1b02
+        ;   XREF to: 005042e0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_render_FUN_005042e0(CMotionController * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004f1b07
     PUSH ESI                            ; 004f1b0a
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004f1b0b

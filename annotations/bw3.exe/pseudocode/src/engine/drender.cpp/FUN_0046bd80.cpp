@@ -20,7 +20,7 @@ void engine_drender_cpp_FUN_0046bd80(void)
   _DAT_01bdd820 = (uint)unaff_EBP[2];
   if (in_ECX->shadow_pass_active == 0) {
     if (DAT_005fba20 == 0x20) {
-      _DAT_01c6b5cc = engine_special_cpp_FUN_00560f31;
+      _DAT_01c6b5cc = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f31;
     }
     else {
       _DAT_01c6b5cc = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_00561713;

@@ -11,7 +11,7 @@
 ;   core_mission.cpp_CDemonMission_createFromSingleSet_FUN_004fca90 at 004fcaef
 ;   core_mission.cpp_CDemonMission_process_FUN_004fc940 at 004fca3d
 ;   core_mission.cpp_CDemonMission_run_FUN_004fcb00 at 004fcb5b
-;   core_mission.cpp_FUN_004fce00 at 004fcea2
+;   core_mission.cpp_CDemonMission_startMission_FUN_004fce00 at 004fcea2
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01cb6900

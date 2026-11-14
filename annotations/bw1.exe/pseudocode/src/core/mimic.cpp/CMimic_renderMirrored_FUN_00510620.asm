@@ -54,9 +54,9 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
 ;   core_morph.cpp_CMorph_render_FUN_005237e0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
-;   core_motion.cpp_FUN_005254b0
+;   core_motion.cpp_CMotionController_render_FUN_005254b0
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_00569810
-;   core_xform.cpp_FUN_005b5760
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
 ;   core_xform.cpp_FUN_005b6270
 ;   core_xform.cpp_matrixToEulerAngles_FUN_005b5930
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005b5200
@@ -213,8 +213,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005107ad
     MOVSD ES:EDI,ESI                    ; 005107ae
     MOVSD ES:EDI,ESI                    ; 005107af
-    CALL core_xform.cpp_FUN_005b5760    ; 005107b0
-        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760 ; 005107b0
+        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     MOV ESI,dword ptr [0x01d22424]      ; 005107b5 | DAT_01d22424
     LEA EAX,[ESI*0x4 + 0x0]             ; 005107bb
     SUB EAX,ESI                         ; 005107c2
@@ -298,8 +298,8 @@ section .text
     PUSH EBX                            ; 0051088a
     LEA ESI,[EBX + 0x158]               ; 0051088b
     PUSH ESI                            ; 00510891
-    CALL core_motion.cpp_FUN_005254b0   ; 00510892
-        ;   XREF to: 005254b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_FUN_005254b0(CMotionController * this_ptr, CDemonActor * actor)
+    CALL core_motion.cpp_CMotionController_render_FUN_005254b0 ; 00510892
+        ;   XREF to: 005254b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_render_FUN_005254b0(CMotionController * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00510897
     PUSH ESI                            ; 0051089a
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770 ; 0051089b

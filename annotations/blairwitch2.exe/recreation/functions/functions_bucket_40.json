@@ -4716,10 +4716,10 @@
       "005b89c0",
       "005b8e10"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":171,
-    "method":"FUN_0042dec0",
-    "name":"cockpit_ckptutil.c_FUN_0042dec0",
+    "method":"loadEdgeListFile",
+    "name":"cockpit_ckptutil.c_loadEdgeListFile_FUN_0042dec0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -5494,8 +5494,8 @@
     ],
     "conv":"__cdecl",
     "instructions":139,
-    "method":"FUN_00448640",
-    "name":"core_dfont.cpp_FUN_00448640",
+    "method":"freeFonts",
+    "name":"core_dfont.cpp_freeFonts_FUN_00448640",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -10354,19 +10354,12 @@
       "004dbc60",
       "004defa0"
     ],
+    "cls":"CGame",
     "conv":"__cdecl",
     "instructions":619,
-    "method":"FUN_004b76c0",
-    "name":"core_game.cpp_FUN_004b76c0",
+    "method":"processKeyboardControls",
+    "name":"core_game.cpp_CGame_processKeyboardControls_FUN_004b76c0",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CGame",
-          "ptr":1
-        }
-      },
       {
         "name":"player_control",
         "type":{
@@ -10376,7 +10369,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -10414,21 +10407,12 @@
       "0043cbe0",
       "004bb2c0"
     ],
+    "cls":"CGame",
     "conv":"__cdecl",
     "instructions":136,
-    "method":"FUN_004bb240",
-    "name":"core_game.cpp_FUN_004bb240",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CGame",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"beginFadeIn",
+    "name":"core_game.cpp_CGame_beginFadeIn_FUN_004bb240",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -12101,14 +12085,33 @@
       "005b7790",
       "005ba8cc"
     ],
-    "conv":"unknown",
+    "cls":"CIniFile",
+    "conv":"__cdecl",
     "instructions":34,
-    "method":"FUN_004d8bc0",
-    "name":"engine_ini.cpp_FUN_004d8bc0",
-    "receiver":false,
+    "method":"getFloat",
+    "name":"engine_ini.cpp_CIniFile_getFloat_FUN_004d8bc0",
+    "params":[
+      {
+        "name":"key",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"output",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/ini.cpp",
@@ -13023,14 +13026,25 @@
       "0046b350",
       "0046b4a0"
     ],
-    "conv":"unknown",
+    "cls":"CMansionPuzzleCircle",
+    "conv":"__cdecl",
     "instructions":36,
-    "method":"FUN_004e6340",
-    "name":"core_manpuz.cpp_FUN_004e6340",
-    "receiver":false,
+    "method":"renderPanel",
+    "name":"core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_004e6340",
+    "params":[
+      {
+        "name":"panel_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/manpuz.cpp",

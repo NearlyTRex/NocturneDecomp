@@ -23,9 +23,9 @@
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
 ;   core_actor.cpp_isOfClass_FUN_0040c550
 ;   core_event.cpp_CEventList_executeCommands_FUN_004a1b70
+;   core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
-;   core_motion.cpp_FUN_00525020
 ;
 ; *****************************************************************************
 
@@ -140,8 +140,8 @@ section .text
     ADD EBX,0x158                       ; 004614ba
         ;   Label: LAB_004614ba
     PUSH EBX                            ; 004614c0
-    CALL core_motion.cpp_FUN_00525020   ; 004614c1
-        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_00525020(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020 ; 004614c1
+        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020(CMotionController * this_ptr)
     MOV dword ptr [ESP + 0x4],EAX       ; 004614c6
     FLD float ptr [ESP + 0x4]           ; 004614ca
     ADD ESP,0x4                         ; 004614ce

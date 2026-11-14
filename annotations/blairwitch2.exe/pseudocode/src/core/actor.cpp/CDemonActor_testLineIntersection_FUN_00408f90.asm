@@ -15,7 +15,7 @@
 ;   core_hero.cpp_CHero_testLineIntersection_FUN_004ce540 at 004ce575
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408290
+;   core_actor.cpp_rayCylinderIntersect_FUN_00408290
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_00537fa0
 ;
 ; *****************************************************************************
@@ -83,8 +83,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00409018
     MOVSD ES:EDI,ESI                    ; 00409019
     MOVSD ES:EDI,ESI                    ; 0040901a
-    CALL core_actor.cpp_FUN_00408290    ; 0040901b
-        ;   XREF to: 00408290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408290()
+    CALL core_actor.cpp_rayCylinderIntersect_FUN_00408290 ; 0040901b
+        ;   XREF to: 00408290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_rayCylinderIntersect_FUN_00408290()
     MOV dword ptr [ESP + 0x98],EAX      ; 00409020
     FLD float ptr [ESP + 0x98]          ; 00409027
     ADD ESP,0x10                        ; 0040902e

@@ -36,7 +36,8 @@ void core_carved_cpp_FUN_00429090(int param_1)
                 ((CMotionController *)(param_1 + 0x158),iVar1 + 3,iVar2);
       return;
     }
-    local_14 = core_motion_cpp_FUN_004fc930((CMotionController *)(param_1 + 0x158));
+    local_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                         ((CMotionController *)(param_1 + 0x158));
     if (local_14 <= (float)_DAT_005b7ec7) {
       return;
     }

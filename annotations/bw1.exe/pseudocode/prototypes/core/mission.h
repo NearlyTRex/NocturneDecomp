@@ -85,9 +85,9 @@ void __cdecl CDemonMission::changeSetName(CDemonMission *this_ptr,int param_2,ch
 // Address: 0051b5a0
 void __cdecl CDemonMission::removeAllActors(CDemonMission *this_ptr);
 
-// Original: core_mission.cpp_FUN_0051b610
+// Original: core_mission.cpp_CDemonMission_loadSet_FUN_0051b610
 // Address: 0051b610
-void FUN_0051b610(CDemonMission *param_1,int param_2);
+void __cdecl CDemonMission::loadSet(CDemonMission *this_ptr,int set_index);
 
 // Original: core_mission.cpp_CDemonMission_findActorByName_FUN_0051b6c0
 // Address: 0051b6c0
@@ -129,9 +129,9 @@ void __cdecl CDemonMission::generateUniqueActorName(CDemonMission *this_ptr,char
 // Address: 0051bd60
 void __cdecl CDemonMission::generateActorName(CDemonMission *this_ptr,CDemonActor *actor);
 
-// Original: core_mission.cpp_FUN_0051bdc0
+// Original: core_mission.cpp_CDemonMission_startMission_FUN_0051bdc0
 // Address: 0051bdc0
-int __cdecl FUN_0051bdc0(CDemonMission *this_ptr);
+int __cdecl CDemonMission::startMission(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_freeAllAssets_FUN_0051bf10
 // Address: 0051bf10
@@ -145,9 +145,9 @@ int __cdecl CDemonMission::createOneHero(CDemonMission *this_ptr,int index,int h
 // Address: 0051c0a0
 int __cdecl CDemonMission::createHeros(CDemonMission *this_ptr,CCharacter *existing_hero);
 
-// Original: core_mission.cpp_FUN_0051c240
+// Original: core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_0051c240
 // Address: 0051c240
-void __cdecl FUN_0051c240(CDemonMission *this_ptr);
+void __cdecl CDemonMission::ensureHeroPlaceholder(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_FUN_0051c410
 // Address: 0051c410

@@ -9,9 +9,9 @@
 // Address: 004080a0
 void __cdecl staticInit(void);
 
-// Original: core_actor.cpp_FUN_004080c0
+// Original: core_actor.cpp_rayCylinderIntersect_FUN_004080c0
 // Address: 004080c0
-float FUN_004080c0(int param_1,float *param_2,float *param_3,float *param_4);
+float rayCylinderIntersect(int param_1,float *param_2,float *param_3,float *param_4);
 
 // Original: core_actor.cpp_FUN_00408560
 // Address: 00408560

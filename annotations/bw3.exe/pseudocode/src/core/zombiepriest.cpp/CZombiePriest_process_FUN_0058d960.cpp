@@ -609,7 +609,7 @@ switchD_0058e8bf_caseD_3:
     (this_ptr->base).base.model.accumulated_root_motion.y =
          (this_ptr->base).base.model.accumulated_root_motion.z;
     pCVar3->x = (this_ptr->base).base.model.accumulated_root_motion.y;
-    core_charactr_cpp_FUN_0042c230((CCharacter *)this_ptr,&CStack_58);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230((CCharacter *)this_ptr,&CStack_58);
   }
   pCVar12 = core_actor_cpp_castToClassHash_FUN_0040c840
                       ((this_ptr->base).base.carry_hands[1].carry_actor,g_CWeaponClassInfo.name_hash

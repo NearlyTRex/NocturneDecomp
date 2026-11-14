@@ -48,9 +48,9 @@ CBoundingBox3D * __cdecl core_turret_cpp_CTurret_getBoundingBox_FUN_005a28c0(CTu
   }
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900(&this_ptr->model);
   if (0 < pCVar1->poly_count) {
-    core_xform_cpp_FUN_005b5760(&CStack_130,(CVector3f *)&DAT_02c8af28,&(this_ptr->home_orient).vec)
-    ;
-    core_xform_cpp_FUN_005b5620
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+              (&CStack_130,(CVector3f *)&DAT_02c8af28,&(this_ptr->home_orient).vec);
+    core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005b5620
               (&CStack_100,(CVector3f *)&DAT_02c8af28,&(this_ptr->base).base.orient.vec);
     core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&CStack_130,&CStack_100,&CStack_d0);
     pCVar4 = &CStack_d0;

@@ -7,9 +7,9 @@
 ; ulong            Stack[0x4]:4   size
 ;
 ; XREF[55]:
-;   cockpit_ckptutil.c_FUN_00438bd0 at 00438d44
 ;   cockpit_ckptutil.c_FUN_0043a200 at 0043a22f
 ;   cockpit_ckptutil.c_FUN_0043b2e0 at 0043b397
+;   cockpit_ckptutil.c_loadEdgeListFile_FUN_00438bd0 at 00438d44
 ;   cockpit_ckptutil.c_rotateBitmap_FUN_0043a040 at 0043a142
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00538280 at 005383fe
 ;   cockpit_pkbmpset.cpp_FUN_00538b30 at 00538c23

@@ -28,7 +28,7 @@
     {
       "addr": "004bbf70",
       "from_addr": "004bc5ac",
-      "name": "core_game.cpp_FUN_004bbf70",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004bbf70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -44,6 +44,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004fd280",
+      "from_addr": "004fd320",
+      "name": "core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004fd280",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004fcd00",
       "from_addr": "004fcd64",
       "name": "core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_004fcd00",
@@ -53,12 +59,6 @@
       "addr": "004fc040",
       "from_addr": "004fc13f",
       "name": "core_mission.cpp_CDemonMission_loadActor_FUN_004fc040",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004fd280",
-      "from_addr": "004fd320",
-      "name": "core_mission.cpp_FUN_004fd280",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -100,7 +100,7 @@
       {
         "call_addr": "004bc5ac",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bbf70",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004bbf70",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -133,7 +133,7 @@
       {
         "call_addr": "004fd320",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004fd280",
+        "caller": "core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004fd280",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

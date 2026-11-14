@@ -113,17 +113,17 @@ int __cdecl CEventList::evaluateAtom(CEventList *this_ptr,char *expression,int *
 // Address: 00490ec0
 int __cdecl CEventList::evaluateLogicalExpr(CEventList *this_ptr,char *expression,int *parse_position);
 
-// Original: core_event.cpp_FUN_00490f80
+// Original: core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80
 // Address: 00490f80
-void __cdecl FUN_00490f80(CEventList *this_ptr,char *name,int add_flag);
+void __cdecl CEventList::addOrRemovePersistentEvent(CEventList *this_ptr,char *name,int add_flag);
 
-// Original: core_event.cpp_FUN_004910b0
+// Original: core_event.cpp_CEventList_resetGameFlags_FUN_004910b0
 // Address: 004910b0
-void FUN_004910b0(CEventList *param_1);
+void __cdecl CEventList::resetGameFlags(CEventList *this_ptr);
 
-// Original: core_event.cpp_FUN_00491110
+// Original: core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_00491110
 // Address: 00491110
-void __cdecl FUN_00491110(CEventList *this_ptr,char *name,int add_flag);
+void __cdecl CEventList::addOrRemoveGameFlag(CEventList *this_ptr,char *name,int add_flag);
 
 // Original: core_event.cpp_FUN_00491240
 // Address: 00491240

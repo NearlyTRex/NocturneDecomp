@@ -8,8 +8,8 @@
 ;
 ; XREF[5]:
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0054e3c0 at 0054e56a
+;   core_set.cpp_CDemonSet_renderScene_FUN_00550580 at 005506d3
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00550260 at 00550404
-;   core_set.cpp_FUN_00550580 at 005506d3
 ;   core_set.cpp_FUN_00551480 at 00551679
 ;   core_set.cpp_FUN_005516c0 at 005518a2
 ;

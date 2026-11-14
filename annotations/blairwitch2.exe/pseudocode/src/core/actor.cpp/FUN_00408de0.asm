@@ -19,7 +19,7 @@
 ;   core_charactr.cpp_CCharacter_checkCylinderCollisionWorld_FUN_00427bf0 at 00427c1a
 ;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042abe0 at 0042acc5
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0 at 00428900
-;   core_charactr.cpp_CCharacter_testDamageLine_FUN_00427c80 at 00427cb4
+;   core_charactr.cpp_CCharacter_renderCollision_FUN_00424c80 at 00424df0
 ;   ... and 85 more
 ;
 ; Called Functions:

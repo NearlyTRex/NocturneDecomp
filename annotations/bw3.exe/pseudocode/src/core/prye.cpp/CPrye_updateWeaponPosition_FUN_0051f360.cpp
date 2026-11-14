@@ -41,7 +41,7 @@ void __cdecl core_prye_cpp_CPrye_updateWeaponPosition_FUN_0051f360(CPrye *this_p
       pfVar4 = pfVar4 + (uint)bVar6 * -2 + 1;
       pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
     }
-    core_xform_cpp_FUN_00583940
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
               (&local_98,&(this_ptr->base).base.base.location,&(this_ptr->base).base.base.orient);
     core_xform_cpp_multiplyMatrix3x4_FUN_005833e0(&local_c8,&local_98,&local_68);
     pCVar5 = &local_68;

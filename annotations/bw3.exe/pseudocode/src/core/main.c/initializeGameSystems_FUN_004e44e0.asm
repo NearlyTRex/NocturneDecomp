@@ -31,7 +31,7 @@
 ; Called Functions:
 ;   core_bmppuzzl.cpp_resetAllPuzzles_FUN_004119e0
 ;   core_dfilter.cpp_CDemonFilter_init_FUN_00459b80
-;   core_dfont.cpp_FUN_00459f50
+;   core_dfont.cpp_initFonts_FUN_00459f50
 ;   core_flattn.cpp_FUN_004ad4c0
 ;   core_inivar.cpp_readIniData_FUN_004d8e70
 ;   core_main.c_FUN_004e4330
@@ -40,7 +40,7 @@
 ;   core_mission.cpp_FUN_004f5aa0
 ;   core_mmx.c_detectCPUFeatures_FUN_004f7c30
 ;   core_netgame.cpp_CNetGame_init_FUN_00503e20
-;   core_sound.cpp_FUN_0055fc60
+;   core_sound.cpp_CSound_findAllSoundFiles_FUN_0055fc60
 ;   crt_io.c__chmod_FUN_005a4bd0
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fopen_FUN_005a43ec
@@ -147,8 +147,8 @@ section .text
     CALL core_main.c_FUN_004e4330       ; 004e460d
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 004e4612
-    CALL core_dfont.cpp_FUN_00459f50    ; 004e4615
-        ;   XREF to: 00459f50 (UNCONDITIONAL_CALL)  ; undefined core_dfont.cpp_FUN_00459f50()
+    CALL core_dfont.cpp_initFonts_FUN_00459f50 ; 004e4615
+        ;   XREF to: 00459f50 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_initFonts_FUN_00459f50()
         ;   Label: LAB_004e4615
     CMP dword ptr [0x02d21b88],0x3c00000 ; 004e461a | DAT_02d21b88
     JGE 0x004e4898                      ; 004e4624
@@ -713,8 +713,8 @@ section .text
     ADD ESP,0x8                         ; 004e4afa
     MOV ESI,dword ptr [0x006045f8]      ; 004e4afd | DAT_006045f8
     PUSH ESI                            ; 004e4b03
-    CALL core_sound.cpp_FUN_0055fc60    ; 004e4b04
-        ;   XREF to: 0055fc60 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0055fc60(CSound * this_ptr)
+    CALL core_sound.cpp_CSound_findAllSoundFiles_FUN_0055fc60 ; 004e4b04
+        ;   XREF to: 0055fc60 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_findAllSoundFiles_FUN_0055fc60(CSound * this_ptr)
     ADD ESP,0x4                         ; 004e4b09
     MOV EDI,dword ptr [0x00600530]      ; 004e4b0c | DAT_00600530
     PUSH EDI                            ; 004e4b12 | DAT_01d81080

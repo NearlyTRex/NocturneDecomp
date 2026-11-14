@@ -19,7 +19,8 @@ int __cdecl shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_F
   shape_edittool_cpp_CStrList_ctor_FUN_00480d20(&local_18);
   shape_edittool_cpp_CStrList_add_FUN_00480e70(&local_18,"^Yes, I know what I'm doing and I hate these annoying prompts.");
   shape_edittool_cpp_CStrList_add_FUN_00480e70(&local_18,"^No, please, I didn't mean to do it!");
-  iVar1 = shape_edittool_cpp_FUN_0047c0f0((CStrList *)0x1c239f0,(char *)&local_18,1);
+  iVar1 = shape_edittool_cpp_showMultiChoiceDialog_FUN_0047c0f0
+                    ((CStrList *)0x1c239f0,(char *)&local_18,1);
   shape_edittool_cpp_CStrList_dtor_FUN_00480d40(&local_18,0);
   return (uint)(iVar1 == 0);
 }

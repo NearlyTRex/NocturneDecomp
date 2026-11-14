@@ -7,7 +7,7 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
-;   core_game.cpp_FUN_004bbf70 at 004bc796
+;   core_game.cpp_CGame_loadGame_FUN_004bbf70 at 004bc796
 ;   core_game.cpp_FUN_004bc840 at 004bca55
 ;   core_game.cpp_hostNetworkGame_FUN_004bd2f0 at 004bd357
 ;   core_game.cpp_joinNetworkGame_FUN_004bd3a0 at 004bd424
@@ -41,8 +41,8 @@
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_004fc6b0
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_004fc570
 ;   core_mission.cpp_CDemonMission_removeActorFromList_FUN_004fc270
+;   core_mission.cpp_CDemonMission_startMission_FUN_004fce00
 ;   core_mission.cpp_FUN_004fc820
-;   core_mission.cpp_FUN_004fce00
 ;   crt_string.c__stricmp_FUN_005bada0
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   ... and 1 more
@@ -187,8 +187,8 @@ section .text
     JZ 0x004fcbce                       ; 004fcc6b
         ;   XREF to: 004fcbce (CONDITIONAL_JUMP)  ; LAB_004fcbce
     PUSH EBX                            ; 004fcc71
-    CALL core_mission.cpp_FUN_004fce00  ; 004fcc72
-        ;   XREF to: 004fce00 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_FUN_004fce00(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_startMission_FUN_004fce00 ; 004fcc72
+        ;   XREF to: 004fce00 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_startMission_FUN_004fce00(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004fcc77
     TEST EAX,EAX                        ; 004fcc7a
     JZ 0x004fcbce                       ; 004fcc7c

@@ -1638,8 +1638,8 @@ section .text
     PUSH EAX                            ; 0048ceda
     LEA EAX,[EBP + 0xfffffe4e]          ; 0048cedb
     PUSH EAX                            ; 0048cee1
-    CALL core_xform.cpp_FUN_00583940    ; 0048cee2
-        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583940()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 ; 0048cee2
+        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940()
     ADD ESP,0xc                         ; 0048cee7
     LEA EAX,[EBP + 0xfffffe4e]          ; 0048ceea
     PUSH EAX                            ; 0048cef0
@@ -5081,8 +5081,8 @@ section .text
     MOV EBX,dword ptr [0x006071f0]      ; 0048ef88 | DAT_006071f0
     PUSH 0x3dcccccd                     ; 0048ef8e
     PUSH EBX                            ; 0048ef93
-    CALL core_weather.cpp_FUN_0057c2e0  ; 0048ef94
-        ;   XREF to: 0057c2e0 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_FUN_0057c2e0()
+    CALL core_weather.cpp_CWeather_createLightningStrike_FUN_0057c2e0 ; 0048ef94
+        ;   XREF to: 0057c2e0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_createLightningStrike_FUN_0057c2e0(CWeather * this_ptr, float flash_timer, int play_sound)
     ADD ESP,0xc                         ; 0048ef99
     JMP 0x0048c7d2                      ; 0048ef9c
         ;   XREF to: 0048c7d2 (UNCONDITIONAL_JUMP)  ; caseD_6
@@ -7817,8 +7817,8 @@ section .text
     PUSH EAX                            ; 004909a2
     MOV EBX,dword ptr [0x006071f0]      ; 004909a3 | DAT_006071f0
     PUSH EBX                            ; 004909a9
-    CALL core_weather.cpp_FUN_0057d050  ; 004909aa
-        ;   XREF to: 0057d050 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_FUN_0057d050()
+    CALL core_weather.cpp_CWeather_setWeatherType_FUN_0057d050 ; 004909aa
+        ;   XREF to: 0057d050 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_0057d050(CWeather * this_ptr, EWeatherType type)
     ADD ESP,0x8                         ; 004909af
     JMP 0x0048c7d2                      ; 004909b2
         ;   XREF to: 0048c7d2 (UNCONDITIONAL_JUMP)  ; caseD_6

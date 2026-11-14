@@ -9,8 +9,8 @@
 ; XREF[4]:
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_004ccc40 at 004cd0dd
 ;   core_game.cpp_drawKeyBindingEntry_FUN_004ccb80 at 004ccb9a
-;   core_inv.cpp_FUN_004f7690 at 004f7883
-;   core_menu.cpp_FUN_0050d640 at 0050e60e
+;   core_inv.cpp_CInventory_addItem_FUN_004f7690 at 004f7883
+;   core_menu.cpp_configureCustomKeyBindings_FUN_0050d640 at 0050e60e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_none_005e82a4

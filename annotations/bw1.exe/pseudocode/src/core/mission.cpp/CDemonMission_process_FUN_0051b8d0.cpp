@@ -47,7 +47,8 @@ void __cdecl core_mission_cpp_CDemonMission_process_FUN_0051b8d0(CDemonMission *
         iVar2 = iVar2 + 1;
         wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
       } while (iVar2 < 3);
-      core_mission_cpp_FUN_0051b610(this_ptr,(this_ptr->pending_teleport).area_id);
+      core_mission_cpp_CDemonMission_loadSet_FUN_0051b610
+                (this_ptr,(this_ptr->pending_teleport).area_id);
       core_set_cpp_CDemonSet_clearLights_FUN_00551b90(g_CDemonSetPtr);
       core_set_cpp_CDemonSet_initScene_FUN_0054ec60(g_CDemonSetPtr);
       g_CScriptPtr->focus_actor_changed = 2;

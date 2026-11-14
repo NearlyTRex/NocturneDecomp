@@ -8,7 +8,7 @@
 ;
 ; XREF[4]:
 ;   core_event.cpp_FUN_0048c2e0 at 0048f4ab
-;   core_game.cpp_FUN_004bdfb0 at 004be897
+;   core_game.cpp_CGame_loadGame_FUN_004bdfb0 at 004be897
 ;   core_gore.cpp_CGore_ctor_FUN_004ce530 at 004ce536
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_004f5cc0 at 004f61a4
 ;

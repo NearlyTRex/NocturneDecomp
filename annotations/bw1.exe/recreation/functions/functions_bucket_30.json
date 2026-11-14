@@ -4801,19 +4801,12 @@
       "005c03a0",
       "005c0880"
     ],
+    "cls":"CCourse",
     "conv":"__cdecl",
     "instructions":266,
-    "method":"FUN_00447fb0",
-    "name":"core_course.cpp_FUN_00447fb0",
+    "method":"interpolate",
+    "name":"core_course.cpp_CCourse_interpolate_FUN_00447fb0",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CCourse",
-          "ptr":1
-        }
-      },
       {
         "name":"time",
         "type":{
@@ -4839,7 +4832,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -8242,14 +8235,49 @@
       "00507c70",
       "005084b0"
     ],
-    "conv":"unknown",
+    "cls":"CEditorTools",
+    "conv":"__cdecl",
     "instructions":54,
-    "method":"FUN_004985b0",
-    "name":"shape_edittool.cpp_FUN_004985b0",
-    "receiver":false,
+    "method":"draw3DAxisLabelsAt",
+    "name":"shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004985b0",
+    "params":[
+      {
+        "name":"scale_factor",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"text_color",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"world_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"orientation",
+        "type":{
+          "kind":"union",
+          "name":"UOrientationVector",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -11473,21 +11501,12 @@
       "0044e2a0",
       "004d60b0"
     ],
+    "cls":"CGame",
     "conv":"__cdecl",
     "instructions":136,
-    "method":"FUN_004d6030",
-    "name":"core_game.cpp_FUN_004d6030",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CGame",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"beginFadeIn",
+    "name":"core_game.cpp_CGame_beginFadeIn_FUN_004d6030",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -13150,14 +13169,33 @@
       "005bfb40",
       "005c2cac"
     ],
-    "conv":"unknown",
+    "cls":"CIniFile",
+    "conv":"__cdecl",
     "instructions":34,
-    "method":"FUN_004f4db0",
-    "name":"engine_ini.cpp_FUN_004f4db0",
-    "receiver":false,
+    "method":"getFloat",
+    "name":"engine_ini.cpp_CIniFile_getFloat_FUN_004f4db0",
+    "params":[
+      {
+        "name":"key",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"output",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/ini.cpp",
@@ -13996,8 +14034,8 @@
     ],
     "conv":"unknown",
     "instructions":45,
-    "method":"FUN_0050d5b0",
-    "name":"core_menu.cpp_FUN_0050d5b0",
+    "method":"getSinglePressedKey",
+    "name":"core_menu.cpp_getSinglePressedKey_FUN_0050d5b0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -15072,19 +15110,12 @@
       "00580173",
       "005bfb40"
     ],
+    "cls":"CMotionController",
     "conv":"__cdecl",
     "instructions":161,
-    "method":"FUN_005254b0",
-    "name":"core_motion.cpp_FUN_005254b0",
+    "method":"render",
+    "name":"core_motion.cpp_CMotionController_render_FUN_005254b0",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CMotionController",
-          "ptr":1
-        }
-      },
       {
         "name":"actor",
         "type":{
@@ -15094,7 +15125,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -16409,14 +16440,32 @@
   },
   {
     "addr":"0053d7b0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":157,
-    "method":"FUN_0053d7b0",
-    "name":"engine_prim.c_FUN_0053d7b0",
+    "method":"setupBasicSoftwareEdge",
+    "name":"engine_prim.c_setupBasicSoftwareEdge_FUN_0053d7b0",
+    "params":[
+      {
+        "name":"start_vertex",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      },
+      {
+        "name":"end_vertex",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/prim.c",
@@ -17045,14 +17094,26 @@
       "005030e0",
       "005c04b0"
     ],
-    "conv":"unknown",
+    "cls":"CDemonSet",
+    "conv":"__cdecl",
     "instructions":143,
-    "method":"FUN_00555e30",
-    "name":"core_set.cpp_FUN_00555e30",
-    "receiver":false,
+    "method":"loadStateInfo",
+    "name":"core_set.cpp_CDemonSet_loadStateInfo_FUN_00555e30",
+    "params":[
+      {
+        "name":"file_handle",
+        "type":{
+          "header":"stdio",
+          "kind":"system",
+          "name":"_FILE",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/set.cpp",
@@ -19791,21 +19852,12 @@
       "00575560",
       "005755c0"
     ],
+    "cls":"CSound",
     "conv":"__cdecl",
     "instructions":24,
-    "method":"FUN_0057cb30",
-    "name":"core_sound.cpp_FUN_0057cb30",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CSound",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"findAllSoundFiles",
+    "name":"core_sound.cpp_CSound_findAllSoundFiles_FUN_0057cb30",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -22060,8 +22112,8 @@
     ],
     "conv":"__cdecl",
     "instructions":67,
-    "method":"FUN_005ac1b0",
-    "name":"wincore_wddvmem.cpp_FUN_005ac1b0",
+    "method":"cleanupGraphicsSystem",
+    "name":"wincore_wddvmem.cpp_cleanupGraphicsSystem_FUN_005ac1b0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -22441,8 +22493,8 @@
     ],
     "conv":"unknown",
     "instructions":28,
-    "method":"FUN_005b62b0",
-    "name":"core_xform.cpp_FUN_005b62b0",
+    "method":"invertAndGetTranslation",
+    "name":"core_xform.cpp_invertAndGetTranslation_FUN_005b62b0",
     "receiver":false,
     "ret":{
       "kind":"builtin",

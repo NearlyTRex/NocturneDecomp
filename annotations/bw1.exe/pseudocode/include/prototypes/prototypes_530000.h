@@ -179,7 +179,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_00538480(CPacked
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadPBMFile_FUN_00538530(CPackedBitmap *this_ptr,int apply_palette_flag);
 void __cdecl cockpit_pkbitmap_cpp_writePBGHeader_FUN_00538550(int total_entries,_FILE *file_header);
 CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_parsePBGFile_FUN_005385d0(CPackedBitmapSet *bitmap_set_ptr,_FILE *file_handle,int frames_per_bitmap,int skip_data_load,int selected_bitmap_index);
-CPackedBitmap * cockpit_pkbitmap_cpp_FUN_00538750(CPackedBitmapSet *param_1,CPackedBitmap *param_2,undefined4 param_3,int param_4,int param_5,int param_6,char *param_7,int param_8);
+CPackedBitmap * cockpit_pkbitmap_cpp_loadPBGFile_FUN_00538750(CPackedBitmapSet *param_1,CPackedBitmap *param_2,undefined4 param_3,int param_4,int param_5,int param_6,char *param_7,int param_8);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_ctor_FUN_00538900(CPackedBitmapSet *this_ptr);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_init_FUN_00538930(CPackedBitmapSet *this_ptr);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reset_FUN_00538990(CPackedBitmapSet *this_ptr);
@@ -211,7 +211,7 @@ int __cdecl core_platfrm_cpp_CPlatform_allowBulletHoles_FUN_0053ad70(CPlatform *
 EGroundType __cdecl core_platfrm_cpp_CPlatform_getGroundType_FUN_0053ad90(CPlatform *this_ptr);
 int __cdecl core_platfrm_cpp_CPlatform_getBlockVirtualDirectorFlag_FUN_0053ada0(CPlatform *this_ptr);
 void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0053adb0(CPlatform *this_ptr,CDemonActor *actor);
-void __cdecl core_platfrm_cpp_FUN_0053aef0(CPlatform *this_ptr);
+void __cdecl core_platfrm_cpp_CPlatform_updateAttachedActors_FUN_0053aef0(CPlatform *this_ptr);
 uint __cdecl engine_pod_cpp_crc32UpdateByte_FUN_0053b000(uint current_crc,uchar data_byte);
 uint engine_pod_cpp_FUN_0053b110(char *param_1,int param_2);
 CPodFile * __cdecl engine_pod_cpp_CPodFile_ctor_FUN_0053b1a0(CPodFile *this_ptr);
@@ -249,7 +249,7 @@ CDemonPod * __cdecl core_podmain_cpp_CDemonPod_ctor_FUN_0053d710(CDemonPod *this
 CDemonPod * __cdecl core_podmain_cpp_CDemonPod_dtor_FUN_0053d730(CDemonPod *this_ptr,uint flags);
 void core_podmain_cpp_FUN_0053d790(void);
 void __cdecl engine_prim_c_FUN_0053d7a0(int culling_mode);
-void engine_prim_c_FUN_0053d7b0(int param_1,int param_2);
+void __cdecl engine_prim_c_setupBasicSoftwareEdge_FUN_0053d7b0(SRenderVertex *start_vertex,SRenderVertex *end_vertex);
 SSoftwareEdge * __cdecl engine_prim_c_findEdgeInBuffer_FUN_0053db80(int y_value,SSoftwareEdge *edge_ptr);
 void __cdecl engine_prim_c_prepareDepthBuffer_FUN_0053dbc0(SRenderVertex *vertices,int vertex_count);
 void __cdecl engine_prim_c_normalizeTextureCoords_FUN_0053dc30(SRenderVertex *vertices,int vertex_count);

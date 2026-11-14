@@ -60,10 +60,10 @@
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
+;   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
 ;   core_xform.cpp_buildRotationX_FUN_00593240
 ;   core_xform.cpp_buildRotationY_FUN_005932c0
-;   core_xform.cpp_FUN_00591ad0
-;   core_xform.cpp_FUN_00591c10
 ;   core_xform.cpp_inverse_FUN_00592830
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005916b0
 ;
@@ -221,8 +221,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00426c6b
     MOVSD ES:EDI,ESI                    ; 00426c6c
     MOVSD ES:EDI,ESI                    ; 00426c6d
-    CALL core_xform.cpp_FUN_00591c10    ; 00426c6e
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591c10()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 00426c6e
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10()
     ADD ESP,0xc                         ; 00426c73
     LEA EAX,[ESP + 0x60]                ; 00426c76
     PUSH EAX                            ; 00426c7a
@@ -288,8 +288,8 @@ section .text
     LEA ESI,[ESP + 0x218]               ; 00426d6c
     PUSH EAX                            ; 00426d73
     MOVSD.REP ES:EDI,ESI                ; 00426d74
-    CALL core_xform.cpp_FUN_00591ad0    ; 00426d76
-        ;   XREF to: 00591ad0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_00591ad0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0 ; 00426d76
+        ;   XREF to: 00591ad0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 00426d7b
     MOV EDX,dword ptr [ESP + 0x300]     ; 00426d7e
     MOV EDX,dword ptr [EDX + 0x4]       ; 00426d85

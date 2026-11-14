@@ -93,7 +93,7 @@ int __cdecl core_dtri_cpp_cylinderEdgeIntersection_FUN_00478cd0(SIntersectXZCyli
 void __cdecl core_dtri_cpp_cylinderEdgeTestWithHeight_FUN_00478fb0(SIntersectXZCylinder *cylinder,CVector3f *vertex1,CVector3f *vertex2);
 void __cdecl core_dtri_cpp_cylinderTriangleTest_FUN_00479050(CDemonTriangle *triangle,SIntersectXZCylinder *cylinder);
 int __cdecl core_dtri_cpp_rayEdgeHeightTest_FUN_00479450(CVector3f *vertex1,CVector3f *vertex2,float ray_radius,float *out_height);
-int __cdecl core_dtri_cpp_FUN_004795c0(CDemonTriangle *triangle,CVector3f *position,float search_radius,float *out_height);
+int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_004795c0(CDemonTriangle *triangle,CVector3f *position,float search_radius,float *out_height);
 void __cdecl core_dtri_cpp_clipLineToPlane_FUN_00479970(CVector3f *point1_ptr,CVector3f *point2_ptr,CVector3f *result_ptr,double plane_nx,double plane_ny,double plane_nz,double plane_d);
 void __cdecl core_dtri_cpp_clipPolygonToRight_FUN_00479de0(float x_max);
 void __cdecl core_dtri_cpp_clipPolygonToFar_FUN_0047a210(float z_far);
@@ -118,9 +118,9 @@ void __cdecl core_dynamite_cpp_CDynamite_process_FUN_0047b270(CDynamite *this_pt
 CDynamite * __cdecl core_dynamite_cpp_CDynamite_dtor_FUN_0047b470(CDynamite *this_ptr,uint flags);
 void __cdecl shape_edittool_cpp_staticInit_FUN_0047b4c0(void);
 void shape_edittool_cpp_FUN_0047b4e0(void);
-void shape_edittool_cpp_FUN_0047b510(int param_1,int param_2,int param_3);
-void shape_edittool_cpp_FUN_0047b580(void);
-void shape_edittool_cpp_FUN_0047b5e0(int param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl shape_edittool_cpp_plotPixelWithClipping_FUN_0047b510(int x_coord,int y_coord,int use_clipping);
+void __cdecl shape_edittool_cpp_initEditorFontMetrics_FUN_0047b580(void);
+void __cdecl shape_edittool_cpp_drawDashedLine_FUN_0047b5e0(int x1,int y1,int x2,int y2,int dash_length);
 void shape_edittool_cpp_FUN_0047b770(void);
 void shape_edittool_cpp_FUN_0047b7c0(int param_1,int param_2,int param_3,int param_4,uint param_5,uint param_6);
 void shape_edittool_cpp_FUN_0047b8e0(int param_1,int param_2,int param_3,int param_4,uint param_5);
@@ -171,5 +171,5 @@ void __cdecl shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_0047f3e0(CE
 void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_0047f4c0(CEditorTools *this_ptr,int left,int top,int right,int bottom,char *text_content,uint window_flags);
 void __cdecl shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047f970(CEditorTools *this_ptr);
 void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_0047f990(CEditorTools *this_ptr);
-void shape_edittool_cpp_FUN_0047fa80(void);
+void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80(CEditorTools *this_ptr);
 

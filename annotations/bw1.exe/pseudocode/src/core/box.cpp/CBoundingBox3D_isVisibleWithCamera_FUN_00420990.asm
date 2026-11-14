@@ -48,7 +48,7 @@
 ;   engine_3d.c_isVisiblePlane_FUN_00403920
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20
 ;   engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70
-;   engine_special.cpp_FUN_00580173
+;   engine_special.cpp_transformAndProjectPoint_FUN_00580173
 ;
 ; *****************************************************************************
 
@@ -97,8 +97,8 @@ section .text
     MOV EAX,dword ptr [ESI]             ; 00420a05 | DAT_01bc120c
     ADD EAX,EBP                         ; 00420a07
     PUSH EAX                            ; 00420a09
-    CALL engine_special.cpp_FUN_00580173 ; 00420a0a
-        ;   XREF to: 00580173 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_00580173(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_00580173 ; 00420a0a
+        ;   XREF to: 00580173 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_00580173(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x00612560]                ; 00420a0f | DAT_00612560
     MOV EAX,dword ptr [EAX]             ; 00420a14 | DAT_01bc120c
     MOV DL,byte ptr [EAX + EBP*0x1 + 0x13] ; 00420a16

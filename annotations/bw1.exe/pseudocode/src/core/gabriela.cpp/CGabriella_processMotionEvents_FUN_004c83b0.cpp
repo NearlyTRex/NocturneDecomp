@@ -117,13 +117,13 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004c83b0(CGabr
       if (pCVar2 != (CDemonActor *)0x0) {
         if (pCVar2[4].blood_effect_color != 1) {
           this_ptr->flashlight_angle = -0.5235988;
-          core_hero_cpp_FUN_004ec280(&this_ptr->base,0);
+          core_hero_cpp_CHero_executeObjectPickup_FUN_004ec280(&this_ptr->base,0);
           break;
         }
         this_ptr->flashlight_angle = 0.31415927;
       }
     case 0x14:
-      core_hero_cpp_FUN_004ec280(&this_ptr->base,0);
+      core_hero_cpp_CHero_executeObjectPickup_FUN_004ec280(&this_ptr->base,0);
       break;
     case 3:
       (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)

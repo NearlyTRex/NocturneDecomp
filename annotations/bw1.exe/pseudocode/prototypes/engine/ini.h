@@ -65,9 +65,9 @@ void FUN_004f4d10(int param_1,undefined4 param_2);
 // Address: 004f4d70
 void FUN_004f4d70(int param_1,undefined4 param_2);
 
-// Original: engine_ini.cpp_FUN_004f4db0
+// Original: engine_ini.cpp_CIniFile_getFloat_FUN_004f4db0
 // Address: 004f4db0
-void FUN_004f4db0(int param_1,undefined4 param_2);
+void __cdecl CIniFile::getFloat(CIniFile *this_ptr,char *key,float *output);
 
 // Original: engine_ini.cpp_FUN_004f4e20
 // Address: 004f4e20

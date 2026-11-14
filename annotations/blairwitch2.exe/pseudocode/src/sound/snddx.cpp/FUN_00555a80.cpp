@@ -30,7 +30,7 @@ uint sound_snddx_cpp_FUN_00555a80(void)
       piStack_1a8 = _DAT_0264a5cc;
       uVar1 = (**(code **)(*_DAT_0264a5cc + 0x10))();
       if (uVar1 != 0) {
-        sound_snddx_cpp_FUN_00554ad0(uVar1);
+        sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(uVar1);
         _sprintf((char *)&piStack_1a8,"DirectSux: Unable to %s.  (%s)");
         sound_sndmain_cpp_logSoundError_FUN_005549c0((char *)&piStack_1a8);
         return 0;

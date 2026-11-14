@@ -73,17 +73,17 @@ void __cdecl CDemonSet::processActors(CDemonSet *this_ptr);
 // Address: 00550260
 void __cdecl CDemonSet::renderStaticLights(CDemonSet *this_ptr);
 
-// Original: core_set.cpp_FUN_00550580
+// Original: core_set.cpp_CDemonSet_renderScene_FUN_00550580
 // Address: 00550580
-void __cdecl FUN_00550580(CDemonSet *this_ptr,int skip_prerender);
+void __cdecl CDemonSet::renderScene(CDemonSet *this_ptr,int skip_prerender);
 
 // Original: core_set.cpp_FUN_00550da0
 // Address: 00550da0
 void __cdecl FUN_00550da0(CDemonSet *this_ptr);
 
-// Original: core_set.cpp_FUN_00551170
+// Original: core_set.cpp_CDemonSet_renderGogglesView_FUN_00551170
 // Address: 00551170
-void FUN_00551170(CDemonSet *param_1);
+void __cdecl CDemonSet::renderGogglesView(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_FUN_00551480
 // Address: 00551480
@@ -137,9 +137,9 @@ void __cdecl CDemonSet::lightVertexColor(CDemonSet *this_ptr,CVector3i *world_po
 // Address: 00552a70
 void __cdecl CDemonSet::computeLighting(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int start_vertex_index,int vertex_count);
 
-// Original: core_set.cpp_FUN_00552d40
+// Original: core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_00552d40
 // Address: 00552d40
-void __cdecl FUN_00552d40(CDemonSet *this_ptr,CVector3f *vertex_position,CVector3f *position_offset,int vertex_index);
+void __cdecl CDemonSet::computeVertexOmniLighting(CDemonSet *this_ptr,CVector3f *vertex_position,CVector3f *position_offset,int vertex_index);
 
 // Original: core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_00552f50
 // Address: 00552f50
@@ -297,9 +297,9 @@ int __cdecl CDemonSet::saveMasterLightStates(CDemonSet *this_ptr,int *light_stat
 // Address: 00555d20
 int FUN_00555d20(int *param_1,undefined4 param_2);
 
-// Original: core_set.cpp_FUN_00555e30
+// Original: core_set.cpp_CDemonSet_loadStateInfo_FUN_00555e30
 // Address: 00555e30
-void FUN_00555e30(int *param_1,_FILE *param_2);
+void __cdecl CDemonSet::loadStateInfo(CDemonSet *this_ptr,_FILE *file_handle);
 
 // Original: core_set.cpp_CDemonSet_isCameraPanning_FUN_00555fe0
 // Address: 00555fe0

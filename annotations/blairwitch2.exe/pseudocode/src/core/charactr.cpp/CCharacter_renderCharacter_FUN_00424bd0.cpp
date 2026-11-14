@@ -30,6 +30,6 @@ void __cdecl core_charactr_cpp_CCharacter_renderCharacter_FUN_00424bd0(CCharacte
   if (g_CGamePtr->collision_render_enabled == 0) {
     return;
   }
-  core_charactr_cpp_FUN_00424c80(this_ptr);
+  core_charactr_cpp_CCharacter_renderCollision_FUN_00424c80(this_ptr);
   return;
 }

@@ -18,8 +18,8 @@
 ;
 ; Called Functions:
 ;   core_hero.cpp_CHero_getGrabbed_FUN_004eadf0
+;   core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
-;   core_motion.cpp_FUN_00525020
 ;   engine_console.cpp_CConsole_printf_FUN_00445430
 ;
 ; *****************************************************************************
@@ -80,8 +80,8 @@ section .text
     JNZ 0x00476276                      ; 004762d5
         ;   XREF to: 00476276 (CONDITIONAL_JUMP)  ; LAB_00476276
     PUSH ESI                            ; 004762d7
-    CALL core_motion.cpp_FUN_00525020   ; 004762d8
-        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_00525020(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020 ; 004762d8
+        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020(CMotionController * this_ptr)
     MOV dword ptr [ESP + 0x10],EAX      ; 004762dd
     FLD float ptr [ESP + 0x10]          ; 004762e1
     ADD ESP,0x4                         ; 004762e5

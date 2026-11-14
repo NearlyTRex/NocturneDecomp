@@ -10,6 +10,6 @@ void __cdecl core_game_cpp_CGame_processJoystickControls_FUN_004b97b0(CGame *thi
 
 {
   core_game_cpp_CGame_resetKeyState_FUN_004b93e0(this_ptr);
-  core_game_cpp_FUN_004b9960(this_ptr,player_control);
+  core_game_cpp_CGame_processKeyboardControls_FUN_004b9960(this_ptr,player_control);
   return;
 }

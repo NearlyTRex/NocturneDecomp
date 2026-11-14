@@ -14,7 +14,7 @@
 ;   core_main.c_FUN_004e4500
 ;   engine_keyframe.c_calculatePackedSurfaceNormal_FUN_004df430
 ;   engine_keyframe.c_calculateSurfaceNormal_FUN_004df5f0
-;   engine_model.c_FUN_00500f30
+;   engine_model.c_getMRGLSize_FUN_00500f30
 ;
 ; *****************************************************************************
 
@@ -78,8 +78,8 @@ section .text
         ;   Label: LAB_004dfdb6
     PUSH EBX                            ; 004dfdb9
         ;   Label: LAB_004dfdb9
-    CALL engine_model.c_FUN_00500f30    ; 004dfdba
-        ;   XREF to: 00500f30 (UNCONDITIONAL_CALL)  ; int engine_model.c_FUN_00500f30(SMRGLHeaderExtended * header)
+    CALL engine_model.c_getMRGLSize_FUN_00500f30 ; 004dfdba
+        ;   XREF to: 00500f30 (UNCONDITIONAL_CALL)  ; int engine_model.c_getMRGLSize_FUN_00500f30(SMRGLHeaderExtended * header)
     SHR EAX,0x2                         ; 004dfdbf
     SHL EAX,0x2                         ; 004dfdc2
     ADD EBX,EAX                         ; 004dfdc5
@@ -101,8 +101,8 @@ section .text
     JZ 0x004dfd73                       ; 004dfddd
         ;   XREF to: 004dfd73 (CONDITIONAL_JUMP)  ; LAB_004dfd73
     PUSH EBX                            ; 004dfddf
-    CALL engine_model.c_FUN_00500f30    ; 004dfde0
-        ;   XREF to: 00500f30 (UNCONDITIONAL_CALL)  ; int engine_model.c_FUN_00500f30(SMRGLHeaderExtended * header)
+    CALL engine_model.c_getMRGLSize_FUN_00500f30 ; 004dfde0
+        ;   XREF to: 00500f30 (UNCONDITIONAL_CALL)  ; int engine_model.c_getMRGLSize_FUN_00500f30(SMRGLHeaderExtended * header)
     SHR EAX,0x2                         ; 004dfde5
     SHL EAX,0x2                         ; 004dfde8
     ADD EBX,EAX                         ; 004dfdeb

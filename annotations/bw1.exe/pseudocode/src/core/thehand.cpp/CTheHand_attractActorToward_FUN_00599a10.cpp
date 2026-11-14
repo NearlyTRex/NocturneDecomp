@@ -46,7 +46,7 @@ int __cdecl core_thehand_cpp_CTheHand_attractActorToward_FUN_00599a10(CTheHand *
     pfVar3 = pfVar3 + (uint)bVar7 * -2 + 1;
     pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
   }
-  core_xform_cpp_FUN_005b5760
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
             (&CStack_154,&(this_ptr->base).base.base.location.position,
              &(this_ptr->base).base.base.orient.vec);
   pCVar5 = &CStack_154;

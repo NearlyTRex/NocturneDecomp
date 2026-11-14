@@ -57,7 +57,7 @@ LAB_0055377a:
       sound_sndmain_cpp_enableHwSoundMixing_FUN_00552b50(iStack_30);
       fStack_2c = sound_sndmain_cpp_getMaxSwLatency_FUN_00553600();
       fStack_14 = fStack_2c;
-      engine_ini_cpp_FUN_004d8bc0(ini_file,"MaxSwLatency",&fStack_2c);
+      engine_ini_cpp_CIniFile_getFloat_FUN_004d8bc0(ini_file,"MaxSwLatency",&fStack_2c);
       sound_sndmain_cpp_setMaxSwSoundLatency_FUN_00553610(fStack_2c);
       sound_sndmain_cpp_getAudioFormat_FUN_00552790(&iStack_28,&iStack_24,&iStack_20);
       engine_ini_cpp_FUN_004d8b20(ini_file,&DAT_005e9307,&iStack_28);
@@ -77,7 +77,7 @@ LAB_0055377a:
           _sprintf(acStack_94,"SfxChannel%dVol");
           fStack_18 = sound_sndmain_cpp_getSfxChannelVol_FUN_00551190(iVar2);
           fStack_14 = fStack_18;
-          engine_ini_cpp_FUN_004d8bc0(ini_file,acStack_94,&fStack_18);
+          engine_ini_cpp_CIniFile_getFloat_FUN_004d8bc0(ini_file,acStack_94,&fStack_18);
           sound_sndmain_cpp_setSfxChannelVol_FUN_00551100(iVar2,fStack_18);
           iVar2 = iVar2 + 1;
         } while (iVar2 < DAT_0061bc94);

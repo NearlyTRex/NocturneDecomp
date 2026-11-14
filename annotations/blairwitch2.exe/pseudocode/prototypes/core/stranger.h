@@ -49,13 +49,13 @@ void __cdecl CStranger::processMotionEvents(CStranger *this_ptr,float delta_time
 // Address: 00565f30
 void FUN_00565f30(int param_1);
 
-// Original: core_stranger.cpp_FUN_00565ff0
+// Original: core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00565ff0
 // Address: 00565ff0
-void __cdecl FUN_00565ff0(CStranger *this_ptr);
+void __cdecl CStranger::updateProceduralAnimation(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_FUN_00567430
+// Original: core_stranger.cpp_CStranger_extractTurnPose_FUN_00567430
 // Address: 00567430
-void __cdecl FUN_00567430(CStranger *this_ptr,SPose *out_pose);
+void __cdecl CStranger::extractTurnPose(CStranger *this_ptr,SPose *out_pose);
 
 // Original: core_stranger.cpp_FUN_00567530
 // Address: 00567530

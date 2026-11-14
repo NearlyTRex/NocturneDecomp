@@ -13,7 +13,7 @@
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005bfb70
 ;   crt_unknown.c_sprintf_FUN_005bfb40
-;   sound_snddx.cpp_FUN_00577500
+;   sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500
 ;   sound_sndmain.cpp_logSoundError_FUN_005773f0
 ;
 ; *****************************************************************************
@@ -67,8 +67,8 @@ section .text
     RET                                 ; 00578607
     PUSH EAX                            ; 00578608
         ;   Label: LAB_00578608
-    CALL sound_snddx.cpp_FUN_00577500   ; 00578609
-        ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00577500(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500 ; 00578609
+        ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500(uint error_code)
     ADD ESP,0x4                         ; 0057860e
     PUSH EAX                            ; 00578611
     PUSH 0x5f4dd1                       ; 00578612 | = "Querry DirectSound capabilities"

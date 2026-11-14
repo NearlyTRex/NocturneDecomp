@@ -57,14 +57,15 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004c91b0(CGab
   
   bVar11 = 0;
   core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_004328f0((CCharacter *)this_ptr,delta_time);
-  core_xform_cpp_FUN_005b5760
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
             (&local_380,&(this_ptr->base).base.base.location.position,
              &(this_ptr->base).base.base.orient.vec);
   local_14 = &(this_ptr->base).inventory;
   if (this_ptr->draw_blend < _DAT_00600d54) {
     pCVar1 = (CCharacter *)(this_ptr->base).inventory.selected_weapon;
     (*(((pCVar1->base).vtable._uc)->_uc).kill)(pCVar1,1,in_stack_fffffc20,in_stack_fffffc24);
-    core_xform_cpp_FUN_005b5760(&local_200,(CVector3f *)&DAT_01cc90e0,(CVector3f *)&DAT_01cc90ec);
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+              (&local_200,(CVector3f *)&DAT_01cc90e0,(CVector3f *)&DAT_01cc90ec);
     pCVar8 = &local_380;
     core_xform_cpp_multiplyMatrix3x4_FUN_005b5200
               (&local_200,
@@ -84,7 +85,8 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004c91b0(CGab
   else {
     pCVar1 = (CCharacter *)(this_ptr->base).inventory.selected_weapon;
     (*(((pCVar1->base).vtable._uc)->_uc).kill)(pCVar1,2,in_stack_fffffc20,in_stack_fffffc24);
-    core_xform_cpp_FUN_005b5760(&local_320,(CVector3f *)&DAT_01cc90d4,(CVector3f *)&DAT_02c8af28);
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+              (&local_320,(CVector3f *)&DAT_01cc90d4,(CVector3f *)&DAT_02c8af28);
     matrix_b = (this_ptr->base).base.model.bone_transform.bone_model_matrices[_DAT_01cc914c].m;
     pCVar8 = &local_320;
     core_xform_cpp_buildRotationX_FUN_005b6d90(1.5707964,&local_170);
@@ -144,7 +146,8 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004c91b0(CGab
       *(float *)((int)&local_50 + ((uint)bVar11 * -2 + (uint)bVar11 * -2) * 4 + 8) =
            afStack_58[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
       local_50.z = (1.0 - this_ptr->aim_weight) * local_50.z;
-      core_xform_cpp_FUN_005b5760(&local_2f0,&local_68,&local_50);
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+                (&local_2f0,&local_68,&local_50);
     }
     core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&local_2f0,&local_380,&local_140);
     pCVar8 = &local_140;

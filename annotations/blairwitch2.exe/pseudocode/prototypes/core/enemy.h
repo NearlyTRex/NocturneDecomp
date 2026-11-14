@@ -69,6 +69,6 @@ void __cdecl CEnemy::releaseVictim(CEnemy *this_ptr);
 // Address: 00488a80
 void __cdecl CEnemy::onVictimLost(CEnemy *this_ptr,CDemonActor *lost_actor);
 
-// Original: core_enemy.cpp_FUN_00488ab0
+// Original: core_enemy.cpp_CEnemy_countSameClassAttackingHero_FUN_00488ab0
 // Address: 00488ab0
-int FUN_00488ab0(void);
+int __cdecl CEnemy::countSameClassAttackingHero(CEnemy *this_ptr);

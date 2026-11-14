@@ -56,7 +56,7 @@ void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_0046e2d0(SMRGLSkyTexture
   iVar2 = (int)uVar8;
   local_44.x = (int)ROUND(fVar5);
   local_44.z = (int)ROUND(fVar6);
-  engine_special_cpp_FUN_0055d723
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
             ((SProjectedVertex *)(*(int *)((ulonglong)uVar8 >> 0x20) + iVar2 * 0x10),input);
   iVar1 = (sky_texture->base).type;
   (&DAT_00622034)[iVar2 * 4] = iVar1;

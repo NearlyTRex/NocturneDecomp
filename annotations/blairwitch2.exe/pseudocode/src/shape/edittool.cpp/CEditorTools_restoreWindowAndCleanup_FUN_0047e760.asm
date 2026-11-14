@@ -16,7 +16,7 @@
 ;   engine_pod.cpp_CPodFile_verifyChecksum_FUN_0051aa80 at 0051aca1
 ;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047d270 at 0047d54b
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00482250 at 004822ff
-;   shape_edittool.cpp_FUN_0047c0f0 at 0047c742
+;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800 at 0047bac0
 ;   ... and 2 more
 ;
 ; Called Functions:

@@ -13,14 +13,14 @@ SMRGLHeaderExtended * __cdecl loadModelFile(char *filename);
 // Address: 005008f0
 void freeMRGLData(SMRGLHeaderExtended *param_1);
 
-// Original: engine_model.c_FUN_00500970
+// Original: engine_model.c_getMRGLBounds_FUN_00500970
 // Address: 00500970
-uint * FUN_00500970(int *param_1);
+uint * getMRGLBounds(int *param_1);
 
-// Original: engine_model.c_FUN_00500f30
+// Original: engine_model.c_getMRGLSize_FUN_00500f30
 // Address: 00500f30
-int __cdecl FUN_00500f30(SMRGLHeaderExtended *header);
+int __cdecl getMRGLSize(SMRGLHeaderExtended *header);
 
-// Original: engine_model.c_FUN_005011a0
+// Original: engine_model.c_loadModelChunk_FUN_005011a0
 // Address: 005011a0
-SMRGLHeaderExtended * __cdecl FUN_005011a0(char *filename,int model_size);
+SMRGLHeaderExtended * __cdecl loadModelChunk(char *filename,int model_size);

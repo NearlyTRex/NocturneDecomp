@@ -16,10 +16,10 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0
 ;   core_box.cpp_FUN_0041daf0
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310
 ;   core_charactr.cpp_CCharacter_renderFlames_FUN_0042f6f0
-;   core_charactr.cpp_FUN_0042f310
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
-;   core_motion.cpp_FUN_004fcdc0
+;   core_motion.cpp_CMotionController_render_FUN_004fcdc0
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0
 ;   crt_math.c_round_FUN_005a3120
 ;   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0
@@ -169,8 +169,8 @@ section .text
         ;   XREF to: 005458b6 (CONDITIONAL_JUMP)  ; LAB_005458b6
     PUSH EBX                            ; 005458ac
     PUSH ESI                            ; 005458ad
-    CALL core_motion.cpp_FUN_004fcdc0   ; 005458ae
-        ;   XREF to: 004fcdc0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_FUN_004fcdc0(CMotionController * this_ptr, CDemonActor * actor)
+    CALL core_motion.cpp_CMotionController_render_FUN_004fcdc0 ; 005458ae
+        ;   XREF to: 004fcdc0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_render_FUN_004fcdc0(CMotionController * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 005458b3
     FLD float ptr [EBX + 0x3254]        ; 005458b6
         ;   Label: LAB_005458b6
@@ -181,8 +181,8 @@ section .text
     JNC 0x005458ce                      ; 005458c3
         ;   XREF to: 005458ce (CONDITIONAL_JUMP)  ; LAB_005458ce
     PUSH EBX                            ; 005458c5
-    CALL core_charactr.cpp_FUN_0042f310 ; 005458c6
-        ;   XREF to: 0042f310 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042f310(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310 ; 005458c6
+        ;   XREF to: 0042f310 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 005458cb
     PUSH EBX                            ; 005458ce
         ;   Label: LAB_005458ce

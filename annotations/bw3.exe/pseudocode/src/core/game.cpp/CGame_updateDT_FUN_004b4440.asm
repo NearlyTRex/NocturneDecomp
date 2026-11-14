@@ -10,13 +10,13 @@
 ;
 ; XREF[8]:
 ;   core_game.cpp_CGame_rollCredits_FUN_004c02a0 at 004c073a
+;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004bec20 at 004bf183
 ;   core_game.cpp_FUN_004b6f30 at 004b6fe6
-;   core_game.cpp_FUN_004bec20 at 004bf183
-;   core_menu.cpp_FUN_004e85a0 at 004e8653
-;   core_menu.cpp_FUN_004e8f80 at 004e8fc4
-;   core_menu.cpp_FUN_004e94f0 at 004e9539
-;   core_menu.cpp_FUN_004ea280 at 004ea2ca
+;   core_menu.cpp_configureCustomKeys_FUN_004e8f80 at 004e8fc4
+;   core_menu.cpp_configureGraphicsOptions_FUN_004e85a0 at 004e8653
+;   core_menu.cpp_configureSoundOptions_FUN_004e94f0 at 004e9539
 ;   core_menu.cpp_showMainGameMenu_FUN_004ea4d0 at 004ea5a7
+;   core_menu.cpp_showOptionsScreen_FUN_004ea280 at 004ea2ca
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c21e8

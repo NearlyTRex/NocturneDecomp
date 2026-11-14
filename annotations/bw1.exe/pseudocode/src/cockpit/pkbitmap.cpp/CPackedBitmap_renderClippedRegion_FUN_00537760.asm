@@ -19,7 +19,7 @@
 ;   undefined4 DAT_0061b4a0
 ;
 ; Called Functions:
-;   cockpit_ckptutil.c_FUN_00437270
+;   cockpit_ckptutil.c_getColorConversionFunction_FUN_00437270
 ;
 ; *****************************************************************************
 
@@ -58,8 +58,8 @@ section .text
     SBB EAX,EDX                         ; 0053779e
     SAR EAX,0x3                         ; 005377a0
     MOV dword ptr [ESP],EAX             ; 005377a3
-    CALL cockpit_ckptutil.c_FUN_00437270 ; 005377a6
-        ;   XREF to: 00437270 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_00437270()
+    CALL cockpit_ckptutil.c_getColorConversionFunction_FUN_00437270 ; 005377a6
+        ;   XREF to: 00437270 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_getColorConversionFunction_FUN_00437270()
     MOV dword ptr [ESP + 0x14],EAX      ; 005377ab
     MOV EAX,dword ptr [ESP + 0x38]      ; 005377af
     SHL EAX,0x2                         ; 005377b3

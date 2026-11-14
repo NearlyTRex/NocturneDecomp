@@ -122,7 +122,7 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004e9250(CHaystack *this_pt
             if ((iVar9 != 0) ||
                (iVar9 = core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004eb240(&this_ptr->base),
                iVar9 != 0)) goto LAB_004e965f;
-            iVar9 = core_hero_cpp_FUN_004eb660(&this_ptr->base);
+            iVar9 = core_hero_cpp_CHero_tryPullLever_FUN_004eb660(&this_ptr->base);
             if (iVar9 != 0) {
               core_hero_cpp_CHero_toggleLeverNow_FUN_004eb7f0(&this_ptr->base);
               goto LAB_004e965f;
@@ -223,7 +223,7 @@ switchD_004e9753_caseD_4:
     CStack_84.x = CStack_84.x + fStack_30;
     CStack_84.y = CStack_84.y + afStack_2c[0];
     CStack_84.z = CStack_84.z + afStack_2c[1];
-    core_charactr_cpp_FUN_0042d750((CCharacter *)this_ptr,pCVar14);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042d750((CCharacter *)this_ptr,pCVar14);
   }
   else {
     if ((this_ptr->base).base.grabbed_type == 0) {

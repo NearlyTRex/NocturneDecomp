@@ -9,9 +9,9 @@
 // Address: 00408270
 void __cdecl staticInit(void);
 
-// Original: core_actor.cpp_FUN_00408290
+// Original: core_actor.cpp_rayCylinderIntersect_FUN_00408290
 // Address: 00408290
-float FUN_00408290(int param_1,float *param_2,float *param_3,float *param_4);
+float rayCylinderIntersect(int param_1,float *param_2,float *param_3,float *param_4);
 
 // Original: core_actor.cpp_FUN_00408730
 // Address: 00408730
@@ -461,6 +461,6 @@ void __cdecl CVector3f::toFixed8(CVector3f *this_ptr,CVector3i *other);
 // Address: 0040d3f0
 CVector3f * __cdecl CVector3f::dtor(CVector3f *this_ptr,uint flags);
 
-// Original: core_actor.cpp_FUN_0040d400
+// Original: core_actor.cpp_CVector3f_arrdtor10_FUN_0040d400
 // Address: 0040d400
-void FUN_0040d400(void *param_1);
+CVector3f * __cdecl CVector3f::arrdtor10(CVector3f *this_ptr,uint flags);

@@ -29,17 +29,17 @@ uint __cdecl playSfxInternal(void *user_data,char *sound_name,float x,float y,fl
 // Address: 0057c4e0
 void FUN_0057c4e0(void);
 
-// Original: core_sound.cpp_FUN_0057c580
+// Original: core_sound.cpp_processTrainSounds_FUN_0057c580
 // Address: 0057c580
-uint FUN_0057c580(void);
+uint processTrainSounds(void);
 
 // Original: core_sound.cpp_CSound_ctor_FUN_0057cb10
 // Address: 0057cb10
 CSound * __cdecl CSound::ctor(CSound *this_ptr);
 
-// Original: core_sound.cpp_FUN_0057cb30
+// Original: core_sound.cpp_CSound_findAllSoundFiles_FUN_0057cb30
 // Address: 0057cb30
-void __cdecl FUN_0057cb30(CSound *this_ptr);
+void __cdecl CSound::findAllSoundFiles(CSound *this_ptr);
 
 // Original: core_sound.cpp_shutdownSoundSystem_FUN_0057cb90
 // Address: 0057cb90

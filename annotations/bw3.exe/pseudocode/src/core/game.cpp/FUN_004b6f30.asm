@@ -199,8 +199,8 @@ section .text
     LEA EAX,[ESP + 0x688]               ; 004b70dd
         ;   Label: LAB_004b70dd
     PUSH EAX                            ; 004b70e4
-    CALL core_slew.cpp_FUN_005505e0     ; 004b70e5
-        ;   XREF to: 005505e0 (UNCONDITIONAL_CALL)  ; undefined core_slew.cpp_FUN_005505e0()
+    CALL core_slew.cpp_CSlew_processInput_FUN_005505e0 ; 004b70e5
+        ;   XREF to: 005505e0 (UNCONDITIONAL_CALL)  ; void core_slew.cpp_CSlew_processInput_FUN_005505e0(CSlew * this_ptr)
     ADD ESP,0x4                         ; 004b70ea
     LEA EDX,[ESP + 0x694]               ; 004b70ed
     MOV EAX,[0x01d5ba14]                ; 004b70f4 | DAT_01d5ba14
@@ -985,8 +985,8 @@ section .text
     PUSH 0x1                            ; 004b7a27
     MOV EDX,dword ptr [0x00603b28]      ; 004b7a29 | g_CDemonSetPtr
     PUSH EDX                            ; 004b7a2f | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_00535da0      ; 004b7a30
-        ;   XREF to: 00535da0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00535da0(CDemonSet * this_ptr, int skip_prerender)
+    CALL core_set.cpp_CDemonSet_renderScene_FUN_00535da0 ; 004b7a30
+        ;   XREF to: 00535da0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderScene_FUN_00535da0(CDemonSet * this_ptr, int skip_prerender)
     ADD ESP,0x8                         ; 004b7a35
     JMP 0x004b702d                      ; 004b7a38
         ;   XREF to: 004b702d (UNCONDITIONAL_JUMP)  ; LAB_004b702d

@@ -18,7 +18,7 @@
 ;
 ; XREF[2]:
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0 at 0052d223
-;   core_set.cpp_FUN_0052f2a0 at 0052f641
+;   core_set.cpp_CDemonSet_renderScene_FUN_0052f2a0 at 0052f641
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ed549

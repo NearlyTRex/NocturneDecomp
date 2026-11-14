@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   restore_zbuffer
 ;
 ; XREF[2]:
+;   core_set.cpp_CDemonSet_renderScene_FUN_0052f2a0 at 0052f787
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0 at 0052e517
-;   core_set.cpp_FUN_0052f2a0 at 0052f787
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0060b280

@@ -31,7 +31,7 @@
 ;   core_event.cpp_CEventList_executeCommands_FUN_004a1b70
 ;   core_game.cpp_CGame_displayMessage_FUN_004cc190
 ;   core_game.cpp_CGame_promptLoadGame_FUN_004d85f0
-;   core_game.cpp_FUN_004d6420
+;   core_game.cpp_CGame_saveGame_FUN_004d6420
 ;   core_script.cpp_CScript_resetDialogState_FUN_0054ae10
 ;   core_set.cpp_CDemonSet_reinitCamera_FUN_0054fbf0
 ;   core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_005558f0
@@ -281,8 +281,8 @@ section .text
         ;   XREF to: 004d1cce (CONDITIONAL_JUMP)  ; LAB_004d1cce
     PUSH 0x0                            ; 004d1cc3
     PUSH EBX                            ; 004d1cc5
-    CALL core_game.cpp_FUN_004d6420     ; 004d1cc6
-        ;   XREF to: 004d6420 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004d6420(CGame * this_ptr, char * save_filename)
+    CALL core_game.cpp_CGame_saveGame_FUN_004d6420 ; 004d1cc6
+        ;   XREF to: 004d6420 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveGame_FUN_004d6420(CGame * this_ptr, char * save_filename)
     ADD ESP,0x8                         ; 004d1ccb
     PUSH 0x3c                           ; 004d1cce
         ;   Label: LAB_004d1cce
@@ -761,24 +761,24 @@ section .text
     PUSH ECX                            ; 004d21ef
         ;   Label: LAB_004d21ef
     PUSH EBX                            ; 004d21f0
-    CALL core_game.cpp_FUN_004d6420     ; 004d21f1
-        ;   XREF to: 004d6420 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004d6420(CGame * this_ptr, char * save_filename)
+    CALL core_game.cpp_CGame_saveGame_FUN_004d6420 ; 004d21f1
+        ;   XREF to: 004d6420 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveGame_FUN_004d6420(CGame * this_ptr, char * save_filename)
     ADD ESP,0x8                         ; 004d21f6
     JMP 0x004d1c9c                      ; 004d21f9
         ;   XREF to: 004d1c9c (UNCONDITIONAL_JUMP)  ; LAB_004d1c9c
     PUSH ESI                            ; 004d21fe
         ;   Label: LAB_004d21fe
     PUSH EBX                            ; 004d21ff
-    CALL core_game.cpp_FUN_004d6420     ; 004d2200
-        ;   XREF to: 004d6420 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004d6420(CGame * this_ptr, char * save_filename)
+    CALL core_game.cpp_CGame_saveGame_FUN_004d6420 ; 004d2200
+        ;   XREF to: 004d6420 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveGame_FUN_004d6420(CGame * this_ptr, char * save_filename)
     ADD ESP,0x8                         ; 004d2205
     JMP 0x004d1cef                      ; 004d2208
         ;   XREF to: 004d1cef (UNCONDITIONAL_JUMP)  ; LAB_004d1cef
     PUSH 0x5e1a32                       ; 004d220d | = "quicksavedgame.noc"
         ;   Label: LAB_004d220d
     PUSH EBX                            ; 004d2212
-    CALL core_game.cpp_FUN_004d6420     ; 004d2213
-        ;   XREF to: 004d6420 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004d6420(CGame * this_ptr, char * save_filename)
+    CALL core_game.cpp_CGame_saveGame_FUN_004d6420 ; 004d2213
+        ;   XREF to: 004d6420 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveGame_FUN_004d6420(CGame * this_ptr, char * save_filename)
     ADD ESP,0x8                         ; 004d2218
     PUSH 0x40000000                     ; 004d221b
     PUSH 0x5e1a45                       ; 004d2220 | = "Quick Save"

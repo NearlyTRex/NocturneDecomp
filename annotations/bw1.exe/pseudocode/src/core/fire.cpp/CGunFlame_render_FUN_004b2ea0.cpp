@@ -110,22 +110,26 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004b2ea0(CGunFlame *this_ptr)
   local_48[0].y = (int)ROUND(local_a4 * _DAT_005fff94);
   local_48[0].z = (int)ROUND(_DAT_005fff94 * 0.0);
   local_28 = local_a8;
-  engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr->projected_vertex,local_48);
+  engine_special_cpp_transformAndProjectPoint_FUN_00580173
+            (&DAT_00612560->vertex_buffer_ptr->projected_vertex,local_48);
   local_a8 = local_f4 * (float)_DAT_005df544 * (float)_DAT_005df53c;
   local_6c.x = (int)ROUND(local_a8 * _DAT_005fff94);
   local_6c.y = (int)ROUND(local_a4 * _DAT_005fff94);
   local_6c.z = (int)ROUND(local_a0 * _DAT_005fff94);
-  engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_6c);
+  engine_special_cpp_transformAndProjectPoint_FUN_00580173
+            (&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_6c);
   local_a4 = -fVar1 * (float)_DAT_005df544 * (float)_DAT_005df53c;
   local_b4.x = (int)ROUND(local_a8 * _DAT_005fff94);
   local_b4.y = (int)ROUND(local_a4 * _DAT_005fff94);
   local_b4.z = (int)ROUND(local_a0 * _DAT_005fff94);
-  engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_b4);
+  engine_special_cpp_transformAndProjectPoint_FUN_00580173
+            (&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_b4);
   local_a8 = local_28;
   local_60.x = (int)ROUND(local_28 * _DAT_005fff94);
   local_60.y = (int)ROUND(local_a4 * _DAT_005fff94);
   local_60.z = (int)ROUND(local_a0 * _DAT_005fff94);
-  engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_60);
+  engine_special_cpp_transformAndProjectPoint_FUN_00580173
+            (&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_60);
   pCVar2 = DAT_00612560;
   fVar5 = (float10)(float)fVar5;
   fVar11 = ((float10)_DAT_005df550 - fVar5) * fVar5;

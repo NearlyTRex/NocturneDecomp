@@ -9,13 +9,13 @@
 // Address: 004eae70
 void __cdecl staticInit(void);
 
-// Original: core_menu.cpp_FUN_004eaf30
+// Original: core_menu.cpp_renderAudioSpectrumBar_FUN_004eaf30
 // Address: 004eaf30
-void __cdecl FUN_004eaf30(int x_center,int y_top,int height_half);
+void __cdecl renderAudioSpectrumBar(int x_center,int y_top,int height_half);
 
-// Original: core_menu.cpp_FUN_004eb0e0
+// Original: core_menu.cpp_renderMenuAndGetChoice_FUN_004eb0e0
 // Address: 004eb0e0
-int __cdecl FUN_004eb0e0(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title);
+int __cdecl renderMenuAndGetChoice(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title);
 
 // Original: core_menu.cpp_showJoystickCalibrationScreen_FUN_004eb3d0
 // Address: 004eb3d0
@@ -45,17 +45,17 @@ void __cdecl showCalibrationTest(void);
 // Address: 004ebf10
 void __cdecl FUN_004ebf10(void);
 
-// Original: core_menu.cpp_FUN_004ecc70
+// Original: core_menu.cpp_configureCustomKeys_FUN_004ecc70
 // Address: 004ecc70
-void __cdecl FUN_004ecc70(void);
+void __cdecl configureCustomKeys(void);
 
-// Original: core_menu.cpp_FUN_004ed260
+// Original: core_menu.cpp_configureSoundOptions_FUN_004ed260
 // Address: 004ed260
-void __cdecl FUN_004ed260(void);
+void __cdecl configureSoundOptions(void);
 
-// Original: core_menu.cpp_FUN_004ee1a0
+// Original: core_menu.cpp_showOptionsScreen_FUN_004ee1a0
 // Address: 004ee1a0
-void __cdecl FUN_004ee1a0(int initialize_systems);
+void __cdecl showOptionsScreen(int initialize_systems);
 
 // Original: core_menu.cpp_showMainGameMenu_FUN_004ee3f0
 // Address: 004ee3f0
@@ -77,9 +77,9 @@ int __cdecl isKeyCodeValidForMode(EInputCodeType *key_code_ptr,char *description
 // Address: 004eece0
 int __cdecl getSinglePressedKey(void);
 
-// Original: core_menu.cpp_FUN_004eed60
+// Original: core_menu.cpp_configureCustomKeyBindings_FUN_004eed60
 // Address: 004eed60
-void FUN_004eed60(void);
+void __cdecl configureCustomKeyBindings(void);
 
 // Original: core_menu.cpp_CAlphaBitmap_arrdtor8_FUN_004f0230
 // Address: 004f0230

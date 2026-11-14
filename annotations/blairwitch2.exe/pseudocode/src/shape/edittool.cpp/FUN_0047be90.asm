@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[7]:
-;   core_menu.cpp_FUN_004eed60 at 004efc56
+;   core_menu.cpp_configureCustomKeyBindings_FUN_004eed60 at 004efc56
 ;   core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_0050b420 at 0050b436
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0050b4d0 at 0050b5a6
 ;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_0050b790 at 0050b7a3

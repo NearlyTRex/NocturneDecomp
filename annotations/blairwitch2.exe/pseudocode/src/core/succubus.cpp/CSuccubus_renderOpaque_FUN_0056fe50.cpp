@@ -67,7 +67,8 @@ int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_0056fe50(CSuccubus *thi
       if ((_DAT_01d1cdc8 != 0) &&
          (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280),
          iVar1 == 0)) {
-        core_motion_cpp_FUN_005042e0(&(this_ptr->base).base.model.base,(CDemonActor *)this_ptr);
+        core_motion_cpp_CMotionController_render_FUN_005042e0
+                  (&(this_ptr->base).base.model.base,(CDemonActor *)this_ptr);
         (*((this_ptr->base).base.base.vtable._ub)->renderTargetPoints)((CDemonActor *)this_ptr);
       }
     }

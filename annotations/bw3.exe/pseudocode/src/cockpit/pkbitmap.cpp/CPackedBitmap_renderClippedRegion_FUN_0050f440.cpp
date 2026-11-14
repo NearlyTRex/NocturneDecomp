@@ -27,7 +27,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderClippedRegion_FUN_0050f440
     iVar4 = (dest_x - clip_left) * DAT_005fba20;
     iVar5 = iVar4 >> 0x1f;
     iVar4 = (int)((iVar4 + iVar5 * -8) - (uint)(iVar5 << 2 < 0)) >> 3;
-    pcVar1 = (code *)cockpit_ckptutil_c_FUN_00434e80(iVar4);
+    pcVar1 = (code *)cockpit_ckptutil_c_getColorConversionFunction_FUN_00434e80(iVar4);
     iStack_24 = dest_y << 2;
     iStack_20 = start_row << 2;
     do {

@@ -65,9 +65,9 @@ void FUN_0048b040(undefined4 param_1,float *param_2,float *param_3);
 // Address: 0048b150
 float FUN_0048b150(CDemonRaytrace *param_1,CVector3f *param_2,float *param_3,CVector3f *param_4,uint *param_5);
 
-// Original: core_dtrace.cpp_FUN_0048b880
+// Original: core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_0048b880
 // Address: 0048b880
-int __cdecl FUN_0048b880(CDemonRaytrace *this_ptr,CVector3f *start_pos,CVector3f *end_pos);
+int __cdecl CDemonRaytrace::rayVoxelGridTest(CDemonRaytrace *this_ptr,CVector3f *start_pos,CVector3f *end_pos);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_0048bdc0
 // Address: 0048bdc0

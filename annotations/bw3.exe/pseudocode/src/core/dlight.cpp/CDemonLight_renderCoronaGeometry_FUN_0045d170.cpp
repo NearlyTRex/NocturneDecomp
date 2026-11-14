@@ -76,7 +76,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_0045d170(CDemo
     local_4c.y = (int)ROUND(local_9c * _DAT_005de4f0);
     local_4c.z = (int)ROUND(local_98 * _DAT_005de4f0);
     local_14 = iVar3;
-    engine_special_cpp_FUN_005632a3
+    engine_special_cpp_transformAndProjectPoint_FUN_005632a3
               ((SProjectedVertex *)
                ((int)&(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).transformed_x + iVar2),
                &local_4c);
@@ -88,7 +88,8 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_0045d170(CDemo
   local_ac.x = (int)ROUND(_DAT_01b4b6a8 * _DAT_005de4f0);
   local_ac.y = (int)ROUND(_DAT_01b4b6ac * _DAT_005de4f0);
   local_ac.z = (int)ROUND(_DAT_01b4b6b0 * _DAT_005de4f0);
-  engine_special_cpp_FUN_005632a3(&pCVar7->vertex_buffer_ptr[0x10].projected_vertex,&local_ac);
+  engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+            (&pCVar7->vertex_buffer_ptr[0x10].projected_vertex,&local_ac);
   pCVar7 = DAT_005f2afc;
   DAT_005f2afc->vertex_buffer_ptr[0x10].r = 0xffff;
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460(pCVar7,1);

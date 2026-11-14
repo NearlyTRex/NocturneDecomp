@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_bmppuzzl.cpp_resetAllPuzzles_FUN_0059abb0
-;   core_dfont.cpp_FUN_00448640
+;   core_dfont.cpp_freeFonts_FUN_00448640
 ;   core_dmodel.cpp_freeAllModels_FUN_0044fc50
 ;   core_inivar.cpp_writeIniData_FUN_004d94d0
 ;   core_marquee.cpp_FUN_004e86a0
@@ -77,8 +77,8 @@ section .text
         ;   XREF to: 00401120 (UNCONDITIONAL_CALL)  ; void engine_2d.c_cleanupGraphicsSystem_FUN_00401120()
     CALL engine_3d.c_freeTextureCache_FUN_004037f0 ; 004e4e82
         ;   XREF to: 004037f0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_freeTextureCache_FUN_004037f0()
-    CALL core_dfont.cpp_FUN_00448640    ; 004e4e87
-        ;   XREF to: 00448640 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_FUN_00448640()
+    CALL core_dfont.cpp_freeFonts_FUN_00448640 ; 004e4e87
+        ;   XREF to: 00448640 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_freeFonts_FUN_00448640()
     CALL wincore_winrun.cpp_doNothing2_FUN_00590040 ; 004e4e8c
         ;   XREF to: 00590040 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_doNothing2_FUN_00590040()
     MOV EDI,dword ptr [0x0061b40c]      ; 004e4e91 | g_CDemonPodPtr

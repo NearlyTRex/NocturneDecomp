@@ -18,7 +18,7 @@
 ;   undefined4 DAT_01c3583a
 ;
 ; Called Functions:
-;   engine_2d.c_FUN_00401450
+;   engine_2d.c_findBestPaletteMatch_FUN_00401450
 ;
 ; *****************************************************************************
 
@@ -76,8 +76,8 @@ section .text
     PUSH EBP                            ; 004028fd
     INC ESI                             ; 004028fe
     ADD EBX,0x8                         ; 004028ff
-    CALL engine_2d.c_FUN_00401450       ; 00402902
-        ;   XREF to: 00401450 (UNCONDITIONAL_CALL)  ; int engine_2d.c_FUN_00401450(int red, int green, int blue, int start_index, ...)
+    CALL engine_2d.c_findBestPaletteMatch_FUN_00401450 ; 00402902
+        ;   XREF to: 00401450 (UNCONDITIONAL_CALL)  ; int engine_2d.c_findBestPaletteMatch_FUN_00401450(int red, int green, int blue, int start_index, ...)
     ADD ESP,0x14                        ; 00402907
     MOV byte ptr [ESI + -0x1],AL        ; 0040290a | DAT_01c2c910
     CMP EBX,0x100                       ; 0040290d

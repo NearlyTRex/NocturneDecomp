@@ -81,7 +81,7 @@ void __cdecl engine_dosio_cpp_CFileFinder_reset_FUN_00460f90(CFileFinder *this_p
 void __cdecl engine_dosio_cpp_CFileFinder_convertStruct_FUN_00460fa0(CFileFinder *this_ptr,byte *param_2);
 void __cdecl engine_dosio_cpp_splitPath_FUN_00461070(char *full_path,char *drive,char *directory,char *filename,char *extension);
 void __cdecl engine_dosio_cpp_makePath_FUN_004610a0(char *full_path,char *drive,char *directory,char *filename,char *extension);
-void __cdecl engine_dosio_cpp_FUN_004610d0(char *input_path,char *drive,char *output_path);
+void __cdecl engine_dosio_cpp_ensureTrailingSlash_FUN_004610d0(char *input_path,char *drive,char *output_path);
 void __cdecl engine_dosio_cpp_changeFileExtension_FUN_004611a0(char *path,char *new_extension);
 int __cdecl engine_dosio_cpp_getFullPath_FUN_00461210(char *output_path,char *input_path);
 void engine_dosio_cpp_FUN_00461260(char *param_1,char *param_2,char *param_3);
@@ -96,7 +96,7 @@ void __cdecl core_dpart_cpp_CDemonPart_save_FUN_00461660(CDemonPart *this_ptr);
 void __cdecl core_dpart_cpp_CDemonPart_calculateFaceNormals_FUN_00461690(CDemonPart *this_ptr);
 void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_00461760(CDemonPart *this_ptr,_FILE *file_handle,CVector3f *offset_position);
 void __cdecl core_dpart_cpp_CDemonPart_renderFaces_FUN_00461a50(CDemonPart *this_ptr);
-void core_dpart_cpp_FUN_00461c02(void);
+void core_dpart_cpp_setupTriangleEdgeInterpolation_FUN_00461c02(void);
 void __cdecl core_dpart_cpp_setupDepthOnlyEdgeInterpolation_FUN_00461e10(SSoftwareEdge *vertex_a,SSoftwareEdge *vertex_b);
 SSoftwareEdge * __cdecl core_dpart_cpp_findEdgeByYStart_FUN_00461f30(int scanline_y,SSoftwareEdge *exclude_edge);
 void __cdecl core_dpart_cpp_FUN_00461f70(int *vertex_indices,int vertex_count);

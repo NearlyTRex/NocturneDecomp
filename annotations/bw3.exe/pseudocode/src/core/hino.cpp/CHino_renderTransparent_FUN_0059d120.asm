@@ -18,9 +18,9 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0
 ;   core_box.cpp_FUN_0041daf0
-;   core_charactr.cpp_FUN_0042f310
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310
 ;   core_hino.cpp_FUN_0059b740
-;   core_motion.cpp_FUN_004fcdc0
+;   core_motion.cpp_CMotionController_render_FUN_004fcdc0
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0
 ;   crt_math.c_round_FUN_005a3120
 ;   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0
@@ -188,8 +188,8 @@ section .text
         ;   XREF to: 0059d2ef (CONDITIONAL_JUMP)  ; LAB_0059d2ef
     PUSH EBX                            ; 0059d2e5
     PUSH ESI                            ; 0059d2e6
-    CALL core_motion.cpp_FUN_004fcdc0   ; 0059d2e7
-        ;   XREF to: 004fcdc0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_FUN_004fcdc0(CMotionController * this_ptr, CDemonActor * actor)
+    CALL core_motion.cpp_CMotionController_render_FUN_004fcdc0 ; 0059d2e7
+        ;   XREF to: 004fcdc0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_render_FUN_004fcdc0(CMotionController * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0059d2ec
     FLD float ptr [EBX + 0x3254]        ; 0059d2ef
         ;   Label: LAB_0059d2ef
@@ -200,8 +200,8 @@ section .text
     JNC 0x0059d228                      ; 0059d2fc
         ;   XREF to: 0059d228 (CONDITIONAL_JUMP)  ; LAB_0059d228
     PUSH EBX                            ; 0059d302
-    CALL core_charactr.cpp_FUN_0042f310 ; 0059d303
-        ;   XREF to: 0042f310 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042f310(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310 ; 0059d303
+        ;   XREF to: 0042f310 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0059d308
     JMP 0x0059d228                      ; 0059d30b
         ;   XREF to: 0059d228 (UNCONDITIONAL_JUMP)  ; LAB_0059d228

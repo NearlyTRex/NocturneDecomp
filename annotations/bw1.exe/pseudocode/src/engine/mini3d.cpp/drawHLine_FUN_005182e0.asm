@@ -15,8 +15,8 @@
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004962b0 at 0049654d
 ;   shape_edittool.cpp_FUN_00492de0 at 00492df8
 ;   shape_edittool.cpp_FUN_00496ee0 at 004970fc
-;   shape_edittool.cpp_FUN_0049c500 at 0049c582
 ;   shape_edittool.cpp_FUN_0049c750 at 0049c89c
+;   shape_edittool.cpp_draw3DBorder_FUN_0049c500 at 0049c582
 ;
 ; Called Functions:
 ;   engine_mini3d.cpp_fillRect_FUN_00518010

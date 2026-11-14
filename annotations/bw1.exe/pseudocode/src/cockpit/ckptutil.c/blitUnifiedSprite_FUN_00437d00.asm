@@ -12,7 +12,7 @@
 ;   undefined4 DAT_01c4f010
 ;
 ; Called Functions:
-;   cockpit_ckptutil.c_FUN_00437270
+;   cockpit_ckptutil.c_getColorConversionFunction_FUN_00437270
 ;
 ; *****************************************************************************
 
@@ -44,8 +44,8 @@ section .text
     POP ESI                             ; 00437d39
     POP EBX                             ; 00437d3a
     RET                                 ; 00437d3b
-    CALL cockpit_ckptutil.c_FUN_00437270 ; 00437d3c
-        ;   XREF to: 00437270 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_00437270()
+    CALL cockpit_ckptutil.c_getColorConversionFunction_FUN_00437270 ; 00437d3c
+        ;   XREF to: 00437270 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_getColorConversionFunction_FUN_00437270()
         ;   Label: LAB_00437d3c
     MOV EDX,dword ptr [ESP + 0x54]      ; 00437d41
     MOV EBP,dword ptr [ESP + 0x4c]      ; 00437d45

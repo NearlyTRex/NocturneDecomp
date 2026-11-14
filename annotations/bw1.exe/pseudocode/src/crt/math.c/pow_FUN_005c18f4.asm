@@ -11,7 +11,7 @@
 ;
 ; XREF[6]:
 ;   core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00454830 at 00454868
-;   core_menu.cpp_FUN_0050ba70 at 0050c1de
+;   core_menu.cpp_configureSoundOptions_FUN_0050ba70 at 0050c1de
 ;   core_set.cpp_CDemonSet_setGamma_FUN_00555830 at 0055587b
 ;   core_shadow.cpp_CShadow_process_FUN_0055de50 at 0055eafd
 ;   sound_mp3.cpp_calculateIntensityStereoRatio_FUN_005292d0 at 00529310

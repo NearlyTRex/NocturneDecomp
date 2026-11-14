@@ -53,7 +53,7 @@
 ;   core_actor.cpp_archiveString_FUN_0040b680
 ;   core_actor.cpp_archiveVector_FUN_0040b400
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040c280
-;   core_xform.cpp_FUN_00583940
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
 ;   core_xform.cpp_FUN_00584450
 ;   core_xform.cpp_matrixToEulerAngles_FUN_00583b10
 ;   core_xform.cpp_setIdentityMatrix3x4_FUN_005835d0
@@ -366,8 +366,8 @@ section .text
     ADD EAX,EBP                         ; 0042b7d7
     ADD EAX,0xc                         ; 0042b7d9
     PUSH EAX                            ; 0042b7dc
-    CALL core_xform.cpp_FUN_00583940    ; 0042b7dd
-        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583940()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 ; 0042b7dd
+        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940()
     ADD ESP,0xc                         ; 0042b7e2
     MOV EAX,dword ptr [ESP + 0x54]      ; 0042b7e5
         ;   Label: LAB_0042b7e5

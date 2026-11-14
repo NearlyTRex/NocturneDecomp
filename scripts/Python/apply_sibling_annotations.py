@@ -516,6 +516,30 @@ def make_readable(func):
     return signature_readable(func)
 
 
+def defer_unbuildable_receivers(rows, funcs, dtm, cache):
+    """Plan as SKIP_NO_RECEIVER the names apply_row would refuse.
+
+    A NAME_SIG row whose `this_ptr` only its prototype supplies is named only
+    if that prototype is built here, and apply_row builds none for a custom
+    storage prototype (left to transfer_custom_storage.py) or one naming a type
+    this program lacks. Without this the report promised those names on every
+    run while the apply skipped them, so the counts overstated what would land.
+    """
+    for r in rows:
+        if r["action"] != "NAME_SIG" or not r.get("receiver_from_signature") \
+                or r["b"] not in funcs:
+            continue
+        if needs_custom_storage(r.get("conv"), r.get("sig")):
+            why = "it needs custom storage (transfer_custom_storage.py)"
+        elif not r.get("sig") or build_signature(dtm, funcs[r["b"]], r["sig"], cache) is None:
+            why = "it names a type this program lacks"
+        else:
+            continue
+        r["action"] = "SKIP_NO_RECEIVER"
+        r["detail"] = ("name claims class %s and only its prototype supplies this_ptr, "
+                       "but %s" % (claimed_class(r["want"]), why))
+
+
 def apply_row(program, func, row, want_signatures, dtm=None, cache=None):
     """Set the name, and the full prototype where the signature is supported.
 
@@ -668,12 +692,15 @@ def main(argv=None):
     out_path = args.out or ("%s_sibling_annotations.txt" % args.program_name)
     project_path = os.path.abspath(args.project_path)
 
-    # nocedit's convention per pair, for the signature step.
-    conv_by_a = {p["a"]: p.get("conv") for p in mapping["pairs"]}
+    # nocedit's convention per pair, for the signature step -- or the one
+    # verify_sibling_signatures measured in its place, where the target passes
+    # nocedit's output pointer in ESI (its `sig_rewrite`).
+    conv_by_a = {p["a"]: (p.get("sig_rewrite") or {}).get("conv") or p.get("conv")
+                 for p in mapping["pairs"]}
 
     # Parameters live in the source annotations, not in the mapping, so load
     # them here: the mapping records only what identifies a pair, and a
-    # prototype is not part of that.
+    # prototype is not part of that. A rewrite carries its own parameter list.
     sig_by_a = {}
     if args.signatures:
         src = sm.Image(mapping.get("from", "nocedit.exe"))
@@ -681,8 +708,9 @@ def main(argv=None):
             rec = src.by_addr.get(p["a"])
             if not rec:
                 continue
-            sig_by_a[p["a"]] = {"ret": rec.get("ret"),
-                                "params": (rec.get("vars") or {}).get("params") or []}
+            params = (p.get("sig_rewrite") or {}).get("params") \
+                or (rec.get("vars") or {}).get("params") or []
+            sig_by_a[p["a"]] = {"ret": rec.get("ret"), "params": params}
         print("Loaded prototypes for %d source functions" % len(sig_by_a))
 
     import pyghidra
@@ -729,6 +757,7 @@ def main(argv=None):
             for r in missing:
                 r["action"] = "SKIP_NAMED"
                 r["detail"] = "no function at this address in the program"
+            defer_unbuildable_receivers(rows, funcs, program.getDataTypeManager(), {})
 
             counts = Counter(r["action"] for r in rows)
 

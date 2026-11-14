@@ -20,7 +20,7 @@
 ; undefined8       Stack[-0x20]:8  local_20
 ;
 ; XREF[1]:
-;   core_dtri.cpp_FUN_00490a40 at 00490be3
+;   core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40 at 00490be3
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005dbbdc

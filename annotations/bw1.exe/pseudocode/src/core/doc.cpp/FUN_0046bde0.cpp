@@ -234,7 +234,7 @@ LAB_0046c965:
                 }
                 param_1->action_pending = 1;
               }
-              core_hero_cpp_FUN_004ec280(param_1,1);
+              core_hero_cpp_CHero_executeObjectPickup_FUN_004ec280(param_1,1);
             }
           }
         }

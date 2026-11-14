@@ -354,8 +354,8 @@ section .text
     PUSH EAX                            ; 00522430
     MOV dword ptr [EBP + 0x46],ECX      ; 00522431
     MOV dword ptr [EBP + 0x4a],ESI      ; 00522434
-    CALL core_xform.cpp_FUN_00583940    ; 00522437
-        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583940()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 ; 00522437
+        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940()
     MOV ESI,dword ptr [0x01ed36dc]      ; 0052243c | DAT_01ed36dc
     LEA EAX,[ESI*0x4 + 0x0]             ; 00522442
     SUB EAX,ESI                         ; 00522449
@@ -480,8 +480,8 @@ section .text
     PUSH EAX                            ; 005225bb
     MOV dword ptr [EBP + 0xffffff7a],ECX ; 005225bc
     MOV dword ptr [EBP + 0xffffff7e],ESI ; 005225c2
-    CALL core_xform.cpp_FUN_00583940    ; 005225c8
-        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583940()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 ; 005225c8
+        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940()
     MOV ESI,dword ptr [0x01ed36dc]      ; 005225cd | DAT_01ed36dc
     LEA EAX,[ESI*0x4 + 0x0]             ; 005225d3
     SUB EAX,ESI                         ; 005225da
@@ -653,8 +653,8 @@ section .text
     PUSH EAX                            ; 00522797
     MOV dword ptr [EBP + -0x76],EDX     ; 00522798
     MOV dword ptr [EBP + -0x7e],EDI     ; 0052279b
-    CALL core_xform.cpp_FUN_00583940    ; 0052279e
-        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583940()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 ; 0052279e
+        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940()
     MOV ESI,dword ptr [0x01ed3714]      ; 005227a3 | DAT_01ed3714
     LEA EAX,[ESI*0x4 + 0x0]             ; 005227a9
     SUB EAX,ESI                         ; 005227b0
@@ -697,8 +697,8 @@ section .text
     PUSH EAX                            ; 00522827
     MOV dword ptr [EBP + 0x26],EDX      ; 00522828
     MOV dword ptr [EBP + 0x1e],EDI      ; 0052282b
-    CALL core_xform.cpp_FUN_00583940    ; 0052282e
-        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583940()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 ; 0052282e
+        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940()
     MOV ESI,dword ptr [0x01ed3710]      ; 00522833 | DAT_01ed3710
     LEA EAX,[ESI*0x4 + 0x0]             ; 00522839
     SUB EAX,ESI                         ; 00522840

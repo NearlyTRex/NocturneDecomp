@@ -21,7 +21,7 @@ void core_main_c_FUN_00503a30(void)
   wincore_winrun_cpp_endPeriod_FUN_005b2410();
   engine_2d_c_cleanupGraphicsSystem_FUN_00401120();
   engine_3d_c_freeTextureCache_FUN_004037a0();
-  core_dfont_cpp_FUN_0045e7a0();
+  core_dfont_cpp_freeFonts_FUN_0045e7a0();
   wincore_winrun_cpp_doNothing2_FUN_005b3b10();
   engine_pod_cpp_CPod_cleanup_FUN_0053c8f0(&g_CDemonPodPtr->base);
   core_inivar_cpp_writeIniData_FUN_004f5760();

@@ -50,12 +50,12 @@ uint sound_snddx_cpp_FUN_0055acd0(int *param_1)
       if (uVar2 == 0) {
         return 1;
       }
-      sound_snddx_cpp_FUN_0055a670(uVar2);
+      sound_snddx_cpp_getDirectSoundErrorString_FUN_0055a670(uVar2);
       _sprintf(acStack_1a0,"DirectSux: Unable to %s.  (%s)");
       format = acStack_1a0;
     }
     else {
-      sound_snddx_cpp_FUN_0055a670(uVar2);
+      sound_snddx_cpp_getDirectSoundErrorString_FUN_0055a670(uVar2);
       _sprintf(&stack0xfffffcd0,"DirectSux: Unable to %s.  (%s)");
     }
     sound_sndmain_cpp_logSoundError_FUN_0055a560(format);

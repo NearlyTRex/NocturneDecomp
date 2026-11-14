@@ -9,8 +9,8 @@
 ; char *           Stack[0xc]:4   filename
 ;
 ; XREF[15]:
-;   cockpit_ckptutil.c_FUN_0042c520 at 0042c55c
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042c780 at 0042c832
+;   cockpit_ckptutil.c_readBitmapFile_FUN_0042c520 at 0042c55c
 ;   engine_2d.c_FUN_00401590 at 004015ad
 ;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 004010be
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 004029d8

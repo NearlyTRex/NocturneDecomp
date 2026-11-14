@@ -235,7 +235,7 @@ void __cdecl core_trigger_cpp_CTrigger_onLaserHit_FUN_0059bd80(CTrigger *this_pt
 void __cdecl core_trigger_cpp_CTrigger_onProjectileHit_FUN_0059bdd0(CTrigger *this_ptr);
 int __cdecl core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_0059bdf0(CTrigger *this_ptr,CDemonActor *actor);
 void __cdecl core_trigger_cpp_CTrigger_applyDamage_FUN_0059be30(CTrigger *this_ptr,float hit_points);
-void core_trigger_cpp_FUN_0059bee0(int param_1);
+void __cdecl core_trigger_cpp_CTrigger_calculateTestRadius_FUN_0059bee0(CTrigger *this_ptr);
 int __cdecl core_trigger_cpp_CTrigger_getTargetPoints_FUN_0059bfb0(CTrigger *this_ptr,CVector3f *out_points_array);
 undefined4 core_trigger_cpp_FUN_0059c090(int param_1,CDemonActor *param_2);
 CTrigger * __cdecl core_trigger_cpp_CTrigger_dtor_FUN_0059c420(CTrigger *this_ptr,uint flags);

@@ -311,7 +311,8 @@ LAB_004ae0ec:
                                      g_CAmmoBoxClassInfo.name_hash);
             if (this_ptr_02 != (CAmmoBox *)0x0) {
               pCStack_14 = (CCharacter_full_vtable *)
-                           core_motion_cpp_FUN_00503e60((CMotionController *)this_ptr_03);
+                           core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00503e60
+                                     ((CMotionController *)this_ptr_03);
               core_ammobox_cpp_CAmmoBox_openBox_FUN_0040e600(this_ptr_02,(float)pCStack_14);
             }
           }
@@ -550,7 +551,7 @@ LAB_004ae5e4:
       CStack_cc.x = CStack_cc.x + fStack_138;
       CStack_cc.y = CStack_cc.y + afStack_134[0];
       CStack_cc.z = CStack_cc.z + afStack_134[1];
-      core_charactr_cpp_FUN_00423a60((CCharacter *)this_ptr,pCVar20);
+      core_charactr_cpp_CCharacter_moveAndCollide_FUN_00423a60((CCharacter *)this_ptr,pCVar20);
     }
   }
   else {
@@ -716,7 +717,7 @@ LAB_004adc3d:
            iVar10 == 0)) {
           iVar10 = core_hero_cpp_CHero_tryPushNearbyBox_FUN_004cf4e0(&this_ptr->base);
           if (iVar10 == 0) {
-            iVar10 = core_hero_cpp_FUN_004cf2b0(&this_ptr->base);
+            iVar10 = core_hero_cpp_CHero_tryPullLever_FUN_004cf2b0(&this_ptr->base);
             if (iVar10 == 0) {
               core_gabriela_cpp_CGabriella_tryClimbLadder_FUN_004b0a90(this_ptr);
             }
@@ -746,7 +747,9 @@ LAB_004adc3d:
     core_hero_cpp_CHero_stopPushingBox_FUN_004cf830(&this_ptr->base);
   }
   else {
-    pCStack_14 = (CCharacter_full_vtable *)core_motion_cpp_FUN_00503e60(&pCVar2->base);
+    pCStack_14 = (CCharacter_full_vtable *)
+                 core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00503e60(&pCVar2->base)
+    ;
     if ((1.0 < (float)pCStack_14) &&
        (pCStack_38 = (CBoxActor *)
                      core_actor_cpp_castToClassHash_FUN_0040c8f0

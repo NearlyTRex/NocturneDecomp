@@ -107,6 +107,6 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_00534420(CDemonSet *this_ptr)
       pCVar7 = (CDemonSet *)&pCVar7->cameras[0].enabled;
     } while (iVar6 < this_ptr->camera_count);
   }
-  core_weather_cpp_FUN_0057d050(0x02D0C1A0,this_ptr->weather_type);
+  core_weather_cpp_CWeather_setWeatherType_FUN_0057d050(0x02D0C1A0,this_ptr->weather_type);
   return;
 }

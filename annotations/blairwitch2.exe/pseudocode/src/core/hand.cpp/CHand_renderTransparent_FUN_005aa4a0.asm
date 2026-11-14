@@ -13,8 +13,8 @@
 ;
 ; Called Functions:
 ;   core_basicene.cpp_CBasicEnemy_renderTransparent_FUN_0059f980
+;   core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
-;   core_motion.cpp_FUN_00503e60
 ;   crt_string.c__strcmp_FUN_005b8c30
 ;
 ; *****************************************************************************
@@ -55,8 +55,8 @@ section .text
     JNZ 0x005aa50f                      ; 005aa4f8
         ;   XREF to: 005aa50f (CONDITIONAL_JUMP)  ; LAB_005aa50f
     PUSH ESI                            ; 005aa4fa
-    CALL core_motion.cpp_FUN_00503e60   ; 005aa4fb
-        ;   XREF to: 00503e60 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_00503e60(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60 ; 005aa4fb
+        ;   XREF to: 00503e60 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60(CMotionController * this_ptr)
     MOV dword ptr [EBP + -0x4],EAX      ; 005aa500
     ADD ESP,0x4                         ; 005aa503
     MOV EAX,dword ptr [EBP + -0x4]      ; 005aa506
@@ -114,8 +114,8 @@ section .text
     LEA EAX,[EBX + 0x2b4]               ; 005aa57e
         ;   Label: LAB_005aa57e
     PUSH EAX                            ; 005aa584
-    CALL core_motion.cpp_FUN_00503e60   ; 005aa585
-        ;   XREF to: 00503e60 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_00503e60(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60 ; 005aa585
+        ;   XREF to: 00503e60 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60(CMotionController * this_ptr)
     MOV dword ptr [EBP + -0x4],EAX      ; 005aa58a
     FLD float ptr [EBP + -0x4]          ; 005aa58d
     FLD1                                ; 005aa590

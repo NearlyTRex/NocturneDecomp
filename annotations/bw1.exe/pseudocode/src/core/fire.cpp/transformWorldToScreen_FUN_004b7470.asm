@@ -12,7 +12,7 @@
 ;   undefined4 DAT_005fff94
 ;
 ; Called Functions:
-;   engine_special.cpp_FUN_0058043c
+;   engine_special.cpp_transformPoint_FUN_0058043c
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     PUSH EBX                            ; 004b749e
     MOV EDX,dword ptr [ESP + 0x1c]      ; 004b749f
     PUSH EDX                            ; 004b74a3
-    CALL engine_special.cpp_FUN_0058043c ; 004b74a4
-        ;   XREF to: 0058043c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0058043c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformPoint_FUN_0058043c ; 004b74a4
+        ;   XREF to: 0058043c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformPoint_FUN_0058043c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004b74a9
     ADD ESP,0xc                         ; 004b74ac
     POP EBX                             ; 004b74af

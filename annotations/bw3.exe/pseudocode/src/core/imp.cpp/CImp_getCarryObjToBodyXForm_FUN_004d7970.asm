@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   hand_index
 ;
 ; Called Functions:
-;   core_xform.cpp_FUN_00583940
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005833e0
 ;
 ; *****************************************************************************
@@ -77,8 +77,8 @@ section .text
     PUSH EAX                            ; 004d7a6a
     LEA EAX,[ESP + 0x8]                 ; 004d7a6b
     PUSH EAX                            ; 004d7a6f
-    CALL core_xform.cpp_FUN_00583940    ; 004d7a70
-        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583940()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 ; 004d7a70
+        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940()
     LEA EAX,[EBP*0x4 + 0x0]             ; 004d7a75
     ADD ESP,0xc                         ; 004d7a7c
     SUB EAX,EBP                         ; 004d7a7f

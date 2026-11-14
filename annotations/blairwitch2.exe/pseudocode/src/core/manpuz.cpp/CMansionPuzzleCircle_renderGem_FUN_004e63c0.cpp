@@ -59,28 +59,28 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderGem_FUN_004e63c0(CMansio
     SStack_a8.vertices[6].vertex_index = (int)ROUND(_DAT_005f98a0 * -1.4);
     SStack_a8.vertices[6].texture_u = (int)ROUND(_DAT_005f98a0 * 0.2);
     SStack_a8.vertices[6].texture_v = (int)ROUND(_DAT_005f98a0 * -1.4);
-    engine_special_cpp_FUN_0055d723
+    engine_special_cpp_transformAndProjectPoint_FUN_0055d723
               (&DAT_0060b280->vertex_buffer_ptr->projected_vertex,
                (CVector3i *)(SStack_a8.vertices + 6));
     fStack_30 = -fStack_30;
     SStack_a8.vertices[4].vertex_index = (int)ROUND(fStack_30 * _DAT_005f98a0);
     SStack_a8.vertices[4].texture_u = (int)ROUND(fStack_2c * _DAT_005f98a0);
     SStack_a8.vertices[4].texture_v = (int)ROUND(fStack_28 * _DAT_005f98a0);
-    engine_special_cpp_FUN_0055d723
+    engine_special_cpp_transformAndProjectPoint_FUN_0055d723
               (&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,
                (CVector3i *)(SStack_a8.vertices + 4));
     fStack_28 = -fStack_28;
     SStack_a8.vertices[5].vertex_index = (int)ROUND(fStack_30 * _DAT_005f98a0);
     SStack_a8.vertices[5].texture_u = (int)ROUND(fStack_2c * _DAT_005f98a0);
     SStack_a8.vertices[5].texture_v = (int)ROUND(fStack_28 * _DAT_005f98a0);
-    engine_special_cpp_FUN_0055d723
+    engine_special_cpp_transformAndProjectPoint_FUN_0055d723
               (&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,
                (CVector3i *)(SStack_a8.vertices + 5));
     fStack_30 = -fStack_30;
     SStack_a8.vertices[7].vertex_index = (int)ROUND(fStack_30 * _DAT_005f98a0);
     SStack_a8.vertices[7].texture_u = (int)ROUND(fStack_2c * _DAT_005f98a0);
     SStack_a8.vertices[7].texture_v = (int)ROUND(fStack_28 * _DAT_005f98a0);
-    engine_special_cpp_FUN_0055d723
+    engine_special_cpp_transformAndProjectPoint_FUN_0055d723
               (&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,
                (CVector3i *)(SStack_a8.vertices + 7));
     SStack_a8.base.base.count = 4;

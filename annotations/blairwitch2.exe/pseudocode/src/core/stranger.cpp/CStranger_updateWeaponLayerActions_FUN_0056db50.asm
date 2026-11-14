@@ -55,7 +55,7 @@
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10
 ;   core_dynamite.cpp_CDynamite_isFuseLit_FUN_0047a1a0
 ;   core_dynamite.cpp_CDynamite_lightFuse_FUN_0047a150
-;   core_hero.cpp_FUN_004cff90
+;   core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004cff90
 ;   core_inv.cpp_CInventory_getActiveLightGun_FUN_004dccb0
 ;   core_inv.cpp_CInventory_removeItem_FUN_004db8e0
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200
@@ -224,8 +224,8 @@ section .text
         ;   XREF to: 0056dd20 (CONDITIONAL_JUMP)  ; LAB_0056dd20
     PUSH ESI                            ; 0056dd0c
     PUSH EBX                            ; 0056dd0d
-    CALL core_hero.cpp_FUN_004cff90     ; 0056dd0e
-        ;   XREF to: 004cff90 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004cff90()
+    CALL core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004cff90 ; 0056dd0e
+        ;   XREF to: 004cff90 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004cff90(CHero * this_ptr, int hand_index)
     ADD ESP,0x8                         ; 0056dd13
     MOV dword ptr [EBX + 0x256a4],0x0   ; 0056dd16
     MOV EAX,dword ptr [EBX + 0x2561c]   ; 0056dd20

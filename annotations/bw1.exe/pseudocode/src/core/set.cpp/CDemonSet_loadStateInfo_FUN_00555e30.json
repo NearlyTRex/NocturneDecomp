@@ -1,0 +1,354 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 191,
+    "complexity_score": 175,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 15,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 70,
+    "suspect_count": 9,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 261
+  },
+  "cross_references": [
+    {
+      "addr": "004d6990",
+      "from_addr": "004d7174",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004d6990",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00555e30",
+    "address_range": [
+      [
+        "00555e30",
+        "00555fde"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_CDemonSet_loadStateInfo_FUN_00555e30",
+    "signature": "void __cdecl core_set_cpp_CDemonSet_loadStateInfo_FUN_00555e30(CDemonSet *this_ptr,_FILE *file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "005c04b0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fscanf_FUN_005c04b0"
+    },
+    {
+      "addr": "00494340",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_00494340"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f0c72",
+      "name": "s_anon_005f0c72",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f0c7a",
+      "name": "DAT_005f0c7a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f0c7e",
+      "name": "s_core_set_cpp_005f0c7e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f0c8e",
+      "name": "s_Set_saveState_info_is_in_005f0c8e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f0cb7",
+      "name": "s_anon_005f0cb7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f0cbf",
+      "name": "DAT_005f0cbf",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f0cc3",
+      "name": "s_The_set_has_changed_sinc_005f0cc3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f0d29",
+      "name": "DAT_005f0d29",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f0d2d",
+      "name": "s_anon_005f0d2d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f0d35",
+      "name": "DAT_005f0d35",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f0d39",
+      "name": "s_anon_005f0d39",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f0d41",
+      "name": "DAT_005f0d41",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061abc0",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c3eb54"
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004d7174",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004d6990",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.615384615384615,
+    "instruction_count": 143,
+    "opcode_distribution": {
+      "BOOL_OR": 6,
+      "BRANCH": 1,
+      "CALL": 11,
+      "CBRANCH": 18,
+      "COPY": 101,
+      "INT_ADD": 48,
+      "INT_AND": 87,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 86,
+      "INT_LESS": 16,
+      "INT_NOTEQUAL": 15,
+      "INT_SBORROW": 16,
+      "INT_SCARRY": 20,
+      "INT_SLESS": 42,
+      "INT_SUB": 58,
+      "INT_XOR": 3,
+      "LOAD": 29,
+      "POPCOUNT": 42,
+      "RETURN": 1,
+      "STORE": 45
+    },
+    "pcode_op_count": 660
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00534a90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5963
+    },
+    "bw3.exe": {
+      "addr": "0053b7f0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00571230",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5963
+    },
+    "nocturne.exe": {
+      "addr": "0050e920",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5963
+    }
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_005f0c7a",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005f0c7a);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_005f0cbf",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005f0cbf);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_005f0d29",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005f0d29);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_005f0d35",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005f0d35);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 63,
+      "match": "DAT_005f0d41",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005f0d41);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar2->vertices[0].a`). Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 36,
+      "match": "pCVar2 = (T *)&pCVar2->FIELD[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar2->vertices[0].a`). Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 51,
+      "match": "pCVar2 = (T *)&pCVar2->FIELD[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar2->vertices[0].a`). Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 68,
+      "match": "pCVar2 = (T *)&pCVar2->FIELD[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

@@ -39,7 +39,7 @@ float __cdecl core_setdir_cpp_CZThumb_calculateActorVisibility_FUN_005386e0(CZTh
             (DAT_0060b280,&local_34,(CVector3f *)0x0);
   iVar7 = 0;
   do {
-    engine_special_cpp_FUN_0055d723
+    engine_special_cpp_transformAndProjectPoint_FUN_0055d723
               ((SProjectedVertex *)
                ((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).transformed_x + iVar7),
                bounding_box_vertices);

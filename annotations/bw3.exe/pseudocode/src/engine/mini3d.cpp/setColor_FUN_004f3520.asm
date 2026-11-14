@@ -11,14 +11,14 @@
 ; XREF[16]:
 ;   shape_edittool.cpp_CEdButton_paint_FUN_00486120 at 00486285
 ;   shape_edittool.cpp_CEdScrollBar_render_FUN_00485640 at 004856d0
+;   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00480f00 at 00480f93
+;   shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00481350 at 00481433
 ;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_00480410 at 00480527
 ;   shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_00480200 at 004802bb
+;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80 at 0047fbb3
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047ee50 at 0047efe7
 ;   shape_edittool.cpp_CInputString_draw_FUN_0047c050 at 0047c242
 ;   shape_edittool.cpp_CPickList_renderDialog_FUN_004843d0 at 004844c9
-;   shape_edittool.cpp_FUN_0047b770 at 0047b7b7
-;   shape_edittool.cpp_FUN_0047b7c0 at 0047b852
-;   shape_edittool.cpp_FUN_0047b8e0 at 0047b948
 ;   ... and 6 more
 ;
 ; Referenced Globals:

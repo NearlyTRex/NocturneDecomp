@@ -57,7 +57,7 @@ void __cdecl core_doc_cpp_CDoc_processDamage_FUN_0045b190(CDoc *this_ptr,SDamage
 void core_doc_cpp_FUN_0045b510(CCharacter *param_1,float param_2,int param_3);
 CMatrix3x4f * __stack2_esi core_doc_cpp_CDoc_getCarryObjToBodyXForm_FUN_0045bb50(CDoc *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 void core_doc_cpp_FUN_0045bba0(int param_1);
-void core_doc_cpp_FUN_0045bdc0(CCharacter *param_1,float param_2);
+void core_doc_cpp_FUN_0045bdc0(CHero *param_1,float param_2);
 void core_doc_cpp_FUN_0045c960(int param_1);
 void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_0045ca30(CDoc *this_ptr);
 int __cdecl core_doc_cpp_CDoc_canDoHeroAction_FUN_0045d0c0(CDoc *this_ptr,int action_type);

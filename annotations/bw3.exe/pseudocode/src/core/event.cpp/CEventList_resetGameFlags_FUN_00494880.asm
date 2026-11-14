@@ -8,7 +8,7 @@
 ;
 ; XREF[3]:
 ;   core_event.cpp_CEventList_ctor_FUN_0048bfb0 at 0048bfbf
-;   core_game.cpp_FUN_004bdfb0 at 004be12d
+;   core_game.cpp_CGame_loadGame_FUN_004bdfb0 at 004be12d
 ;   core_game.cpp_FUN_004be8d0 at 004bea46
 ;
 ; Referenced Globals:

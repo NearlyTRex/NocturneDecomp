@@ -53,6 +53,6 @@ void __cdecl CFlame::archive(CFlame *this_ptr);
 // Address: 004a0580
 ECollisionType __cdecl CFlame::getCollisionType(CFlame *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_flame.cpp_FUN_004a0590
+// Original: core_flame.cpp_CFlame_updateGlobe_FUN_004a0590
 // Address: 004a0590
-void __cdecl FUN_004a0590(CFlame *this_ptr);
+void __cdecl CFlame::updateGlobe(CFlame *this_ptr);

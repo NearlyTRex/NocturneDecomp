@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   core_dcamera.cpp_staticInit_FUN_004486c0 at 004486e3
-;   core_game.cpp_FUN_004bdfb0 at 004be2d7
+;   core_game.cpp_CGame_loadGame_FUN_004bdfb0 at 004be2d7
 ;
 ; Referenced Globals:
 ;   undefined1* PTR_support_codec.cpp_CLZWDecompress_dtor_FUN_00441e70_005dd494 = 00441e70

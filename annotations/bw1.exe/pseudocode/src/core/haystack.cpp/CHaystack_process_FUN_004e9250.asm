@@ -23,11 +23,11 @@
 ;   core_actor.cpp_FUN_00408bb0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
 ;   core_charactr.cpp_FUN_0042d700
-;   core_charactr.cpp_FUN_0042d750
 ;   core_charactr.cpp_FUN_00435320
 ;   core_haystack.cpp_CHaystack_advanceMotion_FUN_004e9f20
 ;   core_haystack.cpp_CHaystack_updateAI_FUN_004e98b0
@@ -458,8 +458,8 @@ section .text
     JNZ 0x004e965f                      ; 004e9703
         ;   XREF to: 004e965f (CONDITIONAL_JUMP)  ; LAB_004e965f
     PUSH EBX                            ; 004e9709
-    CALL core_hero.cpp_FUN_004eb660     ; 004e970a
-        ;   XREF to: 004eb660 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004eb660(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_tryPullLever_FUN_004eb660 ; 004e970a
+        ;   XREF to: 004eb660 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryPullLever_FUN_004eb660(CHero * this_ptr)
     ADD ESP,0x4                         ; 004e970f
     TEST EAX,EAX                        ; 004e9712
     JNZ 0x004e9726                      ; 004e9714
@@ -594,8 +594,8 @@ section .text
     FSTP float ptr [ESP + 0x40]         ; 004e987d
     FSTP float ptr [ESP + 0x44]         ; 004e9881
     FSTP float ptr [ESP + 0x48]         ; 004e9885
-    CALL core_charactr.cpp_FUN_0042d750 ; 004e9889
-        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750 ; 004e9889
+        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 004e988e
     JMP 0x004e94dd                      ; 004e9891
         ;   XREF to: 004e94dd (UNCONDITIONAL_JUMP)  ; LAB_004e94dd

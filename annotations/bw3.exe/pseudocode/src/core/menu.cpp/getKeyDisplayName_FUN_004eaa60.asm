@@ -9,8 +9,8 @@
 ; XREF[4]:
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_004b51e0 at 004b57b7
 ;   core_game.cpp_drawKeyBindingEntry_FUN_004b50f0 at 004b510a
-;   core_inv.cpp_FUN_004da880 at 004daac9
-;   core_menu.cpp_FUN_004eae80 at 004ebd4c
+;   core_inv.cpp_CInventory_addItem_FUN_004da880 at 004daac9
+;   core_menu.cpp_configureCustomKeyBindings_FUN_004eae80 at 004ebd4c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_none_005c797c
@@ -32,7 +32,7 @@
 ;
 ; Called Functions:
 ;   support_newmsg.cpp_getLocalizedString_FUN_00508960
-;   wincore_winrun.cpp_FUN_00581360
+;   wincore_winrun.cpp_getKeyName_FUN_00581360
 ;
 ; *****************************************************************************
 
@@ -268,8 +268,8 @@ section .text
         ;   XREF to: 004eaa87 (UNCONDITIONAL_JUMP)  ; LAB_004eaa87
     PUSH EBX                            ; 004eac9e
         ;   Label: LAB_004eac9e
-    CALL wincore_winrun.cpp_FUN_00581360 ; 004eac9f
-        ;   XREF to: 00581360 (UNCONDITIONAL_CALL)  ; char * wincore_winrun.cpp_FUN_00581360(EInputCodeType keycode)
+    CALL wincore_winrun.cpp_getKeyName_FUN_00581360 ; 004eac9f
+        ;   XREF to: 00581360 (UNCONDITIONAL_CALL)  ; char * wincore_winrun.cpp_getKeyName_FUN_00581360(EInputCodeType keycode)
     MOV ESI,EAX                         ; 004eaca4
     ADD ESP,0x4                         ; 004eaca6
     JMP 0x004eac40                      ; 004eaca9

@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 174,
-    "complexity_score": 197,
+    "complexity_score": 198,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 87,
+    "pseudocode_lines": 88,
     "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
@@ -17,7 +17,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 261
+    "total_lines": 262
   },
   "cross_references": [],
   "function": {
@@ -54,6 +54,11 @@
       "name": "core_enemy.cpp_CEnemy_testAttackRadius_FUN_00488110"
     },
     {
+      "addr": "00503e60",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60"
+    },
+    {
       "addr": "005035c0",
       "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0"
@@ -62,11 +67,6 @@
       "addr": "00503620",
       "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_00503620"
-    },
-    {
-      "addr": "00503e60",
-      "is_variadic": false,
-      "name": "core_motion.cpp_FUN_00503e60"
     },
     {
       "addr": "0059d7f0",
@@ -246,7 +246,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 55,
       "match": "DAT_0265370c",
       "severity": "mild",
       "text": "(&DAT_0265370c,",
@@ -254,7 +254,7 @@
     },
     {
       "description": "Pointer value `&CStack_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 65,
+      "line": 66,
       "match": "(int)&CStack_24",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_24 + (uint)bVar8 * -8 + 4) = afStack_44[(uint)bVar8 * -2 + 3];",
@@ -262,7 +262,7 @@
     },
     {
       "description": "Pointer value `&CStack_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 66,
+      "line": 67,
       "match": "(int)&CStack_24",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_24 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =",
@@ -270,7 +270,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 65,
+      "line": 66,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_24 + (uint)bVar8 * -8 + 4) = afStack_44[(uint)bVar8 * -2 + 3];",
@@ -278,7 +278,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 66,
+      "line": 67,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_24 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =",

@@ -7,7 +7,7 @@
 ; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004d6420 at 004d6691
+;   core_game.cpp_CGame_saveGame_FUN_004d6420 at 004d6691
 ;
 ; Referenced Globals:
 ;   undefined4 s_Set_state_version_005f0bfd+1

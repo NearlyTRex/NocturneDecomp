@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 477,
-    "complexity_score": 585,
+    "complexity_score": 589,
     "cross_reference_count": 3,
     "function_call_count": 11,
     "global_count": 43,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 180,
+    "pseudocode_lines": 184,
     "suspect_count": 38,
     "suspect_types": [
       "pointer_cast",
@@ -16,7 +16,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 657
+    "total_lines": 661
   },
   "cross_references": [
     {
@@ -26,15 +26,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0054f0d0",
-      "from_addr": "0054f82c",
-      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0",
+      "addr": "00550580",
+      "from_addr": "005508fd",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_00550580",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00550580",
-      "from_addr": "005508fd",
-      "name": "core_set.cpp_FUN_00550580",
+      "addr": "0054f0d0",
+      "from_addr": "0054f82c",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -54,7 +54,7 @@
     {
       "addr": "00552d40",
       "is_variadic": false,
-      "name": "core_set.cpp_FUN_00552d40"
+      "name": "core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_00552d40"
     },
     {
       "addr": "005c03a0",
@@ -104,7 +104,7 @@
     {
       "addr": "00580173",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_00580173"
+      "name": "engine_special.cpp_transformAndProjectPoint_FUN_00580173"
     }
   ],
   "globals": [
@@ -406,7 +406,7 @@
       {
         "call_addr": "005508fd",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00550580",
+        "caller": "core_set.cpp_CDemonSet_renderScene_FUN_00550580",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -417,7 +417,7 @@
       {
         "call_addr": "00550a14",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00550580",
+        "caller": "core_set.cpp_CDemonSet_renderScene_FUN_00550580",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -864,7 +864,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 126,
+      "line": 127,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_70);",
@@ -872,7 +872,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 140,
+      "line": 142,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_58);",
@@ -880,26 +880,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 154,
+      "line": 157,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_88);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 160,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,(SMRGLPrimitivePoly *)&DAT_00625e1c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 160,
-      "match": "DAT_00625e1c",
-      "severity": "mild",
-      "text": "(DAT_00612560,(SMRGLPrimitivePoly *)&DAT_00625e1c);",
       "type": "undefined_data"
     },
     {
@@ -923,20 +907,12 @@
       "line": 168,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00483ce0(DAT_00612560,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 170,
-      "match": "DAT_00612560",
-      "severity": "mild",
       "text": "(DAT_00612560,(SMRGLPrimitivePoly *)&DAT_00625e1c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 170,
+      "line": 168,
       "match": "DAT_00625e1c",
       "severity": "mild",
       "text": "(DAT_00612560,(SMRGLPrimitivePoly *)&DAT_00625e1c);",
@@ -944,15 +920,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 174,
+      "line": 172,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,0xa000);",
+      "text": "engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00483ce0(DAT_00612560,1);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 176,
+      "line": 174,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(DAT_00612560,(SMRGLPrimitivePoly *)&DAT_00625e1c);",
@@ -960,7 +936,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 176,
+      "line": 174,
+      "match": "DAT_00625e1c",
+      "severity": "mild",
+      "text": "(DAT_00612560,(SMRGLPrimitivePoly *)&DAT_00625e1c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 178,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,0xa000);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 180,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "(DAT_00612560,(SMRGLPrimitivePoly *)&DAT_00625e1c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 180,
       "match": "DAT_00625e1c",
       "severity": "mild",
       "text": "(DAT_00612560,(SMRGLPrimitivePoly *)&DAT_00625e1c);",

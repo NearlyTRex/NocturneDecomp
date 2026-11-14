@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
-;   core_setcolid.cpp_FUN_00536cb0
+;   core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00536cb0
 ;
 ; *****************************************************************************
 
@@ -63,8 +63,8 @@ section .text
     PUSH EBP                            ; 004e5ece
     MOV ECX,dword ptr [0x0061b5a8]      ; 004e5ecf | g_CDemonSetPtr
     PUSH ECX                            ; 004e5ed5 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_00536cb0 ; 004e5ed6
-        ;   XREF to: 00536cb0 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_FUN_00536cb0(CDemonSet * this_ptr, SIntersectXZCylinder * cylinder, CBoundingBox3D * bounding_box, CVector3f * position, ...)
+    CALL core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00536cb0 ; 004e5ed6
+        ;   XREF to: 00536cb0 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00536cb0(CDemonSet * this_ptr, SIntersectXZCylinder * cylinder, CBoundingBox3D * bounding_box, CVector3f * position, ...)
     ADD ESP,0x14                        ; 004e5edb
     ADD EBX,0x64                        ; 004e5ede
     CMP EBX,ESI                         ; 004e5ee1

@@ -23,7 +23,7 @@ void __cdecl core_mimic_cpp_CMimic_setupCloth_FUN_004f17a0(CMimic *this_ptr)
   
   bVar6 = 0;
   this_ptr->attack_mode = 2;
-  core_cloth_cpp_FUN_005ae680
+  core_cloth_cpp_CCloth_setup_FUN_005ae680
             (&this_ptr->cloth,&(this_ptr->base).base.base.location.position,
              &(this_ptr->base).base.base.orient.vec,&(this_ptr->base).base.model);
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c8f0

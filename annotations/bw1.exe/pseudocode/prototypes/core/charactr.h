@@ -69,9 +69,9 @@ void __cdecl CCharacter::applyDamage(CCharacter *this_ptr,int damage_type,float 
 // Address: 0042d700
 void FUN_0042d700(int param_1,float param_2);
 
-// Original: core_charactr.cpp_FUN_0042d750
+// Original: core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 // Address: 0042d750
-void __cdecl FUN_0042d750(CCharacter *this_ptr,CVector3f *velocity);
+void __cdecl CCharacter::moveAndCollide(CCharacter *this_ptr,CVector3f *velocity);
 
 // Original: core_charactr.cpp_CCharacter_isOnGround_FUN_0042e120
 // Address: 0042e120

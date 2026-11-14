@@ -31,16 +31,16 @@
 ; Called Functions:
 ;   core_bmppuzzl.cpp_resetAllPuzzles_FUN_0059abb0
 ;   core_dfilter.cpp_CDemonFilter_init_FUN_00447ad0
-;   core_dfont.cpp_FUN_00447ea0
+;   core_dfont.cpp_initFonts_FUN_00447ea0
 ;   core_flattn.cpp_FUN_004a67a0
 ;   core_inivar.cpp_readIniData_FUN_004d8d60
 ;   core_main.c_FUN_004e4500
 ;   core_marquee.cpp_FUN_004e8620
 ;   core_menu.cpp_showCalibrationTest_FUN_004ebe30
-;   core_mission.cpp_FUN_004fb380
+;   core_mission.cpp_CDemonMission_reset_FUN_004fb380
 ;   core_mmx.c_detectCPUFeatures_FUN_004fd490
 ;   core_netgame.cpp_CNetGame_init_FUN_0050b340
-;   core_sound.cpp_FUN_0055a100
+;   core_sound.cpp_CSound_findAllSoundFiles_FUN_0055a100
 ;   crt_io.c__chmod_FUN_005b99e0
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_stdio.c_fopen_FUN_005b910c
@@ -147,8 +147,8 @@ section .text
     CALL core_main.c_FUN_004e4500       ; 004e47ed
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 004e47f2
-    CALL core_dfont.cpp_FUN_00447ea0    ; 004e47f5
-        ;   XREF to: 00447ea0 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_FUN_00447ea0()
+    CALL core_dfont.cpp_initFonts_FUN_00447ea0 ; 004e47f5
+        ;   XREF to: 00447ea0 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_initFonts_FUN_00447ea0()
         ;   Label: LAB_004e47f5
     CMP dword ptr [0x02664638],0x3c00000 ; 004e47fa | DAT_02664638
     JGE 0x004e4a78                      ; 004e4804
@@ -691,15 +691,15 @@ section .text
     ADD ESP,0x8                         ; 004e4caa
     MOV ESI,dword ptr [0x0061c068]      ; 004e4cad | DAT_0061c068
     PUSH ESI                            ; 004e4cb3
-    CALL core_sound.cpp_FUN_0055a100    ; 004e4cb4
-        ;   XREF to: 0055a100 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0055a100(CSound * this_ptr)
+    CALL core_sound.cpp_CSound_findAllSoundFiles_FUN_0055a100 ; 004e4cb4
+        ;   XREF to: 0055a100 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_findAllSoundFiles_FUN_0055a100(CSound * this_ptr)
     ADD ESP,0x4                         ; 004e4cb9
     MOV EDI,dword ptr [0x00618170]      ; 004e4cbc | DAT_00618170
     PUSH EDI                            ; 004e4cc2
     XOR EBX,EBX                         ; 004e4cc3
     XOR ESI,ESI                         ; 004e4cc5
-    CALL core_mission.cpp_FUN_004fb380  ; 004e4cc7
-        ;   XREF to: 004fb380 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004fb380()
+    CALL core_mission.cpp_CDemonMission_reset_FUN_004fb380 ; 004e4cc7
+        ;   XREF to: 004fb380 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_reset_FUN_004fb380(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004e4ccc
     MOV dword ptr [ESP + 0x714],EBX     ; 004e4ccf
         ;   Label: LAB_004e4ccf

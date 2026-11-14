@@ -30,6 +30,10 @@ class FixProgram(Program):
         super().__init__()
         self.disassembly, self.disassembled = {}, []
         self.fixups, self.failing, self.fixup_result = [], set(), True
+        # Switch recovery: function -> {jump offset: [case offsets]}, and what the
+        # command returns; functions whose decompile fails or returns nothing
+        self.switch_flows, self.switch_result = {}, True
+        self.decompile_fails, self.decompile_none = set(), set()
 
 
 def program_with(size, disassembly = None, fixup_result = True):
@@ -78,15 +82,73 @@ class ConsoleTaskMonitor:
     pass
 
 
+# What one decompile returned: a HighFunction unless the decompile failed
+class DecompileResults:
+    def __init__(self, func, high = True):
+        self.func, self.high = func, high
+
+    def getHighFunction(self):
+        return object() if self.high else None
+
+
+# Decompiles whatever it is asked; the program's `decompile_fails` says which come
+# back empty and `decompile_none` which come back as no result at all
+class DecompInterface:
+    instances = []
+
+    def __init__(self):
+        self.configured_by = self.program = None
+        self.disposed, self.decompiled = False, []
+        DecompInterface.instances.append(self)
+
+    def openProgram(self, program):
+        self.program = program
+
+    def decompileFunction(self, func, timeout, _monitor):
+        self.decompiled.append((func, timeout))
+        if func in self.program.decompile_none:
+            return None
+        return DecompileResults(func, high = func not in self.program.decompile_fails)
+
+    def dispose(self):
+        self.disposed = True
+
+
+class SwitchAnalysisDecompileConfigurer:
+    def __init__(self, program):
+        self.program = program
+
+    def configure(self, ifc):
+        ifc.configured_by = self.program
+
+
+# Resolves each switch of the decompiled function to the flows the program lists for it
+class DecompilerSwitchAnalysisCmd:
+    def __init__(self, results):
+        self.results = results
+
+    def applyTo(self, program, _monitor):
+        listing = program.getListing()
+        for jump, flows in program.switch_flows.get(self.results.func, {}).items():
+            listing.getInstructionAt(at(jump)).flows = [at(f) for f in flows]
+        return program.switch_result
+
+
 @pytest.fixture(autouse = True)
 def ghidra(monkeypatch):
-    for name, attr, value in [("ghidra.program.model.address", "AddressSet", AddressSet),
-                              ("ghidra.program.model.listing", "Data", Data),
-                              ("ghidra.app.cmd.disassemble", "DisassembleCommand", DisassembleCommand),
-                              ("ghidra.app.cmd.function", "CreateFunctionCmd", CreateFunctionCmd),
-                              ("ghidra.util.task", "ConsoleTaskMonitor", ConsoleTaskMonitor)]:
+    DecompInterface.instances = []
+    for name, attrs in [("ghidra.program.model.address", {"AddressSet": AddressSet}),
+                        ("ghidra.program.model.listing", {"Data": Data}),
+                        ("ghidra.app.cmd.disassemble", {"DisassembleCommand": DisassembleCommand}),
+                        ("ghidra.app.cmd.function", {"CreateFunctionCmd": CreateFunctionCmd,
+                                                     "DecompilerSwitchAnalysisCmd": DecompilerSwitchAnalysisCmd}),
+                        ("ghidra.app.decompiler", {"DecompInterface": DecompInterface}),
+                        ("ghidra.app.plugin.core.analysis",
+                         {"SwitchAnalysisDecompileConfigurer": SwitchAnalysisDecompileConfigurer}),
+                        ("ghidra.util.task", {"ConsoleTaskMonitor": ConsoleTaskMonitor})]:
         fake = types.ModuleType(name)
-        setattr(fake, attr, value)
+        for attr, value in attrs.items():
+            setattr(fake, attr, value)
         monkeypatch.setitem(sys.modules, name, fake)
 
 
@@ -266,14 +328,111 @@ def test_scanning_all_skips_thunks_and_externals_and_logs_progress():
     assert [func.getEntryPoint().getOffset() for func, _ in results] == list(range(0x10001, 0x10000 + 1001))
 
 
+# --- unresolved switches ------------------------------------------------------------------------
+
+SWITCH = FlowType(computed = True, jump = True)
+
+
+def switch_jump(operand = "dword ptr [EDI*0x4 + 0x4c51bc]", flows = (), flow = SWITCH, length = 7):
+    return Instruction("JMP", operand, flow = flow, flows = flows, length = length)
+
+
+def test_a_table_indexed_jump_with_no_flows_names_its_table():
+    assert vfr.unresolved_jump_table(switch_jump()) == 0x4c51bc
+    assert vfr.unresolved_jump_table(switch_jump("dword ptr [EAX * 4 + 0x61bf24]")) == 0x61bf24
+
+
+@pytest.mark.parametrize("instr", [
+    switch_jump(flows = [at(BASE)]),                        # already recovered
+    switch_jump(flow = JUMP),                               # a direct jump
+    switch_jump("EAX"),                                     # a tail call through a register
+    switch_jump("dword ptr [EAX + 0x10]"),                  # a tail call through a vtable
+    switch_jump("dword ptr [EAX*0x2 + 0x4c51bc]"),          # not a dword table
+    Instruction("JMP", flow = SWITCH),                      # nothing to read
+])
+def test_anything_but_an_unresolved_dword_table_is_no_switch(instr):
+    assert vfr.unresolved_jump_table(instr) is None
+
+
+def switch_program(*jumps):
+    """A function at BASE whose instructions at the given offsets are unresolved switches,
+    with a case at BASE + 0x10."""
+    program = program_with(0x40)
+    listing = program.getListing()
+    func = program.getFunctionManager().add("FUN_00001000", BASE, size = 0x20)
+    listing.add_instruction(BASE, Instruction("PUSH", "EBX"))
+    for offset in jumps:
+        listing.add_instruction(BASE + offset, switch_jump(length = 1))
+    listing.add_instruction(BASE + 0x10, Instruction("ret"))
+    return program, func
+
+
+def test_an_unresolved_switch_is_flagged_where_the_jump_is():
+    program, func = switch_program(4)
+    found = scan(program, func)
+    assert kinds(found) == [("SWITCH_UNRESOLVED", 4, 4)]
+    assert (found[0]["severity"], found[0]["note"]) == ("HIGH", "jump table at 004c51bc never recovered")
+
+
+def test_recovering_runs_once_per_function_and_progresses_when_a_jump_gains_flows():
+    program, func = switch_program(4, 8)
+    program.switch_flows = {func: {BASE + 8: [BASE + 0x10]}}
+    recovered = []
+
+    def recover(f):
+        recovered.append(f)
+        return sys.modules["ghidra.app.cmd.function"].DecompilerSwitchAnalysisCmd(
+            DecompileResults(f)).applyTo(program, None)
+
+    findings = [{"kind": "SWITCH_UNRESOLVED", "from": at(BASE + o), "target": at(BASE + o)} for o in (4, 8)]
+    program.fixup_result = False
+    assert fix(program, func, findings, recover_switch = recover) == (True, [])
+    assert recovered == [func]
+
+
+def test_a_switch_the_recovery_leaves_unresolved_is_no_progress():
+    program, func = switch_program(4)
+    program.fixup_result = False
+    findings = [{"kind": "SWITCH_UNRESOLVED", "from": at(BASE + 4), "target": at(BASE + 4)}]
+    assert fix(program, func, findings, recover_switch = lambda f: False) == (False, [])
+    # Without a recoverer the finding is left for the report
+    assert fix(program, func, findings) == (False, [])
+
+
+def test_the_recoverer_is_set_up_as_the_switch_analyzer_sets_up_its_decompiler():
+    program, func = switch_program(4)
+    program.switch_flows = {func: {BASE + 4: [BASE + 0x10]}}
+    recover, dispose = vfr.switch_recoverer(program, ConsoleTaskMonitor())
+    ifc = DecompInterface.instances[0]
+    assert (ifc.configured_by, ifc.program) == (program, program)
+    assert recover(func)
+    assert ifc.decompiled == [(func, vfr.DECOMPILE_TIMEOUT)]
+    assert program.getListing().getInstructionAt(at(BASE + 4)).getFlows() == [at(BASE + 0x10)]
+    program.switch_result = False
+    assert not recover(func)
+    dispose()
+    assert ifc.disposed
+
+
+def test_a_failed_decompile_recovers_nothing():
+    program, func = switch_program(4)
+    program.switch_flows = {func: {BASE + 4: [BASE + 0x10]}}
+    recover, _ = vfr.switch_recoverer(program, ConsoleTaskMonitor())
+    program.decompile_fails = {func}
+    assert not recover(func)
+    program.decompile_fails, program.decompile_none = set(), {func}
+    assert not recover(func)
+    assert program.getListing().getInstructionAt(at(BASE + 4)).getFlows() == []
+
+
 # --- fixing one function ------------------------------------------------------------------------
 
 def finding(kind, target):
     return {"kind": kind, "target": at(target)}
 
 
-def fix(program, func, findings, fix_holes = False):
-    return vfr.fixup_function(program, func, findings, ConsoleTaskMonitor(), fix_holes)
+def fix(program, func, findings, fix_holes = False, recover_switch = None):
+    return vfr.fixup_function(program, func, findings, ConsoleTaskMonitor(), fix_holes, recover_switch)
 
 
 def test_undefined_flow_and_entry_are_disassembled_and_holes_only_when_asked():
@@ -427,6 +586,32 @@ def test_fixing_stops_after_the_pass_that_leaves_nothing(tmp_path, capsys):
     assert program.transactions == [["Fix fragmented functions (pass 1)", True]]
     assert func.getBody().contains(at(BASE + 2))
     assert "Mode: FIXED" in out.read_text()
+
+
+def test_fixing_a_switch_recovers_it_and_disposes_the_decompiler(tmp_path, capsys):
+    program, func = switch_program(4)
+    program.switch_flows = {func: {BASE + 4: [BASE + 0x10]}}
+    assert vfr.run(program, str(tmp_path / "r.txt"), True, 2, False)
+    assert "  after pass 1: 0 fragmented remain" in capsys.readouterr().out
+    assert [ifc.disposed for ifc in DecompInterface.instances] == [True]
+
+
+def test_the_decompiler_is_disposed_when_every_pass_leaves_the_switch(tmp_path, capsys):
+    program, func = switch_program(4)
+    program.fixup_result = False
+    assert not vfr.run(program, str(tmp_path / "r.txt"), True, 2, False)
+    assert "  after pass 2: 1 fragmented remain" in capsys.readouterr().out
+    assert [ifc.decompiled for ifc in DecompInterface.instances] == [[(func, 60), (func, 60)]]
+    assert DecompInterface.instances[0].disposed
+    assert "SWITCH_UNRESOLVED" in (tmp_path / "r.txt").read_text()
+
+
+def test_no_decompiler_is_started_without_a_switch_or_without_fixing(tmp_path):
+    assert not vfr.run(fixable_program(), str(tmp_path / "r.txt"), False, 1, False)
+    program, _ = switch_program(4)
+    assert not vfr.run(program, str(tmp_path / "r.txt"), False, 1, False)
+    assert vfr.run(fixable_program(), str(tmp_path / "r.txt"), True, 1, False)
+    assert DecompInterface.instances == []
 
 
 def test_splits_are_listed_by_address_once_each_with_one_delete_command(tmp_path, capsys):

@@ -37,7 +37,8 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderBones_FUN_005498d0(CDeform
       CStack_40.x = (int)ROUND(fStack_34 * _DAT_005e4758);
       CStack_40.y = (int)ROUND(afStack_30[0] * _DAT_005e4758);
       CStack_40.z = (int)ROUND(afStack_30[1] * _DAT_005e4758);
-      engine_special_cpp_FUN_005632a3((SProjectedVertex *)(*DAT_005f2afc + 0x124f50),&CStack_40);
+      engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+                ((SProjectedVertex *)(*DAT_005f2afc + 0x124f50),&CStack_40);
       iVar1 = *DAT_005f2afc;
       if ((*(byte *)(iVar1 + 0x124f63) & 0x80) == 0) {
         engine_2d_c_drawText_FUN_00401fe0

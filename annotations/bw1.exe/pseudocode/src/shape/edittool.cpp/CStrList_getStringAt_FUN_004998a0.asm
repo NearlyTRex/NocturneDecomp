@@ -9,7 +9,7 @@
 ;
 ; XREF[18]:
 ;   core_fldnotes.cpp_SNotesEntry_layout_FUN_004bbd10 at 004bbe2d
-;   core_mission.cpp_FUN_0051c240 at 0051c2d6
+;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_0051c240 at 0051c2d6
 ;   core_script.cpp_CScript_buildParsedLines_FUN_00543fd0 at 0054400f
 ;   core_script.cpp_CScript_renderEditor_FUN_00543c00 at 00543d57
 ;   core_sound.cpp_CSound_findRandomSoundFile_FUN_0057be00 at 0057be3c

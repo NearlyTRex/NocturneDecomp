@@ -16,7 +16,8 @@ void __cdecl core_fire_cpp_CStormEffect_process_FUN_004a0570(CStormEffect *this_
      this_ptr->time_remaining = fVar1, fVar1 < 0.0)) {
     this_ptr->time_remaining = 0.0;
     if (this_ptr->saved_weather_type != 5) {
-      core_weather_cpp_FUN_0057d050(0x02D0C1A0,this_ptr->saved_weather_type);
+      core_weather_cpp_CWeather_setWeatherType_FUN_0057d050
+                (0x02D0C1A0,this_ptr->saved_weather_type);
     }
     sound_sndmain_cpp_killSfx_FUN_00556be0(this_ptr->sfx_handle);
     this_ptr->sfx_handle = 0;

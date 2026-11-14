@@ -857,7 +857,8 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
       break;
     case 0xd:
       iVar7 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,100);
-      fStack_14 = core_motion_cpp_FUN_004fc930(&pCStack_28->base);
+      fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                            (&pCStack_28->base);
       if ((float)_DAT_005da4d6 < fStack_14) {
         if (iVar7 < 0x32) {
           fVar23 = 3.92364e-44;
@@ -872,7 +873,8 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
     case 3:
     case 10:
 switchD_005a0147_caseD_3:
-      core_motion_cpp_FUN_004fc930(&(this_ptr->base).base.model.base);
+      core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                (&(this_ptr->base).base.model.base);
       core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0((SDamageInfo *)&stack0xfffffc94);
       damage_info = (SDamageInfo *)&stack0xfffffc94;
       fVar23 = 0.6;
@@ -1119,7 +1121,7 @@ LAB_0059f642:
     (this_ptr->base).base.model.accumulated_root_motion.y =
          (this_ptr->base).base.model.accumulated_root_motion.z;
     pCVar2->x = (this_ptr->base).base.model.accumulated_root_motion.y;
-    core_charactr_cpp_FUN_0042c230((CCharacter *)this_ptr,&CStack_27c);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230((CCharacter *)this_ptr,&CStack_27c);
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_0042cd30((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130

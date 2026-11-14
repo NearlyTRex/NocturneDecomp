@@ -48,7 +48,8 @@ void __cdecl core_ghostchi_cpp_CGhostChild_processMeleeAttackState_FUN_005a9580(
     core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,5,1);
     pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
     if ((((pSVar6->state_index != 5) ||
-         (fStack_10 = core_motion_cpp_FUN_00503e60(&this_ptr_00->base), fStack_c = fStack_10,
+         (fStack_10 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00503e60
+                                (&this_ptr_00->base), fStack_c = fStack_10,
          fStack_10 < _DAT_006006b0)) || (_DAT_006006b4 < fStack_10)) ||
        ((this_ptr->base).flinch_active != 0)) {
       if (this_ptr->hit_count < 3) {

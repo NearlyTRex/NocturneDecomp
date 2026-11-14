@@ -76,23 +76,27 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_00498ed0(CExplosion *this_ptr)
   local_24.y = (int)ROUND(local_44 * _DAT_005f64e4);
   local_24.z = (int)ROUND(_DAT_005f64e4 * 0.0);
   local_14 = local_48;
-  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_24);
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+            (&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_24);
   local_8 = local_c;
   local_48 = (float)local_c;
   local_54.x = (int)ROUND(local_48 * _DAT_005f64e4);
   local_54.y = (int)ROUND(local_44 * _DAT_005f64e4);
   local_54.z = (int)ROUND(local_40 * _DAT_005f64e4);
-  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_54);
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+            (&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_54);
   local_44 = -this_ptr->scale * (float)_DAT_005d5542 * (float)_DAT_005d552a;
   local_3c.x = (int)ROUND(local_48 * _DAT_005f64e4);
   local_3c.y = (int)ROUND(local_44 * _DAT_005f64e4);
   local_3c.z = (int)ROUND(local_40 * _DAT_005f64e4);
-  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_3c);
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+            (&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_3c);
   local_48 = local_14;
   local_6c.x = (int)ROUND(local_14 * _DAT_005f64e4);
   local_6c.y = (int)ROUND(local_44 * _DAT_005f64e4);
   local_6c.z = (int)ROUND(local_40 * _DAT_005f64e4);
-  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_6c);
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+            (&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_6c);
   this_ptr_00 = DAT_0060b280;
   DAT_0060b280->vertex_buffer_ptr->u = 0x20000;
   this_ptr_00->vertex_buffer_ptr->v = 0x20000;

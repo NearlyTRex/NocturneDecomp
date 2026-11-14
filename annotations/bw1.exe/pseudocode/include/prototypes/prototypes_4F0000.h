@@ -17,6 +17,7 @@
 #include "types/classes/CIniFile.h"
 #include "types/classes/CInventory.h"
 #include "types/classes/CKeyActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CKeys.h"
 #include "types/classes/CLadder.h"
 #include "types/classes/CLarva.h"
@@ -104,7 +105,7 @@ void __cdecl engine_ini_cpp_CIniFile_getString_FUN_004f4c00(CIniFile *this_ptr,c
 void __cdecl engine_ini_cpp_CIniFile_setString_FUN_004f4c90(CIniFile *this_ptr,char *key,char *value);
 void engine_ini_cpp_FUN_004f4d10(int param_1,undefined4 param_2);
 void engine_ini_cpp_FUN_004f4d70(int param_1,undefined4 param_2);
-void engine_ini_cpp_FUN_004f4db0(int param_1,undefined4 param_2);
+void __cdecl engine_ini_cpp_CIniFile_getFloat_FUN_004f4db0(CIniFile *this_ptr,char *key,float *output);
 void engine_ini_cpp_FUN_004f4e20(int param_1,undefined4 param_2);
 void engine_ini_cpp_FUN_004f4e70(void);
 void engine_ini_cpp_FUN_004f4ee0(int param_1,undefined4 param_2);
@@ -113,7 +114,7 @@ CIni * __cdecl engine_ini_cpp_CIni_dtor_FUN_004f4f40(CIni *this_ptr,uint flags);
 void __cdecl core_inivar_cpp_readIniData_FUN_004f4f50(void);
 void __cdecl core_inivar_cpp_writeIniData_FUN_004f5760(void);
 void __cdecl core_inv_cpp_staticInit_FUN_004f5ef0(void);
-CDemonActor * core_inv_cpp_FUN_004f60c0(CDemonActor *param_1);
+CKeyFramedModelInstance * __cdecl core_inv_cpp_getItemModel_FUN_004f60c0(CDemonActor *actor_ptr);
 char * __cdecl core_inv_cpp_getItemDisplayName_FUN_004f62e0(CDemonActor *actor_ptr);
 char * __cdecl core_inv_cpp_getItemDescription_FUN_004f6350(CDemonActor *actor_ptr);
 void core_inv_cpp_FUN_004f63c0(float param_1,float param_2);
@@ -129,7 +130,7 @@ void __cdecl core_inv_cpp_CInventory_initialize_FUN_004f7050(CInventory *this_pt
 void __cdecl core_inv_cpp_loadAssets_FUN_004f70e0(void);
 void __cdecl core_inv_cpp_freeInventory_FUN_004f75a0(void);
 void __cdecl core_inv_cpp_clampWeaponAmmoCount_FUN_004f7660(CDemonActor *actor_ptr);
-int __cdecl core_inv_cpp_FUN_004f7690(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message);
+int __cdecl core_inv_cpp_CInventory_addItem_FUN_004f7690(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message);
 void core_inv_cpp_FUN_004f8b70(CInventory *param_1,CDemonActor *param_2);
 CDemonActor * __cdecl core_inv_cpp_FUN_004f8c40(CInventory *this_ptr,char *item_name);
 int __cdecl core_inv_cpp_FUN_004f8c90(CInventory *this_ptr,char *class_name);
@@ -233,7 +234,7 @@ CBoundingBox3D * __cdecl core_lever_cpp_CLever_getBoundingBox_FUN_004ff670(CLeve
 void core_lever_cpp_FUN_004ff6b0(int param_1);
 void __cdecl core_lever_cpp_CLever_archive_FUN_004ff770(CLever *this_ptr);
 ECollisionType __cdecl core_lever_cpp_CLever_getCollisionType_FUN_004ff950(CLever *this_ptr,SCollisionInfo *collision_info);
-undefined4 core_lever_cpp_FUN_004ff970(int param_1,undefined4 param_2);
+int __cdecl core_lever_cpp_CLever_isAccessibleFrom_FUN_004ff970(CLever *this_ptr,CVector3f *world_position);
 CLever * __cdecl core_lever_cpp_CLever_dtor_FUN_004ff9f0(CLever *this_ptr,uint flags);
 void __cdecl engine_light_cpp_setAmbientLightLevel_FUN_004ffa50(int light_level);
 int __cdecl engine_light_cpp_getAmbientLightLevel_FUN_004ffa80(void);

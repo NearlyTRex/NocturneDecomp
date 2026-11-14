@@ -66,7 +66,7 @@ void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_0055d720(C3DS
       CStack_50.y = (int)ROUND(fStack_40 * _DAT_00605158);
       CStack_50.z = (int)ROUND(fStack_3c * _DAT_00605158);
       iStack_8 = iVar5;
-      engine_special_cpp_FUN_00580173
+      engine_special_cpp_transformAndProjectPoint_FUN_00580173
                 ((SProjectedVertex *)
                  ((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x + iVar3),
                  &CStack_50);

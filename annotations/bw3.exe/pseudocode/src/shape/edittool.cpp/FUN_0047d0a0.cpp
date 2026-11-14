@@ -12,7 +12,7 @@
 void shape_edittool_cpp_FUN_0047d0a0(void)
 
 {
-  uint in_stack_00000004;
+  CEditorTools *in_stack_00000004;
   char *in_stack_00000008;
   char acStack_414 [1024];
   byte *puStack_14;
@@ -27,7 +27,7 @@ void shape_edittool_cpp_FUN_0047d0a0(void)
   puStack_14 = &stack0x0000000c;
   _vsprintf(acStack_414,in_stack_00000008,(va_list_t)&puStack_14);
   puStack_14 = (byte *)0x0;
-  shape_edittool_cpp_FUN_0047fa80(in_stack_00000004);
+  shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80(in_stack_00000004);
   engine_3d_c_setRenderAlpha_FUN_00406bf0(0xffff);
   engine_mini3d_cpp_setAlpha_FUN_004edaf0(1.0);
   engine_font_cpp_CBitFont_drawText_FUN_004b0a20

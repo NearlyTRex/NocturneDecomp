@@ -9,9 +9,9 @@
 // Address: 0051c1a0
 void __cdecl FUN_0051c1a0(int culling_mode);
 
-// Original: engine_prim.c_FUN_0051c1b0
+// Original: engine_prim.c_setupBasicSoftwareEdge_FUN_0051c1b0
 // Address: 0051c1b0
-void FUN_0051c1b0(int param_1,int param_2);
+void __cdecl setupBasicSoftwareEdge(SRenderVertex *start_vertex,SRenderVertex *end_vertex);
 
 // Original: engine_prim.c_findEdgeInBuffer_FUN_0051c580
 // Address: 0051c580

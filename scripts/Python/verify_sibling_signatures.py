@@ -444,18 +444,146 @@ def structural_match(a_func, a_insns, b_insns, a_to_b):
     source reads none past its declared parameters (which leaves out varargs
     and bodies the ESP tracking misreads). Scored against the measured pairs
     of the three Blair Witch builds: 0 conflicts in 3461 accepted.
+
+    A source with no mapped callee has no call order to compare; see leaf_match.
     """
-    n = len((a_func.get("vars") or {}).get("params") or [])
-    if not n or not callees_in_order(a_insns, b_insns, a_to_b):
+    params = (a_func.get("vars") or {}).get("params") or []
+    if not params:
+        return False
+    order = callees_in_order(a_insns, b_insns, a_to_b)
+    if order is None:
+        return leaf_match(params, a_insns, b_insns, a_to_b)
+    if not order:
         return False
     read_a, read_b = stack_args_read(a_insns), stack_args_read(b_insns)
-    return 0 in read_b and read_a == read_b and all(i < n for i in read_a)
+    return 0 in read_b and read_a == read_b and all(i < len(params) for i in read_a)
+
+
+def leaf_match(params, a_insns, b_insns, a_to_b):
+    """structural_match for a source that calls nothing the mapping pairs.
+
+    The call order cannot vouch for the pairing, so the target must not call a
+    mapped function the source does not, and every slot read must be a declared
+    *stack* parameter: a source pinning a parameter to a register while its body
+    reads the stack has the wrong prototype, which equal reads would carry over.
+    Scored on the measured pairs of the three Blair Witch builds: 1360 accepted,
+    0 conflicts (the 3 the rule rejects were one CRT function, mis-prototyped so).
+    """
+    b_to_a = {b: a for a, b in a_to_b.items()}
+    if callees_in_order(b_insns, a_insns, b_to_a) is False:
+        return False
+    n_stack = sum(1 for p in params if (p.get("storage") or {}).get("stack"))
+    read_a, read_b = stack_args_read(a_insns), stack_args_read(b_insns)
+    return 0 in read_b and read_a == read_b and all(i < n_stack for i in read_a)
 
 
 def structural_tally(results):
-    """How the structural check scores against the measured verdicts."""
+    """How the structural check scores against the measured verdicts.
+
+    A rewritten prototype (see esi_output_param) is scored on its own line.
+    """
     return Counter((r["sig_verdict"], r["sig_structural"]) for r in results
-                   if r["sig_verdict"] in ("agree", "conflict"))
+                   if r["sig_verdict"] in ("agree", "conflict") and not r.get("sig_rewrite"))
+
+
+# Watcom returns a struct through a buffer whose address the caller passes in ESI,
+# after the stack arguments. The cspec has one convention per stack-argument count.
+ESI_OUTPUT_CONVENTIONS = {0: "__esi", 1: "__stack_esi", 2: "__stack2_esi",
+                          3: "__stack3_esi", 4: "__stack4_esi", 5: "__stack5_esi"}
+
+_ESI_RE = re.compile(r"\besi\b")
+_STRING_OPS = frozenset(("movsb", "movsw", "movsd", "lodsb", "lodsw", "lodsd",
+                         "cmpsb", "cmpsw", "cmpsd", "outsb", "outsw", "outsd"))
+_REG_WRITES = frozenset(("mov", "lea", "pop", "movzx", "movsx"))
+
+# Names a source gives the pointer its function fills in
+_OUTPUT_NAME_RE = re.compile(r"out|result|dest|dst|ret", re.I)
+
+
+def esi_live_in(insns):
+    """Does the body read ESI before it writes it? Saving it with `push esi` is neither."""
+    for _, mnem, ops in insns:
+        if mnem.split()[-1] in _STRING_OPS:
+            return True
+        if not _ESI_RE.search(ops) or (mnem == "push" and ops == "esi"):
+            continue
+        dst, _, src = (s.strip() for s in ops.partition(","))
+        if dst == "esi" and ((mnem in _REG_WRITES and not _ESI_RE.search(src))
+                             or (mnem in ("xor", "sub") and src == "esi")):
+            return False
+        return True
+    return False
+
+
+def calls_agree(a_insns, b_insns, a_to_b):
+    """The call evidence structural_match accepts: in order, or a leaf on both sides."""
+    order = callees_in_order(a_insns, b_insns, a_to_b)
+    if order is not None:
+        return order
+    b_to_a = {b: a for a, b in a_to_b.items()}
+    return callees_in_order(b_insns, a_insns, b_to_a) is not False
+
+
+def esi_output_param(a_func, a_insns, b_insns, a_to_b):
+    """Index of the source's output pointer that the target takes in ESI, else None.
+
+    The target returns a struct the Watcom way where the source passed the buffer
+    as an ordinary stack argument: the target reads ESI on entry and the source
+    does not, and the target's stack reads are the source's with that one slot
+    taken out. The parameter must be a pointer. Taking out any slot of a run of
+    consecutive reads leaves the same reads, so when more than one slot fits, the
+    type proves nothing: the pointer the source returns, or failing that the only
+    one named as an output, is taken; otherwise none is.
+
+    Read on pairs nocedit's own prototype does not fit, the rewritten prototype
+    measured 18 agreements and no conflict across the three Blair Witch builds,
+    5 of them pairs that conflicted as nocedit declared them.
+    """
+    params = (a_func.get("vars") or {}).get("params") or []
+    if not params or (a_func.get("conv") or "__cdecl") != "__cdecl" \
+            or len(params) - 1 not in ESI_OUTPUT_CONVENTIONS \
+            or any(not (p.get("storage") or {}).get("stack") for p in params):
+        return None
+    if esi_live_in(a_insns) or not esi_live_in(b_insns) \
+            or not calls_agree(a_insns, b_insns, a_to_b):
+        return None
+    read_a, read_b = stack_args_read(a_insns), stack_args_read(b_insns)
+    if any(i >= len(params) for i in read_a):
+        return None
+    fits = [k for k in sorted(read_a) if {i - (i > k) for i in read_a if i != k} == read_b]
+    pointers = [k for k in fits if (params[k].get("type") or "").rstrip().endswith("*")]
+    if len(fits) == 1:
+        return pointers[0] if pointers else None
+    fits = pointers
+    ret = (a_func.get("ret") or "").replace(" ", "")
+    returned = [k for k in fits if (params[k].get("type") or "").replace(" ", "") == ret]
+    named = [k for k in (returned or fits) if _OUTPUT_NAME_RE.search(params[k].get("name") or "")]
+    for choice in (named, returned):
+        if len(choice) == 1:
+            return choice[0]
+    return None
+
+
+def esi_output_function(a_func, k):
+    """The source function as the target declares it: parameter k moved last, into ESI."""
+    params = a_func["vars"]["params"]
+    rest = [p for i, p in enumerate(params) if i != k]
+    moved = [{**p, "storage": {"stack": True, "offset": 4 + 4 * i, "size": 4}}
+             for i, p in enumerate(rest)]
+    moved.append({**params[k], "storage": {"stack": False, "reg": "ESI", "size": 4}})
+    return {**a_func, "conv": ESI_OUTPUT_CONVENTIONS[len(rest)], "vars": {"params": moved}}
+
+
+def esi_rewrite(a_func, k):
+    """What the applier needs to declare the rewritten prototype.
+
+    No storage: the convention places every parameter, the last in ESI, so the
+    prototype can be laid out by rule rather than pinned by hand.
+    """
+    f = esi_output_function(a_func, k)
+    return {"kind": "esi_output", "output": a_func["vars"]["params"][k].get("name"),
+            "conv": f["conv"],
+            "params": [{"name": p.get("name"), "type": p.get("type")} for p in f["vars"]["params"]]}
 
 
 def main(argv=None):
@@ -487,10 +615,25 @@ def main(argv=None):
         verdict, detail = verify_pair(a_func, b_func, b_img,
                                       sites.get(pair["b"], ()), insn_cache)
         expected_by_b[pair["b"]] = expected_param_bytes(a_func)[0]
-        structural = structural_match(a_func, _function_insns(a_img, a_cache, pair["a"]),
-                                      _function_insns(b_img, insn_cache, pair["b"]), a_to_b)
-        results.append({**pair, "sig_verdict": verdict, "sig_detail": detail,
-                        "sig_structural": structural})
+        a_insns = _function_insns(a_img, a_cache, pair["a"])
+        b_insns = _function_insns(b_img, insn_cache, pair["b"])
+        structural = structural_match(a_func, a_insns, b_insns, a_to_b)
+        record = {**pair, "sig_verdict": verdict, "sig_detail": detail,
+                  "sig_structural": structural}
+        k = None if verdict == "agree" or structural else \
+            esi_output_param(a_func, a_insns, b_insns, a_to_b)
+        if k is not None:
+            # nocedit's prototype does not fit and the target takes its output in
+            # ESI: measure the prototype the target actually has instead.
+            rewritten = esi_output_function(a_func, k)
+            verdict, detail = verify_pair(rewritten, b_func, b_img,
+                                          sites.get(pair["b"], ()), insn_cache)
+            expected_by_b[pair["b"]] = expected_param_bytes(rewritten)[0]
+            record.update(sig_verdict=verdict, sig_structural=True,
+                          sig_detail="output %s in ESI: %s" % (rewritten["vars"]["params"][-1].get("name"),
+                                                                detail),
+                          sig_rewrite=esi_rewrite(a_func, k))
+        results.append(record)
     by_slot = propagate_through_slots(results, expected_by_b, override_peers(b_img.vtables))
 
     tally = Counter(r["sig_verdict"] for r in results)
@@ -522,6 +665,9 @@ def main(argv=None):
     print(f"\nstructural match: {accepted} measured pair(s) accepted, "
           f"{st[('conflict', True)]} of them conflicts; "
           f"{unverified} unverifiable pair(s) it would carry")
+    rewrites = Counter(r["sig_verdict"] for r in results if r.get("sig_rewrite"))
+    print(f"output in ESI: {sum(rewrites.values())} prototype(s) rewritten, "
+          f"{rewrites['agree']} agree, {rewrites['conflict']} conflict")
 
     print("\nby mapping confidence:")
     print(f"  {'':<8} {'agree':>7} {'conflict':>9} {'unverif':>9}")

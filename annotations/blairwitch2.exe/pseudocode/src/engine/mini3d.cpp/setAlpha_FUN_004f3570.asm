@@ -9,6 +9,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[10]:
+;   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_0047fd00 at 0047ff19
 ;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047d270 at 0047d3ea
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047dc40 at 0047dd05
 ;   shape_edittool.cpp_CInputString_draw_FUN_0047afb0 at 0047aff4
@@ -17,7 +18,6 @@
 ;   shape_edittool.cpp_FUN_0047be90 at 0047befd
 ;   shape_edittool.cpp_FUN_0047bf80 at 0047bff6
 ;   shape_edittool.cpp_FUN_0047e870 at 0047ebae
-;   shape_edittool.cpp_FUN_0047fd00 at 0047ff19
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800 at 0047ba00
 ;
 ; Referenced Globals:

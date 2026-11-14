@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   text
 ;
 ; XREF[1]:
-;   core_menu.cpp_FUN_0050d640 at 0050e65c
+;   core_menu.cpp_configureCustomKeyBindings_FUN_0050d640 at 0050e65c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005dc60f

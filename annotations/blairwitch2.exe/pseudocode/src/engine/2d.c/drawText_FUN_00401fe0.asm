@@ -18,7 +18,7 @@
 ;   core_main.c_FUN_004e45e0 at 004e45fc
 ;   core_menu.cpp_calibrateGamepad_FUN_004eb490 at 004eb55f
 ;   core_menu.cpp_showJoystickCalibrationScreen_FUN_004eb3d0 at 004eb46e
-;   core_motion.cpp_FUN_005042e0 at 005043c6
+;   core_motion.cpp_CMotionController_render_FUN_005042e0 at 005043c6
 ;   ... and 12 more
 ;
 ; Referenced Globals:

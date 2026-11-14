@@ -55,7 +55,7 @@
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_00538dd0
 ;   core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_005388e0
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500
-;   engine_special.cpp_FUN_005632a3
+;   engine_special.cpp_transformAndProjectPoint_FUN_005632a3
 ;
 ; *****************************************************************************
 
@@ -167,8 +167,8 @@ section .text
     PUSH EBP                            ; 004fa5be | DAT_01d88648
     ADD EAX,EDX                         ; 004fa5bf
     PUSH EAX                            ; 004fa5c1
-    CALL engine_special.cpp_FUN_005632a3 ; 004fa5c2
-        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005632a3 ; 004fa5c2
+        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004fa5c7
     MOV EAX,[0x005f2afc]                ; 004fa5ca | DAT_005f2afc
     MOV ECX,dword ptr [ESP + 0x5c]      ; 004fa5cf

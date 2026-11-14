@@ -15,11 +15,11 @@
 ;   core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_0048bdc0 at 0048beb7
 ;   core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_0048e7f0 at 0048e8fc
 ;   core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_0048f120 at 0048f1b2
+;   core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_0048b880 at 0048bbbc
 ;   core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_0048cba0 at 0048cc09
 ;   core_dtrace.cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0048fa40 at 0048faf4
 ;   core_dtrace.cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0048f920 at 0048f9d5
 ;   core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_0048c300 at 0048c46c
-;   core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_0048e9b0 at 0048ecc5
 ;   ... and 2 more
 ;
 ; *****************************************************************************

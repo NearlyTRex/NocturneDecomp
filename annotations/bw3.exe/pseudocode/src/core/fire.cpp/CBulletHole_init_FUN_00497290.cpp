@@ -66,8 +66,9 @@ void __cdecl core_fire_cpp_CBulletHole_init_FUN_00497290(CBulletHole *this_ptr,C
   this_ptr->decal_type = decal_type;
   this_ptr->actor_ptr = hit_actor;
   if (hit_actor != (CDemonActor *)0x0) {
-    core_xform_cpp_FUN_00583940(&local_e8,this_ptr,&this_ptr->euler_angles);
-    core_xform_cpp_FUN_00583800
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
+              (&local_e8,this_ptr,&this_ptr->euler_angles);
+    core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_00583800
               (&local_b8,&(this_ptr->actor_ptr->location).position,
                &(this_ptr->actor_ptr->orient).vec);
     core_xform_cpp_multiplyMatrix3x4_FUN_005833e0(&local_e8,&local_b8,&local_148);

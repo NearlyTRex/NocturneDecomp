@@ -9,10 +9,10 @@
 ;
 ; XREF[5]:
 ;   core_set.cpp_CDemonSet_initScene_FUN_0054ec60 at 0054edbb
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_00551170 at 005512e6
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00550260 at 00550362
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0 at 0054f9c4
 ;   core_set.cpp_FUN_00550da0 at 00550f05
-;   core_set.cpp_FUN_00551170 at 005512e6
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dlight_cpp_005d8fbc

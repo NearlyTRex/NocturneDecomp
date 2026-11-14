@@ -141,9 +141,10 @@ void __cdecl core_toxhand_cpp_CTheHand_process_FUN_0056c140(CTheHand *this_ptr,f
                                      (pCVar3,(CDemonActor *)this_ptr,1), iVar6 != 0)) {
               pCVar3 = (this_ptr->base).victim;
               this_ptr->target_blend = 0.0;
-              core_xform_cpp_FUN_00583940
+              core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
                         (&CStack_2a4,&(pCVar3->base).location,&(pCVar3->base).orient);
-              core_xform_cpp_FUN_00583800(&CStack_334,pCStack_14,pCStack_1c);
+              core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_00583800
+                        (&CStack_334,pCStack_14,pCStack_1c);
               core_xform_cpp_inverse_FUN_00584560(auStack_274);
               pCVar13 = &CStack_304;
               pfVar14 = afStack_214;
@@ -179,7 +180,8 @@ void __cdecl core_toxhand_cpp_CTheHand_process_FUN_0056c140(CTheHand *this_ptr,f
                    afStack_158[(uint)bVar17 * -2 + (uint)bVar17 * -2 + 4];
               afStack_60[1] = -1.91555;
               afStack_60[2] = -0.767692;
-              core_xform_cpp_FUN_00583940(pCStack_20,afStack_b0 + 0x14,afStack_158 + 0x23);
+              core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
+                        (pCStack_20,afStack_b0 + 0x14,afStack_158 + 0x23);
             }
           }
         }

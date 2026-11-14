@@ -8,11 +8,11 @@
 ; int              Stack[0x8]:4   y
 ;
 ; XREF[5]:
+;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210 at 0047f37f
 ;   shape_edittool.cpp_CEditorTools_drawPixelLine_FUN_004808b0 at 004809a7
 ;   shape_edittool.cpp_FUN_0047a450 at 0047a463
-;   shape_edittool.cpp_FUN_0047a480 at 0047a4d2
-;   shape_edittool.cpp_FUN_0047a590 at 0047a5f7
-;   shape_edittool.cpp_FUN_0047f210 at 0047f37f
+;   shape_edittool.cpp_drawDashedLine_FUN_0047a590 at 0047a5f7
+;   shape_edittool.cpp_plotPixelWithClipping_FUN_0047a480 at 0047a4d2
 ;
 ; Called Functions:
 ;   engine_mini3d.cpp_fillRect_FUN_004f90d0

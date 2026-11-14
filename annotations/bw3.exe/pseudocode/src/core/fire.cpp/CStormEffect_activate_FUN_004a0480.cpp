@@ -9,40 +9,37 @@
 void __cdecl core_fire_cpp_CStormEffect_activate_FUN_004a0480(CStormEffect *this_ptr,CVector3f position)
 
 {
-  int iVar1;
+  EWeatherType EVar1;
+  int iVar2;
   CSound *this_ptr_00;
-  int *piVar2;
+  CWeather *this_ptr_01;
   uint uVar3;
   CVector3f *pCVar4;
-  float local_20;
-  float local_1c;
-  float local_18;
-  float local_14;
-  float local_10;
-  float local_c;
+  CVector3f local_20;
+  CVector3f local_14;
   
-  piVar2 = 0x02D0C1A0;
-  iVar1 = *0x02D0C1A0;
-  this_ptr->saved_weather_type = iVar1;
-  if (iVar1 == 0) {
-    iVar1 = g_CDemonSetPtr->selected_camera_index;
-    pCVar4 = &g_CDemonSetPtr->cameras[iVar1].position;
-    if ((CVector3f *)&local_14 != pCVar4) {
-      local_14 = pCVar4->x;
-      local_10 = g_CDemonSetPtr->cameras[iVar1].position.y;
-      local_c = g_CDemonSetPtr->cameras[iVar1].position.z;
+  this_ptr_01 = 0x02D0C1A0;
+  EVar1 = 0x02D0C1A0->weather_type;
+  this_ptr->saved_weather_type = EVar1;
+  if (EVar1 == WEATHER_TYPE_NONE) {
+    iVar2 = g_CDemonSetPtr->selected_camera_index;
+    pCVar4 = &g_CDemonSetPtr->cameras[iVar2].position;
+    if (&local_14 != pCVar4) {
+      local_14.x = pCVar4->x;
+      local_14.y = g_CDemonSetPtr->cameras[iVar2].position.y;
+      local_14.z = g_CDemonSetPtr->cameras[iVar2].position.z;
     }
-    pCVar4 = &g_CDemonSetPtr->cameras[iVar1].orientation;
-    if ((CVector3f *)&local_20 != pCVar4) {
-      local_20 = pCVar4->x;
-      local_1c = g_CDemonSetPtr->cameras[iVar1].orientation.y;
-      local_18 = g_CDemonSetPtr->cameras[iVar1].orientation.z;
+    pCVar4 = &g_CDemonSetPtr->cameras[iVar2].orientation;
+    if (&local_20 != pCVar4) {
+      local_20.x = pCVar4->x;
+      local_20.y = g_CDemonSetPtr->cameras[iVar2].orientation.y;
+      local_20.z = g_CDemonSetPtr->cameras[iVar2].orientation.z;
     }
-    core_weather_cpp_FUN_0057d050(0x02D0C1A0,5);
-    core_weather_cpp_FUN_0057d1a0(0x02D0C1A0,&local_14,&local_20);
+    core_weather_cpp_CWeather_setWeatherType_FUN_0057d050(0x02D0C1A0,5);
+    core_weather_cpp_CWeather_setOriginAndRotation_FUN_0057d1a0(0x02D0C1A0,&local_14,&local_20);
   }
   else {
-    core_weather_cpp_FUN_0057d050(piVar2,5);
+    core_weather_cpp_CWeather_setWeatherType_FUN_0057d050(this_ptr_01,5);
   }
   this_ptr_00 = 0x02CF5680;
   this_ptr->time_remaining = 5.0;

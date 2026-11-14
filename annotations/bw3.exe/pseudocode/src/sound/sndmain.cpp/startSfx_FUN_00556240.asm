@@ -16,11 +16,11 @@
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_playClip_FUN_00412ee0 at 00413198
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_004953d0 at 00495429
 ;   core_fire.cpp_CFireball_onCollision_FUN_00499eb0 at 00499f56
-;   core_menu.cpp_FUN_004e94f0 at 004e9e47
+;   core_menu.cpp_configureSoundOptions_FUN_004e94f0 at 004e9e47
 ;   core_sound.cpp_CSound_configure_FUN_005607d0 at 005608ea
 ;   core_sound.cpp_CSound_process_FUN_0055ff40 at 0056056a
-;   core_sound.cpp_FUN_0055f6b0 at 0055f9e4
 ;   core_sound.cpp_playSfxInternal_FUN_0055f020 at 0055f257
+;   core_sound.cpp_processTrainSounds_FUN_0055f6b0 at 0055f9e4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d2507

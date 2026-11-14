@@ -15,9 +15,9 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087b0
 ;   core_box.cpp_FUN_004207b0
+;   core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_00552d40
 ;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0
 ;   core_set.cpp_CDemonSet_rotateVerticies_FUN_00553140
-;   core_set.cpp_FUN_00552d40
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_00482210
@@ -147,8 +147,8 @@ section .text
     PUSH ESI                            ; 005ab179
     MOV EDX,dword ptr [0x00622c18]      ; 005ab17a | g_CDemonSetPtr
     PUSH EDX                            ; 005ab180
-    CALL core_set.cpp_FUN_00552d40      ; 005ab181
-        ;   XREF to: 00552d40 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00552d40(CDemonSet * this_ptr, CVector3f * vertex_position, CVector3f * position_offset, int vertex_index)
+    CALL core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_00552d40 ; 005ab181
+        ;   XREF to: 00552d40 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_00552d40(CDemonSet * this_ptr, CVector3f * vertex_position, CVector3f * position_offset, int vertex_index)
     MOV ECX,dword ptr [0x00612560]      ; 005ab186 | DAT_00612560
     ADD ESP,0x10                        ; 005ab18c
     MOV EAX,dword ptr [EBP + 0x28c]     ; 005ab18f

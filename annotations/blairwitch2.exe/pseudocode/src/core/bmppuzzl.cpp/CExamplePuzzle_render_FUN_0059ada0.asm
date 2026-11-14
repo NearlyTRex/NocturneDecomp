@@ -13,7 +13,7 @@
 ; Called Functions:
 ;   engine_2d.c_drawRect_FUN_00403170
 ;   engine_special.cpp_clearScreen_FUN_0055b1f0
-;   shape_edittool.cpp_FUN_0047f210
+;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210
 ;
 ; *****************************************************************************
 
@@ -43,8 +43,8 @@ section .text
     PUSH 0x0                            ; 0059add0
     MOV EAX,[0x006138e0]                ; 0059add2 | g_CEditorToolsPtr
     PUSH EAX                            ; 0059add7
-    CALL shape_edittool.cpp_FUN_0047f210 ; 0059add8
-        ;   XREF to: 0047f210 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047f210()
+    CALL shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210 ; 0059add8
+        ;   XREF to: 0047f210 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210(CEditorTools * this_ptr, int use_clipping)
     ADD ESP,0x8                         ; 0059addd
     POP EBP                             ; 0059ade0
     POP EDI                             ; 0059ade1

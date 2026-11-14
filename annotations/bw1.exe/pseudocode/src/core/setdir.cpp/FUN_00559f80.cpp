@@ -374,7 +374,7 @@ LAB_00559fef:
                     (DAT_00612560,&CStack_124,(CVector3f *)0x0);
           iVar8 = 0;
           do {
-            engine_special_cpp_FUN_00580173
+            engine_special_cpp_transformAndProjectPoint_FUN_00580173
                       ((SProjectedVertex *)
                        ((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x +
                        iVar8),input);
@@ -459,7 +459,7 @@ LAB_00559fef:
                     CStack_118.x = (int)ROUND(afStack_180[2] * _DAT_00605120);
                     CStack_118.y = (int)ROUND(afStack_180[3] * _DAT_00605120);
                     CStack_118.z = (int)ROUND(fStack_170 * _DAT_00605120);
-                    engine_special_cpp_FUN_00580173
+                    engine_special_cpp_transformAndProjectPoint_FUN_00580173
                               ((SProjectedVertex *)
                                ((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).
                                       transformed_x + iStack_1c),&CStack_118);

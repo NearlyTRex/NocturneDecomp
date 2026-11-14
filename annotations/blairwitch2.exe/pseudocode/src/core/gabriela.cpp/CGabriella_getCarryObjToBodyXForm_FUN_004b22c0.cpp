@@ -196,7 +196,8 @@ LAB_004b233f:
             (&CStack_18,
              (CMatrix3x4f *)
              (this_ptr->base).base.model.bone_transform.bone_model_matrices[unaff_EBP].m);
-  core_xform_cpp_FUN_00591c10(afStack_150,&CStack_18,&fStack_c0);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
+            (afStack_150,&CStack_18,&fStack_c0);
   core_xform_cpp_FUN_00591530(afStack_b0 + 2,afStack_150);
   fStack_90 = fStack_3c;
   afStack_8c[(uint)bVar7 * -2] = afStack_8c[(uint)bVar7 * -2 + 0x15];

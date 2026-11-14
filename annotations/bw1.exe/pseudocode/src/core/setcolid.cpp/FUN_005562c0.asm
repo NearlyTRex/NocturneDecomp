@@ -52,14 +52,14 @@
 ;   core_actor.cpp_FUN_00408b40
 ;   core_actor.cpp_FUN_00408bb0
 ;   core_actor.cpp_FUN_00408ec0
+;   core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_004215d0
 ;   core_box.cpp_FUN_00420570
-;   core_box.cpp_FUN_004215d0
 ;   core_dmodel.cpp_CKeyFramedModel_getFloorHeight_FUN_00468250
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
 ;   core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck_FUN_0048c010
 ;   core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_0048bdc0
 ;   core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0048fed0
-;   core_dtri.cpp_FUN_00490a40
+;   core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40
 ;   core_main.c_FUN_005030e0
 ;   core_setcolid.cpp_CDemonSet_isActorIgnored_FUN_00557db0
 ;   ... and 2 more
@@ -283,8 +283,8 @@ section .text
     LEA ESI,[ESP + 0x1f4]               ; 00556613
     PUSH EAX                            ; 0055661a
     MOVSD.REP ES:EDI,ESI                ; 0055661b
-    CALL core_box.cpp_FUN_004215d0      ; 0055661d
-        ;   XREF to: 004215d0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_FUN_004215d0(CBoundingBox3D * this_ptr, CBoundingBox3D * other)
+    CALL core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_004215d0 ; 0055661d
+        ;   XREF to: 004215d0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_004215d0(CBoundingBox3D * this_ptr, CBoundingBox3D * other)
     ADD ESP,0x8                         ; 00556622
     TEST EAX,EAX                        ; 00556625
     JZ 0x00556511                       ; 00556627
@@ -380,8 +380,8 @@ section .text
     PUSH EAX                            ; 00556764
     LEA EAX,[ESP + 0x6c]                ; 00556765
     PUSH EAX                            ; 00556769
-    CALL core_dtri.cpp_FUN_00490a40     ; 0055676a
-        ;   XREF to: 00490a40 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_FUN_00490a40(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
+    CALL core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40 ; 0055676a
+        ;   XREF to: 00490a40 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 0055676f
     MOV ESI,EAX                         ; 00556772
     LEA EAX,[ESP + 0x18]                ; 00556774
@@ -404,8 +404,8 @@ section .text
     PUSH EAX                            ; 005567ab
     XOR EBX,EBX                         ; 005567ac
     MOV EBP,ESI                         ; 005567ae
-    CALL core_dtri.cpp_FUN_00490a40     ; 005567b0
-        ;   XREF to: 00490a40 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_FUN_00490a40(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
+    CALL core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40 ; 005567b0
+        ;   XREF to: 00490a40 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 005567b5
     OR EBP,EAX                          ; 005567b8
     JZ 0x00556847                       ; 005567ba
@@ -460,8 +460,8 @@ section .text
     LEA EAX,[ESP + 0x14c]               ; 0055687d
     PUSH EAX                            ; 00556884
     OR EBX,EBP                          ; 00556885
-    CALL core_dtri.cpp_FUN_00490a40     ; 00556887
-        ;   XREF to: 00490a40 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_FUN_00490a40(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
+    CALL core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40 ; 00556887
+        ;   XREF to: 00490a40 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 0055688c
     MOV EBP,EAX                         ; 0055688f
     LEA EAX,[ESP + 0x3c]                ; 00556891
@@ -482,8 +482,8 @@ section .text
     PUSH EAX                            ; 005568c6
     LEA EAX,[ESP + 0x14c]               ; 005568c7
     PUSH EAX                            ; 005568ce
-    CALL core_dtri.cpp_FUN_00490a40     ; 005568cf
-        ;   XREF to: 00490a40 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_FUN_00490a40(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
+    CALL core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40 ; 005568cf
+        ;   XREF to: 00490a40 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 005568d4
     OR EBP,EAX                          ; 005568d7
     JZ 0x00556966                       ; 005568d9
@@ -537,8 +537,8 @@ section .text
     PUSH EAX                            ; 0055699b
     LEA EAX,[ESP + 0x184]               ; 0055699c
     PUSH EAX                            ; 005569a3
-    CALL core_dtri.cpp_FUN_00490a40     ; 005569a4
-        ;   XREF to: 00490a40 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_FUN_00490a40(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
+    CALL core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40 ; 005569a4
+        ;   XREF to: 00490a40 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 005569a9
     MOV ESI,EAX                         ; 005569ac
     LEA EAX,[ESP + 0x30]                ; 005569ae
@@ -561,8 +561,8 @@ section .text
     PUSH EAX                            ; 005569eb
     OR EBX,EBP                          ; 005569ec
     MOV EBP,ESI                         ; 005569ee
-    CALL core_dtri.cpp_FUN_00490a40     ; 005569f0
-        ;   XREF to: 00490a40 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_FUN_00490a40(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
+    CALL core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40 ; 005569f0
+        ;   XREF to: 00490a40 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 005569f5
     OR EBP,EAX                          ; 005569f8
     JZ 0x00556a87                       ; 005569fa
@@ -617,8 +617,8 @@ section .text
     LEA EAX,[ESP + 0x114]               ; 00556abd
     PUSH EAX                            ; 00556ac4
     OR EBX,EBP                          ; 00556ac5
-    CALL core_dtri.cpp_FUN_00490a40     ; 00556ac7
-        ;   XREF to: 00490a40 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_FUN_00490a40(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
+    CALL core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40 ; 00556ac7
+        ;   XREF to: 00490a40 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 00556acc
     MOV EBP,EAX                         ; 00556acf
     LEA EAX,[ESP + 0x24]                ; 00556ad1
@@ -639,8 +639,8 @@ section .text
     PUSH EAX                            ; 00556b06
     LEA EAX,[ESP + 0x114]               ; 00556b07
     PUSH EAX                            ; 00556b0e
-    CALL core_dtri.cpp_FUN_00490a40     ; 00556b0f
-        ;   XREF to: 00490a40 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_FUN_00490a40(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
+    CALL core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40 ; 00556b0f
+        ;   XREF to: 00490a40 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 00556b14
     OR EBP,EAX                          ; 00556b17
     JZ 0x00556ba6                       ; 00556b19
@@ -695,8 +695,8 @@ section .text
     LEA EAX,[ESP + 0xdc]                ; 00556bdc
     PUSH EAX                            ; 00556be3
     OR EBX,EBP                          ; 00556be4
-    CALL core_dtri.cpp_FUN_00490a40     ; 00556be6
-        ;   XREF to: 00490a40 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_FUN_00490a40(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
+    CALL core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40 ; 00556be6
+        ;   XREF to: 00490a40 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 00556beb
     MOV EBP,EAX                         ; 00556bee
     LEA EAX,[ESP + 0xc]                 ; 00556bf0
@@ -717,8 +717,8 @@ section .text
     PUSH EAX                            ; 00556c25
     LEA EAX,[ESP + 0xdc]                ; 00556c26
     PUSH EAX                            ; 00556c2d
-    CALL core_dtri.cpp_FUN_00490a40     ; 00556c2e
-        ;   XREF to: 00490a40 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_FUN_00490a40(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
+    CALL core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40 ; 00556c2e
+        ;   XREF to: 00490a40 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 00556c33
     OR EBP,EAX                          ; 00556c36
     JZ 0x00556cc5                       ; 00556c38
@@ -773,8 +773,8 @@ section .text
     LEA EAX,[ESP + 0xa4]                ; 00556cfb
     PUSH EAX                            ; 00556d02
     OR EBX,EBP                          ; 00556d03
-    CALL core_dtri.cpp_FUN_00490a40     ; 00556d05
-        ;   XREF to: 00490a40 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_FUN_00490a40(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
+    CALL core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40 ; 00556d05
+        ;   XREF to: 00490a40 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 00556d0a
     MOV EBP,EAX                         ; 00556d0d
     LEA EAX,[ESP + 0x48]                ; 00556d0f
@@ -795,8 +795,8 @@ section .text
     PUSH EAX                            ; 00556d44
     LEA EAX,[ESP + 0xa4]                ; 00556d45
     PUSH EAX                            ; 00556d4c
-    CALL core_dtri.cpp_FUN_00490a40     ; 00556d4d
-        ;   XREF to: 00490a40 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_FUN_00490a40(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
+    CALL core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40 ; 00556d4d
+        ;   XREF to: 00490a40 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 00556d52
     OR EBP,EAX                          ; 00556d55
     JZ 0x00556de4                       ; 00556d57

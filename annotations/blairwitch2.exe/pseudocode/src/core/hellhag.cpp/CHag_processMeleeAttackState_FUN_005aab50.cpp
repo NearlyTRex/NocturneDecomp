@@ -61,8 +61,8 @@ void __cdecl core_hellhag_cpp_CHag_processMeleeAttackState_FUN_005aab50(CHag *th
             (&this_ptr_00->base,desired_state_index,1);
 LAB_005aabe3:
   if ((iVar2 == 4) &&
-     (fVar6 = core_motion_cpp_FUN_00503e60(&(this_ptr->base).base.base.model.base),
-     (float)_DAT_005f0bde < fVar6)) {
+     (fVar6 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00503e60
+                        (&(this_ptr->base).base.base.model.base), (float)_DAT_005f0bde < fVar6)) {
     (this_ptr->base).attack_range = _DAT_00600a70;
     core_muzzle_cpp_FUN_0059d8e0(&(this_ptr->base).state_machine,"Chasing");
     return;

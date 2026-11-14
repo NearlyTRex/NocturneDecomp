@@ -27,7 +27,7 @@
 ;
 ; XREF[3]:
 ;   core_dmodel.cpp_CKeyFramedModel_intersectCylinder_FUN_00461e00 at 00461e9c
-;   core_setcolid.cpp_FUN_0053da90 at 0053dbbc
+;   core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_0053da90 at 0053dbbc
 ;   core_stairs.cpp_CStairs_customIntersectCylinderXZ_FUN_00568690 at 005686b8
 ;
 ; Called Functions:

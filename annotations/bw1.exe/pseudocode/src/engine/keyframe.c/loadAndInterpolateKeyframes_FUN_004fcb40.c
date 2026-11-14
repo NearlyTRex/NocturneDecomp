@@ -31,8 +31,8 @@ void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004fcb40(SMRGLKey
              engine_model_c_loadModelFile_FUN_0051f6d0(keyframe_model->filenames[0]);
     keyframe_model->base_keyframes = pSVar6;
   }
-  iVar4 = engine_model_c_FUN_0051fee0(&keyframe_model->base_keyframes->header);
-  iVar5 = engine_model_c_FUN_0051fee0
+  iVar4 = engine_model_c_getMRGLSize_FUN_0051fee0(&keyframe_model->base_keyframes->header);
+  iVar5 = engine_model_c_getMRGLSize_FUN_0051fee0
                     ((SMRGLHeaderExtended *)
                      ((int)&(keyframe_model->base_keyframes->header).base.type + iVar4));
   iVar12 = 0;
@@ -41,7 +41,8 @@ void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004fcb40(SMRGLKey
     pSVar11 = keyframe_model;
     do {
       if (pSVar11->loaded_frames[0] == (SMRGLKeyframe *)0x0) {
-        pSVar6 = (SMRGLKeyframe *)engine_model_c_FUN_00520150(*filename,iVar4 + iVar5);
+        pSVar6 = (SMRGLKeyframe *)
+                 engine_model_c_loadModelChunk_FUN_00520150(*filename,iVar4 + iVar5);
         pSVar11->loaded_frames[0] = pSVar6;
       }
       pSVar11 = (SMRGLKeyframeModel *)&(pSVar11->header).base.count;

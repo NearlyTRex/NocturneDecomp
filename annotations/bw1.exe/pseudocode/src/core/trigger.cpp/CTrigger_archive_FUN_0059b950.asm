@@ -34,7 +34,7 @@
 ;   core_actor.cpp_archiveString_FUN_0040b440
 ;   core_actor.cpp_archiveVector_FUN_0040b1c0
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040c040
-;   core_trigger.cpp_FUN_0059bee0
+;   core_trigger.cpp_CTrigger_calculateTestRadius_FUN_0059bee0
 ;
 ; *****************************************************************************
 
@@ -272,8 +272,8 @@ section .text
     RET                                 ; 0059bbf6
     PUSH EBX                            ; 0059bbf7
         ;   Label: LAB_0059bbf7
-    CALL core_trigger.cpp_FUN_0059bee0  ; 0059bbf8
-        ;   XREF to: 0059bee0 (UNCONDITIONAL_CALL)  ; undefined core_trigger.cpp_FUN_0059bee0()
+    CALL core_trigger.cpp_CTrigger_calculateTestRadius_FUN_0059bee0 ; 0059bbf8
+        ;   XREF to: 0059bee0 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_calculateTestRadius_FUN_0059bee0(CTrigger * this_ptr)
     ADD ESP,0x4                         ; 0059bbfd
     JMP 0x0059bb7c                      ; 0059bc00
         ;   XREF to: 0059bb7c (UNCONDITIONAL_JUMP)  ; LAB_0059bb7c

@@ -50,7 +50,7 @@
 ;   core_charactr.cpp_CCharacter_advanceGesture_FUN_00432220
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_00431ab0
-;   core_charactr.cpp_FUN_0042e8c0
+;   core_charactr.cpp_CCharacter_processFire_FUN_0042e8c0
 ;   core_game.cpp_CGame_setStatusDisplay_FUN_004bd930
 ;   core_hero.cpp_isAnyHeroWithinCylinder_FUN_004d23f0
 ;   core_script.cpp_CScript_setSpeaker_FUN_00530390
@@ -297,8 +297,8 @@ section .text
     PUSH dword ptr [ESP + 0x10c]        ; 0042d081
         ;   Label: LAB_0042d081
     PUSH EBX                            ; 0042d088
-    CALL core_charactr.cpp_FUN_0042e8c0 ; 0042d089
-        ;   XREF to: 0042e8c0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042e8c0()
+    CALL core_charactr.cpp_CCharacter_processFire_FUN_0042e8c0 ; 0042d089
+        ;   XREF to: 0042e8c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processFire_FUN_0042e8c0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0042d08e
     PUSH dword ptr [ESP + 0x10c]        ; 0042d091
     PUSH EBX                            ; 0042d098

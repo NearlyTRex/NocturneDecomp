@@ -7,7 +7,7 @@
 ; HWND             Stack[0x4]:4   window_handle
 ;
 ; XREF[3]:
-;   wincore_winrun.cpp_FUN_00580a50 at 00580e03
+;   wincore_winrun.cpp_mainWindowProc_FUN_00580a50 at 00580e03
 ;   wincore_winvideo.cpp_openMovie_FUN_00582bb0 at 00582bcb
 ;   wincore_winvideo.cpp_playMovie_FUN_00582eb0 at 00582f2b
 ;

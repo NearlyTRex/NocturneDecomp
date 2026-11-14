@@ -164,7 +164,7 @@
 ;   core_event.cpp_isValidIdentifierChar_FUN_00491c70
 ;   core_event.cpp_parseVectorLocation_FUN_00488e30
 ;   core_event.cpp_resolveActorByName_FUN_00488d00
-;   core_game.cpp_FUN_004bb4e0
+;   core_game.cpp_CGame_fadeIn_FUN_004bb4e0
 ;   core_inv.cpp_CInventory_checkHasMatchingKey_FUN_004dee70
 ;   core_inv.cpp_CInventory_findItemByName_FUN_004db830
 ;   core_inv.cpp_CInventory_hasItemOfClass_FUN_004db880
@@ -2010,8 +2010,8 @@ section .text
     ADD EDX,EAX                         ; 0048f9d0
     PUSH ECX                            ; 0048f9d2 | g_CGameInstance
     MOV dword ptr [EBX],EDX             ; 0048f9d3
-    CALL core_game.cpp_FUN_004bb4e0     ; 0048f9d5
-        ;   XREF to: 004bb4e0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004bb4e0()
+    CALL core_game.cpp_CGame_fadeIn_FUN_004bb4e0 ; 0048f9d5
+        ;   XREF to: 004bb4e0 (UNCONDITIONAL_CALL)  ; uint core_game.cpp_CGame_fadeIn_FUN_004bb4e0(CGame * this_ptr)
     ADD ESP,0x4                         ; 0048f9da
     JMP 0x0048ec85                      ; 0048f9dd
         ;   XREF to: 0048ec85 (UNCONDITIONAL_JUMP)  ; LAB_0048ec85

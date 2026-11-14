@@ -1058,8 +1058,8 @@ section .text
     PUSH EBX                            ; 004d3294
     ADD EAX,0x1fae8                     ; 004d3295
     PUSH EAX                            ; 004d329a
-    CALL core_inv.cpp_FUN_004f7690      ; 004d329b
-        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004f7690 ; 004d329b
+        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 004d32a0
     PUSH 0x40a00000                     ; 004d32a3
     PUSH 0x5e1ee7                       ; 004d32a8 | = "You have the skeleton key"
@@ -2373,8 +2373,8 @@ section .text
     PUSH EBX                            ; 004d4179
     ADD EAX,0x1fae8                     ; 004d417a
     PUSH EAX                            ; 004d417f
-    CALL core_inv.cpp_FUN_004f7690      ; 004d4180
-        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004f7690 ; 004d4180
+        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 004d4185
     JMP 0x004d3c73                      ; 004d4188
         ;   XREF to: 004d3c73 (UNCONDITIONAL_JUMP)  ; LAB_004d3c73
@@ -2402,8 +2402,8 @@ section .text
     PUSH EBX                            ; 004d41d1
     ADD EAX,0x1fae8                     ; 004d41d2
     PUSH EAX                            ; 004d41d7
-    CALL core_inv.cpp_FUN_004f7690      ; 004d41d8
-        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004f7690 ; 004d41d8
+        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 004d41dd
     JMP 0x004d3ca1                      ; 004d41e0
         ;   XREF to: 004d3ca1 (UNCONDITIONAL_JUMP)  ; LAB_004d3ca1
@@ -2431,8 +2431,8 @@ section .text
     PUSH EBX                            ; 004d4229
     ADD EAX,0x1fae8                     ; 004d422a
     PUSH EAX                            ; 004d422f
-    CALL core_inv.cpp_FUN_004f7690      ; 004d4230
-        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004f7690 ; 004d4230
+        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 004d4235
     JMP 0x004d3ccf                      ; 004d4238
         ;   XREF to: 004d3ccf (UNCONDITIONAL_JUMP)  ; LAB_004d3ccf
@@ -2460,8 +2460,8 @@ section .text
     PUSH EBX                            ; 004d4280
     ADD EAX,0x1fae8                     ; 004d4281
     PUSH EAX                            ; 004d4286
-    CALL core_inv.cpp_FUN_004f7690      ; 004d4287
-        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004f7690 ; 004d4287
+        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 004d428c
     JMP 0x004d3d24                      ; 004d428f
         ;   XREF to: 004d3d24 (UNCONDITIONAL_JUMP)  ; LAB_004d3d24
@@ -3831,8 +3831,8 @@ section .text
     PUSH EBX                            ; 004d5259
     ADD EAX,0x1fae8                     ; 004d525a
     PUSH EAX                            ; 004d525f
-    CALL core_inv.cpp_FUN_004f7690      ; 004d5260
-        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004f7690 ; 004d5260
+        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 004d5265
     PUSH 0x40a00000                     ; 004d5268
     PUSH 0x5e290d                       ; 004d526d | = "You've got a gasmask!"
@@ -3924,8 +3924,8 @@ section .text
     PUSH EBX                            ; 004d5353
     ADD EAX,0x1fae8                     ; 004d5354
     PUSH EAX                            ; 004d5359
-    CALL core_inv.cpp_FUN_004f7690      ; 004d535a
-        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004f7690 ; 004d535a
+        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 004d535f
     PUSH 0x40a00000                     ; 004d5362
     PUSH 0x5e2958                       ; 004d5367 | = "You've got nightvision goggles!"
@@ -4809,8 +4809,8 @@ section .text
     PUSH EBX                            ; 004d5d6d
     ADD EAX,0x1fae8                     ; 004d5d6e
     PUSH EAX                            ; 004d5d73
-    CALL core_inv.cpp_FUN_004f7690      ; 004d5d74
-        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004f7690 ; 004d5d74
+        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 004d5d79
     JMP 0x004d5b14                      ; 004d5d7c
         ;   XREF to: 004d5b14 (UNCONDITIONAL_JUMP)  ; LAB_004d5b14
@@ -4838,8 +4838,8 @@ section .text
     PUSH EBX                            ; 004d5dc4
     ADD EAX,0x1fae8                     ; 004d5dc5
     PUSH EAX                            ; 004d5dca
-    CALL core_inv.cpp_FUN_004f7690      ; 004d5dcb
-        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004f7690 ; 004d5dcb
+        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 004d5dd0
     JMP 0x004d5bc4                      ; 004d5dd3
         ;   XREF to: 004d5bc4 (UNCONDITIONAL_JUMP)  ; LAB_004d5bc4
@@ -4867,8 +4867,8 @@ section .text
     PUSH EBX                            ; 004d5e1b
     ADD EAX,0x1fae8                     ; 004d5e1c
     PUSH EAX                            ; 004d5e21
-    CALL core_inv.cpp_FUN_004f7690      ; 004d5e22
-        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004f7690 ; 004d5e22
+        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 004d5e27
     JMP 0x004d5c74                      ; 004d5e2a
         ;   XREF to: 004d5c74 (UNCONDITIONAL_JUMP)  ; LAB_004d5c74

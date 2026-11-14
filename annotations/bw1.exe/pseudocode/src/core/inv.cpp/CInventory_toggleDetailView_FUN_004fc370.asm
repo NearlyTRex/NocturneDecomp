@@ -7,7 +7,7 @@
 ; CInventory *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004d0ee0 at 004d12ec
+;   core_game.cpp_CGame_processKeyboardControls_FUN_004d0ee0 at 004d12ec
 ;   core_game.cpp_FUN_004d9260 at 004d95ac
 ;
 ; Referenced Globals:

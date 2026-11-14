@@ -105,13 +105,13 @@ void __cdecl CBugs::recalculateBoundingBox(CBugs *this_ptr);
 // Address: 00427b40
 void __cdecl CBugs::setSwarmTarget(CBugs *this_ptr,CDemonActor *target);
 
-// Original: core_bugs.cpp_FUN_00427e00
+// Original: core_bugs.cpp_CBugs_applySwarmTranslation_FUN_00427e00
 // Address: 00427e00
-void FUN_00427e00(int param_1,float *param_2);
+void __cdecl CBugs::applySwarmTranslation(CBugs *this_ptr,CVector3f *new_position);
 
-// Original: core_bugs.cpp_FUN_00428010
+// Original: core_bugs.cpp_normalizeVector_FUN_00428010
 // Address: 00428010
-void FUN_00428010(float *param_1);
+void normalizeVector(float *param_1);
 
 // Original: core_bugs.cpp_convertVector_FUN_00428080
 // Address: 00428080

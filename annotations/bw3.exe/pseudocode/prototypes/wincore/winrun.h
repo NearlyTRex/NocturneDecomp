@@ -57,13 +57,13 @@ void __cdecl clearMouseClicks(void);
 // Address: 005809d0
 void __cdecl setCursorPosition(int x,int y);
 
-// Original: wincore_winrun.cpp_FUN_00580a50
+// Original: wincore_winrun.cpp_mainWindowProc_FUN_00580a50
 // Address: 00580a50
-LRESULT __stdcall FUN_00580a50(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam);
+LRESULT __stdcall mainWindowProc(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam);
 
-// Original: wincore_winrun.cpp_FUN_00580f70
+// Original: wincore_winrun.cpp_processWindowMessages_FUN_00580f70
 // Address: 00580f70
-void __cdecl FUN_00580f70(void);
+void __cdecl processWindowMessages(void);
 
 // Original: wincore_winrun.cpp_FUN_00581010
 // Address: 00581010
@@ -81,9 +81,9 @@ int __stdcall winMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLin
 // Address: 00581300
 void __cdecl displayMessageBoxAndQuit(char *message);
 
-// Original: wincore_winrun.cpp_FUN_00581360
+// Original: wincore_winrun.cpp_getKeyName_FUN_00581360
 // Address: 00581360
-char * __cdecl FUN_00581360(EInputCodeType keycode);
+char * __cdecl getKeyName(EInputCodeType keycode);
 
 // Original: wincore_winrun.cpp_createMutex_FUN_00581920
 // Address: 00581920

@@ -173,7 +173,7 @@ LAB_0050161d:
     (this_ptr->base).base.position_delta.z = 0.0;
     (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
     pCVar2->x = (this_ptr->base).base.position_delta.y;
-    core_charactr_cpp_FUN_00423a60((CCharacter *)this_ptr,&CStack_a8);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_00423a60((CCharacter *)this_ptr,&CStack_a8);
     goto LAB_005017f4;
   }
   if ((this_ptr->base).base.grabbed_type == 0) {

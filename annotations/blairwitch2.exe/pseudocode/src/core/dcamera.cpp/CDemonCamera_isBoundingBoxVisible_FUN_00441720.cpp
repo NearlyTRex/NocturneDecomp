@@ -104,7 +104,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00441720(CDem
   local_6c = local_118;
   local_68 = local_114;
   local_54 = local_110;
-  engine_special_cpp_FUN_0055d723
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
             (&DAT_0060b280->vertex_buffer_ptr[0x4e18].projected_vertex,&local_e8);
   local_dc = bbox_min->x;
   local_d8 = bbox_min->y;
@@ -115,7 +115,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00441720(CDem
   local_70 = local_dc;
   local_64 = local_d8;
   local_60 = local_d4;
-  engine_special_cpp_FUN_0055d723
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
             (&DAT_0060b280->vertex_buffer_ptr[0x4e19].projected_vertex,&local_d0);
   local_88 = bbox_min->x;
   local_84 = bbox_min->y;
@@ -126,7 +126,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00441720(CDem
   local_5c = local_88;
   local_4c = local_84;
   local_28 = local_80;
-  engine_special_cpp_FUN_0055d723
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
             (&DAT_0060b280->vertex_buffer_ptr[0x4e1a].projected_vertex,&local_f4);
   local_124 = bbox_max->x;
   local_120 = bbox_min->y;
@@ -137,7 +137,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00441720(CDem
   local_58 = local_120;
   local_18 = local_124;
   local_14 = local_11c;
-  engine_special_cpp_FUN_0055d723
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
             (&DAT_0060b280->vertex_buffer_ptr[0x4e1b].projected_vertex,&local_10c);
   local_a0 = bbox_max->x;
   local_9c = bbox_max->y;
@@ -148,7 +148,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00441720(CDem
   local_50 = local_98;
   local_3c = local_a0;
   local_38 = local_9c;
-  engine_special_cpp_FUN_0055d723
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
             (&DAT_0060b280->vertex_buffer_ptr[0x4e1c].projected_vertex,&local_130);
   local_94 = bbox_min->x;
   local_90 = bbox_max->y;
@@ -159,7 +159,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00441720(CDem
   local_48 = local_94;
   local_44 = local_90;
   local_40 = local_8c;
-  engine_special_cpp_FUN_0055d723
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
             (&DAT_0060b280->vertex_buffer_ptr[0x4e1d].projected_vertex,&local_ac);
   local_100 = bbox_min->x;
   local_fc = bbox_max->y;
@@ -170,7 +170,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00441720(CDem
   local_24 = local_100;
   local_20 = local_fc;
   local_1c = local_f8;
-  engine_special_cpp_FUN_0055d723
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
             (&DAT_0060b280->vertex_buffer_ptr[0x4e1e].projected_vertex,&local_7c);
   local_c4 = bbox_max->x;
   local_c0 = bbox_max->y;
@@ -181,7 +181,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00441720(CDem
   local_34 = local_c4;
   local_30 = local_c0;
   local_2c = local_bc;
-  engine_special_cpp_FUN_0055d723
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
             (&DAT_0060b280->vertex_buffer_ptr[19999].projected_vertex,&local_b8);
   uVar3 = 0xffffffff;
   iVar2 = 0xea480;

@@ -65,9 +65,9 @@ void __cdecl CMansionPuzzleCircle::initPuzzleState(CMansionPuzzleCircle *this_pt
 // Address: 00504ee0
 void FUN_00504ee0(int param_1,int param_2);
 
-// Original: core_manpuz.cpp_FUN_00504fe0
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_00504fe0
 // Address: 00504fe0
-void FUN_00504fe0(int param_1,int param_2);
+void __cdecl CMansionPuzzleCircle::renderPanel(CMansionPuzzleCircle *this_ptr,int panel_index);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_00505060
 // Address: 00505060

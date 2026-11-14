@@ -84,7 +84,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_00510620(CMimic *this_ptr)
           *(float *)((int)&local_28 + (uint)bVar6 * -8 + 4) = afStack_6c[(uint)bVar6 * -2 + 3];
           *(float *)((int)&local_28 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
                afStack_6c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
-          core_xform_cpp_FUN_005b5760(pCVar3,pCVar7,pCVar8);
+          core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(pCVar3,pCVar7,pCVar8);
           core_xform_cpp_multiplyMatrix3x4_FUN_005b5200
                     (&local_d0,
                      (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_01d22424,
@@ -120,7 +120,8 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_00510620(CMimic *this_ptr)
            (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560),
            iVar1 == 0)) {
           this_ptr_00 = &(this_ptr->base).base.model;
-          core_motion_cpp_FUN_005254b0(&this_ptr_00->base,(CDemonActor *)this_ptr);
+          core_motion_cpp_CMotionController_render_FUN_005254b0
+                    (&this_ptr_00->base,(CDemonActor *)this_ptr);
           core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
         }
         engine_drender_cpp_pop_FUN_004839a0();

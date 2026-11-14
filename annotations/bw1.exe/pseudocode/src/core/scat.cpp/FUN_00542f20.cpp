@@ -44,7 +44,8 @@ void core_scat_cpp_FUN_00542f20(int param_1)
     local_68.z = 1.5707964;
     local_20.y = -0.103151;
     local_20.z = 0.109206;
-    core_xform_cpp_FUN_005b5760(&local_158,&local_20,&local_68);
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+              (&local_158,&local_20,&local_68);
     core_xform_cpp_multiplyMatrix3x4_FUN_005b5200
               (&local_158,(CMatrix3x4f *)(_DAT_01e7e04c * 0x30 + param_1 + 0xfd8),&local_f8);
     pCVar3 = &local_f8;
@@ -54,7 +55,7 @@ void core_scat_cpp_FUN_00542f20(int param_1)
       pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);
       pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
     }
-    core_xform_cpp_FUN_005b5760
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
               (&local_128,(CVector3f *)(param_1 + 0x20),(CVector3f *)(param_1 + 0x30));
     core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&local_98,&local_128,&local_188);
     pCVar3 = &local_188;

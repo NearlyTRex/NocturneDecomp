@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 151,
-    "complexity_score": 436,
+    "complexity_score": 437,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 51,
+    "pseudocode_lines": 52,
     "suspect_count": 36,
     "suspect_types": [
       "concat_reconstruction",
@@ -16,7 +16,7 @@
       "undefined_type",
       "unnamed_param"
     ],
-    "total_lines": 202
+    "total_lines": 203
   },
   "cross_references": [
     {
@@ -61,6 +61,11 @@
       "name": "core_hero.cpp_CHero_tryPickupActorOfClass_FUN_004ec090"
     },
     {
+      "addr": "004eb660",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHero_tryPullLever_FUN_004eb660"
+    },
+    {
       "addr": "004eb890",
       "is_variadic": false,
       "name": "core_hero.cpp_CHero_tryPushNearbyBox_FUN_004eb890"
@@ -79,11 +84,6 @@
       "addr": "004eb5b0",
       "is_variadic": false,
       "name": "core_hero.cpp_FUN_004eb5b0"
-    },
-    {
-      "addr": "004eb660",
-      "is_variadic": false,
-      "name": "core_hero.cpp_FUN_004eb660"
     }
   ],
   "globals": [
@@ -362,12 +362,12 @@
       "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((iVar4 != 0) && (iVar4 = core_hero_cpp_FUN_004eb660(param_1), iVar4 != 0)) {",
+      "text": "if ((iVar4 != 0) && (iVar4 = core_hero_cpp_CHero_tryPullLever_FUN_004eb660(param_1), iVar4 != 0))",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar4 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,8);",
@@ -375,7 +375,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar4 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,8);",
@@ -383,7 +383,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
       "text": "(iVar4 = core_hero_cpp_CHero_tryPushNearbyBox_FUN_004eb890(param_1), iVar4 != 0)) {",
@@ -391,7 +391,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar4 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,9);",
@@ -399,7 +399,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar4 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,9);",
@@ -407,7 +407,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
       "text": "(iVar4 = core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004ebc40(param_1), iVar4 != 0)) {",
@@ -415,7 +415,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 50,
       "match": "param_1",
       "severity": "mild",
       "text": "(bVar2 = core_hero_cpp_CHero_tryPickupActorOfClass_FUN_004ec090(param_1,\"CBodyPart\"),",
@@ -423,7 +423,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 50,
+      "line": 51,
       "match": "extraout_var_00",
       "severity": "moderate",
       "text": "CONCAT31(extraout_var_00,bVar2) != 0)) {",
@@ -439,7 +439,7 @@
     },
     {
       "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 50,
+      "line": 51,
       "match": "CONCAT31",
       "severity": "moderate",
       "text": "CONCAT31(extraout_var_00,bVar2) != 0)) {",

@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   enable
 ;
 ; XREF[2]:
-;   core_menu.cpp_FUN_0050ba70 at 0050c94a
+;   core_menu.cpp_configureSoundOptions_FUN_0050ba70 at 0050c94a
 ;   sound_sndmain.cpp_readIni_FUN_005760b0 at 005761d4
 ;
 ; Referenced Globals:

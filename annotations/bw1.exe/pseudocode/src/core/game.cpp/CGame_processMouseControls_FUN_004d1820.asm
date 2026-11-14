@@ -32,7 +32,7 @@
 ;   undefined4 g_CDemonSetInstance.selected_camera_index
 ;
 ; Called Functions:
-;   core_game.cpp_FUN_004d0ee0
+;   core_game.cpp_CGame_processKeyboardControls_FUN_004d0ee0
 ;   wincore_winrun.cpp_setCursorPosition_FUN_005b2750
 ;
 ; *****************************************************************************
@@ -51,8 +51,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x18]      ; 004d182f
     PUSH EBX                            ; 004d1832
     PUSH EDI                            ; 004d1833
-    CALL core_game.cpp_FUN_004d0ee0     ; 004d1834
-        ;   XREF to: 004d0ee0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004d0ee0(CGame * this_ptr, SPlayerInput * player_control)
+    CALL core_game.cpp_CGame_processKeyboardControls_FUN_004d0ee0 ; 004d1834
+        ;   XREF to: 004d0ee0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processKeyboardControls_FUN_004d0ee0(CGame * this_ptr, SPlayerInput * player_control)
     MOV EDX,dword ptr [EDI + 0x2ac]     ; 004d1839
     ADD ESP,0x8                         ; 004d183f
     TEST EDX,EDX                        ; 004d1842

@@ -10,7 +10,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_2d.c_FUN_00401450",
+    "name":"engine_2d.c_findBestPaletteMatch_FUN_00401450",
     "ret":"int",
     "vars":{
       "locals":[
@@ -3377,7 +3377,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_box.cpp_FUN_004215d0",
+    "name":"core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_004215d0",
     "ret":"int",
     "vars":{
       "params":[
@@ -4402,7 +4402,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_FUN_0042d750",
+    "name":"core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750",
     "ret":"void",
     "vars":{
       "locals":[
@@ -6467,8 +6467,9 @@
         "start":"00438bd0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"cockpit_ckptutil.c_FUN_00438bd0",
+    "name":"cockpit_ckptutil.c_loadEdgeListFile_FUN_00438bd0",
     "ret":"undefined1",
     "sig":"default",
     "vars":{
@@ -28076,7 +28077,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_game.cpp_FUN_004d77d0",
+    "name":"core_game.cpp_CGame_showFullscreenBitmap_FUN_004d77d0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -35304,7 +35305,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_mobster.cpp_FUN_0051e5d0",
+    "name":"core_mobster.cpp_CMobster_processWeaponPickup_FUN_0051e5d0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -35584,7 +35585,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_model.c_FUN_00520150",
+    "name":"engine_model.c_loadModelChunk_FUN_00520150",
     "ret":"SMRGLHeaderExtended*",
     "vars":{
       "locals":[
@@ -40667,7 +40668,7 @@
       }
     ],
     "importable":true,
-    "name":"cockpit_pkbitmap.cpp_FUN_00538750",
+    "name":"cockpit_pkbitmap.cpp_loadPBGFile_FUN_00538750",
     "ret":"undefined1",
     "sig":"default",
     "vars":{
@@ -44267,7 +44268,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setcolid.cpp_FUN_005580d0",
+    "name":"core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_005580d0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -48637,10 +48638,10 @@
         "start":"0056ba50"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_slew.cpp_FUN_0056ba50",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_slew.cpp_CSlew_processInput_FUN_0056ba50",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -48676,9 +48677,24 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CSlew*"
+        }
+      ]
     }
   },
   {
@@ -55872,19 +55888,9 @@
     "addr":"0059e350",
     "body":[
       {
-        "end":"0059e379",
-        "size":42,
-        "start":"0059e350"
-      },
-      {
-        "end":"0059e496",
-        "size":92,
-        "start":"0059e43b"
-      },
-      {
         "end":"0059ed1d",
-        "size":341,
-        "start":"0059ebc9"
+        "size":2510,
+        "start":"0059e350"
       }
     ],
     "importable":true,
@@ -58542,7 +58548,7 @@
     ],
     "conv":"__stdcall",
     "importable":true,
-    "name":"wincore_winrun.cpp_FUN_005b27d0",
+    "name":"wincore_winrun.cpp_mainWindowProc_FUN_005b27d0",
     "ret":"LRESULT",
     "vars":{
       "params":[

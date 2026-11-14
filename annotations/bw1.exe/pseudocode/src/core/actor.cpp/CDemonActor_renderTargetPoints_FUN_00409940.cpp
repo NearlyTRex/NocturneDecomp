@@ -32,7 +32,8 @@ void __cdecl core_actor_cpp_CDemonActor_renderTargetPoints_FUN_00409940(CDemonAc
       CStack_24.x = (int)ROUND(pCVar6->x * _DAT_005fb310);
       CStack_24.y = (int)ROUND(*(float *)((int)pCVar6 + 4) * _DAT_005fb310);
       CStack_24.z = (int)ROUND(*(float *)((int)pCVar6 + 8) * _DAT_005fb310);
-      engine_special_cpp_FUN_00580173((SProjectedVertex *)(*0x01BC120C + 0xea5d0),&CStack_24);
+      engine_special_cpp_transformAndProjectPoint_FUN_00580173
+                ((SProjectedVertex *)(*0x01BC120C + 0xea5d0),&CStack_24);
       iVar5 = *0x01BC120C;
       if ((*(byte *)(iVar5 + 0xea5e3) & 0x80) == 0) {
         iVar3 = *(int *)(iVar5 + 0xea5e0) >> 0x10;

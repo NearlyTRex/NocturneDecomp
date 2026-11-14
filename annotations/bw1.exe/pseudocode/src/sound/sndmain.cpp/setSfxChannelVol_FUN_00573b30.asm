@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   volume
 ;
 ; XREF[7]:
-;   core_menu.cpp_FUN_0050ba70 at 0050c49f
+;   core_menu.cpp_configureSoundOptions_FUN_0050ba70 at 0050c49f
 ;   core_sound.cpp_CSound_configure_FUN_0057d6a0 at 0057d6e9
 ;   core_sound.cpp_CSound_init_FUN_0057cc00 at 0057cccd
 ;   core_sound.cpp_CSound_process_FUN_0057ce10 at 0057d09f

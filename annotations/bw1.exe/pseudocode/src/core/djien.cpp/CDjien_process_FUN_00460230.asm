@@ -28,13 +28,13 @@
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042e120
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0
 ;   core_charactr.cpp_FUN_0042d700
-;   core_charactr.cpp_FUN_0042d750
 ;   core_charactr.cpp_FUN_00431cc0
 ;   core_charactr.cpp_FUN_00435320
 ;   core_charactr.cpp_FUN_00435380
@@ -285,8 +285,8 @@ section .text
     LEA EAX,[EBP + 0x12]                ; 004604f0
     PUSH EAX                            ; 004604f3
     PUSH EBX                            ; 004604f4
-    CALL core_charactr.cpp_FUN_0042d750 ; 004604f5
-        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750 ; 004604f5
+        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 004604fa
     PUSH EBX                            ; 004604fd
         ;   Label: LAB_004604fd
@@ -348,8 +348,8 @@ section .text
     LEA ESI,[EBX + 0x158]               ; 00460577
         ;   Label: LAB_00460577
     PUSH ESI                            ; 0046057d
-    CALL core_motion.cpp_FUN_00525020   ; 0046057e
-        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_00525020(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020 ; 0046057e
+        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020(CMotionController * this_ptr)
     MOV dword ptr [EBP + 0x76],EAX      ; 00460583
     ADD ESP,0x4                         ; 00460586
     FLD float ptr [EBP + 0x76]          ; 00460589

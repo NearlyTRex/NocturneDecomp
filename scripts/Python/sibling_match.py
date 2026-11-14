@@ -451,14 +451,17 @@ TIERS = ("strict", "relaxed")
 
 class Shape:
     """The normalized form of one function body."""
-    __slots__ = ("strict", "relaxed", "consts", "nbytes", "ninsn")
+    __slots__ = ("strict", "relaxed", "consts", "nbytes", "ninsn", "mnemonics")
 
-    def __init__(self, strict, relaxed, consts, nbytes, ninsn):
+    def __init__(self, strict, relaxed, consts, nbytes, ninsn, mnemonics=()):
         self.strict = strict        # mnemonics + operands, addresses masked
         self.relaxed = relaxed      # mnemonic sequence only
         self.consts = consts        # non-address immediates (build-invariant)
         self.nbytes = nbytes
         self.ninsn = ninsn
+        # The sequence `relaxed` hashes, kept so two bodies that differ can be
+        # graded by how much -- the hashes only say whether they are equal.
+        self.mnemonics = mnemonics
 
 
 def compute_shape(image, func):
@@ -518,6 +521,7 @@ def compute_shape(image, func):
         consts=tuple(sorted(consts)),
         nbytes=nbytes,
         ninsn=len(full),
+        mnemonics=tuple(mnemonics),
     )
 
 

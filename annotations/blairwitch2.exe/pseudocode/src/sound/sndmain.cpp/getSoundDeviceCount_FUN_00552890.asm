@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[6]:
-;   core_menu.cpp_FUN_004ed260 at 004ed866
+;   core_menu.cpp_configureSoundOptions_FUN_004ed260 at 004ed866
 ;   sound_sndmain.cpp_findBestSoundDevice_FUN_00552980 at 00552988
 ;   sound_sndmain.cpp_getSoundDeviceInfo_FUN_00552920 at 00552927
 ;   sound_sndmain.cpp_readIni_FUN_00553680 at 005536ca

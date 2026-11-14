@@ -65,9 +65,9 @@ void __cdecl CCharacter::applyDamage(CCharacter *this_ptr,int damage_type,float 
 // Address: 0042c1e0
 void FUN_0042c1e0(int param_1,float param_2);
 
-// Original: core_charactr.cpp_FUN_0042c230
+// Original: core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 // Address: 0042c230
-void __cdecl FUN_0042c230(CCharacter *this_ptr,CVector3f *velocity);
+void __cdecl CCharacter::moveAndCollide(CCharacter *this_ptr,CVector3f *velocity);
 
 // Original: core_charactr.cpp_CCharacter_isOnGround_FUN_0042ccf0
 // Address: 0042ccf0
@@ -97,13 +97,13 @@ void FUN_0042d860(int param_1,int param_2,undefined4 param_3,undefined4 param_4)
 // Address: 0042d8a0
 void FUN_0042d8a0(int param_1,undefined4 param_2,undefined4 param_3);
 
-// Original: core_charactr.cpp_FUN_0042d8e0
+// Original: core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0
 // Address: 0042d8e0
-void FUN_0042d8e0(CCharacter *param_1);
+void __cdecl CCharacter::renderCharacter(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_0042d9f0
+// Original: core_charactr.cpp_CCharacter_renderCollision_FUN_0042d9f0
 // Address: 0042d9f0
-void __cdecl FUN_0042d9f0(CCharacter *this_ptr);
+void __cdecl CCharacter::renderCollision(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_renderOpaque_FUN_0042e220
 // Address: 0042e220
@@ -125,21 +125,21 @@ void __cdecl CCharacter::renderAttachedModels(CCharacter *this_ptr);
 // Address: 0042e4b0
 void __cdecl CCharacter::spawnFireOnBone(CCharacter *this_ptr,CSkeleton *skeleton,int target_bone_index);
 
-// Original: core_charactr.cpp_FUN_0042e8c0
+// Original: core_charactr.cpp_CCharacter_processFire_FUN_0042e8c0
 // Address: 0042e8c0
-void FUN_0042e8c0(CCharacter *param_1,float param_2);
+void __cdecl CCharacter::processFire(CCharacter *this_ptr,float delta_time);
 
-// Original: core_charactr.cpp_FUN_0042f010
+// Original: core_charactr.cpp_CCharacter_renderBurn_FUN_0042f010
 // Address: 0042f010
-void FUN_0042f010(int param_1);
+void __cdecl CCharacter::renderBurn(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_FUN_0042f280
 // Address: 0042f280
 void FUN_0042f280(int param_1);
 
-// Original: core_charactr.cpp_FUN_0042f310
+// Original: core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310
 // Address: 0042f310
-void __cdecl FUN_0042f310(CCharacter *this_ptr);
+void __cdecl CCharacter::renderEthereal(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_renderTransparent_FUN_0042f510
 // Address: 0042f510

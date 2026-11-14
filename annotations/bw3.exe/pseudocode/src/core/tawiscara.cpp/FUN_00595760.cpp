@@ -85,7 +85,8 @@ void core_tawiscara_cpp_FUN_00595760(int param_1,float *param_2)
   local_40[2] = local_50;
   local_40[3] = local_4c;
   local_30 = local_48;
-  engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_110);
+  engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+            (&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_110);
   local_18 = 0x3E4CCCCD;
   local_11c = -0x3E4CCCCD + *param_2;
   local_118[1] = param_2[2];
@@ -109,7 +110,8 @@ void core_tawiscara_cpp_FUN_00595760(int param_1,float *param_2)
   local_2c.x = (int)ROUND(local_100[2] * _DAT_005e7500);
   local_2c.y = (int)ROUND(local_100[3] * _DAT_005e7500);
   local_2c.z = (int)ROUND(local_f0 * _DAT_005e7500);
-  engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_2c);
+  engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+            (&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_2c);
   local_a8 = param_2[2];
   local_b8[2] = -0x3E4CCCCD + *param_2;
   local_b8[3] = param_2[1] + -0x3E4CCCCD;
@@ -132,7 +134,8 @@ void core_tawiscara_cpp_FUN_00595760(int param_1,float *param_2)
   local_ec.x = (int)ROUND(local_100[2] * _DAT_005e7500);
   local_ec.y = (int)ROUND(local_100[3] * _DAT_005e7500);
   local_ec.z = (int)ROUND(local_f0 * _DAT_005e7500);
-  engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_ec);
+  engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+            (&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_ec);
   local_dc[1] = param_2[2];
   local_e0 = 0x3E4CCCCD + *param_2;
   local_dc[0] = param_2[1] + -0x3E4CCCCD;
@@ -155,7 +158,8 @@ void core_tawiscara_cpp_FUN_00595760(int param_1,float *param_2)
   local_98.x = (int)ROUND(local_100[2] * _DAT_005e7500);
   local_98.y = (int)ROUND(local_100[3] * _DAT_005e7500);
   local_98.z = (int)ROUND(local_f0 * _DAT_005e7500);
-  engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_98);
+  engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+            (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_98);
   this_ptr = DAT_005f2afc;
   DAT_005f2afc->vertex_buffer_ptr->r = 0xffff;
   this_ptr->vertex_buffer_ptr->g = 0;

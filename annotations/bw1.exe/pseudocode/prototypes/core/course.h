@@ -29,6 +29,6 @@ void __cdecl CCourse::free(CCourse *this_ptr);
 // Address: 00447f00
 void __cdecl CCourse::evaluate(CCourse *this_ptr,float time,CVector3f *out_pos,CVector3f *out_euler);
 
-// Original: core_course.cpp_FUN_00447fb0
+// Original: core_course.cpp_CCourse_interpolate_FUN_00447fb0
 // Address: 00447fb0
-void __cdecl FUN_00447fb0(CCourse *this_ptr,float time,CVector3f *out_pos,CQuaternion4f *out_orient);
+void __cdecl CCourse::interpolate(CCourse *this_ptr,float time,CVector3f *out_pos,CQuaternion4f *out_orient);

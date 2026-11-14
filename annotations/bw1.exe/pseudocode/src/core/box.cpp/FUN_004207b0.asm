@@ -57,7 +57,7 @@
 ;   core_box.cpp_CBoundingBox3D_isVisibleWithShadow_FUN_004205e0
 ;   core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00454430
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60
-;   engine_special.cpp_FUN_00580173
+;   engine_special.cpp_transformAndProjectPoint_FUN_00580173
 ;
 ; *****************************************************************************
 
@@ -172,8 +172,8 @@ section .text
     PUSH EAX                            ; 004208dc
     LEA EAX,[ESP + 0x4]                 ; 004208dd
     PUSH EAX                            ; 004208e1
-    CALL engine_special.cpp_FUN_00580173 ; 004208e2
-        ;   XREF to: 00580173 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_00580173(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_00580173 ; 004208e2
+        ;   XREF to: 00580173 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_00580173(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004208e7
     MOV EBX,dword ptr [0x007c6120]      ; 004208ea | DAT_007c6120
     FLD float ptr [ESP + 0x60]          ; 004208f0

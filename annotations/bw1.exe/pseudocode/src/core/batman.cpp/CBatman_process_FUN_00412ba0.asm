@@ -35,12 +35,12 @@
 ;   core_batman.cpp_CBatman_pickRandomMovementState_FUN_00412b20
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042e120
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0
-;   core_charactr.cpp_FUN_0042d700
 ;   ... and 19 more
 ;
 ; *****************************************************************************
@@ -239,8 +239,8 @@ section .text
     LEA EAX,[EBP + 0xfffffe62]          ; 00412de8
     PUSH EAX                            ; 00412dee
     PUSH EBX                            ; 00412def
-    CALL core_charactr.cpp_FUN_0042d750 ; 00412df0
-        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750 ; 00412df0
+        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 00412df5
     CMP dword ptr [EBP + 0x72],0xd      ; 00412df8
         ;   Label: LAB_00412df8

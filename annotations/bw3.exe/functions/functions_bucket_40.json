@@ -5076,7 +5076,7 @@
       }
     ],
     "importable":true,
-    "name":"core_bugs.cpp_FUN_004241c0",
+    "name":"core_bugs.cpp_normalizeVector_FUN_004241c0",
     "ret":"undefined1",
     "sig":"default",
     "vars":{
@@ -5470,10 +5470,10 @@
         "start":"0042e8c0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_FUN_0042e8c0",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_charactr.cpp_CCharacter_processFire_FUN_0042e8c0",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -5765,9 +5765,40 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CCharacter*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        }
+      ]
     }
   },
   {
@@ -14602,7 +14633,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_dtri.cpp_FUN_004795c0",
+    "name":"core_dtri.cpp_rayTriangleFloorTest_FUN_004795c0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -27823,14 +27854,9 @@
     "addr":"004e7540",
     "body":[
       {
-        "end":"004e7573",
-        "size":52,
+        "end":"004e760f",
+        "size":208,
         "start":"004e7540"
-      },
-      {
-        "end":"004e75bb",
-        "size":58,
-        "start":"004e7582"
       }
     ],
     "importable":true,
@@ -29971,7 +29997,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_motion.cpp_FUN_004fcdc0",
+    "name":"core_motion.cpp_CMotionController_render_FUN_004fcdc0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -47787,19 +47813,9 @@
     "addr":"00571340",
     "body":[
       {
-        "end":"00571369",
-        "size":42,
-        "start":"00571340"
-      },
-      {
-        "end":"00571486",
-        "size":92,
-        "start":"0057142b"
-      },
-      {
         "end":"00571d0d",
-        "size":341,
-        "start":"00571bb9"
+        "size":2510,
+        "start":"00571340"
       }
     ],
     "importable":true,
@@ -49187,7 +49203,7 @@
       }
     ],
     "importable":true,
-    "name":"core_xform.cpp_FUN_00583940",
+    "name":"core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940",
     "ret":"undefined1",
     "sig":"default",
     "vars":{

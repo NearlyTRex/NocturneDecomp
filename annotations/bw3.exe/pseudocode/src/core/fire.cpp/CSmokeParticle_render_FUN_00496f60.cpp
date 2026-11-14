@@ -33,7 +33,7 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_00496f60(CSmokeParticle *th
   local_64.x = (int)ROUND((this_ptr->position).x * _DAT_005df8e4);
   local_64.y = (int)ROUND((this_ptr->position).y * _DAT_005df8e4);
   local_64.z = (int)ROUND((this_ptr->position).z * _DAT_005df8e4);
-  engine_special_cpp_FUN_0056356c(&vertex_ptr->projected_vertex,&local_64);
+  engine_special_cpp_transformPoint_FUN_0056356c(&vertex_ptr->projected_vertex,&local_64);
   iVar2 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_0046e6b0(DAT_005f2afc,vertex_ptr);
   if (iVar2 != 0) {
     fVar3 = (float10)this_ptr->age;
@@ -59,28 +59,32 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_00496f60(CSmokeParticle *th
     local_28.z = (int)ROUND(_DAT_005df8e4 * 0.0);
     local_54 = local_58;
     local_1c = local_58;
-    engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_28);
+    engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+              (&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_28);
     local_58 = local_14;
     local_54 = local_1c;
     local_50 = 0;
     local_70.x = (int)ROUND(local_14 * _DAT_005df8e4);
     local_70.y = (int)ROUND(local_1c * _DAT_005df8e4);
     local_70.z = (int)ROUND(_DAT_005df8e4 * 0.0);
-    engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_70);
+    engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+              (&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_70);
     local_50 = 0;
     local_58 = local_14;
     local_54 = local_14;
     local_34.x = (int)ROUND(local_14 * _DAT_005df8e4);
     local_34.y = (int)ROUND(local_14 * _DAT_005df8e4);
     local_34.z = (int)ROUND(_DAT_005df8e4 * 0.0);
-    engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_34);
+    engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+              (&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_34);
     local_58 = local_1c;
     local_54 = local_14;
     local_50 = 0;
     local_4c.x = (int)ROUND(local_1c * _DAT_005df8e4);
     local_4c.y = (int)ROUND(local_14 * _DAT_005df8e4);
     local_4c.z = (int)ROUND(_DAT_005df8e4 * 0.0);
-    engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_4c);
+    engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+              (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_4c);
     DAT_0060b02c = 0x80000;
     _DAT_0060b030 = 0xf80000;
     _DAT_0060b05c = 0xf80000;

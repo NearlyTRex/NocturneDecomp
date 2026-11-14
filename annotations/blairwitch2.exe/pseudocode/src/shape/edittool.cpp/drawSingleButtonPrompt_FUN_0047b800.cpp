@@ -67,7 +67,7 @@ void __cdecl shape_edittool_cpp_drawSingleButtonPrompt_FUN_0047b800(char *title,
               (_DAT_01c25590,message,((_DAT_01c35e48 + _DAT_01c35e50) - iVar3) / 2,
                (((_DAT_01c35e4c + _DAT_01c35e54) - iVar1) - iVar2) / 2,color,0xffffffff);
     shape_edittool_cpp_CEdButton_paint_FUN_00484f20(&local_108,1);
-    shape_edittool_cpp_FUN_0047f210(g_CEditorToolsPtr,0);
+    shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_0047f210(g_CEditorToolsPtr,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
   }
   engine_2d_c_clearInputAndWait_FUN_004032b0();

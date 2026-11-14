@@ -20,6 +20,7 @@
 #include "types/classes/CStrList.h"
 #include "types/classes/CVector3f.h"
 #include "types/structs/SIntersectXZCylinder.h"
+#include "types/unions/UOrientationVector.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x490000
@@ -29,7 +30,7 @@ int __cdecl core_dtri_cpp_cylinderEdgeIntersection_FUN_00490150(SIntersectXZCyli
 void __cdecl core_dtri_cpp_cylinderEdgeTestWithHeight_FUN_00490430(SIntersectXZCylinder *cylinder,CVector3f *vertex1,CVector3f *vertex2);
 void __cdecl core_dtri_cpp_cylinderTriangleTest_FUN_004904d0(CDemonTriangle *triangle,SIntersectXZCylinder *cylinder);
 int __cdecl core_dtri_cpp_rayEdgeHeightTest_FUN_004908d0(CVector3f *vertex1,CVector3f *vertex2,float ray_radius,float *out_height);
-int __cdecl core_dtri_cpp_FUN_00490a40(CDemonTriangle *triangle,CVector3f *position,float search_radius,float *out_height);
+int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_00490a40(CDemonTriangle *triangle,CVector3f *position,float search_radius,float *out_height);
 void __cdecl core_dtri_cpp_clipLineToPlane_FUN_00490df0(CVector3f *point1_ptr,CVector3f *point2_ptr,CVector3f *result_ptr,double plane_nx,double plane_ny,double plane_nz,double plane_d);
 void __cdecl core_dtri_cpp_clipPolygonToRight_FUN_00491260(float x_max);
 void __cdecl core_dtri_cpp_clipPolygonToFar_FUN_00491690(float z_far);
@@ -53,9 +54,9 @@ void __cdecl core_dynamite_cpp_CDynamite_process_FUN_004926d0(CDynamite *this_pt
 CDynamite * __cdecl core_dynamite_cpp_CDynamite_dtor_FUN_004928d0(CDynamite *this_ptr,uint flags);
 void __cdecl shape_edittool_cpp_staticInit_FUN_00492920(void);
 void shape_edittool_cpp_FUN_00492940(void);
-void shape_edittool_cpp_FUN_00492970(int param_1,int param_2,int param_3);
-void shape_edittool_cpp_FUN_004929e0(void);
-void shape_edittool_cpp_FUN_00492a40(int param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl shape_edittool_cpp_plotPixelWithClipping_FUN_00492970(int x_coord,int y_coord,int use_clipping);
+void __cdecl shape_edittool_cpp_initEditorFontMetrics_FUN_004929e0(void);
+void __cdecl shape_edittool_cpp_drawDashedLine_FUN_00492a40(int x1,int y1,int x2,int y2,int dash_length);
 void shape_edittool_cpp_FUN_00492bd0(void);
 void shape_edittool_cpp_FUN_00492c20(int param_1,int param_2,int param_3,int param_4,uint param_5,uint param_6);
 void shape_edittool_cpp_FUN_00492d40(int param_1,int param_2,int param_3,int param_4,uint param_5);
@@ -112,9 +113,9 @@ uint __cdecl shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_00497830
 void __cdecl shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_00497870(CEditorTools *this_ptr,int use_clipping);
 char * __cdecl shape_edittool_cpp_CEditorTools_getClipboardText_FUN_00498210(CEditorTools *this_ptr);
 void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_00498290(CEditorTools *this_ptr,char *text_data);
-void __cdecl shape_edittool_cpp_FUN_00498360(CEditorTools *this_ptr,float scale_factor,int text_color);
-void shape_edittool_cpp_FUN_004985b0(void);
-void shape_edittool_cpp_FUN_00498660(float *param_1,float *param_2);
+void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_00498360(CEditorTools *this_ptr,float scale_factor,int text_color);
+void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004985b0(CEditorTools *this_ptr,float scale_factor,int text_color,CVector3f *world_position,UOrientationVector *orientation);
+void __cdecl shape_edittool_cpp_draw3DInterpolatedLine_FUN_00498660(CVector3f *start_point,CVector3f *end_point);
 void shape_edittool_cpp_FUN_004987b0(void);
 void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_00498e40(CEditorTools *this_ptr,char *output_buffer);
 void __cdecl shape_edittool_cpp_CEditorTools_drawPixelLine_FUN_00498f10(CEditorTools *this_ptr,int start_x,int start_y,int length);
@@ -170,7 +171,7 @@ void __cdecl shape_edittool_cpp_CPickList_remove_FUN_0049c310(CPickList *this_pt
 void __cdecl shape_edittool_cpp_CPickList_clear_FUN_0049c370(CPickList *this_ptr);
 void __cdecl shape_edittool_cpp_CPickList_sort_FUN_0049c3e0(CPickList *this_ptr,int start_index,int end_index);
 void __cdecl shape_edittool_cpp_CPickList_swap_FUN_0049c470(CPickList *this_ptr,int index1,int index2);
-void shape_edittool_cpp_FUN_0049c500(int param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl shape_edittool_cpp_draw3DBorder_FUN_0049c500(int left,int top,int right,int bottom,int pressed);
 void shape_edittool_cpp_FUN_0049c750(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6);
 CEdScrollBar * __cdecl shape_edittool_cpp_CEdScrollBar_ctor_FUN_0049c970(CEdScrollBar *this_ptr);
 CEdScrollBar * __cdecl shape_edittool_cpp_CEdScrollBar_dtor_FUN_0049c9b0(CEdScrollBar *this_ptr,uint flags);

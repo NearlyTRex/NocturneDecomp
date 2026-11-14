@@ -19,21 +19,9 @@
   },
   "cross_references": [
     {
-      "addr": "0042c520",
-      "from_addr": "0042c593",
-      "name": "cockpit_ckptutil.c_FUN_0042c520",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0042dae0",
       "from_addr": "0042dc9f",
       "name": "cockpit_ckptutil.c_FUN_0042dae0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0042dec0",
-      "from_addr": "0042df1a",
-      "name": "cockpit_ckptutil.c_FUN_0042dec0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -70,6 +58,18 @@
       "addr": "0042c780",
       "from_addr": "0042c88f",
       "name": "cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042c780",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042dec0",
+      "from_addr": "0042df1a",
+      "name": "cockpit_ckptutil.c_loadEdgeListFile_FUN_0042dec0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042c520",
+      "from_addr": "0042c593",
+      "name": "cockpit_ckptutil.c_readBitmapFile_FUN_0042c520",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -147,7 +147,7 @@
     {
       "addr": "00517400",
       "from_addr": "005174e6",
-      "name": "cockpit_pkbitmap.cpp_FUN_00517400",
+      "name": "cockpit_pkbitmap.cpp_loadPBGFile_FUN_00517400",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -385,6 +385,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "005ae420",
+      "from_addr": "005ae66d",
+      "name": "core_cloth.cpp_CCloth_initializeConnections_FUN_005ae420",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "005adeb0",
       "from_addr": "005adf46",
       "name": "core_cloth.cpp_CCloth_load_FUN_005adeb0",
@@ -400,12 +406,6 @@
       "addr": "005b0ef0",
       "from_addr": "005b0fa0",
       "name": "core_cloth.cpp_CCloth_saveJoinedLight_FUN_005b0ef0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005ae420",
-      "from_addr": "005ae66d",
-      "name": "core_cloth.cpp_FUN_005ae420",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -525,7 +525,7 @@
     {
       "addr": "00447ea0",
       "from_addr": "004482c4",
-      "name": "core_dfont.cpp_FUN_00447ea0",
+      "name": "core_dfont.cpp_initFonts_FUN_00447ea0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -775,6 +775,18 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00491110",
+      "from_addr": "0049117c",
+      "name": "core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_00491110",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00490f80",
+      "from_addr": "00490fec",
+      "name": "core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0048e7e0",
       "from_addr": "0048ee22",
       "name": "core_event.cpp_CEventList_evaluateAtom_FUN_0048e7e0",
@@ -814,18 +826,6 @@
       "addr": "00491280",
       "from_addr": "004912ca",
       "name": "core_event.cpp_CEventList_setTimerEvent_FUN_00491280",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00490f80",
-      "from_addr": "00490fec",
-      "name": "core_event.cpp_FUN_00490f80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00491110",
-      "from_addr": "0049117c",
-      "name": "core_event.cpp_FUN_00491110",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -991,6 +991,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004bbf70",
+      "from_addr": "004bc31c",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004bbf70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004b7050",
       "from_addr": "004b7112",
       "name": "core_game.cpp_CGame_playerControls_FUN_004b7050",
@@ -1018,12 +1024,6 @@
       "addr": "004b8e10",
       "from_addr": "004b8e9a",
       "name": "core_game.cpp_FUN_004b8e10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004bbf70",
-      "from_addr": "004bc31c",
-      "name": "core_game.cpp_FUN_004bbf70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1159,15 +1159,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004eed60",
-      "from_addr": "004eedd3",
-      "name": "core_menu.cpp_FUN_004eed60",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004ee8e0",
       "from_addr": "004ee94f",
       "name": "core_menu.cpp_addCustomKeyBinding_FUN_004ee8e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004eed60",
+      "from_addr": "004eedd3",
+      "name": "core_menu.cpp_configureCustomKeyBindings_FUN_004eed60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1225,6 +1225,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004fd280",
+      "from_addr": "004fd349",
+      "name": "core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004fd280",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004fbc00",
       "from_addr": "004fbc2c",
       "name": "core_mission.cpp_CDemonMission_getNextLoadedInventoryActor_FUN_004fbc00",
@@ -1276,12 +1282,6 @@
       "addr": "004fc820",
       "from_addr": "004fc8c8",
       "name": "core_mission.cpp_FUN_004fc820",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004fd280",
-      "from_addr": "004fd349",
-      "name": "core_mission.cpp_FUN_004fd280",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1383,7 +1383,7 @@
     {
       "addr": "00502820",
       "from_addr": "00502a4f",
-      "name": "core_motion.cpp_FUN_00502820",
+      "name": "core_motion.cpp_CMotionList_load_FUN_00502820",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -2541,19 +2541,19 @@
     {
       "addr": "00500970",
       "from_addr": "00500a0b",
-      "name": "engine_model.c_FUN_00500970",
+      "name": "engine_model.c_getMRGLBounds_FUN_00500970",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00500f30",
       "from_addr": "00501081",
-      "name": "engine_model.c_FUN_00500f30",
+      "name": "engine_model.c_getMRGLSize_FUN_00500f30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005011a0",
       "from_addr": "00501209",
-      "name": "engine_model.c_FUN_005011a0",
+      "name": "engine_model.c_loadModelChunk_FUN_005011a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -2701,6 +2701,18 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0047fd00",
+      "from_addr": "0047fece",
+      "name": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_0047fd00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047f210",
+      "from_addr": "0047fb98",
+      "name": "shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0047eff0",
       "from_addr": "0047f14d",
       "name": "shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_0047eff0",
@@ -2839,12 +2851,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047a4f0",
-      "from_addr": "0047a537",
-      "name": "shape_edittool.cpp_FUN_0047a4f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0047be90",
       "from_addr": "0047bf67",
       "name": "shape_edittool.cpp_FUN_0047be90",
@@ -2857,27 +2863,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047c0f0",
-      "from_addr": "0047c11d",
-      "name": "shape_edittool.cpp_FUN_0047c0f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0047e870",
       "from_addr": "0047e8cb",
       "name": "shape_edittool.cpp_FUN_0047e870",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047f210",
-      "from_addr": "0047fb98",
-      "name": "shape_edittool.cpp_FUN_0047f210",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047fd00",
-      "from_addr": "0047fece",
-      "name": "shape_edittool.cpp_FUN_0047fd00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -2905,9 +2893,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0047a4f0",
+      "from_addr": "0047a537",
+      "name": "shape_edittool.cpp_initEditorFontMetrics_FUN_0047a4f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0047bca0",
       "from_addr": "0047bd52",
       "name": "shape_edittool.cpp_paintWindowBackground_FUN_0047bca0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047c0f0",
+      "from_addr": "0047c11d",
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0047c0f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {

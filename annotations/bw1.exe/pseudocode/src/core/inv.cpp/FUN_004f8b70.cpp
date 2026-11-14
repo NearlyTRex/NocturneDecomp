@@ -45,6 +45,6 @@ void core_inv_cpp_FUN_004f8b70(CInventory *param_1,CDemonActor *param_2)
     (pCVar2->base).actor_name[1] = cVar1;
     pCVar2 = (CAmmo *)((pCVar2->base).actor_name + 2);
   } while (cVar1 != '\0');
-  core_inv_cpp_FUN_004f7690(param_1,&this_ptr->base,0);
+  core_inv_cpp_CInventory_addItem_FUN_004f7690(param_1,&this_ptr->base,0);
   return;
 }

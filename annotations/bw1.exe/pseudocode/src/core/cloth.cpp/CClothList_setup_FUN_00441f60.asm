@@ -14,7 +14,7 @@
 ;   core_succubus.cpp_CSuccubus_setup_FUN_00591ff0 at 0059207c
 ;
 ; Called Functions:
-;   core_cloth.cpp_FUN_0043eea0
+;   core_cloth.cpp_CCloth_setup_FUN_0043eea0
 ;
 ; *****************************************************************************
 
@@ -43,8 +43,8 @@ section .text
     PUSH EDX                            ; 00441f87
     ADD EBX,0x4                         ; 00441f88
     INC ESI                             ; 00441f8b
-    CALL core_cloth.cpp_FUN_0043eea0    ; 00441f8c
-        ;   XREF to: 0043eea0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043eea0(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
+    CALL core_cloth.cpp_CCloth_setup_FUN_0043eea0 ; 00441f8c
+        ;   XREF to: 0043eea0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_setup_FUN_0043eea0(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
     MOV ECX,dword ptr [EDI]             ; 00441f91
     ADD ESP,0x10                        ; 00441f93
     CMP ESI,ECX                         ; 00441f96

@@ -9,9 +9,9 @@
 // Address: 004fb350
 void __cdecl staticInit(void);
 
-// Original: core_mission.cpp_FUN_004fb380
+// Original: core_mission.cpp_CDemonMission_reset_FUN_004fb380
 // Address: 004fb380
-void FUN_004fb380(int param_1);
+void __cdecl CDemonMission::reset(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_clearMission_FUN_004fb440
 // Address: 004fb440
@@ -129,9 +129,9 @@ void __cdecl CDemonMission::generateUniqueActorName(CDemonMission *this_ptr,char
 // Address: 004fcda0
 void __cdecl CDemonMission::generateActorName(CDemonMission *this_ptr,CDemonActor *actor);
 
-// Original: core_mission.cpp_FUN_004fce00
+// Original: core_mission.cpp_CDemonMission_startMission_FUN_004fce00
 // Address: 004fce00
-int __cdecl FUN_004fce00(CDemonMission *this_ptr);
+int __cdecl CDemonMission::startMission(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_freeAllAssets_FUN_004fcf50
 // Address: 004fcf50
@@ -145,9 +145,9 @@ int __cdecl CDemonMission::createOneHero(CDemonMission *this_ptr,int index,int h
 // Address: 004fd0e0
 int __cdecl CDemonMission::createHeros(CDemonMission *this_ptr,CCharacter *existing_hero);
 
-// Original: core_mission.cpp_FUN_004fd280
+// Original: core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004fd280
 // Address: 004fd280
-void __cdecl FUN_004fd280(CDemonMission *this_ptr);
+void __cdecl CDemonMission::ensureHeroPlaceholder(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_FUN_004fd450
 // Address: 004fd450

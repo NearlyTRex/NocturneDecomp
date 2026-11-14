@@ -51,7 +51,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_0047ee50(CEdit
   iVar7 = wincore_winrun_cpp_getTime_FUN_005806a0();
   iVar1 = (_DAT_01c5b104 + -1) * 0x1f8;
   if ((iVar2 != *(int *)(iVar1 + 0x1c5b2f8)) || (0x47ffff < iVar7 - *(int *)(iVar1 + 0x1c5b2fc))) {
-    shape_edittool_cpp_FUN_0047fa80(this_ptr);
+    shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80(this_ptr);
     engine_3d_c_setRenderAlpha_FUN_00406bf0(0xffff);
     engine_mini3d_cpp_setAlpha_FUN_004edaf0(1.0);
     engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_004b0ff0

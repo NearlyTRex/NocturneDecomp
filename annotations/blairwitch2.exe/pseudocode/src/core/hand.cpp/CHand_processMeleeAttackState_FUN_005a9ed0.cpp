@@ -49,7 +49,7 @@ LAB_005a9f63:
   this_ptr_00 = &(this_ptr->base).base.base.model;
   pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
   iVar6 = pSVar4->state_index;
-  fVar5 = core_motion_cpp_FUN_00503e60(&this_ptr_00->base);
+  fVar5 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00503e60(&this_ptr_00->base);
   if ((iVar6 != 3) && (iVar6 != 4)) {
     return;
   }

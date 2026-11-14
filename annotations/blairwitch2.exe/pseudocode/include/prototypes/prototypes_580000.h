@@ -241,7 +241,7 @@ void __cdecl wincore_winrun_cpp_plotClippedPixel_FUN_0058ebd0(int x_coord,int y_
 void __cdecl wincore_winrun_cpp_drawCrosshair_FUN_0058ec10(void);
 void __cdecl wincore_winrun_cpp_clearMouseClicks_FUN_0058ed00(void);
 void __cdecl wincore_winrun_cpp_setCursorPosition_FUN_0058ed10(int x,int y);
-LRESULT __stdcall wincore_winrun_cpp_FUN_0058ed90(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam);
+LRESULT __stdcall wincore_winrun_cpp_mainWindowProc_FUN_0058ed90(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam);
 void __cdecl wincore_winrun_cpp_processWindowMessages_FUN_0058f270(void);
 int __stdcall wincore_winrun_cpp_winMain_FUN_0058f310(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow);
 void __cdecl wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_0058f5d0(char *message);

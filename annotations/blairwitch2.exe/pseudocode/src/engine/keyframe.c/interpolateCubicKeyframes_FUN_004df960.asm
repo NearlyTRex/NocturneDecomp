@@ -30,7 +30,7 @@
 ;   engine_keyframe.c_calculatePackedSurfaceNormal_FUN_004df430
 ;   engine_keyframe.c_calculateSurfaceNormal_FUN_004df5f0
 ;   engine_keyframe.c_loadAndInterpolateKeyframes_FUN_004df770
-;   engine_model.c_FUN_00500f30
+;   engine_model.c_getMRGLSize_FUN_00500f30
 ;
 ; *****************************************************************************
 
@@ -336,8 +336,8 @@ section .text
         ;   Label: LAB_004dfcc0
     PUSH EBX                            ; 004dfcc3
         ;   Label: LAB_004dfcc3
-    CALL engine_model.c_FUN_00500f30    ; 004dfcc4
-        ;   XREF to: 00500f30 (UNCONDITIONAL_CALL)  ; int engine_model.c_FUN_00500f30(SMRGLHeaderExtended * header)
+    CALL engine_model.c_getMRGLSize_FUN_00500f30 ; 004dfcc4
+        ;   XREF to: 00500f30 (UNCONDITIONAL_CALL)  ; int engine_model.c_getMRGLSize_FUN_00500f30(SMRGLHeaderExtended * header)
     SHR EAX,0x2                         ; 004dfcc9
     SHL EAX,0x2                         ; 004dfccc
     ADD EBX,EAX                         ; 004dfccf

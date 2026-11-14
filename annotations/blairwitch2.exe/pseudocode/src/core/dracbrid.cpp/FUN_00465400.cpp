@@ -150,7 +150,7 @@ void __cdecl core_dracbrid_cpp_FUN_00465400(CDraculaBride *this_ptr,char *sound_
           puVar4[0x12] = (uint)local_24;
           puVar4[0x13] = local_20;
         }
-        core_spline_cpp_FUN_00561310(local_e4,(float)puVar4[7],0.0);
+        core_spline_cpp_computeSplineBasis_FUN_00561310(local_e4,(float)puVar4[7],0.0);
         core_spline_cpp_FUN_00561540(local_e4,puVar4 + 8,puVar4 + 0xb,puVar4 + 0xe,puVar4 + 0x11);
         local_1c = local_58;
         (&local_24)[(uint)bVar5 * -2 + 3] = (&local_6c)[(uint)bVar5 * -2 + 6];

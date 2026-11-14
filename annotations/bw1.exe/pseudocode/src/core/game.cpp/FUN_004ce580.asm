@@ -199,8 +199,8 @@ section .text
     LEA EAX,[ESP + 0x688]               ; 004ce72d
         ;   Label: LAB_004ce72d
     PUSH EAX                            ; 004ce734
-    CALL core_slew.cpp_FUN_0056ba50     ; 004ce735
-        ;   XREF to: 0056ba50 (UNCONDITIONAL_CALL)  ; undefined core_slew.cpp_FUN_0056ba50()
+    CALL core_slew.cpp_CSlew_processInput_FUN_0056ba50 ; 004ce735
+        ;   XREF to: 0056ba50 (UNCONDITIONAL_CALL)  ; void core_slew.cpp_CSlew_processInput_FUN_0056ba50(CSlew * this_ptr)
     ADD ESP,0x4                         ; 004ce73a
     LEA EDX,[ESP + 0x694]               ; 004ce73d
     MOV EAX,[0x01d06ab4]                ; 004ce744 | DAT_01d06ab4
@@ -985,8 +985,8 @@ section .text
     PUSH 0x1                            ; 004cf077
     MOV EDX,dword ptr [0x00622c18]      ; 004cf079 | g_CDemonSetPtr
     PUSH EDX                            ; 004cf07f | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_00550580      ; 004cf080
-        ;   XREF to: 00550580 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00550580(CDemonSet * this_ptr, int skip_prerender)
+    CALL core_set.cpp_CDemonSet_renderScene_FUN_00550580 ; 004cf080
+        ;   XREF to: 00550580 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderScene_FUN_00550580(CDemonSet * this_ptr, int skip_prerender)
     ADD ESP,0x8                         ; 004cf085
     JMP 0x004ce67d                      ; 004cf088
         ;   XREF to: 004ce67d (UNCONDITIONAL_JUMP)  ; LAB_004ce67d
@@ -1030,8 +1030,8 @@ section .text
         ;   XREF to: 004ce908 (CONDITIONAL_JUMP)  ; LAB_004ce908
     MOV EBX,dword ptr [0x00622c18]      ; 004cf0fa | g_CDemonSetPtr
     PUSH EBX                            ; 004cf100 | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_00551170      ; 004cf101
-        ;   XREF to: 00551170 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_00551170()
+    CALL core_set.cpp_CDemonSet_renderGogglesView_FUN_00551170 ; 004cf101
+        ;   XREF to: 00551170 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderGogglesView_FUN_00551170(CDemonSet * this_ptr)
     JMP 0x004ce905                      ; 004cf106
         ;   XREF to: 004ce905 (UNCONDITIONAL_JUMP)  ; LAB_004ce905
     PUSH EDI                            ; 004cf10b

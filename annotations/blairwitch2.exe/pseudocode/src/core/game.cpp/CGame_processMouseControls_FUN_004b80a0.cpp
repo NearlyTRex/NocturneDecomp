@@ -18,7 +18,7 @@ void __cdecl core_game_cpp_CGame_processMouseControls_FUN_004b80a0(CGame *this_p
   float local_40;
   float local_3c;
   
-  core_game_cpp_FUN_004b76c0(this_ptr,player_control);
+  core_game_cpp_CGame_processKeyboardControls_FUN_004b76c0(this_ptr,player_control);
   if (this_ptr->screen_clear_condition == 0) {
     x = DAT_006141b8 / 2;
     y = DAT_006141bc / 2;

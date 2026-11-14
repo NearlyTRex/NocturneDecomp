@@ -23,11 +23,11 @@
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b80
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
 ;   core_charactr.cpp_FUN_0042c1e0
-;   core_charactr.cpp_FUN_0042c230
 ;   core_charactr.cpp_FUN_0042cd70
 ;   core_charactr.cpp_FUN_00432330
 ;   core_charactr.cpp_FUN_00433c60
@@ -269,8 +269,8 @@ section .text
     LEA EAX,[ESP + 0x1c]                ; 0040fd93
     PUSH EAX                            ; 0040fd97
     PUSH EBX                            ; 0040fd98
-    CALL core_charactr.cpp_FUN_0042c230 ; 0040fd99
-        ;   XREF to: 0042c230 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042c230(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230 ; 0040fd99
+        ;   XREF to: 0042c230 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 0040fd9e
     PUSH EBX                            ; 0040fda1
     CALL core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30 ; 0040fda2

@@ -132,7 +132,8 @@ CMatrix3x4f * __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_00
       afStack_b4[3] = 0.904;
       afStack_b4[2] = 0.155;
     }
-    core_xform_cpp_FUN_00591c10(&CStack_1a8,&DAT_0265370c,afStack_b4 + 2);
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
+              (&CStack_1a8,&DAT_0265370c,afStack_b4 + 2);
     (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,in_stack_fffffdf8);
     pfVar4 = afStack_148;
     pfVar6 = &fStack_160;

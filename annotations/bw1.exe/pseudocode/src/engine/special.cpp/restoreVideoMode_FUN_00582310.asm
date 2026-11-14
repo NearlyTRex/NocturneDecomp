@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   wincore_wddvmem.cpp_FUN_005ad270 at 005ad299
 ;   wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_005aca40 at 005aca58
+;   wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_005ad270 at 005ad299
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c50948

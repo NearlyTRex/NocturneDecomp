@@ -25,7 +25,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24
     }
     else {
       if (DAT_006141c0 != 0x20) goto LAB_004047e8;
-      _DAT_01c35e6c = engine_special_cpp_FUN_0055b3b1;
+      _DAT_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0055b3b1;
     }
   }
   else if (_DAT_01c38b40 == 0) {
@@ -38,7 +38,7 @@ LAB_00404756:
     }
   }
   else if (DAT_006141c0 == 0x20) {
-    _DAT_01c35e6c = engine_special_cpp_FUN_0055b3b1;
+    _DAT_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0055b3b1;
   }
   else {
 LAB_004047e8:

@@ -90,7 +90,7 @@ void __cdecl core_doc_cpp_CDoc_makeDrawDecision_FUN_004555c0(CDoc *this_ptr)
   }
   if ((this_ptr->base).base.layer_action_index != 9) goto LAB_00455742;
   pCVar11 = &(this_ptr->base).base.model;
-  local_30 = core_motion_cpp_FUN_00503e60(&pCVar11->base);
+  local_30 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00503e60(&pCVar11->base);
   local_24 = 1.0;
   local_14 = local_30;
   pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&pCVar11->base);

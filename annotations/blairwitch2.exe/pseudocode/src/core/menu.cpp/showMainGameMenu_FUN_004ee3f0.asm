@@ -30,13 +30,13 @@
 ;   ... and 26 more
 ;
 ; Called Functions:
+;   core_game.cpp_CGame_loadGame_FUN_004bbf70
 ;   core_game.cpp_CGame_saveClockTime_FUN_004b3000
 ;   core_game.cpp_CGame_updateDT_FUN_004b3010
-;   core_game.cpp_FUN_004bbf70
 ;   core_game.cpp_FUN_004bc840
 ;   core_main.c_FUN_004e45e0
-;   core_menu.cpp_FUN_004eb0e0
-;   core_menu.cpp_FUN_004ee1a0
+;   core_menu.cpp_renderMenuAndGetChoice_FUN_004eb0e0
+;   core_menu.cpp_showOptionsScreen_FUN_004ee1a0
 ;   core_moon.cpp_CMoon_free_FUN_00502450
 ;   core_moon.cpp_CMoon_init_FUN_005023e0
 ;   core_moon.cpp_CMoon_render_FUN_00502510
@@ -259,8 +259,8 @@ section .text
     PUSH EAX                            ; 004ee61f
     PUSH 0x4                            ; 004ee620
     PUSH 0x1d086e0                      ; 004ee622
-    CALL core_menu.cpp_FUN_004eb0e0     ; 004ee627
-        ;   XREF to: 004eb0e0 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_004eb0e0(char * * menu_text_array, int menu_count, int * selected_index_ptr, int y_position, ...)
+    CALL core_menu.cpp_renderMenuAndGetChoice_FUN_004eb0e0 ; 004ee627
+        ;   XREF to: 004eb0e0 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_renderMenuAndGetChoice_FUN_004eb0e0(char * * menu_text_array, int menu_count, int * selected_index_ptr, int y_position, ...)
     ADD ESP,0x14                        ; 004ee62c
     MOV EBX,dword ptr [ESP + 0x14]      ; 004ee62f
     MOV ESI,EAX                         ; 004ee633
@@ -501,8 +501,8 @@ section .text
     PUSH 0x0                            ; 004ee873
     MOV EDI,dword ptr [0x00616494]      ; 004ee875 | g_CGamePtr
     PUSH EDI                            ; 004ee87b | g_CGameInstance
-    CALL core_game.cpp_FUN_004bbf70     ; 004ee87c
-        ;   XREF to: 004bbf70 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004bbf70(CGame * this_ptr, char * save_filename, int load_mode)
+    CALL core_game.cpp_CGame_loadGame_FUN_004bbf70 ; 004ee87c
+        ;   XREF to: 004bbf70 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_loadGame_FUN_004bbf70(CGame * this_ptr, char * save_filename, int load_mode)
     ADD ESP,0xc                         ; 004ee881
     CALL engine_2d.c_clearInputAndWait_FUN_004032b0 ; 004ee884
         ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_004032b0()
@@ -518,8 +518,8 @@ section .text
         ;   XREF to: 004ee6cc (UNCONDITIONAL_JUMP)  ; LAB_004ee6cc
     PUSH 0x0                            ; 004ee8a6
         ;   Label: caseD_1
-    CALL core_menu.cpp_FUN_004ee1a0     ; 004ee8a8
-        ;   XREF to: 004ee1a0 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_FUN_004ee1a0(int initialize_systems)
+    CALL core_menu.cpp_showOptionsScreen_FUN_004ee1a0 ; 004ee8a8
+        ;   XREF to: 004ee1a0 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_showOptionsScreen_FUN_004ee1a0(int initialize_systems)
     JMP 0x004ee6d1                      ; 004ee8ad
         ;   XREF to: 004ee6d1 (UNCONDITIONAL_JUMP)  ; LAB_004ee6d1
     MOV EBP,0x63                        ; 004ee8b2

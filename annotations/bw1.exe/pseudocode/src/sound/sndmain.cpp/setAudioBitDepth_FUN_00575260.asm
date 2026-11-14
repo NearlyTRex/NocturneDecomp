@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   bit_depth
 ;
 ; XREF[1]:
-;   core_menu.cpp_FUN_0050ba70 at 0050c826
+;   core_menu.cpp_configureSoundOptions_FUN_0050ba70 at 0050c826
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_getAudioChannelCount_FUN_00575240

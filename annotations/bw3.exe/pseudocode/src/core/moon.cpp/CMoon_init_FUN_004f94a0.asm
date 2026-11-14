@@ -7,8 +7,8 @@
 ; CMoon *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_menu.cpp_FUN_004ea280 at 004ea412
 ;   core_menu.cpp_showMainGameMenu_FUN_004ea4d0 at 004ea580
+;   core_menu.cpp_showOptionsScreen_FUN_004ea280 at 004ea412
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_bwp3_menu_scroll_005c9245

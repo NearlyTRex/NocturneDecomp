@@ -75,7 +75,7 @@ int __cdecl core_charactr_cpp_CCharacter_renderTransparent_FUN_0042f510(CCharact
   iVar2 = core_box_cpp_FUN_0041daf0(local_5c);
   if (iVar2 != 0) {
     this_ptr->was_rendered_opaque = 1;
-    core_charactr_cpp_FUN_0042d8e0(this_ptr);
+    core_charactr_cpp_CCharacter_renderCharacter_FUN_0042d8e0(this_ptr);
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830(&this_ptr->base);
   if (bVar1) {

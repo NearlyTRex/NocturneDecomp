@@ -13,10 +13,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[9]:
+;   core_game.cpp_CGame_loadGame_FUN_004bdfb0 at 004bdfeb
 ;   core_game.cpp_CGame_promptLoadGame_FUN_004bfa40 at 004bfa74
-;   core_game.cpp_FUN_004bda10 at 004bda41
-;   core_game.cpp_FUN_004bdfb0 at 004bdfeb
-;   core_game.cpp_FUN_004bec20 at 004beca1
+;   core_game.cpp_CGame_saveGame_FUN_004bda10 at 004bda41
+;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004bec20 at 004beca1
 ;   core_script.cpp_CScript_dbLoad_FUN_00530610 at 00530795
 ;   core_script.cpp_CScript_findDialogEntry_FUN_00530990 at 005309b6
 ;   core_script.cpp_CScript_initRuntime_FUN_005297a0 at 0052984a

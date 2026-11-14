@@ -34,7 +34,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_00548090
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250
-;   core_xform.cpp_FUN_00583800
+;   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00583800
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005833e0
 ;
 ; *****************************************************************************
@@ -134,8 +134,8 @@ section .text
     PUSH EAX                            ; 0043d781
     LEA ESI,[EBX + 0x48]                ; 0043d782
     PUSH ESI                            ; 0043d785
-    CALL core_xform.cpp_FUN_00583800    ; 0043d786
-        ;   XREF to: 00583800 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_00583800(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00583800 ; 0043d786
+        ;   XREF to: 00583800 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00583800(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0043d78b
     LEA EAX,[EBX + 0x28]                ; 0043d78e
     PUSH EAX                            ; 0043d791
@@ -143,8 +143,8 @@ section .text
     PUSH EAX                            ; 0043d795
     LEA EAX,[EBP + -0x1a]               ; 0043d796
     PUSH EAX                            ; 0043d799
-    CALL core_xform.cpp_FUN_00583800    ; 0043d79a
-        ;   XREF to: 00583800 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_00583800(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00583800 ; 0043d79a
+        ;   XREF to: 00583800 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00583800(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0043d79f
     LEA EAX,[EBP + -0x1a]               ; 0043d7a2
     PUSH EAX                            ; 0043d7a5

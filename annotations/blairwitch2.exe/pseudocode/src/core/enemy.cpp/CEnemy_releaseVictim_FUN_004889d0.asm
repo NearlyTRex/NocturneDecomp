@@ -13,7 +13,7 @@
 ;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_00423a60
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60
 ;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
 ; *****************************************************************************
@@ -72,8 +72,8 @@ section .text
     MOV ECX,0xba83126f                  ; 00488a58
     PUSH EBX                            ; 00488a5d
     MOV dword ptr [ESP + 0x14],ECX      ; 00488a5e
-    CALL core_charactr.cpp_FUN_00423a60 ; 00488a62
-        ;   XREF to: 00423a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00423a60(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60 ; 00488a62
+        ;   XREF to: 00423a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 00488a67
     MOV dword ptr [EBX + 0x10a78],0x0   ; 00488a6a
         ;   Label: LAB_00488a6a

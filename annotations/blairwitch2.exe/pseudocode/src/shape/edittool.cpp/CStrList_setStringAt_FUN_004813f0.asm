@@ -9,7 +9,7 @@
 ; char *           Stack[0xc]:4   new_string
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_0047c0f0 at 0047c23b
+;   shape_edittool.cpp_showMultiChoiceDialog_FUN_0047c0f0 at 0047c23b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005d272c

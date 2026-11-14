@@ -15,7 +15,7 @@
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   sound_snddx.cpp_fillStreamBuffer_FUN_005776b0
-;   sound_snddx.cpp_FUN_00577500
+;   sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500
 ;   sound_sndmain.cpp_hasHardware3DSound_FUN_00575560
 ;   sound_sndmain.cpp_logSoundError_FUN_005773f0
 ;   sound_sndmain.cpp_pollAllSfxSlots_FUN_00576f40
@@ -86,8 +86,8 @@ section .text
     RET                                 ; 00578537
     PUSH EAX                            ; 00578538
         ;   Label: LAB_00578538
-    CALL sound_snddx.cpp_FUN_00577500   ; 00578539
-        ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00577500(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500 ; 00578539
+        ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500(uint error_code)
     ADD ESP,0x4                         ; 0057853e
     PUSH EAX                            ; 00578541
     PUSH 0x5f4db0                       ; 00578542 | = "Get position of secondary buffer"

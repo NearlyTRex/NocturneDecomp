@@ -35,19 +35,19 @@
 ; Called Functions:
 ;   core_event.cpp_CEventList_resetGameFlags_FUN_00494880
 ;   core_fldnotes.cpp_CFieldNotes_clear_FUN_004ab7a0
-;   core_game.cpp_FUN_004bdfb0
+;   core_game.cpp_CGame_loadGame_FUN_004bdfb0
 ;   core_game.cpp_FUN_004c4d10
 ;   core_level.cpp_FUN_004dfc50
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_004f7880
 ;   core_mission.cpp_CDemonMission_load_FUN_004f5bc0
 ;   core_mission.cpp_CDemonMission_run_FUN_004f72a0
-;   core_mission.cpp_FUN_004f7590
+;   core_mission.cpp_CDemonMission_startMission_FUN_004f7590
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fopen_FUN_005a43ec
 ;   crt_string.c__stricmp_FUN_005a3260
 ;   engine_dosio.cpp_FUN_004659c0
+;   engine_ini.cpp_CIniFile_ctor_FUN_004d8a20
 ;   engine_ini.cpp_CIniFile_dtor_FUN_004d8a50
-;   engine_ini.cpp_FUN_004d8a20
 ;   ... and 3 more
 ;
 ; *****************************************************************************
@@ -111,8 +111,8 @@ section .text
     PUSH 0x5c37ef                       ; 004be995 | = "system\\bw3.ini"
     LEA EAX,[ESP + 0x8]                 ; 004be99a
     PUSH EAX                            ; 004be99e
-    CALL engine_ini.cpp_FUN_004d8a20    ; 004be99f
-        ;   XREF to: 004d8a20 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_FUN_004d8a20(CIniFile * this_ptr, char * filename, char * section)
+    CALL engine_ini.cpp_CIniFile_ctor_FUN_004d8a20 ; 004be99f
+        ;   XREF to: 004d8a20 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004d8a20(CIniFile * this_ptr, char * filename, char * section)
     ADD ESP,0xc                         ; 004be9a4
     LEA EAX,[ESP + 0x308]               ; 004be9a7
     PUSH EAX                            ; 004be9ae
@@ -221,8 +221,8 @@ section .text
         ;   XREF to: 004beb1f (CONDITIONAL_JUMP)  ; LAB_004beb1f
     MOV EDI,dword ptr [0x00600530]      ; 004beadc | DAT_00600530
     PUSH EDI                            ; 004beae2
-    CALL core_mission.cpp_FUN_004f7590  ; 004beae3
-        ;   XREF to: 004f7590 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_FUN_004f7590(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_startMission_FUN_004f7590 ; 004beae3
+        ;   XREF to: 004f7590 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_startMission_FUN_004f7590(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004beae8
     MOV EAX,[0x00600530]                ; 004beaeb | DAT_00600530
     PUSH EAX                            ; 004beaf0
@@ -238,8 +238,8 @@ section .text
     PUSH EAX                            ; 004beb0b
     PUSH EBX                            ; 004beb0c
     MOV dword ptr [EBX + 0xa78],0x0     ; 004beb0d
-    CALL core_game.cpp_FUN_004bdfb0     ; 004beb17
-        ;   XREF to: 004bdfb0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004bdfb0(CGame * this_ptr, char * save_filename, int load_mode)
+    CALL core_game.cpp_CGame_loadGame_FUN_004bdfb0 ; 004beb17
+        ;   XREF to: 004bdfb0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_loadGame_FUN_004bdfb0(CGame * this_ptr, char * save_filename, int load_mode)
     ADD ESP,0xc                         ; 004beb1c
     PUSH 0x0                            ; 004beb1f
         ;   Label: LAB_004beb1f

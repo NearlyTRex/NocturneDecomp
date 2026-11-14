@@ -41,7 +41,8 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_0042f240(CCharacter *t
       if (_DAT_01d39d34 != 0) {
         iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);
         if (iVar2 == 0) {
-          core_motion_cpp_FUN_005254b0(&(this_ptr->model).base,&this_ptr->base);
+          core_motion_cpp_CMotionController_render_FUN_005254b0
+                    (&(this_ptr->model).base,&this_ptr->base);
           (*((this_ptr->base).vtable._ub)->renderTargetPoints)(&this_ptr->base);
         }
       }

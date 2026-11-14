@@ -24,7 +24,7 @@
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_finishAct_FUN_004bdfb0 at 004be07a
-;   core_menu.cpp_FUN_004ee1a0 at 004ee39a
+;   core_menu.cpp_showOptionsScreen_FUN_004ee1a0 at 004ee39a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_title_bw_005d8a3b

@@ -10,8 +10,8 @@
 ;
 ; XREF[3]:
 ;   core_menu.cpp_FUN_004e8f30 at 004e8f45
-;   core_menu.cpp_FUN_004e8f80 at 004e94ad
-;   core_menu.cpp_FUN_004eae80 at 004ebe19
+;   core_menu.cpp_configureCustomKeyBindings_FUN_004eae80 at 004ebe19
+;   core_menu.cpp_configureCustomKeys_FUN_004e8f80 at 004e94ad
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_d_x_005c724d

@@ -1,0 +1,167 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 109,
+    "complexity_score": 49,
+    "cross_reference_count": 7,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 49,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 158
+  },
+  "cross_references": [
+    {
+      "addr": "0048c2e0",
+      "from_addr": "004909aa",
+      "name": "core_event.cpp_FUN_0048c2e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a0480",
+      "from_addr": "004a04fe",
+      "name": "core_fire.cpp_CStormEffect_activate_FUN_004a0480",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a0570",
+      "from_addr": "004a05b0",
+      "name": "core_fire.cpp_CStormEffect_process_FUN_004a0570",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bb100",
+      "from_addr": "004bcd9f",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004bb100",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059b960",
+      "from_addr": "0059c088",
+      "name": "core_hino.cpp_CHino_process_FUN_0059b960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00534420",
+      "from_addr": "0053463e",
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_00534420",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057bd80",
+      "from_addr": "0057bd88",
+      "name": "core_weather.cpp_CWeather_ctor_FUN_0057bd80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0057d050",
+    "address_range": [
+      [
+        "0057d050",
+        "0057d199"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_weather.cpp_CWeather_setWeatherType_FUN_0057d050",
+    "signature": "void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_0057d050(CWeather *this_ptr,EWeatherType type)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ce40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40"
+    },
+    {
+      "addr": "0044f680",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_0044f680"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.62962962962963,
+    "instruction_count": 81,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BRANCH": 5,
+      "CALL": 5,
+      "CBRANCH": 8,
+      "COPY": 90,
+      "FLOAT2FLOAT": 4,
+      "INT_ADD": 45,
+      "INT_AND": 33,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 32,
+      "INT_LESS": 8,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 16,
+      "INT_SUB": 25,
+      "LOAD": 17,
+      "POPCOUNT": 16,
+      "RETURN": 2,
+      "STORE": 40
+    },
+    "pcode_op_count": 375
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0058b470",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5045
+    },
+    "bw1.exe": {
+      "addr": "005aefc0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5045
+    },
+    "nocedit.exe": {
+      "addr": "005ef8c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5045
+    },
+    "nocturne.exe": {
+      "addr": "00555750",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5045
+    }
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWeather *"
+      },
+      {
+        "is_param": true,
+        "name": "type",
+        "offset": 8,
+        "size": 4,
+        "type": "EWeatherType"
+      }
+    ]
+  },
+  "suspects": []
+}

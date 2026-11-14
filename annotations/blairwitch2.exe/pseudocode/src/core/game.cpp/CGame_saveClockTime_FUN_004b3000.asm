@@ -13,10 +13,10 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b6515
 ;   core_game.cpp_FUN_004bcbf0 at 004bd1ff
 ;   core_menu.cpp_FUN_004ebf10 at 004ebf2f
-;   core_menu.cpp_FUN_004ecc70 at 004ecc8f
-;   core_menu.cpp_FUN_004ed260 at 004ed27f
-;   core_menu.cpp_FUN_004ee1a0 at 004ee1c4
+;   core_menu.cpp_configureCustomKeys_FUN_004ecc70 at 004ecc8f
+;   core_menu.cpp_configureSoundOptions_FUN_004ed260 at 004ed27f
 ;   core_menu.cpp_showMainGameMenu_FUN_004ee3f0 at 004ee4b8
+;   core_menu.cpp_showOptionsScreen_FUN_004ee1a0 at 004ee1c4
 ;
 ; Called Functions:
 ;   wincore_winrun.cpp_getTime_FUN_0058e9e0

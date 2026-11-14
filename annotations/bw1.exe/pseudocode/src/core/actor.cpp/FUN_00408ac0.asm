@@ -16,7 +16,7 @@
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90 at 00419e2b
 ;   core_boxactor.cpp_CBoxActor_process_FUN_00422000 at 004223f1
 ;   core_charactr.cpp_CCharacter_dropCarriedObject_FUN_00432820 at 00432858
-;   core_charactr.cpp_CCharacter_processDamageDecals_FUN_00430960 at 00430a5e
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750 at 0042d7b8
 ;   ... and 62 more
 ;
 ; Called Functions:

@@ -39,7 +39,8 @@ void core_game_cpp_FUN_004bc840(CGame *param_1,int param_2)
   if (p_Var3 != (_FILE *)0x0) {
     _fclose(p_Var3);
   }
-  engine_ini_cpp_FUN_004d8910(&local_324,"system\\nocturne.ini",&DAT_005d869c);
+  engine_ini_cpp_CIniFile_ctor_FUN_004d8910(&local_324,"system\\nocturne.ini",&DAT_005d869c)
+  ;
   local_1c = 0;
   engine_ini_cpp_FUN_004d8b20(&local_324,"Act1Code",&local_1c);
   local_18 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Coffin Rock");
@@ -83,7 +84,7 @@ void core_game_cpp_FUN_004bc840(CGame *param_1,int param_2)
   }
   _DAT_01cb807c = 0;
   core_fldnotes_cpp_CFieldNotes_clear_FUN_004a50b0(g_CFieldNotesPtr);
-  core_event_cpp_FUN_004910b0(0x01C38BC0);
+  core_event_cpp_CEventList_resetGameFlags_FUN_004910b0(0x01C38BC0);
   load_flags = 1;
   iVar4 = _stricmp(&DAT_01cb7b50,local_120);
   if (iVar4 != 0) {
@@ -104,11 +105,11 @@ void core_game_cpp_FUN_004bc840(CGame *param_1,int param_2)
   core_mission_cpp_CDemonMission_load_FUN_004fb490(0x01D182F0,local_120,load_flags);
   iVar4 = core_mission_cpp_CDemonMission_createHeros_FUN_004fd0e0(0x01D182F0,(CCharacter *)0x0);
   if (iVar4 != 0) {
-    core_mission_cpp_FUN_004fce00(0x01D182F0);
+    core_mission_cpp_CDemonMission_startMission_FUN_004fce00(0x01D182F0);
     core_mission_cpp_CDemonMission_run_FUN_004fcb00(0x01D182F0);
     if (param_1->need_chapter_reload != 0) {
       param_1->need_chapter_reload = 0;
-      core_game_cpp_FUN_004bbf70(param_1,param_1->chapter_reload_filename,1);
+      core_game_cpp_CGame_loadGame_FUN_004bbf70(param_1,param_1->chapter_reload_filename,1);
     }
   }
 LAB_004bca85:

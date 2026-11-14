@@ -77,6 +77,6 @@ int __cdecl CPlatform::getBlockVirtualDirectorFlag(CPlatform *this_ptr);
 // Address: 0053adb0
 void __cdecl CPlatform::attachActor(CPlatform *this_ptr,CDemonActor *actor);
 
-// Original: core_platfrm.cpp_FUN_0053aef0
+// Original: core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_0053aef0
 // Address: 0053aef0
-void __cdecl FUN_0053aef0(CPlatform *this_ptr);
+void __cdecl CPlatform::updateAttachedActors(CPlatform *this_ptr);

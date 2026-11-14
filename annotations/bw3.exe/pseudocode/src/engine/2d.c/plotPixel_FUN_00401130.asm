@@ -17,7 +17,7 @@
 ;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_00480410 at 0048058e
 ;   shape_edittool.cpp_CEditorTools_drawPixelLine_FUN_00481ab0 at 00481bb8
 ;   shape_edittool.cpp_FUN_0047b4e0 at 0047b4fe
-;   shape_edittool.cpp_FUN_0047b510 at 0047b56d
+;   shape_edittool.cpp_drawDashedLine_FUN_0047b5e0 at 0047b735
 ;   ... and 3 more
 ;
 ; Referenced Globals:

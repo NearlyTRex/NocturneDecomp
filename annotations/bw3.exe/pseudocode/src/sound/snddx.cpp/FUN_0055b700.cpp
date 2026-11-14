@@ -24,7 +24,7 @@ uint sound_snddx_cpp_FUN_0055b700(void)
     auStack_64[0] = 0x60;
     error_code = (**(code **)(*_DAT_02cf49c4 + 0x10))();
     if (error_code != 0) {
-      sound_snddx_cpp_FUN_0055a670(error_code);
+      sound_snddx_cpp_getDirectSoundErrorString_FUN_0055a670(error_code);
       _sprintf(&stack0xfffffe04,"DirectSux: Unable to %s.  (%s)");
       sound_sndmain_cpp_logSoundError_FUN_0055a560(&stack0xfffffe04);
       return 0;

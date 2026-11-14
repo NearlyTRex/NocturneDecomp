@@ -16,12 +16,6 @@
   },
   "cross_references": [
     {
-      "addr": "004367e0",
-      "from_addr": "0043681e",
-      "name": "cockpit_ckptutil.c_FUN_004367e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00436a50",
       "from_addr": "00436a8e",
       "name": "cockpit_ckptutil.c_FUN_00436a50",
@@ -58,6 +52,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004367e0",
+      "from_addr": "0043681e",
+      "name": "cockpit_ckptutil.c_loadEdgeListFile_FUN_004367e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00437c50",
       "from_addr": "00437cdb",
       "name": "cockpit_ckptutil.c_rotateBitmap_FUN_00437c50",
@@ -90,7 +90,7 @@
     {
       "addr": "00510430",
       "from_addr": "005104f1",
-      "name": "cockpit_pkbitmap.cpp_FUN_00510430",
+      "name": "cockpit_pkbitmap.cpp_loadPBGFile_FUN_00510430",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -286,6 +286,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004bdfb0",
+      "from_addr": "004be268",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004bdfb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004bb100",
       "from_addr": "004bc28e",
       "name": "core_game.cpp_CGame_processCheatCodes_FUN_004bb100",
@@ -310,6 +316,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004bda10",
+      "from_addr": "004bdd42",
+      "name": "core_game.cpp_CGame_saveGame_FUN_004bda10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004b51e0",
       "from_addr": "004b57cd",
       "name": "core_game.cpp_CGame_showCustomizableKeys_FUN_004b51e0",
@@ -319,18 +331,6 @@
       "addr": "004b6f30",
       "from_addr": "004b72f2",
       "name": "core_game.cpp_FUN_004b6f30",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004bda10",
-      "from_addr": "004bdd42",
-      "name": "core_game.cpp_FUN_004bda10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004bdfb0",
-      "from_addr": "004be268",
-      "name": "core_game.cpp_FUN_004bdfb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -370,15 +370,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004dda90",
-      "from_addr": "004ddbfd",
-      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_004dda90",
+      "addr": "004da880",
+      "from_addr": "004da9eb",
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004da880",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004da880",
-      "from_addr": "004da9eb",
-      "name": "core_inv.cpp_FUN_004da880",
+      "addr": "004dda90",
+      "from_addr": "004ddbfd",
+      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_004dda90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -400,45 +400,45 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004e7860",
-      "from_addr": "004e7a43",
-      "name": "core_menu.cpp_FUN_004e7860",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004e85a0",
-      "from_addr": "004e8811",
-      "name": "core_menu.cpp_FUN_004e85a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004e8f80",
-      "from_addr": "004e9075",
-      "name": "core_menu.cpp_FUN_004e8f80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004e94f0",
-      "from_addr": "004e96cb",
-      "name": "core_menu.cpp_FUN_004e94f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004ea280",
-      "from_addr": "004ea337",
-      "name": "core_menu.cpp_FUN_004ea280",
+      "addr": "004e7dc0",
+      "from_addr": "004e7e7b",
+      "name": "core_menu.cpp_calibrateGamepad_FUN_004e7dc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004eae80",
       "from_addr": "004ebd63",
-      "name": "core_menu.cpp_FUN_004eae80",
+      "name": "core_menu.cpp_configureCustomKeyBindings_FUN_004eae80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004e7dc0",
-      "from_addr": "004e7e7b",
-      "name": "core_menu.cpp_calibrateGamepad_FUN_004e7dc0",
+      "addr": "004e8f80",
+      "from_addr": "004e9075",
+      "name": "core_menu.cpp_configureCustomKeys_FUN_004e8f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e85a0",
+      "from_addr": "004e8811",
+      "name": "core_menu.cpp_configureGraphicsOptions_FUN_004e85a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e94f0",
+      "from_addr": "004e96cb",
+      "name": "core_menu.cpp_configureSoundOptions_FUN_004e94f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e7860",
+      "from_addr": "004e7a43",
+      "name": "core_menu.cpp_renderMenuAndGetChoice_FUN_004e7860",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ea280",
+      "from_addr": "004ea337",
+      "name": "core_menu.cpp_showOptionsScreen_FUN_004ea280",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -456,7 +456,7 @@
     {
       "addr": "004fcdc0",
       "from_addr": "004fcf0e",
-      "name": "core_motion.cpp_FUN_004fcdc0",
+      "name": "core_motion.cpp_CMotionController_render_FUN_004fcdc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -562,15 +562,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0055f6b0",
-      "from_addr": "0055fb13",
-      "name": "core_sound.cpp_FUN_0055f6b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0055f020",
       "from_addr": "0055f30c",
       "name": "core_sound.cpp_playSfxInternal_FUN_0055f020",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055f6b0",
+      "from_addr": "0055fb13",
+      "name": "core_sound.cpp_processTrainSounds_FUN_0055f6b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -634,6 +634,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004d8cd0",
+      "from_addr": "004d8ceb",
+      "name": "engine_ini.cpp_CIniFile_getFloat_FUN_004d8cd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004d8290",
       "from_addr": "004d8315",
       "name": "engine_ini.cpp_CIni_getProfileString_FUN_004d8290",
@@ -664,12 +670,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004d8cd0",
-      "from_addr": "004d8ceb",
-      "name": "engine_ini.cpp_FUN_004d8cd0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004d8d40",
       "from_addr": "004d8d58",
       "name": "engine_ini.cpp_FUN_004d8d40",
@@ -696,19 +696,19 @@
     {
       "addr": "004f8170",
       "from_addr": "004f81ef",
-      "name": "engine_model.c_FUN_004f8170",
+      "name": "engine_model.c_getMRGLBounds_FUN_004f8170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f8730",
       "from_addr": "004f8860",
-      "name": "engine_model.c_FUN_004f8730",
+      "name": "engine_model.c_getMRGLSize_FUN_004f8730",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f89a0",
       "from_addr": "004f89e9",
-      "name": "engine_model.c_FUN_004f89a0",
+      "name": "engine_model.c_loadModelChunk_FUN_004f89a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -751,6 +751,12 @@
       "addr": "004819e0",
       "from_addr": "00481a91",
       "name": "shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004819e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00480f00",
+      "from_addr": "004810ff",
+      "name": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00480f00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -808,21 +814,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00480f00",
-      "from_addr": "004810ff",
-      "name": "shape_edittool.cpp_FUN_00480f00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004ffd20",
       "from_addr": "004fff9c",
       "name": "sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_004ffd20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0055a9f0",
-      "from_addr": "0055aaed",
-      "name": "sound_snddx.cpp_FUN_0055a9f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -931,6 +925,12 @@
       "addr": "0055d470",
       "from_addr": "0055d502",
       "name": "sound_snddx.cpp_getDirectSoundDevice_FUN_0055d470",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055a9f0",
+      "from_addr": "0055aaed",
+      "name": "sound_snddx.cpp_releaseSfxHardwareBuffers_FUN_0055a9f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1140,7 +1140,7 @@
       {
         "call_addr": "004be268",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bdfb0",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004bdfb0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",

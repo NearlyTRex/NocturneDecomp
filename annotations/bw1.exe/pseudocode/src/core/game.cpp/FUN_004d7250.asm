@@ -38,12 +38,12 @@
 ; Called Functions:
 ;   core_event.cpp_CEventList_resetGameFlags_FUN_004a9a00
 ;   core_fldnotes.cpp_CFieldNotes_clear_FUN_004bdaa0
-;   core_game.cpp_FUN_004d6990
+;   core_game.cpp_CGame_loadGame_FUN_004d6990
 ;   core_level.cpp_FUN_004fe840
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_0051c0a0
 ;   core_mission.cpp_CDemonMission_load_FUN_0051a3f0
 ;   core_mission.cpp_CDemonMission_run_FUN_0051bad0
-;   core_mission.cpp_FUN_0051bdc0
+;   core_mission.cpp_CDemonMission_startMission_FUN_0051bdc0
 ;   crt_stdio.c_fclose_FUN_005c0d10
 ;   crt_stdio.c_fopen_FUN_005c157c
 ;   crt_string.c__stricmp_FUN_005c04e0
@@ -292,8 +292,8 @@ section .text
         ;   XREF to: 004d757b (CONDITIONAL_JUMP)  ; LAB_004d757b
     MOV ECX,dword ptr [0x0061f650]      ; 004d752e | DAT_0061f650
     PUSH ECX                            ; 004d7534 | DAT_01d2c900
-    CALL core_mission.cpp_FUN_0051bdc0  ; 004d7535
-        ;   XREF to: 0051bdc0 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_FUN_0051bdc0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_startMission_FUN_0051bdc0 ; 004d7535
+        ;   XREF to: 0051bdc0 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_startMission_FUN_0051bdc0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004d753a
     MOV EBX,dword ptr [0x0061f650]      ; 004d753d | DAT_0061f650
     PUSH EBX                            ; 004d7543 | DAT_01d2c900
@@ -310,8 +310,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x704]     ; 004d7564
     PUSH EDI                            ; 004d756b
     MOV dword ptr [EAX + -0x4],0x0      ; 004d756c
-    CALL core_game.cpp_FUN_004d6990     ; 004d7573
-        ;   XREF to: 004d6990 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004d6990(CGame * this_ptr, char * save_filename, int load_mode)
+    CALL core_game.cpp_CGame_loadGame_FUN_004d6990 ; 004d7573
+        ;   XREF to: 004d6990 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_loadGame_FUN_004d6990(CGame * this_ptr, char * save_filename, int load_mode)
     ADD ESP,0xc                         ; 004d7578
     MOV EAX,dword ptr [ESP + 0x6e0]     ; 004d757b
         ;   Label: LAB_004d757b

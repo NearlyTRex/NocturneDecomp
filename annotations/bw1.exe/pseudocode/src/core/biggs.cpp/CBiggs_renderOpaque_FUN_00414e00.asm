@@ -21,7 +21,7 @@
 ;   core_morph.cpp_CMorph_render_FUN_005237e0
 ;   core_morph.cpp_CMorph_updateModelFromDeformable_FUN_00523290
 ;   core_morph.cpp_CMorph_updateModelFromKeyframed_FUN_005232d0
-;   core_motion.cpp_FUN_005254b0
+;   core_motion.cpp_CMotionController_render_FUN_005254b0
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60
 ;
 ; *****************************************************************************
@@ -117,8 +117,8 @@ section .text
     PUSH EBX                            ; 00414ee6
     LEA EAX,[EBX + 0x158]               ; 00414ee7
     PUSH EAX                            ; 00414eed
-    CALL core_motion.cpp_FUN_005254b0   ; 00414eee
-        ;   XREF to: 005254b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_FUN_005254b0(CMotionController * this_ptr, CDemonActor * actor)
+    CALL core_motion.cpp_CMotionController_render_FUN_005254b0 ; 00414eee
+        ;   XREF to: 005254b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_render_FUN_005254b0(CMotionController * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00414ef3
     MOV EAX,dword ptr [EBX + 0x154]     ; 00414ef6
     PUSH EBX                            ; 00414efc

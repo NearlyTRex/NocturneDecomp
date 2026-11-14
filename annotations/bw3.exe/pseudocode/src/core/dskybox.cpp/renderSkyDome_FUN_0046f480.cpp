@@ -100,17 +100,17 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_0046f480(SMRGLSkyTexture *sky_te
   local_cc.vertices[7].texture_v = local_cc.vertices[7].vertex_index;
   input = (CVector3i *)round();
   local_cc.vertices[7].texture_u = (int)ROUND(fVar11);
-  engine_special_cpp_FUN_005632a3((SProjectedVertex *)*extraout_ECX,input);
+  engine_special_cpp_transformAndProjectPoint_FUN_005632a3((SProjectedVertex *)*extraout_ECX,input);
   local_cc.vertices[7].vertex_index = -local_cc.vertices[7].vertex_index;
-  engine_special_cpp_FUN_005632a3
+  engine_special_cpp_transformAndProjectPoint_FUN_005632a3
             (&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,
              (CVector3i *)(local_cc.vertices + 7));
   local_cc.vertices[7].texture_v = -local_cc.vertices[7].texture_v;
-  engine_special_cpp_FUN_005632a3
+  engine_special_cpp_transformAndProjectPoint_FUN_005632a3
             (&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,
              (CVector3i *)(local_cc.vertices + 7));
   local_cc.vertices[7].vertex_index = -local_cc.vertices[7].vertex_index;
-  engine_special_cpp_FUN_005632a3
+  engine_special_cpp_transformAndProjectPoint_FUN_005632a3
             (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,
              (CVector3i *)(local_cc.vertices + 7));
   this_ptr = DAT_005f2afc;

@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[67]:
-;   cockpit_ckptutil.c_FUN_004367e0 at 004369ca
 ;   cockpit_ckptutil.c_FUN_00436a50 at 00436b9f
+;   cockpit_ckptutil.c_loadEdgeListFile_FUN_004367e0 at 004369ca
 ;   cockpit_ckptutil.c_rotateBitmap_FUN_00437c50 at 00437ce4
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_00510160 at 005101de
 ;   cockpit_pkbitmap.cpp_FUN_0050fe10 at 0050fe3c
-;   cockpit_pkbitmap.cpp_FUN_00510430 at 00510491
+;   cockpit_pkbitmap.cpp_loadPBGFile_FUN_00510430 at 00510491
 ;   cockpit_pkbmpset.cpp_FUN_00510810 at 00510a03
 ;   cockpit_pkbmpset.cpp_FUN_00510a90 at 00510b74
 ;   core_cloth.cpp_CCloth_load_FUN_0043c330 at 0043c7ba

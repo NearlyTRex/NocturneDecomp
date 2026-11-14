@@ -9,8 +9,8 @@
 ;   core_game.cpp_FUN_004bcbf0 at 004bcfdc
 ;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047d270 at 0047d4d3
 ;   shape_edittool.cpp_CPickList_handleInput_FUN_00482350 at 00482460
-;   shape_edittool.cpp_FUN_0047c0f0 at 0047c532
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800 at 0047b9ae
+;   shape_edittool.cpp_showMultiChoiceDialog_FUN_0047c0f0 at 0047c532
 ;   shape_edittool.cpp_showTextInputDialog_FUN_0047b1f0 at 0047b486
 ;   wincore_winvideo.cpp_playMovie_FUN_00591190 at 0059148c
 ;

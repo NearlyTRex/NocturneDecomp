@@ -10,8 +10,8 @@
 ;
 ; XREF[3]:
 ;   core_mission.cpp_CDemonMission_createFromSingleSet_FUN_004f7230 at 004f727e
-;   core_mission.cpp_FUN_004f6de0 at 004f6e5d
-;   core_mission.cpp_FUN_004f7590 at 004f75d9
+;   core_mission.cpp_CDemonMission_loadSet_FUN_004f6de0 at 004f6e5d
+;   core_mission.cpp_CDemonMission_startMission_FUN_004f7590 at 004f75d9
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Setting_up_actors_005c89b1

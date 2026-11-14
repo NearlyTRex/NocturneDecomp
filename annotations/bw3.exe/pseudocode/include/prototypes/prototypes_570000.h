@@ -35,6 +35,7 @@
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EDeathState.h"
 #include "types/enums/EGroundType.h"
+#include "types/enums/EWeatherType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SIpAddr.h"
@@ -236,7 +237,7 @@ void __cdecl wincore_wddvmem_cpp_cleanupDirectDrawSurfaces_FUN_00579630(void);
 int __cdecl wincore_wddvmem_cpp_reinitializeDirectDraw_FUN_00579690(void);
 void wincore_wddvmem_cpp_FUN_005797d0(void);
 void wincore_wddvmem_cpp_FUN_005798a0(void);
-int __cdecl wincore_wddvmem_cpp_FUN_005798f0(int width,int height);
+int __cdecl wincore_wddvmem_cpp_initializeGraphicsSystem_FUN_005798f0(int width,int height);
 void __cdecl wincore_wddvmem_cpp_cleanupGraphicsSystem_FUN_00579a60(void);
 void __cdecl wincore_wddvmem_cpp_initializeScanlinePointers_FUN_00579b20(void);
 int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_00579bb0(int width,int height,int bits_per_pixel);
@@ -247,7 +248,7 @@ void __cdecl wincore_wddvmem_cpp_closeScreenDevice_FUN_0057a4b0(void);
 void __cdecl wincore_wddvmem_cpp_analyzePixelFormat_FUN_0057a5b0(void);
 void __cdecl wincore_wddvmem_cpp_setupColorPalette_FUN_0057a770(void);
 void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0(void);
-void wincore_wddvmem_cpp_FUN_0057ab20(void);
+void __cdecl wincore_wddvmem_cpp_restoreVideoAndMinimizeWindow_FUN_0057ab20(void);
 void __cdecl wincore_wddvmem_cpp_videoRestore_FUN_0057ab70(void);
 void __cdecl wincore_wddvmem_cpp_stubFunction_FUN_0057ac80(void);
 BOOL __cdecl wincore_wddvmem_cpp_freeLibrary_FUN_0057ad00(HMODULE hLibModule);
@@ -279,14 +280,14 @@ void __cdecl core_weapon_cpp_CWeapon_setupPhysicsBox_FUN_0057ba10(CWeapon *this_
 void __cdecl core_weapon_cpp_CWeapon_renderAimBeam_FUN_0057bb60(CWeapon *this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_onFired_FUN_0057bba0(CWeapon *this_ptr);
 void __cdecl core_weather_cpp_staticInit_FUN_0057bd20(void);
-int core_weather_cpp_FUN_0057bd80(int param_1);
-void core_weather_cpp_FUN_0057bda0(CWeather *param_1);
+CWeather * __cdecl core_weather_cpp_CWeather_ctor_FUN_0057bd80(CWeather *this_ptr);
+void __cdecl core_weather_cpp_CWeather_update_FUN_0057bda0(CWeather *this_ptr);
 float core_weather_cpp_FUN_0057c2c0(void);
-void core_weather_cpp_FUN_0057c2e0(CDemonActor *param_1,float param_2,int param_3);
+void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_0057c2e0(CWeather *this_ptr,float flash_timer,int play_sound);
 void __cdecl core_weather_cpp_CWeather_createThunder_FUN_0057c840(CWeather *this_ptr);
 void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_0057c890(CWeather *this_ptr);
-void core_weather_cpp_FUN_0057d050(int *param_1,int param_2);
-void core_weather_cpp_FUN_0057d1a0(int *param_1,float *param_2,int *param_3);
+void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_0057d050(CWeather *this_ptr,EWeatherType type);
+void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_0057d1a0(CWeather *this_ptr,CVector3f *direction,CVector3f *rotation);
 void core_weather_cpp_FUN_0057d420(undefined4 param_1,int param_2);
 void __cdecl core_werewolf_cpp_staticInit_FUN_0057d4c0(void);
 CWerewolf * __cdecl core_werewolf_cpp_factoryFuncWerewolf_FUN_0057d520(void);

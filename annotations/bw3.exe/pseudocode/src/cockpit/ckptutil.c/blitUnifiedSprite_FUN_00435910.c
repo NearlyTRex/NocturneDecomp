@@ -36,7 +36,7 @@ void cockpit_ckptutil_c_blitUnifiedSprite_FUN_00435910(void)
   iVar1 = _DAT_01c5faf0 - _DAT_01c5faec;
   iVar8 = _DAT_01c6b5a8 - in_stack_0000000c;
   if (in_stack_00000004 != 0) {
-    pcVar2 = (code *)cockpit_ckptutil_c_FUN_00434e80();
+    pcVar2 = (code *)cockpit_ckptutil_c_getColorConversionFunction_FUN_00434e80();
     if (DAT_005fba20 == 8) {
       iStack_18 = in_stack_0000000c + *(int *)(&DAT_01c5faec + in_stack_00000010 * 4);
       if (0 < in_stack_00000018) {

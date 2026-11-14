@@ -30,13 +30,13 @@
 ;   ... and 26 more
 ;
 ; Called Functions:
+;   core_game.cpp_CGame_loadGame_FUN_004d6990
 ;   core_game.cpp_CGame_saveClockTime_FUN_004cbf10
 ;   core_game.cpp_CGame_updateDT_FUN_004cbf20
-;   core_game.cpp_FUN_004d6990
 ;   core_game.cpp_FUN_004d7250
 ;   core_main.c_FUN_005031c0
-;   core_menu.cpp_FUN_0050c990
 ;   core_menu.cpp_renderMenuAndGetChoice_FUN_00509e20
+;   core_menu.cpp_showOptionsScreen_FUN_0050c990
 ;   core_moon.cpp_CMoon_free_FUN_00521d50
 ;   core_moon.cpp_CMoon_init_FUN_00521c50
 ;   core_moon.cpp_CMoon_render_FUN_00521e40
@@ -513,8 +513,8 @@ section .text
     PUSH 0x0                            ; 0050d134
     MOV EDI,dword ptr [0x0061d95c]      ; 0050d136 | g_CGamePtr
     PUSH EDI                            ; 0050d13c | g_CGameInstance
-    CALL core_game.cpp_FUN_004d6990     ; 0050d13d
-        ;   XREF to: 004d6990 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004d6990(CGame * this_ptr, char * save_filename, int load_mode)
+    CALL core_game.cpp_CGame_loadGame_FUN_004d6990 ; 0050d13d
+        ;   XREF to: 004d6990 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_loadGame_FUN_004d6990(CGame * this_ptr, char * save_filename, int load_mode)
     ADD ESP,0xc                         ; 0050d142
     CALL engine_2d.c_clearInputAndWait_FUN_004032b0 ; 0050d145
         ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_004032b0()
@@ -530,8 +530,8 @@ section .text
         ;   XREF to: 0050cf69 (UNCONDITIONAL_JUMP)  ; LAB_0050cf69
     PUSH 0x0                            ; 0050d167
         ;   Label: caseD_1
-    CALL core_menu.cpp_FUN_0050c990     ; 0050d169
-        ;   XREF to: 0050c990 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_FUN_0050c990()
+    CALL core_menu.cpp_showOptionsScreen_FUN_0050c990 ; 0050d169
+        ;   XREF to: 0050c990 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_showOptionsScreen_FUN_0050c990(int initialize_systems)
     JMP 0x0050cf6e                      ; 0050d16e
         ;   XREF to: 0050cf6e (UNCONDITIONAL_JUMP)  ; LAB_0050cf6e
     MOV EBP,0x63                        ; 0050d173

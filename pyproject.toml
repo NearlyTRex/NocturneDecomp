@@ -32,17 +32,11 @@ sealed_programs = [
     "ssh", "scp", "sftp",
     "gh",
 ]
-
-[tool.coverage.run]
-branch = true
-source = ["scripts/Python", "cmake", "recreation/cmake"]
-# The tests run in pytest-xdist workers, each writing its own data file
-parallel = true
-patch = ["subprocess"]
-# Not yet covered. Each file leaves this list when its tests land, and the same
-# file leaves [tool.ruff.lint.per-file-ignores] with it; the meta suite checks the
-# two lists agree. The list only shrinks.
-omit = [
+# The files not yet covered, which [tool.coverage.run] omit leaves out of the
+# floor; any other omit pattern fails the meta suite. Shrinks with that list and
+# [tool.ruff.lint.per-file-ignores], and unit/meta/test_uncovered_lists.py checks
+# the three agree.
+coverage_omit_allowed = [
     "recreation/cmake/tidy.py",
     "scripts/Python/add_missing_string_references.py",
     "scripts/Python/add_runtime_heap_block.py",
@@ -50,7 +44,6 @@ omit = [
     "scripts/Python/apply_apidll_signatures.py",
     "scripts/Python/apply_crt_signatures.py",
     "scripts/Python/audit_ghidra_fixups.py",
-    "scripts/Python/audit_transferred_signatures.py",
     "scripts/Python/check_authentic_flags.py",
     "scripts/Python/check_keep_signatures.py",
     "scripts/Python/cleanup_unused_locals.py",
@@ -124,7 +117,106 @@ omit = [
     "scripts/Python/netplay_trace_diff.py",
     "scripts/Python/normalize_strings.py",
     "scripts/Python/repair_broken_signatures.py",
-    "scripts/Python/report_sibling_gaps.py",
+    "scripts/Python/scaffold_recreation.py",
+    "scripts/Python/shift_struct_fields.py",
+    "scripts/Python/strip_unused_locals.py",
+    "scripts/Python/test_suspects.py",
+    "scripts/Python/transfer_custom_storage.py",
+    "scripts/Python/verify_globals.py",
+    "scripts/Python/verify_headers.py",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["scripts/Python", "cmake", "recreation/cmake"]
+# The tests run in pytest-xdist workers, each writing its own data file
+parallel = true
+patch = ["subprocess"]
+# Not yet covered. Each file leaves this list when its tests land, and the same
+# file leaves [tool.ruff.lint.per-file-ignores] and [tool.testrex]
+# coverage_omit_allowed with it; the meta suite checks the three lists agree. The
+# list only shrinks.
+omit = [
+    "recreation/cmake/tidy.py",
+    "scripts/Python/add_missing_string_references.py",
+    "scripts/Python/add_runtime_heap_block.py",
+    "scripts/Python/analyze_crt_functions.py",
+    "scripts/Python/apply_apidll_signatures.py",
+    "scripts/Python/apply_crt_signatures.py",
+    "scripts/Python/audit_ghidra_fixups.py",
+    "scripts/Python/check_authentic_flags.py",
+    "scripts/Python/check_keep_signatures.py",
+    "scripts/Python/cleanup_unused_locals.py",
+    "scripts/Python/create_data_label.py",
+    "scripts/Python/create_terminated_string.py",
+    "scripts/Python/delete_function.py",
+    "scripts/Python/dethunk_function.py",
+    "scripts/Python/diff_sibling_layout.py",
+    "scripts/Python/disassemble_function.py",
+    "scripts/Python/dropped_store_report.py",
+    "scripts/Python/extract_line_pins.py",
+    "scripts/Python/find_code_caves.py",
+    "scripts/Python/find_junk_functions.py",
+    "scripts/Python/find_render_sim_writes.py",
+    "scripts/Python/fix_byte_patches.py",
+    "scripts/Python/fix_ctor_dtor_returns.py",
+    "scripts/Python/fix_import_thunks.py",
+    "scripts/Python/fix_misaligned_functions.py",
+    "scripts/Python/fix_movsd_caves.py",
+    "scripts/Python/fix_vtable_structs.py",
+    "scripts/Python/generate_esp_to_ebp_patches.py",
+    "scripts/Python/gen_struct_layout_checks.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/actor_cast_report.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/adjacency_sentinel_transform.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/adj_report.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/analysis.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/asm_transform.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/assembly.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/basetypes.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/callfixups.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/chunk_transform.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/cleanup.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/dat_report.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/decompiler_fixes.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/decompiler.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/exporter.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/function_compile.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/functions.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/globals.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/header_compile.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/headers.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/__init__.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/intrinsics.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/json_cache.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/keep_sync_report.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/output.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/parallel.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/pass_by_value.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/pcode.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/proto.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/render_flags_transform.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/shim_compile.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/stack_patterns.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/static_analysis.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/static_analysis_suspects.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/strings.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/struct_report.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/suspects/assembly.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/suspects/_common.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/suspects/content.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/suspects/__init__.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/suspects/stack.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/suspects/_structtypes.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/transforms.py",
+    "scripts/Python/ghidra_annotations/annotations/pseudocode/vtable_calls.py",
+    "scripts/Python/map_destructor_pairs.py",
+    "scripts/Python/map_factory_pairs.py",
+    "scripts/Python/map_vtable_slots.py",
+    "scripts/Python/name_crt_functions.py",
+    "scripts/Python/name_functions_from_file_literals.py",
+    "scripts/Python/netplay_trace_diff.py",
+    "scripts/Python/normalize_strings.py",
+    "scripts/Python/repair_broken_signatures.py",
     "scripts/Python/scaffold_recreation.py",
     "scripts/Python/shift_struct_fields.py",
     "scripts/Python/strip_unused_locals.py",
@@ -155,7 +247,6 @@ select = ["E4", "E7", "E9", "F"]
 "scripts/Python/apply_apidll_signatures.py" = ["E", "F"]
 "scripts/Python/apply_crt_signatures.py" = ["E", "F"]
 "scripts/Python/audit_ghidra_fixups.py" = ["E", "F"]
-"scripts/Python/audit_transferred_signatures.py" = ["E", "F"]
 "scripts/Python/check_authentic_flags.py" = ["E", "F"]
 "scripts/Python/check_keep_signatures.py" = ["E", "F"]
 "scripts/Python/cleanup_unused_locals.py" = ["E", "F"]
@@ -229,7 +320,6 @@ select = ["E4", "E7", "E9", "F"]
 "scripts/Python/netplay_trace_diff.py" = ["E", "F"]
 "scripts/Python/normalize_strings.py" = ["E", "F"]
 "scripts/Python/repair_broken_signatures.py" = ["E", "F"]
-"scripts/Python/report_sibling_gaps.py" = ["E", "F"]
 "scripts/Python/scaffold_recreation.py" = ["E", "F"]
 "scripts/Python/shift_struct_fields.py" = ["E", "F"]
 "scripts/Python/strip_unused_locals.py" = ["E", "F"]

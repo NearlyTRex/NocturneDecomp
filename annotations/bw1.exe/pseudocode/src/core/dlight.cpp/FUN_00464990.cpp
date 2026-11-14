@@ -142,7 +142,7 @@ void core_dlight_cpp_FUN_00464990(void)
           CStack_c0.x = (int)ROUND(fStack_9c * _DAT_005febd0);
           CStack_c0.y = (int)ROUND(fStack_98 * _DAT_005febd0);
           CStack_c0.z = (int)ROUND(fStack_94 * _DAT_005febd0);
-          engine_special_cpp_FUN_00580173
+          engine_special_cpp_transformAndProjectPoint_FUN_00580173
                     (&DAT_00612560->vertex_buffer_ptr->projected_vertex,&CStack_c0);
           fStack_94 = fStack_2c;
           if (fStack_20 < fStack_2c) {
@@ -153,7 +153,7 @@ void core_dlight_cpp_FUN_00464990(void)
           CStack_90.x = (int)ROUND(fStack_9c * _DAT_005febd0);
           CStack_90.y = (int)ROUND(fStack_98 * _DAT_005febd0);
           CStack_90.z = (int)ROUND(fStack_94 * _DAT_005febd0);
-          engine_special_cpp_FUN_00580173
+          engine_special_cpp_transformAndProjectPoint_FUN_00580173
                     (&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&CStack_90);
           fStack_94 = fStack_2c;
           if (fStack_24 < fStack_2c) {
@@ -164,7 +164,7 @@ void core_dlight_cpp_FUN_00464990(void)
           CStack_84.x = (int)ROUND(fStack_9c * _DAT_005febd0);
           CStack_84.y = (int)ROUND(fStack_98 * _DAT_005febd0);
           CStack_84.z = (int)ROUND(fStack_94 * _DAT_005febd0);
-          engine_special_cpp_FUN_00580173
+          engine_special_cpp_transformAndProjectPoint_FUN_00580173
                     (&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&CStack_84);
           fStack_94 = fStack_28;
           if (fStack_24 < fStack_28) {
@@ -175,7 +175,7 @@ void core_dlight_cpp_FUN_00464990(void)
           aCStack_78[0].x = (int)ROUND(fStack_9c * _DAT_005febd0);
           aCStack_78[0].y = (int)ROUND(fStack_98 * _DAT_005febd0);
           aCStack_78[0].z = (int)ROUND(fStack_94 * _DAT_005febd0);
-          engine_special_cpp_FUN_00580173
+          engine_special_cpp_transformAndProjectPoint_FUN_00580173
                     (&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,aCStack_78);
           pCVar11 = DAT_00612560;
           DAT_00612560->vertex_buffer_ptr->a = iStack_30;

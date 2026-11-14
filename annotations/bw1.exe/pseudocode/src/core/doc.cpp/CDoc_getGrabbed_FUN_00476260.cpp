@@ -24,7 +24,8 @@ int __cdecl core_doc_cpp_CDoc_getGrabbed_FUN_00476260(CDoc *this_ptr,CDemonActor
     if ((((this_ptr->base).object_to_pick_up == (CDemonActor *)0x0) &&
         ((this_ptr->base).door_to_open == (CDoor *)0x0)) &&
        ((this_ptr->base).lever_to_pull == (CLever *)0x0)) {
-      fVar1 = core_motion_cpp_FUN_00525020(&this_ptr_00->base);
+      fVar1 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00525020
+                        (&this_ptr_00->base);
       iVar2 = (this_ptr->base).base.layer_action_index;
       if ((iVar2 == 0xc) || (iVar2 == 0xd)) {
         if ((fVar1 <= (float)_DAT_005da64c) || (_DAT_005da654 <= (double)fVar1)) {

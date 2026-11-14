@@ -17,7 +17,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedDirect_FUN_0046
      (iVar1 = engine_3d_c_isVisiblePlane_FUN_00403970(&prim->surface_normal), iVar1 != 0)) {
     if (this_ptr->shadow_pass_active == 0) {
       if (DAT_006141c0 == 0x20) {
-        _DAT_01c35e6c = engine_special_cpp_FUN_0055b3b1;
+        _DAT_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0055b3b1;
       }
       else {
         _DAT_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb93;

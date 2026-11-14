@@ -14,7 +14,7 @@
 ;
 ; XREF[7]:
 ;   core_doc.cpp_FUN_00453250 at 004535a8
-;   core_game.cpp_FUN_004b76c0 at 004b7ee0
+;   core_game.cpp_CGame_processKeyboardControls_FUN_004b76c0 at 004b7ee0
 ;   core_game.cpp_FUN_004be8a0 at 004bf637
 ;   core_inv.cpp_CInventory_select_FUN_004dc8c0 at 004dca99
 ;   core_inv.cpp_FUN_004dadb0 at 004db433

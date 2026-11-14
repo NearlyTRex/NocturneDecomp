@@ -15,8 +15,8 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0
 ;   core_box.cpp_FUN_0041daf0
-;   core_charactr.cpp_FUN_0042f310
-;   core_motion.cpp_FUN_004fcdc0
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310
+;   core_motion.cpp_CMotionController_render_FUN_004fcdc0
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0
 ;   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0
@@ -105,8 +105,8 @@ section .text
         ;   XREF to: 0059855a (CONDITIONAL_JUMP)  ; LAB_0059855a
     PUSH EBX                            ; 00598550
     PUSH ESI                            ; 00598551
-    CALL core_motion.cpp_FUN_004fcdc0   ; 00598552
-        ;   XREF to: 004fcdc0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_FUN_004fcdc0(CMotionController * this_ptr, CDemonActor * actor)
+    CALL core_motion.cpp_CMotionController_render_FUN_004fcdc0 ; 00598552
+        ;   XREF to: 004fcdc0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_render_FUN_004fcdc0(CMotionController * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00598557
     FLD float ptr [EBX + 0x3254]        ; 0059855a
         ;   Label: LAB_0059855a
@@ -117,8 +117,8 @@ section .text
     JNC 0x00598572                      ; 00598567
         ;   XREF to: 00598572 (CONDITIONAL_JUMP)  ; LAB_00598572
     PUSH EBX                            ; 00598569
-    CALL core_charactr.cpp_FUN_0042f310 ; 0059856a
-        ;   XREF to: 0042f310 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042f310(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310 ; 0059856a
+        ;   XREF to: 0042f310 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0059856f
     PUSH EBX                            ; 00598572
         ;   Label: LAB_00598572

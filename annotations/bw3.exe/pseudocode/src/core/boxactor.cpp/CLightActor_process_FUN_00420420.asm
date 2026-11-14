@@ -22,7 +22,7 @@
 ;   core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_0045fab0
 ;   core_set.cpp_CDemonSet_addCoronaGlobe_FUN_005372f0
 ;   core_set.cpp_CDemonSet_addDynamicLight_FUN_00537270
-;   core_xform.cpp_FUN_00583940
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
 ;   core_xform.cpp_matrixToEulerAngles_FUN_00583b10
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005833e0
 ;   crt_math.c_round_FUN_005a3120
@@ -175,16 +175,16 @@ section .text
     PUSH 0x2cfd900                      ; 004205b8
     LEA EAX,[ESP + 0x8]                 ; 004205bd
     PUSH EAX                            ; 004205c1
-    CALL core_xform.cpp_FUN_00583940    ; 004205c2
-        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583940()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 ; 004205c2
+        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940()
     ADD ESP,0xc                         ; 004205c7
     LEA EAX,[EBX + 0x30]                ; 004205ca
     PUSH EAX                            ; 004205cd
     PUSH 0x2cfd900                      ; 004205ce
     LEA EAX,[ESP + 0x38]                ; 004205d3
     PUSH EAX                            ; 004205d7
-    CALL core_xform.cpp_FUN_00583940    ; 004205d8
-        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583940()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 ; 004205d8
+        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940()
     ADD ESP,0xc                         ; 004205dd
     LEA EAX,[ESP + 0x30]                ; 004205e0
     PUSH EAX                            ; 004205e4

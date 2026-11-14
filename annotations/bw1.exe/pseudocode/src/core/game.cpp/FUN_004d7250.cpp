@@ -165,11 +165,11 @@ void core_game_cpp_FUN_004d7250(CGame *param_1,int param_2)
   core_mission_cpp_CDemonMission_load_FUN_0051a3f0(0x01D2C900,local_134,iVar5);
   iVar3 = core_mission_cpp_CDemonMission_createHeros_FUN_0051c0a0(0x01D2C900,(CCharacter *)0x0);
   if (iVar3 != 0) {
-    core_mission_cpp_FUN_0051bdc0(0x01D2C900);
+    core_mission_cpp_CDemonMission_startMission_FUN_0051bdc0(0x01D2C900);
     core_mission_cpp_CDemonMission_run_FUN_0051bad0(0x01D2C900);
     if (param_1->need_chapter_reload != 0) {
       param_1->need_chapter_reload = 0;
-      core_game_cpp_FUN_004d6990(param_1,param_1->chapter_reload_filename,1);
+      core_game_cpp_CGame_loadGame_FUN_004d6990(param_1,param_1->chapter_reload_filename,1);
     }
   }
 LAB_004d757b:

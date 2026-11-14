@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_charactr.cpp_CCharacter_getDeathState_FUN_004281d0 at 004281ef
-;   core_motion.cpp_FUN_005042e0 at 0050441c
+;   core_motion.cpp_CMotionController_render_FUN_005042e0 at 0050441c
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0

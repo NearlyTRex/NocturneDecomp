@@ -35,7 +35,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_actor.cpp_FUN_00408bf0
-;   core_lever.cpp_FUN_004e0a30
+;   core_lever.cpp_CLever_isAccessibleFrom_FUN_004e0a30
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250
 ;
 ; *****************************************************************************
@@ -150,8 +150,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x38]      ; 004d33ec
     PUSH EDI                            ; 004d33f0
     PUSH EBX                            ; 004d33f1
-    CALL core_lever.cpp_FUN_004e0a30    ; 004d33f2
-        ;   XREF to: 004e0a30 (UNCONDITIONAL_CALL)  ; undefined core_lever.cpp_FUN_004e0a30()
+    CALL core_lever.cpp_CLever_isAccessibleFrom_FUN_004e0a30 ; 004d33f2
+        ;   XREF to: 004e0a30 (UNCONDITIONAL_CALL)  ; int core_lever.cpp_CLever_isAccessibleFrom_FUN_004e0a30(CLever * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 004d33f7
     TEST EAX,EAX                        ; 004d33fa
     JZ 0x004d343c                       ; 004d33fc

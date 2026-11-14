@@ -970,7 +970,8 @@ LAB_005bca7d:
                 fStack_24 = afStack_340[1] * (float)_DAT_005fa71c + fStack_24;
               }
               fStack_98 = fStack_24;
-              fStack_58 = core_motion_cpp_FUN_00525020(&(this_ptr->base).base.model.base);
+              fStack_58 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00525020
+                                    (&(this_ptr->base).base.model.base);
               dStack_c8 = (double)fStack_58;
               pCStack_14 = (CCharacter_full_vtable *)fStack_58;
               if ((1.0 <= dStack_c8) && (dStack_c8 <= _DAT_005fa72c)) {
@@ -1290,7 +1291,7 @@ LAB_005bbbdf:
       fVar11 = (this_ptr->base).base.model.accumulated_root_motion.z;
       (this_ptr->base).base.model.accumulated_root_motion.y = fVar11;
       pCVar25->x = fVar11;
-      core_charactr_cpp_FUN_0042d750((CCharacter *)this_ptr,&CStack_11c);
+      core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042d750((CCharacter *)this_ptr,&CStack_11c);
       if ((fStack_28 == 1.4013e-45) &&
          (pCStack_44 = (CDoor *)core_actor_cpp_castToClassHash_FUN_0040c600
                                           (DAT_007c6380,g_CDoorClassInfo.name_hash),

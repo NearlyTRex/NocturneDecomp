@@ -322,7 +322,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_0051ce40(CMobster *this_ptr,f
         }
       }
       else if (this_ptr->post_mode == 0) {
-        iVar6 = core_mobster_cpp_FUN_0051e5d0(this_ptr,delta_time);
+        iVar6 = core_mobster_cpp_CMobster_processWeaponPickup_FUN_0051e5d0(this_ptr,delta_time);
         if (iVar6 == 0) {
           fStack_38 = 0x40400000 + 1.0;
           if ((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0) {
@@ -675,7 +675,7 @@ switchD_0051ded1_caseD_3:
       fVar18 = (this_ptr->base).base.model.accumulated_root_motion.z;
       (this_ptr->base).base.model.accumulated_root_motion.y = fVar18;
       pCVar3->x = fVar18;
-      core_charactr_cpp_FUN_0042d750((CCharacter *)this_ptr,&CStack_184);
+      core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042d750((CCharacter *)this_ptr,&CStack_184);
     }
   }
   else {

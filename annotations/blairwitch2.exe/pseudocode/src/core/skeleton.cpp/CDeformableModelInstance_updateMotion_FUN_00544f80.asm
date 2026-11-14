@@ -96,10 +96,10 @@
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20 at 004afea3
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_00544f00 at 00544f0f
 ;   core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_00544f50 at 00544f61
-;   core_stranger.cpp_FUN_00567430 at 0056746e
+;   core_stranger.cpp_CStranger_extractTurnPose_FUN_00567430 at 0056746e
 ;
 ; Called Functions:
-;   core_motion.cpp_FUN_00504080
+;   core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_00504080
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
 ;   core_skeleton.cpp_CSkeleton_getBoneAngleAtFrame_FUN_00540f10
 ;   core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_00540f30
@@ -137,8 +137,8 @@ section .text
     PUSH EDI                            ; 00544fb8
     MOV ECX,dword ptr [EBP + 0x14]      ; 00544fb9
     PUSH ECX                            ; 00544fbc
-    CALL core_motion.cpp_FUN_00504080   ; 00544fbd
-        ;   XREF to: 00504080 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_FUN_00504080(CMotionController * this_ptr, int motion_index, float frame_number, int * out_frame1, ...)
+    CALL core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_00504080 ; 00544fbd
+        ;   XREF to: 00504080 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_00504080(CMotionController * this_ptr, int motion_index, float frame_number, int * out_frame1, ...)
     ADD ESP,0x18                        ; 00544fc2
     CMP dword ptr [EBP + 0x20],0x0      ; 00544fc5
     JL 0x00545055                       ; 00544fc9

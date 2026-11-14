@@ -438,7 +438,7 @@ LAB_00588fbb:
           fVar28 = CStack_178.x - (pCVar24->base).location.position.x;
           fVar3 = CStack_178.z - (pCVar24->base).location.position.z;
           if ((float)_DAT_005d8737 < SQRT(fVar3 * fVar3 + fVar28 * fVar28)) {
-            core_zombie_cpp_FUN_0058cc20(this_ptr);
+            core_zombie_cpp_CZombie_resetChaseState_FUN_0058cc20(this_ptr);
             goto LAB_00588fbb;
           }
         }
@@ -447,7 +447,7 @@ LAB_00588fbb:
           pCVar11 = (CZombie *)(*(((pCVar24->base).vtable._uc)->_uc).getGrabber)(pCVar24);
           if (pCVar11 != this_ptr) {
             in_stack_fffffa44 = this_ptr;
-            core_zombie_cpp_FUN_0058cc20(this_ptr);
+            core_zombie_cpp_CZombie_resetChaseState_FUN_0058cc20(this_ptr);
             goto LAB_00588fbb;
           }
         }
@@ -473,14 +473,14 @@ LAB_00588fbb:
         if (0 < (int)EVar12) {
           pCVar24 = (this_ptr->base).victim;
           (*(((pCVar24->base).vtable._uc)->_uc).releaseFromGrab)(pCVar24);
-          core_zombie_cpp_FUN_0058cc20(this_ptr);
+          core_zombie_cpp_CZombie_resetChaseState_FUN_0058cc20(this_ptr);
         }
         in_stack_fffffa4c = (char *)this_ptr;
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
                   ((CDemonActor *)this_ptr,"ghoul-eat-?.wav");
         goto LAB_00588fbb;
       }
-      core_zombie_cpp_FUN_0058cc20(this_ptr);
+      core_zombie_cpp_CZombie_resetChaseState_FUN_0058cc20(this_ptr);
     }
     else if (uVar10 < 0xc) {
       iVar8 = core_zombie_cpp_CZombie_getPickupHandIndex_FUN_0058bd50(this_ptr,2);
@@ -741,10 +741,10 @@ LAB_00588fbb:
           iVar8 = core_enemy_cpp_CEnemy_updatePatrol_FUN_00489ff0(&this_ptr->base,delta_time);
           if (iVar8 != 0) {
             in_stack_fffffa44 = (CZombie *)0x58a49a;
-            core_zombie_cpp_FUN_0058cc20(this_ptr);
+            core_zombie_cpp_CZombie_resetChaseState_FUN_0058cc20(this_ptr);
           }
           if (0x3FA66666 + (float)_DAT_005d86df < fStack_74) {
-            core_zombie_cpp_FUN_0058cc20(this_ptr);
+            core_zombie_cpp_CZombie_resetChaseState_FUN_0058cc20(this_ptr);
             in_stack_fffffa44 = (CZombie *)0x58a4cc;
             iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handles[1]);
             if (iVar8 == 0) {
@@ -955,7 +955,7 @@ LAB_00588fbb:
     case 4:
       if ((this_ptr->base).victim == (CCharacter *)0x0) {
 LAB_0058aaf1:
-        core_zombie_cpp_FUN_0058cc20(this_ptr);
+        core_zombie_cpp_CZombie_resetChaseState_FUN_0058cc20(this_ptr);
       }
       else {
         iVar8 = core_zombie_cpp_CZombie_getPickupHandIndex_FUN_0058bd50(this_ptr,1);
@@ -1011,7 +1011,8 @@ LAB_0058aaf1:
               fStack_48 = fStack_404 * (float)_DAT_005d86cf + fStack_48;
             }
             fStack_28 = fStack_48;
-            fStack_4c = core_motion_cpp_FUN_004fc930(&(this_ptr->base).base.model.base);
+            fStack_4c = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                                  (&(this_ptr->base).base.model.base);
             dStack_d4 = (double)fStack_4c;
             pCStack_14 = (CCharacter_full_vtable *)fStack_4c;
             if ((1.0 <= dStack_d4) && (dStack_d4 <= _DAT_005d86df)) {
@@ -1021,7 +1022,7 @@ LAB_0058aaf1:
           }
         }
         engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"%s gave up swing\n");
-        core_zombie_cpp_FUN_0058cc20(this_ptr);
+        core_zombie_cpp_CZombie_resetChaseState_FUN_0058cc20(this_ptr);
       }
       break;
     case 5:
@@ -1030,7 +1031,7 @@ LAB_0058aaf1:
          (EVar12 = (*(((pCVar24->base).vtable._uc)->_uc).getDeathState)(pCVar24), 0 < (int)EVar12))
       {
 LAB_0058a628:
-        core_zombie_cpp_FUN_0058cc20(this_ptr);
+        core_zombie_cpp_CZombie_resetChaseState_FUN_0058cc20(this_ptr);
       }
       else {
         in_stack_fffffa44 = (CZombie *)(this_ptr->base).victim;
@@ -1230,7 +1231,7 @@ LAB_00589ecd:
       if (iVar8 != 1) {
         engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"%s giving up attack\n")
         ;
-        core_zombie_cpp_FUN_0058cc20(this_ptr);
+        core_zombie_cpp_CZombie_resetChaseState_FUN_0058cc20(this_ptr);
         (this_ptr->base).base.turn_angle_accumulator = 0.0;
       }
     }
@@ -1241,7 +1242,7 @@ LAB_00589ecd:
       if (EVar5 == WALK_STATE_WALKING) {
 LAB_00589ad4:
         if (iVar8 != 2) {
-          core_zombie_cpp_FUN_0058cc20(this_ptr);
+          core_zombie_cpp_CZombie_resetChaseState_FUN_0058cc20(this_ptr);
         }
       }
       else {
@@ -1320,7 +1321,8 @@ LAB_00589d98:
         (this_ptr->base).base.model.accumulated_root_motion.y =
              (this_ptr->base).base.model.accumulated_root_motion.z;
         pCVar25->x = (this_ptr->base).base.model.accumulated_root_motion.y;
-        core_charactr_cpp_FUN_0042c230((CCharacter *)this_ptr,&CStack_3c4);
+        core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230((CCharacter *)this_ptr,&CStack_3c4)
+        ;
       }
       goto LAB_00589b68;
     }

@@ -46,7 +46,8 @@ CMatrix3x4f * __stack2_esi core_bwgrndma_cpp_CGrandma_getCarryObjToBodyXForm_FUN
            aiStack_24[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
       uStack_30 = 0xbe19999a;
       uStack_2c = 0;
-      core_xform_cpp_FUN_00591c10(&CStack_64,&uStack_34,piVar6);
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
+                (&CStack_64,&uStack_34,piVar6);
       core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
                 (&CStack_64,
                  (CMatrix3x4f *)

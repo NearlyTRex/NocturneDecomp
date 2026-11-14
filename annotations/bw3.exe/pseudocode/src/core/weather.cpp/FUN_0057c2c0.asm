@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_weather.cpp_FUN_0057c2e0 at 0057c5a8
+;   core_weather.cpp_CWeather_createLightningStrike_FUN_0057c2e0 at 0057c5a8
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8

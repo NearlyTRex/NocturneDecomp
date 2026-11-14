@@ -31,7 +31,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderBackground_FUN_0042e300(CCharact
   }
   iVar1 = core_box_cpp_FUN_0041daf0(local_1c);
   if (iVar1 != 0) {
-    core_charactr_cpp_FUN_0042d8e0(this_ptr);
+    core_charactr_cpp_CCharacter_renderCharacter_FUN_0042d8e0(this_ptr);
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830(&this_ptr->base);
   return;

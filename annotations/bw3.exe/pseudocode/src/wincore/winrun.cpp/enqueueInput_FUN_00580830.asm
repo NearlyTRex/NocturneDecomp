@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004bb100 at 004bc1ed
-;   wincore_winrun.cpp_FUN_00580a50 at 00580c18
+;   wincore_winrun.cpp_mainWindowProc_FUN_00580a50 at 00580c18
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02d202d4

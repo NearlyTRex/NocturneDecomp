@@ -19,25 +19,25 @@ void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_004faef0(CMirror 
   SStack_88.vertices[5].vertex_index = (int)ROUND((this_ptr->reflection).corner1.x * _DAT_005fa1b0);
   SStack_88.vertices[5].texture_u = (int)ROUND((this_ptr->reflection).corner1.y * _DAT_005fa1b0);
   SStack_88.vertices[5].texture_v = (int)ROUND((this_ptr->reflection).corner1.z * _DAT_005fa1b0);
-  engine_special_cpp_FUN_0055d9ec
+  engine_special_cpp_transformPoint_FUN_0055d9ec
             (&DAT_0060b280->vertex_buffer_ptr->projected_vertex,
              (CVector3i *)(SStack_88.vertices + 5));
   SStack_88.vertices[4].vertex_index = (int)ROUND((this_ptr->reflection).corner2.x * _DAT_005fa1b0);
   SStack_88.vertices[4].texture_u = (int)ROUND((this_ptr->reflection).corner2.y * _DAT_005fa1b0);
   SStack_88.vertices[4].texture_v = (int)ROUND((this_ptr->reflection).corner2.z * _DAT_005fa1b0);
-  engine_special_cpp_FUN_0055d9ec
+  engine_special_cpp_transformPoint_FUN_0055d9ec
             (&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,
              (CVector3i *)(SStack_88.vertices + 4));
   SStack_88.vertices[7].vertex_index = (int)ROUND((this_ptr->reflection).corner3.x * _DAT_005fa1b0);
   SStack_88.vertices[7].texture_u = (int)ROUND((this_ptr->reflection).corner3.y * _DAT_005fa1b0);
   SStack_88.vertices[7].texture_v = (int)ROUND((this_ptr->reflection).corner3.z * _DAT_005fa1b0);
-  engine_special_cpp_FUN_0055d9ec
+  engine_special_cpp_transformPoint_FUN_0055d9ec
             (&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,
              (CVector3i *)(SStack_88.vertices + 7));
   SStack_88.vertices[6].vertex_index = (int)ROUND((this_ptr->reflection).corner4.x * _DAT_005fa1b0);
   SStack_88.vertices[6].texture_u = (int)ROUND((this_ptr->reflection).corner4.y * _DAT_005fa1b0);
   SStack_88.vertices[6].texture_v = (int)ROUND((this_ptr->reflection).corner4.z * _DAT_005fa1b0);
-  engine_special_cpp_FUN_0055d9ec
+  engine_special_cpp_transformPoint_FUN_0055d9ec
             (&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,
              (CVector3i *)(SStack_88.vertices + 6));
   iVar2 = 0;

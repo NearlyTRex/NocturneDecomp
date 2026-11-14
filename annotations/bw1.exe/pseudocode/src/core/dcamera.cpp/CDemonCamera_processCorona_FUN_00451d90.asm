@@ -7,7 +7,7 @@
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_00550580 at 00550625
+;   core_set.cpp_CDemonSet_renderScene_FUN_00550580 at 00550625
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00b81498

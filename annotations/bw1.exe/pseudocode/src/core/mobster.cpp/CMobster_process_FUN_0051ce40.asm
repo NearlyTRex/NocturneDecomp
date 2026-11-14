@@ -33,6 +33,7 @@
 ;   core_actor.cpp_randomChance_FUN_0040cd00
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042e120
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
@@ -40,7 +41,6 @@
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_004328f0
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0
-;   core_charactr.cpp_FUN_0042d700
 ;   ... and 25 more
 ;
 ; *****************************************************************************
@@ -453,8 +453,8 @@ section .text
     FST float ptr [EDX + 0x4]           ; 0051d301
     PUSH EBX                            ; 0051d304
     FSTP float ptr [EDX]                ; 0051d305
-    CALL core_charactr.cpp_FUN_0042d750 ; 0051d307
-        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750 ; 0051d307
+        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 0051d30c
     MOV EAX,[0x02c99770]                ; 0051d30f | g_CWeaponClassInfo.name_hash
         ;   Label: LAB_0051d30f
@@ -1215,8 +1215,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 0051db81
         ;   Label: LAB_0051db81
     PUSH EBX                            ; 0051db87
-    CALL core_mobster.cpp_FUN_0051e5d0  ; 0051db88
-        ;   XREF to: 0051e5d0 (UNCONDITIONAL_CALL)  ; int core_mobster.cpp_FUN_0051e5d0(CMobster * this_ptr, float delta_time)
+    CALL core_mobster.cpp_CMobster_processWeaponPickup_FUN_0051e5d0 ; 0051db88
+        ;   XREF to: 0051e5d0 (UNCONDITIONAL_CALL)  ; int core_mobster.cpp_CMobster_processWeaponPickup_FUN_0051e5d0(CMobster * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0051db8d
     TEST EAX,EAX                        ; 0051db90
     JNZ 0x0051d1a1                      ; 0051db92

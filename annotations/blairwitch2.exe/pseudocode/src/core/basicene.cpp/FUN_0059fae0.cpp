@@ -35,7 +35,8 @@ void core_basicene_cpp_FUN_0059fae0(CDemonActor *param_1)
   local_34.x = (int)ROUND(afStack_24[2] * _DAT_005febc0);
   local_34.y = (int)ROUND(afStack_24[3] * _DAT_005febc0);
   local_34.z = (int)ROUND(local_14 * _DAT_005febc0);
-  engine_special_cpp_FUN_0055d723((SProjectedVertex *)*DAT_0060b280,&local_34);
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+            ((SProjectedVertex *)*DAT_0060b280,&local_34);
   iVar1 = *DAT_0060b280;
   if ((*(byte *)(iVar1 + 0x13) & 0x80) == 0) {
     dVar4 = (double)*(float *)(param_1[0x66].actor_name + 0xc);

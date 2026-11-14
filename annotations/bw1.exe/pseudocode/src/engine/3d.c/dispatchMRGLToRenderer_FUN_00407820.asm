@@ -23,7 +23,7 @@
 ;   engine_3d.c_renderPolygonFullEffectsBufferedOp65_FUN_004070e0
 ;   engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00404560
 ;   engine_3d.c_transformAndBufferVertices_FUN_00403840
-;   engine_model.c_FUN_0051fee0
+;   engine_model.c_getMRGLSize_FUN_0051fee0
 ;   engine_special.cpp_drawPolyList_FUN_005823a0
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_00597a20
 ;
@@ -65,8 +65,8 @@ section .text
         ;   XREF to: 004078cd (CONDITIONAL_JUMP)  ; LAB_004078cd
     PUSH EDI                            ; 0040786f
         ;   Label: LAB_0040786f
-    CALL engine_model.c_FUN_0051fee0    ; 00407870
-        ;   XREF to: 0051fee0 (UNCONDITIONAL_CALL)  ; int engine_model.c_FUN_0051fee0(SMRGLHeaderExtended * header)
+    CALL engine_model.c_getMRGLSize_FUN_0051fee0 ; 00407870
+        ;   XREF to: 0051fee0 (UNCONDITIONAL_CALL)  ; int engine_model.c_getMRGLSize_FUN_0051fee0(SMRGLHeaderExtended * header)
     ADD EDI,EAX                         ; 00407875
     MOV DL,byte ptr [EDI]               ; 00407877
     ADD ESP,0x4                         ; 00407879

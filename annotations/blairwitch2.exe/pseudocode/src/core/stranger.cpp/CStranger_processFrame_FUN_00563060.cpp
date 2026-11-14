@@ -511,7 +511,7 @@ switchD_00564db7_default:
                                 (&(this_ptr->base).base.model.base,desired_state_index,1);
                     }
                     if ((this_ptr->base).player_input.action_state.use_item != 0) {
-                      core_hero_cpp_FUN_004cfc80();
+                      core_hero_cpp_CHero_tryUseSelectedItem_FUN_004cfc80(&this_ptr->base);
                       iStack_68 = 0;
                       break;
                     }
@@ -937,7 +937,7 @@ switchD_00564c2e_caseD_6:
                     core_actor_cpp_castToClassHash_FUN_0040c8f0
                               ((this_ptr->base).object_to_pick_up,g_CAmmoBoxClassInfo.name_hash),
      this_ptr_01 != (CAmmoBox *)0x0)) {
-    fVar17 = core_motion_cpp_FUN_00503e60(&pCVar2->base);
+    fVar17 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00503e60(&pCVar2->base);
     core_ammobox_cpp_CAmmoBox_openBox_FUN_0040e600(this_ptr_01,fVar17);
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_00424470((CCharacter *)this_ptr);
@@ -1093,7 +1093,7 @@ LAB_00564f8a:
     aCStack_2b8[0].y = aCStack_2b8[0].y + fStack_e0;
     aCStack_2b8[0].z = aCStack_2b8[0].z + fStack_dc;
     this_ptr->fall_velocity_snapshot = (this_ptr->base).base.velocity.y;
-    core_charactr_cpp_FUN_00423a60((CCharacter *)this_ptr,pCVar30);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_00423a60((CCharacter *)this_ptr,pCVar30);
     if ((this_ptr->base).base.base.location.position.y <
         (this_ptr->base).base.closest_distance_threshold + (float)_DAT_005eb635) {
       (this_ptr->base).base.is_on_ground = 1;
@@ -1251,14 +1251,14 @@ LAB_005639ef:
   if (iStack_20 != 0) {
     core_stranger_cpp_CStranger_handleActionButton_FUN_0056e4d0(this_ptr);
   }
-  core_stranger_cpp_FUN_00565ff0(this_ptr);
+  core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_00565ff0(this_ptr);
   if ((((this_ptr->base).aim_mode == AIM_MODE_MANUAL) && (this_ptr->weapon != (CWeapon *)0x0)) &&
      (this_ptr->weapon->weapon_type == WEAPON_TYPE_GUN)) {
     core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00546ae0
               (&(this_ptr->base).base.model);
     core_stranger_cpp_CStranger_updateWeaponPosition_FUN_005683d0(this_ptr,0);
     core_stranger_cpp_CStranger_aimLeftPistol_FUN_0056ca10(this_ptr);
-    core_stranger_cpp_FUN_00565ff0(this_ptr);
+    core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_00565ff0(this_ptr);
   }
   core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_0056d3d0(this_ptr,delta_time,iStack_1c);
   core_stranger_cpp_CStranger_updateClothSimulation_FUN_0056eb60(this_ptr);
@@ -1269,7 +1269,7 @@ LAB_005639ef:
     core_hero_cpp_CHero_stopPushingBox_FUN_004cf830(&this_ptr->base);
   }
   else {
-    fVar17 = core_motion_cpp_FUN_00503e60(&pCVar2->base);
+    fVar17 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00503e60(&pCVar2->base);
     if ((1.0 < fVar17) &&
        (pCStack_64 = (CBoxActor *)
                      core_actor_cpp_castToClassHash_FUN_0040c8f0

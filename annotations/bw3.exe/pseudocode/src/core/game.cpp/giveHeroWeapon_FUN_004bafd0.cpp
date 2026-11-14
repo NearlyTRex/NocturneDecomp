@@ -28,7 +28,7 @@ void __cdecl core_game_cpp_giveHeroWeapon_FUN_004bafd0(char *class_name)
   pCVar1[4].actor_name[10] = '\0';
   pCVar1[4].actor_name[0xb] = '\0';
   (*((actor->vtable)._ub)->pickup)(actor,*(CDemonActor **)(_DAT_01d5ba14 * 4 + 0x1d5ba04));
-  core_inv_cpp_FUN_004da880
+  core_inv_cpp_CInventory_addItem_FUN_004da880
             ((CInventory *)(*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x206e8),actor,1);
   return;
 }

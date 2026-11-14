@@ -49,8 +49,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
+;   core_charactr.cpp_CCharacter_processFire_FUN_0042e8c0 at 0042eea6
 ;   core_charactr.cpp_CCharacter_setup_FUN_0042b0e0 at 0042b203
-;   core_charactr.cpp_FUN_0042e8c0 at 0042eea6
 ;   core_charactr.cpp_FUN_0042fbd0 at 0042fc76
 ;
 ; Referenced Globals:

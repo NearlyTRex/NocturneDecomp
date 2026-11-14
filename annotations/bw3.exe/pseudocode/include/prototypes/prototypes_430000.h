@@ -93,7 +93,7 @@ void __cdecl cockpit_ckptutil_c_expandIndexedToRGB_FUN_00434c1a(void *output_buf
 void __cdecl cockpit_ckptutil_c_optimizedMemcpy_FUN_00434c48(void *dest_buffer,void *src_buffer,int byte_count);
 void __cdecl cockpit_ckptutil_c_mmxOptimizedMemcpy_FUN_00434d42(void *dest_buffer,void *src_buffer,int byte_count);
 void __cdecl cockpit_ckptutil_c_basicIndexedTo16Bit_FUN_00434e50(void *output_buffer,void *input_buffer,int pixel_count);
-code * cockpit_ckptutil_c_FUN_00434e80(void);
+code * __cdecl cockpit_ckptutil_c_getColorConversionFunction_FUN_00434e80(void);
 void __cdecl cockpit_ckptutil_c_applyActPalette_FUN_00434f90(char *filename,void *bitmap_buffer,int bitmap_size,int palette_index);
 void __cdecl cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00435010(char *filename,uchar *output_palette);
 void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_004350a0(char *base_filename,uchar *output_buffer);
@@ -114,7 +114,7 @@ void __cdecl cockpit_ckptutil_c_copyScreenRegion_FUN_004363a0(void *dest_buffer,
 void cockpit_ckptutil_c_FUN_00436400(int param_1,int param_2,int param_3,int param_4,int *param_5,int param_6,uint param_7);
 void __cdecl cockpit_ckptutil_c_rotateCircularBitmap_FUN_00436620(void *bitmap_data,int width,int height,int num_iterations);
 void __cdecl cockpit_ckptutil_c_mirrorBitmapHorizontally_FUN_00436750(uchar *bitmap_data,int width,int height,int bytes_per_pixel);
-void cockpit_ckptutil_c_FUN_004367e0(char *param_1,int *param_2,int param_3);
+void __cdecl cockpit_ckptutil_c_loadEdgeListFile_FUN_004367e0(char *param_1,int *param_2,int param_3);
 void cockpit_ckptutil_c_FUN_00436a50(char *param_1,int param_2,int param_3);
 void __cdecl cockpit_ckptutil_c_drawClippedEdges_FUN_00436bb0(SEdge *edges,int count,int x_offset,int y_offset);
 void cockpit_ckptutil_c_FUN_00436ca0(void);
@@ -163,7 +163,7 @@ CCloth * __cdecl core_cloth_cpp_CCloth_dtor_FUN_0043c280(CCloth *this_ptr,uint f
 void __cdecl core_cloth_cpp_CCloth_allocMemory_FUN_0043c2a0(CCloth *this_ptr);
 void __cdecl core_cloth_cpp_CCloth_free_FUN_0043c300(CCloth *this_ptr);
 int __cdecl core_cloth_cpp_CCloth_load_FUN_0043c330(CCloth *this_ptr,char *filename);
-void __cdecl core_cloth_cpp_FUN_0043c8a0(CCloth *this_ptr);
+void __cdecl core_cloth_cpp_CCloth_initializeConnections_FUN_0043c8a0(CCloth *this_ptr);
 void core_cloth_cpp_FUN_0043cb00(CCloth *param_1,float *param_2,float *param_3,CDeformableModelInstance *param_4);
 void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_0043d680(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CCloth_computeBoneTransform_FUN_0043d830(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr);

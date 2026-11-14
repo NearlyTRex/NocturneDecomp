@@ -11,11 +11,11 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[8]:
+;   core_game.cpp_CGame_loadGame_FUN_004bdfb0 at 004be41c
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004bb100 at 004bb9e4
-;   core_game.cpp_FUN_004bdfb0 at 004be41c
 ;   core_game.cpp_setupMovieRecording_FUN_004b3d70 at 004b3e35
 ;   core_main.c_FUN_004e4400 at 004e44ad
-;   core_mission.cpp_FUN_004f7a20 at 004f7b79
+;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004f7a20 at 004f7b79
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_005043b0 at 00504519
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_00505a30 at 00505d5d
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052c0f6

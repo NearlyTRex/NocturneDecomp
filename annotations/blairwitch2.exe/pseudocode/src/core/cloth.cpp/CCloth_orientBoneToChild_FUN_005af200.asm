@@ -21,7 +21,7 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
-;   core_cloth.cpp_FUN_005ae680 at 005aecd8
+;   core_cloth.cpp_CCloth_setup_FUN_005ae680 at 005aecd8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_005f10ac
@@ -34,7 +34,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
-;   core_xform.cpp_FUN_00591ad0
+;   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005916b0
 ;
 ; *****************************************************************************
@@ -134,8 +134,8 @@ section .text
     PUSH EAX                            ; 005af301
     LEA ESI,[EBX + 0x48]                ; 005af302
     PUSH ESI                            ; 005af305
-    CALL core_xform.cpp_FUN_00591ad0    ; 005af306
-        ;   XREF to: 00591ad0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_00591ad0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0 ; 005af306
+        ;   XREF to: 00591ad0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 005af30b
     LEA EAX,[EBX + 0x28]                ; 005af30e
     PUSH EAX                            ; 005af311
@@ -143,8 +143,8 @@ section .text
     PUSH EAX                            ; 005af315
     LEA EAX,[EBP + -0x1a]               ; 005af316
     PUSH EAX                            ; 005af319
-    CALL core_xform.cpp_FUN_00591ad0    ; 005af31a
-        ;   XREF to: 00591ad0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_00591ad0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0 ; 005af31a
+        ;   XREF to: 00591ad0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 005af31f
     LEA EAX,[EBP + -0x1a]               ; 005af322
     PUSH EAX                            ; 005af325

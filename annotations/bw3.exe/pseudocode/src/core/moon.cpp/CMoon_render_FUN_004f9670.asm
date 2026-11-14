@@ -23,12 +23,12 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
-;   core_menu.cpp_FUN_004e85a0 at 004e869b
-;   core_menu.cpp_FUN_004e8f80 at 004e9007
-;   core_menu.cpp_FUN_004e94f0 at 004e957c
-;   core_menu.cpp_FUN_004ea280 at 004ea30d
 ;   core_menu.cpp_calibrateGamepad_FUN_004e7dc0 at 004e7ddf
+;   core_menu.cpp_configureCustomKeys_FUN_004e8f80 at 004e9007
+;   core_menu.cpp_configureGraphicsOptions_FUN_004e85a0 at 004e869b
+;   core_menu.cpp_configureSoundOptions_FUN_004e94f0 at 004e957c
 ;   core_menu.cpp_showMainGameMenu_FUN_004ea4d0 at 004ea60a
+;   core_menu.cpp_showOptionsScreen_FUN_004ea280 at 004ea30d
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f2afc

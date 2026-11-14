@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005b7790
-;   sound_snddx.cpp_FUN_00554ad0
+;   sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0
 ;   sound_sndmain.cpp_logSoundError_FUN_005549c0
 ;
 ; *****************************************************************************
@@ -36,8 +36,8 @@ section .text
     JZ 0x00557810                       ; 00557821
         ;   XREF to: 00557810 (CONDITIONAL_JUMP)  ; LAB_00557810
     PUSH EAX                            ; 00557823
-    CALL sound_snddx.cpp_FUN_00554ad0   ; 00557824
-        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00554ad0(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0 ; 00557824
+        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0(uint error_code)
     ADD ESP,0x4                         ; 00557829
     PUSH EAX                            ; 0055782c
     PUSH 0x5ea472                       ; 0055782d | = "Commit hardware sfx 3d buffer settings"

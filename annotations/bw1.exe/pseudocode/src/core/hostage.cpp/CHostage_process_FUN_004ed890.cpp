@@ -220,7 +220,7 @@ void __cdecl core_hostage_cpp_CHostage_process_FUN_004ed890(CHostage *this_ptr,f
                   ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
         this_ptr_00 = (CInventory *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x1fae8);
         in_stack_fffffd68 = CONCAT44(pCVar18,this_ptr_00);
-        core_inv_cpp_FUN_004f7690(this_ptr_00,pCVar18,1);
+        core_inv_cpp_CInventory_addItem_FUN_004f7690(this_ptr_00,pCVar18,1);
       }
     }
     else {
@@ -692,7 +692,7 @@ LAB_004ee196:
     afStack_1e8[(uint)bVar20 * -2 + 6] = *pfVar19;
     pCVar23 = this_ptr;
     afStack_1e8[(uint)bVar20 * -2 + (uint)bVar20 * -2 + 7] = pfVar19[(uint)bVar20 * -2 + 1];
-    core_charactr_cpp_FUN_0042d750((CCharacter *)pCVar23,pCVar22);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042d750((CCharacter *)pCVar23,pCVar22);
     (this_ptr->base).base.walk_stuck_timer = (this_ptr->base).base.walk_stuck_timer + delta_time;
     if ((delta_time * (float)_DAT_005e4edf <=
          SQRT(CStack_fc.z * CStack_fc.z + CStack_fc.x * CStack_fc.x + CStack_fc.y * CStack_fc.y)) &&

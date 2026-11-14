@@ -78,7 +78,8 @@ void __cdecl core_hecaitmx_cpp_CHecaitomix_process_FUN_00597f40(CHecaitomix *thi
     pCVar1 = &(this_ptr->base).base.model;
     if (EVar3 < 2) {
       if (EVar3 == WALK_STATE_WALKING) {
-        fStack_14 = core_motion_cpp_FUN_004fc930(&pCVar1->base);
+        fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                              (&pCVar1->base);
         if ((float)_DAT_005d97af < fStack_14) {
           iVar4 = 2;
 LAB_0059809b:
@@ -88,7 +89,8 @@ LAB_0059809b:
       }
       else {
 LAB_00598246:
-        fStack_14 = core_motion_cpp_FUN_004fc930(&(this_ptr->base).base.model.base);
+        fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                              (&(this_ptr->base).base.model.base);
         if ((float)_DAT_005d97af < fStack_14) {
           iVar4 = 1;
           goto LAB_0059809b;
@@ -96,7 +98,8 @@ LAB_00598246:
       }
     }
     else if (EVar3 < WALK_STATE_NO_PATH) {
-      fStack_14 = core_motion_cpp_FUN_004fc930(&pCVar1->base);
+      fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                            (&pCVar1->base);
       if ((float)_DAT_005d97af < fStack_14) {
         iVar4 = 2;
         goto LAB_0059809b;
@@ -158,7 +161,8 @@ LAB_00598246:
     }
     iVar4 = core_enemy_cpp_CEnemy_updatePatrol_FUN_00489ff0(&this_ptr->base,delta_time);
     if (iVar4 != 0) {
-      fStack_14 = core_motion_cpp_FUN_004fc930(&pCVar1->base);
+      fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                            (&pCVar1->base);
       if ((float)_DAT_005d97af < fStack_14) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&pCVar1->base,2,1);
       }
@@ -168,7 +172,8 @@ LAB_00598246:
   case 3:
   case 4:
   case 5:
-    fStack_14 = core_motion_cpp_FUN_004fc930(&(this_ptr->base).base.model.base);
+    fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                          (&(this_ptr->base).base.model.base);
     dStack_20 = (double)fStack_14;
     engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"Zone: %f\n");
     if (dStack_20 <= _DAT_005d97a7) goto switchD_00598471_caseD_1;
@@ -227,7 +232,7 @@ switchD_00598471_caseD_1:
     fVar9 = (this_ptr->base).base.model.accumulated_root_motion.z;
     (this_ptr->base).base.model.accumulated_root_motion.y = fVar9;
     pCVar2->x = fVar9;
-    core_charactr_cpp_FUN_0042c230((CCharacter *)this_ptr,&CStack_98);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230((CCharacter *)this_ptr,&CStack_98);
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_0042cd30((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130

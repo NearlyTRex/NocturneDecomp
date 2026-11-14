@@ -30,7 +30,7 @@ void __cdecl shape_edittool_cpp_CEdButton_paint_FUN_00484f20(CEdButton *this_ptr
   uVar2 = _DAT_01c35e4c;
   bVar13 = 0;
   _DAT_01c35e4c = this_ptr->top;
-  shape_edittool_cpp_FUN_00483ea0
+  shape_edittool_cpp_draw3DBorder_FUN_00483ea0
             (this_ptr->left,_DAT_01c35e4c,this_ptr->right,this_ptr->bottom,this_ptr->button_state);
   pcVar8 = this_ptr->button_text;
   _DAT_01c35e4c = uVar2;
@@ -54,7 +54,7 @@ void __cdecl shape_edittool_cpp_CEdButton_paint_FUN_00484f20(CEdButton *this_ptr
   pbVar9 = local_dc;
   pbVar12 = local_dc;
   if (draw_border_flag != 0) {
-    shape_edittool_cpp_FUN_0047a590
+    shape_edittool_cpp_drawDashedLine_FUN_0047a590
               (this_ptr->left + 3,this_ptr->top + 3,this_ptr->right + -5,this_ptr->bottom + -4,1);
   }
   pcVar8 = this_ptr->button_text;

@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_set.cpp_CDemonSet_buildDisplayList_FUN_005545a0 at 005548bf
-;   core_set.cpp_FUN_00550580 at 00550c2d
+;   core_set.cpp_CDemonSet_renderScene_FUN_00550580 at 00550c2d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_005f0d45

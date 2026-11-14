@@ -23,7 +23,7 @@
 ;   core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00511340 at 005114b8
 ;
 ; Called Functions:
-;   core_course.cpp_FUN_00444b70
+;   core_course.cpp_CCourse_interpolate_FUN_00444b70
 ;   core_xform.cpp_matrixToEulerAngles_FUN_00583b10
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_00585740
 ;
@@ -44,8 +44,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0xa0]      ; 00444add
     PUSH dword ptr [ESP + 0xa4]         ; 00444ae4
     PUSH ECX                            ; 00444aeb
-    CALL core_course.cpp_FUN_00444b70   ; 00444aec
-        ;   XREF to: 00444b70 (UNCONDITIONAL_CALL)  ; void core_course.cpp_FUN_00444b70(CCourse * this_ptr, float time, CVector3f * out_pos, CQuaternion4f * out_orient)
+    CALL core_course.cpp_CCourse_interpolate_FUN_00444b70 ; 00444aec
+        ;   XREF to: 00444b70 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_interpolate_FUN_00444b70(CCourse * this_ptr, float time, CVector3f * out_pos, CQuaternion4f * out_orient)
     ADD ESP,0x10                        ; 00444af1
     LEA EAX,[ESP + 0x60]                ; 00444af4
     PUSH EAX                            ; 00444af8

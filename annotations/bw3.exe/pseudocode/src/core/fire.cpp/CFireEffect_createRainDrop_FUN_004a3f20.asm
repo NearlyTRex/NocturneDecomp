@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   core_fire.cpp_CToss_process_FUN_0049d090 at 0049d48d
-;   core_weather.cpp_FUN_0057bda0 at 0057bf8f
+;   core_weather.cpp_CWeather_update_FUN_0057bda0 at 0057bf8f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d07b8c

@@ -246,6 +246,7 @@ def test_a_shape_masks_addresses_but_keeps_constants(image):
     assert (load.consts, load.nbytes, load.ninsn) == ((), 6, 2)
     assert five.consts == (0x50,)
     assert load.relaxed == five.relaxed and load.strict != five.strict
+    assert load.mnemonics == five.mnemonics and len(load.mnemonics) == load.ninsn
 
 
 def test_the_same_code_at_another_address_has_the_same_strict_shape(monkeypatch, tmp_path):

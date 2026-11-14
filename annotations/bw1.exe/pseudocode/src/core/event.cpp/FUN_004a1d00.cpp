@@ -642,7 +642,8 @@ LAB_004a1d87:
                 return 0;
               }
               if ((pCVar9 != 0x0FFFFFFF) && (local_15c != 0)) {
-                core_xform_cpp_FUN_005b5760(&local_26c,&local_194,&local_170);
+                core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+                          (&local_26c,&local_194,&local_170);
                 core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004325b0
                           (pCVar7,local_13c,(int)pCVar9,0,&local_26c);
               }

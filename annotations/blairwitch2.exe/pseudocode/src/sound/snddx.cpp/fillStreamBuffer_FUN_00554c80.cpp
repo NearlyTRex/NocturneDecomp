@@ -45,7 +45,7 @@ int __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_00554c80(void)
     piStack_380 = _DAT_0264a5cc;
     uVar1 = (**(code **)(*_DAT_0264a5cc + 0x2c))();
     if (uVar1 != 0) {
-      sound_snddx_cpp_FUN_00554ad0(uVar1);
+      sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(uVar1);
       _sprintf((char *)&piStack_380,"DirectSux: Unable to %s.  (%s)");
       sound_sndmain_cpp_logSoundError_FUN_005549c0((char *)&piStack_380);
       return 0;
@@ -72,7 +72,7 @@ int __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_00554c80(void)
       uVar1 = (**(code **)(*_DAT_0264a5cc + 0x4c))
                         (_DAT_0264a5cc,iStack_3c,iStack_38,iStack_40,uStack_34);
       if (uVar1 != 0) {
-        sound_snddx_cpp_FUN_00554ad0(uVar1);
+        sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(uVar1);
         _sprintf(acStack_204,"DirectSux: Unable to %s.  (%s)");
         sound_sndmain_cpp_logSoundError_FUN_005549c0(acStack_204);
         return 0;

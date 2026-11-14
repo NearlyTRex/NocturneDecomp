@@ -210,7 +210,8 @@ LAB_00522382:
              afStack_a0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x13];
         afStack_50[1] = 0.283614;
         afStack_50[2] = 0.537644;
-        core_xform_cpp_FUN_00583940(&CStack_2cc,afStack_a0 + 0x14,pfVar6);
+        core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
+                  (&CStack_2cc,afStack_a0 + 0x14,pfVar6);
         core_xform_cpp_multiplyMatrix3x4_FUN_005833e0
                   (&CStack_2cc,pCStack_20 + _DAT_01ed36dc,&CStack_1dc);
         pCVar5 = &CStack_1dc;
@@ -227,7 +228,8 @@ LAB_00522382:
              afStack_100[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
         uStack_108 = 0x3e05d9a1;
         uStack_110 = 0x3f033b43;
-        core_xform_cpp_FUN_00583940(&CStack_32c,&uStack_110,pfVar6);
+        core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
+                  (&CStack_32c,&uStack_110,pfVar6);
         core_xform_cpp_multiplyMatrix3x4_FUN_005833e0
                   (&CStack_32c,pCStack_20 + _DAT_01ed3714,&CStack_2fc);
         pCVar5 = &CStack_2fc;
@@ -279,7 +281,8 @@ LAB_00522382:
              afStack_a0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x1c];
         uStack_118 = 0x3eac59da;
         uStack_114 = 0x3e5903ea;
-        core_xform_cpp_FUN_00583940(&CStack_26c,&uStack_11c,puVar10);
+        core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
+                  (&CStack_26c,&uStack_11c,puVar10);
         core_xform_cpp_multiplyMatrix3x4_FUN_005833e0
                   (&CStack_26c,pCStack_24 + _DAT_01ed36dc,&CStack_23c);
         pCVar5 = &CStack_23c;
@@ -296,7 +299,8 @@ LAB_00522382:
              afStack_a0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
         afStack_74[2] = -0.022014;
         afStack_74[0] = -0.427273;
-        core_xform_cpp_FUN_00583940(&CStack_1ac,afStack_a0 + 0xb,pfVar6);
+        core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
+                  (&CStack_1ac,afStack_a0 + 0xb,pfVar6);
         core_xform_cpp_multiplyMatrix3x4_FUN_005833e0
                   (&CStack_1ac,pCStack_24 + _DAT_01ed3710,&CStack_29c);
         pCVar5 = &CStack_29c;

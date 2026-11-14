@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[3]:
-;   core_charactr.cpp_FUN_0042f310 at 0042f471
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310 at 0042f471
 ;   core_prye.cpp_FUN_0051e280 at 0051e361
 ;   core_toxhand.cpp_CTheHand_process_FUN_0056c140 at 0056c586
 ;

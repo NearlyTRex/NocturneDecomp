@@ -10,7 +10,7 @@
 ; undefined1       Stack[-0x6f]:1  local_6f
 ;
 ; XREF[3]:
-;   core_mission.cpp_FUN_0051bdc0 at 0051be98
+;   core_mission.cpp_CDemonMission_startMission_FUN_0051bdc0 at 0051be98
 ;   core_script.cpp_FUN_00543e00 at 00543f36
 ;   core_script.cpp_FUN_00544100 at 0054411f
 ;

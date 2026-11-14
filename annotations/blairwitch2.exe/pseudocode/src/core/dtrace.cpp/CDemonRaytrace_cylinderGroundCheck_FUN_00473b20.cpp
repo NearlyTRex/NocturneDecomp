@@ -85,7 +85,7 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00473b20(CD
               this_ptr_00 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_00472af0
                                       (this_ptr,iVar3,local_18,grid_z);
               if (this_ptr_00 != (CDemonCube *)0x0) {
-                iVar4 = core_dcube_cpp_FUN_00446df0
+                iVar4 = core_dcube_cpp_CDemonCube_testCylinderGroundCollision_FUN_00446df0
                                   (this_ptr_00,&local_4c,radius,&local_40,&local_64,&local_34);
                 if (iVar4 != 0) {
                   bVar2 = true;

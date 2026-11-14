@@ -23,17 +23,17 @@
 ;   core_actor.cpp_FUN_00408de0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00424470
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0
 ;   core_charactr.cpp_FUN_00423a10
-;   core_charactr.cpp_FUN_00423a60
 ;   core_charactr.cpp_FUN_0042b2a0
 ;   core_haystack.cpp_CHaystack_advanceMotion_FUN_004cd660
 ;   core_haystack.cpp_CHaystack_updateAI_FUN_004ccff0
 ;   core_hero.cpp_CHero_toggleLeverNow_FUN_004cf440
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004cf230
-;   core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004cee90
+;   core_hero.cpp_CHero_tryPullLever_FUN_004cf2b0
 ;   ... and 11 more
 ;
 ; *****************************************************************************
@@ -458,8 +458,8 @@ section .text
     JNZ 0x004ccd9f                      ; 004cce43
         ;   XREF to: 004ccd9f (CONDITIONAL_JUMP)  ; LAB_004ccd9f
     PUSH EBX                            ; 004cce49
-    CALL core_hero.cpp_FUN_004cf2b0     ; 004cce4a
-        ;   XREF to: 004cf2b0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004cf2b0(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_tryPullLever_FUN_004cf2b0 ; 004cce4a
+        ;   XREF to: 004cf2b0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryPullLever_FUN_004cf2b0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004cce4f
     TEST EAX,EAX                        ; 004cce52
     JNZ 0x004cce66                      ; 004cce54
@@ -594,8 +594,8 @@ section .text
     FSTP float ptr [ESP + 0x40]         ; 004ccfbd
     FSTP float ptr [ESP + 0x44]         ; 004ccfc1
     FSTP float ptr [ESP + 0x48]         ; 004ccfc5
-    CALL core_charactr.cpp_FUN_00423a60 ; 004ccfc9
-        ;   XREF to: 00423a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00423a60(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60 ; 004ccfc9
+        ;   XREF to: 00423a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 004ccfce
     JMP 0x004ccc1d                      ; 004ccfd1
         ;   XREF to: 004ccc1d (UNCONDITIONAL_JUMP)  ; LAB_004ccc1d

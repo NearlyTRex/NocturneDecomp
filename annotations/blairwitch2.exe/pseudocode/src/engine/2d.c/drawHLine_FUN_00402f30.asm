@@ -18,7 +18,7 @@
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047dc40 at 0047e187
 ;   shape_edittool.cpp_FUN_0047a930 at 0047a954
 ;   shape_edittool.cpp_FUN_0047e870 at 0047ef80
-;   shape_edittool.cpp_FUN_00483ea0 at 0048404c
+;   shape_edittool.cpp_FUN_004840f0 at 0048416c
 ;   ... and 1 more
 ;
 ; Referenced Globals:

@@ -35,7 +35,7 @@
 ;   core_main.c_FUN_005030e0
 ;   core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_00552f50
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20
-;   engine_special.cpp_FUN_00580173
+;   engine_special.cpp_transformAndProjectPoint_FUN_00580173
 ;
 ; *****************************************************************************
 
@@ -71,8 +71,8 @@ section .text
     PUSH EBP                            ; 00553183
         ;   Label: LAB_00553183
     PUSH ESI                            ; 00553184
-    CALL engine_special.cpp_FUN_00580173 ; 00553185
-        ;   XREF to: 00580173 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_00580173(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_00580173 ; 00553185
+        ;   XREF to: 00580173 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_00580173(SProjectedVertex * output, CVector3i * input)
     MOV AH,byte ptr [ESI + 0x13]        ; 0055318a
     ADD ESP,0x8                         ; 0055318d
     TEST AH,0x80                        ; 00553190

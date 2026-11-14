@@ -113,9 +113,9 @@ int __cdecl CMotionController::advanceFrameToExitPoint(CMotionController *this_p
 // Address: 004fc850
 void FUN_004fc850(int *param_1,int param_2,float param_3,float *param_4);
 
-// Original: core_motion.cpp_FUN_004fc930
+// Original: core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
 // Address: 004fc930
-float __cdecl FUN_004fc930(CMotionController *this_ptr);
+float __cdecl CMotionController::frameToMarkerPosition(CMotionController *this_ptr);
 
 // Original: core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004fca20
 // Address: 004fca20
@@ -133,6 +133,6 @@ void __cdecl CMotionController::load(CMotionController *this_ptr,_FILE *file_han
 // Address: 004fcd30
 void __cdecl CMotionController::save(CMotionController *this_ptr,_FILE *file_handle,char *indent_prefix);
 
-// Original: core_motion.cpp_FUN_004fcdc0
+// Original: core_motion.cpp_CMotionController_render_FUN_004fcdc0
 // Address: 004fcdc0
-void __cdecl FUN_004fcdc0(CMotionController *this_ptr,CDemonActor *actor);
+void __cdecl CMotionController::render(CMotionController *this_ptr,CDemonActor *actor);

@@ -85,7 +85,8 @@ void core_shadow_cpp_FUN_00545140(int param_1,float *param_2)
   afStack_40[2] = fStack_50;
   afStack_40[3] = fStack_4c;
   fStack_30 = fStack_48;
-  engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&CStack_110);
+  engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+            (&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&CStack_110);
   fStack_18 = _DAT_005e3d68;
   fStack_11c = -_DAT_005e3d64 + *param_2;
   afStack_118[1] = param_2[2];
@@ -109,7 +110,8 @@ void core_shadow_cpp_FUN_00545140(int param_1,float *param_2)
   CStack_2c.x = (int)ROUND(afStack_100[2] * _DAT_005e3d30);
   CStack_2c.y = (int)ROUND(afStack_100[3] * _DAT_005e3d30);
   CStack_2c.z = (int)ROUND(fStack_f0 * _DAT_005e3d30);
-  engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&CStack_2c);
+  engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+            (&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&CStack_2c);
   fStack_a8 = param_2[2];
   afStack_b8[2] = -_DAT_005e3d64 + *param_2;
   afStack_b8[3] = param_2[1] + -_DAT_005e3d68;
@@ -132,7 +134,8 @@ void core_shadow_cpp_FUN_00545140(int param_1,float *param_2)
   CStack_ec.x = (int)ROUND(afStack_100[2] * _DAT_005e3d30);
   CStack_ec.y = (int)ROUND(afStack_100[3] * _DAT_005e3d30);
   CStack_ec.z = (int)ROUND(fStack_f0 * _DAT_005e3d30);
-  engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&CStack_ec);
+  engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+            (&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&CStack_ec);
   afStack_dc[1] = param_2[2];
   fStack_e0 = _DAT_005e3d64 + *param_2;
   afStack_dc[0] = param_2[1] + -_DAT_005e3d68;
@@ -155,7 +158,8 @@ void core_shadow_cpp_FUN_00545140(int param_1,float *param_2)
   CStack_98.x = (int)ROUND(afStack_100[2] * _DAT_005e3d30);
   CStack_98.y = (int)ROUND(afStack_100[3] * _DAT_005e3d30);
   CStack_98.z = (int)ROUND(fStack_f0 * _DAT_005e3d30);
-  engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&CStack_98);
+  engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+            (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&CStack_98);
   this_ptr = DAT_005f2afc;
   DAT_005f2afc->vertex_buffer_ptr->r = 0xffff;
   this_ptr->vertex_buffer_ptr->g = 0;

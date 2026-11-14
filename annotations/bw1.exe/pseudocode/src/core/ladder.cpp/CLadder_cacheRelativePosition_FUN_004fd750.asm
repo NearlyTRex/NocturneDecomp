@@ -29,8 +29,8 @@
 ;   core_ladder.cpp_CLadder_archive_FUN_004fd560 at 004fd5ab
 ;
 ; Called Functions:
-;   core_xform.cpp_FUN_005b5620
-;   core_xform.cpp_FUN_005b5760
+;   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005b5620
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
 ;   core_xform.cpp_matrixToEulerAngles_FUN_005b5930
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005b5200
 ;
@@ -60,8 +60,8 @@ section .text
     PUSH EAX                            ; 004fd77a
     LEA EAX,[ESP + 0x38]                ; 004fd77b
     PUSH EAX                            ; 004fd77f
-    CALL core_xform.cpp_FUN_005b5760    ; 004fd780
-        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760 ; 004fd780
+        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     MOV EAX,dword ptr [EBX + 0x2e0]     ; 004fd785
     ADD ESP,0xc                         ; 004fd78b
     LEA EDX,[EAX + 0x30]                ; 004fd78e
@@ -70,8 +70,8 @@ section .text
     PUSH EAX                            ; 004fd795
     LEA EAX,[ESP + 0x68]                ; 004fd796
     PUSH EAX                            ; 004fd79a
-    CALL core_xform.cpp_FUN_005b5620    ; 004fd79b
-        ;   XREF to: 005b5620 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_005b5620(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005b5620 ; 004fd79b
+        ;   XREF to: 005b5620 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005b5620(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 004fd7a0
     LEA EAX,[ESP + 0x60]                ; 004fd7a3
     PUSH EAX                            ; 004fd7a7

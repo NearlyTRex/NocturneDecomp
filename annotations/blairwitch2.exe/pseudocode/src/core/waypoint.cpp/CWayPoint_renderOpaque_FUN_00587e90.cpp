@@ -97,7 +97,8 @@ int __cdecl core_waypoint_cpp_CWayPoint_renderOpaque_FUN_00587e90(CWayPoint *thi
     CStack_c8.x = (int)ROUND(fStack_8c * _DAT_005fde10);
     CStack_c8.y = (int)ROUND(fStack_88 * _DAT_005fde10);
     CStack_c8.z = (int)ROUND(fStack_84 * _DAT_005fde10);
-    engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&CStack_c8);
+    engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+              (&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&CStack_c8);
     pfVar5 = (float *)0x0;
     if (0 < this_ptr->num_adjacent_waypoints) {
       pfStack_8 = &stack0xffffff2c;
@@ -149,7 +150,7 @@ int __cdecl core_waypoint_cpp_CWayPoint_renderOpaque_FUN_00587e90(CWayPoint *thi
           CStack_78.x = (int)ROUND(fStack_b4 * _DAT_005fde10);
           CStack_78.y = (int)ROUND(fStack_b0 * _DAT_005fde10);
           CStack_78.z = (int)ROUND(fStack_ac * _DAT_005fde10);
-          engine_special_cpp_FUN_0055d723
+          engine_special_cpp_transformAndProjectPoint_FUN_0055d723
                     (&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&CStack_78);
           unaff_EDI = (CBoundingBox3D *)0x0;
           engine_3d_c_drawLine2DFromIndices_FUN_00407c40(0,1);

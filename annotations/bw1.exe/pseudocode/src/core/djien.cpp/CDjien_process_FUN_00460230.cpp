@@ -224,7 +224,8 @@ LAB_00460307:
     }
     else {
 LAB_00460577:
-      fStack_14 = core_motion_cpp_FUN_00525020(&(this_ptr->base).base.model.base);
+      fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00525020
+                            (&(this_ptr->base).base.model.base);
       if (fStack_14 <= (float)_DAT_005d8d70) goto LAB_0046031a;
       iVar10 = 0;
     }
@@ -302,7 +303,7 @@ LAB_00460332:
     (this_ptr->base).base.model.accumulated_root_motion.y =
          (this_ptr->base).base.model.accumulated_root_motion.z;
     pCVar2->x = (this_ptr->base).base.model.accumulated_root_motion.y;
-    core_charactr_cpp_FUN_0042d750((CCharacter *)this_ptr,&CStack_78);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042d750((CCharacter *)this_ptr,&CStack_78);
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_0042e160((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_005675a0

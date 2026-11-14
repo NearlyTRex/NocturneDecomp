@@ -21,7 +21,7 @@
 ;   core_dlight.cpp_CDemonLight_applyFilter_FUN_00463e30
 ;   core_set.cpp_CDemonSet_addCoronaGlobe_FUN_00551960
 ;   core_set.cpp_CDemonSet_addDynamicLight_FUN_005518e0
-;   core_xform.cpp_FUN_005b5760
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
 ;   core_xform.cpp_matrixToEulerAngles_FUN_005b5930
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005b5200
 ;   crt_stdlib.c_rand_FUN_005c084c
@@ -168,16 +168,16 @@ section .text
     PUSH 0x2c8af28                      ; 00423124
     LEA EAX,[ESP + 0x70]                ; 00423129
     PUSH EAX                            ; 0042312d
-    CALL core_xform.cpp_FUN_005b5760    ; 0042312e
-        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760 ; 0042312e
+        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 00423133
     LEA EAX,[EBX + 0x30]                ; 00423136
     PUSH EAX                            ; 00423139
     PUSH 0x2c8af28                      ; 0042313a
     LEA EAX,[ESP + 0xa0]                ; 0042313f
     PUSH EAX                            ; 00423146
-    CALL core_xform.cpp_FUN_005b5760    ; 00423147
-        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760 ; 00423147
+        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0042314c
     LEA EAX,[ESP + 0x98]                ; 0042314f
     PUSH EAX                            ; 00423156

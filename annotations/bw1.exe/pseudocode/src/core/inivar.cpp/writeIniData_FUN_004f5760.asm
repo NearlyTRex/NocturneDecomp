@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_main.c_FUN_00503a30 at 00503ab0
-;   core_menu.cpp_FUN_0050c990 at 0050cb65
+;   core_menu.cpp_showOptionsScreen_FUN_0050c990 at 0050cb65
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gamePIXX_005e5c3c

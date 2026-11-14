@@ -33,6 +33,7 @@
 ;   core_actor.cpp_randomChance_FUN_0040d060
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_00424430
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00424470
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
@@ -40,7 +41,6 @@
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00428e30
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_00423000
-;   core_charactr.cpp_FUN_00423a10
 ;   ... and 25 more
 ;
 ; *****************************************************************************
@@ -453,8 +453,8 @@ section .text
     FST float ptr [EDX + 0x4]           ; 004fe341
     PUSH EBX                            ; 004fe344
     FSTP float ptr [EDX]                ; 004fe345
-    CALL core_charactr.cpp_FUN_00423a60 ; 004fe347
-        ;   XREF to: 00423a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00423a60(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60 ; 004fe347
+        ;   XREF to: 00423a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 004fe34c
     MOV EAX,[0x02661f38]                ; 004fe34f | g_CWeaponClassInfo.name_hash
         ;   Label: LAB_004fe34f

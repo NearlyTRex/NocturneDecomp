@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   device_id
 ;
 ; XREF[4]:
-;   core_menu.cpp_FUN_004ed260 at 004ee101
+;   core_menu.cpp_configureSoundOptions_FUN_004ed260 at 004ee101
 ;   sound_sndmain.cpp_initializeSoundDevice_FUN_00552b90 at 00552ba3
 ;   sound_sndmain.cpp_readIni_FUN_00553680 at 00553764
 ;   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005523d0 at 0055244a

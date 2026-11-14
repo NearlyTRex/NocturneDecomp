@@ -78,7 +78,7 @@
 ;   core_actor.cpp_isOfClass_FUN_0040c790
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540
-;   core_inv.cpp_FUN_004d9d20
+;   core_inv.cpp_getItemModel_FUN_004d9d20
 ;   crt_string.c__strcmp_FUN_005a3d00
 ;   crt_string.c__stricmp_FUN_005a3260
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
@@ -189,8 +189,8 @@ section .text
         ;   XREF to: 0046d2f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046d2f0(CDemonRenderer * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x14                        ; 004dbfc4
     PUSH EBX                            ; 004dbfc7
-    CALL core_inv.cpp_FUN_004d9d20      ; 004dbfc8
-        ;   XREF to: 004d9d20 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004d9d20()
+    CALL core_inv.cpp_getItemModel_FUN_004d9d20 ; 004dbfc8
+        ;   XREF to: 004d9d20 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_getItemModel_FUN_004d9d20()
     ADD ESP,0x4                         ; 004dbfcd
     PUSH EAX                            ; 004dbfd0
     LEA EDI,[EBP + -0x3e]               ; 004dbfd1

@@ -18,19 +18,19 @@
     {
       "addr": "00480f00",
       "from_addr": "00480faf",
-      "name": "shape_edittool.cpp_FUN_00480f00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00481200",
-      "from_addr": "0048123e",
-      "name": "shape_edittool.cpp_FUN_00481200",
+      "name": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00480f00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00481350",
       "from_addr": "0048148d",
-      "name": "shape_edittool.cpp_FUN_00481350",
+      "name": "shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00481350",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00481200",
+      "from_addr": "0048123e",
+      "name": "shape_edittool.cpp_draw3DInterpolatedLine_FUN_00481200",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -50,7 +50,7 @@
     {
       "addr": "005632a3",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_005632a3"
+      "name": "engine_special.cpp_transformAndProjectPoint_FUN_005632a3"
     }
   ],
   "globals": [],
@@ -60,7 +60,7 @@
       {
         "call_addr": "00480faf",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00480f00",
+        "caller": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00480f00",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -71,7 +71,7 @@
       {
         "call_addr": "00480fce",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00480f00",
+        "caller": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00480f00",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -82,7 +82,7 @@
       {
         "call_addr": "00481017",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00480f00",
+        "caller": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00480f00",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -93,7 +93,7 @@
       {
         "call_addr": "00481060",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00480f00",
+        "caller": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00480f00",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -104,7 +104,7 @@
       {
         "call_addr": "0048123e",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00481200",
+        "caller": "shape_edittool.cpp_draw3DInterpolatedLine_FUN_00481200",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -115,7 +115,7 @@
       {
         "call_addr": "00481308",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00481200",
+        "caller": "shape_edittool.cpp_draw3DInterpolatedLine_FUN_00481200",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -126,7 +126,7 @@
       {
         "call_addr": "0048148d",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00481350",
+        "caller": "shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00481350",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -137,7 +137,7 @@
       {
         "call_addr": "004815a2",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00481350",
+        "caller": "shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00481350",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -148,7 +148,7 @@
       {
         "call_addr": "00481619",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00481350",
+        "caller": "shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00481350",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -159,7 +159,7 @@
       {
         "call_addr": "00481734",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00481350",
+        "caller": "shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00481350",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -254,10 +254,10 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 5,
+      "line": 6,
       "match": "DAT_0060b014",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_005632a3((SProjectedVertex *)(&DAT_0060b014 + cacheIndex * 0xc),inputPoint)",
+      "text": "((SProjectedVertex *)(&DAT_0060b014 + cacheIndex * 0xc),inputPoint);",
       "type": "undefined_data"
     }
   ]

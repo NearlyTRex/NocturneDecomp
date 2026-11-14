@@ -73,7 +73,7 @@ void core_game_cpp_FUN_004b6f30(CGame *param_1)
     }
     if (((g_CFieldNotesPtr->is_displayed == 0) && (param_1->goggles_active == 0)) &&
        (DAT_007dffb4 == (int *)0x0)) {
-      core_set_cpp_FUN_00535da0(g_CDemonSetPtr,1);
+      core_set_cpp_CDemonSet_renderScene_FUN_00535da0(g_CDemonSetPtr,1);
     }
     if (DAT_007dffb4 != (int *)0x0) {
       (**(code **)(*DAT_007dffb4 + 0x1c))(DAT_007dffb4);
@@ -97,7 +97,7 @@ void core_game_cpp_FUN_004b6f30(CGame *param_1)
         CStack_a8.orientation.vec.y = *(float *)(iVar2 + 0x34);
         CStack_a8.orientation.vec.z = *(float *)(iVar2 + 0x38);
       }
-      core_slew_cpp_FUN_005505e0(&CStack_a8);
+      core_slew_cpp_CSlew_processInput_FUN_005505e0(&CStack_a8);
       iVar2 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
       (**(code **)(*(int *)(iVar2 + 0x154) + 0x68))(iVar2,&CStack_a8,&CStack_a8.orientation);
       if ((DAT_01c5fae4 & 1) != 0) {

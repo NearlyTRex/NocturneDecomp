@@ -19,11 +19,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
-;   core_menu.cpp_FUN_0050b470 at 0050b787
-;   core_menu.cpp_FUN_0050ba70 at 0050c2eb
-;   core_menu.cpp_FUN_0050c990 at 0050cb23
+;   core_menu.cpp_configureCustomKeys_FUN_0050b470 at 0050b787
 ;   core_menu.cpp_configureGraphicsOptions_FUN_0050aa90 at 0050ae98
+;   core_menu.cpp_configureSoundOptions_FUN_0050ba70 at 0050c2eb
 ;   core_menu.cpp_showMainGameMenu_FUN_0050cc90 at 0050cec4
+;   core_menu.cpp_showOptionsScreen_FUN_0050c990 at 0050cb23
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Blair_Witch_Volume_I_Rus_005e7a0a

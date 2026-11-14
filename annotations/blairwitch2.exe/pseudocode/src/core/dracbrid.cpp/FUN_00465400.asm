@@ -72,7 +72,7 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
 ;   core_sound.cpp_CSound_findRandomSoundFile_FUN_005593d0
-;   core_spline.cpp_FUN_00561310
+;   core_spline.cpp_computeSplineBasis_FUN_00561310
 ;   core_spline.cpp_FUN_00561540
 ;   core_spline.cpp_FUN_00561780
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
@@ -328,8 +328,8 @@ section .text
     LEA EAX,[ESP + 0xd0]                ; 0046578b
     PUSH dword ptr [EBP + 0x1c]         ; 00465792 | DAT_01ba57b4
     PUSH EAX                            ; 00465795
-    CALL core_spline.cpp_FUN_00561310   ; 00465796
-        ;   XREF to: 00561310 (UNCONDITIONAL_CALL)  ; void core_spline.cpp_FUN_00561310(float * out_basis, float t, float tension)
+    CALL core_spline.cpp_computeSplineBasis_FUN_00561310 ; 00465796
+        ;   XREF to: 00561310 (UNCONDITIONAL_CALL)  ; void core_spline.cpp_computeSplineBasis_FUN_00561310(float * out_basis, float t, float tension)
     LEA EDX,[EBP + 0x20]                ; 0046579b
     LEA ESI,[EBP + 0x2c]                ; 0046579e
     LEA EBX,[EBP + 0x38]                ; 004657a1

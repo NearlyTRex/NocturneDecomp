@@ -6,8 +6,8 @@
     ],
     "conv":"__cdecl",
     "instructions":108,
-    "method":"FUN_00401450",
-    "name":"engine_2d.c_FUN_00401450",
+    "method":"findBestPaletteMatch",
+    "name":"engine_2d.c_findBestPaletteMatch_FUN_00401450",
     "params":[
       {
         "name":"red",
@@ -2440,19 +2440,12 @@
       "005562c0",
       "00558450"
     ],
+    "cls":"CBoundingBox3D",
     "conv":"__cdecl",
     "instructions":36,
-    "method":"FUN_004215d0",
-    "name":"core_box.cpp_FUN_004215d0",
+    "method":"doesBoxIntersect",
+    "name":"core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_004215d0",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CBoundingBox3D",
-          "ptr":1
-        }
-      },
       {
         "name":"other",
         "type":{
@@ -2462,7 +2455,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"int",
@@ -3024,19 +3017,12 @@
       "00559250",
       "005c1210"
     ],
+    "cls":"CCharacter",
     "conv":"__cdecl",
     "instructions":640,
-    "method":"FUN_0042d750",
-    "name":"core_charactr.cpp_FUN_0042d750",
+    "method":"moveAndCollide",
+    "name":"core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CCharacter",
-          "ptr":1
-        }
-      },
       {
         "name":"velocity",
         "type":{
@@ -3046,7 +3032,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -3604,10 +3590,10 @@
       "005c0d10",
       "005c1280"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":171,
-    "method":"FUN_00438bd0",
-    "name":"cockpit_ckptutil.c_FUN_00438bd0",
+    "method":"loadEdgeListFile",
+    "name":"cockpit_ckptutil.c_loadEdgeListFile_FUN_00438bd0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -10734,21 +10720,12 @@
       "005c0d10",
       "005c2238"
     ],
+    "cls":"CGame",
     "conv":"__cdecl",
     "instructions":395,
-    "method":"FUN_004d77d0",
-    "name":"core_game.cpp_FUN_004d77d0",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CGame",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"showFullscreenBitmap",
+    "name":"core_game.cpp_CGame_showFullscreenBitmap_FUN_004d77d0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -14228,19 +14205,12 @@
       "0042ccf0",
       "005247c0"
     ],
+    "cls":"CMobster",
     "conv":"__cdecl",
     "instructions":346,
-    "method":"FUN_0051e5d0",
-    "name":"core_mobster.cpp_FUN_0051e5d0",
+    "method":"processWeaponPickup",
+    "name":"core_mobster.cpp_CMobster_processWeaponPickup_FUN_0051e5d0",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CMobster",
-          "ptr":1
-        }
-      },
       {
         "name":"delta_time",
         "type":{
@@ -14250,7 +14220,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"int",
@@ -14346,8 +14316,8 @@
     ],
     "conv":"__cdecl",
     "instructions":98,
-    "method":"FUN_00520150",
-    "name":"engine_model.c_FUN_00520150",
+    "method":"loadModelChunk",
+    "name":"engine_model.c_loadModelChunk_FUN_00520150",
     "params":[
       {
         "name":"filename",
@@ -16018,8 +15988,8 @@
     ],
     "conv":"unknown",
     "instructions":102,
-    "method":"FUN_00538750",
-    "name":"cockpit_pkbitmap.cpp_FUN_00538750",
+    "method":"loadPBGFile",
+    "name":"cockpit_pkbitmap.cpp_loadPBGFile_FUN_00538750",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -16966,19 +16936,12 @@
       "004904d0",
       "005c0357"
     ],
+    "cls":"CDemonSet",
     "conv":"__cdecl",
     "instructions":266,
-    "method":"FUN_005580d0",
-    "name":"core_setcolid.cpp_FUN_005580d0",
+    "method":"testOBBCylinderCollision",
+    "name":"core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_005580d0",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CDemonSet",
-          "ptr":1
-        }
-      },
       {
         "name":"cylinder",
         "type":{
@@ -17012,7 +16975,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"int",
@@ -18252,14 +18215,15 @@
     "callers":[
       "004ce580"
     ],
-    "conv":"unknown",
+    "cls":"CSlew",
+    "conv":"__cdecl",
     "instructions":341,
-    "method":"FUN_0056ba50",
-    "name":"core_slew.cpp_FUN_0056ba50",
-    "receiver":false,
+    "method":"processInput",
+    "name":"core_slew.cpp_CSlew_processInput_FUN_0056ba50",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/slew.cpp",
@@ -22070,8 +22034,8 @@
       "005b2f74"
     ],
     "instructions":344,
-    "method":"FUN_005b27d0",
-    "name":"wincore_winrun.cpp_FUN_005b27d0",
+    "method":"mainWindowProc",
+    "name":"wincore_winrun.cpp_mainWindowProc_FUN_005b27d0",
     "params":[
       {
         "name":"hWnd",

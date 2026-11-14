@@ -36,7 +36,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
-;   core_motion.cpp_FUN_00502820
+;   core_motion.cpp_CMotionList_load_FUN_00502820
 ;   core_skeleton.cpp_CSkeleton_allocMemory_FUN_00540870
 ;   core_skeleton.cpp_CSkeleton_free_FUN_00540980
 ;   crt_stdio.c_fgetc_FUN_005b8180
@@ -363,8 +363,8 @@ section .text
     PUSH EDX                            ; 00540db0
     MOV ECX,dword ptr [ESP + 0x2c]      ; 00540db1
     PUSH ECX                            ; 00540db5
-    CALL core_motion.cpp_FUN_00502820   ; 00540db6
-        ;   XREF to: 00502820 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_FUN_00502820(CMotionList * this_ptr, _FILE * file_handle)
+    CALL core_motion.cpp_CMotionList_load_FUN_00502820 ; 00540db6
+        ;   XREF to: 00502820 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionList_load_FUN_00502820(CMotionList * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 00540dbb
     CMP dword ptr [ESP],0x3             ; 00540dbe
     JL 0x00540e0d                       ; 00540dc2

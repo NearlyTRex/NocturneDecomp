@@ -20,7 +20,7 @@
 ;   core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004b0210 at 004b03cb
 ;   core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_004e5080 at 004e5394
 ;   core_mimic.cpp_CMimic_renderMirrored_FUN_004f1890 at 004f1a71
-;   core_platfrm.cpp_FUN_00519ba0 at 00519c7a
+;   core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_00519ba0 at 00519c7a
 ;   ... and 9 more
 ;
 ; *****************************************************************************

@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 82,
+    "complexity_score": 83,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 32,
+    "pseudocode_lines": 33,
     "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 107
+    "total_lines": 108
   },
   "cross_references": [],
   "function": {
@@ -32,7 +32,7 @@
     {
       "addr": "0055d723",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_0055d723"
+      "name": "engine_special.cpp_transformAndProjectPoint_FUN_0055d723"
     }
   ],
   "globals": [
@@ -196,15 +196,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 32,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_0055d723((SProjectedVertex *)(*DAT_0060b280 + iVar2),aCStack_38);",
+      "text": "((SProjectedVertex *)(*DAT_0060b280 + iVar2),aCStack_38);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 33,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "piVar1 = DAT_0060b280;",
@@ -212,7 +212,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 34,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "*(uint *)(*DAT_0060b280 + 0x18 + iVar2) = 0x800000;",

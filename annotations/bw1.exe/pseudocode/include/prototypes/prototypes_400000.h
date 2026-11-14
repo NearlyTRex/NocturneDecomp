@@ -58,7 +58,7 @@ void __cdecl engine_2d_c_plotPixel_FUN_00401130(int x,int y);
 void __cdecl engine_2d_c_drawLine_FUN_004011a0(int x1,int y1,int x2,int y2);
 void __cdecl engine_2d_c_plotPixelWithDepth_FUN_00401280(int x_coord,int y_coord,uint depth_value);
 void __cdecl engine_2d_c_drawLine3D_FUN_00401310(int x1,int y1,uint z1,int x2,int y2,uint z2);
-int __cdecl engine_2d_c_FUN_00401450(int red,int green,int blue,int start_index,int end_index);
+int __cdecl engine_2d_c_findBestPaletteMatch_FUN_00401450(int red,int green,int blue,int start_index,int end_index);
 void engine_2d_c_FUN_00401590(char *param_1);
 int __cdecl engine_2d_c_drawCharacter_FUN_00401620(int char_code,int x_pos,int y_pos);
 void __cdecl engine_2d_c_project3DPointToScreen_FUN_00401780(int x_3d,int y_3d,int z_depth);
@@ -194,7 +194,7 @@ void __cdecl engine_3d_c_clipAndDrawLine2D_FUN_00407af0(SRenderVertex vertex1,SR
 void engine_3d_c_drawLine3DFromIndices_FUN_00407d70(int param_1,int param_2);
 void __cdecl engine_3d_c_clipAndDrawLine3D_FUN_00407df0(SRenderVertex vertex1,SRenderVertex vertex2);
 void __cdecl core_actor_cpp_staticInit_FUN_004080a0(void);
-float core_actor_cpp_FUN_004080c0(int param_1,float *param_2,float *param_3,float *param_4);
+float core_actor_cpp_rayCylinderIntersect_FUN_004080c0(int param_1,float *param_2,float *param_3,float *param_4);
 void core_actor_cpp_FUN_00408560(int param_1);
 CDemonActorTransformState * __cdecl core_actor_cpp_initTransformCache_FUN_00408580(CDemonActorTransformState *transform_cache);
 CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_004085c0(CDemonActor *this_ptr);

@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 315,
+    "complexity_score": 316,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 50,
+    "pseudocode_lines": 51,
     "suspect_count": 24,
     "suspect_types": [
       "pointer_truncation",
@@ -16,7 +16,7 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 192
+    "total_lines": 193
   },
   "cross_references": [],
   "function": {
@@ -70,7 +70,7 @@
     {
       "addr": "004850a0",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_004850a0"
+      "name": "shape_edittool.cpp_draw3DBorder_FUN_004850a0"
     }
   ],
   "globals": [
@@ -219,7 +219,7 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = param_1->x_position;",
+      "text": "left = param_1->x_position;",
       "type": "unnamed_param"
     },
     {
@@ -272,23 +272,23 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 33,
+      "line": 34,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "shape_edittool_cpp_FUN_004850a0(iVar5,iVar1,iVar2,unaff_EBX,param_1->border_style_flag);",
+      "text": "(left,iVar1,iVar2,unaff_EBX,param_1->border_style_flag);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "shape_edittool_cpp_FUN_004850a0(iVar5,iVar1,iVar2,unaff_EBX,param_1->border_style_flag);",
+      "text": "(left,iVar1,iVar2,unaff_EBX,param_1->border_style_flag);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->border_style_flag == 0) {",
@@ -296,7 +296,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 35,
+      "line": 36,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = unaff_EBX + -1;",
@@ -304,7 +304,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 35,
+      "line": 36,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = unaff_EBX + -1;",
@@ -312,7 +312,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->checked_state == 1) {",
@@ -320,7 +320,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 49,
       "match": "DAT_01c6af9a",
       "severity": "mild",
       "text": "((uint)DAT_01c6af9a | (uint)DAT_01c6af99 << 8 | (uint)DAT_01c6af98 << 0x10);",
@@ -328,7 +328,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 49,
       "match": "DAT_01c6af99",
       "severity": "mild",
       "text": "((uint)DAT_01c6af9a | (uint)DAT_01c6af99 << 8 | (uint)DAT_01c6af98 << 0x10);",
@@ -336,7 +336,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 49,
       "match": "DAT_01c6af98",
       "severity": "mild",
       "text": "((uint)DAT_01c6af9a | (uint)DAT_01c6af99 << 8 | (uint)DAT_01c6af98 << 0x10);",
@@ -344,18 +344,18 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 50,
+      "line": 51,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "engine_2d_c_clipLineGlobal_FUN_00402ca0(iVar5 + 1,iVar1 + 1,iVar2 + -2,unaff_EBX + -2);",
+      "text": "engine_2d_c_clipLineGlobal_FUN_00402ca0(left + 1,iVar1 + 1,iVar2 + -2,unaff_EBX + -2);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 51,
+      "line": 52,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "engine_2d_c_clipLineGlobal_FUN_00402ca0(iVar2 + -2,iVar1 + 1,iVar5 + 1,unaff_EBX + -2);",
+      "text": "engine_2d_c_clipLineGlobal_FUN_00402ca0(iVar2 + -2,iVar1 + 1,left + 1,unaff_EBX + -2);",
       "type": "unaffected_reg"
     },
     {

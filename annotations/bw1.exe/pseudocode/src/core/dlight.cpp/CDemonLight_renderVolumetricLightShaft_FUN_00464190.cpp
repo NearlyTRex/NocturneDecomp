@@ -190,25 +190,25 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190
             local_e0.x = (int)ROUND(local_20 * _DAT_005febd0);
             local_e0.y = (int)ROUND(local_20 * _DAT_005febd0);
             local_e0.z = (int)ROUND(_DAT_005febd0 * 0.0);
-            engine_special_cpp_FUN_00580173
+            engine_special_cpp_transformAndProjectPoint_FUN_00580173
                       (&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_e0);
             local_8c = -local_8c;
             local_d4.x = (int)ROUND(local_8c * _DAT_005febd0);
             local_d4.y = (int)ROUND(local_88 * _DAT_005febd0);
             local_d4.z = (int)ROUND(local_84 * _DAT_005febd0);
-            engine_special_cpp_FUN_00580173
+            engine_special_cpp_transformAndProjectPoint_FUN_00580173
                       (&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_d4);
             local_88 = -local_88;
             local_b0.x = (int)ROUND(local_8c * _DAT_005febd0);
             local_b0.y = (int)ROUND(local_88 * _DAT_005febd0);
             local_b0.z = (int)ROUND(local_84 * _DAT_005febd0);
-            engine_special_cpp_FUN_00580173
+            engine_special_cpp_transformAndProjectPoint_FUN_00580173
                       (&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_b0);
             local_8c = -local_8c;
             local_5c.x = (int)ROUND(local_8c * _DAT_005febd0);
             local_5c.y = (int)ROUND(local_88 * _DAT_005febd0);
             local_5c.z = (int)ROUND(local_84 * _DAT_005febd0);
-            engine_special_cpp_FUN_00580173
+            engine_special_cpp_transformAndProjectPoint_FUN_00580173
                       (&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_5c);
             engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
                       (DAT_00612560,(SMRGLTextureBasic *)&DAT_006122c0);

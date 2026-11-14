@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_menu.cpp_FUN_0050b470 at 0050b98e
+;   core_menu.cpp_configureCustomKeys_FUN_0050b470 at 0050b98e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_4_2f_005e7aff

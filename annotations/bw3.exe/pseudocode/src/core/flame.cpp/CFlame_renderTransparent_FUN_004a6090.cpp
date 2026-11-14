@@ -124,25 +124,25 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_pt
           CStack_e4.x = (int)ROUND(fStack_48 * _DAT_005dfe50);
           CStack_e4.y = (int)ROUND(_DAT_005dfe50 * 0.0);
           CStack_e4.z = (int)ROUND(_DAT_005dfe50 * 0.0);
-          engine_special_cpp_FUN_005632a3
+          engine_special_cpp_transformAndProjectPoint_FUN_005632a3
                     (&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&CStack_e4);
           fStack_44 = (this_ptr->flame_size).y;
           CStack_c0.x = (int)ROUND(fStack_48 * _DAT_005dfe50);
           CStack_c0.y = (int)ROUND(fStack_44 * _DAT_005dfe50);
           CStack_c0.z = (int)ROUND(fStack_40 * _DAT_005dfe50);
-          engine_special_cpp_FUN_005632a3
+          engine_special_cpp_transformAndProjectPoint_FUN_005632a3
                     (&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&CStack_c0);
           fStack_48 = -fStack_48;
           CStack_a8.x = (int)ROUND(fStack_48 * _DAT_005dfe50);
           CStack_a8.y = (int)ROUND(fStack_44 * _DAT_005dfe50);
           CStack_a8.z = (int)ROUND(fStack_40 * _DAT_005dfe50);
-          engine_special_cpp_FUN_005632a3
+          engine_special_cpp_transformAndProjectPoint_FUN_005632a3
                     (&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&CStack_a8);
           fStack_44 = 0.0;
           CStack_78.x = (int)ROUND(fStack_48 * _DAT_005dfe50);
           CStack_78.y = (int)ROUND(_DAT_005dfe50 * 0.0);
           CStack_78.z = (int)ROUND(fStack_40 * _DAT_005dfe50);
-          engine_special_cpp_FUN_005632a3
+          engine_special_cpp_transformAndProjectPoint_FUN_005632a3
                     (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&CStack_78);
           (**(code **)(*(int *)(DAT_007e2a54 + 0x3c) + 4))
                     (DAT_007e2a54,&(this_ptr->base).location,0);
@@ -235,25 +235,25 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_pt
       CStack_54.y = (int)ROUND(fStack_f0 * _DAT_005dfe50);
       CStack_54.z = (int)ROUND(_DAT_005dfe50 * 0.0);
       fStack_ec = fStack_f0;
-      engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&CStack_54)
-      ;
+      engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+                (&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&CStack_54);
       fStack_f0 = -fStack_f0;
       CStack_3c.x = (int)ROUND(fStack_f0 * _DAT_005dfe50);
       CStack_3c.y = (int)ROUND(fStack_ec * _DAT_005dfe50);
       CStack_3c.z = (int)ROUND(fStack_e8 * _DAT_005dfe50);
-      engine_special_cpp_FUN_005632a3
+      engine_special_cpp_transformAndProjectPoint_FUN_005632a3
                 (&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&CStack_3c);
       fStack_ec = -fStack_ec;
       CStack_b4.x = (int)ROUND(fStack_f0 * _DAT_005dfe50);
       CStack_b4.y = (int)ROUND(fStack_ec * _DAT_005dfe50);
       CStack_b4.z = (int)ROUND(fStack_e8 * _DAT_005dfe50);
-      engine_special_cpp_FUN_005632a3
+      engine_special_cpp_transformAndProjectPoint_FUN_005632a3
                 (&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&CStack_b4);
       fStack_f0 = -fStack_f0;
       CStack_84.x = (int)ROUND(fStack_f0 * _DAT_005dfe50);
       CStack_84.y = (int)ROUND(fStack_ec * _DAT_005dfe50);
       CStack_84.z = (int)ROUND(fStack_e8 * _DAT_005dfe50);
-      engine_special_cpp_FUN_005632a3
+      engine_special_cpp_transformAndProjectPoint_FUN_005632a3
                 (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&CStack_84);
       iStack_1c = 0;
       do {

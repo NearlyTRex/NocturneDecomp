@@ -908,7 +908,7 @@ LAB_00594269:
     fVar17 = (this_ptr->base).base.position_delta.z;
     (this_ptr->base).base.position_delta.y = fVar17;
     pCVar2->x = fVar17;
-    core_charactr_cpp_FUN_0042c230((CCharacter *)this_ptr,&CStack_9c);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230((CCharacter *)this_ptr,&CStack_9c);
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_0042cd30((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130

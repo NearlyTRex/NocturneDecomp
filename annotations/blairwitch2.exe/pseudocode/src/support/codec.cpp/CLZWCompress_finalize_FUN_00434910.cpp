@@ -26,7 +26,7 @@ int __cdecl support_codec_cpp_CLZWCompress_finalize_FUN_00434910(CLZWCompress *t
       return 0;
     }
   }
-  iVar1 = support_codec_cpp_FUN_00433ad0(&(this_ptr->dictionary).bit_state,ostream);
+  iVar1 = support_codec_cpp_flushBitBuffer_FUN_00433ad0(&(this_ptr->dictionary).bit_state,ostream);
   if ((iVar1 != 0) && (iVar1 == -1)) {
     return 2;
   }

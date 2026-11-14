@@ -20,9 +20,9 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
 ;   core_main.c_FUN_004e4500
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
 ;   core_xform.cpp_buildRotationY_FUN_005932c0
 ;   core_xform.cpp_FUN_00591530
-;   core_xform.cpp_FUN_00591c10
 ;   core_xform.cpp_matrixToEulerAngles_FUN_00591de0
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005916b0
 ;   core_xform.cpp_setIdentityMatrix3x4_FUN_005918a0
@@ -106,8 +106,8 @@ section .text
     PUSH EAX                            ; 004b23cf
     LEA EAX,[ESP + 0x98]                ; 004b23d0
     PUSH EAX                            ; 004b23d7
-    CALL core_xform.cpp_FUN_00591c10    ; 004b23d8
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591c10()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 004b23d8
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10()
     ADD ESP,0xc                         ; 004b23dd
     LEA EAX,[ESP + 0x90]                ; 004b23e0
     PUSH EAX                            ; 004b23e7

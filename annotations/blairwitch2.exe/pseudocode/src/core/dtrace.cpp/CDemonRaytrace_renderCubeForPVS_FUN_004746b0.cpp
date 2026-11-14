@@ -68,7 +68,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0(CDemon
       local_64.x = (int)ROUND(local_ac * _DAT_005f5b10);
       local_64.y = (int)ROUND(local_a8 * _DAT_005f5b10);
       local_64.z = (int)ROUND(local_a4 * _DAT_005f5b10);
-      engine_special_cpp_FUN_0055d723((SProjectedVertex *)*0x01BA5C50,&local_64);
+      engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+                ((SProjectedVertex *)*0x01BA5C50,&local_64);
       local_14 = grid_x + 1;
       local_2c = (float)local_14;
       local_ac = local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x;
@@ -77,7 +78,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0(CDemon
       local_7c.x = (int)ROUND(local_ac * _DAT_005f5b10);
       local_7c.y = (int)ROUND(local_a8 * _DAT_005f5b10);
       local_7c.z = (int)ROUND(local_a4 * _DAT_005f5b10);
-      engine_special_cpp_FUN_0055d723((SProjectedVertex *)(*0x01BA5C50 + 0x30),&local_7c);
+      engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+                ((SProjectedVertex *)(*0x01BA5C50 + 0x30),&local_7c);
       local_14 = grid_z + 1;
       local_ac = local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x;
       local_24 = (float)local_14;
@@ -86,14 +88,16 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0(CDemon
       local_40.x = (int)ROUND(local_ac * _DAT_005f5b10);
       local_40.y = (int)ROUND(local_a8 * _DAT_005f5b10);
       local_40.z = (int)ROUND(local_a4 * _DAT_005f5b10);
-      engine_special_cpp_FUN_0055d723((SProjectedVertex *)(*0x01BA5C50 + 0x60),&local_40);
+      engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+                ((SProjectedVertex *)(*0x01BA5C50 + 0x60),&local_40);
       local_ac = local_28 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x;
       local_a8 = local_20 * (this_ptr->cell_size).y + (this_ptr->bbox_min).y;
       local_a4 = local_24 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z;
       local_58.x = (int)ROUND(local_ac * _DAT_005f5b10);
       local_58.y = (int)ROUND(local_a8 * _DAT_005f5b10);
       local_58.z = (int)ROUND(local_a4 * _DAT_005f5b10);
-      engine_special_cpp_FUN_0055d723((SProjectedVertex *)(*0x01BA5C50 + 0x90),&local_58);
+      engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+                ((SProjectedVertex *)(*0x01BA5C50 + 0x90),&local_58);
       local_14 = grid_y + 1;
       local_ac = local_28 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x;
       local_1c = (float)local_14;
@@ -102,28 +106,32 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0(CDemon
       local_a0.x = (int)ROUND(local_ac * _DAT_005f5b10);
       local_a0.y = (int)ROUND(local_a8 * _DAT_005f5b10);
       local_a0.z = (int)ROUND(local_a4 * _DAT_005f5b10);
-      engine_special_cpp_FUN_0055d723((SProjectedVertex *)(*0x01BA5C50 + 0xc0),&local_a0);
+      engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+                ((SProjectedVertex *)(*0x01BA5C50 + 0xc0),&local_a0);
       local_ac = local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x;
       local_a8 = local_1c * (this_ptr->cell_size).y + (this_ptr->bbox_min).y;
       local_a4 = local_30 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z;
       local_94.x = (int)ROUND(local_ac * _DAT_005f5b10);
       local_94.y = (int)ROUND(local_a8 * _DAT_005f5b10);
       local_94.z = (int)ROUND(local_a4 * _DAT_005f5b10);
-      engine_special_cpp_FUN_0055d723((SProjectedVertex *)(*0x01BA5C50 + 0xf0),&local_94);
+      engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+                ((SProjectedVertex *)(*0x01BA5C50 + 0xf0),&local_94);
       local_ac = local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x;
       local_a8 = local_1c * (this_ptr->cell_size).y + (this_ptr->bbox_min).y;
       local_a4 = local_24 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z;
       local_70.x = (int)ROUND(local_ac * _DAT_005f5b10);
       local_70.y = (int)ROUND(local_a8 * _DAT_005f5b10);
       local_70.z = (int)ROUND(local_a4 * _DAT_005f5b10);
-      engine_special_cpp_FUN_0055d723((SProjectedVertex *)(*0x01BA5C50 + 0x120),&local_70);
+      engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+                ((SProjectedVertex *)(*0x01BA5C50 + 0x120),&local_70);
       local_ac = local_28 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x;
       local_a8 = local_1c * (this_ptr->cell_size).y + (this_ptr->bbox_min).y;
       local_a4 = local_24 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z;
       local_88.x = (int)ROUND(local_ac * _DAT_005f5b10);
       local_88.y = (int)ROUND(local_a8 * _DAT_005f5b10);
       local_88.z = (int)ROUND(local_a4 * _DAT_005f5b10);
-      engine_special_cpp_FUN_0055d723((SProjectedVertex *)(*0x01BA5C50 + 0x150),&local_88);
+      engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+                ((SProjectedVertex *)(*0x01BA5C50 + 0x150),&local_88);
       uVar1 = DAT_00622024 & DAT_00622054 & DAT_00622084 & DAT_006220b4 & DAT_006220e4 &
               DAT_00622114 & DAT_00622144 & DAT_00622174;
       pSVar5 = &SStack_d4;

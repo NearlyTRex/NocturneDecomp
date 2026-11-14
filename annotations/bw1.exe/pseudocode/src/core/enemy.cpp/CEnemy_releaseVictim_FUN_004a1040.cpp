@@ -22,7 +22,7 @@ void __cdecl core_enemy_cpp_CEnemy_releaseVictim_FUN_004a1040(CEnemy *this_ptr)
         CStack_14.x = 0.0;
         CStack_14.y = 0.0;
         CStack_14.z = -0.001;
-        core_charactr_cpp_FUN_0042d750(&this_ptr->base,&CStack_14);
+        core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042d750(&this_ptr->base,&CStack_14);
       }
       this_ptr->victim = (CCharacter *)0x0;
       return;

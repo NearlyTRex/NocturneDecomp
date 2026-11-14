@@ -68,10 +68,11 @@ int __cdecl core_kedward_cpp_CKedward_renderTransparent_FUN_00591680(CKedward *t
   engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0(DAT_005f2afc);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);
   if (0.0 < (this_ptr->base).base.bind_time) {
-    core_charactr_cpp_FUN_0042f310((CCharacter *)this_ptr);
+    core_charactr_cpp_CCharacter_renderEthereal_FUN_0042f310((CCharacter *)this_ptr);
   }
   if (_DAT_01d8e40c != 0) {
-    core_motion_cpp_FUN_004fcdc0(&(this_ptr->base).base.model.base,(CDemonActor *)this_ptr);
+    core_motion_cpp_CMotionController_render_FUN_004fcdc0
+              (&(this_ptr->base).base.model.base,(CDemonActor *)this_ptr);
   }
   if (this_ptr->cini_flag != 0) {
     engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046d520(DAT_005f2afc,unaff_ESI);

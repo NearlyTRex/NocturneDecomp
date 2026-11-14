@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 177,
-    "complexity_score": 235,
+    "complexity_score": 238,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 80,
+    "pseudocode_lines": 83,
     "suspect_count": 14,
     "suspect_types": [
       "extra_output",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 257
+    "total_lines": 260
   },
   "cross_references": [],
   "function": {
@@ -43,7 +43,7 @@
     {
       "addr": "005632a3",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_005632a3"
+      "name": "engine_special.cpp_transformAndProjectPoint_FUN_005632a3"
     }
   ],
   "globals": [
@@ -262,31 +262,31 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 50,
+      "line": 51,
       "match": "extraout_EDX",
       "severity": "moderate",
-      "text": "engine_special_cpp_FUN_005632a3((SProjectedVertex *)(*extraout_EDX + 0x30),pCVar12);",
+      "text": "((SProjectedVertex *)(*extraout_EDX + 0x30),pCVar12);",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 56,
+      "line": 58,
       "match": "extraout_EDX_00",
       "severity": "moderate",
-      "text": "engine_special_cpp_FUN_005632a3((SProjectedVertex *)(*extraout_EDX_00 + 0x60),pCVar12);",
+      "text": "((SProjectedVertex *)(*extraout_EDX_00 + 0x60),pCVar12);",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 63,
+      "line": 66,
       "match": "extraout_EDX_01",
       "severity": "moderate",
-      "text": "engine_special_cpp_FUN_005632a3((SProjectedVertex *)(*extraout_EDX_01 + 0x90),pCVar12);",
+      "text": "((SProjectedVertex *)(*extraout_EDX_01 + 0x90),pCVar12);",
       "type": "extra_output"
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 67,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "this_ptr = DAT_005f2afc;",
@@ -294,7 +294,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 68,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "DAT_005f2afc->vertex_buffer_ptr->r = iVar4;",
@@ -302,7 +302,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 66,
+      "line": 69,
       "match": "extraout_ECX",
       "severity": "moderate",
       "text": "this_ptr->vertex_buffer_ptr->g = extraout_ECX;",
@@ -310,7 +310,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 70,
+      "line": 73,
       "match": "extraout_ECX",
       "severity": "moderate",
       "text": "this_ptr->vertex_buffer_ptr[1].g = extraout_ECX;",
@@ -318,7 +318,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 74,
+      "line": 77,
       "match": "extraout_ECX",
       "severity": "moderate",
       "text": "this_ptr->vertex_buffer_ptr[2].g = extraout_ECX;",
@@ -326,7 +326,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 78,
+      "line": 81,
       "match": "extraout_ECX",
       "severity": "moderate",
       "text": "this_ptr->vertex_buffer_ptr[3].g = extraout_ECX;",

@@ -21,7 +21,7 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_004e4e20(void)
   wincore_winrun_cpp_endPeriod_FUN_0058e9d0();
   engine_2d_c_cleanupGraphicsSystem_FUN_00401120();
   engine_3d_c_freeTextureCache_FUN_004037f0();
-  core_dfont_cpp_FUN_00448640();
+  core_dfont_cpp_freeFonts_FUN_00448640();
   wincore_winrun_cpp_doNothing2_FUN_00590040();
   engine_pod_cpp_CPod_cleanup_FUN_0051b370(&g_CDemonPodPtr->base);
   core_inivar_cpp_writeIniData_FUN_004d94d0();

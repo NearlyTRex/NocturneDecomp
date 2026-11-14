@@ -9,10 +9,10 @@
 ;   core_game.cpp_CGame_process_FUN_004d8060 at 004d81d6
 ;   core_game.cpp_CGame_rollCredits_FUN_004d8e50 at 004d8e6d
 ;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cfb97
-;   core_game.cpp_FUN_004d77d0 at 004d7b62
+;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004d77d0 at 004d7b62
 ;   core_main.c_FUN_005031c0 at 005031c9
-;   core_menu.cpp_FUN_0050d640 at 0050ea74
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_0050a5e0 at 0050a64d
+;   core_menu.cpp_configureCustomKeyBindings_FUN_0050d640 at 0050ea74
 ;   core_menu.cpp_showCalibrationTestPattern_FUN_0050a870 at 0050a9a1
 ;   core_menu.cpp_showCalibrationTest_FUN_0050a9c0 at 0050aa68
 ;   ... and 13 more

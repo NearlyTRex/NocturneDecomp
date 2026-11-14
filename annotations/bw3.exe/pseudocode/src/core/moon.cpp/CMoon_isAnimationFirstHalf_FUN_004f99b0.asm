@@ -7,7 +7,7 @@
 ; CMoon *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_menu.cpp_FUN_004e7860 at 004e7927
+;   core_menu.cpp_renderMenuAndGetChoice_FUN_004e7860 at 004e7927
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c927d

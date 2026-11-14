@@ -25,8 +25,8 @@
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
 ;   crt_unknown.c_sprintf_FUN_005bfb40
-;   sound_snddx.cpp_FUN_00577500
 ;   sound_snddx.cpp_FUN_00577a50
+;   sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500
 ;   sound_sndmain.cpp_logSoundError_FUN_005773f0
 ;
 ; *****************************************************************************
@@ -254,8 +254,8 @@ section .text
         ;   XREF to: 00579be1 (UNCONDITIONAL_JUMP)  ; LAB_00579be1
     PUSH EAX                            ; 00579d74
         ;   Label: LAB_00579d74
-    CALL sound_snddx.cpp_FUN_00577500   ; 00579d75
-        ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00577500(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500 ; 00579d75
+        ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500(uint error_code)
     ADD ESP,0x4                         ; 00579d7a
     PUSH EAX                            ; 00579d7d
     PUSH 0x5f542e                       ; 00579d7e | = "Set frequency hardware sfx secondary ..."
@@ -279,8 +279,8 @@ section .text
     RET                                 ; 00579db4
     PUSH EAX                            ; 00579db5
         ;   Label: LAB_00579db5
-    CALL sound_snddx.cpp_FUN_00577500   ; 00579db6
-        ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00577500(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500 ; 00579db6
+        ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500(uint error_code)
     ADD ESP,0x4                         ; 00579dbb
     PUSH EAX                            ; 00579dbe
     PUSH 0x5f545a                       ; 00579dbf | = "Set volume hardware sfx secondary buffer"
@@ -304,8 +304,8 @@ section .text
     RET                                 ; 00579df5
     PUSH EAX                            ; 00579df6
         ;   Label: LAB_00579df6
-    CALL sound_snddx.cpp_FUN_00577500   ; 00579df7
-        ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00577500(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500 ; 00579df7
+        ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500(uint error_code)
     ADD ESP,0x4                         ; 00579dfc
     PUSH EAX                            ; 00579dff
     PUSH 0x5f5483                       ; 00579e00 | = "Play hardware sfx secondary buffer"
@@ -329,8 +329,8 @@ section .text
     RET                                 ; 00579e36
     PUSH EAX                            ; 00579e37
         ;   Label: LAB_00579e37
-    CALL sound_snddx.cpp_FUN_00577500   ; 00579e38
-        ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00577500(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500 ; 00579e38
+        ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500(uint error_code)
     ADD ESP,0x4                         ; 00579e3d
     PUSH EAX                            ; 00579e40
     PUSH 0x5f54a6                       ; 00579e41 | = "Set hardware sfx secondary buffer fre..."
@@ -349,8 +349,8 @@ section .text
         ;   XREF to: 00579d19 (UNCONDITIONAL_JUMP)  ; LAB_00579d19
     PUSH EAX                            ; 00579e70
         ;   Label: LAB_00579e70
-    CALL sound_snddx.cpp_FUN_00577500   ; 00579e71
-        ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00577500(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500 ; 00579e71
+        ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500(uint error_code)
     ADD ESP,0x4                         ; 00579e76
     PUSH EAX                            ; 00579e79
     PUSH 0x5f54d2                       ; 00579e7a | = "Set hardware sfx secondary buffer pla..."
@@ -374,8 +374,8 @@ section .text
     RET                                 ; 00579eb0
     PUSH EAX                            ; 00579eb1
         ;   Label: LAB_00579eb1
-    CALL sound_snddx.cpp_FUN_00577500   ; 00579eb2
-        ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00577500(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500 ; 00579eb2
+        ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500(uint error_code)
     ADD ESP,0x4                         ; 00579eb7
     PUSH EAX                            ; 00579eba
     PUSH 0x5f5506                       ; 00579ebb | = "Set hardware sfx secondary buffer volume"
@@ -399,8 +399,8 @@ section .text
     RET                                 ; 00579ef1
     PUSH EAX                            ; 00579ef2
         ;   Label: LAB_00579ef2
-    CALL sound_snddx.cpp_FUN_00577500   ; 00579ef3
-        ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00577500(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500 ; 00579ef3
+        ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500(uint error_code)
     ADD ESP,0x4                         ; 00579ef8
     PUSH EAX                            ; 00579efb
     PUSH 0x5f552f                       ; 00579efc | = "Play hardware sfx secondary buffer"

@@ -13,9 +13,9 @@
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004bb100 at 004bb169
 ;   core_game.cpp_CGame_processHotkeys_FUN_004ba540 at 004ba8cf
 ;   core_hero.cpp_CHero_tryPickupActorOfClass_FUN_004d3e20 at 004d3fb3
+;   core_inv.cpp_CInventory_addItem_FUN_004da880 at 004db0ae
 ;   core_inv.cpp_CInventory_checkHasMatchingKey_FUN_004de610 at 004de672
 ;   core_inv.cpp_CInventory_select_FUN_004dcb40 at 004dcd0c
-;   core_inv.cpp_FUN_004da880 at 004db0ae
 ;   core_netgame.cpp_CNetGame_addChatHistory_FUN_00506a00 at 00506ab9
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052b84d
 ;

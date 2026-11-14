@@ -8,8 +8,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80 at 0047fafd
 ;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047f970 at 0047f970
-;   shape_edittool.cpp_FUN_0047fa80 at 0047fafd
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005bce22

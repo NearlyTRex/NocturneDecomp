@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_load_FUN_0043e6d0
-;   core_cloth.cpp_FUN_0043eea0
+;   core_cloth.cpp_CCloth_setup_FUN_0043eea0
 ;   core_enemy.cpp_CEnemy_setup_FUN_004a0510
 ;   core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_00523210
 ;   core_morph.cpp_CMorph_getReady_FUN_00523310
@@ -67,8 +67,8 @@ section .text
     MOV dword ptr [ESP + 0xc],EAX       ; 005a52f3
     MOV EAX,dword ptr [ESP + 0x14]      ; 005a52f7
     PUSH EAX                            ; 005a52fb
-    CALL core_cloth.cpp_FUN_0043eea0    ; 005a52fc
-        ;   XREF to: 0043eea0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043eea0(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
+    CALL core_cloth.cpp_CCloth_setup_FUN_0043eea0 ; 005a52fc
+        ;   XREF to: 0043eea0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_setup_FUN_0043eea0(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
     ADD ESP,0x10                        ; 005a5301
     PUSH 0x5f8d10                       ; 005a5304 | = "noscape.cth"
     LEA EAX,[EBX + 0x4913c]             ; 005a5309
@@ -83,8 +83,8 @@ section .text
     PUSH ESI                            ; 005a5322
     MOV EAX,dword ptr [ESP + 0x18]      ; 005a5323
     PUSH EAX                            ; 005a5327
-    CALL core_cloth.cpp_FUN_0043eea0    ; 005a5328
-        ;   XREF to: 0043eea0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043eea0(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
+    CALL core_cloth.cpp_CCloth_setup_FUN_0043eea0 ; 005a5328
+        ;   XREF to: 0043eea0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_setup_FUN_0043eea0(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
     ADD ESP,0x10                        ; 005a532d
     PUSH 0x5f8d1c                       ; 005a5330 | = "nosskirt.cth"
     LEA EAX,[EBX + 0x83c6c]             ; 005a5335
@@ -99,8 +99,8 @@ section .text
     PUSH ESI                            ; 005a534e
     MOV ESI,dword ptr [ESP + 0x10]      ; 005a534f
     PUSH ESI                            ; 005a5353
-    CALL core_cloth.cpp_FUN_0043eea0    ; 005a5354
-        ;   XREF to: 0043eea0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043eea0(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
+    CALL core_cloth.cpp_CCloth_setup_FUN_0043eea0 ; 005a5354
+        ;   XREF to: 0043eea0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_setup_FUN_0043eea0(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
     ADD ESP,0x10                        ; 005a5359
     PUSH EDI                            ; 005a535c
     CALL core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_00567500 ; 005a535d

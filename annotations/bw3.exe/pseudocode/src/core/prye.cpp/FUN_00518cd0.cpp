@@ -1028,7 +1028,8 @@ LAB_0051976f:
                  core_actor_cpp_castToClassHash_FUN_0040c840
                            ((CDemonActor *)param_1[0x2ba2].vec.x,g_CAmmoBoxClassInfo.name_hash),
      this_ptr != (CAmmoBox *)0x0)) {
-    fVar7 = core_motion_cpp_FUN_004fc930((CMotionController *)((int)param_1 + 0x158));
+    fVar7 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                      ((CMotionController *)((int)param_1 + 0x158));
     core_ammobox_cpp_CAmmoBox_openBox_FUN_0040e6b0(this_ptr,fVar7);
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_0042cd30((CCharacter *)&param_1->vec);
@@ -1098,7 +1099,7 @@ LAB_0051976f:
     CStack_d0.y = CStack_d0.y + fStack_180;
     CStack_d0.z = CStack_d0.z + fStack_17c;
     param_1[0x2bc0].vec.x = *(float *)((int)param_1 + 0x251c);
-    core_charactr_cpp_FUN_0042c230((CCharacter *)&param_1->vec,pCVar17);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230((CCharacter *)&param_1->vec,pCVar17);
     if (param_1[3].vec.x < *(float *)((int)param_1 + 0x2504) + (float)_DAT_005cd1af) {
       *(uint *)((int)param_1 + 0x2500) = 1;
     }
@@ -1285,7 +1286,8 @@ LAB_005199e6:
     core_hero_cpp_CHero_stopPushingBox_FUN_004d3850((CHero *)&param_1->vec);
   }
   else {
-    fVar7 = core_motion_cpp_FUN_004fc930((CMotionController *)((int)param_1 + 0x158));
+    fVar7 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                      ((CMotionController *)((int)param_1 + 0x158));
     if ((1.0 < fVar7) &&
        (pCStack_18 = (CBoxActor *)
                      core_actor_cpp_castToClassHash_FUN_0040c840

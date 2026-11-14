@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   path
 ;
 ; XREF[3]:
-;   core_game.cpp_FUN_004d6420 at 004d64db
+;   core_game.cpp_CGame_saveGame_FUN_004d6420 at 004d64db
 ;   engine_dosio.cpp_FUN_004798c0 at 0047990e
 ;   engine_dosio.cpp_reopenFileStream_FUN_00479240 at 00479297
 ;

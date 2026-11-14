@@ -249,11 +249,13 @@ LAB_00455d67:
        afStack_ec[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x21];
   local_64[1] = -0.13;
   local_64[2] = 0.0;
-  core_xform_cpp_FUN_00591c10(&local_260,afStack_ec + 0x22,pfVar2);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
+            (&local_260,afStack_ec + 0x22,pfVar2);
   core_xform_cpp_multiplyMatrix3x4InPlace_FUN_00591860
             (&local_260,
              (CMatrix3x4f *)(param_1[6].footstep_sound_code + _DAT_01b4d290 * 0x30 + -0x24));
-  core_xform_cpp_FUN_00591c10(&local_290,&param_1->location,&param_1->orient);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
+            (&local_290,&param_1->location,&param_1->orient);
   core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(&local_260,&local_290,&local_2c0);
   pCVar4 = &local_2c0;
   piVar6 = &param_1[0xdd].particle_systems[2].next_particle;

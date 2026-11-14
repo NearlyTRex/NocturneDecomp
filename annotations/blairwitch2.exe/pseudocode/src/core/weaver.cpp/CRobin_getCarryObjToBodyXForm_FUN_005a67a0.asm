@@ -15,7 +15,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
 ;   core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429120
-;   core_xform.cpp_FUN_00591c10
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005916b0
 ;   crt_string.c__strcmp_FUN_005b8c30
 ;
@@ -114,8 +114,8 @@ section .text
     PUSH EAX                            ; 005a6894
     MOV dword ptr [EBP + 0x3a],ECX      ; 005a6895
     MOV dword ptr [EBP + 0x3e],ESI      ; 005a6898
-    CALL core_xform.cpp_FUN_00591c10    ; 005a689b
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591c10()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 005a689b
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10()
     MOV EDX,dword ptr [EBP + 0x76]      ; 005a68a0
     MOV EDX,dword ptr [EDX + 0x2618]    ; 005a68a3
     LEA EAX,[EDX*0x4 + 0x0]             ; 005a68a9
@@ -158,8 +158,8 @@ section .text
     PUSH EAX                            ; 005a6919
     MOV dword ptr [EBP + 0x46],ECX      ; 005a691a
     MOV dword ptr [EBP + 0x42],ESI      ; 005a691d
-    CALL core_xform.cpp_FUN_00591c10    ; 005a6920
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591c10()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 005a6920
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10()
     MOV EDX,dword ptr [EBP + 0x76]      ; 005a6925
     MOV EDX,dword ptr [EDX + 0x2618]    ; 005a6928
     LEA EAX,[EDX*0x4 + 0x0]             ; 005a692e

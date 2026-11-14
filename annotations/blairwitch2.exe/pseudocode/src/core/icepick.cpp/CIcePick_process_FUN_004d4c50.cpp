@@ -141,7 +141,7 @@ LAB_004d5052:
                 if ((iVar9 != 0) ||
                    (iVar9 = core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004cee90
                                       (&this_ptr->base), iVar9 != 0)) goto LAB_004d50f7;
-                iVar9 = core_hero_cpp_FUN_004cf2b0(&this_ptr->base);
+                iVar9 = core_hero_cpp_CHero_tryPullLever_FUN_004cf2b0(&this_ptr->base);
                 if (iVar9 != 0) {
                   core_hero_cpp_CHero_toggleLeverNow_FUN_004cf440(&this_ptr->base);
                   goto LAB_004d50f7;
@@ -196,7 +196,8 @@ switchD_004d528c_default:
                         (&(this_ptr->base).base.model.base,iVar5,1);
             }
             if (((this_ptr->base).player_input.action_state.use_item != 0) &&
-               (iVar5 = core_icepick_cpp_FUN_004d55e0(this_ptr), iVar5 == 0)) {
+               (iVar5 = core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004d55e0(this_ptr),
+               iVar5 == 0)) {
               core_icepick_cpp_FUN_004d5780(this_ptr);
             }
           }
@@ -260,7 +261,7 @@ LAB_004d4d65:
     CStack_64.x = CStack_64.x + afStack_9c[2];
     CStack_64.y = CStack_64.y + afStack_9c[3];
     CStack_64.z = CStack_64.z + fStack_8c;
-    core_charactr_cpp_FUN_00423a60((CCharacter *)this_ptr,pCVar15);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_00423a60((CCharacter *)this_ptr,pCVar15);
     goto LAB_004d4f1a;
   }
   if ((this_ptr->base).base.grabbed_type == 0) {
@@ -350,7 +351,7 @@ LAB_004d4f1a:
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_005466c0
               (pCVar13,source_quaternions,fVar14,iVar5,blend_callback);
   }
-  core_icepick_cpp_FUN_004d5470(this_ptr,in_stack_00000014);
+  core_icepick_cpp_CIcePick_updateShootBlend_FUN_004d5470(this_ptr,in_stack_00000014);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00429e90
             ((CCharacter *)this_ptr,in_stack_00000014);
   return;

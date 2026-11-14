@@ -97,9 +97,9 @@ float __cdecl CDemonCube::rayIntersectTriangles(CDemonCube *this_ptr,CVector3f *
 // Address: 00454520
 void __cdecl CDemonCube::testCylinderCollision(CDemonCube *this_ptr,SIntersectXZCylinder *cylinder);
 
-// Original: core_dcube.cpp_FUN_004545f0
+// Original: core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_004545f0
 // Address: 004545f0
-int __cdecl FUN_004545f0(CDemonCube *this_ptr,CVector3f *cylinder_position,float cylinder_radius,CVector3f *output_height,CVector3f *output_normal,uint *output_material);
+int __cdecl CDemonCube::testCylinderGroundCollision(CDemonCube *this_ptr,CVector3f *cylinder_position,float cylinder_radius,CVector3f *output_height,CVector3f *output_normal,uint *output_material);
 
 // Original: core_dcube.cpp_CVector3f_arrdtor16_FUN_004de7b0
 // Address: 004de7b0

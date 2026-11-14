@@ -65,7 +65,8 @@ int __cdecl core_shadow_cpp_CShadow_renderTransparent_FUN_0053e6c0(CShadow *this
                 (this_ptr_00,-1,0x2e7,1,0);
       engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046c900(DAT_0060b280);
       if (_DAT_01d1cdc8 != 0) {
-        core_motion_cpp_FUN_005042e0(&this_ptr_00->base,(CDemonActor *)this_ptr);
+        core_motion_cpp_CMotionController_render_FUN_005042e0
+                  (&this_ptr_00->base,(CDemonActor *)this_ptr);
       }
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10((CDemonActor *)this_ptr);

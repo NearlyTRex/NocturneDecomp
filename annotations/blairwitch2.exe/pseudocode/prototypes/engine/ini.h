@@ -33,9 +33,9 @@ int __cdecl getProfileInteger(char *section,char *key,int default_value,char *fi
 // Address: 004d88e0
 void __cdecl writeProfileString(char *section,char *key,char *value,char *filename);
 
-// Original: engine_ini.cpp_FUN_004d8910
+// Original: engine_ini.cpp_CIniFile_ctor_FUN_004d8910
 // Address: 004d8910
-CIniFile * __cdecl FUN_004d8910(CIniFile *this_ptr,char *filename,char *section);
+CIniFile * __cdecl CIniFile::ctor(CIniFile *this_ptr,char *filename,char *section);
 
 // Original: engine_ini.cpp_CIniFile_dtor_FUN_004d8940
 // Address: 004d8940
@@ -65,9 +65,9 @@ void FUN_004d8b20(int param_1,undefined4 param_2);
 // Address: 004d8b80
 void FUN_004d8b80(int param_1,undefined4 param_2);
 
-// Original: engine_ini.cpp_FUN_004d8bc0
+// Original: engine_ini.cpp_CIniFile_getFloat_FUN_004d8bc0
 // Address: 004d8bc0
-void FUN_004d8bc0(int param_1,undefined4 param_2);
+void __cdecl CIniFile::getFloat(CIniFile *this_ptr,char *key,float *output);
 
 // Original: engine_ini.cpp_FUN_004d8c30
 // Address: 004d8c30

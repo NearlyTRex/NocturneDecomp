@@ -73,9 +73,9 @@ void __cdecl CDemonSet::processActors(CDemonSet *this_ptr);
 // Address: 0052ef80
 void __cdecl CDemonSet::renderStaticLights(CDemonSet *this_ptr);
 
-// Original: core_set.cpp_FUN_0052f2a0
+// Original: core_set.cpp_CDemonSet_renderScene_FUN_0052f2a0
 // Address: 0052f2a0
-void __cdecl FUN_0052f2a0(CDemonSet *this_ptr,int skip_prerender);
+void __cdecl CDemonSet::renderScene(CDemonSet *this_ptr,int skip_prerender);
 
 // Original: core_set.cpp_FUN_0052fad0
 // Address: 0052fad0
@@ -137,9 +137,9 @@ void __cdecl CDemonSet::lightVertexColor(CDemonSet *this_ptr,CVector3i *world_po
 // Address: 005317c0
 void __cdecl CDemonSet::computeLighting(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int start_vertex_index,int vertex_count);
 
-// Original: core_set.cpp_FUN_00531a90
+// Original: core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_00531a90
 // Address: 00531a90
-void __cdecl FUN_00531a90(CDemonSet *this_ptr,CVector3f *vertex_position,CVector3f *position_offset,int vertex_index);
+void __cdecl CDemonSet::computeVertexOmniLighting(CDemonSet *this_ptr,CVector3f *vertex_position,CVector3f *position_offset,int vertex_index);
 
 // Original: core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_00531ca0
 // Address: 00531ca0

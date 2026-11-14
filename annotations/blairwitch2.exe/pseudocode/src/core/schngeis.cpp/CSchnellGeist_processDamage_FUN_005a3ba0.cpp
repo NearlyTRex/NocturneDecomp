@@ -13,7 +13,8 @@ void __cdecl core_schngeis_cpp_CSchnellGeist_processDamage_FUN_005a3ba0(CSchnell
 {
   if ((this_ptr->base).base.base.hit_points - damage_info->damage_amount <= (float)_DAT_005f01fe) {
     (this_ptr->base).base.base.hit_points = 10.0;
-    core_event_cpp_FUN_00490f80(0x01C38BC0,"schnell_death",1);
+    core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80
+              (0x01C38BC0,"schnell_death",1);
     return;
   }
   core_basicene_cpp_CBasicEnemy_processDamage_FUN_0059f800(&this_ptr->base,damage_info);

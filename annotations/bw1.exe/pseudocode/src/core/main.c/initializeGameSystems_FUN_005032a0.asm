@@ -31,7 +31,7 @@
 ; Called Functions:
 ;   core_bmppuzzl.cpp_resetAllPuzzles_FUN_00415c20
 ;   core_dfilter.cpp_CDemonFilter_init_FUN_0045dc30
-;   core_dfont.cpp_FUN_0045e000
+;   core_dfont.cpp_initFonts_FUN_0045e000
 ;   core_flattn.cpp_FUN_004bf770
 ;   core_inivar.cpp_readIniData_FUN_004f4f50
 ;   core_main.c_FUN_005030e0
@@ -40,7 +40,7 @@
 ;   core_mission.cpp_FUN_0051a2d0
 ;   core_mmx.c_detectCPUFeatures_FUN_0051c450
 ;   core_netgame.cpp_CNetGame_init_FUN_0052c520
-;   core_sound.cpp_FUN_0057cb30
+;   core_sound.cpp_CSound_findAllSoundFiles_FUN_0057cb30
 ;   crt_io.c__chmod_FUN_005c1dc0
 ;   crt_stdio.c_fclose_FUN_005c0d10
 ;   crt_stdio.c_fopen_FUN_005c157c
@@ -147,8 +147,8 @@ section .text
     CALL core_main.c_FUN_005030e0       ; 005033cd
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 005033d2
-    CALL core_dfont.cpp_FUN_0045e000    ; 005033d5
-        ;   XREF to: 0045e000 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_FUN_0045e000()
+    CALL core_dfont.cpp_initFonts_FUN_0045e000 ; 005033d5
+        ;   XREF to: 0045e000 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_initFonts_FUN_0045e000()
         ;   Label: LAB_005033d5
     CMP dword ptr [0x02c9be78],0x3c00000 ; 005033da | DAT_02c9be78
     JGE 0x00503658                      ; 005033e4
@@ -713,8 +713,8 @@ section .text
     ADD ESP,0x8                         ; 005038ba
     MOV ESI,dword ptr [0x006236b8]      ; 005038bd | DAT_006236b8
     PUSH ESI                            ; 005038c3
-    CALL core_sound.cpp_FUN_0057cb30    ; 005038c4
-        ;   XREF to: 0057cb30 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0057cb30(CSound * this_ptr)
+    CALL core_sound.cpp_CSound_findAllSoundFiles_FUN_0057cb30 ; 005038c4
+        ;   XREF to: 0057cb30 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_findAllSoundFiles_FUN_0057cb30(CSound * this_ptr)
     ADD ESP,0x4                         ; 005038c9
     MOV EDI,dword ptr [0x0061f650]      ; 005038cc | DAT_0061f650
     PUSH EDI                            ; 005038d2 | DAT_01d2c900

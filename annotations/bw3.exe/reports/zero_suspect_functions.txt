@@ -225,12 +225,12 @@ annotations/bw3.exe/pseudocode/src/core/boneguy.cpp/FUN_00419a90.cpp
 annotations/bw3.exe/pseudocode/src/core/boneguy.cpp/SBoneGuyBox_ctor_FUN_0041ab90.cpp
 annotations/bw3.exe/pseudocode/src/core/boneguy.cpp/factoryFuncBoneGuy_FUN_00417050.cpp
 annotations/bw3.exe/pseudocode/src/core/box.cpp/CBoundingBox3D_ctor_FUN_004fb160.cpp
+annotations/bw3.exe/pseudocode/src/core/box.cpp/CBoundingBox3D_doesBoxIntersect_FUN_0041e910.cpp
 annotations/bw3.exe/pseudocode/src/core/box.cpp/CBoundingBox3D_dtor_FUN_004fb170.cpp
 annotations/bw3.exe/pseudocode/src/core/box.cpp/CBoundingBox3D_expand_FUN_0041d840.cpp
 annotations/bw3.exe/pseudocode/src/core/box.cpp/CBoundingBox3D_getMaximumBound_FUN_0041e960.cpp
 annotations/bw3.exe/pseudocode/src/core/box.cpp/CBoundingBox3D_reset_FUN_0041e8b0.cpp
 annotations/bw3.exe/pseudocode/src/core/box.cpp/CBox_dtor_FUN_0041adf0.cpp
-annotations/bw3.exe/pseudocode/src/core/box.cpp/FUN_0041e910.cpp
 annotations/bw3.exe/pseudocode/src/core/box.cpp/SScrape_ctor_FUN_0041d830.cpp
 annotations/bw3.exe/pseudocode/src/core/boxactor.cpp/CBoxActor_canPickup_FUN_004200a0.cpp
 annotations/bw3.exe/pseudocode/src/core/boxactor.cpp/CBoxActor_getActorType_FUN_0041efd0.cpp
@@ -828,6 +828,7 @@ annotations/bw3.exe/pseudocode/src/core/hero.cpp/CHeroPlaceholder_getActorType_F
 annotations/bw3.exe/pseudocode/src/core/hero.cpp/CHero_addCarriedItemToInventory_FUN_004d41a0.cpp
 annotations/bw3.exe/pseudocode/src/core/hero.cpp/CHero_canBeGrabbed_FUN_004d2aa0.cpp
 annotations/bw3.exe/pseudocode/src/core/hero.cpp/CHero_doHeroAction_FUN_004d4520.cpp
+annotations/bw3.exe/pseudocode/src/core/hero.cpp/CHero_executeObjectPickup_FUN_004d4160.cpp
 annotations/bw3.exe/pseudocode/src/core/hero.cpp/CHero_getPathMap_FUN_004d2a70.cpp
 annotations/bw3.exe/pseudocode/src/core/hero.cpp/CHero_kill_FUN_004d43e0.cpp
 annotations/bw3.exe/pseudocode/src/core/hero.cpp/CHero_removeMatchingKeys_FUN_004d41e0.cpp
@@ -841,7 +842,6 @@ annotations/bw3.exe/pseudocode/src/core/hero.cpp/CHero_testLineIntersection_FUN_
 annotations/bw3.exe/pseudocode/src/core/hero.cpp/CHero_toggleLeverNow_FUN_004d3460.cpp
 annotations/bw3.exe/pseudocode/src/core/hero.cpp/CHero_tryOpenDoor_FUN_004d3250.cpp
 annotations/bw3.exe/pseudocode/src/core/hero.cpp/FUN_004d2ae0.cpp
-annotations/bw3.exe/pseudocode/src/core/hero.cpp/FUN_004d4160.cpp
 annotations/bw3.exe/pseudocode/src/core/hero.cpp/factoryFuncHeroPlaceholder_FUN_004d4ab0.cpp
 annotations/bw3.exe/pseudocode/src/core/hino.cpp/CHino_archive_FUN_0059d310.cpp
 annotations/bw3.exe/pseudocode/src/core/hino.cpp/CHino_getActorType_FUN_0059b660.cpp
@@ -979,6 +979,7 @@ annotations/bw3.exe/pseudocode/src/core/moon.cpp/staticInit_FUN_004f93a0.cpp
 annotations/bw3.exe/pseudocode/src/core/morph.cpp/CMorphModel_addPartFromDeformableModel_FUN_004f9d90.cpp
 annotations/bw3.exe/pseudocode/src/core/morph.cpp/CMorphModel_addPartFromKeyFramedModel_FUN_004f9df0.cpp
 annotations/bw3.exe/pseudocode/src/core/morph.cpp/CMorphModel_animateFromDeformableModel_FUN_004f9f50.cpp
+annotations/bw3.exe/pseudocode/src/core/morph.cpp/CMorphModel_arrdtor2_FUN_004fb180.cpp
 annotations/bw3.exe/pseudocode/src/core/morph.cpp/CMorphModel_ctor_FUN_004f9a20.cpp
 annotations/bw3.exe/pseudocode/src/core/morph.cpp/CMorphModel_dtor_FUN_004f9a50.cpp
 annotations/bw3.exe/pseudocode/src/core/morph.cpp/CMorphModel_findNearestPoint_FUN_004fa7f0.cpp
@@ -991,7 +992,6 @@ annotations/bw3.exe/pseudocode/src/core/morph.cpp/CMorph_render_FUN_004fb0e0.cpp
 annotations/bw3.exe/pseudocode/src/core/morph.cpp/CMorph_setupModelFromDeformable_FUN_004fa9c0.cpp
 annotations/bw3.exe/pseudocode/src/core/morph.cpp/CMorph_setupModelFromTriPolygons_FUN_004fa900.cpp
 annotations/bw3.exe/pseudocode/src/core/morph.cpp/CMorph_updateModelFromDeformable_FUN_004fab90.cpp
-annotations/bw3.exe/pseudocode/src/core/morph.cpp/FUN_004fb180.cpp
 annotations/bw3.exe/pseudocode/src/core/motion.cpp/CMotionController_clearTweenState_FUN_004fc480.cpp
 annotations/bw3.exe/pseudocode/src/core/motion.cpp/CMotionController_ctor_FUN_004fbad0.cpp
 annotations/bw3.exe/pseudocode/src/core/motion.cpp/CMotionController_dtor_FUN_004fbb00.cpp
@@ -1204,6 +1204,7 @@ annotations/bw3.exe/pseudocode/src/core/skeleton.cpp/skipToEndOfLine_FUN_005477e
 annotations/bw3.exe/pseudocode/src/core/skeleton.cpp/staticInit_FUN_00547790.cpp
 annotations/bw3.exe/pseudocode/src/core/sound.cpp/CSound_configure_FUN_005607d0.cpp
 annotations/bw3.exe/pseudocode/src/core/sound.cpp/CSound_ctor_FUN_0055fc40.cpp
+annotations/bw3.exe/pseudocode/src/core/sound.cpp/CSound_findAllSoundFiles_FUN_0055fc60.cpp
 annotations/bw3.exe/pseudocode/src/core/sound.cpp/CSound_isSoundPlaying_FUN_00560af0.cpp
 annotations/bw3.exe/pseudocode/src/core/sound.cpp/CSound_killSound_FUN_00560b00.cpp
 annotations/bw3.exe/pseudocode/src/core/sound.cpp/CSound_playActorSound_FUN_005609d0.cpp
@@ -1211,7 +1212,6 @@ annotations/bw3.exe/pseudocode/src/core/sound.cpp/CSound_playSound_FUN_005609b0.
 annotations/bw3.exe/pseudocode/src/core/sound.cpp/CSound_playTrackedActorSound_FUN_00560a00.cpp
 annotations/bw3.exe/pseudocode/src/core/sound.cpp/CSound_reset_FUN_00560930.cpp
 annotations/bw3.exe/pseudocode/src/core/sound.cpp/CSound_selectReverbPreset_FUN_00560c90.cpp
-annotations/bw3.exe/pseudocode/src/core/sound.cpp/FUN_0055fc60.cpp
 annotations/bw3.exe/pseudocode/src/core/sound.cpp/STrainNoise_ctor_FUN_00560d50.cpp
 annotations/bw3.exe/pseudocode/src/core/sound.cpp/STrainNoise_dtor_FUN_00560d60.cpp
 annotations/bw3.exe/pseudocode/src/core/spawner.cpp/CSpawner_getActorType_FUN_00563890.cpp
@@ -1410,6 +1410,8 @@ annotations/bw3.exe/pseudocode/src/core/weapon.cpp/CWeapon_pickup_FUN_0057b4f0.c
 annotations/bw3.exe/pseudocode/src/core/weapon.cpp/CWeapon_setWeaponState_FUN_0057b7f0.cpp
 annotations/bw3.exe/pseudocode/src/core/weapon.cpp/CWeapon_setup_FUN_0057af40.cpp
 annotations/bw3.exe/pseudocode/src/core/weapon.cpp/staticInit_FUN_0057ad40.cpp
+annotations/bw3.exe/pseudocode/src/core/weather.cpp/CWeather_ctor_FUN_0057bd80.cpp
+annotations/bw3.exe/pseudocode/src/core/weather.cpp/CWeather_setWeatherType_FUN_0057d050.cpp
 annotations/bw3.exe/pseudocode/src/core/weather.cpp/FUN_0057c2c0.cpp
 annotations/bw3.exe/pseudocode/src/core/werewolf.cpp/CWerewolf_getActorType_FUN_0057d540.cpp
 annotations/bw3.exe/pseudocode/src/core/werewolf.cpp/CWerewolf_getDeathState_FUN_0057fa20.cpp
@@ -1417,7 +1419,7 @@ annotations/bw3.exe/pseudocode/src/core/werewolf.cpp/CWerewolf_playHowl_FUN_0057
 annotations/bw3.exe/pseudocode/src/core/werewolf.cpp/CWerewolf_setWalkTarget_FUN_0057edf0.cpp
 annotations/bw3.exe/pseudocode/src/core/werewolf.cpp/CWerewolf_setup_FUN_0057d600.cpp
 annotations/bw3.exe/pseudocode/src/core/werewolf.cpp/factoryFuncWerewolf_FUN_0057d520.cpp
-annotations/bw3.exe/pseudocode/src/core/xform.cpp/FUN_00583800.cpp
+annotations/bw3.exe/pseudocode/src/core/xform.cpp/buildMatrixFromEulerAndPosition_FUN_00583800.cpp
 annotations/bw3.exe/pseudocode/src/core/xform.cpp/clearTranslation_FUN_005837e0.cpp
 annotations/bw3.exe/pseudocode/src/core/xform.cpp/computeOrthogonalityError_FUN_00584790.cpp
 annotations/bw3.exe/pseudocode/src/core/xform.cpp/determinant_FUN_00584510.cpp
@@ -1448,8 +1450,8 @@ annotations/bw3.exe/pseudocode/src/core/zombie.cpp/CZombie_getGrabbed_FUN_0058cb
 annotations/bw3.exe/pseudocode/src/core/zombie.cpp/CZombie_isGrabbable_FUN_0058caf0.cpp
 annotations/bw3.exe/pseudocode/src/core/zombie.cpp/CZombie_isInvulnerable_FUN_0058cbe0.cpp
 annotations/bw3.exe/pseudocode/src/core/zombie.cpp/CZombie_renderOpaque_FUN_0058be70.cpp
+annotations/bw3.exe/pseudocode/src/core/zombie.cpp/CZombie_resetChaseState_FUN_0058cc20.cpp
 annotations/bw3.exe/pseudocode/src/core/zombie.cpp/CZombie_shouldIgnoreForTargeting_FUN_0058cbb0.cpp
-annotations/bw3.exe/pseudocode/src/core/zombie.cpp/FUN_0058cc20.cpp
 annotations/bw3.exe/pseudocode/src/core/zombie.cpp/FUN_0058cc90.cpp
 annotations/bw3.exe/pseudocode/src/core/zombie.cpp/FUN_0058cd20.cpp
 annotations/bw3.exe/pseudocode/src/core/zombie.cpp/FUN_0058cdb0.cpp
@@ -1545,10 +1547,10 @@ annotations/bw3.exe/pseudocode/src/engine/font.cpp/CBitFont_reset_FUN_004af7d0.c
 annotations/bw3.exe/pseudocode/src/engine/font.cpp/CBitFont_setCharYOffsetRange_FUN_004b3150.cpp
 annotations/bw3.exe/pseudocode/src/engine/font.cpp/CBitFont_setFontReady_FUN_004b31b0.cpp
 annotations/bw3.exe/pseudocode/src/engine/font.cpp/CBitFont_setInitializedFlag_FUN_004b0500.cpp
+annotations/bw3.exe/pseudocode/src/engine/ini.cpp/CIniFile_ctor_FUN_004d8a20.cpp
 annotations/bw3.exe/pseudocode/src/engine/ini.cpp/CIniFile_dtor_FUN_004d8a50.cpp
 annotations/bw3.exe/pseudocode/src/engine/ini.cpp/CIni_ctor_FUN_004d8e50.cpp
 annotations/bw3.exe/pseudocode/src/engine/ini.cpp/CIni_dtor_FUN_004d8e60.cpp
-annotations/bw3.exe/pseudocode/src/engine/ini.cpp/FUN_004d8a20.cpp
 annotations/bw3.exe/pseudocode/src/engine/ini.cpp/getProfileString_FUN_004d8910.cpp
 annotations/bw3.exe/pseudocode/src/engine/ini.cpp/writeProfileString_FUN_004d89f0.cpp
 annotations/bw3.exe/pseudocode/src/engine/keys.cpp/CKeys_getInputKey_FUN_004df580.cpp

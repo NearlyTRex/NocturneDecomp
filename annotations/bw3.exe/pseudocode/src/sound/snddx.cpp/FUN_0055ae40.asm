@@ -13,8 +13,8 @@
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005a28c0
-;   sound_snddx.cpp_FUN_0055a670
-;   sound_snddx.cpp_FUN_0055a9f0
+;   sound_snddx.cpp_getDirectSoundErrorString_FUN_0055a670
+;   sound_snddx.cpp_releaseSfxHardwareBuffers_FUN_0055a9f0
 ;   sound_sndmain.cpp_killSoundThread_FUN_00558e10
 ;   sound_sndmain.cpp_logSoundError_FUN_0055a560
 ;
@@ -40,8 +40,8 @@ section .text
         ;   Label: LAB_0055ae65
     PUSH EBX                            ; 0055ae67
         ;   Label: LAB_0055ae67
-    CALL sound_snddx.cpp_FUN_0055a9f0   ; 0055ae68
-        ;   XREF to: 0055a9f0 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_FUN_0055a9f0()
+    CALL sound_snddx.cpp_releaseSfxHardwareBuffers_FUN_0055a9f0 ; 0055ae68
+        ;   XREF to: 0055a9f0 (UNCONDITIONAL_CALL)  ; int sound_snddx.cpp_releaseSfxHardwareBuffers_FUN_0055a9f0(int sfx_handle)
     ADD ESP,0x4                         ; 0055ae6d
     TEST EAX,EAX                        ; 0055ae70
     JZ 0x0055af18                       ; 0055ae72
@@ -69,8 +69,8 @@ section .text
     JZ 0x0055ae57                       ; 0055ae9e
         ;   XREF to: 0055ae57 (CONDITIONAL_JUMP)  ; LAB_0055ae57
     PUSH EAX                            ; 0055aea0
-    CALL sound_snddx.cpp_FUN_0055a670   ; 0055aea1
-        ;   XREF to: 0055a670 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_0055a670(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_0055a670 ; 0055aea1
+        ;   XREF to: 0055a670 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_0055a670(uint error_code)
     ADD ESP,0x4                         ; 0055aea6
     PUSH EAX                            ; 0055aea9
     PUSH 0x5d45ed                       ; 0055aeaa | s_Stop_secondary_sound_buf_005d45ec+1
@@ -96,8 +96,8 @@ section .text
     JZ 0x0055ae65                       ; 0055aee3
         ;   XREF to: 0055ae65 (CONDITIONAL_JUMP)  ; LAB_0055ae65
     PUSH EAX                            ; 0055aee5
-    CALL sound_snddx.cpp_FUN_0055a670   ; 0055aee6
-        ;   XREF to: 0055a670 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_0055a670(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_0055a670 ; 0055aee6
+        ;   XREF to: 0055a670 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_0055a670(uint error_code)
     ADD ESP,0x4                         ; 0055aeeb
     PUSH EAX                            ; 0055aeee
     PUSH 0x5d4609                       ; 0055aeef | = "Stop primary sound buffer"

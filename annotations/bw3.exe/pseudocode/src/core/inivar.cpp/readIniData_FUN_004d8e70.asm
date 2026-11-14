@@ -31,10 +31,10 @@
 ;   core_game.cpp_FUN_004b8e60
 ;   core_main.c_FUN_004e4330
 ;   crt_io.c__chmod_FUN_005a4bd0
+;   engine_ini.cpp_CIniFile_ctor_FUN_004d8a20
 ;   engine_ini.cpp_CIniFile_dtor_FUN_004d8a50
 ;   engine_ini.cpp_CIniFile_getString_FUN_004d8b20
 ;   engine_ini.cpp_CIniFile_readIniHeader_FUN_004d8ae0
-;   engine_ini.cpp_FUN_004d8a20
 ;   engine_ini.cpp_FUN_004d8c30
 ;   sound_sndmain.cpp_readIni_FUN_00559220
 ;
@@ -61,8 +61,8 @@ section .text
     PUSH 0x6000b0                       ; 004d8e96 | = ".\\system\\bw3.ini"
     LEA EAX,[ESP + 0xc]                 ; 004d8e9b
     PUSH EAX                            ; 004d8e9f
-    CALL engine_ini.cpp_FUN_004d8a20    ; 004d8ea0
-        ;   XREF to: 004d8a20 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_FUN_004d8a20(CIniFile * this_ptr, char * filename, char * section)
+    CALL engine_ini.cpp_CIniFile_ctor_FUN_004d8a20 ; 004d8ea0
+        ;   XREF to: 004d8a20 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004d8a20(CIniFile * this_ptr, char * filename, char * section)
     ADD ESP,0xc                         ; 004d8ea5
     PUSH 0x6000d8                       ; 004d8ea8 | = "Graphics"
     LEA EAX,[ESP + 0x8]                 ; 004d8ead

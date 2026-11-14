@@ -8,7 +8,7 @@
 ; CDeformableModelInstance * Stack[0x8]:4   model_ptr
 ;
 ; XREF[2]:
-;   core_charactr.cpp_FUN_0042d8e0 at 0042d953
+;   core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0 at 0042d953
 ;   core_npc.cpp_CNPC_renderTransparent_FUN_005095f0 at 00509783
 ;
 ; Called Functions:

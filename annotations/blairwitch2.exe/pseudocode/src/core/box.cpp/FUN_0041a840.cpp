@@ -60,7 +60,7 @@ uint core_box_cpp_FUN_0041a840(CBoundingBox3D *param_1,int param_2)
     local_48.x = (int)ROUND(local_60 * _DAT_005f39d8);
     local_48.y = (int)ROUND(local_5c * _DAT_005f39d8);
     local_48.z = (int)ROUND(local_58 * _DAT_005f39d8);
-    engine_special_cpp_FUN_0055d723(local_90,&local_48);
+    engine_special_cpp_transformAndProjectPoint_FUN_0055d723(local_90,&local_48);
     local_30.x = local_30.x + local_60;
     local_30.y = local_30.y + local_5c;
     local_30.z = local_30.z + local_58;

@@ -5,9 +5,9 @@
 // Function prototypes for core/spline.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_spline.cpp_FUN_00583d60
+// Original: core_spline.cpp_computeSplineBasis_FUN_00583d60
 // Address: 00583d60
-void __cdecl FUN_00583d60(float *out_basis,float t,float tension);
+void __cdecl computeSplineBasis(float *out_basis,float t,float tension);
 
 // Original: core_spline.cpp_evaluateSplineScalar_FUN_00583ef0
 // Address: 00583ef0

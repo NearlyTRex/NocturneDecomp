@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   source
 ;
 ; XREF[1]:
-;   engine_ini.cpp_FUN_004d8a20 at 004d8a35
+;   engine_ini.cpp_CIniFile_ctor_FUN_004d8a20 at 004d8a35
 ;
 ; *****************************************************************************
 

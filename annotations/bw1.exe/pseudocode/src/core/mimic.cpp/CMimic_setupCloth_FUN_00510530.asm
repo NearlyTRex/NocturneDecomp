@@ -20,7 +20,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
-;   core_cloth.cpp_FUN_0043eea0
+;   core_cloth.cpp_CCloth_setup_FUN_0043eea0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;   core_motion.cpp_CMotionController_jumpToMotionByName_FUN_00524ae0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
@@ -43,8 +43,8 @@ section .text
     LEA ESI,[EBX + 0xc330]              ; 00510545
     PUSH ESI                            ; 0051054b
     MOV dword ptr [EBX + 0x46e60],0x2   ; 0051054c
-    CALL core_cloth.cpp_FUN_0043eea0    ; 00510556
-        ;   XREF to: 0043eea0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043eea0(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
+    CALL core_cloth.cpp_CCloth_setup_FUN_0043eea0 ; 00510556
+        ;   XREF to: 0043eea0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_setup_FUN_0043eea0(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
     ADD ESP,0x10                        ; 0051055b
     MOV EDX,dword ptr [0x01cc9190]      ; 0051055e | g_CGabriellaClassInfo.name_hash
     MOV EAX,[0x01d06ab4]                ; 00510564 | DAT_01d06ab4

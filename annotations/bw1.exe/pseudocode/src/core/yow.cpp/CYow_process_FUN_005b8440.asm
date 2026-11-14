@@ -18,18 +18,18 @@
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042e120
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
 ;   core_charactr.cpp_CCharacter_processSmoking_FUN_00434790
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
 ;   core_charactr.cpp_FUN_0042d700
-;   core_charactr.cpp_FUN_0042d750
 ;   core_charactr.cpp_FUN_00432f10
 ;   core_charactr.cpp_FUN_00435320
 ;   core_motion.cpp_CMotionController_advance_FUN_00524270
+;   core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
-;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
 ;   ... and 4 more
 ;
 ; *****************************************************************************
@@ -175,8 +175,8 @@ section .text
     JNZ 0x005b87f4                      ; 005b85d3
         ;   XREF to: 005b87f4 (CONDITIONAL_JUMP)  ; LAB_005b87f4
     PUSH ESI                            ; 005b85d9
-    CALL core_motion.cpp_FUN_00525020   ; 005b85da
-        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_00525020(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020 ; 005b85da
+        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020(CMotionController * this_ptr)
     MOV dword ptr [EBP + 0x76],EAX      ; 005b85df
     ADD ESP,0x4                         ; 005b85e2
     FLD float ptr [EBP + 0x76]          ; 005b85e5
@@ -318,8 +318,8 @@ section .text
     LEA EAX,[EBP + -0x66]               ; 005b8759
     PUSH EAX                            ; 005b875c
     PUSH EBX                            ; 005b875d
-    CALL core_charactr.cpp_FUN_0042d750 ; 005b875e
-        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750 ; 005b875e
+        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 005b8763
     PUSH EBX                            ; 005b8766
         ;   Label: LAB_005b8766
@@ -360,8 +360,8 @@ section .text
         ;   XREF to: 005b860b (UNCONDITIONAL_JUMP)  ; LAB_005b860b
     PUSH ESI                            ; 005b87b9
         ;   Label: LAB_005b87b9
-    CALL core_motion.cpp_FUN_00525020   ; 005b87ba
-        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_00525020(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020 ; 005b87ba
+        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020(CMotionController * this_ptr)
     MOV dword ptr [EBP + 0x76],EAX      ; 005b87bf
     ADD ESP,0x4                         ; 005b87c2
     FLD float ptr [EBP + 0x76]          ; 005b87c5
@@ -388,8 +388,8 @@ section .text
     LEA ESI,[EBX + 0x158]               ; 005b87f4
         ;   Label: LAB_005b87f4
     PUSH ESI                            ; 005b87fa
-    CALL core_motion.cpp_FUN_00525020   ; 005b87fb
-        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_00525020(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020 ; 005b87fb
+        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020(CMotionController * this_ptr)
     MOV dword ptr [EBP + 0x76],EAX      ; 005b8800
     ADD ESP,0x4                         ; 005b8803
     FLD float ptr [EBP + 0x76]          ; 005b8806

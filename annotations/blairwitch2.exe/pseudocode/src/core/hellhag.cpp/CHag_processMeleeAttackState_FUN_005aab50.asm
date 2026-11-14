@@ -16,9 +16,9 @@
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
+;   core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_00503e60
 ;   core_muzzle.cpp_FUN_0059d8e0
 ;   core_muzzle.cpp_FUN_0059dcb0
 ;
@@ -142,8 +142,8 @@ section .text
     LEA EAX,[EBX + 0x2b4]               ; 005aac4a
         ;   Label: LAB_005aac4a
     PUSH EAX                            ; 005aac50
-    CALL core_motion.cpp_FUN_00503e60   ; 005aac51
-        ;   XREF to: 00503e60 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_00503e60(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60 ; 005aac51
+        ;   XREF to: 00503e60 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60(CMotionController * this_ptr)
     MOV dword ptr [ESP + 0x10],EAX      ; 005aac56
     FLD float ptr [ESP + 0x10]          ; 005aac5a
     ADD ESP,0x4                         ; 005aac5e

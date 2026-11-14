@@ -34,7 +34,7 @@
 ;   core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005188e0 at 00518d01
 ;   core_tentacle.cpp_CTentacle_process_FUN_005952f0 at 0059560f
 ;   core_thehand.cpp_CTheHand_process_FUN_00599150 at 005993c2
-;   core_xform.cpp_FUN_005b62b0 at 005b62c4
+;   core_xform.cpp_invertAndGetTranslation_FUN_005b62b0 at 005b62c4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_xform_cpp_005fa11c

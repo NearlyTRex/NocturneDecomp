@@ -6,9 +6,9 @@
 ;
 ; XREF[4]:
 ;   core_event.cpp_FUN_004a1d00 at 004a4c4c
+;   core_mission.cpp_CDemonMission_loadSet_FUN_0051b610 at 0051b685
 ;   core_mission.cpp_CDemonMission_process_FUN_0051b8d0 at 0051b92b
 ;   core_mission.cpp_CDemonMission_run_FUN_0051bad0 at 0051bb38
-;   core_mission.cpp_FUN_0051b610 at 0051b685
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_none_005e9855

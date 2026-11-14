@@ -40,7 +40,7 @@ void cockpit_ckptutil_c_blitSpanBasedSpriteClipped_FUN_00435550(void)
   if (in_stack_00000004 != 0) {
     in_stack_00000004 =
          in_stack_00000004 + in_stack_0000001c * in_stack_00000010 + in_stack_0000000c;
-    pcVar2 = (code *)cockpit_ckptutil_c_FUN_00434e80();
+    pcVar2 = (code *)cockpit_ckptutil_c_getColorConversionFunction_FUN_00434e80();
     iVar5 = (in_stack_00000018 + in_stack_00000010) * 4;
     iStack_30 = in_stack_00000010 * 0x84;
     if (DAT_005fba20 == 8) {

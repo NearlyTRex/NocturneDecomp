@@ -80,24 +80,25 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004fe9c0(CLevelLoader *this_
       local_5c.x = (int)ROUND(_DAT_00602eac * 7.25);
       local_5c.y = (int)ROUND(_DAT_00602eac * 7.25);
       local_5c.z = (int)ROUND(_DAT_00602eac * 0.0);
-      engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_5c);
+      engine_special_cpp_transformAndProjectPoint_FUN_00580173
+                (&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_5c);
       local_2c = -local_2c;
       local_50.x = (int)ROUND(local_2c * _DAT_00602eac);
       local_50.y = (int)ROUND(local_28 * _DAT_00602eac);
       local_50.z = (int)ROUND(local_24 * _DAT_00602eac);
-      engine_special_cpp_FUN_00580173
+      engine_special_cpp_transformAndProjectPoint_FUN_00580173
                 (&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_50);
       local_28 = -local_28;
       local_38.x = (int)ROUND(local_2c * _DAT_00602eac);
       local_38.y = (int)ROUND(local_28 * _DAT_00602eac);
       local_38.z = (int)ROUND(local_24 * _DAT_00602eac);
-      engine_special_cpp_FUN_00580173
+      engine_special_cpp_transformAndProjectPoint_FUN_00580173
                 (&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_38);
       local_2c = -local_2c;
       local_44.x = (int)ROUND(local_2c * _DAT_00602eac);
       local_44.y = (int)ROUND(local_28 * _DAT_00602eac);
       local_44.z = (int)ROUND(local_24 * _DAT_00602eac);
-      engine_special_cpp_FUN_00580173
+      engine_special_cpp_transformAndProjectPoint_FUN_00580173
                 (&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_44);
       pCVar1 = DAT_00612560;
       DAT_00612560->vertex_buffer_ptr->u = 0x1000000;

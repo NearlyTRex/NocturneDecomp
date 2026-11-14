@@ -8,8 +8,8 @@
 ; CCharacter *     Stack[0x8]:4   user
 ;
 ; XREF[2]:
+;   core_inv.cpp_CInventory_addItem_FUN_004da880 at 004da904
 ;   core_inv.cpp_CInventory_select_FUN_004dcb40 at 004dcd29
-;   core_inv.cpp_FUN_004da880 at 004da904
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01d2130c

@@ -121,9 +121,9 @@ void FUN_004b9850(void);
 // Address: 004b98f0
 void FUN_004b98f0(void);
 
-// Original: core_game.cpp_FUN_004b9960
+// Original: core_game.cpp_CGame_processKeyboardControls_FUN_004b9960
 // Address: 004b9960
-void __cdecl FUN_004b9960(CGame *this_ptr,SPlayerInput *player_control);
+void __cdecl CGame::processKeyboardControls(CGame *this_ptr,SPlayerInput *player_control);
 
 // Original: core_game.cpp_FUN_004ba220
 // Address: 004ba220
@@ -169,9 +169,9 @@ void __cdecl CGame::loadAssets(CGame *this_ptr);
 // Address: 004bd470
 void FUN_004bd470(void);
 
-// Original: core_game.cpp_FUN_004bd620
+// Original: core_game.cpp_CGame_beginFadeIn_FUN_004bd620
 // Address: 004bd620
-void __cdecl FUN_004bd620(CGame *this_ptr);
+void __cdecl CGame::beginFadeIn(CGame *this_ptr);
 
 // Original: core_game.cpp_CGame_beginFadeOut_FUN_004bd660
 // Address: 004bd660
@@ -205,13 +205,13 @@ void __cdecl CGame::resetInventoryDisplayTimer(CGame *this_ptr);
 // Address: 004bd930
 void __cdecl CGame::setStatusDisplay(CGame *this_ptr,char *name,float value,float duration);
 
-// Original: core_game.cpp_FUN_004bda10
+// Original: core_game.cpp_CGame_saveGame_FUN_004bda10
 // Address: 004bda10
-void __cdecl FUN_004bda10(CGame *this_ptr,char *save_filename);
+void __cdecl CGame::saveGame(CGame *this_ptr,char *save_filename);
 
-// Original: core_game.cpp_FUN_004bdfb0
+// Original: core_game.cpp_CGame_loadGame_FUN_004bdfb0
 // Address: 004bdfb0
-void __cdecl FUN_004bdfb0(CGame *this_ptr,char *save_filename,int load_mode);
+void __cdecl CGame::loadGame(CGame *this_ptr,char *save_filename,int load_mode);
 
 // Original: core_game.cpp_FUN_004be8d0
 // Address: 004be8d0
@@ -221,9 +221,9 @@ void FUN_004be8d0(CGame *param_1,int param_2);
 // Address: 004beb80
 void __cdecl CGame::displayBitmap(CGame *this_ptr,char *param_2,int param_3,int param_4,uint param_5);
 
-// Original: core_game.cpp_FUN_004bec20
+// Original: core_game.cpp_CGame_showFullscreenBitmap_FUN_004bec20
 // Address: 004bec20
-void FUN_004bec20(CGame *param_1);
+void __cdecl CGame::showFullscreenBitmap(CGame *this_ptr);
 
 // Original: core_game.cpp_joinNetworkGame_FUN_004bf2e0
 // Address: 004bf2e0

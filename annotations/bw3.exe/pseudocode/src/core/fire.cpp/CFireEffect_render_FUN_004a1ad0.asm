@@ -7,8 +7,8 @@
 ; CFireEffect *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
+;   core_set.cpp_CDemonSet_renderScene_FUN_00535da0 at 00536151
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00535a80 at 00535c72
-;   core_set.cpp_FUN_00535da0 at 00536151
 ;   core_set.cpp_FUN_005365c0 at 005367e5
 ;   core_set.cpp_FUN_00536990 at 00536ba6
 ;

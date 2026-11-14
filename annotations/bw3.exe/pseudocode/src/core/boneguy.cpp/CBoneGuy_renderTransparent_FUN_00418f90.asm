@@ -16,8 +16,8 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0
 ;   core_box.cpp_FUN_0041daf0
-;   core_charactr.cpp_FUN_0042d8e0
-;   core_charactr.cpp_FUN_0042f310
+;   core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310
 ;   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
 ;   engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120
@@ -80,8 +80,8 @@ section .text
         ;   XREF to: 0046d4c0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 0041901b
     PUSH EBX                            ; 0041901e
-    CALL core_charactr.cpp_FUN_0042d8e0 ; 0041901f
-        ;   XREF to: 0042d8e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042d8e0()
+    CALL core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0 ; 0041901f
+        ;   XREF to: 0042d8e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00419024
     MOV EBP,dword ptr [0x005f2afc]      ; 00419027 | DAT_005f2afc
     MOV EAX,[0x00603b28]                ; 0041902d | g_CDemonSetPtr
@@ -98,8 +98,8 @@ section .text
     JNC 0x0041905d                      ; 00419052
         ;   XREF to: 0041905d (CONDITIONAL_JUMP)  ; LAB_0041905d
     PUSH EBX                            ; 00419054
-    CALL core_charactr.cpp_FUN_0042f310 ; 00419055
-        ;   XREF to: 0042f310 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042f310(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310 ; 00419055
+        ;   XREF to: 0042f310 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0041905a
     PUSH EBX                            ; 0041905d
         ;   Label: LAB_0041905d

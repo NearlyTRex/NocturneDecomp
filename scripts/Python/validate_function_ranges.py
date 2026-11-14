@@ -25,6 +25,9 @@ Signals (per function, thunks/externals skipped):
   PADDING_FUNCTION - the whole body is alignment padding (`mov ecx,ecx`,
                    `lea edx,[edx+0]`): a phantom defined on the run before a real
                    entry, which nothing calls. (HIGH)
+  SWITCH_UNRESOLVED - a `jmp [reg*4 + table]` with no flows: auto-analysis never
+                   recovered the switch, so its cases belong to no function and the
+                   table is exported as data pointing at bare LAB_ code. (HIGH)
 
 Inter-function jumps (tail calls, shared code) are NOT flagged - a target that
 lands inside a *different* function is legitimate. A fall-through is not a jump.
@@ -35,6 +38,10 @@ body with CreateFunctionCmd.fixupFunctionBody (which preserves the function's
 name and signature - it does not delete/recreate). That recompute also absorbs
 FLOW_ORPHAN code. --fix iterates until no new fragments appear (bounded by
 --max-passes) since fixing one tail can reveal the next.
+
+SWITCH_UNRESOLVED is fixed the way Ghidra's Decompiler Switch Analysis does it:
+the decompiler recovers the table, and DecompilerSwitchAnalysisCmd adds the
+COMPUTED_JUMP references, the caseD_/switchdataD_ labels and the body fixup.
 
 PADDING_FUNCTION is reported, not fixed; the report prints the delete_function.py
 command, which still refuses one that something references.
@@ -61,6 +68,7 @@ Examples:
 """
 
 import os
+import re
 import sys
 import argparse
 
@@ -68,6 +76,24 @@ import argparse
 from alignment_nop import is_alignment_nop
 
 SEVERITY_ORDER = ["MEDIUM", "HIGH"]
+
+# `dword ptr [EDI*0x4 + 0x4c51bc]`: a dword table indexed by a register. An indirect
+# jump of any other form (`jmp eax`, `jmp [eax + 0x10]`) is a tail call, not a switch.
+_JUMP_TABLE_RE = re.compile(r"\[\w+\s*\*\s*(?:0x)?4\s*\+\s*(0x[0-9a-fA-F]+)\]")
+
+# Seconds the decompiler gets per function when recovering a switch
+DECOMPILE_TIMEOUT = 60
+
+
+def unresolved_jump_table(instr):
+    """The table address of a switch jump analysis never resolved, else None."""
+    ft = instr.getFlowType()
+    if not (ft.isJump() and ft.isComputed()) or instr.getFlows():
+        return None
+    if instr.getNumOperands() < 1:
+        return None
+    m = _JUMP_TABLE_RE.search(instr.getDefaultOperandRepresentation(0))
+    return int(m.group(1), 16) if m else None
 
 
 def get_executable_set(program):
@@ -118,6 +144,13 @@ def scan_function(program, func, exec_set, fm):
         })
 
     for instr in instructions:
+        table = unresolved_jump_table(instr)
+        if table is not None:
+            findings.append({
+                "kind": "SWITCH_UNRESOLVED", "severity": "HIGH",
+                "from": instr.getAddress(), "target": instr.getAddress(),
+                "note": "jump table at %08x never recovered" % table,
+            })
         fallthrough = instr.getFallThrough()
         if fallthrough is not None and not instr.getFlowType().isCall() \
                 and not is_alignment_nop(instr):
@@ -256,7 +289,30 @@ def _clear_orphan_run(program, start, monitor, cap=512):
     return (n, start, clear_max)
 
 
-def fixup_function(program, func, findings, monitor, fix_holes):
+def switch_recoverer(program, monitor):
+    """(recover, dispose): recover(func) runs Ghidra's switch analysis on one function.
+
+    The decompiler is set up exactly as the Decompiler Switch Analysis analyzer sets
+    it up, then DecompilerSwitchAnalysisCmd writes what it recovered back into the
+    listing. Returns whether the command reported success.
+    """
+    from ghidra.app.decompiler import DecompInterface
+    from ghidra.app.cmd.function import DecompilerSwitchAnalysisCmd
+    from ghidra.app.plugin.core.analysis import SwitchAnalysisDecompileConfigurer
+    ifc = DecompInterface()
+    SwitchAnalysisDecompileConfigurer(program).configure(ifc)
+    ifc.openProgram(program)
+
+    def recover(func):
+        results = ifc.decompileFunction(func, DECOMPILE_TIMEOUT, monitor)
+        if results is None or results.getHighFunction() is None:
+            return False
+        return bool(DecompilerSwitchAnalysisCmd(results).applyTo(program, monitor))
+
+    return recover, ifc.dispose
+
+
+def fixup_function(program, func, findings, monitor, fix_holes, recover_switch=None):
     """Disassemble missing targets following flow, then recompute the body.
 
     BODY_HOLE gaps are skipped unless fix_holes is set: interior holes are usually
@@ -273,6 +329,10 @@ def fixup_function(program, func, findings, monitor, fix_holes):
         inside this function's real tail) is NOT touched - it is returned as a blocker
         so the caller can point the user at delete_function.py.
 
+    A SWITCH_UNRESOLVED finding is handed to `recover_switch` (see switch_recoverer),
+    once per function however many switches it holds: one decompile covers them all.
+    It counts as progress only if a jump it named now has flows.
+
     Returns (progressed, blockers): progressed is True if any real disassembly/body
     change happened; blockers is a list of dicts describing function-blocked tails.
     """
@@ -285,6 +345,10 @@ def fixup_function(program, func, findings, monitor, fix_holes):
         else ("FLOW_UNDEFINED", "ENTRY_UNDEFINED")
     progressed = False
     blockers = []
+    switches = [f["from"] for f in findings if f["kind"] == "SWITCH_UNRESOLVED"]
+    if switches and recover_switch is not None:
+        recover_switch(func)
+        progressed = any(listing.getInstructionAt(a).getFlows() for a in switches)
     for f in findings:
         if f["kind"] not in kinds:
             continue
@@ -391,29 +455,38 @@ def run(program, out_path, do_fix, max_passes, fix_holes):
     changed = False
     all_blockers = {}
     if do_fix and results:
-        for p in range(1, max_passes + 1):
-            log("Fix pass %d: repairing %d functions..." % (p, len(results)))
-            tx = program.startTransaction("Fix fragmented functions (pass %d)" % p)
-            ok = True
-            try:
-                for func, findings in results:
-                    prog, blockers = fixup_function(
-                        program, func, findings, monitor, fix_holes)
-                    if prog:
-                        changed = True
-                    for b in blockers:
-                        all_blockers[(b["victim"].getOffset(),
-                                      b["blocker_entry"].getOffset())] = b
-            except Exception as e:
-                ok = False
-                log("ERROR during fix: %s" % e)
-            finally:
-                program.endTransaction(tx, ok)
-            # re-scan to see what remains
-            results = scan_all(program, exec_set, fm, log)
-            log("  after pass %d: %d fragmented remain" % (p, len(results)))
-            if not results:
-                break
+        # The decompiler is only started when there is a switch to recover, and is
+        # always disposed: a leaked one keeps a native process alive past the run.
+        recover, dispose = None, None
+        if any(f["kind"] == "SWITCH_UNRESOLVED" for _, fs in results for f in fs):
+            recover, dispose = switch_recoverer(program, monitor)
+        try:
+            for p in range(1, max_passes + 1):
+                log("Fix pass %d: repairing %d functions..." % (p, len(results)))
+                tx = program.startTransaction("Fix fragmented functions (pass %d)" % p)
+                ok = True
+                try:
+                    for func, findings in results:
+                        prog, blockers = fixup_function(
+                            program, func, findings, monitor, fix_holes, recover)
+                        if prog:
+                            changed = True
+                        for b in blockers:
+                            all_blockers[(b["victim"].getOffset(),
+                                          b["blocker_entry"].getOffset())] = b
+                except Exception as e:
+                    ok = False
+                    log("ERROR during fix: %s" % e)
+                finally:
+                    program.endTransaction(tx, ok)
+                # re-scan to see what remains
+                results = scan_all(program, exec_set, fm, log)
+                log("  after pass %d: %d fragmented remain" % (p, len(results)))
+                if not results:
+                    break
+        finally:
+            if dispose is not None:
+                dispose()
 
         if all_blockers:
             log("")
@@ -473,8 +546,9 @@ def main():
     parser.add_argument("program_name", nargs="?", default="nocturne.exe")
     parser.add_argument("--out", default=None)
     parser.add_argument("--fix", action="store_true",
-                        help="Disassemble missing code (FLOW_UNDEFINED, ENTRY_UNDEFINED) and "
-                             "recompute bodies, which also absorbs FLOW_ORPHAN code, then save")
+                        help="Disassemble missing code (FLOW_UNDEFINED, ENTRY_UNDEFINED), "
+                             "recover switches (SWITCH_UNRESOLVED) and recompute bodies, "
+                             "which also absorbs FLOW_ORPHAN code, then save")
     parser.add_argument("--fix-holes", action="store_true",
                         help="Also disassemble interior BODY_HOLE gaps (usually alignment padding - off by default)")
     parser.add_argument("--max-passes", type=int, default=4)

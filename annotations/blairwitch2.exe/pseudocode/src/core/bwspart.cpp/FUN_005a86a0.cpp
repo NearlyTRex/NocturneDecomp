@@ -63,7 +63,7 @@ int core_bwspart_cpp_FUN_005a86a0(int param_1)
     local_48.x = (int)ROUND(((CVector3f *)(param_1 + 0x24))->x * _DAT_006002bc);
     local_48.y = (int)ROUND(*(float *)(param_1 + 0x28) * _DAT_006002bc);
     local_48.z = (int)ROUND(*(float *)(param_1 + 0x2c) * _DAT_006002bc);
-    engine_special_cpp_FUN_0055d9ec(&pSVar1->projected_vertex,&local_48);
+    engine_special_cpp_transformPoint_FUN_0055d9ec(&pSVar1->projected_vertex,&local_48);
     iVar3 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_0046cad0(DAT_0060b280,pSVar1);
     iVar2 = 0;
     if (iVar3 != 0) {
@@ -92,14 +92,15 @@ int core_bwspart_cpp_FUN_005a86a0(int param_1)
       local_b0 = local_18;
       local_1c = local_6c;
       local_14 = local_68;
-      engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_54);
+      engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+                (&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_54);
       local_6c = local_b0;
       local_64 = 0;
       local_68 = local_14;
       local_30.x = (int)ROUND(local_b0 * _DAT_006002bc);
       local_30.y = (int)ROUND(local_14 * _DAT_006002bc);
       local_30.z = (int)ROUND(_DAT_006002bc * 0.0);
-      engine_special_cpp_FUN_0055d723
+      engine_special_cpp_transformAndProjectPoint_FUN_0055d723
                 (&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_30);
       local_6c = local_b0;
       local_68 = local_18;
@@ -107,7 +108,7 @@ int core_bwspart_cpp_FUN_005a86a0(int param_1)
       local_78.x = (int)ROUND(local_b0 * _DAT_006002bc);
       local_78.y = (int)ROUND(local_18 * _DAT_006002bc);
       local_78.z = (int)ROUND(_DAT_006002bc * 0.0);
-      engine_special_cpp_FUN_0055d723
+      engine_special_cpp_transformAndProjectPoint_FUN_0055d723
                 (&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_78);
       local_64 = 0;
       local_6c = local_1c;
@@ -115,7 +116,7 @@ int core_bwspart_cpp_FUN_005a86a0(int param_1)
       local_60.x = (int)ROUND(local_1c * _DAT_006002bc);
       local_60.y = (int)ROUND(local_18 * _DAT_006002bc);
       local_60.z = (int)ROUND(_DAT_006002bc * 0.0);
-      engine_special_cpp_FUN_0055d723
+      engine_special_cpp_transformAndProjectPoint_FUN_0055d723
                 (&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_60);
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
                 (DAT_0060b280,(SMRGLTextureBasic *)(&DAT_0061ec00 + *(int *)(param_1 + 0x20) * 0x18)

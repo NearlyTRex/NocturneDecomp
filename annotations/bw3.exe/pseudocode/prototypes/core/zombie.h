@@ -113,9 +113,9 @@ int __cdecl CZombie::shouldIgnoreForTargeting(CZombie *this_ptr);
 // Address: 0058cbe0
 int __cdecl CZombie::isInvulnerable(CZombie *this_ptr);
 
-// Original: core_zombie.cpp_FUN_0058cc20
+// Original: core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20
 // Address: 0058cc20
-void __cdecl FUN_0058cc20(CZombie *this_ptr);
+void __cdecl CZombie::resetChaseState(CZombie *this_ptr);
 
 // Original: core_zombie.cpp_FUN_0058cc90
 // Address: 0058cc90

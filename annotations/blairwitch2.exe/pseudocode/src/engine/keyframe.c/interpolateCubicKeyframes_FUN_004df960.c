@@ -158,7 +158,7 @@ SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00
                   ((CVector3i *)(pSVar3 + 1),(SMRGLPrimitiveTriangleIndex *)texture);
       }
     }
-    uVar11 = engine_model_c_FUN_00500f30((SMRGLHeaderExtended *)texture);
+    uVar11 = engine_model_c_getMRGLSize_FUN_00500f30((SMRGLHeaderExtended *)texture);
     texture = (SMRGLPrimitiveTriangle *)
               ((int)&(((SMRGLPrimitiveTriangle *)(texture->vertices + -2))->base).base.type +
               (uVar11 & 0xfffffffc));

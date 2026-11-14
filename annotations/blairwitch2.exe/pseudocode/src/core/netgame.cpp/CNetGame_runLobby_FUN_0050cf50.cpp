@@ -201,7 +201,7 @@ LAB_0050d17c:
             iVar4 = core_mission_cpp_CDemonMission_createHeros_FUN_004fd0e0
                               (0x01D182F0,(CCharacter *)0x0);
             if (iVar4 != 0) {
-              core_mission_cpp_FUN_004fce00(0x01D182F0);
+              core_mission_cpp_CDemonMission_startMission_FUN_004fce00(0x01D182F0);
               iVar4 = core_netgame_cpp_CNetGame_syncPlayers_FUN_0050bdb0(this_ptr,2);
               if (iVar4 != 0) {
                 return 1;
@@ -221,7 +221,7 @@ LAB_0050d17c:
         iVar4 = core_mission_cpp_CDemonMission_createHeros_FUN_004fd0e0
                           (0x01D182F0,(CCharacter *)0x0);
         if (iVar4 != 0) {
-          core_mission_cpp_FUN_004fce00(0x01D182F0);
+          core_mission_cpp_CDemonMission_startMission_FUN_004fce00(0x01D182F0);
           iVar4 = core_netgame_cpp_CNetGame_syncPlayers_FUN_0050bdb0(this_ptr,2);
           if (iVar4 != 0) {
             iVar4 = wincore_winrun_cpp_getTime_FUN_0058e9e0();

@@ -8,7 +8,7 @@
 ;   shape_edittool.cpp_FUN_00481ca0 at 00481cd4
 ;
 ; Called Functions:
-;   engine_dosio.cpp_FUN_004610d0
+;   engine_dosio.cpp_ensureTrailingSlash_FUN_004610d0
 ;   engine_dosio.cpp_makePath_FUN_004610a0
 ;   engine_dosio.cpp_splitPath_FUN_00461070
 ;
@@ -57,8 +57,8 @@ section .text
     PUSH ESI                            ; 004612e1
     MOV EDX,dword ptr [ESP + 0x520]     ; 004612e2
     PUSH EDX                            ; 004612e9
-    CALL engine_dosio.cpp_FUN_004610d0  ; 004612ea
-        ;   XREF to: 004610d0 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_FUN_004610d0(char * input_path, char * drive, char * output_path)
+    CALL engine_dosio.cpp_ensureTrailingSlash_FUN_004610d0 ; 004612ea
+        ;   XREF to: 004610d0 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_ensureTrailingSlash_FUN_004610d0(char * input_path, char * drive, char * output_path)
     ADD ESP,0xc                         ; 004612ef
     MOV AL,byte ptr [ESP + 0x400]       ; 004612f2
     CMP AL,0x2f                         ; 004612f9

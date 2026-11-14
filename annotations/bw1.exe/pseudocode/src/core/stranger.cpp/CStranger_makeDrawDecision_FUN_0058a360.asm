@@ -58,11 +58,11 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590
 ;   core_main.c_FUN_005030e0
+;   core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;   core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00525110
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_005240c0
 ;   core_motion.cpp_FUN_00524a40
-;   core_motion.cpp_FUN_00525020
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_005695e0
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
@@ -183,8 +183,8 @@ section .text
         ;   XREF to: 0058a53a (CONDITIONAL_JUMP)  ; LAB_0058a53a
     LEA ESI,[EBX + 0x158]               ; 0058a4b6
     PUSH ESI                            ; 0058a4bc
-    CALL core_motion.cpp_FUN_00525020   ; 0058a4bd
-        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_00525020(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020 ; 0058a4bd
+        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020(CMotionController * this_ptr)
     MOV dword ptr [ESP + 0xf4],EAX      ; 0058a4c2
     FLD float ptr [ESP + 0xf4]          ; 0058a4c9
     ADD ESP,0x4                         ; 0058a4d0

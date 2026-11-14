@@ -10,7 +10,7 @@
 ;   core_menu.cpp_configureGraphicsOptions_FUN_0050aa90 at 0050b2bc
 ;   engine_special.cpp_setResolutionAndColorTable_FUN_005821c0 at 005821ea
 ;   engine_special.cpp_switchRenderer_FUN_00582ec0 at 00582efa
-;   wincore_wddvmem.cpp_FUN_005ac040 at 005ac155
+;   wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005ac040 at 005ac155
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_APIDLLInformation_005f5c4f

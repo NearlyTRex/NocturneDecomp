@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_mission.cpp_FUN_0051bdc0 at 0051bea7
+;   core_mission.cpp_CDemonMission_startMission_FUN_0051bdc0 at 0051bea7
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_initSection_005ee2c5

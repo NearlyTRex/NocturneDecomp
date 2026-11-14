@@ -101,7 +101,7 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_0043c330(CCloth *this_ptr,char *filen
       _fscanf(local_30,&DAT_005b908a);
     } while (iVar11 < this_ptr->locked_vertex_count);
   }
-  core_cloth_cpp_FUN_0043c8a0(this_ptr);
+  core_cloth_cpp_CCloth_initializeConnections_FUN_0043c8a0(this_ptr);
   p_Var8 = local_30;
   _fgets(local_138,0xff,local_30);
   _fscanf(p_Var8,&DAT_005b908e);

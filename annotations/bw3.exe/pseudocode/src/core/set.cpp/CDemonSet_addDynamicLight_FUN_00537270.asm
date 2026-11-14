@@ -10,7 +10,7 @@
 ; XREF[4]:
 ;   core_boxactor.cpp_CLightActor_process_FUN_00420420 at 00420679
 ;   core_elephant.cpp_CElephantGun_process_FUN_00486c30 at 00486d23
-;   core_set.cpp_FUN_00535da0 at 00535ddf
+;   core_set.cpp_CDemonSet_renderScene_FUN_00535da0 at 00535ddf
 ;   core_weapon.cpp_CWeapon_process_FUN_0057b160 at 0057b290
 ;
 ; Referenced Globals:

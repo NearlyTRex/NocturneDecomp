@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   enable_state
 ;
 ; XREF[6]:
-;   core_menu.cpp_FUN_0050ba70 at 0050c485
+;   core_menu.cpp_configureSoundOptions_FUN_0050ba70 at 0050c485
 ;   core_sound.cpp_CSound_init_FUN_0057cc00 at 0057cca6
 ;   core_sound.cpp_CSound_process_FUN_0057ce10 at 0057d071
 ;   core_sound.cpp_syncChannel3WithChannel0_FUN_0057cba0 at 0057cbb5

@@ -16,9 +16,9 @@
 ;   core_game.cpp_giveHeroWeapon_FUN_004bafd0 at 004bafed
 ;   core_gore.cpp_FUN_004ced40 at 004cedfc
 ;   core_hero.cpp_CHeroPlaceholder_createHero_FUN_004d4be0 at 004d4c39
-;   core_inv.cpp_FUN_004da880 at 004db234
+;   core_inv.cpp_CInventory_addItem_FUN_004da880 at 004db234
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930 at 004f696a
-;   core_mission.cpp_FUN_004f7a20 at 004f7b4f
+;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004f7a20 at 004f7b4f
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870

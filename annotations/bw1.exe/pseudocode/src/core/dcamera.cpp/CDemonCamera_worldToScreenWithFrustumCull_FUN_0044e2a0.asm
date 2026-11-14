@@ -19,7 +19,7 @@
 ;   core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00452550 at 0045259e
 ;   core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004516c0 at 00451916
 ;   core_dcamera.cpp_renderCoronaProjectedTextureScanline_FUN_004513a0 at 00451490
-;   core_game.cpp_FUN_004d6030 at 004d5f87
+;   core_game.cpp_CGame_beginFadeIn_FUN_004d6030 at 004d5f87
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00612560

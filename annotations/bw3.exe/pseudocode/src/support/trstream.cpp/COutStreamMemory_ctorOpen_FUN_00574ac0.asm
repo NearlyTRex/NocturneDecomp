@@ -9,9 +9,9 @@
 ; int              Stack[0xc]:4   capacity
 ;
 ; XREF[3]:
+;   support_codec.cpp_CCodec_finalizeBuffer_FUN_00440b60 at 00440b78
 ;   support_codec.cpp_CInStreamPipe_fillBuffer_FUN_00441c80 at 00441cba
 ;   support_codec.cpp_FUN_004408e0 at 004408fb
-;   support_codec.cpp_FUN_00440b60 at 00440b78
 ;
 ; Referenced Globals:
 ;   undefined1* g_COutStreamMemoryVTable = 00574b50

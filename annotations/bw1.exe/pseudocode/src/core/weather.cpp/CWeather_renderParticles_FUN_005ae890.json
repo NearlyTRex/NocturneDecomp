@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 526,
-    "complexity_score": 730,
+    "complexity_score": 731,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 225,
+    "pseudocode_lines": 226,
     "suspect_count": 48,
     "suspect_types": [
       "pointer_cast",
@@ -16,13 +16,13 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 751
+    "total_lines": 752
   },
   "cross_references": [
     {
       "addr": "00550580",
       "from_addr": "00550986",
-      "name": "core_set.cpp_FUN_00550580",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_00550580",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -97,12 +97,12 @@
     {
       "addr": "00580173",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_00580173"
+      "name": "engine_special.cpp_transformAndProjectPoint_FUN_00580173"
     },
     {
       "addr": "0058043c",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_0058043c"
+      "name": "engine_special.cpp_transformPoint_FUN_0058043c"
     }
   ],
   "globals": [
@@ -197,7 +197,7 @@
       {
         "call_addr": "00550986",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00550580",
+        "caller": "core_set.cpp_CDemonSet_renderScene_FUN_00550580",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -823,15 +823,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 139,
+      "line": 140,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_2c);",
+      "text": "(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_2c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 145,
+      "line": 146,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_b0);",
@@ -839,7 +839,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 151,
+      "line": 152,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_8c);",
@@ -847,7 +847,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 157,
+      "line": 158,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_68);",
@@ -855,26 +855,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 158,
+      "line": 159,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_00483050(DAT_00612560,&local_fc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 166,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,(SMRGLTextureBasic *)&DAT_00626068);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 166,
-      "match": "DAT_00626068",
-      "severity": "mild",
-      "text": "(DAT_00612560,(SMRGLTextureBasic *)&DAT_00626068);",
       "type": "undefined_data"
     },
     {
@@ -882,7 +866,15 @@
       "line": 167,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "pCVar2 = DAT_00612560;",
+      "text": "(DAT_00612560,(SMRGLTextureBasic *)&DAT_00626068);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 167,
+      "match": "DAT_00626068",
+      "severity": "mild",
+      "text": "(DAT_00612560,(SMRGLTextureBasic *)&DAT_00626068);",
       "type": "undefined_data"
     },
     {
@@ -890,12 +882,20 @@
       "line": 168,
       "match": "DAT_00612560",
       "severity": "mild",
+      "text": "pCVar2 = DAT_00612560;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 169,
+      "match": "DAT_00612560",
+      "severity": "mild",
       "text": "DAT_00612560->vertex_buffer_ptr->u = 0x80000;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 183,
+      "line": 184,
       "match": "DAT_02c997f8",
       "severity": "mild",
       "text": "local_c8.x = *(float *)(&DAT_02c997f8 + local_14);",
@@ -903,7 +903,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 185,
+      "line": 186,
       "match": "DAT_02c997fc",
       "severity": "mild",
       "text": "*(uint *)(&DAT_02c997fc + iVar4);",
@@ -911,7 +911,7 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 187,
+      "line": 188,
       "match": "(uint *)((int)(&DAT_02c997fc + iVar4) +",
       "severity": "moderate",
       "text": "*(uint *)((int)(&DAT_02c997fc + iVar4) + ((uint)bVar7 * -2 + 1) * 4);",
@@ -919,7 +919,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 187,
+      "line": 188,
       "match": "DAT_02c997fc",
       "severity": "mild",
       "text": "*(uint *)((int)(&DAT_02c997fc + iVar4) + ((uint)bVar7 * -2 + 1) * 4);",
@@ -927,7 +927,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 190,
+      "line": 191,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(DAT_00612560,&local_c8);",
@@ -935,7 +935,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 192,
+      "line": 193,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(DAT_00612560,&local_d4,(CVector3f *)0x0);",
@@ -943,7 +943,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 200,
+      "line": 201,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_80);",
@@ -951,7 +951,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 206,
+      "line": 207,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_5c);",
@@ -959,7 +959,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 212,
+      "line": 213,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_38);",
@@ -967,7 +967,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 218,
+      "line": 219,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_98);",
@@ -975,7 +975,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 219,
+      "line": 220,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_00483050(DAT_00612560,&local_fc);",
@@ -983,7 +983,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 227,
+      "line": 228,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);",
@@ -1007,7 +1007,7 @@
     },
     {
       "description": "Pointer value `&local_c8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 184,
+      "line": 185,
       "match": "(int)&local_c8",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_c8 + (uint)bVar7 * -8 + 4) =",
@@ -1015,7 +1015,7 @@
     },
     {
       "description": "Pointer value `&local_c8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 186,
+      "line": 187,
       "match": "(int)&local_c8",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_c8 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =",
@@ -1023,7 +1023,7 @@
     },
     {
       "description": "Pointer value `(&DAT_02c997fc + iVar4)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 187,
+      "line": 188,
       "match": "(int)(&DAT_02c997fc + iVar4)",
       "severity": "moderate",
       "text": "*(uint *)((int)(&DAT_02c997fc + iVar4) + ((uint)bVar7 * -2 + 1) * 4);",
@@ -1047,7 +1047,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 184,
+      "line": 185,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_c8 + (uint)bVar7 * -8 + 4) =",
@@ -1055,7 +1055,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 186,
+      "line": 187,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_c8 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =",

@@ -8,9 +8,9 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[3]:
+;   support_codec.cpp_CCodec_finalizeBuffer_FUN_00442f00 at 00442f58
 ;   support_codec.cpp_CInStreamPipe_fillBuffer_FUN_00444020 at 004440b5
 ;   support_codec.cpp_FUN_00442c80 at 00442cda
-;   support_codec.cpp_FUN_00442f00 at 00442f58
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_COutStreamMemoryTypeInfo

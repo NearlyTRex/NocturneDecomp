@@ -176,7 +176,7 @@ LAB_0058e657:
       *(CLightGun **)((int)&CStack_60 + (uint)bVar6 * -8 + 4) = apCStack_38[(uint)bVar6 * -2 + 3];
       *(CLightGun **)((int)&CStack_60 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
            apCStack_38[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
-      core_xform_cpp_FUN_005b5760(pCVar4,pCVar7,pCVar9);
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(pCVar4,pCVar7,pCVar9);
       core_xform_cpp_multiplyMatrix3x4_FUN_005b5200
                 (&CStack_18c,pCStack_20 + _DAT_02c83600,&CStack_1bc);
       pCVar4 = &CStack_1bc;
@@ -193,7 +193,8 @@ LAB_0058e657:
       CStack_9c.z = 0.130713;
       CStack_9c.x = 0.512623;
       CStack_9c.y = -0.0202601;
-      core_xform_cpp_FUN_005b5760(&CStack_fc,&CStack_9c,pCVar9);
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+                (&CStack_fc,&CStack_9c,pCVar9);
       core_xform_cpp_multiplyMatrix3x4_FUN_005b5200
                 (&CStack_fc,pCStack_20 + _DAT_02c83638,&CStack_12c);
       pCVar4 = &CStack_12c;

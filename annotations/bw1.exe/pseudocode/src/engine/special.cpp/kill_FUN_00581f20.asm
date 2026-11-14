@@ -7,7 +7,7 @@
 ; XREF[3]:
 ;   core_menu.cpp_configureGraphicsOptions_FUN_0050aa90 at 0050b2b5
 ;   engine_special.cpp_switchRenderer_FUN_00582ec0 at 00582ec2
-;   wincore_wddvmem.cpp_FUN_005ac1b0 at 005ac1dc
+;   wincore_wddvmem.cpp_cleanupGraphicsSystem_FUN_005ac1b0 at 005ac1dc
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02c8338c

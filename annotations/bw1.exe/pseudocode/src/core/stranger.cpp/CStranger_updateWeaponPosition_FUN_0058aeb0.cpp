@@ -41,7 +41,7 @@ void __cdecl core_stranger_cpp_CStranger_updateWeaponPosition_FUN_0058aeb0(CStra
       pfVar4 = pfVar4 + (uint)bVar6 * -2 + 1;
       pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
     }
-    core_xform_cpp_FUN_005b5760
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
               (&local_98,&(this_ptr->base).base.base.location.position,
                &(this_ptr->base).base.base.orient.vec);
     core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&local_c8,&local_98,&local_68);

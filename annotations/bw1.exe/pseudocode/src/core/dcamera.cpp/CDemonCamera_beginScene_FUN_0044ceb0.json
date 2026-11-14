@@ -17,6 +17,12 @@
   },
   "cross_references": [
     {
+      "addr": "00550580",
+      "from_addr": "00550601",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_00550580",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0054f0d0",
       "from_addr": "0054f739",
       "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0",
@@ -26,12 +32,6 @@
       "addr": "0054e6a0",
       "from_addr": "0054e99d",
       "name": "core_set.cpp_FUN_0054e6a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00550580",
-      "from_addr": "00550601",
-      "name": "core_set.cpp_FUN_00550580",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -89,6 +89,11 @@
       "name": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_00483560"
     },
     {
+      "addr": "00581fe0",
+      "is_variadic": false,
+      "name": "engine_special.cpp_beginScene_FUN_00581fe0"
+    },
+    {
       "addr": "00582790",
       "is_variadic": false,
       "name": "engine_special.cpp_clear_FUN_00582790"
@@ -107,11 +112,6 @@
       "addr": "0057dca4",
       "is_variadic": false,
       "name": "engine_special.cpp_clearZBufferNative_FUN_0057dca4"
-    },
-    {
-      "addr": "00581fe0",
-      "is_variadic": false,
-      "name": "engine_special.cpp_FUN_00581fe0"
     }
   ],
   "globals": [
@@ -312,7 +312,7 @@
       {
         "call_addr": "00550601",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00550580",
+        "caller": "core_set.cpp_CDemonSet_renderScene_FUN_00550580",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

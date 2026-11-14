@@ -341,8 +341,10 @@ LAB_0056db57:
     (this_ptr->velocity).z = fStack_c0;
   }
   pUStack_28 = &(this_ptr->base).orient;
-  core_xform_cpp_FUN_00583940(&CStack_260,&DAT_02cfd900,pUStack_28);
-  core_xform_cpp_FUN_00583940(&CStack_200,&DAT_02cfd900,afStack_19c + 5);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
+            (&CStack_260,&DAT_02cfd900,pUStack_28);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
+            (&CStack_200,&DAT_02cfd900,afStack_19c + 5);
   core_xform_cpp_multiplyMatrix3x4_FUN_005833e0(&CStack_200,&CStack_260,&CStack_1d0);
   pCVar10 = &CStack_1d0;
   pfVar9 = afStack_230;

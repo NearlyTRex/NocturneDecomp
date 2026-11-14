@@ -59,7 +59,7 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004addd0(CFlies *this_ptr)
       do {
         iVar5 = iVar3 + 1;
         iStack_14 = iVar3;
-        core_spline_cpp_FUN_00567630
+        core_spline_cpp_computeSplineBasis_FUN_00567630
                   (out_basis,((float)iVar3 + (float)_DAT_005c1c61) * (float)_DAT_005c1c51,0.0);
         out_basis = out_basis + 8;
         iVar3 = iVar5;
@@ -126,7 +126,7 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004addd0(CFlies *this_ptr)
         fStack_48 = (float)(int)ROUND(fStack_48 * _DAT_005e0400);
         afStack_44[0] = (float)(int)ROUND(afStack_44[0] * _DAT_005e0400);
         afStack_44[1] = (float)(int)ROUND(afStack_44[1] * _DAT_005e0400);
-        engine_special_cpp_FUN_005632a3
+        engine_special_cpp_transformAndProjectPoint_FUN_005632a3
                   (&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,
                    (CVector3i *)(SStack_c0.vertices + 7));
         pCVar2 = DAT_005f2afc;

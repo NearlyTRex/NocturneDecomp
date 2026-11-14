@@ -20,7 +20,7 @@
 ;   crt_memory.c_memset_FUN_005a28f0
 ;   crt_string.c__strncpy_FUN_005a4ee0
 ;   crt_unknown.c_sprintf_FUN_005a28c0
-;   sound_snddx.cpp_FUN_0055a670
+;   sound_snddx.cpp_getDirectSoundErrorString_FUN_0055a670
 ;   sound_sndmain.cpp_logSoundError_FUN_0055a560
 ;
 ; *****************************************************************************
@@ -68,8 +68,8 @@ section .text
     RET 0x10                            ; 0055d13e
     PUSH EAX                            ; 0055d141
         ;   Label: LAB_0055d141
-    CALL sound_snddx.cpp_FUN_0055a670   ; 0055d142
-        ;   XREF to: 0055a670 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_0055a670(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_0055a670 ; 0055d142
+        ;   XREF to: 0055a670 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_0055a670(uint error_code)
     ADD ESP,0x4                         ; 0055d147
     PUSH EAX                            ; 0055d14a
     PUSH 0x5d4e8b                       ; 0055d14b
@@ -137,8 +137,8 @@ section .text
     RET 0x10                            ; 0055d1f9
     PUSH EAX                            ; 0055d1fc
         ;   Label: LAB_0055d1fc
-    CALL sound_snddx.cpp_FUN_0055a670   ; 0055d1fd
-        ;   XREF to: 0055a670 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_0055a670(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_0055a670 ; 0055d1fd
+        ;   XREF to: 0055a670 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_0055a670(uint error_code)
     ADD ESP,0x4                         ; 0055d202
     PUSH EAX                            ; 0055d205
     PUSH 0x5d4ea5                       ; 0055d206

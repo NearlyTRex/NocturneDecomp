@@ -81,7 +81,8 @@ LAB_00582f62:
   if (_DAT_01d1cdc8 != 0) {
     iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
     if (iVar1 == 0) {
-      core_motion_cpp_FUN_005042e0(&(this_ptr->base).base.model.base,(CDemonActor *)this_ptr);
+      core_motion_cpp_CMotionController_render_FUN_005042e0
+                (&(this_ptr->base).base.model.base,(CDemonActor *)this_ptr);
     }
   }
 LAB_00582f9f:

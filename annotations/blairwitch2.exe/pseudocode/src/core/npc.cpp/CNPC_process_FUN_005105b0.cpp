@@ -156,7 +156,7 @@ LAB_00510740:
   fVar3 = (this_ptr->base).model.accumulated_root_motion.z;
   (this_ptr->base).model.accumulated_root_motion.y = fVar3;
   pCVar2->x = fVar3;
-  core_charactr_cpp_FUN_00423a60(&this_ptr->base,&CStack_74);
+  core_charactr_cpp_CCharacter_moveAndCollide_FUN_00423a60(&this_ptr->base,&CStack_74);
   core_charactr_cpp_CCharacter_preProcess_FUN_00424470(&this_ptr->base);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_00544f00(&(this_ptr->base).model);
   core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00429420

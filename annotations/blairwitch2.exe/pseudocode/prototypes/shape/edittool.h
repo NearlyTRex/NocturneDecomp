@@ -13,17 +13,17 @@ void __cdecl staticInit(void);
 // Address: 0047a450
 void FUN_0047a450(void);
 
-// Original: shape_edittool.cpp_FUN_0047a480
+// Original: shape_edittool.cpp_plotPixelWithClipping_FUN_0047a480
 // Address: 0047a480
-void FUN_0047a480(int param_1,int param_2,int param_3);
+void __cdecl plotPixelWithClipping(int x_coord,int y_coord,int use_clipping);
 
-// Original: shape_edittool.cpp_FUN_0047a4f0
+// Original: shape_edittool.cpp_initEditorFontMetrics_FUN_0047a4f0
 // Address: 0047a4f0
-void FUN_0047a4f0(void);
+void __cdecl initEditorFontMetrics(void);
 
-// Original: shape_edittool.cpp_FUN_0047a590
+// Original: shape_edittool.cpp_drawDashedLine_FUN_0047a590
 // Address: 0047a590
-void FUN_0047a590(int param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl drawDashedLine(int x1,int y1,int x2,int y2,int dash_length);
 
 // Original: shape_edittool.cpp_FUN_0047a720
 // Address: 0047a720
@@ -145,9 +145,9 @@ void FUN_0047be90(undefined4 param_1,char *param_2);
 // Address: 0047bf80
 void FUN_0047bf80(void);
 
-// Original: shape_edittool.cpp_FUN_0047c0f0
+// Original: shape_edittool.cpp_showMultiChoiceDialog_FUN_0047c0f0
 // Address: 0047c0f0
-int __cdecl FUN_0047c0f0(CStrList *str_list,char *dialog_title,int dialog_mode);
+int __cdecl showMultiChoiceDialog(CStrList *str_list,char *dialog_title,int dialog_mode);
 
 // Original: shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0047c760
 // Address: 0047c760
@@ -233,9 +233,9 @@ void __cdecl CEditorTools::drawWindowSeparator(CEditorTools *this_ptr,int line_p
 // Address: 0047f1c0
 uint __cdecl CEditorTools::getTimeCycledColorByte(CEditorTools *this_ptr);
 
-// Original: shape_edittool.cpp_FUN_0047f210
+// Original: shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210
 // Address: 0047f210
-void FUN_0047f210(CEditorTools *param_1,int param_2);
+void __cdecl CEditorTools::drawMousePointer(CEditorTools *this_ptr,int use_clipping);
 
 // Original: shape_edittool.cpp_CEditorTools_getClipboardText_FUN_0047fbb0
 // Address: 0047fbb0
@@ -245,25 +245,25 @@ char * __cdecl CEditorTools::getClipboardText(CEditorTools *this_ptr);
 // Address: 0047fc30
 void __cdecl CEditorTools::setClipboardText(CEditorTools *this_ptr,char *text_data);
 
-// Original: shape_edittool.cpp_FUN_0047fd00
+// Original: shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_0047fd00
 // Address: 0047fd00
-void __cdecl FUN_0047fd00(CEditorTools *this_ptr,float scale_factor,int text_color);
+void __cdecl CEditorTools::draw3DAxisLabels(CEditorTools *this_ptr,float scale_factor,int text_color);
 
-// Original: shape_edittool.cpp_FUN_0047ff50
+// Original: shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_0047ff50
 // Address: 0047ff50
-void FUN_0047ff50(void);
+void __cdecl CEditorTools::draw3DAxisLabelsAt(CEditorTools *this_ptr,float scale_factor,int text_color,CVector3f *world_position,UOrientationVector *orientation);
 
-// Original: shape_edittool.cpp_FUN_00480000
+// Original: shape_edittool.cpp_draw3DInterpolatedLine_FUN_00480000
 // Address: 00480000
-void FUN_00480000(float *param_1,float *param_2);
+void __cdecl draw3DInterpolatedLine(CVector3f *start_point,CVector3f *end_point);
 
-// Original: shape_edittool.cpp_FUN_00480150
+// Original: shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00480150
 // Address: 00480150
-void FUN_00480150(undefined4 param_1,int *param_2,int *param_3,uint param_4);
+void __cdecl CEditorTools::draw3DWireframeCube(CEditorTools *this_ptr,CVector3f *corner1,CVector3f *corner2,int color_value);
 
 // Original: shape_edittool.cpp_FUN_00480720
 // Address: 00480720
-void FUN_00480720(undefined4 param_1,float *param_2,undefined4 param_3);
+void FUN_00480720(CEditorTools *param_1,float *param_2,int param_3);
 
 // Original: shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004807e0
 // Address: 004807e0
@@ -481,9 +481,9 @@ void __cdecl CPickList::sort(CPickList *this_ptr,int start_index,int end_index);
 // Address: 00483e10
 void __cdecl CPickList::swap(CPickList *this_ptr,int index1,int index2);
 
-// Original: shape_edittool.cpp_FUN_00483ea0
+// Original: shape_edittool.cpp_draw3DBorder_FUN_00483ea0
 // Address: 00483ea0
-void FUN_00483ea0(int param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl draw3DBorder(int left,int top,int right,int bottom,int pressed);
 
 // Original: shape_edittool.cpp_FUN_004840f0
 // Address: 004840f0

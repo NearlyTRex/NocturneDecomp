@@ -58,7 +58,7 @@ void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004c5640(CGlass *this_p
       CStack_18.x = (int)ROUND(pCVar7->x * _DAT_005f7a60);
       CStack_18.y = (int)ROUND(pCVar7->y * _DAT_005f7a60);
       CStack_18.z = (int)ROUND(pCVar7->z * _DAT_005f7a60);
-      engine_special_cpp_FUN_0055d723
+      engine_special_cpp_transformAndProjectPoint_FUN_0055d723
                 ((SProjectedVertex *)
                  ((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).transformed_x + iVar4),
                  &CStack_18);

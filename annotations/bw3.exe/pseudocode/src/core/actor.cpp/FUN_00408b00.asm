@@ -15,8 +15,8 @@
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041f360 at 0041f702
 ;   core_burncrss.cpp_CBurncross_fire_FUN_00424550 at 00424645
 ;   core_charactr.cpp_CCharacter_dropCarriedObject_FUN_00431c40 at 00431c78
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230 at 0042c298
 ;   core_charactr.cpp_CCharacter_processDamageDecals_FUN_0042fc90 at 0042fd8e
-;   core_charactr.cpp_CCharacter_setOrientation_FUN_00433220 at 0043323f
 ;   ... and 50 more
 ;
 ; Called Functions:

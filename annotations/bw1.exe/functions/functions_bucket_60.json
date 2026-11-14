@@ -11954,39 +11954,9 @@
     "addr":"004570e0",
     "body":[
       {
-        "end":"00457344",
-        "size":613,
+        "end":"00457aeb",
+        "size":2572,
         "start":"004570e0"
-      },
-      {
-        "end":"004573e6",
-        "size":123,
-        "start":"0045736c"
-      },
-      {
-        "end":"00457489",
-        "size":124,
-        "start":"0045740e"
-      },
-      {
-        "end":"0045752c",
-        "size":124,
-        "start":"004574b1"
-      },
-      {
-        "end":"004575d2",
-        "size":127,
-        "start":"00457554"
-      },
-      {
-        "end":"00457678",
-        "size":127,
-        "start":"004575fa"
-      },
-      {
-        "end":"004576c5",
-        "size":38,
-        "start":"004576a0"
       }
     ],
     "importable":true,
@@ -17907,7 +17877,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_dosio.cpp_FUN_004795e0",
+    "name":"engine_dosio.cpp_ensureTrailingSlash_FUN_004795e0",
     "ret":"void",
     "vars":{
       "params":[
@@ -20088,14 +20058,10 @@
         "start":"004929e0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_edittool.cpp_FUN_004929e0",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "name":"shape_edittool.cpp_initEditorFontMetrics_FUN_004929e0",
+    "ret":"void"
   },
   {
     "addr":"00492de0",
@@ -20734,7 +20700,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_edittool.cpp_FUN_00498360",
+    "name":"shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00498360",
     "ret":"void",
     "vars":{
       "params":[
@@ -20798,14 +20764,45 @@
         "start":"00498660"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_edittool.cpp_FUN_00498660",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"shape_edittool.cpp_draw3DInterpolatedLine_FUN_00498660",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"start_point",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"end_point",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        }
+      ]
     }
   },
   {
@@ -27570,19 +27567,9 @@
     "addr":"004c51e0",
     "body":[
       {
-        "end":"004c5212",
-        "size":51,
-        "start":"004c51e0"
-      },
-      {
-        "end":"004c5292",
-        "size":42,
-        "start":"004c5269"
-      },
-      {
         "end":"004c5404",
-        "size":35,
-        "start":"004c53e2"
+        "size":549,
+        "start":"004c51e0"
       }
     ],
     "conv":"__cdecl",
@@ -29092,7 +29079,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_game.cpp_FUN_004d0ee0",
+    "name":"core_game.cpp_CGame_processKeyboardControls_FUN_004d0ee0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -31986,7 +31973,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hero.cpp_FUN_004eb660",
+    "name":"core_hero.cpp_CHero_tryPullLever_FUN_004eb660",
     "ret":"int",
     "vars":{
       "locals":[
@@ -33851,14 +33838,45 @@
         "start":"00504fe0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_manpuz.cpp_FUN_00504fe0",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_00504fe0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMansionPuzzleCircle*"
+        },
+        {
+          "name":"panel_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -40541,7 +40559,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_model.c_FUN_0051fee0",
+    "name":"engine_model.c_getMRGLSize_FUN_0051fee0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -55363,7 +55381,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_special.cpp_FUN_00581fe0",
+    "name":"engine_special.cpp_beginScene_FUN_00581fe0",
     "ret":"int",
     "vars":{
       "ret_storage":{
@@ -56046,7 +56064,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_spline.cpp_FUN_00583d60",
+    "name":"core_spline.cpp_computeSplineBasis_FUN_00583d60",
     "ret":"void",
     "vars":{
       "locals":[
@@ -62363,10 +62381,10 @@
         "start":"0059bee0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_trigger.cpp_FUN_0059bee0",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_trigger.cpp_CTrigger_calculateTestRadius_FUN_0059bee0",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -62402,9 +62420,24 @@
           "type":"undefined1"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CTrigger*"
+        }
+      ]
     }
   },
   {
@@ -64676,7 +64709,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_xform.cpp_FUN_005b5760",
+    "name":"core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760",
     "ret":"void",
     "vars":{
       "locals":[

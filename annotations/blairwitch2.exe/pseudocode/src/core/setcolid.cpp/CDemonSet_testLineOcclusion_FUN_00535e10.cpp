@@ -12,7 +12,8 @@ int __cdecl core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_00535e10(CDemonSet
   int iVar1;
   float fVar2;
   
-  iVar1 = core_dtrace_cpp_FUN_00473390(&g_CDemonRaytraceInstance,start_pos,end_pos);
+  iVar1 = core_dtrace_cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00473390
+                    (&g_CDemonRaytraceInstance,start_pos,end_pos);
   if (iVar1 == 0) {
     fVar2 = core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00536490
                       (this_ptr,-1.0,start_pos,end_pos,1.01);

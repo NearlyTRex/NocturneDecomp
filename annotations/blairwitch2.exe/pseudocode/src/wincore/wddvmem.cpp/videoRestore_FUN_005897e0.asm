@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00589560 at 0058962d
-;   wincore_winrun.cpp_FUN_0058ed90 at 0058ee9c
+;   wincore_winrun.cpp_mainWindowProc_FUN_0058ed90 at 0058ee9c
 ;
 ; Referenced Globals:
 ;   void* PTR_SetFocus_005c84f0 = 001c8bce

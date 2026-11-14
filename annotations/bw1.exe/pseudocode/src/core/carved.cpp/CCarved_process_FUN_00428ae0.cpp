@@ -865,7 +865,8 @@ LAB_00429a81:
           fStack_44 = fStack_c4 * (float)_DAT_005d5495 + 1.0;
         }
         fStack_38 = fStack_44;
-        fStack_5c = core_motion_cpp_FUN_00525020(&(this_ptr->base).base.model.base);
+        fStack_5c = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00525020
+                              (&(this_ptr->base).base.model.base);
         dStack_7c = (double)fStack_5c;
         pCStack_14 = (CCharacter_full_vtable *)fStack_5c;
         if ((1.0 <= dStack_7c) && (dStack_7c <= _DAT_005d549d)) {
@@ -997,7 +998,7 @@ LAB_004296f2:
     fVar10 = (this_ptr->base).base.model.accumulated_root_motion.z;
     (this_ptr->base).base.model.accumulated_root_motion.y = fVar10;
     pCVar1->x = fVar10;
-    core_charactr_cpp_FUN_0042d750((CCharacter *)this_ptr,&CStack_2dc);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042d750((CCharacter *)this_ptr,&CStack_2dc);
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_0042e160((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_005675a0

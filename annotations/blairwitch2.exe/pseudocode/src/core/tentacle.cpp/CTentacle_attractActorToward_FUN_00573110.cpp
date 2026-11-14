@@ -46,7 +46,7 @@ int __cdecl core_tentacle_cpp_CTentacle_attractActorToward_FUN_00573110(CTentacl
     pfVar3 = pfVar3 + (uint)bVar7 * -2 + 1;
     pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
   }
-  core_xform_cpp_FUN_00591c10
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
             (&CStack_154,&(this_ptr->base).base.base.location,&(this_ptr->base).base.base.orient);
   pCVar5 = &CStack_154;
   core_tentacle_cpp_FUN_005732e0(this_ptr);

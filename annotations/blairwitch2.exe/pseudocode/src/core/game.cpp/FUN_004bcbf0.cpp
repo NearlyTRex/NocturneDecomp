@@ -119,7 +119,7 @@ void __cdecl core_game_cpp_FUN_004bcbf0(CGame *this_ptr)
       local_24 = local_24 + 4;
     } while (iVar7 != 0x200);
     wincore_wddvmem_cpp_openScreenDevice_FUN_005890c0();
-    engine_special_cpp_FUN_0055f500();
+    engine_special_cpp_lockFrame_FUN_0055f500();
     engine_special_cpp_clearScreen_FUN_0055b1f0();
     engine_special_cpp_unlockFrame_FUN_0055f550(0);
     wincore_wddvmem_cpp_closeScreenDevice_FUN_00589170();

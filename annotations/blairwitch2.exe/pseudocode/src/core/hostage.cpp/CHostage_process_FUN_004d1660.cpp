@@ -426,7 +426,8 @@ LAB_004d1ac4:
               core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar2->base,0,1);
               core_event_cpp_CEventList_executeCommands_FUN_004894f0
                         (0x01C38BC0,this_ptr->sit_down_event);
-              core_event_cpp_FUN_00490f80(0x01C38BC0,this_ptr->rescue_event,1);
+              core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80
+                        (0x01C38BC0,this_ptr->rescue_event,1);
               this_ptr->hostage_state = 4;
               this_ptr->next_way_point = (CDemonActor *)0x0;
             }
@@ -505,7 +506,8 @@ LAB_004d1ac4:
               }
               core_event_cpp_CEventList_executeCommands_FUN_004894f0
                         (0x01C38BC0,this_ptr->sit_down_event);
-              core_event_cpp_FUN_00490f80(0x01C38BC0,this_ptr->rescue_event,1);
+              core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80
+                        (0x01C38BC0,this_ptr->rescue_event,1);
               this_ptr->sit_down_way_point = (CDemonActor *)0x0;
             }
             fStack_4c = delta_time * _DAT_005da35e;
@@ -688,7 +690,7 @@ LAB_004d1f68:
     afStack_1e8[(uint)bVar20 * -2 + 6] = *pfVar19;
     pCVar23 = this_ptr;
     afStack_1e8[(uint)bVar20 * -2 + (uint)bVar20 * -2 + 7] = pfVar19[(uint)bVar20 * -2 + 1];
-    core_charactr_cpp_FUN_00423a60((CCharacter *)pCVar23,pCVar22);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_00423a60((CCharacter *)pCVar23,pCVar22);
     (this_ptr->base).base.walk_stuck_timer = (this_ptr->base).base.walk_stuck_timer + delta_time;
     if ((delta_time * (float)_DAT_005da37e <=
          SQRT(CStack_fc.z * CStack_fc.z + CStack_fc.x * CStack_fc.x + CStack_fc.y * CStack_fc.y)) &&

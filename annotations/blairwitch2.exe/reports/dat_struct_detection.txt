@@ -48,7 +48,7 @@ Consider removing the Ghidra label and leaving the raw number.
       CMP dword ptr [EBX + 0x68],0x78a123 ; 0058a30d | DAT_0078a123
 
   DAT_0061b190  value=0x61B190 (6402448)  refs=5
-    FUN_00447ea0
+    initFonts
       PUSH 0x61b190                       ; 00448499 | DAT_0061b190
     readMessageFile
       PUSH 0x61b190                       ; 0050fabf | DAT_0061b190
@@ -217,6 +217,10 @@ Consider removing the Ghidra label and leaving the raw number.
     CCharacter_renderBurn
       PUSH 0x609acc                       ; 004264ef | DAT_00609acc
 
+  DAT_007bda78  value=0x7BDA78 (8116856)  refs=1
+    CCharacter_renderCollision
+      PUSH 0x7bda78                       ; 00424cdd | DAT_007bda78
+
   DAT_00609a10  value=0x609A10 (6330896)  refs=1
     CCharacter_renderEthereal
       ADD EAX,0x609a10                    ; 004267c9 | DAT_00609a10
@@ -224,10 +228,6 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_007bda98  value=0x7BDA98 (8116888)  refs=1
     CCharacter_renderTransparent
       PUSH 0x7bda98                       ; 00426937 | DAT_007bda98
-
-  DAT_007bda78  value=0x7BDA78 (8116856)  refs=1
-    FUN_00424c80
-      PUSH 0x7bda78                       ; 00424cdd | DAT_007bda78
 
   DAT_00609ae4  value=0x609AE4 (6331108)  refs=1
     FUN_0042b760
@@ -325,25 +325,25 @@ Consider removing the Ghidra label and leaving the raw number.
     CFlame_renderTransparent
       PUSH 0x615ae8                       ; 004a010a | DAT_00615ae8
 
-  DAT_006164ac  value=0x6164AC (6382764)  refs=1
-    FUN_004bb620
-      ADD EAX,0x6164ac                    ; 004bb78a | DAT_006164ac
-
   DAT_005d8427  value=0x5D8427 (6128679)  refs=1
-    FUN_004bb9b0
+    CGame_saveGame
       PUSH 0x5d8427                       ; 004bb9fd | DAT_005d8427
 
   DAT_005d842b  value=0x5D842B (6128683)  refs=1
-    FUN_004bb9b0
+    CGame_saveGame
       PUSH 0x5d842b                       ; 004bbe25 | DAT_005d842b
 
   DAT_005d8430  value=0x5D8430 (6128688)  refs=1
-    FUN_004bb9b0
+    CGame_saveGame
       PUSH 0x5d8430                       ; 004bbe53 | DAT_005d8430
 
   DAT_005d8434  value=0x5D8434 (6128692)  refs=1
-    FUN_004bb9b0
+    CGame_saveGame
       PUSH 0x5d8434                       ; 004bbe58 | DAT_005d8434
+
+  DAT_006164ac  value=0x6164AC (6382764)  refs=1
+    FUN_004bb620
+      ADD EAX,0x6164ac                    ; 004bb78a | DAT_006164ac
 
   DAT_005f8274  value=0x5F8274 (6259316)  refs=1
     CHero_dtor
@@ -362,7 +362,7 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x61ef88                       ; 004e4707 | DAT_0061ef88
 
   DAT_00617fc8  value=0x617FC8 (6389704)  refs=1
-    FUN_004eaf30
+    renderAudioSpectrumBar
       ADD EAX,0x617fc8                    ; 004eb07c | DAT_00617fc8
 
   DAT_005de036  value=0x5DE036 (6152246)  refs=1
@@ -370,7 +370,7 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x5de036                       ; 004fb493 | DAT_005de036
 
   DAT_005df720  value=0x5DF720 (6158112)  refs=1
-    FUN_00502820
+    CMotionList_load
       PUSH 0x5df720                       ; 0050285a | DAT_005df720
 
   DAT_005e4b99  value=0x5E4B99 (6179737)  refs=1

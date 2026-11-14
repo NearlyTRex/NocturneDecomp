@@ -43,7 +43,7 @@ void __cdecl core_gore_cpp_CFootstep_render_FUN_004e5860(CFootstep *this_ptr,int
     local_1c.y = (int)ROUND(pCVar2->y * _DAT_006016a8);
     local_1c.z = (int)ROUND(pCVar2->z * _DAT_006016a8);
     pCVar2 = pCVar2 + 1;
-    engine_special_cpp_FUN_0058043c(output,&local_1c);
+    engine_special_cpp_transformPoint_FUN_0058043c(output,&local_1c);
     output = output + 2;
   } while (pCVar2 != (CVector3f *)&this_ptr->alpha);
   if (this_ptr->is_bloody == 0) {

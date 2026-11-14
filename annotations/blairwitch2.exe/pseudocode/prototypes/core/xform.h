@@ -41,13 +41,13 @@ void FUN_00591980(float *param_1);
 // Address: 00591ab0
 void __cdecl clearTranslation(CMatrix3x4f *matrix);
 
-// Original: core_xform.cpp_FUN_00591ad0
+// Original: core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0
 // Address: 00591ad0
-void __cdecl FUN_00591ad0(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles);
+void __cdecl buildMatrixFromEulerAndPosition(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles);
 
-// Original: core_xform.cpp_FUN_00591c10
+// Original: core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
 // Address: 00591c10
-void FUN_00591c10(float *param_1,float *param_2,int param_3);
+void buildMatrixFromEulerAndPositionDirect(float *param_1,float *param_2,int param_3);
 
 // Original: core_xform.cpp_angleFromSinCos_FUN_00591d10
 // Address: 00591d10
@@ -65,9 +65,9 @@ float * matrixToEulerAnglesZYX(float *param_1);
 // Address: 00592720
 void FUN_00592720(int param_1);
 
-// Original: core_xform.cpp_FUN_00592760
+// Original: core_xform.cpp_invertAndGetTranslation_FUN_00592760
 // Address: 00592760
-void FUN_00592760(undefined4 param_1);
+void invertAndGetTranslation(undefined4 param_1);
 
 // Original: core_xform.cpp_determinant_FUN_005927e0
 // Address: 005927e0

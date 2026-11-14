@@ -42,7 +42,7 @@ void __cdecl core_dtrace_cpp_FUN_00474020(CDemonRaytrace *this_ptr,CVector3f *wo
   SStack_e8.vertices[5].vertex_index = (int)ROUND(world_pos->x * _DAT_005f5b10);
   SStack_e8.vertices[5].texture_u = (int)ROUND(world_pos->y * _DAT_005f5b10);
   SStack_e8.vertices[5].texture_v = (int)ROUND(world_pos->z * _DAT_005f5b10);
-  engine_special_cpp_FUN_0055d723
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
             (&DAT_0060b280->vertex_buffer_ptr->projected_vertex,
              (CVector3i *)(SStack_e8.vertices + 5));
   SStack_e8.vertices[7].vertex_index =
@@ -52,7 +52,8 @@ void __cdecl core_dtrace_cpp_FUN_00474020(CDemonRaytrace *this_ptr,CVector3f *wo
   CStack_70.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * _DAT_005f5b10);
   CStack_70.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * _DAT_005f5b10);
   CStack_70.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * _DAT_005f5b10);
-  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&CStack_70);
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+            (&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&CStack_70);
   SStack_e8.vertices[7].vertex_index =
        (int)(world_pos->x + (float)SStack_e8.vertices[4].vertex_index);
   SStack_e8.vertices[7].texture_u = (int)world_pos->y;
@@ -60,21 +61,24 @@ void __cdecl core_dtrace_cpp_FUN_00474020(CDemonRaytrace *this_ptr,CVector3f *wo
   CStack_40.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * _DAT_005f5b10);
   CStack_40.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * _DAT_005f5b10);
   CStack_40.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * _DAT_005f5b10);
-  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&CStack_40);
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+            (&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&CStack_40);
   SStack_e8.vertices[7].vertex_index = (int)world_pos->x;
   SStack_e8.vertices[7].texture_u = (int)world_pos->y;
   SStack_e8.vertices[7].texture_v = (int)(world_pos->z + (float)SStack_e8.vertices[4].texture_v);
   CStack_64.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * _DAT_005f5b10);
   CStack_64.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * _DAT_005f5b10);
   CStack_64.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * _DAT_005f5b10);
-  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&CStack_64);
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+            (&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&CStack_64);
   SStack_e8.vertices[7].vertex_index = (int)world_pos->x;
   SStack_e8.vertices[7].texture_u = (int)(world_pos->y + (float)SStack_e8.vertices[4].texture_u);
   SStack_e8.vertices[7].texture_v = (int)world_pos->z;
   CStack_34.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * _DAT_005f5b10);
   CStack_34.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * _DAT_005f5b10);
   CStack_34.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * _DAT_005f5b10);
-  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[4].projected_vertex,&CStack_34);
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+            (&DAT_0060b280->vertex_buffer_ptr[4].projected_vertex,&CStack_34);
   SStack_e8.vertices[7].vertex_index =
        (int)(world_pos->x + (float)SStack_e8.vertices[4].vertex_index);
   SStack_e8.vertices[7].texture_u = (int)(world_pos->y + (float)SStack_e8.vertices[4].texture_u);
@@ -85,7 +89,7 @@ void __cdecl core_dtrace_cpp_FUN_00474020(CDemonRaytrace *this_ptr,CVector3f *wo
        (int)ROUND((float)SStack_e8.vertices[7].texture_u * _DAT_005f5b10);
   SStack_e8.vertices[6].texture_v =
        (int)ROUND((float)SStack_e8.vertices[7].texture_v * _DAT_005f5b10);
-  engine_special_cpp_FUN_0055d723
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
             (&DAT_0060b280->vertex_buffer_ptr[5].projected_vertex,
              (CVector3i *)(SStack_e8.vertices + 6));
   SStack_e8.vertices[7].vertex_index =
@@ -95,14 +99,16 @@ void __cdecl core_dtrace_cpp_FUN_00474020(CDemonRaytrace *this_ptr,CVector3f *wo
   CStack_1c.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * _DAT_005f5b10);
   CStack_1c.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * _DAT_005f5b10);
   CStack_1c.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * _DAT_005f5b10);
-  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[6].projected_vertex,&CStack_1c);
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+            (&DAT_0060b280->vertex_buffer_ptr[6].projected_vertex,&CStack_1c);
   SStack_e8.vertices[7].vertex_index = (int)world_pos->x;
   SStack_e8.vertices[7].texture_u = (int)(world_pos->y + (float)SStack_e8.vertices[4].texture_u);
   SStack_e8.vertices[7].texture_v = (int)(world_pos->z + (float)SStack_e8.vertices[4].texture_v);
   CStack_28.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * _DAT_005f5b10);
   CStack_28.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * _DAT_005f5b10);
   CStack_28.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * _DAT_005f5b10);
-  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[7].projected_vertex,&CStack_28);
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+            (&DAT_0060b280->vertex_buffer_ptr[7].projected_vertex,&CStack_28);
   uVar1 = rand();
   engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0046b7e0(DAT_0060b280,uVar1 & 0xff);
   SStack_e8.base.base.count = 4;

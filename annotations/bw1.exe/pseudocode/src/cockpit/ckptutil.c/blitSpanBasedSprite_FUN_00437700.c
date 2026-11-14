@@ -30,7 +30,7 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSprite_FUN_00437700(void *sprite_da
   iVar8 = iVar7 + 1;
   if (sprite_data != (void *)0x0) {
     sprite_data = (void *)((int)sprite_data + width * screen_y + screen_x);
-    pcVar2 = (code *)cockpit_ckptutil_c_FUN_00437270();
+    pcVar2 = (code *)cockpit_ckptutil_c_getColorConversionFunction_FUN_00437270();
     iStack_30 = screen_y * 0x84;
     iVar5 = (src_y + screen_y) * 4;
     if (DAT_0061b4a0 == 8) {

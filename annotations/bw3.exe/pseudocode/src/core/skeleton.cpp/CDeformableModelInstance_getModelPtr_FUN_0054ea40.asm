@@ -15,8 +15,8 @@
 ;   core_carved.cpp_CCarved_setup_FUN_00425ab0 at 00425bc4
 ;   core_charactr.cpp_CCharacter_dismember_FUN_004300e0 at 0043025c
 ;   core_charactr.cpp_CCharacter_getPartDominantBone_FUN_0042e370 at 0042e37f
-;   core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042e4b0 at 0042e689
-;   core_charactr.cpp_FUN_0042d500 at 0042d536
+;   core_charactr.cpp_CCharacter_processFire_FUN_0042e8c0 at 0042e916
+;   core_charactr.cpp_CCharacter_renderBurn_FUN_0042f010 at 0042f06b
 ;   ... and 38 more
 ;
 ; Referenced Globals:

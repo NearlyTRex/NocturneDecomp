@@ -36,11 +36,11 @@
 ;   core_actor.cpp_randomChance_FUN_0040cd00
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042e120
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_charactr.cpp_CCharacter_processDamageDecals_FUN_00430960
-;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
 ;   ... and 36 more
 ;
 ; *****************************************************************************
@@ -2392,8 +2392,8 @@ section .text
     MOV dword ptr [EBP + -0xe],EAX      ; 005bcbe6
     LEA EAX,[EBX + 0x158]               ; 005bcbe9
     PUSH EAX                            ; 005bcbef
-    CALL core_motion.cpp_FUN_00525020   ; 005bcbf0
-        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_00525020(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020 ; 005bcbf0
+        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020(CMotionController * this_ptr)
     FLD1                                ; 005bcbf5
     MOV dword ptr [EBP + 0x76],EAX      ; 005bcbf7
     ADD ESP,0x4                         ; 005bcbfa
@@ -2658,8 +2658,8 @@ section .text
     FST float ptr [EDX + 0x4]           ; 005bceff
     PUSH EBX                            ; 005bcf02
     FSTP float ptr [EDX]                ; 005bcf03
-    CALL core_charactr.cpp_FUN_0042d750 ; 005bcf05
-        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750 ; 005bcf05
+        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
     MOV ECX,dword ptr [EBP + 0x62]      ; 005bcf0a
     ADD ESP,0x8                         ; 005bcf0d
     CMP ECX,0x1                         ; 005bcf10

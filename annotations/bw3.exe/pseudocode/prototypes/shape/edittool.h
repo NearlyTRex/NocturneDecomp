@@ -13,17 +13,17 @@ void __cdecl staticInit(void);
 // Address: 0047b4e0
 void FUN_0047b4e0(void);
 
-// Original: shape_edittool.cpp_FUN_0047b510
+// Original: shape_edittool.cpp_plotPixelWithClipping_FUN_0047b510
 // Address: 0047b510
-void FUN_0047b510(int param_1,int param_2,int param_3);
+void __cdecl plotPixelWithClipping(int x_coord,int y_coord,int use_clipping);
 
-// Original: shape_edittool.cpp_FUN_0047b580
+// Original: shape_edittool.cpp_initEditorFontMetrics_FUN_0047b580
 // Address: 0047b580
-void FUN_0047b580(void);
+void __cdecl initEditorFontMetrics(void);
 
-// Original: shape_edittool.cpp_FUN_0047b5e0
+// Original: shape_edittool.cpp_drawDashedLine_FUN_0047b5e0
 // Address: 0047b5e0
-void FUN_0047b5e0(int param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl drawDashedLine(int x1,int y1,int x2,int y2,int dash_length);
 
 // Original: shape_edittool.cpp_FUN_0047b770
 // Address: 0047b770
@@ -225,9 +225,9 @@ void __cdecl CEditorTools::restoreWindowAndCleanup(CEditorTools *this_ptr);
 // Address: 0047f990
 void __cdecl CEditorTools::popWindowState(CEditorTools *this_ptr);
 
-// Original: shape_edittool.cpp_FUN_0047fa80
+// Original: shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80
 // Address: 0047fa80
-void FUN_0047fa80(void);
+void __cdecl CEditorTools::paintCurrentWindow(CEditorTools *this_ptr);
 
 // Original: shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_00480200
 // Address: 00480200
@@ -249,25 +249,25 @@ char * __cdecl CEditorTools::getClipboardText(CEditorTools *this_ptr);
 // Address: 00480e30
 void __cdecl CEditorTools::setClipboardText(CEditorTools *this_ptr,char *text_data);
 
-// Original: shape_edittool.cpp_FUN_00480f00
+// Original: shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00480f00
 // Address: 00480f00
-void __cdecl FUN_00480f00(CEditorTools *this_ptr,float scale_factor,int text_color);
+void __cdecl CEditorTools::draw3DAxisLabels(CEditorTools *this_ptr,float scale_factor,int text_color);
 
-// Original: shape_edittool.cpp_FUN_00481150
+// Original: shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_00481150
 // Address: 00481150
-void FUN_00481150(void);
+void __cdecl CEditorTools::draw3DAxisLabelsAt(CEditorTools *this_ptr,float scale_factor,int text_color,CVector3f *world_position,UOrientationVector *orientation);
 
-// Original: shape_edittool.cpp_FUN_00481200
+// Original: shape_edittool.cpp_draw3DInterpolatedLine_FUN_00481200
 // Address: 00481200
-void FUN_00481200(float *param_1,float *param_2);
+void __cdecl draw3DInterpolatedLine(CVector3f *start_point,CVector3f *end_point);
 
-// Original: shape_edittool.cpp_FUN_00481350
+// Original: shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00481350
 // Address: 00481350
-void FUN_00481350(undefined4 param_1,int *param_2,int *param_3,uint param_4);
+void __cdecl CEditorTools::draw3DWireframeCube(CEditorTools *this_ptr,CVector3f *corner1,CVector3f *corner2,int color_value);
 
 // Original: shape_edittool.cpp_FUN_00481920
 // Address: 00481920
-void FUN_00481920(undefined4 param_1,float *param_2,undefined4 param_3);
+void FUN_00481920(CEditorTools *param_1,float *param_2,int param_3);
 
 // Original: shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004819e0
 // Address: 004819e0
@@ -485,9 +485,9 @@ void __cdecl CPickList::sort(CPickList *this_ptr,int start_index,int end_index);
 // Address: 00485010
 void __cdecl CPickList::swap(CPickList *this_ptr,int index1,int index2);
 
-// Original: shape_edittool.cpp_FUN_004850a0
+// Original: shape_edittool.cpp_draw3DBorder_FUN_004850a0
 // Address: 004850a0
-void FUN_004850a0(int param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl draw3DBorder(int left,int top,int right,int bottom,int pressed);
 
 // Original: shape_edittool.cpp_FUN_004852f0
 // Address: 004852f0

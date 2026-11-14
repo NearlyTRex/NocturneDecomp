@@ -217,7 +217,7 @@ void __cdecl core_mission_cpp_CDemonMission_buildSetActorList_FUN_0051b420(CDemo
 void __cdecl core_mission_cpp_CDemonMission_removeActor_FUN_0051b4d0(CDemonMission *this_ptr,CDemonActor *actor,int should_delete);
 void __cdecl core_mission_cpp_CDemonMission_changeSetName_FUN_0051b500(CDemonMission *this_ptr,int param_2,char *param_3);
 void __cdecl core_mission_cpp_CDemonMission_removeAllActors_FUN_0051b5a0(CDemonMission *this_ptr);
-void core_mission_cpp_FUN_0051b610(CDemonMission *param_1,int param_2);
+void __cdecl core_mission_cpp_CDemonMission_loadSet_FUN_0051b610(CDemonMission *this_ptr,int set_index);
 CDemonActor * __cdecl core_mission_cpp_CDemonMission_findActorByName_FUN_0051b6c0(CDemonMission *this_ptr,char *name);
 void __cdecl core_mission_cpp_CDemonMission_setTeleportTarget_FUN_0051b700(CDemonMission *this_ptr,CLocation *teleport_target);
 void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_0051b740(CDemonMission *this_ptr,CDemonActor *param_2,uint param_3);
@@ -228,11 +228,11 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_0051bad0(CDemonMission *this
 void __cdecl core_mission_cpp_CDemonMission_setMissionName_FUN_0051bc90(CDemonMission *this_ptr,char *name);
 void __cdecl core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_0051bcc0(CDemonMission *this_ptr,char *out_buf,char *base_name);
 void __cdecl core_mission_cpp_CDemonMission_generateActorName_FUN_0051bd60(CDemonMission *this_ptr,CDemonActor *actor);
-int __cdecl core_mission_cpp_FUN_0051bdc0(CDemonMission *this_ptr);
+int __cdecl core_mission_cpp_CDemonMission_startMission_FUN_0051bdc0(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_freeAllAssets_FUN_0051bf10(CDemonMission *this_ptr);
 int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_0051bf30(CDemonMission *this_ptr,int index,int hero_type,CCharacter *existing_actor);
 int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_0051c0a0(CDemonMission *this_ptr,CCharacter *existing_hero);
-void __cdecl core_mission_cpp_FUN_0051c240(CDemonMission *this_ptr);
+void __cdecl core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_0051c240(CDemonMission *this_ptr);
 undefined4 core_mission_cpp_FUN_0051c410(void);
 void __cdecl core_mission_cpp_CDemonMission_setVersionControlDirectory_FUN_0051c420(CDemonMission *this_ptr,char *directory);
 void __cdecl core_mmx_c_detectCPUFeatures_FUN_0051c450(void);
@@ -251,7 +251,7 @@ void __cdecl core_mobster_cpp_CMobster_dismountVehicle_FUN_0051cd10(CMobster *th
 void __cdecl core_mobster_cpp_CMobster_process_FUN_0051ce40(CMobster *this_ptr,float delta_time);
 void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_0051def0(CMobster *this_ptr,float delta_time);
 CMatrix3x4f * __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_0051e2f0(CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
-int __cdecl core_mobster_cpp_FUN_0051e5d0(CMobster *this_ptr,float delta_time);
+int __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_0051e5d0(CMobster *this_ptr,float delta_time);
 void __cdecl core_mobster_cpp_CMobster_startFiringAttack_FUN_0051eac0(CMobster *this_ptr);
 void __cdecl core_mobster_cpp_CMobster_archive_FUN_0051eb30(CMobster *this_ptr);
 void __cdecl core_mobster_cpp_CMobster_reset_FUN_0051ec60(CMobster *this_ptr);
@@ -263,6 +263,6 @@ void __cdecl core_mobster_cpp_CMobster_playTaunt_FUN_0051f330(CMobster *this_ptr
 CMobster * __cdecl core_mobster_cpp_CMobster_dtor_FUN_0051f4b0(CMobster *this_ptr,uint flags);
 SMRGLHeaderExtended * __cdecl engine_model_c_loadModelFile_FUN_0051f6d0(char *filename);
 void engine_model_c_freeMRGLData_FUN_0051f8a0(SMRGLHeaderExtended *param_1);
-uint * engine_model_c_FUN_0051f920(int *param_1);
-int __cdecl engine_model_c_FUN_0051fee0(SMRGLHeaderExtended *header);
+uint * engine_model_c_getMRGLBounds_FUN_0051f920(int *param_1);
+int __cdecl engine_model_c_getMRGLSize_FUN_0051fee0(SMRGLHeaderExtended *header);
 

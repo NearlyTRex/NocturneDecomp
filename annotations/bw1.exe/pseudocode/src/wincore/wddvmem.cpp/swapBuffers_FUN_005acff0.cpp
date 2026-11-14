@@ -38,7 +38,7 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005acff0(void)
     if (_DAT_01c50948 != 0) {
       engine_special_cpp_presentToExternalRenderer_FUN_00582990(0);
       _DAT_02c99314 = 0;
-      wincore_winrun_cpp_FUN_005b2cf0();
+      wincore_winrun_cpp_processWindowMessages_FUN_005b2cf0();
       return;
     }
     if (_DAT_02c99314 == 0) {
@@ -101,7 +101,7 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005acff0(void)
             _DAT_01d1d404 = 0x381;
             core_main_c_FUN_005030e0("Unable to unlock front buffer");
             _DAT_02c99314 = 0;
-            wincore_winrun_cpp_FUN_005b2cf0();
+            wincore_winrun_cpp_processWindowMessages_FUN_005b2cf0();
             return;
           }
         }
@@ -142,6 +142,6 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005acff0(void)
   }
 LAB_005ad0c1:
   _DAT_02c99314 = 0;
-  wincore_winrun_cpp_FUN_005b2cf0();
+  wincore_winrun_cpp_processWindowMessages_FUN_005b2cf0();
   return;
 }

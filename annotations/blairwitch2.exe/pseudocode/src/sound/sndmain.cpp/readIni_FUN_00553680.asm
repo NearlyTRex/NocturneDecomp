@@ -29,8 +29,8 @@
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005b8130
 ;   crt_unknown.c_sprintf_FUN_005b7790
+;   engine_ini.cpp_CIniFile_getFloat_FUN_004d8bc0
 ;   engine_ini.cpp_FUN_004d8b20
-;   engine_ini.cpp_FUN_004d8bc0
 ;   sound_sndmain.cpp_closeSoundDevice_FUN_00552c40
 ;   sound_sndmain.cpp_enableHwSoundMixing_FUN_00552b50
 ;   sound_sndmain.cpp_enableSfxChannel_FUN_00551220
@@ -172,8 +172,8 @@ section .text
     FLD float ptr [ESP + 0x3a8]         ; 005537c5
     PUSH EBP                            ; 005537cc
     FSTP float ptr [ESP + 0x394]        ; 005537cd
-    CALL engine_ini.cpp_FUN_004d8bc0    ; 005537d4
-        ;   XREF to: 004d8bc0 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004d8bc0()
+    CALL engine_ini.cpp_CIniFile_getFloat_FUN_004d8bc0 ; 005537d4
+        ;   XREF to: 004d8bc0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getFloat_FUN_004d8bc0(CIniFile * this_ptr, char * key, float * output)
     ADD ESP,0xc                         ; 005537d9
     PUSH dword ptr [ESP + 0x388]        ; 005537dc
     CALL sound_sndmain.cpp_setMaxSwSoundLatency_FUN_00553610 ; 005537e3
@@ -284,8 +284,8 @@ section .text
     PUSH EAX                            ; 0055393a
     PUSH EBP                            ; 0055393b
     FSTP float ptr [ESP + 0x3a8]        ; 0055393c
-    CALL engine_ini.cpp_FUN_004d8bc0    ; 00553943
-        ;   XREF to: 004d8bc0 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004d8bc0()
+    CALL engine_ini.cpp_CIniFile_getFloat_FUN_004d8bc0 ; 00553943
+        ;   XREF to: 004d8bc0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getFloat_FUN_004d8bc0(CIniFile * this_ptr, char * key, float * output)
     ADD ESP,0xc                         ; 00553948
     PUSH dword ptr [ESP + 0x39c]        ; 0055394b
     PUSH EBX                            ; 00553952

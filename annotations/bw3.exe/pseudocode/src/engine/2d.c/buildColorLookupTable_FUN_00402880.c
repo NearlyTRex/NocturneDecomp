@@ -46,7 +46,7 @@ void __cdecl engine_2d_c_buildColorLookupTable_FUN_00402880(void)
       do {
         puVar9 = puVar10 + 1;
         iVar6 = iVar8 + 8;
-        iVar8 = engine_2d_c_FUN_00401450(iVar7,iVar5,iVar8,10,0xe5);
+        iVar8 = engine_2d_c_findBestPaletteMatch_FUN_00401450(iVar7,iVar5,iVar8,10,0xe5);
         *puVar10 = (char)iVar8;
         iVar8 = iVar6;
         puVar10 = puVar9;

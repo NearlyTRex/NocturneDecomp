@@ -2920,19 +2920,12 @@
       "00534ea0",
       "00537030"
     ],
+    "cls":"CBoundingBox3D",
     "conv":"__cdecl",
     "instructions":36,
-    "method":"FUN_0041b660",
-    "name":"core_box.cpp_FUN_0041b660",
+    "method":"doesBoxIntersect",
+    "name":"core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041b660",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CBoundingBox3D",
-          "ptr":1
-        }
-      },
       {
         "name":"other",
         "type":{
@@ -2942,7 +2935,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"int",
@@ -3150,8 +3143,8 @@
     "addr":"00421fe0",
     "conv":"unknown",
     "instructions":46,
-    "method":"FUN_00421fe0",
-    "name":"core_bugs.cpp_FUN_00421fe0",
+    "method":"normalizeVector",
+    "name":"core_bugs.cpp_normalizeVector_FUN_00421fe0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -3302,19 +3295,12 @@
       "00537e30",
       "005b8da0"
     ],
+    "cls":"CCharacter",
     "conv":"__cdecl",
     "instructions":640,
-    "method":"FUN_00423a60",
-    "name":"core_charactr.cpp_FUN_00423a60",
+    "method":"moveAndCollide",
+    "name":"core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CCharacter",
-          "ptr":1
-        }
-      },
       {
         "name":"velocity",
         "type":{
@@ -3324,7 +3310,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -11651,14 +11637,15 @@
       "0048e7e0",
       "00522350"
     ],
-    "conv":"unknown",
+    "cls":"CGame",
+    "conv":"__cdecl",
     "instructions":7,
-    "method":"FUN_004bb4e0",
-    "name":"core_game.cpp_FUN_004bb4e0",
-    "receiver":false,
+    "method":"fadeIn",
+    "name":"core_game.cpp_CGame_fadeIn_FUN_004bb4e0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"uint",
       "ptr":0
     },
     "tu":"core/game.cpp",
@@ -12938,21 +12925,12 @@
       "0040c8f0",
       "00503620"
     ],
+    "cls":"CIcePick",
     "conv":"__cdecl",
     "instructions":131,
-    "method":"FUN_004d55e0",
-    "name":"core_icepick.cpp_FUN_004d55e0",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CIcePick",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"findAndPickupGun",
+    "name":"core_icepick.cpp_CIcePick_findAndPickupGun_FUN_004d55e0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"int",
@@ -13755,14 +13733,25 @@
     "calls":[
       "00408de0"
     ],
-    "conv":"unknown",
+    "cls":"CLever",
+    "conv":"__cdecl",
     "instructions":59,
-    "method":"FUN_004e24e0",
-    "name":"core_lever.cpp_FUN_004e24e0",
-    "receiver":false,
+    "method":"isAccessibleFrom",
+    "name":"core_lever.cpp_CLever_isAccessibleFrom_FUN_004e24e0",
+    "params":[
+      {
+        "name":"world_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/lever.cpp",
@@ -13856,14 +13845,15 @@
     "calls":[
       "0040c840"
     ],
-    "conv":"unknown",
+    "cls":"CLightGun",
+    "conv":"__cdecl",
     "instructions":37,
-    "method":"FUN_004e2ae0",
-    "name":"core_lightgun.cpp_FUN_004e2ae0",
-    "receiver":false,
+    "method":"isVampireType",
+    "name":"core_lightgun.cpp_CLightGun_isVampireType_FUN_004e2ae0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/lightgun.cpp",
@@ -14206,8 +14196,8 @@
     ],
     "conv":"__cdecl",
     "instructions":261,
-    "method":"FUN_004eb0e0",
-    "name":"core_menu.cpp_FUN_004eb0e0",
+    "method":"renderMenuAndGetChoice",
+    "name":"core_menu.cpp_renderMenuAndGetChoice_FUN_004eb0e0",
     "params":[
       {
         "name":"menu_text_array",
@@ -14353,8 +14343,8 @@
     ],
     "conv":"__cdecl",
     "instructions":1140,
-    "method":"FUN_004ed260",
-    "name":"core_menu.cpp_FUN_004ed260",
+    "method":"configureSoundOptions",
+    "name":"core_menu.cpp_configureSoundOptions_FUN_004ed260",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -14482,14 +14472,14 @@
       "00589560",
       "005b7790"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":1509,
-    "method":"FUN_004eed60",
-    "name":"core_menu.cpp_FUN_004eed60",
+    "method":"configureCustomKeyBindings",
+    "name":"core_menu.cpp_configureCustomKeyBindings_FUN_004eed60",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/menu.cpp",
@@ -15457,21 +15447,12 @@
       "005aab50",
       "005ac200"
     ],
+    "cls":"CMotionController",
     "conv":"__cdecl",
     "instructions":88,
-    "method":"FUN_00503e60",
-    "name":"core_motion.cpp_FUN_00503e60",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CMotionController",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"frameToMarkerPosition",
+    "name":"core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"float",
@@ -15503,19 +15484,12 @@
       "0055d723",
       "005b7790"
     ],
+    "cls":"CMotionController",
     "conv":"__cdecl",
     "instructions":161,
-    "method":"FUN_005042e0",
-    "name":"core_motion.cpp_FUN_005042e0",
+    "method":"render",
+    "name":"core_motion.cpp_CMotionController_render_FUN_005042e0",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CMotionController",
-          "ptr":1
-        }
-      },
       {
         "name":"actor",
         "type":{
@@ -15525,7 +15499,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -22741,8 +22715,8 @@
     ],
     "conv":"unknown",
     "instructions":28,
-    "method":"FUN_00592760",
-    "name":"core_xform.cpp_FUN_00592760",
+    "method":"invertAndGetTranslation",
+    "name":"core_xform.cpp_invertAndGetTranslation_FUN_00592760",
     "receiver":false,
     "ret":{
       "kind":"builtin",

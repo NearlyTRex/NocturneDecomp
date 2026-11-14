@@ -35,7 +35,7 @@
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_00537eb0
 ;   core_stranger.cpp_CStranger_updateWeaponPosition_FUN_005683d0
 ;   core_stranger.cpp_FUN_0056da90
-;   core_xform.cpp_FUN_00591c10
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
 ;   ... and 6 more
 ;
 ; *****************************************************************************
@@ -330,8 +330,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0056baa1
     MOVSD ES:EDI,ESI                    ; 0056baa2
     MOVSD ES:EDI,ESI                    ; 0056baa3
-    CALL core_xform.cpp_FUN_00591c10    ; 0056baa4
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591c10()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 0056baa4
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10()
     MOV ESI,dword ptr [0x0264be30]      ; 0056baa9 | DAT_0264be30
     LEA EAX,[ESI*0x4 + 0x0]             ; 0056baaf
     SUB EAX,ESI                         ; 0056bab6
@@ -478,8 +478,8 @@ section .text
     PUSH EAX                            ; 0056bc26
     MOV dword ptr [EBP + -0xe],ESI      ; 0056bc27
     MOV dword ptr [EBP + -0xa],EDI      ; 0056bc2a
-    CALL core_xform.cpp_FUN_00591c10    ; 0056bc2d
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591c10()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 0056bc2d
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10()
     MOV ESI,dword ptr [0x0264be68]      ; 0056bc32 | DAT_0264be68
     LEA EAX,[ESI*0x4 + 0x0]             ; 0056bc38
     SUB EAX,ESI                         ; 0056bc3f

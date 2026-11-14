@@ -72,7 +72,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_005424b0(CDef
                  ((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).transformed_x +
                  iStack_20);
         in_stack_ffffff80 = 0x542557;
-        engine_special_cpp_FUN_0055d723(output,(CVector3i *)this_ptr);
+        engine_special_cpp_transformAndProjectPoint_FUN_0055d723(output,(CVector3i *)this_ptr);
         iVar4 = iVar4 + 1;
         pCStack_18 = pCStack_18 + 1;
       } while (iVar4 < pCStack_14->bone_count);
@@ -138,7 +138,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_005424b0(CDef
            afStack_64[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
                 (this_ptr_00,euler_angles,translation);
-      shape_edittool_cpp_FUN_0047fd00(g_CEditorToolsPtr,0.5,0xff);
+      shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_0047fd00(g_CEditorToolsPtr,0.5,0xff);
       CStack_74.z = (float)DAT_0060b280;
       CStack_74.y = 7.728015e-39;
       engine_drender_cpp_pop_FUN_0046b4a0();

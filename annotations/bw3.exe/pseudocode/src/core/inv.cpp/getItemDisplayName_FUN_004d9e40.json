@@ -16,6 +16,12 @@
   },
   "cross_references": [
     {
+      "addr": "004da880",
+      "from_addr": "004da94b",
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004da880",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004dda90",
       "from_addr": "004ddbea",
       "name": "core_inv.cpp_CInventory_renderAllItems_FUN_004dda90",
@@ -25,12 +31,6 @@
       "addr": "004dcb40",
       "from_addr": "004dcc9c",
       "name": "core_inv.cpp_CInventory_select_FUN_004dcb40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004da880",
-      "from_addr": "004da94b",
-      "name": "core_inv.cpp_FUN_004da880",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -51,7 +51,7 @@
     {
       "addr": "004d9d20",
       "is_variadic": false,
-      "name": "core_inv.cpp_FUN_004d9d20"
+      "name": "core_inv.cpp_getItemModel_FUN_004d9d20"
     },
     {
       "addr": "005a3260",
@@ -84,7 +84,7 @@
       {
         "call_addr": "004da94b",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004da880",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004da880",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -95,7 +95,7 @@
       {
         "call_addr": "004daf5f",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004da880",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004da880",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

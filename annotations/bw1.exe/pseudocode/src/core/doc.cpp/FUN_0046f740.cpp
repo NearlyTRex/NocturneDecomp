@@ -196,7 +196,8 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,CDemonActor *param_2,int p
       local_ac.z = -0.412366;
       local_ac.x = 0.53949;
       local_150[4] = 1.83791;
-      core_xform_cpp_FUN_005b5760(&local_9d0,&local_ac,pCVar4);
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(&local_9d0,&local_ac,pCVar4)
+      ;
       local_150[3] = 0.934256;
       pCVar4 = &local_28c;
       local_150[2] = -0.414435;
@@ -209,7 +210,7 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,CDemonActor *param_2,int p
       *(float *)((int)&local_28c + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =
            local_150[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 4];
       local_280.z = 0.26139;
-      core_xform_cpp_FUN_005b5760(pCVar11,pCVar15,pCVar4);
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(pCVar11,pCVar15,pCVar4);
       fVar2 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590(param_1,3);
       core_xform_cpp_lerpMatrix3x4_FUN_005b72c0(&local_9d0,&local_8b0,1.0 - fVar2);
       pfVar8 = local_6d0;
@@ -234,7 +235,8 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,CDemonActor *param_2,int p
            local_9c[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 4];
       local_88.z = -0.326223;
       local_124 = -0.0120173;
-      core_xform_cpp_FUN_005b5760(&local_640,&local_88,&local_b8);
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+                (&local_640,&local_88,&local_b8);
       local_11c = 0x3fc9f99c;
       local_120 = 0x3fca29c7;
       local_1f0.x = 0.665317;
@@ -244,7 +246,8 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,CDemonActor *param_2,int p
            local_150[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 0xd];
       local_1f0.y = -0.0635326;
       local_1f0.z = 0.227495;
-      core_xform_cpp_FUN_005b5760(&local_ac0,&local_1f0,&local_70);
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+                (&local_ac0,&local_1f0,&local_70);
       fVar2 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590(param_1,3);
       core_xform_cpp_lerpMatrix3x4_FUN_005b72c0(&local_640,&local_ac0,1.0 - fVar2);
       pfVar8 = (float *)&stack0xfffff180;
@@ -270,7 +273,8 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,CDemonActor *param_2,int p
       local_298.z = -0.233186;
       local_298.x = 0.412537;
       local_3c[4] = (CDemonActor *)0x3fdd1cc1;
-      core_xform_cpp_FUN_005b5760(&local_df0,&local_298,pCVar4);
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+                (&local_df0,&local_298,pCVar4);
       local_3c[3] = (CDemonActor *)0x3fac74a7;
       pCVar4 = &local_25c;
       local_3c[2] = (CDemonActor *)0xbe93c947;
@@ -283,7 +287,7 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,CDemonActor *param_2,int p
       *(CDemonActor **)((int)&local_25c + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =
            local_3c[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 4];
       local_268.z = 0.0731532;
-      core_xform_cpp_FUN_005b5760(pCVar11,pCVar15,pCVar4);
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(pCVar11,pCVar15,pCVar4);
       fVar2 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590(param_1,3);
       core_xform_cpp_lerpMatrix3x4_FUN_005b72c0(&local_df0,&local_cd0,1.0 - fVar2);
       pfVar8 = local_550;
@@ -308,7 +312,8 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,CDemonActor *param_2,int p
            local_2c4[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1];
       local_64.z = -0.409418;
       local_58 = -0.464445;
-      core_xform_cpp_FUN_005b5760(&local_7c0,&local_64,&local_1c0);
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+                (&local_7c0,&local_64,&local_1c0);
       local_54[1] = 0x3fe3381d;
       local_54[0] = 0x3f93df3b;
       local_190.x = 0.381162;
@@ -318,7 +323,8 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,CDemonActor *param_2,int p
            local_54[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1];
       local_190.y = 0.0692056;
       local_190.z = -0.225393;
-      core_xform_cpp_FUN_005b5760(&local_6a0,&local_190,&local_238);
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+                (&local_6a0,&local_190,&local_238);
       fVar2 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590(param_1,3);
       core_xform_cpp_lerpMatrix3x4_FUN_005b72c0(&local_7c0,&local_6a0,1.0 - fVar2);
       pfVar8 = local_d30;
@@ -345,7 +351,7 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,CDemonActor *param_2,int p
       *(float *)((int)&local_dc + (uint)bVar14 * -8 + 4) = local_78[(uint)bVar14 * -2];
       *(float *)((int)&local_dc + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =
            local_78[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1];
-      core_xform_cpp_FUN_005b5760(pCVar11,pCVar15,pCVar4);
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(pCVar11,pCVar15,pCVar4);
       core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&local_d00,pCVar7,&local_5b0);
       pCVar7 = &local_5b0;
     }
@@ -361,7 +367,8 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,CDemonActor *param_2,int p
            local_cc[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1];
       local_160.z = 0.0786577;
       local_160.x = 0.17933;
-      core_xform_cpp_FUN_005b5760(&local_850,&local_160,pCVar4);
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+                (&local_850,&local_160,pCVar4);
       core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&local_850,pCVar7,&local_730);
       pCVar7 = &local_730;
     }
@@ -377,7 +384,8 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,CDemonActor *param_2,int p
            local_150[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1];
       local_1b4.z = -0.13807;
       local_150[5] = -0.00840538;
-      core_xform_cpp_FUN_005b5760(&local_430,&local_1b4,&local_250);
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+                (&local_430,&local_1b4,&local_250);
       local_150[7] = 0.0168502;
       local_150[6] = 0.0531937;
       local_220.x = 0.15802;
@@ -387,7 +395,8 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,CDemonActor *param_2,int p
            local_150[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 7];
       local_220.y = -0.0925491;
       local_220.z = -0.13807;
-      core_xform_cpp_FUN_005b5760(&local_460,&local_220,&local_2e0);
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+                (&local_460,&local_220,&local_2e0);
       fVar2 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590(param_1,0);
       core_xform_cpp_lerpMatrix3x4_FUN_005b72c0(&local_430,&local_460,1.0 - fVar2);
       pfVar8 = local_ca0;
@@ -401,7 +410,8 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,CDemonActor *param_2,int p
       pCVar7 = &local_c40;
     }
     else if (param_3 == 0) {
-      core_xform_cpp_FUN_005b5760(&local_c10,(CVector3f *)&DAT_01b68804,(CVector3f *)&DAT_02c8af28);
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+                (&local_c10,(CVector3f *)&DAT_01b68804,(CVector3f *)&DAT_02c8af28);
       pCVar11 = &local_c10;
       core_xform_cpp_buildRotationX_FUN_005b6d90(1.5707964,&local_520);
       pCVar10 = &local_bb0;
@@ -440,7 +450,8 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,CDemonActor *param_2,int p
       pCVar7 = &local_a60;
     }
     else {
-      core_xform_cpp_FUN_005b5760(&local_a30,(CVector3f *)&DAT_01b687f8,(CVector3f *)&DAT_02c8af28);
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+                (&local_a30,(CVector3f *)&DAT_01b687f8,(CVector3f *)&DAT_02c8af28);
       pCVar11 = &local_a30;
       core_xform_cpp_buildRotationX_FUN_005b6d90(1.5707964,&local_940);
       pCVar10 = &local_340;
@@ -585,7 +596,8 @@ LAB_00470270:
          local_2c4[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 7];
     local_2d4.z = -0.489897;
     local_180[2] = 0.30057;
-    core_xform_cpp_FUN_005b5760(&local_370,&local_2d4,&local_214);
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+              (&local_370,&local_2d4,&local_214);
     local_208.y = -0.0122009;
     local_180[4] = 0.64525;
     pCVar4 = &local_118;
@@ -596,7 +608,7 @@ LAB_00470270:
          local_180[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 4];
     local_208.x = 0.385392;
     local_208.z = -0.49418;
-    core_xform_cpp_FUN_005b5760(&local_e50,&local_208,pCVar4);
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(&local_e50,&local_208,pCVar4);
     pCVar11 = (param_1->model).bone_transform.bone_model_matrices + iVar5;
     core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590(param_1,0);
     core_xform_cpp_lerpMatrix3x4_FUN_005b72c0(&local_370);
@@ -654,7 +666,8 @@ LAB_0047045f:
   }
   core_xform_cpp_transformVector3x4InPlace_FUN_005b5100
             (&local_1cc,(param_1->model).bone_transform.bone_model_matrices + iVar5);
-  core_xform_cpp_FUN_005b5760(&local_b20,&local_1cc,&local_22c);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+            (&local_b20,&local_1cc,&local_22c);
   core_xform_cpp_FUN_005b5080();
   local_2c4[2] = local_150[8];
   local_2c4[(uint)bVar14 * -2 + 3] = local_150[(uint)bVar14 * -2 + 9];

@@ -124,28 +124,32 @@ void __cdecl core_dlight_cpp_FUN_0044b020(CDemonLight *this_ptr)
     local_40.x = (int)ROUND(_DAT_005f5050 * 1.0);
     local_40.y = (int)ROUND(_DAT_005f5050 * 1.0);
     local_40.z = (int)ROUND(_DAT_005f5050 * -0.5);
-    engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_40);
+    engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+              (&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_40);
     local_cc = 0x3f800000;
     local_d0 = 0xbf800000;
     local_c8 = 0xbf000000;
     local_c4.x = (int)ROUND(_DAT_005f5050 * -1.0);
     local_c4.y = (int)ROUND(_DAT_005f5050 * 1.0);
     local_c4.z = (int)ROUND(_DAT_005f5050 * -0.5);
-    engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_c4);
+    engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+              (&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_c4);
     local_d0 = 0xbf800000;
     local_cc = 0xbf800000;
     local_c8 = 0xbf000000;
     local_88.x = (int)ROUND(_DAT_005f5050 * -1.0);
     local_88.y = (int)ROUND(_DAT_005f5050 * -1.0);
     local_88.z = (int)ROUND(_DAT_005f5050 * -0.5);
-    engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_88);
+    engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+              (&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_88);
     local_d0 = 0x3f800000;
     local_c8 = 0xbf000000;
     local_cc = 0xbf800000;
     local_4c.x = (int)ROUND(_DAT_005f5050 * 1.0);
     local_4c.y = (int)ROUND(_DAT_005f5050 * -1.0);
     local_4c.z = (int)ROUND(_DAT_005f5050 * -0.5);
-    engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_4c);
+    engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+              (&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_4c);
     this_ptr_00 = DAT_0060b280;
     DAT_0060b280->vertex_buffer_ptr->u = 0xf80000;
     this_ptr_00->vertex_buffer_ptr->v = 0xf80000;

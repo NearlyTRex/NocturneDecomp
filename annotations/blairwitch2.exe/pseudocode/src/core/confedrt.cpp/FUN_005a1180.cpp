@@ -44,7 +44,8 @@ void core_confedrt_cpp_FUN_005a1180(CCharacter *param_1)
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr->base,unaff_EDI,1);
       pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr->base);
       if (pSVar4->state_index == 5) {
-        fVar5 = core_motion_cpp_FUN_00503e60(&this_ptr->base);
+        fVar5 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00503e60
+                          (&this_ptr->base);
         if ((float)_DAT_005efccf < fVar5) {
           fVar5 = (float)core_actor_cpp_getRandomInt_FUN_0040cfc0(0,1);
           param_1[1].model.bone_transform.pose_data.bone_rotations[0x4a].w = fVar5;
@@ -53,7 +54,8 @@ void core_confedrt_cpp_FUN_005a1180(CCharacter *param_1)
       pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
                          (&(param_1->model).base);
       if (pSVar4->state_index == 9) {
-        fVar5 = core_motion_cpp_FUN_00503e60(&(param_1->model).base);
+        fVar5 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00503e60
+                          (&(param_1->model).base);
         if ((float)_DAT_005efccf < fVar5) {
           fVar5 = (float)core_actor_cpp_getRandomInt_FUN_0040cfc0(0,1);
           param_1[1].model.bone_transform.pose_data.bone_rotations[0x4a].w = fVar5;

@@ -62,7 +62,8 @@ CMatrix3x4f * __stack2_esi core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_
     _DAT_01d046a4 = 0x289;
     core_main_c_FUN_004e4500("CIcePick::getCarryObjToBodyXForm - wrong hand");
   }
-  core_xform_cpp_FUN_00591c10(&CStack_78,&uStack_3c,&uStack_24);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
+            (&CStack_78,&uStack_3c,&uStack_24);
   core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
             (&CStack_78,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar1,
              &CStack_a8);

@@ -26,7 +26,7 @@
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_load_FUN_0043e6d0
-;   core_cloth.cpp_FUN_0043eea0
+;   core_cloth.cpp_CCloth_setup_FUN_0043eea0
 ;   core_hero.cpp_CHero_setup_FUN_004eaa10
 ;   core_skeleton.cpp_CDeformableModel_findPartByName_FUN_00565780
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0
@@ -215,8 +215,8 @@ section .text
     PUSH EBX                            ; 00593093
     MOV EAX,dword ptr [ESP + 0xc]       ; 00593094
     PUSH EAX                            ; 00593098
-    CALL core_cloth.cpp_FUN_0043eea0    ; 00593099
-        ;   XREF to: 0043eea0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043eea0(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
+    CALL core_cloth.cpp_CCloth_setup_FUN_0043eea0 ; 00593099
+        ;   XREF to: 0043eea0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_setup_FUN_0043eea0(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
     ADD ESP,0x10                        ; 0059309e
     PUSH 0x5f7522                       ; 005930a1 | = "svethair.cth"
     LEA EAX,[ESI + 0x5aae4]             ; 005930a6
@@ -230,8 +230,8 @@ section .text
     PUSH EBX                            ; 005930bb
     MOV ECX,dword ptr [ESP + 0xc]       ; 005930bc
     PUSH ECX                            ; 005930c0
-    CALL core_cloth.cpp_FUN_0043eea0    ; 005930c1
-        ;   XREF to: 0043eea0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043eea0(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
+    CALL core_cloth.cpp_CCloth_setup_FUN_0043eea0 ; 005930c1
+        ;   XREF to: 0043eea0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_setup_FUN_0043eea0(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
     ADD ESP,0x10                        ; 005930c6
     PUSH EDI                            ; 005930c9
     CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0 ; 005930ca

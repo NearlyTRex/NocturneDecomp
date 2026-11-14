@@ -8,7 +8,7 @@
 ; SSoundDeviceInfo * Stack[0x8]:4   device_info
 ;
 ; XREF[4]:
-;   core_menu.cpp_FUN_004ed260 at 004edc1e
+;   core_menu.cpp_configureSoundOptions_FUN_004ed260 at 004edc1e
 ;   sound_sndmain.cpp_findBestSoundDevice_FUN_00552980 at 005529a2
 ;   sound_sndmain.cpp_readIni_FUN_00553680 at 00553742
 ;   sound_sndmain.cpp_writeIni_FUN_00553980 at 005539c1

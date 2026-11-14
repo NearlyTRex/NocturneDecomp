@@ -19,7 +19,7 @@ int __cdecl core_skeleton_cpp_CDeformableModel_selectLOD_FUN_00543d00(CDeformabl
   if (iVar1 == 0) {
     iVar1 = 0;
     if (1 < this_ptr->num_lods) {
-      fVar2 = core_box_cpp_FUN_0041ae50(bounding_box);
+      fVar2 = core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041ae50(bounding_box);
       fVar4 = (float10)fVar2;
       round();
       iVar1 = extraout_ECX + -1;

@@ -463,7 +463,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_00529a70(CScript *this_ptr,float *t
                                         &g_CDemonActorClassInfo), item_actor == (CDemonActor *)0x0))
             goto joined_r0x0052b739;
             if (_DAT_01ed6808 == 0) {
-              core_inv_cpp_FUN_004da880
+              core_inv_cpp_CInventory_addItem_FUN_004da880
                         ((CInventory *)((int)&pCVar13[0x182].orient + 8),item_actor,0);
             }
           }
@@ -582,7 +582,7 @@ LAB_0052b2b0:
                       {
                         local_160 = core_script_cpp_skipWhitespace_FUN_005288a0(pcVar16 + 0xb);
                         if (_DAT_01ed6808 == 0) {
-                          core_game_cpp_FUN_004bd620(g_CGamePtr);
+                          core_game_cpp_CGame_beginFadeIn_FUN_004bd620(g_CGamePtr);
                         }
                       }
                       else {
@@ -1301,7 +1301,8 @@ LAB_0052c6e3:
                                                   }
                                                   }
                                                   else {
-                                                    core_game_cpp_FUN_004bd620(g_CGamePtr);
+                                                    core_game_cpp_CGame_beginFadeIn_FUN_004bd620
+                                                              (g_CGamePtr);
                                                     this_ptr->cmd_timer = 1.0;
                                                   }
                                                   }
@@ -1433,7 +1434,7 @@ LAB_0052c6e3:
                                                   core_script_cpp_trimString_FUN_00528830
                                                             (local_291c);
                                                   if (_DAT_01ed6808 == 0) {
-                                                    engine_ini_cpp_FUN_004d8a20
+                                                    engine_ini_cpp_CIniFile_ctor_FUN_004d8a20
                                                               (&local_4720,"system\\bw3.ini"
                                                                ,&DAT_005ceb10);
                                                     local_10c = 
@@ -2940,7 +2941,7 @@ LAB_0052ebdc:
                                                   core_script_cpp_trimString_FUN_00528830
                                                             (local_340c);
                                                   if (_DAT_01ed6808 == 0) {
-                                                    engine_ini_cpp_FUN_004d8a20
+                                                    engine_ini_cpp_CIniFile_ctor_FUN_004d8a20
                                                               (&local_4924,"system\\bw3.ini"
                                                                ,&DAT_005cf59c);
                                                     engine_ini_cpp_FUN_004d8c90

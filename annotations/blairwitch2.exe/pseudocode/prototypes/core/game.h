@@ -125,9 +125,9 @@ void __cdecl pollKeyEdgeTrigger(int key_index,uint *out_state);
 // Address: 004b7650
 void FUN_004b7650(void);
 
-// Original: core_game.cpp_FUN_004b76c0
+// Original: core_game.cpp_CGame_processKeyboardControls_FUN_004b76c0
 // Address: 004b76c0
-void __cdecl FUN_004b76c0(CGame *this_ptr,SPlayerInput *player_control);
+void __cdecl CGame::processKeyboardControls(CGame *this_ptr,SPlayerInput *player_control);
 
 // Original: core_game.cpp_FUN_004b7fc0
 // Address: 004b7fc0
@@ -177,9 +177,9 @@ void __cdecl CGame::loadAssets(CGame *this_ptr);
 // Address: 004bb090
 void FUN_004bb090(void);
 
-// Original: core_game.cpp_FUN_004bb240
+// Original: core_game.cpp_CGame_beginFadeIn_FUN_004bb240
 // Address: 004bb240
-void __cdecl FUN_004bb240(CGame *this_ptr);
+void __cdecl CGame::beginFadeIn(CGame *this_ptr);
 
 // Original: core_game.cpp_CGame_beginFadeOut_FUN_004bb280
 // Address: 004bb280
@@ -193,13 +193,13 @@ void __cdecl calculateIrisFadeCenter(void);
 // Address: 004bb2f0
 void __cdecl CGame::updateFadeTransition(CGame *this_ptr);
 
-// Original: core_game.cpp_FUN_004bb3d0
+// Original: core_game.cpp_CGame_renderIrisFade_FUN_004bb3d0
 // Address: 004bb3d0
-void __cdecl FUN_004bb3d0(CGame *this_ptr);
+void __cdecl CGame::renderIrisFade(CGame *this_ptr);
 
-// Original: core_game.cpp_FUN_004bb4e0
+// Original: core_game.cpp_CGame_fadeIn_FUN_004bb4e0
 // Address: 004bb4e0
-undefined4 FUN_004bb4e0(void);
+uint __cdecl CGame::fadeIn(CGame *this_ptr);
 
 // Original: core_game.cpp_FUN_004bb500
 // Address: 004bb500
@@ -233,13 +233,13 @@ void __cdecl CGame::resetInventoryDisplayTimer(CGame *this_ptr);
 // Address: 004bb8d0
 void __cdecl CGame::setStatusDisplay(CGame *this_ptr,char *name,float value,float duration);
 
-// Original: core_game.cpp_FUN_004bb9b0
+// Original: core_game.cpp_CGame_saveGame_FUN_004bb9b0
 // Address: 004bb9b0
-void __cdecl FUN_004bb9b0(CGame *this_ptr,char *save_filename);
+void __cdecl CGame::saveGame(CGame *this_ptr,char *save_filename);
 
-// Original: core_game.cpp_FUN_004bbf70
+// Original: core_game.cpp_CGame_loadGame_FUN_004bbf70
 // Address: 004bbf70
-void __cdecl FUN_004bbf70(CGame *this_ptr,char *save_filename,int load_mode);
+void __cdecl CGame::loadGame(CGame *this_ptr,char *save_filename,int load_mode);
 
 // Original: core_game.cpp_FUN_004bc840
 // Address: 004bc840

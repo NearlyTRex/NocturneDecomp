@@ -16,7 +16,7 @@
 ;   core_main.c_FUN_004e4500
 ;   crt_memory.c_memset_FUN_005b77c0
 ;   crt_unknown.c_sprintf_FUN_005b7790
-;   sound_snddx.cpp_FUN_00554ad0
+;   sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0
 ;   sound_sndmain.cpp_logSoundError_FUN_005549c0
 ;
 ; *****************************************************************************
@@ -137,8 +137,8 @@ section .text
     RET                                 ; 00556168
     PUSH EAX                            ; 00556169
         ;   Label: LAB_00556169
-    CALL sound_snddx.cpp_FUN_00554ad0   ; 0055616a
-        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00554ad0(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0 ; 0055616a
+        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0(uint error_code)
     ADD ESP,0x4                         ; 0055616f
     PUSH EAX                            ; 00556172
     PUSH 0x5e9c8b                       ; 00556173 | = "Lock hw sample buffer"

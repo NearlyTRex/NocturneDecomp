@@ -198,7 +198,8 @@ LAB_00543ab8:
                 (&(param_1->base).model.base,iVar8,iVar14);
     }
     else if (EVar2 < WALK_STATE_NO_PATH) {
-      fStack_14 = core_motion_cpp_FUN_004fc930(&pCVar16->base);
+      fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                            (&pCVar16->base);
       if ((float)_DAT_005d12de < fStack_14) {
         iVar14 = 1;
         iVar8 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,1);
@@ -251,14 +252,16 @@ LAB_00544b88:
           }
           else {
             if (uVar4 != 2) goto LAB_00544b88;
-            fStack_14 = core_motion_cpp_FUN_004fc930(&pCVar16->base);
+            fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                                  (&pCVar16->base);
             if ((float)_DAT_005d12d6 < fStack_14) {
               pcVar1 = param_1[1].base.base.create_event;
               *(int *)pcVar1 = *(int *)pcVar1 + 1;
             }
             if (2 < *(int *)param_1[1].base.base.create_event) {
               pCVar16 = &(param_1->base).model;
-              fStack_14 = core_motion_cpp_FUN_004fc930(&pCVar16->base);
+              fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                                    (&pCVar16->base);
               if ((float)_DAT_005d12de < fStack_14) {
                 iVar23 = 1;
                 iVar8 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,1);
@@ -376,7 +379,8 @@ LAB_00544b88:
               in_stack_fffffd20 = (CEnemy *)(fStack_a8 - (param_1->base).base.orient.vec.y);
               fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0((float)in_stack_fffffd20);
               if (ABS(fStack_14) < (float)_DAT_005d12ee) {
-                fStack_14 = core_motion_cpp_FUN_004fc930(pCStack_1c);
+                fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                                      (pCStack_1c);
                 if ((float)_DAT_005d12de < fStack_14) {
                   fVar25 = 1.4013e-45;
                   iVar14 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,1);
@@ -430,8 +434,8 @@ LAB_00544b88:
             else if (fStack_34 < 0x40400000 * _DAT_005d12c2) {
               if ((iVar14 == 5) &&
                  (in_stack_fffffd20 = (CEnemy *)pCVar16,
-                 fStack_14 = core_motion_cpp_FUN_004fc930(&pCVar16->base),
-                 (float)_DAT_005d12de < fStack_14)) {
+                 fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                                       (&pCVar16->base), (float)_DAT_005d12de < fStack_14)) {
                 in_stack_fffffd20 = (CEnemy *)0x1;
                 iVar8 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,4);
                 core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
@@ -629,7 +633,8 @@ LAB_00544758:
       }
       if (param_1->victim == (CCharacter *)0x0) {
         pCVar16 = &(param_1->base).model;
-        fStack_14 = core_motion_cpp_FUN_004fc930(&pCVar16->base);
+        fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                              (&pCVar16->base);
         if ((float)_DAT_005d12de < fStack_14) {
           fVar25 = 1.4013e-45;
           iVar14 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,4);
@@ -720,7 +725,8 @@ LAB_00544758:
     (pCVar3->base).create_event[0x12] = '\0';
     (pCVar3->base).create_event[0x13] = '\0';
     pCVar12 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(pCVar16);
-    fStack_14 = core_motion_cpp_FUN_004fc930(&pCVar16->base);
+    fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930(&pCVar16->base)
+    ;
     fVar19 = (float10)_DAT_005d12c6;
     pow();
     fVar20 = (float10)_DAT_005d12ce;
@@ -809,7 +815,7 @@ LAB_00543af0:
          (param_1->base).model.accumulated_root_motion.y;
     (param_1->base).position_delta.y = (param_1->base).position_delta.z;
     (param_1->base).position_delta.x = (param_1->base).position_delta.y;
-    core_charactr_cpp_FUN_0042c230(&param_1->base,&CStack_10c);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230(&param_1->base,&CStack_10c);
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_0042cd30(&param_1->base);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130(&(param_1->base).model);

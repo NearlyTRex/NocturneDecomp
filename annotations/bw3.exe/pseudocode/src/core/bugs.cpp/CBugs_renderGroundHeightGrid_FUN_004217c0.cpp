@@ -40,7 +40,7 @@ void __cdecl core_bugs_cpp_CBugs_renderGroundHeightGrid_FUN_004217c0(CBugs *this
       CStack_3c.z = (int)ROUND(((float)iVar1 * _DAT_005dcbc8 + this_ptr->grid_origin_z) *
                                _DAT_005dcbb0);
       iStack_18 = iVar1;
-      engine_special_cpp_FUN_005632a3
+      engine_special_cpp_transformAndProjectPoint_FUN_005632a3
                 ((SProjectedVertex *)
                  ((int)&(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).transformed_x +
                  iStack_1c),&CStack_3c);

@@ -36,11 +36,11 @@
 ;   core_actor.cpp_randomChance_FUN_0040d060
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429420
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60
 ;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042abe0
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00424470
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042aa00
-;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0
 ;   ... and 26 more
 ;
 ; *****************************************************************************
@@ -1277,8 +1277,8 @@ section .text
     PUSH EAX                            ; 004d2539
     MOV ESI,dword ptr [0x006141f0]      ; 004d253a | DAT_006141f0
     PUSH ESI                            ; 004d2540
-    CALL core_event.cpp_FUN_00490f80    ; 004d2541
-        ;   XREF to: 00490f80 (UNCONDITIONAL_CALL)  ; void core_event.cpp_FUN_00490f80(CEventList * this_ptr, char * name, int add_flag)
+    CALL core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80 ; 004d2541
+        ;   XREF to: 00490f80 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80(CEventList * this_ptr, char * name, int add_flag)
     MOV dword ptr [EBX + 0x246fc],0x4   ; 004d2546
     ADD ESP,0xc                         ; 004d2550
     MOV dword ptr [EBX + 0x24708],0x0   ; 004d2553
@@ -1493,8 +1493,8 @@ section .text
     PUSH EAX                            ; 004d2817
     MOV ESI,dword ptr [0x006141f0]      ; 004d2818 | DAT_006141f0
     PUSH ESI                            ; 004d281e
-    CALL core_event.cpp_FUN_00490f80    ; 004d281f
-        ;   XREF to: 00490f80 (UNCONDITIONAL_CALL)  ; void core_event.cpp_FUN_00490f80(CEventList * this_ptr, char * name, int add_flag)
+    CALL core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80 ; 004d281f
+        ;   XREF to: 00490f80 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80(CEventList * this_ptr, char * name, int add_flag)
     ADD ESP,0xc                         ; 004d2824
     MOV dword ptr [EBX + 0x24704],0x0   ; 004d2827
     FLD float ptr [EBP + 0x18]          ; 004d2831
@@ -1642,8 +1642,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004d2a27
     MOVSD ES:EDI,ESI                    ; 004d2a28
     MOVSD ES:EDI,ESI                    ; 004d2a29
-    CALL core_charactr.cpp_FUN_00423a60 ; 004d2a2a
-        ;   XREF to: 00423a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00423a60(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60 ; 004d2a2a
+        ;   XREF to: 00423a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 004d2a2f
     FLD float ptr [EBX + 0x304c]        ; 004d2a32
     FADD float ptr [EBP + 0x18]         ; 004d2a38

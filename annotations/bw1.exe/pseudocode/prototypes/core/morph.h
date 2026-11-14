@@ -125,9 +125,9 @@ void __cdecl CMorph::getReady(CMorph *this_ptr);
 // Address: 005237e0
 void __cdecl CMorph::render(CMorph *this_ptr,float morph_t);
 
-// Original: core_morph.cpp_FUN_00523880
+// Original: core_morph.cpp_CMorphModel_arrdtor2_FUN_00523880
 // Address: 00523880
-CMorphModel * __cdecl FUN_00523880(CMorphModel *this_ptr,uint flags);
+CMorphModel * __cdecl CMorphModel::arrdtor2(CMorphModel *this_ptr,uint flags);
 
 // Original: core_morph.cpp_FUN_005238c0
 // Address: 005238c0

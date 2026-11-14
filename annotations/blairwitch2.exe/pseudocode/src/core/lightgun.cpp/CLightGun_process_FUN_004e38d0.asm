@@ -23,7 +23,7 @@
 ;   core_dfilter.cpp_CFilterCache_getFilter_FUN_00447660
 ;   core_dlight.cpp_CDemonLight_applyFilter_FUN_0044b600
 ;   core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004dcfb0
-;   core_lightgun.cpp_FUN_004e2bf0
+;   core_lightgun.cpp_CLightGun_updateBeamLight_FUN_004e2bf0
 ;   core_set.cpp_CDemonSet_addDynamicLight_FUN_00530630
 ;   core_weapon.cpp_CWeapon_process_FUN_00589c80
 ;   core_weather.cpp_CWeather_createLightningStrike_FUN_0058aa30
@@ -116,8 +116,8 @@ section .text
     ADD ESP,0x8                         ; 004e39c8
     PUSH EBX                            ; 004e39cb
         ;   Label: LAB_004e39cb
-    CALL core_lightgun.cpp_FUN_004e2bf0 ; 004e39cc
-        ;   XREF to: 004e2bf0 (UNCONDITIONAL_CALL)  ; undefined core_lightgun.cpp_FUN_004e2bf0()
+    CALL core_lightgun.cpp_CLightGun_updateBeamLight_FUN_004e2bf0 ; 004e39cc
+        ;   XREF to: 004e2bf0 (UNCONDITIONAL_CALL)  ; void core_lightgun.cpp_CLightGun_updateBeamLight_FUN_004e2bf0(CLightGun * this_ptr)
     MOV EBP,dword ptr [EBX + 0x6d4]     ; 004e39d1
     ADD ESP,0x4                         ; 004e39d7
     TEST EBP,EBP                        ; 004e39da

@@ -26,11 +26,11 @@
 ;   core_doc.cpp_FUN_00453d80 at 00453fe2
 ;   core_doc.cpp_FUN_00455170 at 00455234
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20 at 004b0143
-;   core_icepick.cpp_FUN_004d5470 at 004d556e
+;   core_icepick.cpp_CIcePick_updateShootBlend_FUN_004d5470 at 004d556e
 ;   core_mobster.cpp_CMobster_aimTommyGun_FUN_004fef30 at 004ff234
+;   core_stranger.cpp_CStranger_extractTurnPose_FUN_00567430 at 005674f4
 ;   core_stranger.cpp_CStranger_makeDrawDecision_FUN_00567880 at 00567d50
-;   core_stranger.cpp_FUN_00565ff0 at 00566246
-;   core_stranger.cpp_FUN_00567430 at 005674f4
+;   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00565ff0 at 00566246
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e7337

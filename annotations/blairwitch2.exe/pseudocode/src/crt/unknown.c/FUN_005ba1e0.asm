@@ -7,8 +7,8 @@
 ; char *           Stack[0x4]:4   filename
 ;
 ; XREF[6]:
-;   core_game.cpp_FUN_004bb9b0 at 004bb9da
-;   core_game.cpp_FUN_004bbf70 at 004bbf7f
+;   core_game.cpp_CGame_loadGame_FUN_004bbf70 at 004bbf7f
+;   core_game.cpp_CGame_saveGame_FUN_004bb9b0 at 004bb9da
 ;   core_netgame.cpp_CNetGame_init_FUN_0050b340 at 0050b347
 ;   crt_stdio.c_fclose_FUN_005b8af0 at 005b8ba9
 ;   engine_dosio.cpp_FUN_00461440 at 00461445

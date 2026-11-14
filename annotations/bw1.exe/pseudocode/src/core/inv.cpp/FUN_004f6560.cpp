@@ -103,7 +103,8 @@ void core_inv_cpp_FUN_004f6560(void)
   *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) = afStack_8c[(uint)bVar5 * -2];
   *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
        afStack_8c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-  engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&CStack_c0);
+  engine_special_cpp_transformAndProjectPoint_FUN_00580173
+            (&DAT_00612560->vertex_buffer_ptr->projected_vertex,&CStack_c0);
   fStack_44 = -fStack_20;
   fStack_48 = fStack_24;
   uStack_40 = 0;
@@ -123,7 +124,8 @@ void core_inv_cpp_FUN_004f6560(void)
   *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) = afStack_38[(uint)bVar5 * -2];
   *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
        afStack_38[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-  engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&CStack_c0);
+  engine_special_cpp_transformAndProjectPoint_FUN_00580173
+            (&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&CStack_c0);
   fStack_54 = fStack_24;
   fStack_50 = fStack_20;
   uStack_4c = 0;
@@ -142,7 +144,8 @@ void core_inv_cpp_FUN_004f6560(void)
   *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) = afStack_ec[(uint)bVar5 * -2];
   *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
        afStack_ec[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-  engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&CStack_c0);
+  engine_special_cpp_transformAndProjectPoint_FUN_00580173
+            (&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&CStack_c0);
   afStack_8c[3] = fStack_20;
   afStack_8c[2] = -fStack_24;
   uStack_7c = 0;
@@ -161,7 +164,8 @@ void core_inv_cpp_FUN_004f6560(void)
   *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) = afStack_a4[(uint)bVar5 * -2];
   *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
        afStack_a4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-  engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&CStack_c0);
+  engine_special_cpp_transformAndProjectPoint_FUN_00580173
+            (&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&CStack_c0);
   auStack_184._4_4_ = 4;
   auStack_184._24_4_ = 0;
   auStack_184._28_4_ = 0;

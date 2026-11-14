@@ -3638,14 +3638,15 @@
       "0046d540",
       "0054e3a0"
     ],
-    "conv":"unknown",
+    "cls":"CCharacter",
+    "conv":"__cdecl",
     "instructions":90,
-    "method":"FUN_0042d8e0",
-    "name":"core_charactr.cpp_FUN_0042d8e0",
-    "receiver":false,
+    "method":"renderCharacter",
+    "name":"core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/charactr.cpp",
@@ -4267,10 +4268,10 @@
       "005a3a90",
       "005a40f0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":171,
-    "method":"FUN_004367e0",
-    "name":"cockpit_ckptutil.c_FUN_004367e0",
+    "method":"loadEdgeListFile",
+    "name":"cockpit_ckptutil.c_loadEdgeListFile_FUN_004367e0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -4597,7 +4598,8 @@
       "00574b50",
       "00574d00"
     ],
-    "conv":"unknown",
+    "cls":"CCodec",
+    "conv":"__cdecl",
     "data_refs":[
       "005dd454",
       "005dd484",
@@ -4607,12 +4609,30 @@
       "005dd544"
     ],
     "instructions":46,
-    "method":"FUN_00440b60",
-    "name":"support_codec.cpp_FUN_00440b60",
-    "receiver":false,
+    "method":"finalizeBuffer",
+    "name":"support_codec.cpp_CCodec_finalizeBuffer_FUN_00440b60",
+    "params":[
+      {
+        "name":"buffer_ptr",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"buffer_size_ptr",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -7573,14 +7593,56 @@
       "00401130",
       "004f36e0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":140,
-    "method":"FUN_0047b5e0",
-    "name":"shape_edittool.cpp_FUN_0047b5e0",
+    "method":"drawDashedLine",
+    "name":"shape_edittool.cpp_drawDashedLine_FUN_0047b5e0",
+    "params":[
+      {
+        "name":"x1",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"y1",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"x2",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"y2",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"dash_length",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -10269,19 +10331,12 @@
       "004dbb40",
       "004dbc40"
     ],
+    "cls":"CGame",
     "conv":"__cdecl",
     "instructions":601,
-    "method":"FUN_004b9960",
-    "name":"core_game.cpp_FUN_004b9960",
+    "method":"processKeyboardControls",
+    "name":"core_game.cpp_CGame_processKeyboardControls_FUN_004b9960",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CGame",
-          "ptr":1
-        }
-      },
       {
         "name":"player_control",
         "type":{
@@ -10291,7 +10346,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -11148,19 +11203,12 @@
     "calls":[
       "004319d0"
     ],
+    "cls":"CHero",
     "conv":"__cdecl",
     "instructions":20,
-    "method":"FUN_004d4160",
-    "name":"core_hero.cpp_FUN_004d4160",
+    "method":"executeObjectPickup",
+    "name":"core_hero.cpp_CHero_executeObjectPickup_FUN_004d4160",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CHero",
-          "ptr":1
-        }
-      },
       {
         "name":"hand_index",
         "type":{
@@ -11170,7 +11218,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -12215,8 +12263,8 @@
     ],
     "conv":"__cdecl",
     "instructions":333,
-    "method":"FUN_004e7860",
-    "name":"core_menu.cpp_FUN_004e7860",
+    "method":"renderMenuAndGetChoice",
+    "name":"core_menu.cpp_renderMenuAndGetChoice_FUN_004e7860",
     "params":[
       {
         "name":"menu_text_array",
@@ -12838,14 +12886,25 @@
       "00532b80",
       "00556c60"
     ],
-    "conv":"unknown",
+    "cls":"CDemonMission",
+    "conv":"__cdecl",
     "instructions":58,
-    "method":"FUN_004f6de0",
-    "name":"core_mission.cpp_FUN_004f6de0",
-    "receiver":false,
+    "method":"loadSet",
+    "name":"core_mission.cpp_CDemonMission_loadSet_FUN_004f6de0",
+    "params":[
+      {
+        "name":"set_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/mission.cpp",
@@ -14201,21 +14260,12 @@
       "00583b10",
       "00584450"
     ],
+    "cls":"CPlatform",
     "conv":"__cdecl",
     "instructions":77,
-    "method":"FUN_00512be0",
-    "name":"core_platfrm.cpp_FUN_00512be0",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CPlatform",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"updateAttachedActors",
+    "name":"core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_00512be0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -16084,14 +16134,15 @@
     "callers":[
       "004b6f30"
     ],
-    "conv":"unknown",
+    "cls":"CSlew",
+    "conv":"__cdecl",
     "instructions":341,
-    "method":"FUN_005505e0",
-    "name":"core_slew.cpp_FUN_005505e0",
-    "receiver":false,
+    "method":"processInput",
+    "name":"core_slew.cpp_CSlew_processInput_FUN_005505e0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/slew.cpp",
@@ -17146,21 +17197,12 @@
       "005586d0",
       "00558730"
     ],
+    "cls":"CSound",
     "conv":"__cdecl",
     "instructions":24,
-    "method":"FUN_0055fc60",
-    "name":"core_sound.cpp_FUN_0055fc60",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CSound",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"findAllSoundFiles",
+    "name":"core_sound.cpp_CSound_findAllSoundFiles_FUN_0055fc60",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -19071,14 +19113,33 @@
       "005609d0",
       "0057c2c0"
     ],
-    "conv":"unknown",
+    "cls":"CWeather",
+    "conv":"__cdecl",
     "instructions":339,
-    "method":"FUN_0057c2e0",
-    "name":"core_weather.cpp_FUN_0057c2e0",
-    "receiver":false,
+    "method":"createLightningStrike",
+    "name":"core_weather.cpp_CWeather_createLightningStrike_FUN_0057c2e0",
+    "params":[
+      {
+        "name":"flash_timer",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"play_sound",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/weather.cpp",
@@ -19196,8 +19257,8 @@
     ],
     "conv":"__cdecl",
     "instructions":398,
-    "method":"FUN_00581360",
-    "name":"wincore_winrun.cpp_FUN_00581360",
+    "method":"getKeyName",
+    "name":"wincore_winrun.cpp_getKeyName_FUN_00581360",
     "params":[
       {
         "name":"keycode",

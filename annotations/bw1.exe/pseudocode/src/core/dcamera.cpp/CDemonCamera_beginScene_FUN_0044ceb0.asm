@@ -8,9 +8,9 @@
 ; int              Stack[0x8]:4   skip_clear_buffers
 ;
 ; XREF[3]:
+;   core_set.cpp_CDemonSet_renderScene_FUN_00550580 at 00550601
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0 at 0054f739
 ;   core_set.cpp_FUN_0054e6a0 at 0054e99d
-;   core_set.cpp_FUN_00550580 at 00550601
 ;
 ; Referenced Globals:
 ;   void* PTR_caseD_3_0044ceac = 0044cf36
@@ -39,11 +39,11 @@
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0
 ;   engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_004839b0
 ;   engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_00483560
+;   engine_special.cpp_beginScene_FUN_00581fe0
 ;   engine_special.cpp_clear_FUN_00582790
 ;   engine_special.cpp_clearScreen_FUN_0057dc40
 ;   engine_special.cpp_clearZBuffer_FUN_00582940
 ;   engine_special.cpp_clearZBufferNative_FUN_0057dca4
-;   engine_special.cpp_FUN_00581fe0
 ;
 ; *****************************************************************************
 
@@ -213,8 +213,8 @@ section .text
     CMP dword ptr [0x02c83370],0x0      ; 0044d0c7 | DAT_02c83370
     JZ 0x0044d0d5                       ; 0044d0ce
         ;   XREF to: 0044d0d5 (CONDITIONAL_JUMP)  ; LAB_0044d0d5
-    CALL engine_special.cpp_FUN_00581fe0 ; 0044d0d0
-        ;   XREF to: 00581fe0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_00581fe0()
+    CALL engine_special.cpp_beginScene_FUN_00581fe0 ; 0044d0d0
+        ;   XREF to: 00581fe0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_beginScene_FUN_00581fe0()
     CALL engine_special.cpp_clearScreen_FUN_0057dc40 ; 0044d0d5
         ;   XREF to: 0057dc40 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0057dc40()
         ;   Label: LAB_0044d0d5

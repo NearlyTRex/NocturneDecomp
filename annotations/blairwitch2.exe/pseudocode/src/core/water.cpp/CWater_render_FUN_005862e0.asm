@@ -34,8 +34,8 @@
 ;
 ; XREF[3]:
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0 at 0052d320
+;   core_set.cpp_CDemonSet_renderScene_FUN_0052f2a0 at 0052f61d
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0 at 0052e54c
-;   core_set.cpp_FUN_0052f2a0 at 0052f61d
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005edef6
@@ -56,7 +56,7 @@
 ;   ... and 27 more
 ;
 ; Called Functions:
-;   core_set.cpp_FUN_00531a90
+;   core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_00531a90
 ;   crt_math.c_round_FUN_005b7ff0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
@@ -66,7 +66,7 @@
 ;   engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0
 ;   engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0046b7e0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0
-;   engine_special.cpp_FUN_0055d723
+;   engine_special.cpp_transformAndProjectPoint_FUN_0055d723
 ;
 ; *****************************************************************************
 
@@ -279,8 +279,8 @@ section .text
     PUSH EAX                            ; 005865dc
     MOV EAX,dword ptr [EDX]             ; 005865dd | DAT_01ba5c50
     PUSH EAX                            ; 005865df
-    CALL engine_special.cpp_FUN_0055d723 ; 005865e0
-        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 005865e0
+        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 005865e5
     PUSH 0x0                            ; 005865e8
     LEA EAX,[ESP + 0x40]                ; 005865ea
@@ -289,8 +289,8 @@ section .text
     PUSH EAX                            ; 005865f3
     MOV EDI,dword ptr [0x0061b5a8]      ; 005865f4 | g_CDemonSetPtr
     PUSH EDI                            ; 005865fa
-    CALL core_set.cpp_FUN_00531a90      ; 005865fb
-        ;   XREF to: 00531a90 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00531a90(CDemonSet * this_ptr, CVector3f * vertex_position, CVector3f * position_offset, int vertex_index)
+    CALL core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_00531a90 ; 005865fb
+        ;   XREF to: 00531a90 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_00531a90(CDemonSet * this_ptr, CVector3f * vertex_position, CVector3f * position_offset, int vertex_index)
     ADD ESP,0x10                        ; 00586600
     MOV EAX,dword ptr [EBP + 0x8]       ; 00586603
     MOV dword ptr [ESP + 0xc],EAX       ; 00586606
@@ -331,8 +331,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 00586682 | DAT_01ba5c50
     ADD EAX,0x30                        ; 00586684
     PUSH EAX                            ; 00586687
-    CALL engine_special.cpp_FUN_0055d723 ; 00586688
-        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 00586688
+        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0058668d
     PUSH 0x1                            ; 00586690
     LEA EAX,[ESP + 0x40]                ; 00586692
@@ -341,8 +341,8 @@ section .text
     PUSH EAX                            ; 0058669b
     MOV EDX,dword ptr [0x0061b5a8]      ; 0058669c | g_CDemonSetPtr
     PUSH EDX                            ; 005866a2
-    CALL core_set.cpp_FUN_00531a90      ; 005866a3
-        ;   XREF to: 00531a90 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00531a90(CDemonSet * this_ptr, CVector3f * vertex_position, CVector3f * position_offset, int vertex_index)
+    CALL core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_00531a90 ; 005866a3
+        ;   XREF to: 00531a90 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_00531a90(CDemonSet * this_ptr, CVector3f * vertex_position, CVector3f * position_offset, int vertex_index)
     ADD ESP,0x10                        ; 005866a8
     MOV EAX,dword ptr [EBP + 0x8]       ; 005866ab
     MOV dword ptr [ESP + 0x14],EAX      ; 005866ae
@@ -384,8 +384,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0058672b | DAT_01ba5c50
     ADD EAX,0x60                        ; 0058672d
     PUSH EAX                            ; 00586730
-    CALL engine_special.cpp_FUN_0055d723 ; 00586731
-        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 00586731
+        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 00586736
     PUSH 0x2                            ; 00586739
     LEA EAX,[ESP + 0x40]                ; 0058673b
@@ -395,8 +395,8 @@ section .text
     MOV EBX,dword ptr [0x0061b5a8]      ; 00586745 | g_CDemonSetPtr
     PUSH EBX                            ; 0058674b
     XOR ESI,ESI                         ; 0058674c
-    CALL core_set.cpp_FUN_00531a90      ; 0058674e
-        ;   XREF to: 00531a90 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00531a90(CDemonSet * this_ptr, CVector3f * vertex_position, CVector3f * position_offset, int vertex_index)
+    CALL core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_00531a90 ; 0058674e
+        ;   XREF to: 00531a90 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_00531a90(CDemonSet * this_ptr, CVector3f * vertex_position, CVector3f * position_offset, int vertex_index)
     ADD ESP,0x10                        ; 00586753
     MOV dword ptr [ESP + 0xc],ESI       ; 00586756
     CMP dword ptr [EBP],0x0             ; 0058675a
@@ -436,8 +436,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 005867ce | DAT_01ba5c50
     ADD EAX,0x90                        ; 005867d0
     PUSH EAX                            ; 005867d5
-    CALL engine_special.cpp_FUN_0055d723 ; 005867d6
-        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 005867d6
+        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 005867db
     PUSH 0x3                            ; 005867de
     LEA EAX,[ESP + 0x40]                ; 005867e0
@@ -446,8 +446,8 @@ section .text
     PUSH EAX                            ; 005867e9
     MOV EAX,[0x0061b5a8]                ; 005867ea | g_CDemonSetPtr
     PUSH EAX                            ; 005867ef
-    CALL core_set.cpp_FUN_00531a90      ; 005867f0
-        ;   XREF to: 00531a90 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00531a90(CDemonSet * this_ptr, CVector3f * vertex_position, CVector3f * position_offset, int vertex_index)
+    CALL core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_00531a90 ; 005867f0
+        ;   XREF to: 00531a90 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_00531a90(CDemonSet * this_ptr, CVector3f * vertex_position, CVector3f * position_offset, int vertex_index)
     MOV EDX,dword ptr [EBP]             ; 005867f5
     ADD ESP,0x10                        ; 005867f8
     TEST EDX,EDX                        ; 005867fb

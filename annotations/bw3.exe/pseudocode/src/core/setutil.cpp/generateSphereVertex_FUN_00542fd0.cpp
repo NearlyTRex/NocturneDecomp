@@ -35,7 +35,8 @@ void __cdecl core_setutil_cpp_generateSphereVertex_FUN_00542fd0(int longitude_in
   aCStack_38[0].y = (int)ROUND((float)(fVar6 * fVar5) * _DAT_005e3d18);
   aCStack_38[0].z = (int)ROUND((float)(fVar3 * fVar5 * fVar7) * _DAT_005e3d18);
   iVar2 = vertex_buffer_index * 0x30;
-  engine_special_cpp_FUN_005632a3((SProjectedVertex *)(*DAT_005f2afc + iVar2),aCStack_38);
+  engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+            ((SProjectedVertex *)(*DAT_005f2afc + iVar2),aCStack_38);
   piVar1 = DAT_005f2afc;
   *(uint *)(*DAT_005f2afc + 0x18 + iVar2) = 0x800000;
   *(uint *)(iVar2 + 0x1c + *piVar1) = 0x800000;

@@ -5172,19 +5172,12 @@
       "00569eb0",
       "005b5080"
     ],
+    "cls":"CCloth",
     "conv":"__cdecl",
     "instructions":687,
-    "method":"FUN_0043eea0",
-    "name":"core_cloth.cpp_FUN_0043eea0",
+    "method":"setup",
+    "name":"core_cloth.cpp_CCloth_setup_FUN_0043eea0",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CCloth",
-          "ptr":1
-        }
-      },
       {
         "name":"position",
         "type":{
@@ -5210,7 +5203,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -6747,19 +6740,12 @@
     "calls":[
       "00456cd0"
     ],
+    "cls":"CDemonCube",
     "conv":"__cdecl",
     "instructions":118,
-    "method":"FUN_004584a0",
-    "name":"core_dcube.cpp_FUN_004584a0",
+    "method":"testCylinderGroundCollision",
+    "name":"core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_004584a0",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CDemonCube",
-          "ptr":1
-        }
-      },
       {
         "name":"cylinder_position",
         "type":{
@@ -6801,7 +6787,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"int",
@@ -7032,8 +7018,8 @@
     ],
     "conv":"__cdecl",
     "instructions":139,
-    "method":"FUN_0045e7a0",
-    "name":"core_dfont.cpp_FUN_0045e7a0",
+    "method":"freeFonts",
+    "name":"core_dfont.cpp_freeFonts_FUN_0045e7a0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -10614,14 +10600,15 @@
       "00408830",
       "0040c550"
     ],
-    "conv":"unknown",
+    "cls":"CEnemy",
+    "conv":"__cdecl",
     "instructions":45,
-    "method":"FUN_004a1120",
-    "name":"core_enemy.cpp_FUN_004a1120",
-    "receiver":false,
+    "method":"countSameClassAttackingHero",
+    "name":"core_enemy.cpp_CEnemy_countSameClassAttackingHero_FUN_004a1120",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/enemy.cpp",
@@ -12783,19 +12770,12 @@
       "005c2238",
       "005c25c0"
     ],
+    "cls":"CGame",
     "conv":"__cdecl",
     "instructions":412,
-    "method":"FUN_004d6420",
-    "name":"core_game.cpp_FUN_004d6420",
+    "method":"saveGame",
+    "name":"core_game.cpp_CGame_saveGame_FUN_004d6420",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CGame",
-          "ptr":1
-        }
-      },
       {
         "name":"save_filename",
         "type":{
@@ -12805,7 +12785,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -16318,8 +16298,8 @@
     ],
     "conv":"unknown",
     "instructions":292,
-    "method":"FUN_0051f920",
-    "name":"engine_model.c_FUN_0051f920",
+    "method":"getMRGLBounds",
+    "name":"engine_model.c_getMRGLBounds_FUN_0051f920",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -16546,6 +16526,7 @@
       "005b8440",
       "005bafb0"
     ],
+    "cls":"CMotionController",
     "conv":"__cdecl",
     "data_refs":[
       "005b89a9",
@@ -16554,19 +16535,9 @@
       "005b8e14"
     ],
     "instructions":86,
-    "method":"FUN_00525020",
-    "name":"core_motion.cpp_FUN_00525020",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CMotionController",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"frameToMarkerPosition",
+    "name":"core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"float",
@@ -23688,8 +23659,8 @@
     ],
     "conv":"__cdecl",
     "instructions":110,
-    "method":"FUN_005b5620",
-    "name":"core_xform.cpp_FUN_005b5620",
+    "method":"buildMatrixFromEulerAndPosition",
+    "name":"core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005b5620",
     "params":[
       {
         "name":"output_matrix",

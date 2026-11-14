@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   sound_snddx.cpp_fillStreamBuffer_FUN_00554c80
-;   sound_snddx.cpp_FUN_00554ad0
+;   sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0
 ;   sound_sndmain.cpp_logSoundError_FUN_005549c0
 ;   sound_sndmain.cpp_startSoundThread_FUN_005531d0
 ;
@@ -99,8 +99,8 @@ section .text
     JZ 0x00555287                       ; 005551f5
         ;   XREF to: 00555287 (CONDITIONAL_JUMP)  ; LAB_00555287
     PUSH EAX                            ; 005551fb
-    CALL sound_snddx.cpp_FUN_00554ad0   ; 005551fc
-        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00554ad0(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0 ; 005551fc
+        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0(uint error_code)
     ADD ESP,0x4                         ; 00555201
     PUSH EAX                            ; 00555204
     PUSH 0x5e9ad8                       ; 00555205 | = "Play the secondary buffer"
@@ -135,8 +135,8 @@ section .text
         ;   XREF to: 005551b2 (UNCONDITIONAL_JUMP)  ; LAB_005551b2
     PUSH EAX                            ; 00555262
         ;   Label: LAB_00555262
-    CALL sound_snddx.cpp_FUN_00554ad0   ; 00555263
-        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00554ad0(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0 ; 00555263
+        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0(uint error_code)
     ADD ESP,0x4                         ; 00555268
     PUSH EAX                            ; 0055526b
     PUSH 0x5e9ab9                       ; 0055526c | s_Position_secondary_buffe_005e9ab8+1

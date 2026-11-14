@@ -7,8 +7,8 @@
 ; CMoon *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_menu.cpp_FUN_0050c990 at 0050cc51
 ;   core_menu.cpp_showMainGameMenu_FUN_0050cc90 at 0050d007
+;   core_menu.cpp_showOptionsScreen_FUN_0050c990 at 0050cc51
 ;   core_moon.cpp_CMoon_dtor_FUN_00521c00 at 00521c06
 ;
 ; Called Functions:

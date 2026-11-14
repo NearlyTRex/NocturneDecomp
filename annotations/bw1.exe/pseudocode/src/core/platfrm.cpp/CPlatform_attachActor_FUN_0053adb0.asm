@@ -23,8 +23,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
-;   core_xform.cpp_FUN_005b5620
-;   core_xform.cpp_FUN_005b5760
+;   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005b5620
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005b5200
 ;
 ; *****************************************************************************
@@ -87,8 +87,8 @@ section .text
     PUSH EAX                            ; 0053ae1d
     LEA EAX,[ESP + 0x8]                 ; 0053ae1e
     PUSH EAX                            ; 0053ae22
-    CALL core_xform.cpp_FUN_005b5760    ; 0053ae23
-        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760 ; 0053ae23
+        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0053ae28
     LEA EAX,[ESI + 0x30]                ; 0053ae2b
     PUSH EAX                            ; 0053ae2e
@@ -96,8 +96,8 @@ section .text
     PUSH ESI                            ; 0053ae32
     LEA EAX,[ESP + 0x68]                ; 0053ae33
     PUSH EAX                            ; 0053ae37
-    CALL core_xform.cpp_FUN_005b5620    ; 0053ae38
-        ;   XREF to: 005b5620 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_005b5620(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005b5620 ; 0053ae38
+        ;   XREF to: 005b5620 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005b5620(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0053ae3d
     LEA EAX,[ESP + 0x60]                ; 0053ae40
     PUSH EAX                            ; 0053ae44

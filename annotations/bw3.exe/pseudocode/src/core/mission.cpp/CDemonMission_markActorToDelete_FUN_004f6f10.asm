@@ -16,7 +16,7 @@
 ;   core_crate.cpp_FUN_004461c0 at 00446268
 ;   core_darkwolf.cpp_CDarkwolf_process_FUN_005989e0 at 00598dea
 ;   core_flamecan.cpp_CFlameCan_process_FUN_004a7160 at 004a71df
-;   core_inv.cpp_FUN_004da880 at 004db2a1
+;   core_inv.cpp_CInventory_addItem_FUN_004da880 at 004db2a1
 ;   core_passngr.cpp_CPassenger_process_FUN_0050a7d0 at 0050a911
 ;   core_pryemorp.cpp_CPryeMorph_process_FUN_00527780 at 005278ce
 ;   ... and 7 more

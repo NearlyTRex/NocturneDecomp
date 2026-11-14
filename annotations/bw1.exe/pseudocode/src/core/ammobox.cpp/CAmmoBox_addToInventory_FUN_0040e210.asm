@@ -26,7 +26,7 @@
 ;   core_ammo.cpp_CAmmo_ctor_FUN_0040dbc0
 ;   core_ammo.cpp_CAmmo_setAmmoCount_FUN_0040dfd0
 ;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ddd0
-;   core_inv.cpp_FUN_004f7690
+;   core_inv.cpp_CInventory_addItem_FUN_004f7690
 ;   core_main.c_FUN_005030e0
 ;   crt_memory.c_operator_new_FUN_005c0f32
 ;
@@ -53,8 +53,8 @@ section .text
     PUSH EDX                            ; 0040e22e
     MOV EBX,dword ptr [ESP + 0x18]      ; 0040e22f
     PUSH EBX                            ; 0040e233
-    CALL core_inv.cpp_FUN_004f7690      ; 0040e234
-        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004f7690 ; 0040e234
+        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     MOV dword ptr [EBP + 0x320],0x0     ; 0040e239
     ADD ESP,0xc                         ; 0040e243
     MOV dword ptr [EBP + 0x314],0x0     ; 0040e246
@@ -134,8 +134,8 @@ section .text
     PUSH EBX                            ; 0040e2fd
     MOV EDX,dword ptr [ESP + 0x20]      ; 0040e2fe
     PUSH EDX                            ; 0040e302
-    CALL core_inv.cpp_FUN_004f7690      ; 0040e303
-        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004f7690 ; 0040e303
+        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 0040e308
     MOV dword ptr [EBP + 0x314],0x0     ; 0040e30b
     POP ESI                             ; 0040e315

@@ -78,7 +78,8 @@ int __cdecl core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_00464ac0(CDraculaBr
         if (_DAT_01d1cdc8 != 0) {
           iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
           if (iVar2 == 0) {
-            core_motion_cpp_FUN_005042e0(&(this_ptr->base).base.model.base,(CDemonActor *)this_ptr);
+            core_motion_cpp_CMotionController_render_FUN_005042e0
+                      (&(this_ptr->base).base.model.base,(CDemonActor *)this_ptr);
             (*((this_ptr->base).base.base.vtable._ub)->renderTargetPoints)((CDemonActor *)this_ptr);
           }
         }

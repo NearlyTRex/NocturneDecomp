@@ -21,9 +21,9 @@ void __cdecl clearScreenRegion(int color);
 // Address: 00560ec2
 void __cdecl fillDepthRegion(int left,int right,int top,int bottom);
 
-// Original: engine_special.cpp_FUN_00560f31
+// Original: engine_special.cpp_renderMMXPerspectiveScanline32_FUN_00560f31
 // Address: 00560f31
-void FUN_00560f31(void);
+void renderMMXPerspectiveScanline32(void);
 
 // Original: engine_special.cpp_FUN_005616a0
 // Address: 005616a0
@@ -61,13 +61,13 @@ void __cdecl renderAlphaRow16(ushort *destPixels,uchar *srcIndices,uchar *srcAlp
 // Address: 00563257
 void FUN_00563257(void);
 
-// Original: engine_special.cpp_FUN_005632a3
+// Original: engine_special.cpp_transformAndProjectPoint_FUN_005632a3
 // Address: 005632a3
-void __cdecl FUN_005632a3(SProjectedVertex *output,CVector3i *input);
+void __cdecl transformAndProjectPoint(SProjectedVertex *output,CVector3i *input);
 
-// Original: engine_special.cpp_FUN_0056356c
+// Original: engine_special.cpp_transformPoint_FUN_0056356c
 // Address: 0056356c
-void __cdecl FUN_0056356c(SProjectedVertex *output,CVector3i *input);
+void __cdecl transformPoint(SProjectedVertex *output,CVector3i *input);
 
 // Original: engine_special.cpp_shutdownExternalRenderer_FUN_00564010
 // Address: 00564010
@@ -93,13 +93,13 @@ int __cdecl lockFrame(void);
 // Address: 00565870
 int __cdecl unlockFrame(int clear_lock_flag);
 
-// Original: engine_special.cpp_FUN_005658b0
+// Original: engine_special.cpp_beginScene_FUN_005658b0
 // Address: 005658b0
-int __cdecl FUN_005658b0(void);
+int __cdecl beginScene(void);
 
-// Original: engine_special.cpp_FUN_005658d0
+// Original: engine_special.cpp_endScene_FUN_005658d0
 // Address: 005658d0
-int __cdecl FUN_005658d0(void);
+int __cdecl endScene(void);
 
 // Original: engine_special.cpp_FUN_005658f0
 // Address: 005658f0

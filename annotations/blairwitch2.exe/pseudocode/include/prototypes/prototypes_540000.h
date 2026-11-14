@@ -187,7 +187,7 @@ CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_arrdtor40_FUN_00549330(CSkeleton
 CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModel_arrdtor64_FUN_00549350(CDeformableModel *this_ptr,uint flags);
 void __cdecl core_slew_cpp_staticInit_FUN_00549370(void);
 undefined8 __cdecl core_slew_cpp_CSlew_init_FUN_00549380(CSlew *this_ptr);
-void core_slew_cpp_FUN_005493d0(float *param_1);
+void __cdecl core_slew_cpp_CSlew_processInput_FUN_005493d0(CSlew *this_ptr);
 void __cdecl core_smiley_cpp_staticInit_FUN_00549770(void);
 CSmiley * __cdecl core_smiley_cpp_factoryFuncSmiley_FUN_005497a0(void);
 CDemonActorType * __cdecl core_smiley_cpp_CSmiley_getActorType_FUN_005497c0(CSmiley *this_ptr);

@@ -25,8 +25,8 @@
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407af0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
 ;   engine_drender.cpp_pop_FUN_004839a0
-;   engine_special.cpp_FUN_00580173
-;   shape_edittool.cpp_FUN_00498360
+;   engine_special.cpp_transformAndProjectPoint_FUN_00580173
+;   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00498360
 ;
 ; *****************************************************************************
 
@@ -86,8 +86,8 @@ section .text
     MOV EAX,dword ptr [ESI]             ; 00564bbb
     ADD EAX,dword ptr [ESP + 0x58]      ; 00564bbd
     PUSH EAX                            ; 00564bc1
-    CALL engine_special.cpp_FUN_00580173 ; 00564bc2
-        ;   XREF to: 00580173 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_00580173(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_00580173 ; 00564bc2
+        ;   XREF to: 00580173 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_00580173(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 00564bc7
     MOV EDI,dword ptr [ESP + 0x58]      ; 00564bca
     MOV EAX,dword ptr [ESP + 0x60]      ; 00564bce
@@ -193,8 +193,8 @@ section .text
     MOV EDX,dword ptr [0x0061abc0]      ; 00564cea | g_CEditorToolsPtr
     PUSH 0x3f000000                     ; 00564cf0
     PUSH EDX                            ; 00564cf5
-    CALL shape_edittool.cpp_FUN_00498360 ; 00564cf6
-        ;   XREF to: 00498360 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_FUN_00498360(CEditorTools * this_ptr, float scale_factor, int text_color)
+    CALL shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00498360 ; 00564cf6
+        ;   XREF to: 00498360 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00498360(CEditorTools * this_ptr, float scale_factor, int text_color)
     ADD ESP,0xc                         ; 00564cfb
     MOV ECX,dword ptr [0x00612560]      ; 00564cfe | DAT_00612560
     PUSH ECX                            ; 00564d04

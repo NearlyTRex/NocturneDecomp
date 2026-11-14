@@ -945,7 +945,7 @@ LAB_0058636e:
                     core_actor_cpp_castToClassHash_FUN_0040c600
                               ((this_ptr->base).object_to_pick_up,g_CAmmoBoxClassInfo.name_hash),
      this_ptr_01 != (CAmmoBox *)0x0)) {
-    fVar17 = core_motion_cpp_FUN_00525020(&pCVar2->base);
+    fVar17 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00525020(&pCVar2->base);
     core_ammobox_cpp_CAmmoBox_openBox_FUN_0040e1a0(this_ptr_01,fVar17);
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_0042e160((CCharacter *)this_ptr);
@@ -1102,7 +1102,7 @@ LAB_00587a60:
     CStack_2dc.y = CStack_2dc.y + afStack_20c[0];
     CStack_2dc.z = CStack_2dc.z + afStack_20c[1];
     this_ptr->fall_velocity_snapshot = (this_ptr->base).base.velocity.y;
-    core_charactr_cpp_FUN_0042d750((CCharacter *)this_ptr,pCVar29);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042d750((CCharacter *)this_ptr,pCVar29);
     if ((this_ptr->base).base.base.location.position.y <
         (this_ptr->base).base.closest_distance_threshold + (float)_DAT_005f68a9) {
       (this_ptr->base).base.is_on_ground = 1;
@@ -1278,7 +1278,7 @@ LAB_0058648f:
     core_hero_cpp_CHero_stopPushingBox_FUN_004ebbe0(&this_ptr->base);
   }
   else {
-    fVar17 = core_motion_cpp_FUN_00525020(&pCVar2->base);
+    fVar17 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00525020(&pCVar2->base);
     if ((1.0 < fVar17) &&
        (pCStack_6c = (CBoxActor *)
                      core_actor_cpp_castToClassHash_FUN_0040c600

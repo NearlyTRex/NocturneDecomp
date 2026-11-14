@@ -31,12 +31,12 @@
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042ccf0
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
 ;   core_charactr.cpp_FUN_0042c1e0
-;   core_charactr.cpp_FUN_0042c230
 ;   core_charactr.cpp_FUN_00432330
 ;   core_charactr.cpp_FUN_00433c60
 ;   core_charactr.cpp_FUN_00434850
@@ -167,8 +167,8 @@ section .text
     JNZ 0x0058685d                      ; 0058663f
         ;   XREF to: 0058685d (CONDITIONAL_JUMP)  ; LAB_0058685d
     PUSH ESI                            ; 00586645
-    CALL core_motion.cpp_FUN_004fc930   ; 00586646
-        ;   XREF to: 004fc930 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_004fc930(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930 ; 00586646
+        ;   XREF to: 004fc930 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930(CMotionController * this_ptr)
     MOV dword ptr [EBP + 0x76],EAX      ; 0058664b
     ADD ESP,0x4                         ; 0058664e
     FLD float ptr [EBP + 0x76]          ; 00586651
@@ -309,8 +309,8 @@ section .text
     FST float ptr [EDX + 0x4]           ; 005867c1
     PUSH EBX                            ; 005867c4
     FSTP float ptr [EDX]                ; 005867c5
-    CALL core_charactr.cpp_FUN_0042c230 ; 005867c7
-        ;   XREF to: 0042c230 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042c230(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230 ; 005867c7
+        ;   XREF to: 0042c230 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 005867cc
     PUSH EBX                            ; 005867cf
         ;   Label: LAB_005867cf
@@ -350,8 +350,8 @@ section .text
         ;   XREF to: 00586677 (UNCONDITIONAL_JUMP)  ; LAB_00586677
     PUSH ESI                            ; 00586822
         ;   Label: LAB_00586822
-    CALL core_motion.cpp_FUN_004fc930   ; 00586823
-        ;   XREF to: 004fc930 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_004fc930(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930 ; 00586823
+        ;   XREF to: 004fc930 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930(CMotionController * this_ptr)
     MOV dword ptr [EBP + 0x76],EAX      ; 00586828
     ADD ESP,0x4                         ; 0058682b
     FLD float ptr [EBP + 0x76]          ; 0058682e
@@ -378,8 +378,8 @@ section .text
     LEA ESI,[EBX + 0x158]               ; 0058685d
         ;   Label: LAB_0058685d
     PUSH ESI                            ; 00586863
-    CALL core_motion.cpp_FUN_004fc930   ; 00586864
-        ;   XREF to: 004fc930 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_004fc930(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930 ; 00586864
+        ;   XREF to: 004fc930 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930(CMotionController * this_ptr)
     MOV dword ptr [EBP + 0x76],EAX      ; 00586869
     ADD ESP,0x4                         ; 0058686c
     FLD float ptr [EBP + 0x76]          ; 0058686f
@@ -530,8 +530,8 @@ section .text
     JZ 0x00586a5a                       ; 00586a17
         ;   XREF to: 00586a5a (CONDITIONAL_JUMP)  ; LAB_00586a5a
     PUSH EDX                            ; 00586a19
-    CALL core_motion.cpp_FUN_004fc930   ; 00586a1a
-        ;   XREF to: 004fc930 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_004fc930(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930 ; 00586a1a
+        ;   XREF to: 004fc930 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930(CMotionController * this_ptr)
     MOV dword ptr [EBP + 0x76],EAX      ; 00586a1f
     ADD ESP,0x4                         ; 00586a22
     FLD float ptr [EBP + 0x76]          ; 00586a25
@@ -711,8 +711,8 @@ section .text
     JBE 0x00586dda                      ; 00586c04
         ;   XREF to: 00586dda (CONDITIONAL_JUMP)  ; LAB_00586dda
     PUSH ESI                            ; 00586c0a
-    CALL core_motion.cpp_FUN_004fc930   ; 00586c0b
-        ;   XREF to: 004fc930 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_004fc930(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930 ; 00586c0b
+        ;   XREF to: 004fc930 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930(CMotionController * this_ptr)
     MOV dword ptr [EBP + 0x76],EAX      ; 00586c10
     ADD ESP,0x4                         ; 00586c13
     FLD float ptr [EBP + 0x76]          ; 00586c16
@@ -839,8 +839,8 @@ section .text
     JZ 0x00586da4                       ; 00586d65
         ;   XREF to: 00586da4 (CONDITIONAL_JUMP)  ; LAB_00586da4
     PUSH ESI                            ; 00586d67
-    CALL core_motion.cpp_FUN_004fc930   ; 00586d68
-        ;   XREF to: 004fc930 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_004fc930(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930 ; 00586d68
+        ;   XREF to: 004fc930 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930(CMotionController * this_ptr)
     MOV dword ptr [EBP + 0x76],EAX      ; 00586d6d
     ADD ESP,0x4                         ; 00586d70
     FLD float ptr [EBP + 0x76]          ; 00586d73
@@ -889,8 +889,8 @@ section .text
         ;   XREF to: 00586c3f (UNCONDITIONAL_JUMP)  ; LAB_00586c3f
     PUSH ESI                            ; 00586dda
         ;   Label: LAB_00586dda
-    CALL core_motion.cpp_FUN_004fc930   ; 00586ddb
-        ;   XREF to: 004fc930 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_004fc930(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930 ; 00586ddb
+        ;   XREF to: 004fc930 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930(CMotionController * this_ptr)
     MOV dword ptr [EBP + 0x76],EAX      ; 00586de0
     ADD ESP,0x4                         ; 00586de3
     FLD float ptr [EBP + 0x76]          ; 00586de6

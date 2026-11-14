@@ -25,7 +25,7 @@
 ;   core_hero.cpp_isAnyHeroWithinRadius_FUN_004ea6f0
 ;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00558450
 ;   core_setcolid.cpp_FUN_005562c0
-;   core_xform.cpp_FUN_005b5760
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
 ;   core_xform.cpp_matrixToEulerAngles_FUN_005b5930
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005b5200
 ;
@@ -632,16 +632,16 @@ section .text
     MOV dword ptr [ESP + 0x250],EAX     ; 0059ac3a
     LEA EAX,[ESP + 0x18]                ; 0059ac41
     PUSH EAX                            ; 0059ac45
-    CALL core_xform.cpp_FUN_005b5760    ; 0059ac46
-        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760 ; 0059ac46
+        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0059ac4b
     LEA EAX,[ESP + 0xe8]                ; 0059ac4e
     PUSH EAX                            ; 0059ac55
     PUSH 0x2c8af28                      ; 0059ac56
     LEA EAX,[ESP + 0x78]                ; 0059ac5b
     PUSH EAX                            ; 0059ac5f
-    CALL core_xform.cpp_FUN_005b5760    ; 0059ac60
-        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760 ; 0059ac60
+        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0059ac65
     LEA EAX,[ESP + 0x10]                ; 0059ac68
     PUSH EAX                            ; 0059ac6c

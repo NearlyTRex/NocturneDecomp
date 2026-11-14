@@ -14,7 +14,7 @@
 ;
 ; XREF[2]:
 ;   core_box.cpp_FUN_0041daf0 at 0041dc6f
-;   core_set.cpp_FUN_00535da0 at 005360bd
+;   core_set.cpp_CDemonSet_renderScene_FUN_00535da0 at 005360bd
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ddfbc

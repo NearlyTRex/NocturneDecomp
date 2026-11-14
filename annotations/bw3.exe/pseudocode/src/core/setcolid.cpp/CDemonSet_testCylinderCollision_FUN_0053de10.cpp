@@ -119,7 +119,8 @@ float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_0053de10(CDe
             puVar11 = puVar11 + (uint)bVar13 * -2 + 1;
             puVar12 = puVar12 + (uint)bVar13 * -2 + 1;
           }
-          iVar10 = core_box_cpp_FUN_0041e910(&local_d4,(CBoundingBox3D *)(auStack_fc + 0x10));
+          iVar10 = core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041e910
+                             (&local_d4,(CBoundingBox3D *)(auStack_fc + 0x10));
           if (iVar10 != 0) {
             if (pCStack_120 == (CKeyFramedModelInstance *)0x0) {
               if (EVar9 < COLLISION_TYPE_CYLINDER) {
@@ -133,7 +134,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_0053de10(CDe
                     puVar11 = puVar11 + (uint)bVar13 * -2 + 1;
                     puVar12 = puVar12 + (uint)bVar13 * -2 + 1;
                   }
-                  iVar10 = core_setcolid_cpp_FUN_0053da90
+                  iVar10 = core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_0053da90
                                      (this_ptr,(SIntersectXZCylinder *)local_198,
                                       (CBoundingBox3D *)auStack_fc,(CVector3f *)in_stack_fffffd08,
                                       in_stack_fffffd0c);

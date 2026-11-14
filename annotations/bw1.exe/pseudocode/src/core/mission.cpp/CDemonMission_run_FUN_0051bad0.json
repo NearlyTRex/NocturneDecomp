@@ -2,25 +2,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 169,
-    "complexity_score": 117,
+    "complexity_score": 118,
     "cross_reference_count": 3,
     "function_call_count": 15,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 52,
+    "pseudocode_lines": 53,
     "suspect_count": 5,
     "suspect_types": [
       "raw_address_pointer_store",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 221
+    "total_lines": 222
   },
   "cross_references": [
     {
       "addr": "004d6990",
       "from_addr": "004d71b3",
-      "name": "core_game.cpp_FUN_004d6990",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004d6990",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -95,6 +95,11 @@
       "name": "core_mission.cpp_CDemonMission_load_FUN_0051a3f0"
     },
     {
+      "addr": "0051b610",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_loadSet_FUN_0051b610"
+    },
+    {
       "addr": "0051b4d0",
       "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_removeActor_FUN_0051b4d0"
@@ -105,19 +110,14 @@
       "name": "core_mission.cpp_CDemonMission_removeActorFromList_FUN_0051b1d0"
     },
     {
-      "addr": "0051b610",
+      "addr": "0051bdc0",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_0051b610"
+      "name": "core_mission.cpp_CDemonMission_startMission_FUN_0051bdc0"
     },
     {
       "addr": "0051b7b0",
       "is_variadic": false,
       "name": "core_mission.cpp_FUN_0051b7b0"
-    },
-    {
-      "addr": "0051bdc0",
-      "is_variadic": false,
-      "name": "core_mission.cpp_FUN_0051bdc0"
     },
     {
       "addr": "005c3160",
@@ -234,7 +234,7 @@
       {
         "call_addr": "004d71b3",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d6990",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004d6990",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

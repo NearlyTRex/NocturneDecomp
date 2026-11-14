@@ -59,8 +59,8 @@
 ;   core_gabriela.cpp_CGabriella_collectAmmo_FUN_004c9990
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004e6060
 ;   core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004ec2c0
+;   core_hero.cpp_CHero_executeObjectPickup_FUN_004ec280
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004eb5e0
-;   core_hero.cpp_FUN_004ec280
 ;   core_motion.cpp_CMotionController_advance_FUN_00524270
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
 ;   core_motion.cpp_FUN_00524a40
@@ -178,8 +178,8 @@ section .text
     PUSH 0x0                            ; 004c84da
         ;   Label: caseD_14
     PUSH EBX                            ; 004c84dc
-    CALL core_hero.cpp_FUN_004ec280     ; 004c84dd
-        ;   XREF to: 004ec280 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004ec280(CHero * this_ptr, int hand_index)
+    CALL core_hero.cpp_CHero_executeObjectPickup_FUN_004ec280 ; 004c84dd
+        ;   XREF to: 004ec280 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_executeObjectPickup_FUN_004ec280(CHero * this_ptr, int hand_index)
     ADD ESP,0x8                         ; 004c84e2
     JMP 0x004c8496                      ; 004c84e5
         ;   XREF to: 004c8496 (UNCONDITIONAL_JUMP)  ; caseD_12
@@ -187,8 +187,8 @@ section .text
         ;   Label: LAB_004c84e7
     PUSH 0x0                            ; 004c84f1
     PUSH EBX                            ; 004c84f3
-    CALL core_hero.cpp_FUN_004ec280     ; 004c84f4
-        ;   XREF to: 004ec280 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004ec280(CHero * this_ptr, int hand_index)
+    CALL core_hero.cpp_CHero_executeObjectPickup_FUN_004ec280 ; 004c84f4
+        ;   XREF to: 004ec280 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_executeObjectPickup_FUN_004ec280(CHero * this_ptr, int hand_index)
     ADD ESP,0x8                         ; 004c84f9
     JMP 0x004c8496                      ; 004c84fc
         ;   XREF to: 004c8496 (UNCONDITIONAL_JUMP)  ; caseD_12

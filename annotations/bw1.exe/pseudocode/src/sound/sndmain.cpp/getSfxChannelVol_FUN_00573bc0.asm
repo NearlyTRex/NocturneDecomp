@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   channel_index
 ;
 ; XREF[9]:
-;   core_menu.cpp_FUN_0050ba70 at 0050bbd7
+;   core_menu.cpp_configureSoundOptions_FUN_0050ba70 at 0050bbd7
 ;   core_sound.cpp_CSound_configure_FUN_0057d6a0 at 0057d6a5
 ;   core_sound.cpp_CSound_init_FUN_0057cc00 at 0057ccaf
 ;   core_sound.cpp_CSound_process_FUN_0057ce10 at 0057d07b

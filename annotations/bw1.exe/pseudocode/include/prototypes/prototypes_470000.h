@@ -129,7 +129,7 @@ void __cdecl engine_dosio_cpp_CFileFinder_reset_FUN_004794a0(CFileFinder *this_p
 void __cdecl engine_dosio_cpp_CFileFinder_convertStruct_FUN_004794b0(CFileFinder *this_ptr,byte *param_2);
 void __cdecl engine_dosio_cpp_splitPath_FUN_00479580(char *full_path,char *drive,char *directory,char *filename,char *extension);
 void __cdecl engine_dosio_cpp_makePath_FUN_004795b0(char *full_path,char *drive,char *directory,char *filename,char *extension);
-void __cdecl engine_dosio_cpp_FUN_004795e0(char *input_path,char *drive,char *output_path);
+void __cdecl engine_dosio_cpp_ensureTrailingSlash_FUN_004795e0(char *input_path,char *drive,char *output_path);
 void __cdecl engine_dosio_cpp_changeFileExtension_FUN_004796b0(char *path,char *new_extension);
 int __cdecl engine_dosio_cpp_getFullPath_FUN_00479720(char *output_path,char *input_path);
 void engine_dosio_cpp_FUN_00479770(char *param_1,char *param_2,char *param_3);

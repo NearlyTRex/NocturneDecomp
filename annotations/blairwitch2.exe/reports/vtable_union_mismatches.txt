@@ -11,17 +11,17 @@ from the wrong vtable struct, producing misleading pseudocode.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Total mismatches found: 40
+  Total mismatches found: 41
 
   By union member used:
-    _uc (CCharacter_vtable): 33
+    _uc (CCharacter_vtable): 34
     _ue (CEnemy_vtable): 2
     _uh (CHero_vtable): 5
 
   By source file:
+    core/lightgun.cpp                        6
     core/turret.cpp                          6
     core/basicene.cpp                        5
-    core/lightgun.cpp                        5
     core/crossbow.cpp                        4
     core/elephant.cpp                        4
     core/shotgun.cpp                         4
@@ -34,9 +34,9 @@ SUMMARY
     core/scat.cpp                            1
 
   By object type:
+    CLightGun                 6  (CLightGun -> CWeapon -> CDemonActor)
     CTurret                   6  (CTurret -> CWeapon -> CDemonActor)
     CBasicEnemy               5  (CBasicEnemy -> CEnemy -> CCharacter -> CDemonActor)
-    CLightGun                 5  (CLightGun -> CWeapon -> CDemonActor)
     CCrossbow                 4  (CCrossbow -> CWeapon -> CDemonActor)
     CElephantGun              4  (CElephantGun -> CWeapon -> CDemonActor)
     CShotgun                  4  (CShotgun -> CWeapon -> CDemonActor)
@@ -52,6 +52,14 @@ SUMMARY
 DETAILED FINDINGS
 ====================================================================================================
 
+  core/lightgun.cpp (6)
+    CLightGun_fire_FUN_004e2e70                         this_ptr on CLightGun        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightGun_fire_FUN_004e2e70                         this_ptr on CLightGun        used _uc, need _uw  getGrabbed -> getDamage
+    CLightGun_fire_FUN_004e2e70                         this_ptr on CLightGun        used _uc, need _uw  getGrabbed -> getDamage
+    CLightGun_renderAimBeam_FUN_004e3b10                this_ptr on CLightGun        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightGun_renderAimBeam_FUN_004e3b10                this_ptr on CLightGun        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightGun_updateBeamLight_FUN_004e2bf0              this_ptr on CLightGun        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+
   core/turret.cpp (6)
     CTurret_fire_FUN_0057fc20                           this_ptr on CTurret          used _uc, need _uw  isInvulnerable -> getMuzzlePoint
     CTurret_fire_FUN_0057fc20                           this_ptr on CTurret          used _uc, need _uw  getGrabbed -> getDamage
@@ -66,13 +74,6 @@ DETAILED FINDINGS
     CBasicEnemy_process_FUN_0059f420                    this_ptr on CBasicEnemy      used _uh, need _ue  canReachPickup -> ?
     CBasicEnemy_process_FUN_0059f420                    this_ptr on CBasicEnemy      used _uh, need _ue  doHeroAction -> ?
     CBasicEnemy_process_FUN_0059f420                    this_ptr on CBasicEnemy      used _uh, need _ue  isWeaponDrawn -> ?
-
-  core/lightgun.cpp (5)
-    CLightGun_fire_FUN_004e2e70                         this_ptr on CLightGun        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
-    CLightGun_fire_FUN_004e2e70                         this_ptr on CLightGun        used _uc, need _uw  getGrabbed -> getDamage
-    CLightGun_fire_FUN_004e2e70                         this_ptr on CLightGun        used _uc, need _uw  getGrabbed -> getDamage
-    CLightGun_renderAimBeam_FUN_004e3b10                this_ptr on CLightGun        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
-    CLightGun_renderAimBeam_FUN_004e3b10                this_ptr on CLightGun        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
 
   core/crossbow.cpp (4)
     CCrossbow_fire_FUN_0043a7a0                         this_ptr on CCrossbow        used _uc, need _uw  isInvulnerable -> getMuzzlePoint

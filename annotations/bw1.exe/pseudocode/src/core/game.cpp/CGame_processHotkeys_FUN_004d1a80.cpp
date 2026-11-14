@@ -147,15 +147,15 @@ LAB_004d1aac:
   iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0);
   if (((iVar5 != 0) && (iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)) &&
      (this_ptr->letterbox_mode == 0)) {
-    core_game_cpp_FUN_004d6420(this_ptr,(char *)0x0);
+    core_game_cpp_CGame_saveGame_FUN_004d6420(this_ptr,(char *)0x0);
   }
   iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0);
   if ((iVar5 != 0) && (iVar5 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0), iVar5 != 0)) {
-    core_game_cpp_FUN_004d6420(this_ptr,(char *)0x0);
+    core_game_cpp_CGame_saveGame_FUN_004d6420(this_ptr,(char *)0x0);
   }
   iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0);
   if ((iVar5 != 0) && (this_ptr->letterbox_mode == 0)) {
-    core_game_cpp_FUN_004d6420(this_ptr,(char *)0x0);
+    core_game_cpp_CGame_saveGame_FUN_004d6420(this_ptr,(char *)0x0);
   }
   iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0);
   if (iVar5 != 0) {
@@ -163,7 +163,7 @@ LAB_004d1aac:
   }
   iVar5 = (**(code **)*0x01D1BCA0)(0x01D1BCA0);
   if ((iVar5 != 0) && (this_ptr->letterbox_mode == 0)) {
-    core_game_cpp_FUN_004d6420(this_ptr,"quicksavedgame.noc");
+    core_game_cpp_CGame_saveGame_FUN_004d6420(this_ptr,"quicksavedgame.noc");
     fVar10 = 2.0;
     pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Quick Save");
     core_game_cpp_CGame_displayMessage_FUN_004cc190(this_ptr,pcVar8,fVar10);

@@ -85,7 +85,8 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_0057ee80(CWerewolf *t
   local_40[2] = local_50;
   local_40[3] = local_4c;
   local_30 = local_48;
-  engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_110);
+  engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+            (&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_110);
   local_18 = 0x3E4CCCCD;
   local_11c = -0x3E4CCCCD + eye_position->x;
   local_118[1] = eye_position->z;
@@ -109,7 +110,8 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_0057ee80(CWerewolf *t
   local_2c.x = (int)ROUND(local_100[2] * _DAT_005e6380);
   local_2c.y = (int)ROUND(local_100[3] * _DAT_005e6380);
   local_2c.z = (int)ROUND(local_f0 * _DAT_005e6380);
-  engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_2c);
+  engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+            (&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_2c);
   local_a8 = eye_position->z;
   local_b8[2] = -0x3E4CCCCD + eye_position->x;
   local_b8[3] = eye_position->y + -0x3E4CCCCD;
@@ -132,7 +134,8 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_0057ee80(CWerewolf *t
   local_ec.x = (int)ROUND(local_100[2] * _DAT_005e6380);
   local_ec.y = (int)ROUND(local_100[3] * _DAT_005e6380);
   local_ec.z = (int)ROUND(local_f0 * _DAT_005e6380);
-  engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_ec);
+  engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+            (&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_ec);
   local_dc[1] = eye_position->z;
   local_e0 = 0x3E4CCCCD + eye_position->x;
   local_dc[0] = eye_position->y + -0x3E4CCCCD;
@@ -155,7 +158,8 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_0057ee80(CWerewolf *t
   local_98.x = (int)ROUND(local_100[2] * _DAT_005e6380);
   local_98.y = (int)ROUND(local_100[3] * _DAT_005e6380);
   local_98.z = (int)ROUND(local_f0 * _DAT_005e6380);
-  engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_98);
+  engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+            (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_98);
   this_ptr_00 = DAT_005f2afc;
   DAT_005f2afc->vertex_buffer_ptr->r = 0xffff;
   this_ptr_00->vertex_buffer_ptr->g = 0;

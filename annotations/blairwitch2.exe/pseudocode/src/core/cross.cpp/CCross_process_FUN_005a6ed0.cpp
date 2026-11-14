@@ -161,7 +161,7 @@ LAB_005a6f19:
       iVar2 = core_bwgrndma_cpp_FUN_005a7ed0();
       if (iVar2 != 0) {
         core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr);
-        core_xform_cpp_FUN_00591c10();
+        core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10();
         uStack_1b4 = 0;
         uStack_1b0 = 0x3fa66666;
         uStack_1ac = 0;

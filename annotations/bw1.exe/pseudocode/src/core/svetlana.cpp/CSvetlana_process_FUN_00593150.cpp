@@ -138,7 +138,7 @@ switchD_005935af_caseD_9:
             if ((iVar8 != 0) ||
                (iVar8 = core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004eb240(&this_ptr->base),
                iVar8 != 0)) goto LAB_00593649;
-            iVar8 = core_hero_cpp_FUN_004eb660(&this_ptr->base);
+            iVar8 = core_hero_cpp_CHero_tryPullLever_FUN_004eb660(&this_ptr->base);
             if (iVar8 != 0) {
               core_hero_cpp_CHero_toggleLeverNow_FUN_004eb7f0(&this_ptr->base);
               goto LAB_00593649;
@@ -238,7 +238,7 @@ switchD_005935af_caseD_4:
     iVar4 = pSVar5->state_index;
     if ((((iVar4 != 0x17) && (iVar4 != 0x18)) && (iVar4 != 0x19)) &&
        (((iVar4 != 0x25 && (iVar4 != 0x26)) && ((iVar4 != 0x27 && (iVar4 != 0x28)))))) {
-      core_charactr_cpp_FUN_0042d750((CCharacter *)this_ptr,&CStack_8c);
+      core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042d750((CCharacter *)this_ptr,&CStack_8c);
     }
     pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
                        (&(this_ptr->base).base.model.base);

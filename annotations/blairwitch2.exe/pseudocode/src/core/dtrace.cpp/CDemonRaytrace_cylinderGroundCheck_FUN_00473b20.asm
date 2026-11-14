@@ -39,7 +39,7 @@
 ;   undefined4 DAT_005d1b67
 ;
 ; Called Functions:
-;   core_dcube.cpp_FUN_00446df0
+;   core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_00446df0
 ;   core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_00472af0
 ;   crt_math.c_round_FUN_005b7ff0
 ;
@@ -178,8 +178,8 @@ section .text
     PUSH dword ptr [ESP + 0x7c]         ; 00473c74
     PUSH EDX                            ; 00473c78
     PUSH EAX                            ; 00473c79
-    CALL core_dcube.cpp_FUN_00446df0    ; 00473c7a
-        ;   XREF to: 00446df0 (UNCONDITIONAL_CALL)  ; int core_dcube.cpp_FUN_00446df0(CDemonCube * this_ptr, CVector3f * cylinder_position, float cylinder_radius, CVector3f * output_height, ...)
+    CALL core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_00446df0 ; 00473c7a
+        ;   XREF to: 00446df0 (UNCONDITIONAL_CALL)  ; int core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_00446df0(CDemonCube * this_ptr, CVector3f * cylinder_position, float cylinder_radius, CVector3f * output_height, ...)
     ADD ESP,0x18                        ; 00473c7f
     TEST EAX,EAX                        ; 00473c82
     JZ 0x00473c8b                       ; 00473c84

@@ -3456,14 +3456,9 @@
     "addr":"0041b590",
     "body":[
       {
-        "end":"0041b601",
-        "size":114,
-        "start":"0041b590"
-      },
-      {
         "end":"0041b748",
-        "size":186,
-        "start":"0041b68f"
+        "size":441,
+        "start":"0041b590"
       }
     ],
     "importable":true,
@@ -4860,7 +4855,7 @@
       }
     ],
     "importable":true,
-    "name":"core_bugs.cpp_FUN_00428010",
+    "name":"core_bugs.cpp_normalizeVector_FUN_00428010",
     "ret":"undefined1",
     "sig":"default",
     "vars":{
@@ -8832,14 +8827,9 @@
     "addr":"0043bb10",
     "body":[
       {
-        "end":"0043bb64",
-        "size":85,
+        "end":"0043bc3b",
+        "size":300,
         "start":"0043bb10"
-      },
-      {
-        "end":"0043bb8f",
-        "size":38,
-        "start":"0043bb6a"
       }
     ],
     "importable":true,
@@ -8855,14 +8845,9 @@
     "addr":"0043bd90",
     "body":[
       {
-        "end":"0043bde6",
-        "size":87,
+        "end":"0043bebd",
+        "size":302,
         "start":"0043bd90"
-      },
-      {
-        "end":"0043be11",
-        "size":38,
-        "start":"0043bdec"
       }
     ],
     "importable":true,
@@ -15537,19 +15522,9 @@
     "addr":"00468a90",
     "body":[
       {
-        "end":"00468aa9",
-        "size":26,
-        "start":"00468a90"
-      },
-      {
-        "end":"00468ab2",
-        "size":3,
-        "start":"00468ab0"
-      },
-      {
         "end":"00468ad5",
-        "size":6,
-        "start":"00468ad0"
+        "size":70,
+        "start":"00468a90"
       }
     ],
     "importable":true,
@@ -26471,7 +26446,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_game.cpp_FUN_004d6990",
+    "name":"core_game.cpp_CGame_loadGame_FUN_004d6990",
     "ret":"void",
     "vars":{
       "locals":[
@@ -29411,7 +29386,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_inv.cpp_FUN_004f7690",
+    "name":"core_inv.cpp_CInventory_addItem_FUN_004f7690",
     "ret":"int",
     "vars":{
       "params":[
@@ -33651,10 +33626,10 @@
         "start":"0050c990"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_menu.cpp_FUN_0050c990",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_menu.cpp_showOptionsScreen_FUN_0050c990",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -33674,9 +33649,24 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"initialize_systems",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -34725,14 +34715,45 @@
         "start":"0051b610"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_mission.cpp_FUN_0051b610",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_mission.cpp_CDemonMission_loadSet_FUN_0051b610",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonMission*"
+        },
+        {
+          "name":"set_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {

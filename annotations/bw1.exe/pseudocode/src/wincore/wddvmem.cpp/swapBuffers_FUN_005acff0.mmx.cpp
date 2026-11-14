@@ -76,7 +76,7 @@ __asm {
     LAB_005ad0c1:
         xor EDI,EDI
         mov dword ptr [DAT_02c99314],EDI
-        call wincore_winrun_cpp_FUN_005b2cf0
+        call wincore_winrun_cpp_processWindowMessages_FUN_005b2cf0
         mov ESP,EBP
         pop EBP
         pop EDI
@@ -89,7 +89,7 @@ __asm {
         add ESP,0x4
         xor EDI,EDI
         mov dword ptr [DAT_02c99314],EDI
-        call wincore_winrun_cpp_FUN_005b2cf0
+        call wincore_winrun_cpp_processWindowMessages_FUN_005b2cf0
         mov ESP,EBP
         pop EBP
         pop EDI
@@ -197,7 +197,7 @@ __asm {
         add ESP,0x4
         xor EDI,EDI
         mov dword ptr [DAT_02c99314],EDI
-        call wincore_winrun_cpp_FUN_005b2cf0
+        call wincore_winrun_cpp_processWindowMessages_FUN_005b2cf0
         mov ESP,EBP
         pop EBP
         pop EDI

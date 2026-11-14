@@ -25,19 +25,23 @@ int __cdecl core_mirror_cpp_CMirror_renderMirrorQuad_FUN_004f5480(CMirror *this_
   CStack_24.x = (int)ROUND((this_ptr->reflection).corner1.x * _DAT_005e29c0);
   CStack_24.y = (int)ROUND((this_ptr->reflection).corner1.y * _DAT_005e29c0);
   CStack_24.z = (int)ROUND((this_ptr->reflection).corner1.z * _DAT_005e29c0);
-  engine_special_cpp_FUN_0056356c(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&CStack_24);
+  engine_special_cpp_transformPoint_FUN_0056356c
+            (&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&CStack_24);
   CStack_30.x = (int)ROUND((this_ptr->reflection).corner2.x * _DAT_005e29c0);
   CStack_30.y = (int)ROUND((this_ptr->reflection).corner2.y * _DAT_005e29c0);
   CStack_30.z = (int)ROUND((this_ptr->reflection).corner2.z * _DAT_005e29c0);
-  engine_special_cpp_FUN_0056356c(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&CStack_30);
+  engine_special_cpp_transformPoint_FUN_0056356c
+            (&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&CStack_30);
   CStack_3c.x = (int)ROUND((this_ptr->reflection).corner3.x * _DAT_005e29c0);
   CStack_3c.y = (int)ROUND((this_ptr->reflection).corner3.y * _DAT_005e29c0);
   CStack_3c.z = (int)ROUND((this_ptr->reflection).corner3.z * _DAT_005e29c0);
-  engine_special_cpp_FUN_0056356c(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&CStack_3c);
+  engine_special_cpp_transformPoint_FUN_0056356c
+            (&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&CStack_3c);
   CStack_18.x = (int)ROUND((this_ptr->reflection).corner4.x * _DAT_005e29c0);
   CStack_18.y = (int)ROUND((this_ptr->reflection).corner4.y * _DAT_005e29c0);
   CStack_18.z = (int)ROUND((this_ptr->reflection).corner4.z * _DAT_005e29c0);
-  engine_special_cpp_FUN_0056356c(&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&CStack_18);
+  engine_special_cpp_transformPoint_FUN_0056356c
+            (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&CStack_18);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460(DAT_005f2afc,1);
   SStack_64.base.count = 4;
   SStack_64.surface_normal.D.i = 0;

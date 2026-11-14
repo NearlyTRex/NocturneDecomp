@@ -78,7 +78,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_0049b830(CPickList *t
                 uVar10 = _DAT_01c4f020;
               }
               _DAT_01c4f020 = uVar10;
-              shape_edittool_cpp_FUN_00492a40(local_28,local_1c,iVar9,iVar8,1);
+              shape_edittool_cpp_drawDashedLine_FUN_00492a40(local_28,local_1c,iVar9,iVar8,1);
             }
           }
           local_18 = 0;

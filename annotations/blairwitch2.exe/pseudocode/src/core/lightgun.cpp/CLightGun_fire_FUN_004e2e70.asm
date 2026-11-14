@@ -33,7 +33,7 @@
 ;   core_actor.cpp_isOfClass_FUN_0040c840
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
 ;   core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00441720
-;   core_lightgun.cpp_FUN_004e2bf0
+;   core_lightgun.cpp_CLightGun_updateBeamLight_FUN_004e2bf0
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00537e30
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00537e00
 ;   core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00537c40
@@ -209,8 +209,8 @@ section .text
     ADD ESP,0x4                         ; 004e3095
     MOV EDX,dword ptr [EBP + 0x14]      ; 004e3098
     PUSH EDX                            ; 004e309b
-    CALL core_lightgun.cpp_FUN_004e2bf0 ; 004e309c
-        ;   XREF to: 004e2bf0 (UNCONDITIONAL_CALL)  ; undefined core_lightgun.cpp_FUN_004e2bf0()
+    CALL core_lightgun.cpp_CLightGun_updateBeamLight_FUN_004e2bf0 ; 004e309c
+        ;   XREF to: 004e2bf0 (UNCONDITIONAL_CALL)  ; void core_lightgun.cpp_CLightGun_updateBeamLight_FUN_004e2bf0(CLightGun * this_ptr)
     ADD ESP,0x4                         ; 004e30a1
     XOR ECX,ECX                         ; 004e30a4
     LEA EAX,[ESP + 0x84]                ; 004e30a6

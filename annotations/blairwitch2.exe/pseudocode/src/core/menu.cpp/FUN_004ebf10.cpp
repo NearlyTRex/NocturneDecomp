@@ -369,7 +369,8 @@ void __cdecl core_menu_cpp_FUN_004ebf10(void)
       iVar3 = 8;
     }
     pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Graphic Options");
-    iVar3 = core_menu_cpp_FUN_004eb0e0((char **)0x1d06a50,iVar3,&local_38,0x122,pcVar7);
+    iVar3 = core_menu_cpp_renderMenuAndGetChoice_FUN_004eb0e0
+                      ((char **)0x1d06a50,iVar3,&local_38,0x122,pcVar7);
     wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
     pCVar2 = g_CGamePtr;
     switch(iVar3) {

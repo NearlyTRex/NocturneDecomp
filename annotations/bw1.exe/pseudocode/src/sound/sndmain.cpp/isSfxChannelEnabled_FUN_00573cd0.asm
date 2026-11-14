@@ -9,7 +9,7 @@
 ; XREF[9]:
 ;   core_event.cpp_FUN_004a1d00 at 004a4a59
 ;   core_game.cpp_CGame_rollCredits_FUN_004d8e50 at 004d8f3f
-;   core_menu.cpp_FUN_0050ba70 at 0050bb92
+;   core_menu.cpp_configureSoundOptions_FUN_0050ba70 at 0050bb92
 ;   core_sound.cpp_CSound_init_FUN_0057cc00 at 0057cc92
 ;   core_sound.cpp_CSound_process_FUN_0057ce10 at 0057d05d
 ;   core_sound.cpp_syncChannel3WithChannel0_FUN_0057cba0 at 0057cba5

@@ -11,31 +11,32 @@
 void shape_edittool_cpp_FUN_00485610(CEdCheck *param_1)
 
 {
+  int left;
   int iVar1;
   int iVar2;
   int iVar3;
   int iVar4;
+  int unaff_EBX;
   int iVar5;
-  uint unaff_EBX;
-  int iVar6;
-  uint uVar7;
+  uint uVar6;
   char *text_string;
   
-  iVar3 = param_1->y_position;
-  iVar6 = param_1->right_boundary;
-  iVar1 = param_1->x_position;
-  iVar2 = shape_edittool_cpp_CEdCheck_calculateBaseWidth_FUN_004855c0(param_1);
-  iVar2 = ((iVar3 + iVar6) - iVar2) / 2;
-  iVar3 = shape_edittool_cpp_CEdCheck_calculateScaledWidth_FUN_00485580(param_1);
-  iVar3 = iVar1 + iVar3;
-  iVar4 = shape_edittool_cpp_CEdCheck_calculateBaseWidth_FUN_004855c0(param_1);
+  iVar2 = param_1->y_position;
+  iVar5 = param_1->right_boundary;
+  left = param_1->x_position;
+  iVar1 = shape_edittool_cpp_CEdCheck_calculateBaseWidth_FUN_004855c0(param_1);
+  iVar1 = ((iVar2 + iVar5) - iVar1) / 2;
+  iVar2 = shape_edittool_cpp_CEdCheck_calculateScaledWidth_FUN_00485580(param_1);
+  iVar2 = left + iVar2;
+  iVar3 = shape_edittool_cpp_CEdCheck_calculateBaseWidth_FUN_004855c0(param_1);
   text_string = param_1->checkbox_text;
   engine_font_cpp_CBitFont_getTextHeight_FUN_004aafb0(_DAT_01c25590,text_string);
-  uVar7 = 0xffffffff;
-  iVar6 = param_1->text_color_mode;
-  iVar5 = shape_edittool_cpp_CEdCheck_calculateSpacing_FUN_004855f0(param_1);
-  engine_font_cpp_FUN_004a8df0(_DAT_01c25590,iVar2 + iVar4,iVar5 + iVar3,iVar6,uVar7,text_string);
-  shape_edittool_cpp_FUN_00483ea0(iVar1,iVar2,iVar3,unaff_EBX,param_1->border_style_flag);
+  uVar6 = 0xffffffff;
+  iVar5 = param_1->text_color_mode;
+  iVar4 = shape_edittool_cpp_CEdCheck_calculateSpacing_FUN_004855f0(param_1);
+  engine_font_cpp_FUN_004a8df0(_DAT_01c25590,iVar1 + iVar3,iVar4 + iVar2,iVar5,uVar6,text_string);
+  shape_edittool_cpp_draw3DBorder_FUN_00483ea0
+            (left,iVar1,iVar2,unaff_EBX,param_1->border_style_flag);
   if (param_1->checked_state == 1) {
     if (_DAT_01c25f84 == 0) {
       _DAT_01c35e60 = _DAT_01c25f84;

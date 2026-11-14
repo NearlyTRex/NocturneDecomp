@@ -73,9 +73,9 @@ void __cdecl CDemonSet::processActors(CDemonSet *this_ptr);
 // Address: 00535a80
 void __cdecl CDemonSet::renderStaticLights(CDemonSet *this_ptr);
 
-// Original: core_set.cpp_FUN_00535da0
+// Original: core_set.cpp_CDemonSet_renderScene_FUN_00535da0
 // Address: 00535da0
-void __cdecl FUN_00535da0(CDemonSet *this_ptr,int skip_prerender);
+void __cdecl CDemonSet::renderScene(CDemonSet *this_ptr,int skip_prerender);
 
 // Original: core_set.cpp_FUN_005365c0
 // Address: 005365c0
@@ -297,9 +297,9 @@ int __cdecl CDemonSet::saveMasterLightStates(CDemonSet *this_ptr,int *light_stat
 // Address: 0053b6e0
 int FUN_0053b6e0(int *param_1,undefined4 param_2);
 
-// Original: core_set.cpp_FUN_0053b7f0
+// Original: core_set.cpp_CDemonSet_loadStateInfo_FUN_0053b7f0
 // Address: 0053b7f0
-void FUN_0053b7f0(int *param_1,_FILE *param_2);
+void __cdecl CDemonSet::loadStateInfo(CDemonSet *this_ptr,_FILE *file_handle);
 
 // Original: core_set.cpp_CDemonSet_isCameraPanning_FUN_0053b9a0
 // Address: 0053b9a0

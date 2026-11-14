@@ -12,7 +12,7 @@
 ;
 ; XREF[3]:
 ;   core_stranger.cpp_CStranger_tryPlaceObject_FUN_0056acd0 at 0056b016
-;   core_stranger.cpp_FUN_00565ff0 at 00566f0b
+;   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00565ff0 at 00566f0b
 ;   core_stranger.cpp_FUN_00568500 at 0056937a
 ;
 ; Referenced Globals:

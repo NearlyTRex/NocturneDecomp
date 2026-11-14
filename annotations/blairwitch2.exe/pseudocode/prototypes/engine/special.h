@@ -21,9 +21,9 @@ void __cdecl clearScreenRegion(int color);
 // Address: 0055b342
 void __cdecl fillDepthRegion(int left,int right,int top,int bottom);
 
-// Original: engine_special.cpp_FUN_0055b3b1
+// Original: engine_special.cpp_renderMMXPerspectiveScanline32_FUN_0055b3b1
 // Address: 0055b3b1
-void FUN_0055b3b1(void);
+void renderMMXPerspectiveScanline32(void);
 
 // Original: engine_special.cpp_FUN_0055bb20
 // Address: 0055bb20
@@ -61,13 +61,13 @@ void __cdecl renderAlphaRow16(ushort *destPixels,uchar *srcIndices,uchar *srcAlp
 // Address: 0055d6d7
 void FUN_0055d6d7(void);
 
-// Original: engine_special.cpp_FUN_0055d723
+// Original: engine_special.cpp_transformAndProjectPoint_FUN_0055d723
 // Address: 0055d723
-void __cdecl FUN_0055d723(SProjectedVertex *output,CVector3i *input);
+void __cdecl transformAndProjectPoint(SProjectedVertex *output,CVector3i *input);
 
-// Original: engine_special.cpp_FUN_0055d9ec
+// Original: engine_special.cpp_transformPoint_FUN_0055d9ec
 // Address: 0055d9ec
-void __cdecl FUN_0055d9ec(SProjectedVertex *output,CVector3i *input);
+void __cdecl transformPoint(SProjectedVertex *output,CVector3i *input);
 
 // Original: engine_special.cpp_shutdownExternalRenderer_FUN_0055dcf0
 // Address: 0055dcf0
@@ -85,21 +85,21 @@ int __cdecl kill(void);
 // Address: 0055f4f0
 int __cdecl isExternalRendererActive(void);
 
-// Original: engine_special.cpp_FUN_0055f500
+// Original: engine_special.cpp_lockFrame_FUN_0055f500
 // Address: 0055f500
-undefined4 FUN_0055f500(void);
+int __cdecl lockFrame(void);
 
 // Original: engine_special.cpp_unlockFrame_FUN_0055f550
 // Address: 0055f550
 int __cdecl unlockFrame(int clear_lock_flag);
 
-// Original: engine_special.cpp_FUN_0055f590
+// Original: engine_special.cpp_beginScene_FUN_0055f590
 // Address: 0055f590
-int __cdecl FUN_0055f590(void);
+int __cdecl beginScene(void);
 
-// Original: engine_special.cpp_FUN_0055f5b0
+// Original: engine_special.cpp_endScene_FUN_0055f5b0
 // Address: 0055f5b0
-int __cdecl FUN_0055f5b0(void);
+int __cdecl endScene(void);
 
 // Original: engine_special.cpp_FUN_0055f5d0
 // Address: 0055f5d0

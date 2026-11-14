@@ -31,13 +31,13 @@ void __cdecl core_vampboss_cpp_CVampireBoss_setup_FUN_005a52a0(CVampireBoss *thi
   core_cloth_cpp_CCloth_load_FUN_0043e6d0(this_ptr_02,"batwing.cth");
   euler = &(this_ptr->base).base.base.orient;
   position = &(this_ptr->base).base.base.location;
-  core_cloth_cpp_FUN_0043eea0(this_ptr_02,&position->position,&euler->vec,this_ptr_01);
+  core_cloth_cpp_CCloth_setup_FUN_0043eea0(this_ptr_02,&position->position,&euler->vec,this_ptr_01);
   this_ptr_03 = &this_ptr->cape_cloth;
   core_cloth_cpp_CCloth_load_FUN_0043e6d0(this_ptr_03,"noscape.cth");
-  core_cloth_cpp_FUN_0043eea0(this_ptr_03,&position->position,&euler->vec,this_ptr_00);
+  core_cloth_cpp_CCloth_setup_FUN_0043eea0(this_ptr_03,&position->position,&euler->vec,this_ptr_00);
   this_ptr_04 = &this_ptr->skirt_cloth;
   core_cloth_cpp_CCloth_load_FUN_0043e6d0(this_ptr_04,"nosskirt.cth");
-  core_cloth_cpp_FUN_0043eea0(this_ptr_04,&position->position,&euler->vec,this_ptr_00);
+  core_cloth_cpp_CCloth_setup_FUN_0043eea0(this_ptr_04,&position->position,&euler->vec,this_ptr_00);
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_00567500(this_ptr_00);
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00569180(this_ptr_00);
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_00567500(this_ptr_01);

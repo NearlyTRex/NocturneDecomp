@@ -72,7 +72,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
     _DAT_01d046a4 = 0x3f2;
     core_main_c_FUN_004e4500();
   }
-  core_dfont_cpp_FUN_00447ea0();
+  core_dfont_cpp_initFonts_FUN_00447ea0();
   if (_DAT_02664638 < 0x3c00000) {
     pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Windows is reporting ");
     pcVar10 = acStack_528;
@@ -462,9 +462,9 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d900(&CStack_28,0,0,0xffff);
   wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
   engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d440(&CStack_28,0);
-  core_sound_cpp_FUN_0055a100(0x0264B290);
+  core_sound_cpp_CSound_findAllSoundFiles_FUN_0055a100(0x0264B290);
   iVar6 = 0;
-  core_mission_cpp_FUN_004fb380();
+  core_mission_cpp_CDemonMission_reset_FUN_004fb380(0x01D182F0);
   iStack_14 = 0;
   do {
     puVar1 = (uint *)((int)&g_GlobalFilters + iVar6);

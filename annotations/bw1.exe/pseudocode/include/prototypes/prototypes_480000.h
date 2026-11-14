@@ -225,7 +225,7 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_0048afa0(C
 CDemonCube * __cdecl core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_0048afe0(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z);
 void core_dtrace_cpp_FUN_0048b040(undefined4 param_1,float *param_2,float *param_3);
 float core_dtrace_cpp_FUN_0048b150(CDemonRaytrace *param_1,CVector3f *param_2,float *param_3,CVector3f *param_4,uint *param_5);
-int __cdecl core_dtrace_cpp_FUN_0048b880(CDemonRaytrace *this_ptr,CVector3f *start_pos,CVector3f *end_pos);
+int __cdecl core_dtrace_cpp_CDemonRaytrace_rayVoxelGridTest_FUN_0048b880(CDemonRaytrace *this_ptr,CVector3f *start_pos,CVector3f *end_pos);
 float __cdecl core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_0048bdc0(CDemonRaytrace *this_ptr,CVector3f *pos,int *hit_flag,CVector3f *normal_out);
 float __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_0048c010(CDemonRaytrace *this_ptr,CVector3f *pos,float radius,int *hit_flag,CVector3f *normal_out);
 void __cdecl core_dtrace_cpp_initIntersectionCylinder_FUN_0048c230(SIntersectXZCylinder *this_ptr,float start_x,float start_z,float dir_x,float dir_z,float radius,float bottom_y,float top_y);

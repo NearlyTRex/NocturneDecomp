@@ -10,8 +10,8 @@
 ; XREF[18]:
 ;   cockpit_ckptutil.c_FUN_0043b2e0 at 0043b384
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_00437490 at 004375c5
-;   core_game.cpp_FUN_004d6420 at 004d682e
-;   core_game.cpp_FUN_004d6990 at 004d6d81
+;   core_game.cpp_CGame_loadGame_FUN_004d6990 at 004d6d81
+;   core_game.cpp_CGame_saveGame_FUN_004d6420 at 004d682e
 ;   engine_2d.c_FUN_00401590 at 004015e4
 ;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 004010d3
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 00402a86

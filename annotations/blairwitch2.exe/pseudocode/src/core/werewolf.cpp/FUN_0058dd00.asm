@@ -47,7 +47,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408de0
-;   core_charactr.cpp_FUN_00423a60
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60
 ;   core_xform.cpp_FUN_00591530
 ;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
@@ -226,8 +226,8 @@ section .text
     FSTP float ptr [EBP + 0x3a]         ; 0058dea8
     FSTP float ptr [EBP + 0x3e]         ; 0058deab
     FSTP float ptr [EBP + 0x42]         ; 0058deae
-    CALL core_charactr.cpp_FUN_00423a60 ; 0058deb1
-        ;   XREF to: 00423a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00423a60(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60 ; 0058deb1
+        ;   XREF to: 00423a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 0058deb6
     LEA ESP,[EBP + 0x7e]                ; 0058deb9
     POP EBP                             ; 0058debc
@@ -246,8 +246,8 @@ section .text
     XOR ESI,ESI                         ; 0058dece
     PUSH EBX                            ; 0058ded0
     MOV dword ptr [EBP + 0x56],ESI      ; 0058ded1
-    CALL core_charactr.cpp_FUN_00423a60 ; 0058ded4
-        ;   XREF to: 00423a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00423a60(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60 ; 0058ded4
+        ;   XREF to: 00423a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 0058ded9
     LEA ESP,[EBP + 0x7e]                ; 0058dedc
     POP EBP                             ; 0058dedf

@@ -451,7 +451,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_00544460(CScript *this_ptr,float *t
                                         &g_CDemonActorClassInfo), item_actor == (CDemonActor *)0x0))
             goto joined_r0x00546052;
             if (_DAT_01e810a8 == 0) {
-              core_inv_cpp_FUN_004f7690
+              core_inv_cpp_CInventory_addItem_FUN_004f7690
                         ((CInventory *)&pCVar13[0x179].orient_matrix.m[1].z,item_actor,0);
             }
           }
@@ -570,7 +570,7 @@ LAB_00545bc9:
                       {
                         local_34 = core_script_cpp_skipWhitespace_FUN_005432b0(pcVar16 + 0xb);
                         if (_DAT_01e810a8 == 0) {
-                          core_game_cpp_FUN_004d6030(g_CGamePtr);
+                          core_game_cpp_CGame_beginFadeIn_FUN_004d6030(g_CGamePtr);
                         }
                       }
                       else {
@@ -1289,7 +1289,8 @@ LAB_00546ffc:
                                                   }
                                                   }
                                                   else {
-                                                    core_game_cpp_FUN_004d6030(g_CGamePtr);
+                                                    core_game_cpp_CGame_beginFadeIn_FUN_004d6030
+                                                              (g_CGamePtr);
                                                     this_ptr->cmd_timer = 1.0;
                                                   }
                                                   }

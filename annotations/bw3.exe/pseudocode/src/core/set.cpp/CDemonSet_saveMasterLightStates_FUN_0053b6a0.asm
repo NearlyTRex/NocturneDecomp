@@ -8,7 +8,7 @@
 ; int *            Stack[0x8]:4   light_state_buffer
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004bda10 at 004bdbda
+;   core_game.cpp_CGame_saveGame_FUN_004bda10 at 004bdbda
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0203a414

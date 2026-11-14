@@ -402,7 +402,8 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_004179b0(CBoneGuy *this_ptr,f
     case 6:
       pCVar4 = (this_ptr->base).base.carry_hands[1].carry_actor;
       if (pCVar4 == (CDemonActor *)0x0) {
-        fStack_14 = core_motion_cpp_FUN_004fc930(pCStack_2c);
+        fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930(pCStack_2c)
+        ;
         if (((float)_DAT_005b6f52 < fStack_14) && ((this_ptr->base).attack_cooldown <= 0.0)) {
           core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(&SStack_208);
           SStack_208.damage_amount = (this_ptr->base).attack_damage;
@@ -508,7 +509,7 @@ switchD_00418691_caseD_3:
     fVar20 = (this_ptr->base).base.model.accumulated_root_motion.z;
     (this_ptr->base).base.model.accumulated_root_motion.y = fVar20;
     pCVar3->x = fVar20;
-    core_charactr_cpp_FUN_0042c230((CCharacter *)this_ptr,&CStack_188);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230((CCharacter *)this_ptr,&CStack_188);
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_0042cd30((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130

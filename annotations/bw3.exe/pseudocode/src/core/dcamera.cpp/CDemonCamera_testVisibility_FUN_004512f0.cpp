@@ -26,7 +26,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_testVisibility_FUN_004512f0(CDemonCame
   engine_drender_cpp_CDemonRenderer_setupCameraAndViewport_FUN_0046e720
             (DAT_005f2afc,(SCameraViewportState *)0x14a01f0);
   do {
-    engine_special_cpp_FUN_0056356c(output,corners);
+    engine_special_cpp_transformPoint_FUN_0056356c(output,corners);
     corners = corners + 1;
     output = output + 2;
   } while (corners != pCVar2);

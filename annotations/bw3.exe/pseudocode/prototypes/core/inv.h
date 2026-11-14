@@ -9,9 +9,9 @@
 // Address: 004d9c90
 void __cdecl staticInit(void);
 
-// Original: core_inv.cpp_FUN_004d9d20
+// Original: core_inv.cpp_getItemModel_FUN_004d9d20
 // Address: 004d9d20
-CDemonActor * FUN_004d9d20(CDemonActor *param_1);
+CDemonActor * getItemModel(CDemonActor *param_1);
 
 // Original: core_inv.cpp_getItemDisplayName_FUN_004d9e40
 // Address: 004d9e40
@@ -57,9 +57,9 @@ void __cdecl loadAssets(void);
 // Address: 004da840
 void FUN_004da840(void);
 
-// Original: core_inv.cpp_FUN_004da880
+// Original: core_inv.cpp_CInventory_addItem_FUN_004da880
 // Address: 004da880
-int __cdecl FUN_004da880(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message);
+int __cdecl CInventory::addItem(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message);
 
 // Original: core_inv.cpp_FUN_004db8d0
 // Address: 004db8d0

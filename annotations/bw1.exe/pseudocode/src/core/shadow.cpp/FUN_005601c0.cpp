@@ -68,7 +68,7 @@ void core_shadow_cpp_FUN_005601c0(void)
       *(uint *)((int)&CStack_3c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
            *(uint *)(&stack0xffffff78 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
       CStack_3c.y = 0.0;
-      core_charactr_cpp_FUN_0042d750(in_stack_00000004,&CStack_3c);
+      core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042d750(in_stack_00000004,&CStack_3c);
       return;
     }
     fStack_6c = fStack_9c - fStack_60;
@@ -97,7 +97,7 @@ void core_shadow_cpp_FUN_005601c0(void)
         CStack_54.y = fStack_18 * 0.0;
         CStack_54.z = CStack_54.z * fStack_18;
         fStack_14 = fVar1;
-        core_charactr_cpp_FUN_0042d750(in_stack_00000004,&CStack_54);
+        core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042d750(in_stack_00000004,&CStack_54);
         return;
       }
     }

@@ -5,17 +5,17 @@
 // Function prototypes for sound/snddx.cpp
 // Generated from Ghidra function signatures
 
-// Original: sound_snddx.cpp_FUN_00577500
+// Original: sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500
 // Address: 00577500
-char * __cdecl FUN_00577500(uint error_code);
+char * __cdecl getDirectSoundErrorString(uint error_code);
 
 // Original: sound_snddx.cpp_fillStreamBuffer_FUN_005776b0
 // Address: 005776b0
 int __cdecl fillStreamBuffer(void);
 
-// Original: sound_snddx.cpp_FUN_00577880
+// Original: sound_snddx.cpp_releaseSfxHardwareBuffers_FUN_00577880
 // Address: 00577880
-bool FUN_00577880(int param_1);
+int __cdecl releaseSfxHardwareBuffers(int sfx_handle);
 
 // Original: sound_snddx.cpp_FUN_005779b0
 // Address: 005779b0

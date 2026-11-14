@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_main.c_FUN_004e4c70 at 004e4cf0
-;   core_menu.cpp_FUN_004ea280 at 004ea401
+;   core_menu.cpp_showOptionsScreen_FUN_004ea280 at 004ea401
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gamePIXX_005c5bad
@@ -29,10 +29,10 @@
 ;   ... and 105 more
 ;
 ; Called Functions:
+;   engine_ini.cpp_CIniFile_ctor_FUN_004d8a20
 ;   engine_ini.cpp_CIniFile_dtor_FUN_004d8a50
 ;   engine_ini.cpp_CIniFile_readIniHeader_FUN_004d8ae0
 ;   engine_ini.cpp_CIniFile_setString_FUN_004d8bb0
-;   engine_ini.cpp_FUN_004d8a20
 ;   engine_ini.cpp_FUN_004d8c90
 ;   sound_sndmain.cpp_writeIni_FUN_00559520
 ;
@@ -50,8 +50,8 @@ section .text
     PUSH 0x6000b0                       ; 004d95cc | = ".\\system\\bw3.ini"
     LEA EAX,[ESP + 0x8]                 ; 004d95d1
     PUSH EAX                            ; 004d95d5
-    CALL engine_ini.cpp_FUN_004d8a20    ; 004d95d6
-        ;   XREF to: 004d8a20 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_FUN_004d8a20(CIniFile * this_ptr, char * filename, char * section)
+    CALL engine_ini.cpp_CIniFile_ctor_FUN_004d8a20 ; 004d95d6
+        ;   XREF to: 004d8a20 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004d8a20(CIniFile * this_ptr, char * filename, char * section)
     ADD ESP,0xc                         ; 004d95db
     PUSH 0x6000d8                       ; 004d95de | = "Graphics"
     LEA EAX,[ESP + 0x4]                 ; 004d95e3

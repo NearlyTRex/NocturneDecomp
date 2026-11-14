@@ -772,7 +772,9 @@ LAB_00456085:
           goto LAB_004566b3;
         }
         if (pCVar8 != (CCharacter *)0x0) {
-          pCStack_14 = (CCharacter_full_vtable *)core_motion_cpp_FUN_004fc930(&pCVar2->base);
+          pCStack_14 = (CCharacter_full_vtable *)
+                       core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                                 (&pCVar2->base);
           if ((float)_DAT_005ba6b2 < (float)pCStack_14) {
             pCVar5 = (this_ptr->base).victim;
             fStack_158 = (pCVar5->base).location.position.x -
@@ -969,7 +971,9 @@ LAB_00456085:
     case 8:
     case 9:
       pCVar2 = &(this_ptr->base).base.model;
-      pCStack_14 = (CCharacter_full_vtable *)core_motion_cpp_FUN_004fc930(&pCVar2->base);
+      pCStack_14 = (CCharacter_full_vtable *)
+                   core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                             (&pCVar2->base);
       if ((float)_DAT_005ba6b2 < (float)pCStack_14) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&pCVar2->base,4,1);
       }
@@ -1029,7 +1033,8 @@ LAB_00456ca5:
               fStack_5c = fStack_468 * (float)_DAT_005ba69a + fStack_5c;
             }
             fStack_30 = fStack_5c;
-            fStack_60 = core_motion_cpp_FUN_004fc930(&(this_ptr->base).base.model.base);
+            fStack_60 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                                  (&(this_ptr->base).base.model.base);
             dStack_c8 = (double)fStack_60;
             pCStack_14 = (CCharacter_full_vtable *)fStack_60;
             if ((1.0 <= dStack_c8) && (dStack_c8 <= _DAT_005ba6aa)) {
@@ -1338,7 +1343,7 @@ LAB_00455cd6:
       (this_ptr->base).base.model.accumulated_root_motion.y =
            (this_ptr->base).base.model.accumulated_root_motion.z;
       pCVar26->x = (this_ptr->base).base.model.accumulated_root_motion.y;
-      core_charactr_cpp_FUN_0042c230((CCharacter *)this_ptr,&CStack_2d8);
+      core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230((CCharacter *)this_ptr,&CStack_2d8);
       if ((fStack_34 == 5.60519e-45) &&
          (pCStack_50 = (CDoor *)core_actor_cpp_castToClassHash_FUN_0040c840
                                           (DAT_007e2cf0,g_CDoorClassInfo.name_hash),

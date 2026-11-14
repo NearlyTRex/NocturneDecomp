@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   engine_drender.cpp_pop_FUN_0046b4a0 at 0046b4a0
-;   shape_edittool.cpp_FUN_0047ff50 at 0047ffe8
+;   shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_0047ff50 at 0047ffe8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_matrix_c_005dc7e6

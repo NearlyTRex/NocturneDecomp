@@ -32,7 +32,7 @@ int __cdecl core_asgaya_cpp_CAsgaya_renderOpaque_FUN_005a1760(CAsgaya *this_ptr)
   }
   iVar1 = core_box_cpp_FUN_0041daf0(auStack_1c);
   if (iVar1 != 0) {
-    core_charactr_cpp_FUN_0042d8e0(this_ptr);
+    core_charactr_cpp_CCharacter_renderCharacter_FUN_0042d8e0((CCharacter *)this_ptr);
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830((CDemonActor *)this_ptr);
   return iVar1;

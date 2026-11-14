@@ -75,7 +75,7 @@ void support_codec_cpp_FUN_004338a0(int *param_1,int param_2,uint param_3);
 undefined4 support_codec_cpp_FUN_004338d0(undefined4 *param_1,undefined4 *param_2);
 int support_codec_cpp_FUN_004338f0(byte *param_1,int param_2,uint param_3,int *param_4);
 int support_codec_cpp_FUN_00433a90(int *param_1,int *param_2);
-int support_codec_cpp_FUN_00433ad0(int *param_1,int *param_2);
+int __cdecl support_codec_cpp_flushBitBuffer_FUN_00433ad0(int *param_1,int *param_2);
 CCodec * __cdecl support_codec_cpp_CCodec_ctor_FUN_00433e80(CCodec *this_ptr);
 CCodec * __cdecl support_codec_cpp_CCodec_dtor_FUN_00433e90(CCodec *this_ptr,uint flags);
 void __cdecl support_codec_cpp_CCodec_init_FUN_00433eb0(CCodec *this_ptr);
@@ -191,7 +191,7 @@ void __cdecl core_course_cpp_CCourse_allocMemory_FUN_00438a90(CCourse *this_ptr,
 void __cdecl core_course_cpp_CCourse_load_FUN_00438af0(CCourse *this_ptr,char *filename);
 void __cdecl core_course_cpp_CCourse_free_FUN_00438c20(CCourse *this_ptr);
 void __cdecl core_course_cpp_CCourse_evaluate_FUN_00438c40(CCourse *this_ptr,float time,CVector3f *out_pos,CVector3f *out_euler);
-void __cdecl core_course_cpp_FUN_00438cf0(CCourse *this_ptr,float time,CVector3f *out_pos,CQuaternion4f *out_orient);
+void __cdecl core_course_cpp_CCourse_interpolate_FUN_00438cf0(CCourse *this_ptr,float time,CVector3f *out_pos,CQuaternion4f *out_orient);
 void __cdecl core_cow_cpp_staticInit_FUN_00439080(void);
 CZombieCow * __cdecl core_cow_cpp_factoryFuncZombieCow_FUN_004390b0(void);
 CDemonActorType * __cdecl core_cow_cpp_CZombieCow_getActorType_FUN_004390d0(CZombieCow *this_ptr);

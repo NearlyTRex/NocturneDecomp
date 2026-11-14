@@ -21,7 +21,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004bbf70 at 004bc51e
+;   core_game.cpp_CGame_loadGame_FUN_004bbf70 at 004bc51e
 ;   core_mission.cpp_CDemonMission_load_FUN_004fb490 at 004fb4da
 ;
 ; Referenced Globals:

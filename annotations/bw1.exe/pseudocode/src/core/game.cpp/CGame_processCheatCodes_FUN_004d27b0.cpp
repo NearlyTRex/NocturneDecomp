@@ -720,7 +720,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004d27b0(CGame *this_ptr)
           } while (cVar4 != '\0');
           core_sound_cpp_CSound_playSound_FUN_0057d880
                     (0x02C82A60,(void *)0x0,"cheat-1.wav");
-          core_inv_cpp_FUN_004f7690
+          core_inv_cpp_CInventory_addItem_FUN_004f7690
                     ((CInventory *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x1fae8),this_ptr_02,1
                     );
           fVar21 = 5.0;
@@ -1126,7 +1126,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004d27b0(CGame *this_ptr)
           core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ddd0(pCVar14,&DAT_005e22f0);
           iVar7 = _DAT_01d06ab4;
           pCVar14->ammo_count = 500;
-          core_inv_cpp_FUN_004f7690
+          core_inv_cpp_CInventory_addItem_FUN_004f7690
                     ((CInventory *)(*(int *)(iVar7 * 4 + 0x1d06aa4) + 0x1fae8),&pCVar14->base,1);
         }
         pCVar13 = (CAmmo *)operator_new(0x31c);
@@ -1142,7 +1142,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004d27b0(CGame *this_ptr)
           core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ddd0(pCVar14,&DAT_005e22f5);
           iVar7 = _DAT_01d06ab4;
           pCVar14->ammo_count = 500;
-          core_inv_cpp_FUN_004f7690
+          core_inv_cpp_CInventory_addItem_FUN_004f7690
                     ((CInventory *)(*(int *)(iVar7 * 4 + 0x1d06aa4) + 0x1fae8),&pCVar14->base,1);
         }
         pCVar13 = (CAmmo *)operator_new(0x31c);
@@ -1158,7 +1158,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004d27b0(CGame *this_ptr)
           core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ddd0(pCVar14,&DAT_005e22fa);
           iVar7 = _DAT_01d06ab4;
           pCVar14->ammo_count = 500;
-          core_inv_cpp_FUN_004f7690
+          core_inv_cpp_CInventory_addItem_FUN_004f7690
                     ((CInventory *)(*(int *)(iVar7 * 4 + 0x1d06aa4) + 0x1fae8),&pCVar14->base,1);
         }
         core_game_cpp_giveHeroWeapon_FUN_004d2540("CShotgun");
@@ -1177,7 +1177,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004d27b0(CGame *this_ptr)
           core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ddd0(pCVar14,"CCrossbow");
           iVar7 = _DAT_01d06ab4;
           pCVar14->ammo_count = 500;
-          core_inv_cpp_FUN_004f7690
+          core_inv_cpp_CInventory_addItem_FUN_004f7690
                     ((CInventory *)(*(int *)(iVar7 * 4 + 0x1d06aa4) + 0x1fae8),&pCVar14->base,1);
         }
         core_game_cpp_giveHeroWeapon_FUN_004d2540("CDynamite");
@@ -1913,7 +1913,7 @@ LAB_004d42bf:
         }
         core_mission_cpp_CDemonMission_generateActorName_FUN_0051bd60(0x01D2C900,&actor->base);
         (*((actor->base).vtable._ub)->setup)(&actor->base);
-        core_inv_cpp_FUN_004f7690
+        core_inv_cpp_CInventory_addItem_FUN_004f7690
                   ((CInventory *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x1fae8),&actor->base,1)
         ;
         fVar21 = 5.0;
@@ -1954,7 +1954,7 @@ LAB_004d42bf:
         }
         core_mission_cpp_CDemonMission_generateActorName_FUN_0051bd60(0x01D2C900,&actor_00->base);
         (*((actor_00->base).vtable._ub)->setup)(&actor_00->base);
-        core_inv_cpp_FUN_004f7690
+        core_inv_cpp_CInventory_addItem_FUN_004f7690
                   ((CInventory *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x1fae8),&actor_00->base
                    ,1);
         fVar21 = 5.0;
@@ -2251,7 +2251,7 @@ LAB_004d42bf:
           core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ddd0(pCVar14,"CGun");
           iVar7 = _DAT_01d06ab4;
           pCVar14->ammo_count = 500;
-          core_inv_cpp_FUN_004f7690
+          core_inv_cpp_CInventory_addItem_FUN_004f7690
                     ((CInventory *)(*(int *)(iVar7 * 4 + 0x1d06aa4) + 0x1fae8),&pCVar14->base,1);
         }
       }
@@ -2294,7 +2294,7 @@ LAB_004d42bf:
           core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ddd0(pCVar14,"CGun");
           iVar7 = _DAT_01d06ab4;
           pCVar14->ammo_count = 500;
-          core_inv_cpp_FUN_004f7690
+          core_inv_cpp_CInventory_addItem_FUN_004f7690
                     ((CInventory *)(*(int *)(iVar7 * 4 + 0x1d06aa4) + 0x1fae8),&pCVar14->base,1);
         }
       }
@@ -2337,7 +2337,7 @@ LAB_004d42bf:
           core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ddd0(pCVar14,"CGun");
           iVar7 = _DAT_01d06ab4;
           pCVar14->ammo_count = 500;
-          core_inv_cpp_FUN_004f7690
+          core_inv_cpp_CInventory_addItem_FUN_004f7690
                     ((CInventory *)(*(int *)(iVar7 * 4 + 0x1d06aa4) + 0x1fae8),&pCVar14->base,1);
         }
       }

@@ -15,7 +15,7 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
 ;   crt_unknown.c_sprintf_FUN_005b7790
-;   sound_snddx.cpp_FUN_00554ad0
+;   sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0
 ;   sound_sndmain.cpp_CSfxSample_bytesToFrames_FUN_0054fd70
 ;   sound_sndmain.cpp_logSoundError_FUN_005549c0
 ;
@@ -106,8 +106,8 @@ section .text
     RET                                 ; 00557053
     PUSH EAX                            ; 00557054
         ;   Label: LAB_00557054
-    CALL sound_snddx.cpp_FUN_00554ad0   ; 00557055
-        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00554ad0(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0 ; 00557055
+        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0(uint error_code)
     ADD ESP,0x4                         ; 0055705a
     PUSH EAX                            ; 0055705d
     PUSH 0x5ea111                       ; 0055705e | = "Get playback cursor of hardware sfx s..."

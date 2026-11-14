@@ -15,7 +15,7 @@
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046b970
 ;   engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0046b7e0
-;   engine_special.cpp_FUN_0055d723
+;   engine_special.cpp_transformAndProjectPoint_FUN_0055d723
 ;
 ; *****************************************************************************
 
@@ -74,8 +74,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0041f6ca
     ADD EAX,EBX                         ; 0041f6cc
     PUSH EAX                            ; 0041f6ce
-    CALL engine_special.cpp_FUN_0055d723 ; 0041f6cf
-        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 0041f6cf
+        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0041f6d4
     MOV EAX,dword ptr [ESP + 0x2c]      ; 0041f6d7
     ADD EDI,0x4                         ; 0041f6db

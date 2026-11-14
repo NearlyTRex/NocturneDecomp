@@ -20,8 +20,8 @@
 ;
 ; XREF[3]:
 ;   core_game.cpp_FUN_004b6f30 at 004b7a7a
+;   core_set.cpp_CDemonSet_renderScene_FUN_00535da0 at 00535de8
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00534890 at 00534a8c
-;   core_set.cpp_FUN_00535da0 at 00535de8
 ;
 ; Referenced Globals:
 ;   undefined4 s_renderStaticLights_3_2f_005d053e+1

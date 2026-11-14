@@ -9,6 +9,6 @@
 void __cdecl engine_mini3d_cpp_lockFrame_FUN_004f23d0(void)
 
 {
-  engine_special_cpp_FUN_0055f500();
+  engine_special_cpp_lockFrame_FUN_0055f500();
   return;
 }

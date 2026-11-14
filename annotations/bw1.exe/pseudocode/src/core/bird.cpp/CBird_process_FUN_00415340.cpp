@@ -159,7 +159,7 @@ LAB_004154bd:
   (this_ptr->base).model.accumulated_root_motion.y =
        (this_ptr->base).model.accumulated_root_motion.z;
   pCVar1->x = (this_ptr->base).model.accumulated_root_motion.y;
-  core_charactr_cpp_FUN_0042d750(&this_ptr->base,&CStack_74);
+  core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042d750(&this_ptr->base,&CStack_74);
   core_charactr_cpp_CCharacter_preProcess_FUN_0042e160(&this_ptr->base);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_005675a0(&(this_ptr->base).model);
   core_charactr_cpp_FUN_00432f10(this_ptr,delta_time,uStack_14);

@@ -29,9 +29,9 @@ int FUN_004338f0(byte *param_1,int param_2,uint param_3,int *param_4);
 // Address: 00433a90
 int FUN_00433a90(int *param_1,int *param_2);
 
-// Original: support_codec.cpp_FUN_00433ad0
+// Original: support_codec.cpp_flushBitBuffer_FUN_00433ad0
 // Address: 00433ad0
-int FUN_00433ad0(int *param_1,int *param_2);
+int __cdecl flushBitBuffer(int *param_1,int *param_2);
 
 // Original: support_codec.cpp_CCodec_ctor_FUN_00433e80
 // Address: 00433e80

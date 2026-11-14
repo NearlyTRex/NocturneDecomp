@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
-;   core_dfont.cpp_FUN_0045a8d0 at 0045a8f6
+;   core_dfont.cpp_freeFonts_FUN_0045a8d0 at 0045a8f6
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_free_FUN_004b0480

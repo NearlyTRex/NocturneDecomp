@@ -13,7 +13,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadAndCompressBitmap_FUN_005169
   int in_stack_00000014;
   
   raw_bitmap_data =
-       cockpit_ckptutil_c_FUN_0042c520
+       cockpit_ckptutil_c_readBitmapFile_FUN_0042c520
                  (this_ptr->filename,(void *)0x0,this_ptr->width * this_ptr->height);
   if (raw_bitmap_data != (uchar *)0x0) {
     cockpit_pkbitmap_cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_005169b0

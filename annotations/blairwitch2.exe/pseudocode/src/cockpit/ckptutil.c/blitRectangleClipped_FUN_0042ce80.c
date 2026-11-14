@@ -30,7 +30,7 @@ int cockpit_ckptutil_c_blitRectangleClipped_FUN_0042ce80(void)
   iVar6 = _DAT_01c35e48 - in_stack_00000008;
   iVar4 = iVar2;
   if (in_stack_00000004 != 0) {
-    pcVar3 = (code *)cockpit_ckptutil_c_FUN_0042c410();
+    pcVar3 = (code *)cockpit_ckptutil_c_getColorConversionFunction_FUN_0042c410();
     iVar4 = in_stack_00000010 + -1;
     if (DAT_006141c0 == 8) {
       iVar7 = *(int *)(&DAT_01c2a38c + in_stack_0000000c * 4) + in_stack_00000008;

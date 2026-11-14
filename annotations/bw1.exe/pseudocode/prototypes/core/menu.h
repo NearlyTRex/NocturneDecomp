@@ -45,17 +45,17 @@ void __cdecl configureGraphicsOptions(void);
 // Address: 0050b410
 int __cdecl checkAndCalibrateGamepad(void);
 
-// Original: core_menu.cpp_FUN_0050b470
+// Original: core_menu.cpp_configureCustomKeys_FUN_0050b470
 // Address: 0050b470
-void __cdecl FUN_0050b470(void);
+void __cdecl configureCustomKeys(void);
 
-// Original: core_menu.cpp_FUN_0050ba70
+// Original: core_menu.cpp_configureSoundOptions_FUN_0050ba70
 // Address: 0050ba70
-void __cdecl FUN_0050ba70(void);
+void __cdecl configureSoundOptions(void);
 
-// Original: core_menu.cpp_FUN_0050c990
+// Original: core_menu.cpp_showOptionsScreen_FUN_0050c990
 // Address: 0050c990
-void FUN_0050c990(int param_1);
+void __cdecl showOptionsScreen(int initialize_systems);
 
 // Original: core_menu.cpp_showMainGameMenu_FUN_0050cc90
 // Address: 0050cc90
@@ -73,10 +73,10 @@ char * __cdecl getKeyDisplayName(EInputCodeType key_code);
 // Address: 0050d470
 int __cdecl isKeyCodeValidForMode(EInputCodeType *key_code_ptr,char *description);
 
-// Original: core_menu.cpp_FUN_0050d5b0
+// Original: core_menu.cpp_getSinglePressedKey_FUN_0050d5b0
 // Address: 0050d5b0
-int FUN_0050d5b0(void);
+int getSinglePressedKey(void);
 
-// Original: core_menu.cpp_FUN_0050d640
+// Original: core_menu.cpp_configureCustomKeyBindings_FUN_0050d640
 // Address: 0050d640
-void FUN_0050d640(void);
+void __cdecl configureCustomKeyBindings(void);

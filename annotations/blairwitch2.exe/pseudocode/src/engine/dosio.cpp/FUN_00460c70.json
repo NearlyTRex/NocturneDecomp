@@ -14,12 +14,6 @@
   },
   "cross_references": [
     {
-      "addr": "0042dec0",
-      "from_addr": "0042deda",
-      "name": "cockpit_ckptutil.c_FUN_0042dec0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0042e130",
       "from_addr": "0042e155",
       "name": "cockpit_ckptutil.c_FUN_0042e130",
@@ -32,6 +26,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0042dec0",
+      "from_addr": "0042deda",
+      "name": "cockpit_ckptutil.c_loadEdgeListFile_FUN_0042dec0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00517130",
       "from_addr": "0051715b",
       "name": "cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_00517130",
@@ -40,7 +40,7 @@
     {
       "addr": "00517400",
       "from_addr": "0051742a",
-      "name": "cockpit_pkbitmap.cpp_FUN_00517400",
+      "name": "cockpit_pkbitmap.cpp_loadPBGFile_FUN_00517400",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -122,6 +122,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004bbf70",
+      "from_addr": "004bc0f8",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004bbf70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004b82e0",
       "from_addr": "004b8bba",
       "name": "core_game.cpp_CGame_processHotkeys_FUN_004b82e0",
@@ -137,12 +143,6 @@
       "addr": "004b5190",
       "from_addr": "004b5dd1",
       "name": "core_game.cpp_FUN_004b5190",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004bbf70",
-      "from_addr": "004bc0f8",
-      "name": "core_game.cpp_FUN_004bbf70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -256,7 +256,7 @@
     {
       "addr": "005011a0",
       "from_addr": "005011ba",
-      "name": "engine_model.c_FUN_005011a0",
+      "name": "engine_model.c_loadModelChunk_FUN_005011a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -390,7 +390,7 @@
       {
         "call_addr": "004bc0f8",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bbf70",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004bbf70",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

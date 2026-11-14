@@ -35,9 +35,9 @@
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_0041a590
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00427360
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00424470
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
-;   core_charactr.cpp_FUN_00423a60
 ;   core_charactr.cpp_FUN_00428260
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
 ;   core_cloth.cpp_CCloth_process_FUN_005afdf0
@@ -1120,8 +1120,8 @@ section .text
     PUSH EBX                            ; 0058268e
     FSTP ST1                            ; 0058268f
     FSTP float ptr [ESP + 0x240]        ; 00582691
-    CALL core_charactr.cpp_FUN_00423a60 ; 00582698
-        ;   XREF to: 00423a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00423a60(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60 ; 00582698
+        ;   XREF to: 00423a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 0058269d
     LEA EAX,[EBX + 0x257c]              ; 005826a0
         ;   Label: LAB_005826a0

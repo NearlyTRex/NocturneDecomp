@@ -57,7 +57,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
-;   core_spline.cpp_FUN_00583d60
+;   core_spline.cpp_computeSplineBasis_FUN_00583d60
 ;   core_spline.cpp_FUN_00583f90
 ;   core_spline.cpp_FUN_005841d0
 ;   engine_console.cpp_CConsole_printf_FUN_00445430
@@ -260,8 +260,8 @@ section .text
     PUSH dword ptr [EAX + 0x1c]         ; 0047e03c | DAT_01bc0dc4
     LEA EAX,[ESP + 0x8]                 ; 0047e03f
     PUSH EAX                            ; 0047e043
-    CALL core_spline.cpp_FUN_00583d60   ; 0047e044
-        ;   XREF to: 00583d60 (UNCONDITIONAL_CALL)  ; void core_spline.cpp_FUN_00583d60(float * out_basis, float t, float tension)
+    CALL core_spline.cpp_computeSplineBasis_FUN_00583d60 ; 0047e044
+        ;   XREF to: 00583d60 (UNCONDITIONAL_CALL)  ; void core_spline.cpp_computeSplineBasis_FUN_00583d60(float * out_basis, float t, float tension)
     ADD ESP,0xc                         ; 0047e049
     MOV ESI,dword ptr [ESP + 0x7c]      ; 0047e04c
     ADD ESI,0x44                        ; 0047e050

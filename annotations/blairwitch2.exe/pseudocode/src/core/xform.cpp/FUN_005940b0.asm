@@ -14,7 +14,7 @@
 ;   core_construc.cpp_CConstruct_process_FUN_00436e80 at 0043708c
 ;   core_doc.cpp_FUN_00455170 at 004551d5
 ;   core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00518310 at 0051843f
-;   core_stranger.cpp_FUN_00567430 at 00567495
+;   core_stranger.cpp_CStranger_extractTurnPose_FUN_00567430 at 00567495
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005eedba

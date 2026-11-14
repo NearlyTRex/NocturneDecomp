@@ -41,7 +41,7 @@
 ;   core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00539660
 ;   core_platfrm.cpp_CPlatform_isActorOnPlatform_FUN_0053ab00
 ;   core_platfrm.cpp_CPlatform_startMovement_FUN_0053a340
-;   core_platfrm.cpp_FUN_0053aef0
+;   core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_0053aef0
 ;   core_set.cpp_CDemonSet_findCameraByName_FUN_0054fba0
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005593c0
 ;   core_setdir.cpp_CDemonSet_clearCameraSwitchCooldown_FUN_0055b200
@@ -233,8 +233,8 @@ section .text
     MOV dword ptr [ESP + 0x37c],EAX     ; 00539a12
     LEA EAX,[ESP + 0x144]               ; 00539a19
     PUSH EAX                            ; 00539a20
-    CALL core_xform.cpp_FUN_005b5620    ; 00539a21
-        ;   XREF to: 005b5620 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_005b5620(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005b5620 ; 00539a21
+        ;   XREF to: 005b5620 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005b5620(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 00539a26
     MOV EDI,dword ptr [EBP + 0x14]      ; 00539a29
     PUSH EDI                            ; 00539a2c
@@ -245,8 +245,8 @@ section .text
     PUSH ESI                            ; 00539a36
     LEA EAX,[ESP + 0x114]               ; 00539a37
     PUSH EAX                            ; 00539a3e
-    CALL core_xform.cpp_FUN_005b5760    ; 00539a3f
-        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760 ; 00539a3f
+        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 00539a44
     MOV EAX,dword ptr [EDI + 0x154]     ; 00539a47
     PUSH EDI                            ; 00539a4d
@@ -786,8 +786,8 @@ section .text
     MOV dword ptr [ESP + 0x3a0],EAX     ; 0053a179
     LEA EAX,[ESP + 0x1a4]               ; 0053a180
     PUSH EAX                            ; 0053a187
-    CALL core_xform.cpp_FUN_005b5760    ; 0053a188
-        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760 ; 0053a188
+        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0053a18d
     LEA EAX,[ESP + 0x13c]               ; 0053a190
     PUSH EAX                            ; 0053a197
@@ -884,8 +884,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0053a322
         ;   Label: LAB_0053a322
     PUSH EAX                            ; 0053a325
-    CALL core_platfrm.cpp_FUN_0053aef0  ; 0053a326
-        ;   XREF to: 0053aef0 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_FUN_0053aef0(CPlatform * this_ptr)
+    CALL core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_0053aef0 ; 0053a326
+        ;   XREF to: 0053aef0 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_0053aef0(CPlatform * this_ptr)
     ADD ESP,0x4                         ; 0053a32b
     MOV ESP,EBP                         ; 0053a32e
         ;   Label: LAB_0053a32e

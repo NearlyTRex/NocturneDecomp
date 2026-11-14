@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   engine_keyframe.c_loadAndInterpolateKeyframes_FUN_004fcb40 at 004fcc92
-;   engine_model.c_FUN_0051f920 at 0051fd34
+;   engine_model.c_getMRGLBounds_FUN_0051f920 at 0051fd34
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_models_005e9fad

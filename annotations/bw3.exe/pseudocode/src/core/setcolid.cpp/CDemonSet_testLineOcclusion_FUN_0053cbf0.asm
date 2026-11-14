@@ -17,7 +17,7 @@
 ;   core_demnfolk.cpp_CDemnfolk_process_FUN_00455080 at 0045539c
 ;   core_prye.cpp_FUN_00522b00 at 005233bc
 ;   core_sound.cpp_CSound_process_FUN_0055ff40 at 00560683
-;   core_sound.cpp_FUN_0055f6b0 at 0055f775
+;   core_sound.cpp_processTrainSounds_FUN_0055f6b0 at 0055f775
 ;   core_zombie.cpp_CZombie_process_FUN_00588ee0 at 005891fe
 ;
 ; Referenced Globals:

@@ -16,9 +16,9 @@
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
+;   core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_00503e60
 ;   core_muzzle.cpp_FUN_0059d7f0
 ;   core_muzzle.cpp_FUN_0059d8e0
 ;
@@ -56,8 +56,8 @@ section .text
     ADD ESP,0x4                         ; 005ac236
     PUSH EDI                            ; 005ac239
     MOV ESI,dword ptr [EAX + 0x24]      ; 005ac23a
-    CALL core_motion.cpp_FUN_00503e60   ; 005ac23d
-        ;   XREF to: 00503e60 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_00503e60(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60 ; 005ac23d
+        ;   XREF to: 00503e60 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60(CMotionController * this_ptr)
     MOV dword ptr [ESP + 0xc],EAX       ; 005ac242
     MOV dword ptr [ESP + 0x8],ESI       ; 005ac246
     FLD float ptr [ESP + 0xc]           ; 005ac24a

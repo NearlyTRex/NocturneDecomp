@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 589,
-    "complexity_score": 1046,
+    "complexity_score": 1051,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 27,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 246,
+    "pseudocode_lines": 251,
     "suspect_count": 77,
     "suspect_types": [
       "pointer_cast",
@@ -17,7 +17,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 835
+    "total_lines": 840
   },
   "cross_references": [],
   "function": {
@@ -77,12 +77,12 @@
     {
       "addr": "0055d723",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_0055d723"
+      "name": "engine_special.cpp_transformAndProjectPoint_FUN_0055d723"
     },
     {
       "addr": "0055d9ec",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_0055d9ec"
+      "name": "engine_special.cpp_transformPoint_FUN_0055d9ec"
     }
   ],
   "globals": [
@@ -410,39 +410,39 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 68,
+      "line": 69,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&CStack_80);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&CStack_80);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 77,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&CStack_98);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&CStack_98);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 82,
+      "line": 85,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&CStack_5c);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&CStack_5c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 89,
+      "line": 93,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&CStack_f8);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&CStack_f8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 91,
+      "line": 95,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,(SMRGLTextureBasic *)&DAT_006167f0);",
@@ -450,7 +450,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 91,
+      "line": 95,
       "match": "DAT_006167f0",
       "severity": "mild",
       "text": "(DAT_0060b280,(SMRGLTextureBasic *)&DAT_006167f0);",
@@ -458,7 +458,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 94,
+      "line": 98,
       "match": "DAT_0062202c",
       "severity": "mild",
       "text": "DAT_0062202c = _DAT_0062205c + 0x80000;",
@@ -466,7 +466,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 97,
+      "line": 101,
       "match": "DAT_00622090",
       "severity": "mild",
       "text": "DAT_00622090 = iVar4 + 0x380000;",
@@ -474,7 +474,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 103,
+      "line": 107,
       "match": "DAT_0062202c",
       "severity": "mild",
       "text": "_DAT_006220bc = DAT_0062202c;",
@@ -482,7 +482,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 104,
+      "line": 108,
       "match": "DAT_00622090",
       "severity": "mild",
       "text": "_DAT_006220c0 = DAT_00622090;",
@@ -490,7 +490,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 106,
+      "line": 110,
       "match": "DAT_01cb82bc",
       "severity": "mild",
       "text": "(g_CDemonSetPtr,&CStack_b0,(CVector3i *)&DAT_01cb82bc,0,4);",
@@ -498,7 +498,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 130,
+      "line": 134,
       "match": "DAT_00622034",
       "severity": "mild",
       "text": "lVar2 = (longlong)iStack_2c * (longlong)*(int *)((int)&DAT_00622034 + iVar4);",
@@ -506,7 +506,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 131,
+      "line": 135,
       "match": "DAT_00622034",
       "severity": "mild",
       "text": "*(uint *)((int)&DAT_00622034 + iVar4) =",
@@ -514,7 +514,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 133,
+      "line": 137,
       "match": "DAT_00622038",
       "severity": "mild",
       "text": "lVar2 = (longlong)iStack_30 * (longlong)*(int *)((int)&DAT_00622038 + iVar4);",
@@ -522,7 +522,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 134,
+      "line": 138,
       "match": "DAT_00622038",
       "severity": "mild",
       "text": "*(uint *)((int)&DAT_00622038 + iVar4) =",
@@ -530,7 +530,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 137,
+      "line": 141,
       "match": "DAT_0062203c",
       "severity": "mild",
       "text": "lVar2 = (longlong)iStack_34 * (longlong)*(int *)((int)&DAT_0062203c + iVar4);",
@@ -538,7 +538,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 138,
+      "line": 142,
       "match": "DAT_0062203c",
       "severity": "mild",
       "text": "*(uint *)((int)&DAT_0062203c + iVar4) =",
@@ -546,7 +546,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 142,
+      "line": 146,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(DAT_007bda74 + 0x3c) + 4))(DAT_007bda74,this_ptr,0);",
@@ -554,7 +554,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 142,
+      "line": 146,
       "match": "DAT_007bda74",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(DAT_007bda74 + 0x3c) + 4))(DAT_007bda74,this_ptr,0);",
@@ -562,7 +562,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 142,
+      "line": 146,
       "match": "DAT_007bda74",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(DAT_007bda74 + 0x3c) + 4))(DAT_007bda74,this_ptr,0);",
@@ -570,7 +570,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 143,
+      "line": 147,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xffff - _DAT_01c38aec)",
@@ -578,7 +578,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 146,
+      "line": 150,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,(SMRGLHeaderPrimitive *)0x1cb8288);",
@@ -586,7 +586,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 149,
+      "line": 153,
       "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "puVar5 = (uint *)((int)this_ptr + (uint)bVar7 * -8 + 4);",
@@ -594,7 +594,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 157,
+      "line": 161,
       "match": "(float *)((int)this_ptr",
       "severity": "moderate",
       "text": "pfVar6 = (float *)((int)this_ptr + (uint)bVar7 * -8 + 0x10);",
@@ -602,7 +602,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 186,
+      "line": 190,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,world_position);",
@@ -610,7 +610,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 188,
+      "line": 192,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,(CVector3i *)&DAT_01cb82b0,(CVector3i *)0x0);",
@@ -618,7 +618,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 188,
+      "line": 192,
       "match": "DAT_01cb82b0",
       "severity": "mild",
       "text": "(DAT_0060b280,(CVector3i *)&DAT_01cb82b0,(CVector3i *)0x0);",
@@ -626,23 +626,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 196,
+      "line": 201,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,aCStack_50);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,aCStack_50);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 204,
+      "line": 210,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&CStack_68)",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&CStack_68);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 213,
+      "line": 218,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&CStack_104);",
@@ -650,15 +650,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 220,
+      "line": 226,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&CStack_bc)",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&CStack_bc);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 226,
+      "line": 231,
       "match": "DAT_01cb82bc",
       "severity": "mild",
       "text": "(g_CDemonSetPtr,&CStack_b0,(CVector3i *)&DAT_01cb82bc,0,4);",
@@ -666,7 +666,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 229,
+      "line": 234,
       "match": "DAT_00622034",
       "severity": "mild",
       "text": "lVar2 = (longlong)iStack_2c * (longlong)*(int *)((int)&DAT_00622034 + iVar4);",
@@ -674,7 +674,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 230,
+      "line": 235,
       "match": "DAT_00622034",
       "severity": "mild",
       "text": "*(uint *)((int)&DAT_00622034 + iVar4) =",
@@ -682,7 +682,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 232,
+      "line": 237,
       "match": "DAT_00622038",
       "severity": "mild",
       "text": "lVar2 = (longlong)iStack_30 * (longlong)*(int *)((int)&DAT_00622038 + iVar4);",
@@ -690,7 +690,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 233,
+      "line": 238,
       "match": "DAT_00622038",
       "severity": "mild",
       "text": "*(uint *)((int)&DAT_00622038 + iVar4) =",
@@ -698,7 +698,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 236,
+      "line": 241,
       "match": "DAT_0062203c",
       "severity": "mild",
       "text": "lVar2 = (longlong)iStack_34 * (longlong)*(int *)((int)&DAT_0062203c + iVar4);",
@@ -706,7 +706,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 237,
+      "line": 242,
       "match": "DAT_0062203c",
       "severity": "mild",
       "text": "*(uint *)((int)&DAT_0062203c + iVar4) =",
@@ -714,7 +714,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 241,
+      "line": 246,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(DAT_007bda74 + 0x3c) + 4))(DAT_007bda74,this_ptr,0);",
@@ -722,7 +722,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 241,
+      "line": 246,
       "match": "DAT_007bda74",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(DAT_007bda74 + 0x3c) + 4))(DAT_007bda74,this_ptr,0);",
@@ -730,7 +730,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 241,
+      "line": 246,
       "match": "DAT_007bda74",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(DAT_007bda74 + 0x3c) + 4))(DAT_007bda74,this_ptr,0);",
@@ -738,7 +738,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 243,
+      "line": 248,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,0xffff - _DAT_01c38aec);",
@@ -746,7 +746,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 245,
+      "line": 250,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,(SMRGLHeaderPrimitive *)0x1cb8288);",
@@ -754,7 +754,7 @@
     },
     {
       "description": "Pointer value `&DAT_00622034` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 130,
+      "line": 134,
       "match": "(int)&DAT_00622034",
       "severity": "moderate",
       "text": "lVar2 = (longlong)iStack_2c * (longlong)*(int *)((int)&DAT_00622034 + iVar4);",
@@ -762,7 +762,7 @@
     },
     {
       "description": "Pointer value `&DAT_00622034` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 131,
+      "line": 135,
       "match": "(int)&DAT_00622034",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_00622034 + iVar4) =",
@@ -770,7 +770,7 @@
     },
     {
       "description": "Pointer value `&DAT_00622038` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 133,
+      "line": 137,
       "match": "(int)&DAT_00622038",
       "severity": "moderate",
       "text": "lVar2 = (longlong)iStack_30 * (longlong)*(int *)((int)&DAT_00622038 + iVar4);",
@@ -778,7 +778,7 @@
     },
     {
       "description": "Pointer value `&DAT_00622038` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 134,
+      "line": 138,
       "match": "(int)&DAT_00622038",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_00622038 + iVar4) =",
@@ -786,7 +786,7 @@
     },
     {
       "description": "Pointer value `&DAT_0062203c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 137,
+      "line": 141,
       "match": "(int)&DAT_0062203c",
       "severity": "moderate",
       "text": "lVar2 = (longlong)iStack_34 * (longlong)*(int *)((int)&DAT_0062203c + iVar4);",
@@ -794,7 +794,7 @@
     },
     {
       "description": "Pointer value `&DAT_0062203c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 138,
+      "line": 142,
       "match": "(int)&DAT_0062203c",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_0062203c + iVar4) =",
@@ -802,7 +802,7 @@
     },
     {
       "description": "Pointer value `&CStack_d4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 151,
+      "line": 155,
       "match": "(int)&CStack_d4",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_d4 + (uint)bVar7 * -8 + 4) = *puVar5;",
@@ -810,7 +810,7 @@
     },
     {
       "description": "Pointer value `&CStack_d4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 152,
+      "line": 156,
       "match": "(int)&CStack_d4",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_d4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =",
@@ -818,7 +818,7 @@
     },
     {
       "description": "Pointer value `&DAT_00622034` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 229,
+      "line": 234,
       "match": "(int)&DAT_00622034",
       "severity": "moderate",
       "text": "lVar2 = (longlong)iStack_2c * (longlong)*(int *)((int)&DAT_00622034 + iVar4);",
@@ -826,7 +826,7 @@
     },
     {
       "description": "Pointer value `&DAT_00622034` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 230,
+      "line": 235,
       "match": "(int)&DAT_00622034",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_00622034 + iVar4) =",
@@ -834,7 +834,7 @@
     },
     {
       "description": "Pointer value `&DAT_00622038` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 232,
+      "line": 237,
       "match": "(int)&DAT_00622038",
       "severity": "moderate",
       "text": "lVar2 = (longlong)iStack_30 * (longlong)*(int *)((int)&DAT_00622038 + iVar4);",
@@ -842,7 +842,7 @@
     },
     {
       "description": "Pointer value `&DAT_00622038` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 233,
+      "line": 238,
       "match": "(int)&DAT_00622038",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_00622038 + iVar4) =",
@@ -850,7 +850,7 @@
     },
     {
       "description": "Pointer value `&DAT_0062203c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 236,
+      "line": 241,
       "match": "(int)&DAT_0062203c",
       "severity": "moderate",
       "text": "lVar2 = (longlong)iStack_34 * (longlong)*(int *)((int)&DAT_0062203c + iVar4);",
@@ -858,7 +858,7 @@
     },
     {
       "description": "Pointer value `&DAT_0062203c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 237,
+      "line": 242,
       "match": "(int)&DAT_0062203c",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_0062203c + iVar4) =",
@@ -866,7 +866,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 130,
+      "line": 134,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "lVar2 = (longlong)iStack_2c * (longlong)*(int *)((int)&DAT_00622034 + iVar4);",
@@ -874,26 +874,10 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 131,
+      "line": 135,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_00622034 + iVar4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 133,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "lVar2 = (longlong)iStack_30 * (longlong)*(int *)((int)&DAT_00622038 + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 134,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_00622038 + iVar4) =",
       "type": "pointer_cast"
     },
     {
@@ -901,7 +885,7 @@
       "line": 137,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "lVar2 = (longlong)iStack_34 * (longlong)*(int *)((int)&DAT_0062203c + iVar4);",
+      "text": "lVar2 = (longlong)iStack_30 * (longlong)*(int *)((int)&DAT_00622038 + iVar4);",
       "type": "pointer_cast"
     },
     {
@@ -909,60 +893,12 @@
       "line": 138,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_0062203c + iVar4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 151,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_d4 + (uint)bVar7 * -8 + 4) = *puVar5;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 152,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_d4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 229,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "lVar2 = (longlong)iStack_2c * (longlong)*(int *)((int)&DAT_00622034 + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 230,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_00622034 + iVar4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 232,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "lVar2 = (longlong)iStack_30 * (longlong)*(int *)((int)&DAT_00622038 + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 233,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
       "text": "*(uint *)((int)&DAT_00622038 + iVar4) =",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 236,
+      "line": 141,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "lVar2 = (longlong)iStack_34 * (longlong)*(int *)((int)&DAT_0062203c + iVar4);",
@@ -970,7 +906,71 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 142,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_0062203c + iVar4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 155,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_d4 + (uint)bVar7 * -8 + 4) = *puVar5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 156,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_d4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 234,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "lVar2 = (longlong)iStack_2c * (longlong)*(int *)((int)&DAT_00622034 + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 235,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622034 + iVar4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 237,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "lVar2 = (longlong)iStack_30 * (longlong)*(int *)((int)&DAT_00622038 + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 238,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622038 + iVar4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 241,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "lVar2 = (longlong)iStack_34 * (longlong)*(int *)((int)&DAT_0062203c + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 242,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_0062203c + iVar4) =",

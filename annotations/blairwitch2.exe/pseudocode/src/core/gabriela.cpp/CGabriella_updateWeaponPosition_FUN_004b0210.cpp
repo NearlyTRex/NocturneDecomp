@@ -59,7 +59,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004b0210(CGab
   
   bVar10 = 0;
   core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_00428e30((CCharacter *)this_ptr,delta_time);
-  core_xform_cpp_FUN_00591c10
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
             (&local_380,&(this_ptr->base).base.base.location,&(this_ptr->base).base.base.orient);
   local_14 = (this_ptr->base).inventories;
   if (this_ptr->draw_blend < _DAT_005f7334) {
@@ -68,7 +68,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004b0210(CGab
               ((CCharacter *)
                local_14->selected_weapons[(this_ptr->base).inventories[0].current_group],1,
                in_stack_fffffc20,in_stack_fffffc24);
-    core_xform_cpp_FUN_00591c10();
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10();
     pCVar8 = &local_380;
     core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
               (&local_200,
@@ -91,7 +91,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004b0210(CGab
               ((CCharacter *)
                local_14->selected_weapons[(this_ptr->base).inventories[0].current_group],2,
                in_stack_fffffc20,in_stack_fffffc24);
-    core_xform_cpp_FUN_00591c10();
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10();
     matrix_b = (this_ptr->base).base.model.bone_transform.bone_model_matrices[_DAT_01cb06bc].m;
     pCVar8 = &local_170;
     core_xform_cpp_buildRotationX_FUN_00593240(1.5707964,&local_140);
@@ -152,7 +152,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004b0210(CGab
       afStack_7c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
            afStack_7c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 10];
       afStack_7c[1] = (1.0 - this_ptr->aim_weight) * afStack_7c[1];
-      core_xform_cpp_FUN_00591c10();
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10();
     }
     core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(&local_320,&local_380,&local_110);
     pCVar8 = &local_110;

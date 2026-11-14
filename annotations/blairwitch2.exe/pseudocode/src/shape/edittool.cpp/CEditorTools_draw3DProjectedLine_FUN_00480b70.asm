@@ -12,7 +12,7 @@
 ;   undefined4 DAT_005f5cec
 ;
 ; Called Functions:
-;   engine_special.cpp_FUN_0055d723
+;   engine_special.cpp_transformAndProjectPoint_FUN_0055d723
 ;   shape_edittool.cpp_CEditorTools_drawPixelLine_FUN_004808b0
 ;
 ; *****************************************************************************
@@ -37,8 +37,8 @@ section .text
     PUSH EBX                            ; 00480ba2
     LEA EBX,[ESP + 0x4]                 ; 00480ba3
     PUSH EBX                            ; 00480ba7
-    CALL engine_special.cpp_FUN_0055d723 ; 00480ba8
-        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 00480ba8
+        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 00480bad
     TEST byte ptr [ESP + 0x13],0x80     ; 00480bb0
     JZ 0x00480bbc                       ; 00480bb5

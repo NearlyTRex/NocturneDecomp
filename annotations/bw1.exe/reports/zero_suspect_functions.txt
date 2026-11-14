@@ -249,12 +249,12 @@ annotations/bw1.exe/pseudocode/src/core/boneguy.cpp/SBoneGuyBox_ctor_FUN_0041d8e
 annotations/bw1.exe/pseudocode/src/core/boneguy.cpp/factoryFuncBoneGuy_FUN_0041b3a0.cpp
 annotations/bw1.exe/pseudocode/src/core/boneguy.cpp/staticInit_FUN_0041b1b0.cpp
 annotations/bw1.exe/pseudocode/src/core/box.cpp/CBoundingBox3D_ctor_FUN_00523860.cpp
+annotations/bw1.exe/pseudocode/src/core/box.cpp/CBoundingBox3D_doesBoxIntersect_FUN_004215d0.cpp
 annotations/bw1.exe/pseudocode/src/core/box.cpp/CBoundingBox3D_dtor_FUN_00523870.cpp
 annotations/bw1.exe/pseudocode/src/core/box.cpp/CBoundingBox3D_expand_FUN_00420500.cpp
 annotations/bw1.exe/pseudocode/src/core/box.cpp/CBoundingBox3D_getMaximumBound_FUN_00421620.cpp
 annotations/bw1.exe/pseudocode/src/core/box.cpp/CBoundingBox3D_reset_FUN_00421570.cpp
 annotations/bw1.exe/pseudocode/src/core/box.cpp/CBox_dtor_FUN_0041dab0.cpp
-annotations/bw1.exe/pseudocode/src/core/box.cpp/FUN_004215d0.cpp
 annotations/bw1.exe/pseudocode/src/core/box.cpp/SScrape_ctor_FUN_004204f0.cpp
 annotations/bw1.exe/pseudocode/src/core/boxactor.cpp/CBoxActor_canPickup_FUN_00422c30.cpp
 annotations/bw1.exe/pseudocode/src/core/boxactor.cpp/CBoxActor_getActorType_FUN_00421c90.cpp
@@ -872,6 +872,7 @@ annotations/bw1.exe/pseudocode/src/core/hero.cpp/CHero_canBeGrabbed_FUN_004eada0
 annotations/bw1.exe/pseudocode/src/core/hero.cpp/CHero_canDoHeroAction_FUN_004ec950.cpp
 annotations/bw1.exe/pseudocode/src/core/hero.cpp/CHero_canReachPickup_FUN_004eade0.cpp
 annotations/bw1.exe/pseudocode/src/core/hero.cpp/CHero_doHeroAction_FUN_004ec640.cpp
+annotations/bw1.exe/pseudocode/src/core/hero.cpp/CHero_executeObjectPickup_FUN_004ec280.cpp
 annotations/bw1.exe/pseudocode/src/core/hero.cpp/CHero_getPathMap_FUN_004ead80.cpp
 annotations/bw1.exe/pseudocode/src/core/hero.cpp/CHero_isGrabbable_FUN_004ead90.cpp
 annotations/bw1.exe/pseudocode/src/core/hero.cpp/CHero_kill_FUN_004ec540.cpp
@@ -886,7 +887,6 @@ annotations/bw1.exe/pseudocode/src/core/hero.cpp/CHero_testLineIntersection_FUN_
 annotations/bw1.exe/pseudocode/src/core/hero.cpp/CHero_toggleLeverNow_FUN_004eb7f0.cpp
 annotations/bw1.exe/pseudocode/src/core/hero.cpp/CHero_tryOpenDoor_FUN_004eb5e0.cpp
 annotations/bw1.exe/pseudocode/src/core/hero.cpp/CHero_tryUseSelectedItem_FUN_004ec020.cpp
-annotations/bw1.exe/pseudocode/src/core/hero.cpp/FUN_004ec280.cpp
 annotations/bw1.exe/pseudocode/src/core/hero.cpp/factoryFuncHeroPlaceholder_FUN_004ecb70.cpp
 annotations/bw1.exe/pseudocode/src/core/hiram.cpp/CHiram_archive_FUN_004ed3f0.cpp
 annotations/bw1.exe/pseudocode/src/core/hiram.cpp/CHiram_getActorType_FUN_004ed180.cpp
@@ -1085,6 +1085,7 @@ annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorphModel_addPartFromDeforma
 annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorphModel_addPartFromKeyFramedModel_FUN_005224f0.cpp
 annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorphModel_animateFromDeformableModel_FUN_00522650.cpp
 annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorphModel_animateFromKeyframedModel_FUN_005226a0.cpp
+annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorphModel_arrdtor2_FUN_00523880.cpp
 annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorphModel_ctor_FUN_00522120.cpp
 annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorphModel_dtor_FUN_00522150.cpp
 annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorphModel_findNearestPoint_FUN_00522ef0.cpp
@@ -1099,7 +1100,6 @@ annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorph_setupModelFromKeyframed
 annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorph_setupModelFromTriPolygons_FUN_00523000.cpp
 annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorph_updateModelFromDeformable_FUN_00523290.cpp
 annotations/bw1.exe/pseudocode/src/core/morph.cpp/CMorph_updateModelFromKeyframed_FUN_005232d0.cpp
-annotations/bw1.exe/pseudocode/src/core/morph.cpp/FUN_00523880.cpp
 annotations/bw1.exe/pseudocode/src/core/motion.cpp/CMotionController_clearTweenState_FUN_00524b70.cpp
 annotations/bw1.exe/pseudocode/src/core/motion.cpp/CMotionController_ctor_FUN_005241d0.cpp
 annotations/bw1.exe/pseudocode/src/core/motion.cpp/CMotionController_dtor_FUN_00524200.cpp
@@ -1310,6 +1310,7 @@ annotations/bw1.exe/pseudocode/src/core/smiley.cpp/factoryFuncSmiley_FUN_0056be2
 annotations/bw1.exe/pseudocode/src/core/smiley.cpp/staticInit_FUN_0056bdf0.cpp
 annotations/bw1.exe/pseudocode/src/core/sound.cpp/CSound_configure_FUN_0057d6a0.cpp
 annotations/bw1.exe/pseudocode/src/core/sound.cpp/CSound_ctor_FUN_0057cb10.cpp
+annotations/bw1.exe/pseudocode/src/core/sound.cpp/CSound_findAllSoundFiles_FUN_0057cb30.cpp
 annotations/bw1.exe/pseudocode/src/core/sound.cpp/CSound_isSoundPlaying_FUN_0057d9c0.cpp
 annotations/bw1.exe/pseudocode/src/core/sound.cpp/CSound_killSound_FUN_0057d9d0.cpp
 annotations/bw1.exe/pseudocode/src/core/sound.cpp/CSound_playActorNonPositionalSoundWithDelay_FUN_0057d940.cpp
@@ -1319,7 +1320,6 @@ annotations/bw1.exe/pseudocode/src/core/sound.cpp/CSound_playTrackedActorSoundWi
 annotations/bw1.exe/pseudocode/src/core/sound.cpp/CSound_playTrackedActorSound_FUN_0057d8d0.cpp
 annotations/bw1.exe/pseudocode/src/core/sound.cpp/CSound_reset_FUN_0057d800.cpp
 annotations/bw1.exe/pseudocode/src/core/sound.cpp/CSound_selectReverbPreset_FUN_0057db60.cpp
-annotations/bw1.exe/pseudocode/src/core/sound.cpp/FUN_0057cb30.cpp
 annotations/bw1.exe/pseudocode/src/core/sound.cpp/STrainNoise_ctor_FUN_0057dc20.cpp
 annotations/bw1.exe/pseudocode/src/core/sound.cpp/STrainNoise_dtor_FUN_0057dc30.cpp
 annotations/bw1.exe/pseudocode/src/core/spike.cpp/CSpike_archive_FUN_005835a0.cpp
@@ -1537,8 +1537,8 @@ annotations/bw1.exe/pseudocode/src/core/werewolf.cpp/CWerewolf_playHowl_FUN_005b
 annotations/bw1.exe/pseudocode/src/core/werewolf.cpp/CWerewolf_setWalkTarget_FUN_005b0b70.cpp
 annotations/bw1.exe/pseudocode/src/core/werewolf.cpp/CWerewolf_setup_FUN_005af380.cpp
 annotations/bw1.exe/pseudocode/src/core/werewolf.cpp/factoryFuncWerewolf_FUN_005af2a0.cpp
-annotations/bw1.exe/pseudocode/src/core/xform.cpp/FUN_005b5620.cpp
-annotations/bw1.exe/pseudocode/src/core/xform.cpp/FUN_005b5760.cpp
+annotations/bw1.exe/pseudocode/src/core/xform.cpp/buildMatrixFromEulerAndPositionDirect_FUN_005b5760.cpp
+annotations/bw1.exe/pseudocode/src/core/xform.cpp/buildMatrixFromEulerAndPosition_FUN_005b5620.cpp
 annotations/bw1.exe/pseudocode/src/core/xform.cpp/clearTranslation_FUN_005b5600.cpp
 annotations/bw1.exe/pseudocode/src/core/xform.cpp/computeOrthogonalityError_FUN_005b65b0.cpp
 annotations/bw1.exe/pseudocode/src/core/xform.cpp/determinant_FUN_005b6330.cpp

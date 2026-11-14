@@ -15,7 +15,7 @@
 ;   core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005907a0 at 0059095e
 ;
 ; Called Functions:
-;   core_inv.cpp_FUN_004f7690
+;   core_inv.cpp_CInventory_addItem_FUN_004f7690
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     PUSH EAX                            ; 004ec2e4
     LEA EAX,[ECX + 0x1fae8]             ; 004ec2e5
     PUSH EAX                            ; 004ec2eb
-    CALL core_inv.cpp_FUN_004f7690      ; 004ec2ec
-        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004f7690 ; 004ec2ec
+        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 004ec2f1
     MOV dword ptr [EBX + 0x25b0],0x0    ; 004ec2f4
     POP EBX                             ; 004ec2fe

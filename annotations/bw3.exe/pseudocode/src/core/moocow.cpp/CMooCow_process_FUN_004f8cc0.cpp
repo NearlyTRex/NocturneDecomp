@@ -68,7 +68,8 @@ void __cdecl core_moocow_cpp_CMooCow_process_FUN_004f8cc0(CMooCow *this_ptr,floa
     case 3:
     case 4:
       pCVar1 = &(this_ptr->base).model;
-      afStack_1c[2] = core_motion_cpp_FUN_004fc930(&pCVar1->base);
+      afStack_1c[2] =
+           core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930(&pCVar1->base);
       if ((float)_DAT_005c91ec < afStack_1c[2]) {
         iVar7 = 1;
         iVar5 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,4);
@@ -94,7 +95,9 @@ LAB_004f8d8c:
     }
     else {
 LAB_004f8f31:
-      afStack_1c[2] = core_motion_cpp_FUN_004fc930(&(this_ptr->base).model.base);
+      afStack_1c[2] =
+           core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                     (&(this_ptr->base).model.base);
       if (afStack_1c[2] <= (float)_DAT_005c91f4) goto LAB_004f8d9f;
       iVar7 = 1;
       iVar5 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,4);
@@ -105,7 +108,8 @@ LAB_004f8f31:
   else {
     if (EVar4 < WALK_STATE_NO_PATH) goto LAB_004f8d8c;
     if (EVar4 != WALK_STATE_NO_PATH) goto LAB_004f8f31;
-    afStack_1c[2] = core_motion_cpp_FUN_004fc930(&pCVar1->base);
+    afStack_1c[2] =
+         core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930(&pCVar1->base);
     if ((float)_DAT_005c91f4 < afStack_1c[2]) {
       iVar7 = 1;
       iVar5 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,4);
@@ -156,7 +160,7 @@ switchD_004f9003_caseD_5:
     (this_ptr->base).model.accumulated_root_motion.y =
          (this_ptr->base).model.accumulated_root_motion.z;
     pCVar3->x = (this_ptr->base).model.accumulated_root_motion.y;
-    core_charactr_cpp_FUN_0042c230(&this_ptr->base,&CStack_2c);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230(&this_ptr->base,&CStack_2c);
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_0042cd30(&this_ptr->base);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130(&(this_ptr->base).model);

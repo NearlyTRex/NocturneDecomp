@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 127,
+    "complexity_score": 128,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 32,
+    "pseudocode_lines": 33,
     "suspect_count": 9,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 124
+    "total_lines": 125
   },
   "cross_references": [
     {
@@ -43,7 +43,7 @@
     {
       "addr": "0058043c",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_0058043c"
+      "name": "engine_special.cpp_transformPoint_FUN_0058043c"
     }
   ],
   "globals": [
@@ -222,15 +222,15 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 18,
+      "line": 19,
       "match": "DAT_00629014",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_0058043c((SProjectedVertex *)(&DAT_00629014 + iVar1 * 0xc),&local_1c);",
+      "text": "((SProjectedVertex *)(&DAT_00629014 + iVar1 * 0xc),&local_1c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 19,
+      "line": 20,
       "match": "DAT_00629034",
       "severity": "mild",
       "text": "(&DAT_00629034)[iVar1 * 0xc] = 0x3fff;",
@@ -238,7 +238,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 20,
+      "line": 21,
       "match": "DAT_00629038",
       "severity": "mild",
       "text": "(&DAT_00629038)[iVar1 * 0xc] = 0x3fff;",
@@ -246,7 +246,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 22,
       "match": "DAT_0062903c",
       "severity": "mild",
       "text": "(&DAT_0062903c)[iVar1 * 0xc] = 0x3fff;",
@@ -254,7 +254,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 23,
       "match": "DAT_0062901c",
       "severity": "mild",
       "text": "if ((int)(&DAT_0062901c)[iVar1 * 0xc] < 0) {",
@@ -262,7 +262,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 24,
       "match": "DAT_00629040",
       "severity": "mild",
       "text": "(&DAT_00629040)[iVar1 * 0xc] = 0;",
@@ -270,7 +270,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 27,
       "match": "DAT_0062901c",
       "severity": "mild",
       "text": "iVar2 = (int)((&DAT_0062901c)[iVar1 * 0xc] << 8) /",
@@ -278,7 +278,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 29,
       "match": "DAT_00629040",
       "severity": "mild",
       "text": "(&DAT_00629040)[iVar1 * 0xc] = iVar2;",
@@ -286,7 +286,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 31,
       "match": "DAT_00629040",
       "severity": "mild",
       "text": "(&DAT_00629040)[iVar1 * 0xc] = 0xffff;",

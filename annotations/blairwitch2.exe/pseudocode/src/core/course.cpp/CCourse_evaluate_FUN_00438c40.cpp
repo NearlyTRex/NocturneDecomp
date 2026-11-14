@@ -22,7 +22,7 @@ void __cdecl core_course_cpp_CCourse_evaluate_FUN_00438c40(CCourse *this_ptr,flo
   CVector3f local_18;
   
   bVar4 = 0;
-  core_course_cpp_FUN_00438cf0(this_ptr,time,out_pos,&local_34);
+  core_course_cpp_CCourse_interpolate_FUN_00438cf0(this_ptr,time,out_pos,&local_34);
   core_xform_cpp_quaternionToMatrix3x4_FUN_00593a10(&local_34,&local_94);
   pCVar2 = &local_94;
   pfVar3 = local_64;

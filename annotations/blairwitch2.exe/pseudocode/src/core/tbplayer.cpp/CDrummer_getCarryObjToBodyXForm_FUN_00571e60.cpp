@@ -82,7 +82,8 @@ CMatrix3x4f * __stack2_esi core_tbplayer_cpp_CDrummer_getCarryObjToBodyXForm_FUN
   uStack_54 = 0;
   uStack_4c = 0;
 LAB_00571f40:
-  core_xform_cpp_FUN_00591c10(&CStack_cc,&uStack_18,&uStack_54);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
+            (&CStack_cc,&uStack_18,&uStack_54);
   core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
             (&CStack_cc,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar1,
              &CStack_9c);

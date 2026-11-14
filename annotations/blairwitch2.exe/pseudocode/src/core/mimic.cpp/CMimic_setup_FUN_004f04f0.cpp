@@ -81,7 +81,7 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_004f04f0(CMimic *this_ptr)
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 Spine",1);
   core_enemy_cpp_CEnemy_setup_FUN_00487eb0(&this_ptr->base);
   core_cloth_cpp_CCloth_load_FUN_005adeb0(&this_ptr->cloth,"strcoat.cth");
-  core_cloth_cpp_FUN_005ae680
+  core_cloth_cpp_CCloth_setup_FUN_005ae680
             (&this_ptr->cloth,&(this_ptr->base).base.base.location.position,
              &(this_ptr->base).base.base.orient.vec,pCVar1);
   class_name_hash = g_CEnemyClassInfo.name_hash;

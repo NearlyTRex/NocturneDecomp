@@ -93,9 +93,9 @@ void FUN_004eb5b0(int param_1);
 // Address: 004eb5e0
 int __cdecl CHero::tryOpenDoor(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004eb660
+// Original: core_hero.cpp_CHero_tryPullLever_FUN_004eb660
 // Address: 004eb660
-int __cdecl FUN_004eb660(CHero *this_ptr);
+int __cdecl CHero::tryPullLever(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_toggleLeverNow_FUN_004eb7f0
 // Address: 004eb7f0
@@ -133,9 +133,9 @@ bool __cdecl CHero::tryPickupActorOfClass(CHero *this_ptr,char *class_name);
 // Address: 004ec1b0
 int __cdecl CHero::canLookAt(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004ec280
+// Original: core_hero.cpp_CHero_executeObjectPickup_FUN_004ec280
 // Address: 004ec280
-void __cdecl FUN_004ec280(CHero *this_ptr,int hand_index);
+void __cdecl CHero::executeObjectPickup(CHero *this_ptr,int hand_index);
 
 // Original: core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004ec2c0
 // Address: 004ec2c0

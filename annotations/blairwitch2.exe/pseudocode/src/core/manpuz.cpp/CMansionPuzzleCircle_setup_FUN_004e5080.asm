@@ -25,8 +25,8 @@
 ;   core_manpuz.cpp_CMansionPuzzleCircle_getPanelColor_FUN_004e6a50
 ;   core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_004e7600
 ;   core_manpuz.cpp_FUN_004e6240
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
 ;   core_xform.cpp_FUN_00591530
-;   core_xform.cpp_FUN_00591c10
 ;   core_xform.cpp_FUN_00592720
 ;   core_xform.cpp_matrixToEulerAngles_FUN_00591de0
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005916b0
@@ -144,8 +144,8 @@ section .text
     PUSH EAX                            ; 004e51e7
     LEA EAX,[EBP + 0xfffffee2]          ; 004e51e8
     PUSH EAX                            ; 004e51ee
-    CALL core_xform.cpp_FUN_00591c10    ; 004e51ef
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591c10()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 004e51ef
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10()
     MOV EAX,dword ptr [EBP + 0x92]      ; 004e51f4
     ADD ESP,0xc                         ; 004e51fa
     ADD EAX,0x430                       ; 004e51fd
@@ -251,8 +251,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004e534d
     MOVSD ES:EDI,ESI                    ; 004e534e
     MOVSD ES:EDI,ESI                    ; 004e534f
-    CALL core_xform.cpp_FUN_00591c10    ; 004e5350
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591c10()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 004e5350
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10()
     ADD ESP,0xc                         ; 004e5355
     LEA EAX,[EBP + 0xfffffe82]          ; 004e5358
     PUSH EAX                            ; 004e535e

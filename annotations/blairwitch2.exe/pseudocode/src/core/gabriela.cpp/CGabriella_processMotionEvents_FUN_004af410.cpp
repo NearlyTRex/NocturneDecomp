@@ -117,13 +117,13 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004af410(CGabr
       if (pCVar2 != (CDemonActor *)0x0) {
         if (pCVar2[2].particle_systems[4].position.z != 1.4013e-45) {
           this_ptr->flashlight_angle = -0.5235988;
-          core_hero_cpp_FUN_004cff50(&this_ptr->base,0);
+          core_hero_cpp_CHero_executeObjectPickup_FUN_004cff50(&this_ptr->base,0);
           break;
         }
         this_ptr->flashlight_angle = 0.31415927;
       }
     case 0x14:
-      core_hero_cpp_FUN_004cff50(&this_ptr->base,0);
+      core_hero_cpp_CHero_executeObjectPickup_FUN_004cff50(&this_ptr->base,0);
       break;
     case 3:
       (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
@@ -211,7 +211,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004af410(CGabr
       core_gabriela_cpp_CGabriella_collectAmmo_FUN_004b0a40(this_ptr);
       break;
     case 0x15:
-      core_hero_cpp_FUN_004cff90(this_ptr,0);
+      core_hero_cpp_CHero_addCarriedItemToInventory_FUN_004cff90(&this_ptr->base,0);
       break;
     case 0x16:
       iVar1 = core_hero_cpp_CHero_tryOpenDoor_FUN_004cf230(&this_ptr->base);

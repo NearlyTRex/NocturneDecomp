@@ -79,7 +79,7 @@ int __cdecl core_set_cpp_CDemonSet_findCameraByName_FUN_00535360(CDemonSet *this
 void __cdecl core_set_cpp_CDemonSet_reinitCamera_FUN_005353b0(CDemonSet *this_ptr,int clear_enabled,int is_clearing,int screen_height);
 void __cdecl core_set_cpp_CDemonSet_processActors_FUN_005353e0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_00535a80(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_FUN_00535da0(CDemonSet *this_ptr,int skip_prerender);
+void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_00535da0(CDemonSet *this_ptr,int skip_prerender);
 void __cdecl core_set_cpp_FUN_005365c0(CDemonSet *this_ptr);
 void core_set_cpp_FUN_00536990(CDemonSet *param_1);
 void core_set_cpp_FUN_00536c90(CDemonSet *param_1);
@@ -135,7 +135,7 @@ void __cdecl core_set_cpp_CDemonSet_buildActorTypeLists_FUN_0053b460(CDemonSet *
 void __cdecl core_set_cpp_CDemonSet_loadMasterLightStates_FUN_0053b660(CDemonSet *this_ptr,int *light_state_buffer);
 int __cdecl core_set_cpp_CDemonSet_saveMasterLightStates_FUN_0053b6a0(CDemonSet *this_ptr,int *light_state_buffer);
 int core_set_cpp_FUN_0053b6e0(int *param_1,undefined4 param_2);
-void core_set_cpp_FUN_0053b7f0(int *param_1,_FILE *param_2);
+void __cdecl core_set_cpp_CDemonSet_loadStateInfo_FUN_0053b7f0(CDemonSet *this_ptr,_FILE *file_handle);
 int __cdecl core_set_cpp_CDemonSet_isCameraPanning_FUN_0053b9a0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_expireDecals_FUN_0053ba00(CDemonSet *this_ptr,int expire_flag);
 void __cdecl core_set_cpp_CDemonSet_renderDecals_FUN_0053ba40(CDemonSet *this_ptr);
@@ -154,7 +154,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_0053cff0(CDemonSe
 float __cdecl core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_0053d270(CDemonSet *this_ptr,float min_t,CVector3f *ray_origin,CVector3f *ray_target,float max_t);
 int __cdecl core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_0053d770(CDemonSet *this_ptr,CDemonActor *actor);
 int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_0053d7d0(SIntersectXZCylinder *cylinder,float obstacle_x,float obstacle_y,SCollisionInfo *collision_info);
-int __cdecl core_setcolid_cpp_FUN_0053da90(CDemonSet *this_ptr,SIntersectXZCylinder *cylinder,CBoundingBox3D *bounding_box,CVector3f *position,CMatrix3x3f *orientation_matrix);
+int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_0053da90(CDemonSet *this_ptr,SIntersectXZCylinder *cylinder,CBoundingBox3D *bounding_box,CVector3f *position,CMatrix3x3f *orientation_matrix);
 float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_0053de10(CDemonSet *this_ptr,float start_x,float start_z,float dir_x,float dir_z,float radius,float bottom_y,float top_y);
 void __cdecl core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_0053e870(CDemonSet *this_ptr);
 void __cdecl core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_0053ea20(CDemonSet *this_ptr);

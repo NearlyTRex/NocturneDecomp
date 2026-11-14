@@ -39,7 +39,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0
-;   core_xform.cpp_FUN_00583940
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
 ;   core_xform.cpp_FUN_00584450
 ;   core_xform.cpp_inverse_FUN_00584560
 ;   core_xform.cpp_lerpMatrix3x4_FUN_005854a0
@@ -136,8 +136,8 @@ section .text
     PUSH EAX                            ; 00431e11
     LEA EAX,[ESP + 0x1e8]               ; 00431e12
     PUSH EAX                            ; 00431e19
-    CALL core_xform.cpp_FUN_00583940    ; 00431e1a
-        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583940()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 ; 00431e1a
+        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940()
     ADD ESP,0xc                         ; 00431e1f
     LEA EAX,[ESP + 0x1e0]               ; 00431e22
     PUSH EAX                            ; 00431e29

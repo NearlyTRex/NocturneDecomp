@@ -32,7 +32,7 @@
 ;   core_actor.cpp_setRandomSeed_FUN_0040cee0
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_004fd0e0
 ;   core_mission.cpp_CDemonMission_load_FUN_004fb490
-;   core_mission.cpp_FUN_004fce00
+;   core_mission.cpp_CDemonMission_startMission_FUN_004fce00
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_0050b8d0
 ;   core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_0050e890
 ;   core_netgame.cpp_CNetGame_processChatOut_FUN_0050d9f0
@@ -621,8 +621,8 @@ section .text
         ;   XREF to: 0050d5a9 (CONDITIONAL_JUMP)  ; LAB_0050d5a9
     MOV EAX,[0x00618170]                ; 0050d585 | DAT_00618170
     PUSH EAX                            ; 0050d58a
-    CALL core_mission.cpp_FUN_004fce00  ; 0050d58b
-        ;   XREF to: 004fce00 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_FUN_004fce00(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_startMission_FUN_004fce00 ; 0050d58b
+        ;   XREF to: 004fce00 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_startMission_FUN_004fce00(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0050d590
     PUSH 0x2                            ; 0050d593
     MOV EDX,dword ptr [EBP + 0x14]      ; 0050d595
@@ -806,8 +806,8 @@ section .text
         ;   XREF to: 0050d7e5 (CONDITIONAL_JUMP)  ; LAB_0050d7e5
     MOV ESI,dword ptr [0x00618170]      ; 0050d76a | DAT_00618170
     PUSH ESI                            ; 0050d770
-    CALL core_mission.cpp_FUN_004fce00  ; 0050d771
-        ;   XREF to: 004fce00 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_FUN_004fce00(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_startMission_FUN_004fce00 ; 0050d771
+        ;   XREF to: 004fce00 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_startMission_FUN_004fce00(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0050d776
     PUSH 0x2                            ; 0050d779
     MOV EDI,dword ptr [EBP + 0x14]      ; 0050d77b

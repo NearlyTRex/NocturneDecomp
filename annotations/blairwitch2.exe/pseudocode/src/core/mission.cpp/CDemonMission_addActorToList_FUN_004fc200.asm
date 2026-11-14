@@ -14,8 +14,8 @@
 ;   core_gore.cpp_FUN_004c9bd0 at 004c9c9d
 ;   core_mimic.cpp_CMimic_processMorph_FUN_004f1e90 at 004f1f38
 ;   core_mission.cpp_CDemonMission_createOneHero_FUN_004fcf70 at 004fd090
+;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004fd280 at 004fd3c5
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_004fb590 at 004fbb56
-;   core_mission.cpp_FUN_004fd280 at 004fd3c5
 ;   core_passngr.cpp_CPassenger_process_FUN_005117a0 at 005118c6
 ;   core_script.cpp_CScript_step_FUN_00522350 at 00526a6f
 ;   ... and 4 more

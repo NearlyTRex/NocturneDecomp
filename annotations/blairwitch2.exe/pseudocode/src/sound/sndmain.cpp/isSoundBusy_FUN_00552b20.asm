@@ -6,7 +6,7 @@
 ;
 ; XREF[7]:
 ;   core_dracbrid.cpp_FUN_00465400 at 00465436
-;   core_menu.cpp_FUN_004ed260 at 004ed972
+;   core_menu.cpp_configureSoundOptions_FUN_004ed260 at 004ed972
 ;   core_sound.cpp_CSound_init_FUN_0055a1d0 at 0055a239
 ;   sound_sndmain.cpp_enableSoundSystem_FUN_005524b0 at 005524cb
 ;   sound_sndmain.cpp_setMaxSwSoundLatency_FUN_00553610 at 00553610

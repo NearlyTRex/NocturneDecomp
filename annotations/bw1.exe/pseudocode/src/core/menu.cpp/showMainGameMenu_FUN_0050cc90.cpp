@@ -142,12 +142,12 @@ int __cdecl core_menu_cpp_showMainGameMenu_FUN_0050cc90(void)
       core_moon_cpp_CMoon_init_FUN_00521c50(&g_CMoonInstance);
       goto LAB_0050cf69;
     case 1:
-      core_menu_cpp_FUN_0050c990(0);
+      core_menu_cpp_showOptionsScreen_FUN_0050c990(0);
       break;
     case 2:
       core_moon_cpp_CMoon_free_FUN_00521d50(&g_CMoonInstance);
       core_sound_cpp_CSound_reset_FUN_0057d800(0x02C82A60);
-      core_game_cpp_FUN_004d6990(g_CGamePtr,(char *)0x0,1);
+      core_game_cpp_CGame_loadGame_FUN_004d6990(g_CGamePtr,(char *)0x0,1);
       engine_2d_c_clearInputAndWait_FUN_004032b0();
       engine_texture_cpp_FUN_00597c30();
       core_moon_cpp_CMoon_init_FUN_00521c50(&g_CMoonInstance);

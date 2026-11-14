@@ -32,13 +32,13 @@
 ;   core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_00418930
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042ccf0
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
 ;   core_charactr.cpp_FUN_0042c1e0
-;   core_charactr.cpp_FUN_0042c230
 ;   core_charactr.cpp_FUN_00434850
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   ... and 22 more
@@ -577,8 +577,8 @@ section .text
     FST float ptr [EDX + 0x4]           ; 0041a148
     PUSH EBX                            ; 0041a14b
     FSTP float ptr [EDX]                ; 0041a14c
-    CALL core_charactr.cpp_FUN_0042c230 ; 0041a14e
-        ;   XREF to: 0042c230 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042c230(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230 ; 0041a14e
+        ;   XREF to: 0042c230 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 0041a153
     PUSH EBX                            ; 0041a156
         ;   Label: LAB_0041a156
@@ -747,8 +747,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x56]      ; 0041a334
         ;   Label: LAB_0041a334
     PUSH EAX                            ; 0041a337
-    CALL core_motion.cpp_FUN_004fc930   ; 0041a338
-        ;   XREF to: 004fc930 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_004fc930(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930 ; 0041a338
+        ;   XREF to: 004fc930 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930(CMotionController * this_ptr)
     MOV dword ptr [EBP + 0x76],EAX      ; 0041a33d
     ADD ESP,0x4                         ; 0041a340
     FLD float ptr [EBP + 0x76]          ; 0041a343

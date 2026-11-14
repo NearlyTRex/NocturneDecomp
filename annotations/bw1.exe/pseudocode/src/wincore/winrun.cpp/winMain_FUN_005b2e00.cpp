@@ -107,7 +107,7 @@ int __stdcall wincore_winrun_cpp_winMain_FUN_005b2e00(HINSTANCE hInstance,HINSTA
 LAB_005b2f58:
   SetCurrentDirectoryA(&DAT_02c9c808);
   local_58.style = 3;
-  local_58.lpfnWndProc = wincore_winrun_cpp_FUN_005b27d0;
+  local_58.lpfnWndProc = wincore_winrun_cpp_mainWindowProc_FUN_005b27d0;
   local_58.hInstance = hInstance;
   local_58.cbClsExtra = 0;
   local_58.cbWndExtra = 0;

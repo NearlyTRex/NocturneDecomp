@@ -15,9 +15,9 @@
 ;   core_box.cpp_FUN_0041a600
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
 ;   core_turret.cpp_CTurret_getCurFrame_FUN_0057ee90
+;   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
 ;   core_xform.cpp_FUN_00591530
-;   core_xform.cpp_FUN_00591ad0
-;   core_xform.cpp_FUN_00591c10
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005916b0
 ;   crt_math.c_round_FUN_005b7ff0
 ;
@@ -87,8 +87,8 @@ section .text
     PUSH 0x265370c                      ; 0057ed39 | DAT_0265370c
     LEA EAX,[ESP + 0x8]                 ; 0057ed3e
     PUSH EAX                            ; 0057ed42
-    CALL core_xform.cpp_FUN_00591c10    ; 0057ed43
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591c10()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 0057ed43
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10()
     ADD ESP,0xc                         ; 0057ed48
     MOV EAX,dword ptr [ESP + 0x134]     ; 0057ed4b
     ADD EAX,0x30                        ; 0057ed52
@@ -96,8 +96,8 @@ section .text
     PUSH 0x265370c                      ; 0057ed56 | DAT_0265370c
     LEA EAX,[ESP + 0x38]                ; 0057ed5b
     PUSH EAX                            ; 0057ed5f
-    CALL core_xform.cpp_FUN_00591ad0    ; 0057ed60
-        ;   XREF to: 00591ad0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_00591ad0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0 ; 0057ed60
+        ;   XREF to: 00591ad0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0057ed65
     LEA EAX,[ESP + 0x30]                ; 0057ed68
     PUSH EAX                            ; 0057ed6c

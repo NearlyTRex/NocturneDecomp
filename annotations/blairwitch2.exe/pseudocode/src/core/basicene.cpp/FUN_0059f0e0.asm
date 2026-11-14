@@ -9,9 +9,9 @@
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429420
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_00424430
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00424470
 ;   core_charactr.cpp_FUN_00423a10
-;   core_charactr.cpp_FUN_00423a60
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_00544f00
 ;
 ; *****************************************************************************
@@ -190,8 +190,8 @@ section .text
     LEA EAX,[ESP + 0x88]                ; 0059f2f9
     PUSH EAX                            ; 0059f300
     PUSH EBX                            ; 0059f301
-    CALL core_charactr.cpp_FUN_00423a60 ; 0059f302
-        ;   XREF to: 00423a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00423a60(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60 ; 0059f302
+        ;   XREF to: 00423a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 0059f307
     POP ESI                             ; 0059f30a
     PUSH EBX                            ; 0059f30b

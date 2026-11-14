@@ -2601,8 +2601,8 @@ section .text
     PUSH EAX                            ; 00545cfc
     ADD ESI,0x1fae8                     ; 00545cfd
     PUSH ESI                            ; 00545d03
-    CALL core_inv.cpp_FUN_004f7690      ; 00545d04
-        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004f7690 ; 00545d04
+        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 00545d09
     JMP 0x0054450b                      ; 00545d0c
         ;   XREF to: 0054450b (UNCONDITIONAL_JUMP)  ; LAB_0054450b
@@ -2901,8 +2901,8 @@ section .text
         ;   XREF to: 0054450b (CONDITIONAL_JUMP)  ; LAB_0054450b
     MOV EDX,dword ptr [0x0061d95c]      ; 005460cb | g_CGamePtr
     PUSH EDX                            ; 005460d1 | g_CGameInstance
-    CALL core_game.cpp_FUN_004d6030     ; 005460d2
-        ;   XREF to: 004d6030 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004d6030(CGame * this_ptr)
+    CALL core_game.cpp_CGame_beginFadeIn_FUN_004d6030 ; 005460d2
+        ;   XREF to: 004d6030 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_beginFadeIn_FUN_004d6030(CGame * this_ptr)
     ADD ESP,0x4                         ; 005460d7
     JMP 0x0054450b                      ; 005460da
         ;   XREF to: 0054450b (UNCONDITIONAL_JUMP)  ; LAB_0054450b
@@ -4358,8 +4358,8 @@ section .text
         ;   XREF to: 00547231 (CONDITIONAL_JUMP)  ; LAB_00547231
     MOV EDI,dword ptr [0x0061d95c]      ; 00547216 | g_CGamePtr
     PUSH EDI                            ; 0054721c | g_CGameInstance
-    CALL core_game.cpp_FUN_004d6030     ; 0054721d
-        ;   XREF to: 004d6030 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004d6030(CGame * this_ptr)
+    CALL core_game.cpp_CGame_beginFadeIn_FUN_004d6030 ; 0054721d
+        ;   XREF to: 004d6030 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_beginFadeIn_FUN_004d6030(CGame * this_ptr)
     ADD ESP,0x4                         ; 00547222
     MOV dword ptr [EBX + 0x48],0x3f800000 ; 00547225
     JMP 0x0054450b                      ; 0054722c

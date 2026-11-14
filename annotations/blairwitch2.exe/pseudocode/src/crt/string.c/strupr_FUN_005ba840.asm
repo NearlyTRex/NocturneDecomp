@@ -7,8 +7,8 @@
 ; char *           Stack[0x4]:4   string
 ;
 ; XREF[7]:
-;   core_event.cpp_FUN_00490f80 at 0049102b
-;   core_event.cpp_FUN_00491110 at 004911bb
+;   core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_00491110 at 004911bb
+;   core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80 at 0049102b
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_004a7d00 at 004a7d62
 ;   engine_font.cpp_FUN_004a85a0 at 004a85ed
 ;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0047cb20 at 0047cf8e

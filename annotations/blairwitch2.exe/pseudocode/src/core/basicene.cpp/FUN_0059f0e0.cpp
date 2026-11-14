@@ -125,7 +125,7 @@ void core_basicene_cpp_FUN_0059f0e0(CCharacter *param_1,float param_2)
     (param_1->model).accumulated_root_motion.z = 0.0;
     (param_1->model).accumulated_root_motion.y = (param_1->model).accumulated_root_motion.z;
     pCVar2->x = (param_1->model).accumulated_root_motion.y;
-    core_charactr_cpp_FUN_00423a60(param_1,&CStack_24);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_00423a60(param_1,&CStack_24);
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_00424470(param_1);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_00544f00(&param_1->model);

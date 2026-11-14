@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   value
 ;
 ; XREF[1]:
-;   core_dfont.cpp_FUN_00459f50 at 00459ffa
+;   core_dfont.cpp_initFonts_FUN_00459f50 at 00459ffa
 ;
 ; *****************************************************************************
 

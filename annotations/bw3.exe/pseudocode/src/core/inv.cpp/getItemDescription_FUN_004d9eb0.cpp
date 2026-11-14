@@ -18,7 +18,7 @@ char * __cdecl core_inv_cpp_getItemDescription_FUN_004d9eb0(CDemonActor *actor_p
   
   str2 = (char *)0x1d5dc90;
   iVar3 = 0;
-  iVar1 = core_inv_cpp_FUN_004d9d20(actor_ptr);
+  iVar1 = core_inv_cpp_getItemModel_FUN_004d9d20(actor_ptr);
   if (0 < _DAT_01d5dc88) {
     do {
       iVar2 = _stricmp((char *)(iVar1 + 0x78),str2);

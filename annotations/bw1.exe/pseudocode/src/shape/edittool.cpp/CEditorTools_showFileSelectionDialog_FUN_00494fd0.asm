@@ -17,8 +17,8 @@
 ; undefined        Stack[-0x114]:1  local_114
 ;
 ; XREF[3]:
+;   core_game.cpp_CGame_loadGame_FUN_004d6990 at 004d6e22
 ;   core_game.cpp_CGame_promptLoadGame_FUN_004d85f0 at 004d86a5
-;   core_game.cpp_FUN_004d6990 at 004d6e22
 ;   core_game.cpp_FUN_004d7250 at 004d76fb
 ;
 ; Referenced Globals:

@@ -333,8 +333,10 @@ LAB_0059ab67:
     (this_ptr->velocity).z = fStack_c0;
   }
   pCStack_28 = (CVector3f *)&(this_ptr->base).orient;
-  core_xform_cpp_FUN_005b5760(&CStack_260,(CVector3f *)&DAT_02c8af28,pCStack_28);
-  core_xform_cpp_FUN_005b5760(&CStack_200,(CVector3f *)&DAT_02c8af28,&CStack_188);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+            (&CStack_260,(CVector3f *)&DAT_02c8af28,pCStack_28);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+            (&CStack_200,(CVector3f *)&DAT_02c8af28,&CStack_188);
   core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&CStack_200,&CStack_260,&CStack_1d0);
   pCVar9 = &CStack_1d0;
   pfVar8 = afStack_230;

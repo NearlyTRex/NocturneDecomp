@@ -172,7 +172,7 @@ LAB_00565ebd:
                 }
                 this_ptr->action_pending = 1;
               }
-              core_hero_cpp_FUN_004cff50(&this_ptr->base,1);
+              core_hero_cpp_CHero_executeObjectPickup_FUN_004cff50(&this_ptr->base,1);
             }
           }
         }
@@ -288,7 +288,7 @@ LAB_00565858:
           if ((CWeapon *)(this_ptr->base).base.carry_hands[1].carry_actor == this_ptr->weapon) {
             this_ptr->weapon = (CWeapon *)0x0;
           }
-          core_hero_cpp_FUN_004cff90(this_ptr,1);
+          core_hero_cpp_CHero_addCarriedItemToInventory_FUN_004cff90(&this_ptr->base,1);
           if (this_ptr->action_pending == 1) {
             this_ptr->action_pending = 0;
           }

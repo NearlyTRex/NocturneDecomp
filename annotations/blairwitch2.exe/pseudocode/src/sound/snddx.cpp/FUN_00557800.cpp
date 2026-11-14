@@ -18,7 +18,7 @@ void sound_snddx_cpp_FUN_00557800(void)
     apiStack_194[0] = _DAT_0264a5d0;
     error_code = (**(code **)(*_DAT_0264a5d0 + 0x44))();
     if (error_code != 0) {
-      sound_snddx_cpp_FUN_00554ad0(error_code);
+      sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(error_code);
       _sprintf((char *)apiStack_194,"DirectSux: Unable to %s.  (%s)");
       sound_sndmain_cpp_logSoundError_FUN_005549c0((char *)apiStack_194);
       return;

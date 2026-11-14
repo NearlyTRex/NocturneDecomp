@@ -760,7 +760,8 @@ LAB_00592354:
             in_stack_fffffce0 = (CMattanntote *)0x59343e;
             in_stack_fffffce4 = pCStack_20;
             pCStack_34 = (CDeformableModelInstance *)
-                         core_motion_cpp_FUN_004fc930((CMotionController *)pCStack_20);
+                         core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                                   ((CMotionController *)pCStack_20);
             pCStack_14 = pCStack_34;
             if ((0x3f7fffff < (int)pCStack_34) && ((float)pCStack_34 <= _DAT_005d91d3)) {
               in_stack_fffffce4 = (CMattanntote *)0x2;
@@ -795,7 +796,8 @@ LAB_00592354:
             in_stack_fffffce0 = (CMattanntote *)0x593537;
             in_stack_fffffce4 = pCStack_20;
             pCStack_3c = (CDeformableModelInstance *)
-                         core_motion_cpp_FUN_004fc930((CMotionController *)pCStack_20);
+                         core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                                   ((CMotionController *)pCStack_20);
             pCStack_14 = pCStack_3c;
             if ((0x403fffff < (int)pCStack_3c) && ((int)pCStack_3c < 0x40800001)) {
               in_stack_fffffce4 = (CMattanntote *)0x2;
@@ -831,7 +833,8 @@ LAB_00592354:
             in_stack_fffffce0 = (CMattanntote *)0x593347;
             in_stack_fffffce4 = pCStack_20;
             pCStack_38 = (CDeformableModelInstance *)
-                         core_motion_cpp_FUN_004fc930((CMotionController *)pCStack_20);
+                         core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                                   ((CMotionController *)pCStack_20);
             pCStack_14 = pCStack_38;
             if ((0x403fffff < (int)pCStack_38) && ((int)pCStack_38 < 0x40800001)) {
               in_stack_fffffce4 = (CMattanntote *)0x2;
@@ -879,7 +882,8 @@ LAB_00592354:
           iVar5 = (**(code **)(*(int *)(iVar5 + 0x154) + 0x10c))(iVar5);
           if (iVar5 == 0) goto switchD_00593661_caseD_e;
           pCStack_14 = (CDeformableModelInstance *)
-                       core_motion_cpp_FUN_004fc930((CMotionController *)pCStack_20);
+                       core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                                 ((CMotionController *)pCStack_20);
           if ((float)_DAT_005d91db < (float)pCStack_14) {
             core_motion_cpp_CMotionController_jumpToMotionByName_FUN_004fc3f0
                       ((CMotionController *)pCStack_20,"stand",0.0);
@@ -970,7 +974,7 @@ LAB_00592a8c:
       pCStack_28->z = 0.0;
       pCStack_28->y = pCStack_28->z;
       pCStack_28->x = pCStack_28->y;
-      core_charactr_cpp_FUN_0042c230((CCharacter *)this_ptr,&CStack_2ac);
+      core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230((CCharacter *)this_ptr,&CStack_2ac);
     }
     core_charactr_cpp_CCharacter_preProcess_FUN_0042cd30((CCharacter *)this_ptr);
     core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130

@@ -100,7 +100,7 @@ uint sound_snddx_cpp_FUN_0055b100(uint *param_1,int param_2,ushort param_3,int p
           }
         }
         else {
-          sound_snddx_cpp_FUN_0055a670(uVar1);
+          sound_snddx_cpp_getDirectSoundErrorString_FUN_0055a670(uVar1);
           _sprintf(acStack_550,"DirectSux: Unable to %s.  (%s)");
           sound_sndmain_cpp_logSoundError_FUN_0055a560(acStack_550);
         }
@@ -137,18 +137,18 @@ uint sound_snddx_cpp_FUN_0055b100(uint *param_1,int param_2,ushort param_3,int p
           *param_5 = _DAT_02cf49e4;
           return 1;
         }
-        sound_snddx_cpp_FUN_0055a670(uVar1);
+        sound_snddx_cpp_getDirectSoundErrorString_FUN_0055a670(uVar1);
         _sprintf(acStack_6d0,"DirectSux: Unable to %s.  (%s)");
         sound_sndmain_cpp_logSoundError_FUN_0055a560(acStack_6d0);
       }
       else {
-        sound_snddx_cpp_FUN_0055a670(uVar1);
+        sound_snddx_cpp_getDirectSoundErrorString_FUN_0055a670(uVar1);
         _sprintf(acStack_220,"DirectSux: Unable to %s.  (%s)");
         sound_sndmain_cpp_logSoundError_FUN_0055a560(acStack_220);
       }
     }
     else {
-      sound_snddx_cpp_FUN_0055a670(uVar1);
+      sound_snddx_cpp_getDirectSoundErrorString_FUN_0055a670(uVar1);
       _sprintf(acStack_3b0,"DirectSux: Unable to %s.  (%s)");
       sound_sndmain_cpp_logSoundError_FUN_0055a560(acStack_3b0);
     }

@@ -33,6 +33,7 @@
 ;   core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_00419520
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_00424430
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00424470
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
@@ -40,7 +41,6 @@
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_00423000
 ;   core_charactr.cpp_FUN_00423a10
-;   core_charactr.cpp_FUN_00423a60
 ;   ... and 24 more
 ;
 ; *****************************************************************************
@@ -578,8 +578,8 @@ section .text
     LEA EAX,[EBP + 0xffffff66]          ; 00418cbb
     PUSH EAX                            ; 00418cc1
     PUSH EBX                            ; 00418cc2
-    CALL core_charactr.cpp_FUN_00423a60 ; 00418cc3
-        ;   XREF to: 00423a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00423a60(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60 ; 00418cc3
+        ;   XREF to: 00423a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 00418cc8
     PUSH EBX                            ; 00418ccb
         ;   Label: LAB_00418ccb

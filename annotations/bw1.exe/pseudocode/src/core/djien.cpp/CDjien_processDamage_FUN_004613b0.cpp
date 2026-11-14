@@ -34,7 +34,7 @@ void __cdecl core_djien_cpp_CDjien_processDamage_FUN_004613b0(CDjien *this_ptr,S
         return;
       }
       pCVar5 = &(this_ptr->base).base.model;
-      fVar4 = core_motion_cpp_FUN_00525020(&pCVar5->base);
+      fVar4 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00525020(&pCVar5->base);
       if ((float)_DAT_005d8ed8 < fVar4) {
         iVar6 = 1;
         iVar3 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,2);

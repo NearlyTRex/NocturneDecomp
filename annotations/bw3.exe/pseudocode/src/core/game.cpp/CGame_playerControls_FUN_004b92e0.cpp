@@ -24,7 +24,7 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004b92e0(CGame *this_ptr)
         player_control = core_netgame_cpp_CNetGame_getMyControls_FUN_00507f10(g_CNetGamePtr);
         switch(this_ptr->game_control) {
         case CONTROL_MODE_KEYBOARD:
-          core_game_cpp_FUN_004b9960(this_ptr,player_control);
+          core_game_cpp_CGame_processKeyboardControls_FUN_004b9960(this_ptr,player_control);
           break;
         case CONTROL_MODE_MOUSE:
           core_game_cpp_CGame_processMouseControls_FUN_004ba2e0(this_ptr,player_control);

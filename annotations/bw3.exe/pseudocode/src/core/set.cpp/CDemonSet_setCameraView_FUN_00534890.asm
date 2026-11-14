@@ -316,8 +316,8 @@ section .text
     PUSH EAX                            ; 00534bc1
     MOV EDX,dword ptr [0x006071f0]      ; 00534bc2 | DAT_006071f0
     PUSH EDX                            ; 00534bc8
-    CALL core_weather.cpp_FUN_0057d1a0  ; 00534bc9
-        ;   XREF to: 0057d1a0 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_FUN_0057d1a0()
+    CALL core_weather.cpp_CWeather_setOriginAndRotation_FUN_0057d1a0 ; 00534bc9
+        ;   XREF to: 0057d1a0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setOriginAndRotation_FUN_0057d1a0(CWeather * this_ptr, CVector3f * direction, CVector3f * rotation)
     ADD ESP,0xc                         ; 00534bce
     MOV EAX,dword ptr [ESP + 0x1fc]     ; 00534bd1
     MOV ECX,dword ptr [EAX + 0x14d164]  ; 00534bd8

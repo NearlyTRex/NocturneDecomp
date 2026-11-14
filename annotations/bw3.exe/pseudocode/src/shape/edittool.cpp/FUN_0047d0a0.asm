@@ -21,7 +21,7 @@
 ;   engine_font.cpp_CBitFont_drawText_FUN_004b0a20
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0
 ;   engine_mini3d.cpp_setAlpha_FUN_004edaf0
-;   shape_edittool.cpp_FUN_0047fa80
+;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0
 ;
 ; *****************************************************************************
@@ -62,8 +62,8 @@ section .text
     XOR EDI,EDI                         ; 0047d10a
     PUSH EBP                            ; 0047d10c
     MOV dword ptr [ESP + 0x404],EDI     ; 0047d10d
-    CALL shape_edittool.cpp_FUN_0047fa80 ; 0047d114
-        ;   XREF to: 0047fa80 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047fa80()
+    CALL shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80 ; 0047d114
+        ;   XREF to: 0047fa80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0047d119
     PUSH 0xffff                         ; 0047d11c
     CALL engine_3d.c_setRenderAlpha_FUN_00406bf0 ; 0047d121

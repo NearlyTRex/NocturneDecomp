@@ -15,7 +15,7 @@
 ;   crt_math.c_round_FUN_005a3120
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
 ;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046c510
-;   engine_special.cpp_FUN_005632a3
+;   engine_special.cpp_transformAndProjectPoint_FUN_005632a3
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10
 ;
 ; *****************************************************************************
@@ -70,8 +70,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0045ae64
     ADD EAX,ESI                         ; 0045ae66
     PUSH EAX                            ; 0045ae68
-    CALL engine_special.cpp_FUN_005632a3 ; 0045ae69
-        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005632a3 ; 0045ae69
+        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x005f2af8]                ; 0045ae6e | DAT_005f2af8
     MOV EBX,dword ptr [EAX]             ; 0045ae73
     MOV dword ptr [ESI + EBX*0x1 + 0x18],0x800000 ; 0045ae75

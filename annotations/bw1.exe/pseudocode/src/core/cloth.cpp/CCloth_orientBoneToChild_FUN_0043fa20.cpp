@@ -67,8 +67,10 @@ void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_0043fa20(CCloth *this_p
   *(float *)((int)&local_28 + (uint)bVar5 * -8 + 4) = afStack_30[(uint)bVar5 * -2];
   *(float *)((int)&local_28 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
        afStack_30[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-  core_xform_cpp_FUN_005b5620(&bone_name->world_matrix,&local_40,pCVar2);
-  core_xform_cpp_FUN_005b5620(&local_a0,&bone_name->euler1,&bone_name->euler2);
+  core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005b5620
+            (&bone_name->world_matrix,&local_40,pCVar2);
+  core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005b5620
+            (&local_a0,&bone_name->euler1,&bone_name->euler2);
   core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&bone_name->world_matrix,&local_a0,&local_70);
   pCVar3 = &local_70;
   pCVar4 = &bone_name->world_matrix;

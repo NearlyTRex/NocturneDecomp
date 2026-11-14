@@ -6,7 +6,7 @@
 ;
 ; XREF[8]:
 ;   core_game.cpp_CGame_rollCredits_FUN_004d8e50 at 004d8f2a
-;   core_menu.cpp_FUN_0050ba70 at 0050c7ab
+;   core_menu.cpp_configureSoundOptions_FUN_0050ba70 at 0050c7ab
 ;   core_sound.cpp_CSound_reset_FUN_0057d800 at 0057d800
 ;   core_sound.cpp_CSound_shutdown_FUN_0057cdb0 at 0057cdf4
 ;   sound_sndmain.cpp_closeSoundDevice_FUN_00575670 at 00575672

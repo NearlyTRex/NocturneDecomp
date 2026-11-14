@@ -72,9 +72,11 @@ void __cdecl core_svetlana_cpp_CSvetlana_setup_FUN_00570250(CSvetlana *this_ptr)
   core_cloth_cpp_CCloth_load_FUN_005adeb0(&this_ptr->cape_cloth,"svetcape.cth");
   euler = &(this_ptr->base).base.base.orient;
   position = &(this_ptr->base).base.base.location;
-  core_cloth_cpp_FUN_005ae680(&this_ptr->cape_cloth,&position->position,&euler->vec,this_ptr_00);
+  core_cloth_cpp_CCloth_setup_FUN_005ae680
+            (&this_ptr->cape_cloth,&position->position,&euler->vec,this_ptr_00);
   core_cloth_cpp_CCloth_load_FUN_005adeb0(&this_ptr->hair_cloth,"svethair.cth");
-  core_cloth_cpp_FUN_005ae680(&this_ptr->hair_cloth,&position->position,&euler->vec,this_ptr_00);
+  core_cloth_cpp_CCloth_setup_FUN_005ae680
+            (&this_ptr->hair_cloth,&position->position,&euler->vec,this_ptr_00);
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810(this_ptr_00);
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                     (this_ptr_02,"lblade01",1);

@@ -25,7 +25,7 @@
 ;   WatcomTypeInfo g_CDemonActorTypeInfo
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040d400
+;   core_actor.cpp_CVector3f_arrdtor10_FUN_0040d400
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
 ;   crt_unknown.c_FUN_005b7fce
 ;   crt_unknown.c_FUN_005b7fdc
@@ -45,8 +45,8 @@ section .text
     MOV dword ptr [EBX + 0x15c],0x5f2184 ; 00408944 | g_CDemonActorVTable
     PUSH EBX                            ; 0040894e
     MOV dword ptr [EBX + 0xffffff14],0x495fd67 ; 0040894f
-    CALL core_actor.cpp_FUN_0040d400    ; 00408959
-        ;   XREF to: 0040d400 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040d400()
+    CALL core_actor.cpp_CVector3f_arrdtor10_FUN_0040d400 ; 00408959
+        ;   XREF to: 0040d400 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector3f_arrdtor10_FUN_0040d400(CVector3f * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0040895e
     MOV DL,byte ptr [ESP + 0xc]         ; 00408961
     LEA EBX,[EAX + 0xfffffeac]          ; 00408965

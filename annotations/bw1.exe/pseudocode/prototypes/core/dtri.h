@@ -45,9 +45,9 @@ void __cdecl cylinderTriangleTest(CDemonTriangle *triangle,SIntersectXZCylinder 
 // Address: 004908d0
 int __cdecl rayEdgeHeightTest(CVector3f *vertex1,CVector3f *vertex2,float ray_radius,float *out_height);
 
-// Original: core_dtri.cpp_FUN_00490a40
+// Original: core_dtri.cpp_rayTriangleFloorTest_FUN_00490a40
 // Address: 00490a40
-int __cdecl FUN_00490a40(CDemonTriangle *triangle,CVector3f *position,float search_radius,float *out_height);
+int __cdecl rayTriangleFloorTest(CDemonTriangle *triangle,CVector3f *position,float search_radius,float *out_height);
 
 // Original: core_dtri.cpp_clipLineToPlane_FUN_00490df0
 // Address: 00490df0

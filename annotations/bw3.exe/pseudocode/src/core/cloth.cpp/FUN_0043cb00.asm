@@ -94,8 +94,8 @@
 ;   undefined4 DAT_005dd3b0
 ;
 ; Called Functions:
+;   core_cloth.cpp_CCloth_initializeConnections_FUN_0043c8a0
 ;   core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043d680
-;   core_cloth.cpp_FUN_0043c8a0
 ;   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_005487e0
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0054dd10
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
@@ -303,8 +303,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x16c]     ; 0043cdb3
         ;   Label: LAB_0043cdb3
     PUSH EAX                            ; 0043cdba
-    CALL core_cloth.cpp_FUN_0043c8a0    ; 0043cdbb
-        ;   XREF to: 0043c8a0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043c8a0(CCloth * this_ptr)
+    CALL core_cloth.cpp_CCloth_initializeConnections_FUN_0043c8a0 ; 0043cdbb
+        ;   XREF to: 0043c8a0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_initializeConnections_FUN_0043c8a0(CCloth * this_ptr)
     ADD ESP,0x4                         ; 0043cdc0
     MOV EDX,dword ptr [ESP + 0x16c]     ; 0043cdc3
     MOV ECX,dword ptr [EDX + 0x39ce8]   ; 0043cdca

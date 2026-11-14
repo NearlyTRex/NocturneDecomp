@@ -91,7 +91,7 @@ void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_00591120(CStrang
       if (((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0) &&
          (fVar3 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590
                             ((CCharacter *)this_ptr,0), (float)_DAT_005f70b9 < fVar3)) {
-        iVar2 = core_hero_cpp_FUN_004eb660(&this_ptr->base);
+        iVar2 = core_hero_cpp_CHero_tryPullLever_FUN_004eb660(&this_ptr->base);
         if (iVar2 != 0) {
           (this_ptr->base).player_input.action_state.fire = 0;
           core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar1->base,0x2c,1);

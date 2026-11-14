@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ;
 ; XREF[1]:
-;   core_menu.cpp_FUN_004ee1a0 at 004ee312
+;   core_menu.cpp_showOptionsScreen_FUN_004ee1a0 at 004ee312
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004ebee0 = 004ec3f9
@@ -42,7 +42,7 @@
 ; Called Functions:
 ;   core_game.cpp_CGame_saveClockTime_FUN_004b3000
 ;   core_game.cpp_CGame_updateDT_FUN_004b3010
-;   core_menu.cpp_FUN_004eb0e0
+;   core_menu.cpp_renderMenuAndGetChoice_FUN_004eb0e0
 ;   core_menu.cpp_showCalibrationTest_FUN_004ebe30
 ;   core_moon.cpp_CMoon_render_FUN_00502510
 ;   core_moon.cpp_CMoon_update_FUN_005024a0
@@ -462,8 +462,8 @@ section .text
     PUSH EAX                            ; 004ec3d1
     PUSH EBX                            ; 004ec3d2
     PUSH 0x1d06a50                      ; 004ec3d3
-    CALL core_menu.cpp_FUN_004eb0e0     ; 004ec3d8
-        ;   XREF to: 004eb0e0 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_004eb0e0(char * * menu_text_array, int menu_count, int * selected_index_ptr, int y_position, ...)
+    CALL core_menu.cpp_renderMenuAndGetChoice_FUN_004eb0e0 ; 004ec3d8
+        ;   XREF to: 004eb0e0 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_renderMenuAndGetChoice_FUN_004eb0e0(char * * menu_text_array, int menu_count, int * selected_index_ptr, int y_position, ...)
     ADD ESP,0x14                        ; 004ec3dd
     MOV EBX,EAX                         ; 004ec3e0
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00589560 ; 004ec3e2

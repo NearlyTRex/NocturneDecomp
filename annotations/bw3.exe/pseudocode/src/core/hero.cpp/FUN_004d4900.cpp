@@ -39,7 +39,8 @@ uint core_hero_cpp_FUN_004d4900(CHero *param_1,uint param_2)
              iVar5 == 0 ||
              (iVar5 = core_hero_cpp_CHero_tryPullLever_FUN_004d32d0(param_1), iVar5 == 0)))) &&
            ((iVar5 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,9),
-            iVar5 == 0 || (iVar5 = core_hero_cpp_FUN_004d3500(param_1), iVar5 == 0)))))) &&
+            iVar5 == 0 ||
+            (iVar5 = core_hero_cpp_CHero_tryPushNearbyBox_FUN_004d3500(param_1), iVar5 == 0)))))) &&
          ((iVar5 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,10),
           iVar5 == 0 ||
           (iVar5 = core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004d38b0(param_1), iVar5 == 0))))

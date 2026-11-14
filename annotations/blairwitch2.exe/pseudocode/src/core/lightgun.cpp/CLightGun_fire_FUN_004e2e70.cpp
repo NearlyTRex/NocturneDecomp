@@ -182,7 +182,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004e2e70(CLightGun *this_ptr)
     iVar9 = iVar9 + 1;
   } while (iVar9 < 1);
   core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00537c40(g_CDemonSetPtr);
-  core_lightgun_cpp_FUN_004e2bf0(this_ptr);
+  core_lightgun_cpp_CLightGun_updateBeamLight_FUN_004e2bf0(this_ptr);
   CStack_24.x = 0.0;
   pfStack_28 = afStack_184;
   iStack_2c = 0;

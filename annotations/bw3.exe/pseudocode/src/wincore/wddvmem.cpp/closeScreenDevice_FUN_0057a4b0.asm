@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[4]:
+;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004bec20 at 004bedf8
 ;   core_game.cpp_FUN_004b6f30 at 004b79ec
-;   core_game.cpp_FUN_004bec20 at 004bedf8
 ;   engine_special.cpp_presentToExternalRenderer_FUN_00566260 at 0056631a
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0 at 0057a93e
 ;

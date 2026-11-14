@@ -11,7 +11,7 @@
 ; int              Stack[0x14]:4   load_flags
 ;
 ; XREF[2]:
-;   core_dfont.cpp_FUN_00447ea0 at 00447ede
+;   core_dfont.cpp_initFonts_FUN_00447ea0 at 00447ede
 ;   engine_font.cpp_FUN_004a85a0 at 004a8842
 ;
 ; Called Functions:

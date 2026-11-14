@@ -10,7 +10,6 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[42]:
-;   sound_snddx.cpp_FUN_0055a9f0 at 0055aafa
 ;   sound_snddx.cpp_FUN_0055acd0 at 0055adc7
 ;   sound_snddx.cpp_FUN_0055ae40 at 0055aece
 ;   sound_snddx.cpp_FUN_0055b100 at 0055b4f5
@@ -20,6 +19,7 @@
 ;   sound_snddx.cpp_FUN_0055bbf0 at 0055bd2d
 ;   sound_snddx.cpp_FUN_0055bd50 at 0055bde7
 ;   sound_snddx.cpp_FUN_0055be30 at 0055c03f
+;   sound_snddx.cpp_FUN_0055c0f0 at 0055c348
 ;   ... and 32 more
 ;
 ; Referenced Globals:

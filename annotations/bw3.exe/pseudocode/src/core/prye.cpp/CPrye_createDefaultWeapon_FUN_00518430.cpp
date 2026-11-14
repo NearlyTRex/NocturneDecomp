@@ -39,7 +39,7 @@ void __cdecl core_prye_cpp_CPrye_createDefaultWeapon_FUN_00518430(CPrye *this_pt
     pCVar4 = (CDemonActor *)(pCVar4->actor_name + 2);
   } while (cVar1 != '\0');
   this_ptr_00 = &(this_ptr->base).inventory;
-  core_inv_cpp_FUN_004da880(this_ptr_00,pCVar2,1);
+  core_inv_cpp_CInventory_addItem_FUN_004da880(this_ptr_00,pCVar2,1);
   core_inv_cpp_CInventory_selectWeapon_FUN_004dbb40(this_ptr_00,(CDemonActor *)0x0,5,1);
   uVar5 = g_CWeaponClassInfo.name_hash;
   pCVar2 = core_actor_cpp_createActorByName_FUN_0040c4f0("CHolycross");
@@ -60,7 +60,7 @@ void __cdecl core_prye_cpp_CPrye_createDefaultWeapon_FUN_00518430(CPrye *this_pt
     pCVar4->actor_name[1] = cVar1;
     pCVar4 = (CDemonActor *)(pCVar4->actor_name + 2);
   } while (cVar1 != '\0');
-  core_inv_cpp_FUN_004da880(&(this_ptr->base).inventory,pCVar2,1);
+  core_inv_cpp_CInventory_addItem_FUN_004da880(&(this_ptr->base).inventory,pCVar2,1);
   uVar5 = DAT_007e1a50;
   pCVar2 = core_actor_cpp_createActorByName_FUN_0040c4f0("CLightActor");
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c840(pCVar2,uVar5);
@@ -82,7 +82,7 @@ void __cdecl core_prye_cpp_CPrye_createDefaultWeapon_FUN_00518430(CPrye *this_pt
     pCVar4 = (CDemonActor *)(pCVar4->actor_name + 2);
   } while (cVar1 != '\0');
   (*((pCVar2->vtable)._ub)->setup)(pCVar2);
-  core_inv_cpp_FUN_004da880(&(this_ptr->base).inventory,pCVar2,1);
+  core_inv_cpp_CInventory_addItem_FUN_004da880(&(this_ptr->base).inventory,pCVar2,1);
   uVar5 = g_CBoxActorClassInfo.name_hash;
   pCVar2 = core_actor_cpp_createActorByName_FUN_0040c4f0("CBoxActor");
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c840(pCVar2,uVar5);
@@ -104,6 +104,6 @@ void __cdecl core_prye_cpp_CPrye_createDefaultWeapon_FUN_00518430(CPrye *this_pt
     pCVar4->actor_name[1] = cVar1;
     pCVar4 = (CDemonActor *)(pCVar4->actor_name + 2);
   } while (cVar1 != '\0');
-  core_inv_cpp_FUN_004da880(&(this_ptr->base).inventory,pCVar2,1);
+  core_inv_cpp_CInventory_addItem_FUN_004da880(&(this_ptr->base).inventory,pCVar2,1);
   return;
 }

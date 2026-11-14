@@ -22,7 +22,8 @@ void __cdecl core_ground_cpp_CGround_transformAndStoreVertex_FUN_004e7690(CGroun
                (int)this_ptr->terrain_data
                     [(row & this_ptr->height_minus_1) * this_ptr->width +
                      (column & this_ptr->width_minus_1)].height;
-  engine_special_cpp_FUN_0058043c((SProjectedVertex *)(&DAT_00629014 + iVar1 * 0xc),&local_1c);
+  engine_special_cpp_transformPoint_FUN_0058043c
+            ((SProjectedVertex *)(&DAT_00629014 + iVar1 * 0xc),&local_1c);
   (&DAT_00629034)[iVar1 * 0xc] = 0x3fff;
   (&DAT_00629038)[iVar1 * 0xc] = 0x3fff;
   (&DAT_0062903c)[iVar1 * 0xc] = 0x3fff;

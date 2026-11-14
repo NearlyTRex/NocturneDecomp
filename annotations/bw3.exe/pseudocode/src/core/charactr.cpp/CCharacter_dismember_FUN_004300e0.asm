@@ -30,7 +30,7 @@
 ; XREF[4]:
 ;   core_charactr.cpp_CCharacter_explode_FUN_0042ffe0 at 004300cc
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00430d60 at 00430f8f
-;   core_charactr.cpp_FUN_0042e8c0 at 0042ece3
+;   core_charactr.cpp_CCharacter_processFire_FUN_0042e8c0 at 0042ece3
 ;   core_gargoyle.cpp_CGargoyle_processDamage_FUN_004c61b0 at 004c62a6
 ;
 ; Referenced Globals:

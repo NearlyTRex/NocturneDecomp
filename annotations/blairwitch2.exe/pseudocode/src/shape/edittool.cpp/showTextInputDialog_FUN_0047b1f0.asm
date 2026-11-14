@@ -51,9 +51,9 @@
 ;   shape_edittool.cpp_CEdButton_setBoundsAndText_FUN_00484ed0
 ;   shape_edittool.cpp_CEdButton_wasClicked_FUN_00485240
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047e1d0
+;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210
 ;   shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_0047eff0
 ;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760
-;   shape_edittool.cpp_CInputString_backspace_FUN_0047abd0
 ;   ... and 10 more
 ;
 ; *****************************************************************************
@@ -248,8 +248,8 @@ section .text
     PUSH 0x0                            ; 0047b427
     MOV EAX,[0x006138e0]                ; 0047b429 | g_CEditorToolsPtr
     PUSH EAX                            ; 0047b42e
-    CALL shape_edittool.cpp_FUN_0047f210 ; 0047b42f
-        ;   XREF to: 0047f210 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047f210()
+    CALL shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210 ; 0047b42f
+        ;   XREF to: 0047f210 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210(CEditorTools * this_ptr, int use_clipping)
     ADD ESP,0x8                         ; 0047b434
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00589560 ; 0047b437
         ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00589560()

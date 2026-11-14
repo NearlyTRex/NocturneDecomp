@@ -16,13 +16,13 @@
 ;   undefined4 DAT_005fd234
 ;
 ; Called Functions:
+;   core_bugs.cpp_CBugs_applySwarmTranslation_FUN_00427e00
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_004263d0
 ;   core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_00427a30
 ;   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427b40
 ;   core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_00425b00
 ;   core_bugs.cpp_FUN_00426870
-;   core_bugs.cpp_FUN_00427e00
-;   core_charactr.cpp_FUN_0042d750
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
 ;   core_dirmat.cpp_FUN_0045f690
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_005349a0
@@ -221,8 +221,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00426235
     MOVSD ES:EDI,ESI                    ; 00426236
     MOVSD ES:EDI,ESI                    ; 00426237
-    CALL core_charactr.cpp_FUN_0042d750 ; 00426238
-        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750 ; 00426238
+        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
     LEA EDI,[ESP + 0xa8]                ; 0042623d
     ADD ESP,0x8                         ; 00426244
     LEA ESI,[EBX + 0x20]                ; 00426247
@@ -333,8 +333,8 @@ section .text
     LEA EAX,[ESP + 0xa0]                ; 00426396
     PUSH EAX                            ; 0042639d
     PUSH EBX                            ; 0042639e
-    CALL core_bugs.cpp_FUN_00427e00     ; 0042639f
-        ;   XREF to: 00427e00 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00427e00()
+    CALL core_bugs.cpp_CBugs_applySwarmTranslation_FUN_00427e00 ; 0042639f
+        ;   XREF to: 00427e00 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_applySwarmTranslation_FUN_00427e00(CBugs * this_ptr, CVector3f * new_position)
     ADD ESP,0x8                         ; 004263a4
     PUSH EBX                            ; 004263a7
         ;   Label: LAB_004263a7

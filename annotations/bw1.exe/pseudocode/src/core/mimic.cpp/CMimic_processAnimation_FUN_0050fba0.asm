@@ -120,10 +120,10 @@
 ;   core_actor.cpp_FUN_00408bb0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0
 ;   core_charactr.cpp_FUN_0042d700
-;   core_charactr.cpp_FUN_0042d750
 ;   core_charactr.cpp_FUN_00435320
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042c010
 ;   core_cloth.cpp_CCloth_process_FUN_00440610
@@ -646,8 +646,8 @@ section .text
     MOV ECX,dword ptr [EBP + 0x6a]      ; 00510184
         ;   Label: LAB_00510184
     PUSH ECX                            ; 00510187
-    CALL core_motion.cpp_FUN_00525020   ; 00510188
-        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_00525020(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020 ; 00510188
+        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020(CMotionController * this_ptr)
     MOV dword ptr [EBP + 0x76],EAX      ; 0051018d
     ADD ESP,0x4                         ; 00510190
     MOV EAX,dword ptr [EBP + 0x76]      ; 00510193
@@ -914,8 +914,8 @@ section .text
         ;   Label: LAB_0051049f
     PUSH EAX                            ; 005104a5
     PUSH EBX                            ; 005104a6
-    CALL core_charactr.cpp_FUN_0042d750 ; 005104a7
-        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750 ; 005104a7
+        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 005104ac
     LEA ESI,[EBX + 0x158]               ; 005104af
         ;   Label: LAB_005104af

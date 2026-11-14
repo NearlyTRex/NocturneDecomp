@@ -21,13 +21,13 @@ void __cdecl mmxOptimizedMemcpy(void *dest_buffer,void *src_buffer,int byte_coun
 // Address: 0042c3e0
 void __cdecl basicIndexedTo16Bit(void *output_buffer,void *input_buffer,int pixel_count);
 
-// Original: cockpit_ckptutil.c_FUN_0042c410
+// Original: cockpit_ckptutil.c_getColorConversionFunction_FUN_0042c410
 // Address: 0042c410
-code * FUN_0042c410(void);
+code * __cdecl getColorConversionFunction(void);
 
-// Original: cockpit_ckptutil.c_FUN_0042c520
+// Original: cockpit_ckptutil.c_readBitmapFile_FUN_0042c520
 // Address: 0042c520
-void * __cdecl FUN_0042c520(char *filename,void *buffer,int size);
+void * __cdecl readBitmapFile(char *filename,void *buffer,int size);
 
 // Original: cockpit_ckptutil.c_applyActPalette_FUN_0042c670
 // Address: 0042c670
@@ -109,9 +109,9 @@ void __cdecl rotateCircularBitmap(void *bitmap_data,int width,int height,int num
 // Address: 0042de30
 void __cdecl mirrorBitmapHorizontally(uchar *bitmap_data,int width,int height,int bytes_per_pixel);
 
-// Original: cockpit_ckptutil.c_FUN_0042dec0
+// Original: cockpit_ckptutil.c_loadEdgeListFile_FUN_0042dec0
 // Address: 0042dec0
-void FUN_0042dec0(char *param_1,int *param_2,int param_3);
+void __cdecl loadEdgeListFile(char *param_1,int *param_2,int param_3);
 
 // Original: cockpit_ckptutil.c_FUN_0042e130
 // Address: 0042e130

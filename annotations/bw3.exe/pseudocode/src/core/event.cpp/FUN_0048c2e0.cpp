@@ -29,6 +29,7 @@ int core_event_cpp_FUN_0048c2e0(CEventList *param_1,char *param_2)
   int iVar13;
   uint uVar14;
   CMotionList *pCVar15;
+  EWeatherType type;
   SMotion *pSVar16;
   uint uVar17;
   SIZE_T SVar18;
@@ -655,7 +656,8 @@ LAB_0048c367:
                 return 0;
               }
               if ((pCVar9 != 0x0FFFFFFF) && (local_170 != 0)) {
-                core_xform_cpp_FUN_00583940(local_2bc,local_1ac);
+                core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
+                          (local_2bc,local_1ac);
                 core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004319d0
                           (pCVar7,local_64,(int)pCVar9,0,local_2bc);
               }
@@ -1965,8 +1967,9 @@ LAB_0048c717:
                                                   }
                                                   local_16c = local_16c + local_c4;
                                                   if (local_170 != 0) {
-                                                    core_weather_cpp_FUN_0057c2e0
-                                                              (0x02D0C1A0,0x3dcccccd,1);
+                                                                                                        
+                                                  core_weather_cpp_CWeather_createLightningStrike_FUN_0057c2e0
+                                                            (0x02D0C1A0,0.1,1);
                                                   }
                                                   }
                                                   else {
@@ -3153,13 +3156,13 @@ LAB_0048c717:
                                                   }
                                                   iVar5 = _stricmp
                                                                     (local_1bbd + 1,&DAT_005bf180);
-                                                  uVar14 = 0;
+                                                  type = WEATHER_TYPE_NONE;
                                                   if (iVar5 != 0) {
                                                     iVar5 = _stricmp
                                                                       (local_1bbd + 1,&DAT_005bf185)
                                                     ;
                                                     if (iVar5 == 0) {
-                                                      uVar14 = 1;
+                                                      type = WEATHER_TYPE_RAIN;
                                                     }
                                                     else {
                                                       iVar5 = _stricmp
@@ -3171,12 +3174,13 @@ LAB_0048c717:
                                                                   );
                                                         return 0;
                                                       }
-                                                      uVar14 = 2;
+                                                      type = WEATHER_TYPE_SNOW;
                                                     }
                                                   }
                                                   if (local_170 != 0) {
-                                                    core_weather_cpp_FUN_0057d050
-                                                              (0x02D0C1A0,uVar14);
+                                                                                                        
+                                                  core_weather_cpp_CWeather_setWeatherType_FUN_0057d050
+                                                            (0x02D0C1A0,type);
                                                   }
                                                   }
                                                   else {

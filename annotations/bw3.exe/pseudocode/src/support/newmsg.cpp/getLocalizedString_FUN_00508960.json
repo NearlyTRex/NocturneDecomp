@@ -47,6 +47,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004bdfb0",
+      "from_addr": "004be458",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004bdfb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004bb100",
       "from_addr": "004bb15c",
       "name": "core_game.cpp_CGame_processCheatCodes_FUN_004bb100",
@@ -71,6 +77,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004bda10",
+      "from_addr": "004bdd04",
+      "name": "core_game.cpp_CGame_saveGame_FUN_004bda10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004b51e0",
       "from_addr": "004b524c",
       "name": "core_game.cpp_CGame_showCustomizableKeys_FUN_004b51e0",
@@ -83,21 +95,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004bda10",
-      "from_addr": "004bdd04",
-      "name": "core_game.cpp_FUN_004bda10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004bdfb0",
-      "from_addr": "004be458",
-      "name": "core_game.cpp_FUN_004bdfb0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004be8d0",
       "from_addr": "004be9d4",
       "name": "core_game.cpp_FUN_004be8d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004da880",
+      "from_addr": "004da96f",
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004da880",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -113,51 +119,39 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004da880",
-      "from_addr": "004da96f",
-      "name": "core_inv.cpp_FUN_004da880",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004e44e0",
       "from_addr": "004e45b1",
       "name": "core_main.c_initializeGameSystems_FUN_004e44e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004e85a0",
-      "from_addr": "004e8803",
-      "name": "core_menu.cpp_FUN_004e85a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004e8f80",
-      "from_addr": "004e905d",
-      "name": "core_menu.cpp_FUN_004e8f80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004e94f0",
-      "from_addr": "004e95bb",
-      "name": "core_menu.cpp_FUN_004e94f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004ea280",
-      "from_addr": "004ea329",
-      "name": "core_menu.cpp_FUN_004ea280",
+      "addr": "004e7dc0",
+      "from_addr": "004e7dec",
+      "name": "core_menu.cpp_calibrateGamepad_FUN_004e7dc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004eae80",
       "from_addr": "004eaecf",
-      "name": "core_menu.cpp_FUN_004eae80",
+      "name": "core_menu.cpp_configureCustomKeyBindings_FUN_004eae80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004e7dc0",
-      "from_addr": "004e7dec",
-      "name": "core_menu.cpp_calibrateGamepad_FUN_004e7dc0",
+      "addr": "004e8f80",
+      "from_addr": "004e905d",
+      "name": "core_menu.cpp_configureCustomKeys_FUN_004e8f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e85a0",
+      "from_addr": "004e8803",
+      "name": "core_menu.cpp_configureGraphicsOptions_FUN_004e85a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e94f0",
+      "from_addr": "004e95bb",
+      "name": "core_menu.cpp_configureSoundOptions_FUN_004e94f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -185,6 +179,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004ea280",
+      "from_addr": "004ea329",
+      "name": "core_menu.cpp_showOptionsScreen_FUN_004ea280",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004f5bc0",
       "from_addr": "004f5be7",
       "name": "core_mission.cpp_CDemonMission_load_FUN_004f5bc0",
@@ -199,7 +199,7 @@
     {
       "addr": "004f7590",
       "from_addr": "004f764b",
-      "name": "core_mission.cpp_FUN_004f7590",
+      "name": "core_mission.cpp_CDemonMission_startMission_FUN_004f7590",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -389,7 +389,7 @@
       {
         "call_addr": "004be458",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bdfb0",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004bdfb0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -400,7 +400,7 @@
       {
         "call_addr": "004be4c1",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bdfb0",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004bdfb0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

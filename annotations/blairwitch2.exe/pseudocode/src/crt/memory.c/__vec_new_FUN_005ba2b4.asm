@@ -8,7 +8,7 @@
 ;   cockpit_pkbitmap.cpp_parsePBGFile_FUN_00517280 at 00517359
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_00517670 at 005176bc
 ;   core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00472550 at 00472586
-;   shape_edittool.cpp_FUN_0047c0f0 at 0047c189
+;   shape_edittool.cpp_showMultiChoiceDialog_FUN_0047c0f0 at 0047c189
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005ba274

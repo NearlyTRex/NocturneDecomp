@@ -35,12 +35,12 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
 ;   core_actor.cpp_randomChance_FUN_0040cd00
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434c60
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
-;   core_charactr.cpp_FUN_0042d700
 ;   ... and 26 more
 ;
 ; *****************************************************************************
@@ -298,8 +298,8 @@ section .text
     PUSH ESI                            ; 004edbea
     ADD EAX,0x1fae8                     ; 004edbeb
     PUSH EAX                            ; 004edbf0
-    CALL core_inv.cpp_FUN_004f7690      ; 004edbf1
-        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004f7690 ; 004edbf1
+        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 004edbf6
     JMP 0x004ed92b                      ; 004edbf9
         ;   XREF to: 004ed92b (UNCONDITIONAL_JUMP)  ; LAB_004ed92b
@@ -1641,8 +1641,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004eec55
     MOVSD ES:EDI,ESI                    ; 004eec56
     MOVSD ES:EDI,ESI                    ; 004eec57
-    CALL core_charactr.cpp_FUN_0042d750 ; 004eec58
-        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750 ; 004eec58
+        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 004eec5d
     FLD float ptr [EBX + 0x2fe0]        ; 004eec60
     FADD float ptr [EBP + 0x18]         ; 004eec66

@@ -50,7 +50,7 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_004fcb00(CDemonMission *this
     core_mission_cpp_CDemonMission_load_FUN_004fb490(this_ptr,&DAT_01d1c630,0);
     iVar1 = core_mission_cpp_CDemonMission_createHeros_FUN_004fd0e0(this_ptr,&this_ptr_00->base);
     if (iVar1 == 0) goto LAB_004fcbce;
-    iVar1 = core_mission_cpp_FUN_004fce00(this_ptr);
+    iVar1 = core_mission_cpp_CDemonMission_startMission_FUN_004fce00(this_ptr);
     if (iVar1 == 0) goto LAB_004fcbce;
     if (bVar2) {
       wincore_wddvmem_cpp_swapBuffers_FUN_00589560();

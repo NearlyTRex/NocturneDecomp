@@ -29,9 +29,9 @@
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_processJoystickControls_FUN_004b97b0
+;   core_game.cpp_CGame_processKeyboardControls_FUN_004b9960
 ;   core_game.cpp_CGame_processMouseControls_FUN_004ba2e0
 ;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004ba490
-;   core_game.cpp_FUN_004b9960
 ;   core_game.cpp_FUN_004c07b0
 ;   core_main.c_FUN_004e4330
 ;   core_netgame.cpp_CNetGame_getMyControls_FUN_00507f10
@@ -73,8 +73,8 @@ section .text
     PUSH EAX                            ; 004b932f
         ;   Label: caseD_0
     PUSH ESI                            ; 004b9330
-    CALL core_game.cpp_FUN_004b9960     ; 004b9331
-        ;   XREF to: 004b9960 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004b9960(CGame * this_ptr, SPlayerInput * player_control)
+    CALL core_game.cpp_CGame_processKeyboardControls_FUN_004b9960 ; 004b9331
+        ;   XREF to: 004b9960 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processKeyboardControls_FUN_004b9960(CGame * this_ptr, SPlayerInput * player_control)
     ADD ESP,0x8                         ; 004b9336
         ;   Label: LAB_004b9336
     PUSH EDI                            ; 004b9339

@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_FUN_00480720(undefined4 param_1,float *param_2,undefined4 param_3)
+; void shape_edittool_cpp_FUN_00480720(CEditorTools *param_1,float *param_2,int param_3)
 ;
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d24f7
 ;
 ; Called Functions:
-;   shape_edittool.cpp_FUN_00480150
+;   shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00480150
 ;
 ; *****************************************************************************
 
@@ -79,8 +79,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004807ad
     MOVSD ES:EDI,ESI                    ; 004807ae
     MOVSD ES:EDI,ESI                    ; 004807af
-    CALL shape_edittool.cpp_FUN_00480150 ; 004807b0
-        ;   XREF to: 00480150 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00480150()
+    CALL shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00480150 ; 004807b0
+        ;   XREF to: 00480150 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00480150(CEditorTools * this_ptr, CVector3f * corner1, CVector3f * corner2, int color_value)
     ADD ESP,0x10                        ; 004807b5
     MOV ESP,EBP                         ; 004807b8
     POP EBP                             ; 004807ba

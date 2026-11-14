@@ -602,8 +602,8 @@
     ],
     "conv":"unknown",
     "instructions":374,
-    "method":"FUN_00408100",
-    "name":"core_actor.cpp_FUN_00408100",
+    "method":"rayCylinderIntersect",
+    "name":"core_actor.cpp_rayCylinderIntersect_FUN_00408100",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -3193,21 +3193,12 @@
     "calls":[
       "005632a3"
     ],
+    "cls":"CBoundingBox3D",
     "conv":"__cdecl",
     "instructions":98,
-    "method":"FUN_0041e100",
-    "name":"core_box.cpp_FUN_0041e100",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CBoundingBox3D",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"getBoundingBoxScreenSize",
+    "name":"core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041e100",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"float",
@@ -4477,10 +4468,10 @@
       "00436170",
       "0050f440"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":15,
-    "method":"FUN_00434e80",
-    "name":"cockpit_ckptutil.c_FUN_00434e80",
+    "method":"getColorConversionFunction",
+    "name":"cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -8485,14 +8476,14 @@
       "004b30f0",
       "004e4330"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":21,
-    "method":"FUN_0047b580",
-    "name":"shape_edittool.cpp_FUN_0047b580",
+    "method":"initEditorFontMetrics",
+    "name":"shape_edittool.cpp_initEditorFontMetrics_FUN_0047b580",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -8670,14 +8661,15 @@
       "004f3ab0",
       "004f3ad0"
     ],
-    "conv":"unknown",
+    "cls":"CEditorTools",
+    "conv":"__cdecl",
     "instructions":592,
-    "method":"FUN_0047fa80",
-    "name":"shape_edittool.cpp_FUN_0047fa80",
-    "receiver":false,
+    "method":"paintCurrentWindow",
+    "name":"shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -8740,19 +8732,12 @@
       "005a28c0",
       "005a3120"
     ],
+    "cls":"CEditorTools",
     "conv":"__cdecl",
     "instructions":168,
-    "method":"FUN_00480f00",
-    "name":"shape_edittool.cpp_FUN_00480f00",
+    "method":"draw3DAxisLabels",
+    "name":"shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00480f00",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CEditorTools",
-          "ptr":1
-        }
-      },
       {
         "name":"scale_factor",
         "type":{
@@ -8770,7 +8755,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -8785,14 +8770,32 @@
       "00407b30",
       "004e5540"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":108,
-    "method":"FUN_00481200",
-    "name":"shape_edittool.cpp_FUN_00481200",
+    "method":"draw3DInterpolatedLine",
+    "name":"shape_edittool.cpp_draw3DInterpolatedLine_FUN_00481200",
+    "params":[
+      {
+        "name":"start_point",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"end_point",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -12516,14 +12519,15 @@
       "00432060",
       "00576250"
     ],
-    "conv":"unknown",
+    "cls":"CHero",
+    "conv":"__cdecl",
     "instructions":231,
-    "method":"FUN_004d3500",
-    "name":"core_hero.cpp_FUN_004d3500",
-    "receiver":false,
+    "method":"tryPushNearbyBox",
+    "name":"core_hero.cpp_CHero_tryPushNearbyBox_FUN_004d3500",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/hero.cpp",
@@ -12803,19 +12807,12 @@
       "005a3260",
       "005a3d00"
     ],
+    "cls":"CInventory",
     "conv":"__cdecl",
     "instructions":1377,
-    "method":"FUN_004da880",
-    "name":"core_inv.cpp_FUN_004da880",
+    "method":"addItem",
+    "name":"core_inv.cpp_CInventory_addItem_FUN_004da880",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CInventory",
-          "ptr":1
-        }
-      },
       {
         "name":"item_actor",
         "type":{
@@ -12833,7 +12830,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"int",
@@ -13443,8 +13440,8 @@
     ],
     "conv":"__cdecl",
     "instructions":357,
-    "method":"FUN_004e8f80",
-    "name":"core_menu.cpp_FUN_004e8f80",
+    "method":"configureCustomKeys",
+    "name":"core_menu.cpp_configureCustomKeys_FUN_004e8f80",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -13482,8 +13479,8 @@
     ],
     "conv":"__cdecl",
     "instructions":146,
-    "method":"FUN_004ea280",
-    "name":"core_menu.cpp_FUN_004ea280",
+    "method":"showOptionsScreen",
+    "name":"core_menu.cpp_showOptionsScreen_FUN_004ea280",
     "params":[
       {
         "name":"initialize_systems",
@@ -13532,14 +13529,14 @@
       "0057a8a0",
       "005a28c0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":1761,
-    "method":"FUN_004eae80",
-    "name":"core_menu.cpp_FUN_004eae80",
+    "method":"configureCustomKeyBindings",
+    "name":"core_menu.cpp_configureCustomKeyBindings_FUN_004eae80",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/menu.cpp",
@@ -14274,19 +14271,12 @@
     "calls":[
       "005a3de6"
     ],
+    "cls":"CMorphModel",
     "conv":"__cdecl",
     "instructions":7,
-    "method":"FUN_004fb180",
-    "name":"core_morph.cpp_FUN_004fb180",
+    "method":"arrdtor2",
+    "name":"core_morph.cpp_CMorphModel_arrdtor2_FUN_004fb180",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CMorphModel",
-          "ptr":1
-        }
-      },
       {
         "name":"flags",
         "type":{
@@ -14296,7 +14286,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"class",
       "name":"CMorphModel",
@@ -21140,15 +21130,16 @@
     "calls":[
       "0057d050"
     ],
-    "conv":"unknown",
+    "cls":"CWeather",
+    "conv":"__cdecl",
     "instructions":10,
-    "method":"FUN_0057bd80",
-    "name":"core_weather.cpp_FUN_0057bd80",
-    "receiver":false,
+    "method":"ctor",
+    "name":"core_weather.cpp_CWeather_ctor_FUN_0057bd80",
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CWeather",
+      "ptr":1
     },
     "tu":"core/weather.cpp",
     "variadic":false
@@ -21571,8 +21562,8 @@
     ],
     "conv":"__cdecl",
     "instructions":110,
-    "method":"FUN_00583800",
-    "name":"core_xform.cpp_FUN_00583800",
+    "method":"buildMatrixFromEulerAndPosition",
+    "name":"core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00583800",
     "params":[
       {
         "name":"output_matrix",

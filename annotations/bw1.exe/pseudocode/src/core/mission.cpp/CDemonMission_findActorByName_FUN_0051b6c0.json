@@ -22,13 +22,19 @@
     {
       "addr": "004d6990",
       "from_addr": "004d6fc9",
-      "name": "core_game.cpp_FUN_004d6990",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004d6990",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004ed2b0",
       "from_addr": "004ed386",
       "name": "core_hiram.cpp_CHiram_process_FUN_004ed2b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051c240",
+      "from_addr": "0051c2e0",
+      "name": "core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_0051c240",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -41,12 +47,6 @@
       "addr": "0051afa0",
       "from_addr": "0051b09f",
       "name": "core_mission.cpp_CDemonMission_loadActor_FUN_0051afa0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0051c240",
-      "from_addr": "0051c2e0",
-      "name": "core_mission.cpp_FUN_0051c240",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -88,7 +88,7 @@
       {
         "call_addr": "004d6fc9",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d6990",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004d6990",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -121,7 +121,7 @@
       {
         "call_addr": "0051c2e0",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_0051c240",
+        "caller": "core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_0051c240",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

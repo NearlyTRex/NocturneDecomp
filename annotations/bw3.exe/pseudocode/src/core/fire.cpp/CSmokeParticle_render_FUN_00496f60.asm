@@ -63,8 +63,8 @@
 ;   engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
 ;   engine_drender.cpp_pop_FUN_0046d080
-;   engine_special.cpp_FUN_005632a3
-;   engine_special.cpp_FUN_0056356c
+;   engine_special.cpp_transformAndProjectPoint_FUN_005632a3
+;   engine_special.cpp_transformPoint_FUN_0056356c
 ;
 ; *****************************************************************************
 
@@ -93,8 +93,8 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 00496f9c
     PUSH EAX                            ; 00496fa0
     PUSH ESI                            ; 00496fa1
-    CALL engine_special.cpp_FUN_0056356c ; 00496fa2
-        ;   XREF to: 0056356c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0056356c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformPoint_FUN_0056356c ; 00496fa2
+        ;   XREF to: 0056356c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformPoint_FUN_0056356c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 00496fa7
     PUSH ESI                            ; 00496faa
     MOV EDX,dword ptr [0x005f2afc]      ; 00496fab | DAT_005f2afc
@@ -177,8 +177,8 @@ section .text
     PUSH EAX                            ; 004970a2
     MOV EAX,dword ptr [EDX]             ; 004970a3 | DAT_01bdd7e4
     PUSH EAX                            ; 004970a5
-    CALL engine_special.cpp_FUN_005632a3 ; 004970a6
-        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005632a3 ; 004970a6
+        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004970ab
     XOR EBP,EBP                         ; 004970ae
     MOV EAX,dword ptr [ESP + 0x5c]      ; 004970b0
@@ -203,8 +203,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 004970f5 | DAT_01bdd7e4
     ADD EAX,0x30                        ; 004970f7
     PUSH EAX                            ; 004970fa
-    CALL engine_special.cpp_FUN_005632a3 ; 004970fb
-        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005632a3 ; 004970fb
+        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 00497100
     MOV EAX,dword ptr [ESP + 0x5c]      ; 00497103
     MOV dword ptr [ESP + 0x20],EBP      ; 00497107
@@ -227,8 +227,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 00497148 | DAT_01bdd7e4
     ADD EAX,0x60                        ; 0049714a
     PUSH EAX                            ; 0049714d
-    CALL engine_special.cpp_FUN_005632a3 ; 0049714e
-        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005632a3 ; 0049714e
+        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 00497153
     MOV EAX,dword ptr [ESP + 0x54]      ; 00497156
     LEA EBX,[ESP + 0x24]                ; 0049715a
@@ -252,8 +252,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0049719f | DAT_01bdd7e4
     ADD EAX,0x90                        ; 004971a1
     PUSH EAX                            ; 004971a6
-    CALL engine_special.cpp_FUN_005632a3 ; 004971a7
-        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005632a3 ; 004971a7
+        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
     MOV ECX,0x80000                     ; 004971ac
     MOV EBX,0xf80000                    ; 004971b1
     ADD ESP,0x8                         ; 004971b6

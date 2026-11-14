@@ -636,7 +636,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004bb100(CGame *this_ptr)
           } while (cVar3 != '\0');
           core_sound_cpp_CSound_playSound_FUN_005609b0
                     (0x02CF5680,(void *)0x0,"cheat-1.wav");
-          core_inv_cpp_FUN_004da880
+          core_inv_cpp_CInventory_addItem_FUN_004da880
                     ((CInventory *)(*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x206e8),this_ptr_00,1
                     );
           fVar17 = 5.0;
@@ -1353,7 +1353,7 @@ LAB_004bc479:
       }
       if (iVar5 == iStack_108) {
         DAT_01d22c70 = 0;
-        core_weather_cpp_FUN_0057d050(0x02D0C1A0,1);
+        core_weather_cpp_CWeather_setWeatherType_FUN_0057d050(0x02D0C1A0,WEATHER_TYPE_RAIN);
       }
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c33d4);
       iVar5 = 0;
@@ -1381,7 +1381,7 @@ LAB_004bc479:
       }
       if (iVar5 == iStack_104) {
         DAT_01d22c70 = 0;
-        core_weather_cpp_FUN_0057d050(0x02D0C1A0,2);
+        core_weather_cpp_CWeather_setWeatherType_FUN_0057d050(0x02D0C1A0,WEATHER_TYPE_SNOW);
       }
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c340b);
       iStack_fc = 0;

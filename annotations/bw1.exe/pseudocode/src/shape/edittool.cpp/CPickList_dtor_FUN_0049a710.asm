@@ -10,9 +10,9 @@
 ; XREF[9]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004d0172
 ;   core_game.cpp_FUN_004d7250 at 004d76ac
-;   core_menu.cpp_FUN_0050ba70 at 0050c92d
-;   core_menu.cpp_FUN_0050d640 at 0050e6ce
-;   core_mission.cpp_FUN_0051c240 at 0051c3a8
+;   core_menu.cpp_configureCustomKeyBindings_FUN_0050d640 at 0050e6ce
+;   core_menu.cpp_configureSoundOptions_FUN_0050ba70 at 0050c92d
+;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_0051c240 at 0051c3a8
 ;   core_sound.cpp_CSound_selectReverbPreset_FUN_0057db60 at 0057dbcd
 ;   engine_pod.cpp_FUN_0053bfc0 at 0053c1f6
 ;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00495180 at 0049546e

@@ -55,7 +55,7 @@
 // FUNCTION PROTOTYPES - Range 0x520000
 // =============================================================================
 
-SMRGLHeaderExtended * __cdecl engine_model_c_FUN_00520150(char *filename,int model_size);
+SMRGLHeaderExtended * __cdecl engine_model_c_loadModelChunk_FUN_00520150(char *filename,int model_size);
 void __cdecl core_moloch_cpp_staticInit_FUN_00520290(void);
 CMoloch * __cdecl core_moloch_cpp_factoryFuncMoloch_FUN_005202c0(void);
 CDemonActorType * __cdecl core_moloch_cpp_CMoloch_getActorType_FUN_005202e0(CMoloch *this_ptr);
@@ -121,7 +121,7 @@ void __cdecl core_morph_cpp_CMorph_getReady_FUN_00523310(CMorph *this_ptr);
 void __cdecl core_morph_cpp_CMorph_render_FUN_005237e0(CMorph *this_ptr,float morph_t);
 CBoundingBox3D * __cdecl core_box_cpp_CBoundingBox3D_ctor_FUN_00523860(CBoundingBox3D *this_ptr);
 CBoundingBox3D * __cdecl core_box_cpp_CBoundingBox3D_dtor_FUN_00523870(CBoundingBox3D *this_ptr,uint flags);
-CMorphModel * __cdecl core_morph_cpp_FUN_00523880(CMorphModel *this_ptr,uint flags);
+CMorphModel * __cdecl core_morph_cpp_CMorphModel_arrdtor2_FUN_00523880(CMorphModel *this_ptr,uint flags);
 undefined4 * core_morph_cpp_FUN_005238c0(undefined4 *param_1);
 undefined4 core_morph_cpp_FUN_005238f0(undefined4 param_1);
 void core_morph_cpp_FUN_00523910(undefined4 *param_1);
@@ -151,12 +151,12 @@ void __cdecl core_motion_cpp_CMotionController_clearTweenState_FUN_00524b70(CMot
 int __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00524ba0(CMotionController *this_ptr,int *inout_motion_index,float *inout_frame_number,float delta_time,float scale_factor);
 int __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_00524d70(CMotionController *this_ptr,int motion_index,float current_frame,float *inout_delta_time,SMotionTransition *out_transition);
 void core_motion_cpp_FUN_00524f40(int *param_1,int param_2,float param_3,float *param_4);
-float __cdecl core_motion_cpp_FUN_00525020(CMotionController *this_ptr);
+float __cdecl core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00525020(CMotionController *this_ptr);
 float __cdecl core_motion_cpp_CMotionController_markerPositionToFrame_FUN_00525110(CMotionController *this_ptr,int motion_index,float marker_position);
 void __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_00525240(CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1,int *out_frame2,float *out_blend_weight);
 void __cdecl core_motion_cpp_CMotionController_load_FUN_00525380(CMotionController *this_ptr,_FILE *file_handle);
 void __cdecl core_motion_cpp_CMotionController_save_FUN_00525420(CMotionController *this_ptr,_FILE *file_handle,char *indent_prefix);
-void __cdecl core_motion_cpp_FUN_005254b0(CMotionController *this_ptr,CDemonActor *actor);
+void __cdecl core_motion_cpp_CMotionController_render_FUN_005254b0(CMotionController *this_ptr,CDemonActor *actor);
 void __cdecl sound_mp3_cpp_calculateMpegFrame_FUN_00525840(SMpegFrame *frame);
 void sound_mp3_cpp_FUN_00525ab0(int *param_1,_FILE *param_2,ulong param_3,int param_4);
 uint __cdecl sound_mp3_cpp_CFileBitStream_readBit_FUN_00525be0(CFileBitStream *this_ptr);

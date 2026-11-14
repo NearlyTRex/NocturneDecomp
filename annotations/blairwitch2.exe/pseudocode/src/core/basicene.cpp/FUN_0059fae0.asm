@@ -30,7 +30,7 @@
 ;   core_xform.cpp_FUN_00592720
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_2d.c_drawText_FUN_00401fe0
-;   engine_special.cpp_FUN_0055d723
+;   engine_special.cpp_transformAndProjectPoint_FUN_0055d723
 ;
 ; *****************************************************************************
 
@@ -95,8 +95,8 @@ section .text
     PUSH EAX                            ; 0059fb73
     MOV EAX,dword ptr [ESI]             ; 0059fb74 | DAT_01ba5c50
     PUSH EAX                            ; 0059fb76
-    CALL engine_special.cpp_FUN_0055d723 ; 0059fb77
-        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 0059fb77
+        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     MOV EBX,dword ptr [0x0060b280]      ; 0059fb7c | DAT_0060b280
     MOV EBX,dword ptr [EBX]             ; 0059fb82 | DAT_01ba5c50
     MOV AH,byte ptr [EBX + 0x13]        ; 0059fb84

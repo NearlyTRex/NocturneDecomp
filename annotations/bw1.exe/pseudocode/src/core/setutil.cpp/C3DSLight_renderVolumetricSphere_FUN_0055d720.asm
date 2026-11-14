@@ -25,7 +25,7 @@
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00483dd0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00483d80
-;   engine_special.cpp_FUN_00580173
+;   engine_special.cpp_transformAndProjectPoint_FUN_00580173
 ;
 ; *****************************************************************************
 
@@ -113,8 +113,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0055d818
     ADD EAX,ESI                         ; 0055d81a
     PUSH EAX                            ; 0055d81c
-    CALL engine_special.cpp_FUN_00580173 ; 0055d81d
-        ;   XREF to: 00580173 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_00580173(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_00580173 ; 0055d81d
+        ;   XREF to: 00580173 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_00580173(SProjectedVertex * output, CVector3i * input)
     MOV EDX,dword ptr [0x00612560]      ; 0055d822 | DAT_00612560
     MOV EAX,dword ptr [EDX]             ; 0055d828
     MOV dword ptr [ESI + EAX*0x1 + 0x18],0x800000 ; 0055d82a

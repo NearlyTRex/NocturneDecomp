@@ -30,7 +30,7 @@ double sound_snddx_cpp_FUN_00556f80(uint param_1,int param_2)
     piVar1 = *(int **)(iVar2 * 0x24 + 0x264ac10);
     error_code = (**(code **)(*piVar1 + 0x10))(piVar1);
     if (error_code != 0) {
-      sound_snddx_cpp_FUN_00554ad0(error_code);
+      sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(error_code);
       _sprintf((char *)apcStack_1bc,"DirectSux: Unable to %s.  (%s)");
       sound_sndmain_cpp_logSoundError_FUN_005549c0((char *)apcStack_1bc);
       return -1.0;

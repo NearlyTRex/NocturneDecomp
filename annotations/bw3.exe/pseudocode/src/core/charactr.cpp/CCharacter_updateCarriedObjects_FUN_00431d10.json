@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 216,
-    "complexity_score": 402,
+    "complexity_score": 403,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 147,
+    "pseudocode_lines": 148,
     "suspect_count": 23,
     "suspect_types": [
       "pointer_cast",
@@ -16,7 +16,7 @@
       "stack_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 363
+    "total_lines": 364
   },
   "cross_references": [
     {
@@ -48,7 +48,7 @@
     {
       "addr": "00583940",
       "is_variadic": false,
-      "name": "core_xform.cpp_FUN_00583940"
+      "name": "core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940"
     },
     {
       "addr": "00584450",
@@ -463,7 +463,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 115,
+      "line": 116,
       "match": "in_stack_fffffd38",
       "severity": "moderate",
       "text": "in_stack_fffffd38 = (CMatrix3x4f *)0x431e45;",
@@ -471,7 +471,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 121,
+      "line": 122,
       "match": "(CMatrix3x4f *)((int)pCVar7",
       "severity": "moderate",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar10 * -2 + 1) * 4);",
@@ -519,7 +519,7 @@
     },
     {
       "description": "Pointer value `pCVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 121,
+      "line": 122,
       "match": "(int)pCVar7",
       "severity": "moderate",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar10 * -2 + 1) * 4);",
@@ -567,7 +567,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 119,
+      "line": 120,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",

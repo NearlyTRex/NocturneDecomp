@@ -25,8 +25,8 @@
 ;   core_manpuz.cpp_CMansionPuzzleCircle_getPanelColor_FUN_005056f0
 ;   core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_005062a0
 ;   core_manpuz.cpp_FUN_00504ee0
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
 ;   core_xform.cpp_FUN_005b5080
-;   core_xform.cpp_FUN_005b5760
 ;   core_xform.cpp_FUN_005b6270
 ;   core_xform.cpp_matrixToEulerAngles_FUN_005b5930
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005b5200
@@ -144,8 +144,8 @@ section .text
     PUSH EAX                            ; 00503df7
     LEA EAX,[EBP + 0xfffffee2]          ; 00503df8
     PUSH EAX                            ; 00503dfe
-    CALL core_xform.cpp_FUN_005b5760    ; 00503dff
-        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760 ; 00503dff
+        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     MOV EAX,dword ptr [EBP + 0x92]      ; 00503e04
     ADD ESP,0xc                         ; 00503e0a
     ADD EAX,0x2d4                       ; 00503e0d
@@ -251,8 +251,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00503f5d
     MOVSD ES:EDI,ESI                    ; 00503f5e
     MOVSD ES:EDI,ESI                    ; 00503f5f
-    CALL core_xform.cpp_FUN_005b5760    ; 00503f60
-        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760 ; 00503f60
+        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 00503f65
     LEA EAX,[EBP + 0xfffffe82]          ; 00503f68
     PUSH EAX                            ; 00503f6e

@@ -57,13 +57,13 @@ void __cdecl clearMouseClicks(void);
 // Address: 005b2750
 void __cdecl setCursorPosition(int x,int y);
 
-// Original: wincore_winrun.cpp_FUN_005b27d0
+// Original: wincore_winrun.cpp_mainWindowProc_FUN_005b27d0
 // Address: 005b27d0
-LRESULT __stdcall FUN_005b27d0(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam);
+LRESULT __stdcall mainWindowProc(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam);
 
-// Original: wincore_winrun.cpp_FUN_005b2cf0
+// Original: wincore_winrun.cpp_processWindowMessages_FUN_005b2cf0
 // Address: 005b2cf0
-void __cdecl FUN_005b2cf0(void);
+void __cdecl processWindowMessages(void);
 
 // Original: wincore_winrun.cpp_FUN_005b2d90
 // Address: 005b2d90

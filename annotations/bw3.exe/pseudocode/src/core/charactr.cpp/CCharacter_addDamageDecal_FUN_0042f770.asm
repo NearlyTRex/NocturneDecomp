@@ -60,10 +60,10 @@
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250
+;   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00583800
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
 ;   core_xform.cpp_buildRotationX_FUN_00584f70
 ;   core_xform.cpp_buildRotationY_FUN_00584ff0
-;   core_xform.cpp_FUN_00583800
-;   core_xform.cpp_FUN_00583940
 ;   core_xform.cpp_inverse_FUN_00584560
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005833e0
 ;
@@ -221,8 +221,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0042f9cb
     MOVSD ES:EDI,ESI                    ; 0042f9cc
     MOVSD ES:EDI,ESI                    ; 0042f9cd
-    CALL core_xform.cpp_FUN_00583940    ; 0042f9ce
-        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583940()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 ; 0042f9ce
+        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940()
     ADD ESP,0xc                         ; 0042f9d3
     LEA EAX,[ESP + 0x60]                ; 0042f9d6
     PUSH EAX                            ; 0042f9da
@@ -288,8 +288,8 @@ section .text
     LEA ESI,[ESP + 0x218]               ; 0042facc
     PUSH EAX                            ; 0042fad3
     MOVSD.REP ES:EDI,ESI                ; 0042fad4
-    CALL core_xform.cpp_FUN_00583800    ; 0042fad6
-        ;   XREF to: 00583800 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_00583800(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00583800 ; 0042fad6
+        ;   XREF to: 00583800 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00583800(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0042fadb
     MOV EDX,dword ptr [ESP + 0x300]     ; 0042fade
     MOV EDX,dword ptr [EDX + 0x4]       ; 0042fae5

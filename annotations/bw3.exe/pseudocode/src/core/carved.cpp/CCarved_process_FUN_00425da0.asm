@@ -38,9 +38,9 @@
 ;   core_carved.cpp_FUN_00429090
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042ccf0
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
-;   core_charactr.cpp_CCharacter_processDamageDecals_FUN_0042fc90
 ;   ... and 30 more
 ;
 ; *****************************************************************************
@@ -1173,8 +1173,8 @@ section .text
     LEA EAX,[EBP + 0xfffffdba]          ; 00426b12
     PUSH EAX                            ; 00426b18
     PUSH EBX                            ; 00426b19
-    CALL core_charactr.cpp_FUN_0042c230 ; 00426b1a
-        ;   XREF to: 0042c230 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042c230(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230 ; 00426b1a
+        ;   XREF to: 0042c230 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 00426b1f
     PUSH EBX                            ; 00426b22
         ;   Label: LAB_00426b22
@@ -2146,8 +2146,8 @@ section .text
     MOV dword ptr [EBP + 0x56],EAX      ; 004276d1
     LEA EAX,[EBX + 0x158]               ; 004276d4
     PUSH EAX                            ; 004276da
-    CALL core_motion.cpp_FUN_004fc930   ; 004276db
-        ;   XREF to: 004fc930 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_004fc930(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930 ; 004276db
+        ;   XREF to: 004fc930 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930(CMotionController * this_ptr)
     FLD1                                ; 004276e0
     MOV dword ptr [EBP + 0x76],EAX      ; 004276e2
     ADD ESP,0x4                         ; 004276e5

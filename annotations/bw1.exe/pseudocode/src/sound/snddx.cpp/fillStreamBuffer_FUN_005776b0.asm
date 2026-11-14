@@ -28,7 +28,7 @@
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005bfb40
-;   sound_snddx.cpp_FUN_00577500
+;   sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500
 ;   sound_sndmain.cpp_logSoundError_FUN_005773f0
 ;   sound_sndmain.cpp_pollAndMixSfx_FUN_00576c20
 ;
@@ -158,8 +158,8 @@ section .text
     RET                                 ; 005777fc
     PUSH EAX                            ; 005777fd
         ;   Label: LAB_005777fd
-    CALL sound_snddx.cpp_FUN_00577500   ; 005777fe
-        ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00577500(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500 ; 005777fe
+        ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500(uint error_code)
     ADD ESP,0x4                         ; 00577803
     PUSH EAX                            ; 00577806
     PUSH 0x5f4c54                       ; 00577807 | = "Lock secondary buffer"
@@ -183,8 +183,8 @@ section .text
     RET                                 ; 00577835
     PUSH EAX                            ; 00577836
         ;   Label: LAB_00577836
-    CALL sound_snddx.cpp_FUN_00577500   ; 00577837
-        ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00577500(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500 ; 00577837
+        ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500(uint error_code)
     ADD ESP,0x4                         ; 0057783c
     PUSH EAX                            ; 0057783f
     PUSH 0x5f4c6a                       ; 00577840 | = "Unlock secondary buffer"

@@ -26,7 +26,7 @@
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_load_FUN_0043e6d0
-;   core_cloth.cpp_FUN_0043eea0
+;   core_cloth.cpp_CCloth_setup_FUN_0043eea0
 ;   core_hero.cpp_CHero_setup_FUN_004eaa10
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_00524a00
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_005240c0
@@ -70,8 +70,8 @@ section .text
     LEA EAX,[ESI + 0x20]                ; 004c63d6
     PUSH EAX                            ; 004c63d9
     PUSH EBX                            ; 004c63da
-    CALL core_cloth.cpp_FUN_0043eea0    ; 004c63db
-        ;   XREF to: 0043eea0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043eea0(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
+    CALL core_cloth.cpp_CCloth_setup_FUN_0043eea0 ; 004c63db
+        ;   XREF to: 0043eea0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_setup_FUN_0043eea0(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
     ADD ESP,0x10                        ; 004c63e0
     PUSH EDI                            ; 004c63e3
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30 ; 004c63e4

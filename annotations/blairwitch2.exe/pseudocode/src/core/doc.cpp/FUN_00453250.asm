@@ -74,10 +74,10 @@
 ;   core_doc.cpp_FUN_00458320
 ;   core_doc.cpp_FUN_004583a0
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004c9850
+;   core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004cff90
+;   core_hero.cpp_CHero_executeObjectPickup_FUN_004cff50
 ;   core_hero.cpp_CHero_toggleLeverNow_FUN_004cf440
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004cf230
-;   core_hero.cpp_FUN_004cff50
-;   core_hero.cpp_FUN_004cff90
 ;   core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0
 ;   core_motion.cpp_CMotionController_advance_FUN_005030c0
 ;   ... and 5 more
@@ -332,8 +332,8 @@ section .text
     PUSH 0x1                            ; 0045352c
         ;   Label: LAB_0045352c
     PUSH EBX                            ; 0045352e
-    CALL core_hero.cpp_FUN_004cff50     ; 0045352f
-        ;   XREF to: 004cff50 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004cff50(CHero * this_ptr, int hand_index)
+    CALL core_hero.cpp_CHero_executeObjectPickup_FUN_004cff50 ; 0045352f
+        ;   XREF to: 004cff50 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_executeObjectPickup_FUN_004cff50(CHero * this_ptr, int hand_index)
     ADD ESP,0x8                         ; 00453534
     JMP 0x00453374                      ; 00453537
         ;   XREF to: 00453374 (UNCONDITIONAL_JUMP)  ; LAB_00453374
@@ -360,13 +360,13 @@ section .text
         ;   XREF to: 0045352c (CONDITIONAL_JUMP)  ; LAB_0045352c
     PUSH 0x1                            ; 00453585
     PUSH EBX                            ; 00453587
-    CALL core_hero.cpp_FUN_004cff50     ; 00453588
-        ;   XREF to: 004cff50 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004cff50(CHero * this_ptr, int hand_index)
+    CALL core_hero.cpp_CHero_executeObjectPickup_FUN_004cff50 ; 00453588
+        ;   XREF to: 004cff50 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_executeObjectPickup_FUN_004cff50(CHero * this_ptr, int hand_index)
     ADD ESP,0x8                         ; 0045358d
     PUSH 0x1                            ; 00453590
     PUSH EBX                            ; 00453592
-    CALL core_hero.cpp_FUN_004cff90     ; 00453593
-        ;   XREF to: 004cff90 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004cff90()
+    CALL core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004cff90 ; 00453593
+        ;   XREF to: 004cff90 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004cff90(CHero * this_ptr, int hand_index)
     ADD ESP,0x8                         ; 00453598
     PUSH 0x1                            ; 0045359b
     PUSH 0x5                            ; 0045359d
@@ -394,8 +394,8 @@ section .text
         ;   XREF to: 00453581 (CONDITIONAL_JUMP)  ; LAB_00453581
     PUSH 0x1                            ; 004535e9
     PUSH EBX                            ; 004535eb
-    CALL core_hero.cpp_FUN_004cff50     ; 004535ec
-        ;   XREF to: 004cff50 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004cff50(CHero * this_ptr, int hand_index)
+    CALL core_hero.cpp_CHero_executeObjectPickup_FUN_004cff50 ; 004535ec
+        ;   XREF to: 004cff50 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_executeObjectPickup_FUN_004cff50(CHero * this_ptr, int hand_index)
     ADD ESP,0x8                         ; 004535f1
     JMP 0x00453374                      ; 004535f4
         ;   XREF to: 00453374 (UNCONDITIONAL_JUMP)  ; LAB_00453374
@@ -416,8 +416,8 @@ section .text
     PUSH 0x1                            ; 00453622
         ;   Label: LAB_00453622
     PUSH EBX                            ; 00453624
-    CALL core_hero.cpp_FUN_004cff90     ; 00453625
-        ;   XREF to: 004cff90 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004cff90()
+    CALL core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004cff90 ; 00453625
+        ;   XREF to: 004cff90 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004cff90(CHero * this_ptr, int hand_index)
     MOV EDI,dword ptr [EBX + 0x256a4]   ; 0045362a
     ADD ESP,0x8                         ; 00453630
     CMP EDI,0x1                         ; 00453633

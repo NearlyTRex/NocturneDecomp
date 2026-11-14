@@ -36,7 +36,7 @@
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00
 ;   engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_00483050
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0
-;   engine_special.cpp_FUN_0058043c
+;   engine_special.cpp_transformPoint_FUN_0058043c
 ;
 ; *****************************************************************************
 
@@ -107,8 +107,8 @@ section .text
     PUSH EBX                            ; 004e594f
     PUSH EDI                            ; 004e5950 | DAT_00629014 | DAT_00629044
     ADD ESI,0xc                         ; 004e5951
-    CALL engine_special.cpp_FUN_0058043c ; 004e5954
-        ;   XREF to: 0058043c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0058043c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformPoint_FUN_0058043c ; 004e5954
+        ;   XREF to: 0058043c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformPoint_FUN_0058043c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004e5959
     ADD EDI,0x30                        ; 004e595c
     CMP ESI,EBP                         ; 004e595f

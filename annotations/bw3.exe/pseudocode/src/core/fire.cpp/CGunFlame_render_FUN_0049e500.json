@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1042,
-    "complexity_score": 1366,
+    "complexity_score": 1370,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 33,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 416,
+    "pseudocode_lines": 420,
     "suspect_count": 92,
     "suspect_types": [
       "pointer_cast",
@@ -17,7 +17,7 @@
       "unknown_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1458
+    "total_lines": 1462
   },
   "cross_references": [
     {
@@ -94,7 +94,7 @@
     {
       "addr": "005632a3",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_005632a3"
+      "name": "engine_special.cpp_transformAndProjectPoint_FUN_005632a3"
     }
   ],
   "globals": [
@@ -1508,23 +1508,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 275,
+      "line": 276,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_f8);",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_f8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 286,
+      "line": 288,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_134)",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_134);",
       "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 300,
+      "line": 301,
       "match": "._16_4_",
       "severity": "mild",
       "text": "local_a4._16_4_ = local_20 * _DAT_005c08b0 * (float)_DAT_005c08b8;",
@@ -1532,7 +1532,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 301,
+      "line": 302,
       "match": "._12_4_",
       "severity": "mild",
       "text": "local_a4._12_4_ = -local_194 * _DAT_005c08b0 * (float)_DAT_005c08b8;",
@@ -1540,7 +1540,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 302,
+      "line": 303,
       "match": "._20_4_",
       "severity": "mild",
       "text": "local_a4._20_4_ = 0.0;",
@@ -1548,7 +1548,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 303,
+      "line": 304,
       "match": "._12_4_",
       "severity": "mild",
       "text": "local_c8.x = (int)ROUND((float)local_a4._12_4_ * _DAT_005df8e4);",
@@ -1556,7 +1556,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 304,
+      "line": 305,
       "match": "._16_4_",
       "severity": "mild",
       "text": "local_c8.y = (int)ROUND((float)local_a4._16_4_ * _DAT_005df8e4);",
@@ -1564,7 +1564,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 306,
+      "line": 307,
       "match": "._12_4_",
       "severity": "mild",
       "text": "local_18 = (float)local_a4._12_4_;",
@@ -1572,15 +1572,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 307,
+      "line": 309,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_c8);",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_c8);",
       "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 308,
+      "line": 310,
       "match": "._12_4_",
       "severity": "mild",
       "text": "local_a4._12_4_ = local_194 * (float)_DAT_005c08c0 * (float)_DAT_005c08b8;",
@@ -1588,7 +1588,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 309,
+      "line": 311,
       "match": "._12_4_",
       "severity": "mild",
       "text": "local_74.x = (int)ROUND((float)local_a4._12_4_ * _DAT_005df8e4);",
@@ -1596,7 +1596,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 310,
+      "line": 312,
       "match": "._16_4_",
       "severity": "mild",
       "text": "local_74.y = (int)ROUND((float)local_a4._16_4_ * _DAT_005df8e4);",
@@ -1604,7 +1604,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 311,
+      "line": 313,
       "match": "._20_4_",
       "severity": "mild",
       "text": "local_74.z = (int)ROUND((float)local_a4._20_4_ * _DAT_005df8e4);",
@@ -1612,15 +1612,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 312,
+      "line": 315,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_74);",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_74);",
       "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 313,
+      "line": 316,
       "match": "._16_4_",
       "severity": "mild",
       "text": "local_a4._16_4_ = -local_20 * (float)_DAT_005c08c0 * (float)_DAT_005c08b8;",
@@ -1628,7 +1628,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 314,
+      "line": 317,
       "match": "._12_4_",
       "severity": "mild",
       "text": "local_11c.x = (int)ROUND((float)local_a4._12_4_ * _DAT_005df8e4);",
@@ -1636,7 +1636,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 315,
+      "line": 318,
       "match": "._16_4_",
       "severity": "mild",
       "text": "local_11c.y = (int)ROUND((float)local_a4._16_4_ * _DAT_005df8e4);",
@@ -1644,7 +1644,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 316,
+      "line": 319,
       "match": "._20_4_",
       "severity": "mild",
       "text": "local_11c.z = (int)ROUND((float)local_a4._20_4_ * _DAT_005df8e4);",
@@ -1652,15 +1652,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 317,
+      "line": 321,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_11c)",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_11c);",
       "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 319,
+      "line": 322,
       "match": "._12_4_",
       "severity": "mild",
       "text": "local_a4._12_4_ = local_18;",
@@ -1668,7 +1668,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 321,
+      "line": 324,
       "match": "._16_4_",
       "severity": "mild",
       "text": "local_14c.y = (int)ROUND((float)local_a4._16_4_ * _DAT_005df8e4);",
@@ -1676,7 +1676,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 322,
+      "line": 325,
       "match": "._20_4_",
       "severity": "mild",
       "text": "local_14c.z = (int)ROUND((float)local_a4._20_4_ * _DAT_005df8e4);",
@@ -1684,15 +1684,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 325,
+      "line": 329,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,input);",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,input);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 326,
+      "line": 330,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "pCVar8 = DAT_005f2afc;",
@@ -1700,7 +1700,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 327,
+      "line": 331,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "DAT_005f2afc->vertex_buffer_ptr->u = 0x20000;",
@@ -1708,7 +1708,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 389,
+      "line": 393,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "pCVar8 = DAT_005f2afc;",
@@ -1716,7 +1716,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 390,
+      "line": 394,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "DAT_005f2afc->vertex_buffer_ptr->r = local_2c;",
@@ -1724,7 +1724,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 416,
+      "line": 420,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046c510(DAT_005f2afc,&local_180);",
@@ -1732,7 +1732,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 417,
+      "line": 421,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);",

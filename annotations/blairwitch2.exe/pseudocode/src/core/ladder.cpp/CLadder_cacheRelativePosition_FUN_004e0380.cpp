@@ -32,8 +32,9 @@ void __cdecl core_ladder_cpp_CLadder_cacheRelativePosition_FUN_004e0380(CLadder 
   
   bVar4 = 0;
   if (this_ptr->master_actor != (CDemonActor *)0x0) {
-    core_xform_cpp_FUN_00591c10(&local_cc,&(this_ptr->base).location,&(this_ptr->base).orient);
-    core_xform_cpp_FUN_00591ad0
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
+              (&local_cc,&(this_ptr->base).location,&(this_ptr->base).orient);
+    core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0
               (&local_9c,&(this_ptr->master_actor->location).position,
                &(this_ptr->master_actor->orient).vec);
     core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(&local_cc,&local_9c,&local_6c);

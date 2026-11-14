@@ -15,7 +15,7 @@
 ;   core_fire.cpp_CFireball_process_FUN_00499350 at 004993b9
 ;   core_fire.cpp_CMuzzleFlash_init_FUN_0049a390 at 0049a3a4
 ;   core_firestff.cpp_CFirestaff_process_FUN_004a4dc0 at 004a5637
-;   core_flame.cpp_FUN_004a6dd0 at 004a6e0b
+;   core_flame.cpp_CFlame_updateGlobe_FUN_004a6dd0 at 004a6e0b
 ;   core_keyactor.cpp_CKeyActor_process_FUN_004de8b0 at 004de8da
 ;   core_lightsta.cpp_CLightStaff_process_FUN_004e2050 at 004e2252
 ;   ... and 2 more

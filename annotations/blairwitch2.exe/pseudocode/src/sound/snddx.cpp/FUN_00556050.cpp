@@ -64,7 +64,7 @@ int sound_snddx_cpp_FUN_00556050(uint param_1,int param_2,int param_3,int param_
     }
     return (*(int *)(param_2 + 0x264a604) + (iVar2 >> 8)) - uVar3;
   }
-  sound_snddx_cpp_FUN_00554ad0(uVar1);
+  sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(uVar1);
   _sprintf((char *)&piStack_1c8,"DirectSux: Unable to %s.  (%s)");
   sound_sndmain_cpp_logSoundError_FUN_005549c0((char *)&piStack_1c8);
   return 0;

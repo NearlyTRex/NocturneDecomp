@@ -453,13 +453,14 @@ LAB_005974b3:
             core_baal_cpp_FUN_00597be0(this_ptr,1);
           }
           else if ((fStack_24 <= 0x40A00000 + (float)_DAT_005d9669) ||
-                  (fStack_14 = core_motion_cpp_FUN_004fc930(&pCStack_1c->base),
-                  fStack_14 <= (float)_DAT_005d9671)) {
+                  (fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                                         (&pCStack_1c->base), fStack_14 <= (float)_DAT_005d9671)) {
             this_ptr_01 = pCStack_1c;
-            fStack_14 = core_motion_cpp_FUN_004fc930(&pCStack_1c->base);
+            fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                                  (&pCStack_1c->base);
             if ((1.0 < fStack_14) &&
-               (fStack_14 = core_motion_cpp_FUN_004fc930(&this_ptr_01->base),
-               fStack_14 < _DAT_005d9661)) {
+               (fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                                      (&this_ptr_01->base), fStack_14 < _DAT_005d9661)) {
               core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(&SStack_198);
               SStack_198.damage_amount = (this_ptr->base).attack_damage;
               SStack_198.attacker = (CDemonActor *)this_ptr;
@@ -565,7 +566,7 @@ switchD_005976af_caseD_6:
         pCStack_18->z = 0.0;
         pCStack_18->y = pCStack_18->z;
         pCStack_18->x = pCStack_18->y;
-        core_charactr_cpp_FUN_0042c230((CCharacter *)this_ptr,&CStack_6c);
+        core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230((CCharacter *)this_ptr,&CStack_6c);
       } while( true );
     }
   }

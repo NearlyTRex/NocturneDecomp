@@ -48,7 +48,8 @@ CMatrix3x4f * __stack2_esi core_weaver_cpp_CRobin_getCarryObjToBodyXForm_FUN_005
            aiStack_58[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
       aiStack_58[3] = 0xbda3d70a;
       aiStack_58[4] = 0;
-      core_xform_cpp_FUN_00591c10(&CStack_ec,aiStack_58 + 2,piVar6);
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
+                (&CStack_ec,aiStack_58 + 2,piVar6);
       core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
                 (&CStack_ec,pCStack_14 + *(int *)(pcStack_10 + 0x2618),&CStack_11c);
       pCVar3 = &CStack_11c;
@@ -67,7 +68,8 @@ CMatrix3x4f * __stack2_esi core_weaver_cpp_CRobin_getCarryObjToBodyXForm_FUN_005
            aiStack_58[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 10];
       aiStack_58[6] = 0;
       aiStack_58[5] = 0x3e4ccccd;
-      core_xform_cpp_FUN_00591c10(&CStack_8c,aiStack_58 + 5,piVar6);
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
+                (&CStack_8c,aiStack_58 + 5,piVar6);
       core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
                 (&CStack_8c,pCStack_14 + *(int *)(pcStack_10 + 0x2618),&CStack_bc);
       pCVar3 = &CStack_bc;

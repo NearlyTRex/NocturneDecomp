@@ -31,10 +31,10 @@
 ;   core_game.cpp_CGame_restoreDefaultControls_FUN_004b6e10
 ;   core_main.c_FUN_004e4500
 ;   crt_io.c__chmod_FUN_005b99e0
+;   engine_ini.cpp_CIniFile_ctor_FUN_004d8910
 ;   engine_ini.cpp_CIniFile_dtor_FUN_004d8940
 ;   engine_ini.cpp_CIniFile_getString_FUN_004d8a10
 ;   engine_ini.cpp_CIniFile_readIniHeader_FUN_004d89d0
-;   engine_ini.cpp_FUN_004d8910
 ;   engine_ini.cpp_FUN_004d8b20
 ;   sound_sndmain.cpp_readIni_FUN_00553680
 ;
@@ -61,8 +61,8 @@ section .text
     PUSH 0x617b50                       ; 004d8d86 | = ".\\system\\nocturne.ini"
     LEA EAX,[ESP + 0x10]                ; 004d8d8b
     PUSH EAX                            ; 004d8d8f
-    CALL engine_ini.cpp_FUN_004d8910    ; 004d8d90
-        ;   XREF to: 004d8910 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_FUN_004d8910(CIniFile * this_ptr, char * filename, char * section)
+    CALL engine_ini.cpp_CIniFile_ctor_FUN_004d8910 ; 004d8d90
+        ;   XREF to: 004d8910 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004d8910(CIniFile * this_ptr, char * filename, char * section)
     ADD ESP,0xc                         ; 004d8d95
     PUSH 0x617b78                       ; 004d8d98 | = "Graphics"
     LEA EAX,[ESP + 0xc]                 ; 004d8d9d

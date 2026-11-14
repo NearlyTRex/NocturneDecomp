@@ -14,7 +14,7 @@
 ;   core_main.c_FUN_004e45e0 at 004e45e9
 ;   core_menu.cpp_FUN_004eba50 at 004ebabd
 ;   core_menu.cpp_FUN_004ebf10 at 004ec9b8
-;   core_menu.cpp_FUN_004eed60 at 004efdd9
+;   core_menu.cpp_adjustMouseSensitivity_FUN_004eb7c0 at 004eb82d
 ;   ... and 17 more
 ;
 ; Referenced Globals:

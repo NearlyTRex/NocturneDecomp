@@ -26,8 +26,8 @@
 ; Called Functions:
 ;   core_level.cpp_CLevelLoader_update_FUN_004e1600
 ;   core_main.c_FUN_004e4500
+;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004fd280
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_004fb590
-;   core_mission.cpp_FUN_004fd280
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   engine_dosio.cpp_FUN_00460c70
 ;   support_newmsg.cpp_getLocalizedString_FUN_0050fe80
@@ -77,8 +77,8 @@ section .text
     ADD ESP,0x4                         ; 004fb4e8
     MOV EDX,dword ptr [ESP + 0x10]      ; 004fb4eb
     PUSH EDX                            ; 004fb4ef
-    CALL core_mission.cpp_FUN_004fd280  ; 004fb4f0
-        ;   XREF to: 004fd280 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_FUN_004fd280(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004fd280 ; 004fb4f0
+        ;   XREF to: 004fd280 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004fd280(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004fb4f5
     POP EBP                             ; 004fb4f8
     POP EDI                             ; 004fb4f9

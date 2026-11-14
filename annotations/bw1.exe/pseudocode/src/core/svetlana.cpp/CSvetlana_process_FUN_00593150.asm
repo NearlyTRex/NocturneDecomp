@@ -25,12 +25,12 @@
 ;   core_actor.cpp_FUN_00408bb0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_charactr.cpp_CCharacter_processSmoking_FUN_00434790
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
 ;   core_charactr.cpp_FUN_0042d700
-;   core_charactr.cpp_FUN_0042d750
 ;   core_charactr.cpp_FUN_00435320
 ;   core_cloth.cpp_CCloth_process_FUN_00440610
 ;   core_hero.cpp_CHero_toggleLeverNow_FUN_004eb7f0
@@ -535,8 +535,8 @@ section .text
     JNZ 0x00593649                      ; 005936ed
         ;   XREF to: 00593649 (CONDITIONAL_JUMP)  ; LAB_00593649
     PUSH EBX                            ; 005936f3
-    CALL core_hero.cpp_FUN_004eb660     ; 005936f4
-        ;   XREF to: 004eb660 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004eb660(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_tryPullLever_FUN_004eb660 ; 005936f4
+        ;   XREF to: 004eb660 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryPullLever_FUN_004eb660(CHero * this_ptr)
     ADD ESP,0x4                         ; 005936f9
     TEST EAX,EAX                        ; 005936fc
     JNZ 0x00593710                      ; 005936fe
@@ -682,8 +682,8 @@ section .text
     LEA EAX,[ESP + 0x44]                ; 00593877
     PUSH EAX                            ; 0059387b
     PUSH EBX                            ; 0059387c
-    CALL core_charactr.cpp_FUN_0042d750 ; 0059387d
-        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750 ; 0059387d
+        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 00593882
     LEA EAX,[EBX + 0x158]               ; 00593885
         ;   Label: LAB_00593885

@@ -238,7 +238,7 @@ LAB_0051f19d:
     CStack_1c.x = CStack_1c.x + fStack_70;
     CStack_1c.y = CStack_1c.y + fStack_6c;
     CStack_1c.z = CStack_1c.z + fStack_68;
-    core_charactr_cpp_FUN_00423a60((CCharacter *)this_ptr,pCVar17);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_00423a60((CCharacter *)this_ptr,pCVar17);
     goto LAB_0051ef62;
   }
   core_actor_cpp_FUN_00408de0(this_ptr,&pCVar7->location);

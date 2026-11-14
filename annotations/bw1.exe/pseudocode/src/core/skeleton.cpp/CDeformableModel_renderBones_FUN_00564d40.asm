@@ -15,7 +15,7 @@
 ;   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00563c40
 ;   core_xform.cpp_FUN_005b6270
 ;   engine_2d.c_drawText_FUN_00401fe0
-;   engine_special.cpp_FUN_00580173
+;   engine_special.cpp_transformAndProjectPoint_FUN_00580173
 ;
 ; *****************************************************************************
 
@@ -71,8 +71,8 @@ section .text
     MOV EAX,dword ptr [ESI]             ; 00564dc7
     ADD EAX,0xea5d0                     ; 00564dc9
     PUSH EAX                            ; 00564dce
-    CALL engine_special.cpp_FUN_00580173 ; 00564dcf
-        ;   XREF to: 00580173 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_00580173(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_00580173 ; 00564dcf
+        ;   XREF to: 00580173 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_00580173(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x00612560]                ; 00564dd4 | DAT_00612560
     MOV EAX,dword ptr [EAX]             ; 00564dd9
     ADD ESP,0x8                         ; 00564ddb

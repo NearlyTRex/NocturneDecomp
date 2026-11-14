@@ -55,14 +55,14 @@
 ;   undefined4 DAT_020ccff0
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408290
 ;   core_actor.cpp_FUN_00408cf0
 ;   core_actor.cpp_FUN_00408d30
 ;   core_actor.cpp_FUN_00408de0
 ;   core_actor.cpp_FUN_004090f0
+;   core_actor.cpp_rayCylinderIntersect_FUN_00408290
+;   core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041b660
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_0041a590
 ;   core_box.cpp_FUN_0041af70
-;   core_box.cpp_FUN_0041b660
 ;   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_0044f020
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
 ;   core_main.c_FUN_004e4500
@@ -171,8 +171,8 @@ section .text
     PUSH EAX                            ; 004094a6
     LEA EAX,[ESP + 0x20]                ; 004094a7
     PUSH EAX                            ; 004094ab
-    CALL core_box.cpp_FUN_0041b660      ; 004094ac
-        ;   XREF to: 0041b660 (UNCONDITIONAL_CALL)  ; int core_box.cpp_FUN_0041b660(CBoundingBox3D * this_ptr, CBoundingBox3D * other)
+    CALL core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041b660 ; 004094ac
+        ;   XREF to: 0041b660 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041b660(CBoundingBox3D * this_ptr, CBoundingBox3D * other)
     ADD ESP,0x8                         ; 004094b1
     TEST EAX,EAX                        ; 004094b4
     JZ 0x004093b9                       ; 004094b6
@@ -301,8 +301,8 @@ section .text
     PUSH EAX                            ; 00409646
     MOV ESI,dword ptr [EBP + 0x2c]      ; 00409647
     PUSH ESI                            ; 0040964a
-    CALL core_box.cpp_FUN_0041b660      ; 0040964b
-        ;   XREF to: 0041b660 (UNCONDITIONAL_CALL)  ; int core_box.cpp_FUN_0041b660(CBoundingBox3D * this_ptr, CBoundingBox3D * other)
+    CALL core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041b660 ; 0040964b
+        ;   XREF to: 0041b660 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041b660(CBoundingBox3D * this_ptr, CBoundingBox3D * other)
     ADD ESP,0x8                         ; 00409650
     TEST EAX,EAX                        ; 00409653
     JNZ 0x004094bc                      ; 00409655
@@ -318,8 +318,8 @@ section .text
     PUSH EAX                            ; 00409677
     MOV ESI,dword ptr [EBP + 0x24]      ; 00409678
     PUSH ESI                            ; 0040967b
-    CALL core_actor.cpp_FUN_00408290    ; 0040967c
-        ;   XREF to: 00408290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408290()
+    CALL core_actor.cpp_rayCylinderIntersect_FUN_00408290 ; 0040967c
+        ;   XREF to: 00408290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_rayCylinderIntersect_FUN_00408290()
     JMP 0x00409569                      ; 00409681
         ;   XREF to: 00409569 (UNCONDITIONAL_JUMP)  ; LAB_00409569
     LEA EAX,[ESP + 0xb8]                ; 00409686

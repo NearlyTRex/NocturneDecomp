@@ -98,7 +98,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00545a60
   
   bVar10 = 0;
   if ((float)_DAT_005e72f7 < blend_weight) {
-    core_motion_cpp_FUN_00504080
+    core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_00504080
               (&this_ptr->base,target_motion_index,target_frame_number,&local_5c,&local_54,
                &stack0xfffff680);
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(this_ptr);

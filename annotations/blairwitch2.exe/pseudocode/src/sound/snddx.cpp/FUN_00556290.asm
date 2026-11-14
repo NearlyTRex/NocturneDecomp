@@ -26,8 +26,8 @@
 ;   core_main.c_FUN_004e4500
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_console.cpp_CConsole_printf_FUN_00436710
-;   sound_snddx.cpp_FUN_00554ad0
-;   sound_snddx.cpp_FUN_00554e50
+;   sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0
+;   sound_snddx.cpp_releaseSfxHardwareBuffers_FUN_00554e50
 ;   sound_sndmain.cpp_logSoundError_FUN_005549c0
 ;
 ; *****************************************************************************
@@ -203,8 +203,8 @@ section .text
         ;   XREF to: 00556392 (UNCONDITIONAL_JUMP)  ; LAB_00556392
     PUSH EAX                            ; 00556473
         ;   Label: LAB_00556473
-    CALL sound_snddx.cpp_FUN_00554ad0   ; 00556474
-        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00554ad0(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0 ; 00556474
+        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0(uint error_code)
     ADD ESP,0x4                         ; 00556479
     PUSH EAX                            ; 0055647c
     PUSH 0x5e9dd8                       ; 0055647d | = "Duplicate sound buffer"
@@ -242,8 +242,8 @@ section .text
     JNZ 0x005563af                      ; 005564cc
         ;   XREF to: 005563af (CONDITIONAL_JUMP)  ; LAB_005563af
     PUSH EBX                            ; 005564d2
-    CALL sound_snddx.cpp_FUN_00554e50   ; 005564d3
-        ;   XREF to: 00554e50 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_FUN_00554e50()
+    CALL sound_snddx.cpp_releaseSfxHardwareBuffers_FUN_00554e50 ; 005564d3
+        ;   XREF to: 00554e50 (UNCONDITIONAL_CALL)  ; int sound_snddx.cpp_releaseSfxHardwareBuffers_FUN_00554e50(int sfx_handle)
     ADD ESP,0x4                         ; 005564d8
     XOR EAX,EAX                         ; 005564db
     ADD ESP,0x320                       ; 005564dd
@@ -254,8 +254,8 @@ section .text
     RET                                 ; 005564e7
     PUSH EAX                            ; 005564e8
         ;   Label: LAB_005564e8
-    CALL sound_snddx.cpp_FUN_00554ad0   ; 005564e9
-        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00554ad0(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0 ; 005564e9
+        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0(uint error_code)
     ADD ESP,0x4                         ; 005564ee
     PUSH EAX                            ; 005564f1
     PUSH 0x5e9def                       ; 005564f2 | = "get DirectSound3DBuffer interface fro..."

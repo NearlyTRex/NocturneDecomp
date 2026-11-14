@@ -136,8 +136,10 @@ void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_00416d70(CBodyPart *t
     } while (iVar13 < this_ptr->vertex_count);
   }
   euler_angles_00 = &(this_ptr->base).orient;
-  core_xform_cpp_FUN_00591ad0(&local_140,(CVector3f *)&DAT_0265370c,&euler_angles_00->vec);
-  core_xform_cpp_FUN_00591ad0(&local_170,(CVector3f *)&DAT_0265370c,euler_angles);
+  core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0
+            (&local_140,(CVector3f *)&DAT_0265370c,&euler_angles_00->vec);
+  core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0
+            (&local_170,(CVector3f *)&DAT_0265370c,euler_angles);
   core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(&local_140,&local_170,&local_110);
   pCVar12 = &local_110;
   pfVar14 = local_1d0;
@@ -199,7 +201,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_00416d70(CBodyPart *t
         (pSVar9->position_offset).z = local_80;
       }
       pCVar10 = &pSVar9->euler_angles;
-      core_xform_cpp_FUN_00591c10(&local_1a0,&DAT_0265370c,pCVar10);
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
+                (&local_1a0,&DAT_0265370c,pCVar10);
       core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(&local_1a0,&local_170,&local_200);
       core_xform_cpp_matrixToEulerAngles_FUN_00591de0(&local_170);
       local_ac = local_b8;

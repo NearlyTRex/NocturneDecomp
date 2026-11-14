@@ -115,12 +115,14 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_004f0a50(CMimic *this_ptr)
   }
   pCVar1 = this_ptr->mirror_plane_actor;
   if (pCVar1 != (CDemonActor *)0x0) {
-    core_xform_cpp_FUN_00591ad0(&local_168,&(pCVar1->location).position,&(pCVar1->orient).vec);
-    core_xform_cpp_FUN_00591c10
+    core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0
+              (&local_168,&(pCVar1->location).position,&(pCVar1->orient).vec);
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
               (&local_108,&this_ptr->mirror_plane_actor->location,
                &this_ptr->mirror_plane_actor->orient);
     iVar8 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
-    core_xform_cpp_FUN_00591c10(&local_1f8,iVar8 + 0x20,iVar8 + 0x30);
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
+              (&local_1f8,iVar8 + 0x20,iVar8 + 0x30);
     pCVar16 = &local_108;
     core_xform_cpp_buildZFlipMatrix_FUN_005935a0(0.0,&local_198);
     pCVar15 = &local_d8;

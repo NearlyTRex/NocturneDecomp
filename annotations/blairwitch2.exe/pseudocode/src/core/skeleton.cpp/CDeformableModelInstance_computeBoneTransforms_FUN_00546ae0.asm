@@ -22,7 +22,7 @@
 ; XREF[16]:
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90 at 00429eae
 ;   core_charactr.cpp_CCharacter_renderEthereal_FUN_00426730 at 004267fc
-;   core_cloth.cpp_FUN_005ae680 at 005aeac8
+;   core_cloth.cpp_CCloth_setup_FUN_005ae680 at 005aeac8
 ;   core_doc.cpp_FUN_00450c60 at 00451600
 ;   core_doc.cpp_FUN_00455d10 at 0045605a
 ;   core_mimic.cpp_CMimic_processAnimation_FUN_004f0e10 at 004f172f

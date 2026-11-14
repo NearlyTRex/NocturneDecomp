@@ -15,8 +15,8 @@
 ;   core_fire.cpp_spawnDiseaseBugs_FUN_0049cca0 at 0049cd2f
 ;   core_gore.cpp_FUN_004ced40 at 004cee0c
 ;   core_mission.cpp_CDemonMission_createOneHero_FUN_004f7710 at 004f7839
+;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004f7a20 at 004f7b65
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_004f5cc0 at 004f6286
-;   core_mission.cpp_FUN_004f7a20 at 004f7b65
 ;   core_passngr.cpp_CPassenger_process_FUN_0050a7d0 at 0050a8f6
 ;   ... and 9 more
 ;

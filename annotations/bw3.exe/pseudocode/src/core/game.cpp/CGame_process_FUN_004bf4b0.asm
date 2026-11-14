@@ -349,8 +349,8 @@ section .text
     ADD ESP,0x4                         ; 004bf874
     MOV ECX,dword ptr [0x006071f0]      ; 004bf877 | DAT_006071f0
     PUSH ECX                            ; 004bf87d | DAT_02d0c1a0
-    CALL core_weather.cpp_FUN_0057bda0  ; 004bf87e
-        ;   XREF to: 0057bda0 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_FUN_0057bda0()
+    CALL core_weather.cpp_CWeather_update_FUN_0057bda0 ; 004bf87e
+        ;   XREF to: 0057bda0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_update_FUN_0057bda0(CWeather * this_ptr)
     ADD ESP,0x4                         ; 004bf883
     PUSH EBX                            ; 004bf886
     CALL core_game.cpp_CGame_processCheatCodes_FUN_004bb100 ; 004bf887

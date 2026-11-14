@@ -21,7 +21,7 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004d8d60(void)
     _DAT_01d046a4 = 0x58;
     core_main_c_FUN_004e4500("Please copy Nocturne to your hard drive");
   }
-  engine_ini_cpp_FUN_004d8910(&local_20c,".\\system\\nocturne.ini",(char *)0x0);
+  engine_ini_cpp_CIniFile_ctor_FUN_004d8910(&local_20c,".\\system\\nocturne.ini",(char *)0x0);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004d89d0(&local_20c,"Graphics");
   engine_ini_cpp_FUN_004d8b20(&local_20c,"gamePIXX",g_CGamePtr);
   engine_ini_cpp_FUN_004d8b20(&local_20c,"gamePIXY",&g_CGamePtr->game_pixy);

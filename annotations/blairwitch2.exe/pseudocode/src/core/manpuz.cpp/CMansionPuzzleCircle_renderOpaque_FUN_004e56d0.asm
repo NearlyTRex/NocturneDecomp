@@ -16,10 +16,10 @@
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
 ;   core_box.cpp_FUN_0041a840
 ;   core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_004e63c0
-;   core_manpuz.cpp_FUN_004e6340
+;   core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_004e6340
 ;   core_manpuz.cpp_FUN_004e6820
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
-;   engine_special.cpp_FUN_0055d723
+;   engine_special.cpp_transformAndProjectPoint_FUN_0055d723
 ;
 ; *****************************************************************************
 
@@ -83,15 +83,15 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 004e5761
     ADD EAX,0xbb80                      ; 004e5763
     PUSH EAX                            ; 004e5768
-    CALL engine_special.cpp_FUN_0055d723 ; 004e5769
-        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 004e5769
+        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004e576e
     XOR EBX,EBX                         ; 004e5771
     PUSH EBX                            ; 004e5773
         ;   Label: LAB_004e5773
     PUSH EBP                            ; 004e5774
-    CALL core_manpuz.cpp_FUN_004e6340   ; 004e5775
-        ;   XREF to: 004e6340 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_FUN_004e6340()
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_004e6340 ; 004e5775
+        ;   XREF to: 004e6340 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_004e6340(CMansionPuzzleCircle * this_ptr, int panel_index)
     ADD ESP,0x8                         ; 004e577a
     PUSH EBX                            ; 004e577d
     PUSH EBP                            ; 004e577e

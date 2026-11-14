@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_hero.cpp_factoryFuncHeroPlaceholder_FUN_004d4ab0 at 004d4ac3
-;   core_mission.cpp_FUN_004f7a20 at 004f7b03
+;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004f7a20 at 004f7b03
 ;
 ; Referenced Globals:
 ;   undefined1 DAT_005c50eb

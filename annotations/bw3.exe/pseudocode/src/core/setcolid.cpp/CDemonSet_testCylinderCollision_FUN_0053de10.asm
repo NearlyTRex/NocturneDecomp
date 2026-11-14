@@ -42,7 +42,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[8]:
-;   core_charactr.cpp_FUN_0042c230 at 0042c4cb
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230 at 0042c4cb
 ;   core_demnfolk.cpp_CDemnfolk_process_FUN_00455080 at 0045625d
 ;   core_ghoul.cpp_CGhoul_process_FUN_004c6eb0 at 004c7d05
 ;   core_kedward.cpp_CKedward_process_FUN_00590010 at 00590a42
@@ -66,14 +66,14 @@
 ;   core_actor.cpp_FUN_00408b40
 ;   core_actor.cpp_FUN_00408bf0
 ;   core_actor.cpp_FUN_00408f00
-;   core_box.cpp_FUN_0041e910
+;   core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041e910
 ;   core_dmodel.cpp_CKeyFramedModel_intersectCylinder_FUN_00461e00
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
 ;   core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_00474e80
 ;   core_dtrace.cpp_initIntersectionCylinder_FUN_00474db0
 ;   core_main.c_FUN_004e4330
 ;   core_setcolid.cpp_CDemonSet_isActorIgnored_FUN_0053d770
-;   core_setcolid.cpp_FUN_0053da90
+;   core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_0053da90
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_0053ed80
 ;
 ; *****************************************************************************
@@ -308,8 +308,8 @@ section .text
     LEA ESI,[ESP + 0x240]               ; 0053e15f
     PUSH EAX                            ; 0053e166
     MOVSD.REP ES:EDI,ESI                ; 0053e167
-    CALL core_box.cpp_FUN_0041e910      ; 0053e169
-        ;   XREF to: 0041e910 (UNCONDITIONAL_CALL)  ; int core_box.cpp_FUN_0041e910(CBoundingBox3D * this_ptr, CBoundingBox3D * other)
+    CALL core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041e910 ; 0053e169
+        ;   XREF to: 0041e910 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041e910(CBoundingBox3D * this_ptr, CBoundingBox3D * other)
     ADD ESP,0x8                         ; 0053e16e
     TEST EAX,EAX                        ; 0053e171
     JZ 0x0053e00f                       ; 0053e173
@@ -417,8 +417,8 @@ section .text
     LEA ESI,[ESP + 0x1ec]               ; 0053e2eb
     PUSH EDX                            ; 0053e2f2
     MOVSD.REP ES:EDI,ESI                ; 0053e2f3
-    CALL core_setcolid.cpp_FUN_0053da90 ; 0053e2f5
-        ;   XREF to: 0053da90 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_FUN_0053da90(CDemonSet * this_ptr, SIntersectXZCylinder * cylinder, CBoundingBox3D * bounding_box, CVector3f * position, ...)
+    CALL core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_0053da90 ; 0053e2f5
+        ;   XREF to: 0053da90 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_0053da90(CDemonSet * this_ptr, SIntersectXZCylinder * cylinder, CBoundingBox3D * bounding_box, CVector3f * position, ...)
     ADD ESP,0x14                        ; 0053e2fa
     TEST EAX,EAX                        ; 0053e2fd
     JZ 0x0053e00f                       ; 0053e2ff

@@ -40,7 +40,7 @@ void core_game_cpp_FUN_004be8d0(CGame *param_1,int param_2)
   if (p_Var3 != (_FILE *)0x0) {
     _fclose(p_Var3);
   }
-  engine_ini_cpp_FUN_004d8a20(&local_320,"system\\bw3.ini",&DAT_005c37ea);
+  engine_ini_cpp_CIniFile_ctor_FUN_004d8a20(&local_320,"system\\bw3.ini",&DAT_005c37ea);
   local_18 = 0;
   engine_ini_cpp_FUN_004d8c30(&local_320,"Act1Code",&local_18);
   support_newmsg_cpp_getLocalizedString_FUN_00508960("The Rustin Parr Investigation");
@@ -89,11 +89,11 @@ void core_game_cpp_FUN_004be8d0(CGame *param_1,int param_2)
   core_mission_cpp_CDemonMission_load_FUN_004f5bc0(0x01D81080,local_11c,load_flags);
   iVar4 = core_mission_cpp_CDemonMission_createHeros_FUN_004f7880(0x01D81080,(CCharacter *)0x0);
   if (iVar4 != 0) {
-    core_mission_cpp_FUN_004f7590(0x01D81080);
+    core_mission_cpp_CDemonMission_startMission_FUN_004f7590(0x01D81080);
     core_mission_cpp_CDemonMission_run_FUN_004f72a0(0x01D81080);
     if (param_1->need_chapter_reload != 0) {
       param_1->need_chapter_reload = 0;
-      core_game_cpp_FUN_004bdfb0(param_1,param_1->chapter_reload_filename,1);
+      core_game_cpp_CGame_loadGame_FUN_004bdfb0(param_1,param_1->chapter_reload_filename,1);
     }
   }
 LAB_004beb21:

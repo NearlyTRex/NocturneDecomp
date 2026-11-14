@@ -73,9 +73,9 @@ int __cdecl CCodec::processBuffer(CCodec *this_ptr,char *input,int *input_length
 // Address: 00440a70
 undefined4 FUN_00440a70(int *param_1,char *param_2,char *param_3);
 
-// Original: support_codec.cpp_FUN_00440b60
+// Original: support_codec.cpp_CCodec_finalizeBuffer_FUN_00440b60
 // Address: 00440b60
-bool FUN_00440b60(int *param_1,char *param_2,int *param_3);
+int __cdecl CCodec::finalizeBuffer(CCodec *this_ptr,char *buffer_ptr,int *buffer_size_ptr);
 
 // Original: support_codec.cpp_CLZWDictionary_ctor_FUN_00440bd0
 // Address: 00440bd0

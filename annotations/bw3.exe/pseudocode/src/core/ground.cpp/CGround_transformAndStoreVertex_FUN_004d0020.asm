@@ -25,7 +25,7 @@
 ;
 ; Called Functions:
 ;   core_ground.cpp_CGround_getVertexIndex_FUN_004d0000
-;   engine_special.cpp_FUN_0056356c
+;   engine_special.cpp_transformPoint_FUN_0056356c
 ;
 ; *****************************************************************************
 
@@ -82,8 +82,8 @@ section .text
     ADD EDI,0x60b014                    ; 004d009b | DAT_0060b014
     PUSH EDI                            ; 004d00a1
     MOV dword ptr [ESP + 0xc],EBX       ; 004d00a2
-    CALL engine_special.cpp_FUN_0056356c ; 004d00a6
-        ;   XREF to: 0056356c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0056356c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformPoint_FUN_0056356c ; 004d00a6
+        ;   XREF to: 0056356c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformPoint_FUN_0056356c(SProjectedVertex * output, CVector3i * input)
     MOV dword ptr [EDI + 0x20],0x3fff   ; 004d00ab | DAT_0060b034
     MOV dword ptr [EDI + 0x24],0x3fff   ; 004d00b2 | DAT_0060b038
     ADD ESP,0x8                         ; 004d00b9

@@ -111,7 +111,7 @@ void __cdecl core_stranger_cpp_CStranger_setup_FUN_00562b90(CStranger *this_ptr)
     (this_ptr->ref_r_upperarm_bone_pos).y = afStack_24[0];
     (this_ptr->ref_r_upperarm_bone_pos).z = afStack_24[1];
   }
-  core_stranger_cpp_FUN_00565ff0(this_ptr);
+  core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_00565ff0(this_ptr);
   this_ptr->grab_timer = 0.0;
   this_ptr->ladder_blend_time = 0.0;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70

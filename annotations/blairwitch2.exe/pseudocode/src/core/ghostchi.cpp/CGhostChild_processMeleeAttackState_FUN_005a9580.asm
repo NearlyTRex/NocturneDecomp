@@ -23,9 +23,9 @@
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
 ;   core_enemy.cpp_CEnemy_testAttackRadius_FUN_00488110
+;   core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_00503e60
 ;   core_muzzle.cpp_FUN_0059d7f0
 ;   core_muzzle.cpp_FUN_0059d8e0
 ;   core_muzzle.cpp_FUN_0059dcb0
@@ -84,8 +84,8 @@ section .text
     JNZ 0x005a9638                      ; 005a95fe
         ;   XREF to: 005a9638 (CONDITIONAL_JUMP)  ; LAB_005a9638
     PUSH ESI                            ; 005a9600
-    CALL core_motion.cpp_FUN_00503e60   ; 005a9601
-        ;   XREF to: 00503e60 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_00503e60(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60 ; 005a9601
+        ;   XREF to: 00503e60 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60(CMotionController * this_ptr)
     MOV dword ptr [ESP + 0x7c],EAX      ; 005a9606
     FLD float ptr [ESP + 0x7c]          ; 005a960a
     ADD ESP,0x4                         ; 005a960e

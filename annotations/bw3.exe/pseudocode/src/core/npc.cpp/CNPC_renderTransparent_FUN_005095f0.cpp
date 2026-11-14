@@ -81,7 +81,8 @@ int __cdecl core_npc_cpp_CNPC_renderTransparent_FUN_005095f0(CNPC *this_ptr)
                   (this_ptr_00,-1,0x2e7,1,0);
         engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0(DAT_005f2afc);
         if (_DAT_01d8e40c != 0) {
-          core_motion_cpp_FUN_004fcdc0(&this_ptr_00->base,(CDemonActor *)this_ptr);
+          core_motion_cpp_CMotionController_render_FUN_004fcdc0
+                    (&this_ptr_00->base,(CDemonActor *)this_ptr);
         }
       }
       core_cloth_cpp_CClothList_render_FUN_0043fc50

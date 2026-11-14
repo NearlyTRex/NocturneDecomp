@@ -11,9 +11,9 @@
 ; char *           Stack[0x14]:4   extension
 ;
 ; XREF[13]:
-;   engine_dosio.cpp_FUN_00465eb0 at 00465f00
 ;   engine_dosio.cpp_FUN_00466040 at 0046612f
 ;   engine_dosio.cpp_changeFileExtension_FUN_00465f80 at 00465fd3
+;   engine_dosio.cpp_ensureTrailingSlash_FUN_00465eb0 at 00465f00
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_004af920 at 004afa8d
 ;   engine_font.cpp_FUN_004afbf0 at 004afd42
 ;   engine_texture.cpp_FUN_0056ad60 at 0056aec8

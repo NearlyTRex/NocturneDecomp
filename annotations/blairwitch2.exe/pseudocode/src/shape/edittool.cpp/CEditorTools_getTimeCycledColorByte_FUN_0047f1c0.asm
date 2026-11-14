@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_cloth.cpp_FUN_005b0ce0 at 005b0ec1
-;   shape_edittool.cpp_FUN_0047f210 at 0047f220
+;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210 at 0047f220
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c2c910

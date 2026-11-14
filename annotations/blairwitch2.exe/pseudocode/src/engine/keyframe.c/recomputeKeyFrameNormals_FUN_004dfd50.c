@@ -25,7 +25,7 @@ void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_004dfd50(SMRGLPrimit
     iVar1 = (primitive_list->base).base.type;
     pSVar3 = primitive_list;
     if (((iVar1 == 0x18) || (iVar1 == 0x29)) || (iVar1 == 0x19)) break;
-    uVar2 = engine_model_c_FUN_00500f30((SMRGLHeaderExtended *)primitive_list);
+    uVar2 = engine_model_c_getMRGLSize_FUN_00500f30((SMRGLHeaderExtended *)primitive_list);
     primitive_list =
          (SMRGLPrimitiveTriangle *)
          ((int)&(((SMRGLPrimitiveTriangle *)(primitive_list->vertices + -2))->base).base.type +
@@ -55,7 +55,7 @@ LAB_004dfdaf:
                 (vertex_data,(SMRGLPrimitiveTriangleIndex *)primitive_list);
     }
     else if (uVar2 == 0x29) goto LAB_004dfdaf;
-    uVar2 = engine_model_c_FUN_00500f30((SMRGLHeaderExtended *)primitive_list);
+    uVar2 = engine_model_c_getMRGLSize_FUN_00500f30((SMRGLHeaderExtended *)primitive_list);
     primitive_list =
          (SMRGLPrimitiveTriangle *)
          ((int)&(((SMRGLPrimitiveTriangle *)(primitive_list->vertices + -2))->base).base.type +

@@ -27,12 +27,12 @@
 ;   core_actor.cpp_FUN_00408bb0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
 ;   core_charactr.cpp_FUN_0042d700
-;   core_charactr.cpp_FUN_0042d750
 ;   core_charactr.cpp_FUN_00435320
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30
 ;   core_moloch.cpp_CMoloch_processAI_FUN_00520c10
@@ -523,8 +523,8 @@ section .text
     LEA EAX,[ESP + 0x1ab8]              ; 00520a76
     PUSH EAX                            ; 00520a7d
     PUSH EBX                            ; 00520a7e
-    CALL core_charactr.cpp_FUN_0042d750 ; 00520a7f
-        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750 ; 00520a7f
+        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 00520a84
     JMP 0x005207a4                      ; 00520a87
         ;   XREF to: 005207a4 (UNCONDITIONAL_JUMP)  ; LAB_005207a4

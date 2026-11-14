@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   result_value
 ;
 ; XREF[1]:
-;   core_menu.cpp_FUN_004eed60 at 004efa8b
+;   core_menu.cpp_configureCustomKeyBindings_FUN_004eed60 at 004efa8b
 ;
 ; *****************************************************************************
 

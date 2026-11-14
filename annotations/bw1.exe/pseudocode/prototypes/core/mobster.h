@@ -53,9 +53,9 @@ void __cdecl CMobster::aimTommyGun(CMobster *this_ptr,float delta_time);
 // Address: 0051e2f0
 CMatrix3x4f * __stack2_esi CMobster::getCarryObjToBodyXForm(CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_mobster.cpp_FUN_0051e5d0
+// Original: core_mobster.cpp_CMobster_processWeaponPickup_FUN_0051e5d0
 // Address: 0051e5d0
-int __cdecl FUN_0051e5d0(CMobster *this_ptr,float delta_time);
+int __cdecl CMobster::processWeaponPickup(CMobster *this_ptr,float delta_time);
 
 // Original: core_mobster.cpp_CMobster_startFiringAttack_FUN_0051eac0
 // Address: 0051eac0

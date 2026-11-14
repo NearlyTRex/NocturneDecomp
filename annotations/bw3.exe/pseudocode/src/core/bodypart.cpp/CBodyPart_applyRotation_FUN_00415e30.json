@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 342,
-    "complexity_score": 633,
+    "complexity_score": 636,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 208,
+    "pseudocode_lines": 211,
     "suspect_count": 39,
     "suspect_types": [
       "extra_output",
@@ -18,7 +18,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 550
+    "total_lines": 553
   },
   "cross_references": [
     {
@@ -64,12 +64,12 @@
     {
       "addr": "00583800",
       "is_variadic": false,
-      "name": "core_xform.cpp_FUN_00583800"
+      "name": "core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00583800"
     },
     {
       "addr": "00583940",
       "is_variadic": false,
-      "name": "core_xform.cpp_FUN_00583940"
+      "name": "core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940"
     },
     {
       "addr": "00583b10",
@@ -579,23 +579,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 132,
+      "line": 133,
       "match": "DAT_02cfd900",
       "severity": "mild",
-      "text": "core_xform_cpp_FUN_00583800(&local_140,(CVector3f *)&DAT_02cfd900,&euler_angles_00->vec);",
+      "text": "(&local_140,(CVector3f *)&DAT_02cfd900,&euler_angles_00->vec);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 133,
+      "line": 135,
       "match": "DAT_02cfd900",
       "severity": "mild",
-      "text": "core_xform_cpp_FUN_00583800(&local_170,(CVector3f *)&DAT_02cfd900,euler_angles);",
+      "text": "(&local_170,(CVector3f *)&DAT_02cfd900,euler_angles);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 139,
+      "line": 141,
       "match": "(CMatrix3x4f *)((int)pCVar12",
       "severity": "moderate",
       "text": "pCVar12 = (CMatrix3x4f *)((int)pCVar12 + ((uint)bVar15 * -2 + 1) * 4);",
@@ -603,10 +603,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 195,
+      "line": 198,
       "match": "DAT_02cfd900",
       "severity": "mild",
-      "text": "core_xform_cpp_FUN_00583940(&local_1a0,&DAT_02cfd900,pCVar10);",
+      "text": "(&local_1a0,&DAT_02cfd900,pCVar10);",
       "type": "undefined_data"
     },
     {
@@ -707,7 +707,7 @@
     },
     {
       "description": "Pointer value `pCVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 139,
+      "line": 141,
       "match": "(int)pCVar12",
       "severity": "moderate",
       "text": "pCVar12 = (CMatrix3x4f *)((int)pCVar12 + ((uint)bVar15 * -2 + 1) * 4);",
@@ -715,7 +715,7 @@
     },
     {
       "description": "Pointer value `&local_70` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 144,
+      "line": 146,
       "match": "(int)&local_70",
       "severity": "moderate",
       "text": "*(int *)((int)&local_70 + (uint)bVar15 * -8 + 4) = aiStack_b4[(uint)bVar15 * -2 + 9];",
@@ -723,7 +723,7 @@
     },
     {
       "description": "Pointer value `&local_70` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 145,
+      "line": 147,
       "match": "(int)&local_70",
       "severity": "moderate",
       "text": "*(int *)((int)&local_70 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8) =",
@@ -731,7 +731,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 137,
+      "line": 139,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar13 = 0xc; iVar13 != 0; iVar13 = iVar13 + -1) {",
@@ -739,7 +739,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 148,
+      "line": 150,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(euler_angles_00->vec).x = local_70.x;",
@@ -843,7 +843,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 144,
+      "line": 146,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&local_70 + (uint)bVar15 * -8 + 4) = aiStack_b4[(uint)bVar15 * -2 + 9];",
@@ -851,7 +851,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 145,
+      "line": 147,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&local_70 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8) =",

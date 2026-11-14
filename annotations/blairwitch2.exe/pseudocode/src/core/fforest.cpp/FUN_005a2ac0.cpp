@@ -42,7 +42,8 @@ void core_fforest_cpp_FUN_005a2ac0(CEnemy *param_1)
     core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00423850
               (&param_1->base,&(param_1->victim->base).location.position);
     this_ptr = &(param_1->base).model;
-    fStack_18 = core_motion_cpp_FUN_00503e60(&this_ptr->base);
+    fStack_18 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00503e60
+                          (&this_ptr->base);
     pCStack_14 = (CMatrix3x4f *)fStack_18;
     pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr->base);
     if (pSVar4->state_index != 2) {

@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x28]:4  local_28
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_00535da0 at 00536126
+;   core_set.cpp_CDemonSet_renderScene_FUN_00535da0 at 00536126
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d05ef

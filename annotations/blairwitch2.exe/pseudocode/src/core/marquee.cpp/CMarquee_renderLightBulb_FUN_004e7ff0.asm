@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_00469c60
-;   engine_special.cpp_FUN_0055d9ec
+;   engine_special.cpp_transformPoint_FUN_0055d9ec
 ;
 ; *****************************************************************************
 
@@ -44,8 +44,8 @@ section .text
     LEA EAX,[ESP + 0x28]                ; 004e8029
     PUSH EAX                            ; 004e802d
     PUSH ESI                            ; 004e802e
-    CALL engine_special.cpp_FUN_0055d9ec ; 004e802f
-        ;   XREF to: 0055d9ec (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d9ec(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformPoint_FUN_0055d9ec ; 004e802f
+        ;   XREF to: 0055d9ec (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformPoint_FUN_0055d9ec(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x0060b280]                ; 004e8034 | DAT_0060b280
     MOV ESI,dword ptr [EAX]             ; 004e8039
     MOV ECX,0xc                         ; 004e803b

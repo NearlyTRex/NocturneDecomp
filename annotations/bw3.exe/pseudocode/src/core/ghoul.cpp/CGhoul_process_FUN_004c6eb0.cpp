@@ -755,7 +755,8 @@ LAB_004c7fd6:
           iVar5 = this_ptr->part_indices[3];
           (this_ptr->base).attack_cooldown = fStack_14;
           if ((this_ptr->base).base.model.part_data.visibility_flags[iVar5] != 0) {
-            fStack_5c = core_motion_cpp_FUN_004fc930((CMotionController *)pCVar7);
+            fStack_5c = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                                  ((CMotionController *)pCVar7);
             dStack_b8 = (double)fStack_5c;
             in_stack_fffffb28 = (char *)pCVar7;
             fStack_14 = fStack_5c;
@@ -972,7 +973,8 @@ LAB_004c887a:
       iVar5 = this_ptr->part_indices[1];
       (this_ptr->base).attack_cooldown = fStack_14;
       if ((this_ptr->base).base.model.part_data.visibility_flags[iVar5] != 0) {
-        fStack_60 = core_motion_cpp_FUN_004fc930((CMotionController *)pCVar7);
+        fStack_60 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                              ((CMotionController *)pCVar7);
         dStack_b0 = (double)fStack_60;
         in_stack_fffffb28 = (char *)pCVar7;
         fStack_14 = fStack_60;
@@ -1145,7 +1147,7 @@ LAB_004c7010:
     fVar29 = (this_ptr->base).base.model.accumulated_root_motion.z;
     (this_ptr->base).base.model.accumulated_root_motion.y = fVar29;
     pCVar24->x = fVar29;
-    core_charactr_cpp_FUN_0042c230((CCharacter *)this_ptr,&CStack_224);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230((CCharacter *)this_ptr,&CStack_224);
   }
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130(this_ptr_00);

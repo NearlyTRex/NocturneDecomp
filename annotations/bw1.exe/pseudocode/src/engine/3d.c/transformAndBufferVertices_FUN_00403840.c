@@ -24,7 +24,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_transformAndBufferVertices_FUN_0040384
   _DAT_00713a94 = input;
   if (0 < mrgl->child_count) {
     do {
-      engine_special_cpp_FUN_00580173(output,input);
+      engine_special_cpp_transformAndProjectPoint_FUN_00580173(output,input);
       output[1].screen_y = _DAT_01c51cac;
       if ((int)(output->screen_x & -0x80000000) == 0) {
         iStack_14 = iStack_14 + 1;

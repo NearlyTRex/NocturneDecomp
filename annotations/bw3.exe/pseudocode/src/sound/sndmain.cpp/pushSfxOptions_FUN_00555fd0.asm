@@ -8,13 +8,13 @@
 ;   core_boneguy.cpp_CBaalSkel_process_FUN_00419b40 at 0041a1d0
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 0041807e
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041f360 at 0041f877
-;   core_charactr.cpp_FUN_0042e8c0 at 0042ecf6
+;   core_charactr.cpp_CCharacter_processFire_FUN_0042e8c0 at 0042ecf6
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_004953d0 at 00495401
 ;   core_event.cpp_FUN_0048c2e0 at 0048f23d
 ;   core_fire.cpp_CFireball_onCollision_FUN_00499eb0 at 00499f2a
 ;   core_flame.cpp_CFlame_process_FUN_004a5b10 at 004a5e95
 ;   core_game.cpp_FUN_004c4a60 at 004c4b02
-;   core_menu.cpp_FUN_004e94f0 at 004e9e33
+;   core_menu.cpp_configureSoundOptions_FUN_004e94f0 at 004e9e33
 ;   ... and 9 more
 ;
 ; Referenced Globals:

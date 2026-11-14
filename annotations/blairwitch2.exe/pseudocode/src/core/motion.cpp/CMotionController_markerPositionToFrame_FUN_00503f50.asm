@@ -25,7 +25,7 @@
 ;   core_scat.cpp_CScat_blendLayerAction_FUN_0051ff60 at 005200d1
 ;   core_stranger.cpp_CStranger_applyArmAimRotation_FUN_00567fd0 at 005680d3
 ;   core_stranger.cpp_CStranger_makeDrawDecision_FUN_00567880 at 00567ac9
-;   core_stranger.cpp_FUN_00565ff0 at 005673e6
+;   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00565ff0 at 005673e6
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005b7ff0

@@ -9,9 +9,9 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[3]:
-;   core_menu.cpp_FUN_0050ba70 at 0050c339
-;   core_menu.cpp_FUN_0050c990 at 0050cb79
+;   core_menu.cpp_configureSoundOptions_FUN_0050ba70 at 0050c339
 ;   core_menu.cpp_showMainGameMenu_FUN_0050cc90 at 0050cfcf
+;   core_menu.cpp_showOptionsScreen_FUN_0050c990 at 0050cb79
 ;
 ; Referenced Globals:
 ;   undefined4 s_splash_music_44_wav_005f5afd+1

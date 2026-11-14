@@ -29,7 +29,7 @@
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   sound_snddx.cpp_CDirectSoundDevice_close_FUN_00555060
 ;   sound_snddx.cpp_enumerateDirectSoundDevice_FUN_00557860
-;   sound_snddx.cpp_FUN_00554ad0
+;   sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0
 ;   sound_sndmain.cpp_isHardwareMixingEnabled_FUN_00552b40
 ;   sound_sndmain.cpp_logSoundError_FUN_005549c0
 ;
@@ -88,8 +88,8 @@ section .text
     JZ 0x005579d3                       ; 00557984
         ;   XREF to: 005579d3 (CONDITIONAL_JUMP)  ; LAB_005579d3
     PUSH EAX                            ; 00557986
-    CALL sound_snddx.cpp_FUN_00554ad0   ; 00557987
-        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00554ad0(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0 ; 00557987
+        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0(uint error_code)
     ADD ESP,0x4                         ; 0055798c
     PUSH EAX                            ; 0055798f
     PUSH 0x5ea4a9                       ; 00557990 | = "create DirectSound object"
@@ -176,8 +176,8 @@ section .text
     RET                                 ; 00557a7c
     PUSH EAX                            ; 00557a7d
         ;   Label: LAB_00557a7d
-    CALL sound_snddx.cpp_FUN_00554ad0   ; 00557a7e
-        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00554ad0(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0 ; 00557a7e
+        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0(uint error_code)
     ADD ESP,0x4                         ; 00557a83
     PUSH EAX                            ; 00557a86
     PUSH 0x5ea4c3                       ; 00557a87 | = "Set cooperative level"
@@ -192,8 +192,8 @@ section .text
         ;   XREF to: 005579b1 (UNCONDITIONAL_JUMP)  ; LAB_005579b1
     PUSH EAX                            ; 00557aad
         ;   Label: LAB_00557aad
-    CALL sound_snddx.cpp_FUN_00554ad0   ; 00557aae
-        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00554ad0(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0 ; 00557aae
+        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0(uint error_code)
     ADD ESP,0x4                         ; 00557ab3
     PUSH EAX                            ; 00557ab6
     PUSH 0x5ea4d9                       ; 00557ab7 | = "Create the primary buffer"
@@ -223,8 +223,8 @@ section .text
     JZ 0x00557a38                       ; 00557b06
         ;   XREF to: 00557a38 (CONDITIONAL_JUMP)  ; LAB_00557a38
     PUSH EAX                            ; 00557b0c
-    CALL sound_snddx.cpp_FUN_00554ad0   ; 00557b0d
-        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00554ad0(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0 ; 00557b0d
+        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0(uint error_code)
     ADD ESP,0x4                         ; 00557b12
     PUSH EAX                            ; 00557b15
     PUSH 0x5ea4f3                       ; 00557b16 | = "Create the primary buffer"

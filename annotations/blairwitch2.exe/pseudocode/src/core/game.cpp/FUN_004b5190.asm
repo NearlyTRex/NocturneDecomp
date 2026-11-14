@@ -78,11 +78,11 @@
 ;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004a5700
 ;   core_game.cpp_CGame_drawScreenBorder_FUN_004b30d0
 ;   core_game.cpp_CGame_process_FUN_004bd570
+;   core_game.cpp_CGame_renderIrisFade_FUN_004bb3d0
 ;   core_game.cpp_CGame_renderOverlay_FUN_004b32c0
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_004b3c50
 ;   core_game.cpp_CGame_slamDT_FUN_004bd460
 ;   core_game.cpp_CGame_updateDT_FUN_004b3010
-;   core_game.cpp_FUN_004bb3d0
 ;   core_inv.cpp_FUN_004dd9b0
 ;   core_netgame.cpp_CNetGame_processClientFrame_FUN_0050f120
 ;   ... and 46 more
@@ -242,8 +242,8 @@ section .text
     LEA EAX,[EBP + -0x26]               ; 004b5329
         ;   Label: LAB_004b5329
     PUSH EAX                            ; 004b532c
-    CALL core_slew.cpp_FUN_005493d0     ; 004b532d
-        ;   XREF to: 005493d0 (UNCONDITIONAL_CALL)  ; undefined core_slew.cpp_FUN_005493d0()
+    CALL core_slew.cpp_CSlew_processInput_FUN_005493d0 ; 004b532d
+        ;   XREF to: 005493d0 (UNCONDITIONAL_CALL)  ; void core_slew.cpp_CSlew_processInput_FUN_005493d0(CSlew * this_ptr)
     ADD ESP,0x4                         ; 004b5332
     LEA EDX,[EBP + -0x1a]               ; 004b5335
     MOV EAX,[0x01cedef4]                ; 004b5338 | DAT_01cedef4
@@ -363,8 +363,8 @@ section .text
     CMP dword ptr [EAX + 0x224],0x0     ; 004b54a4
     JNZ 0x004b5c51                      ; 004b54ab
         ;   XREF to: 004b5c51 (CONDITIONAL_JUMP)  ; LAB_004b5c51
-    CALL engine_special.cpp_FUN_0055f500 ; 004b54b1
-        ;   XREF to: 0055f500 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_0055f500()
+    CALL engine_special.cpp_lockFrame_FUN_0055f500 ; 004b54b1
+        ;   XREF to: 0055f500 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_0055f500()
     MOV EAX,[0x00616044]                ; 004b54b6 | g_CFieldNotesPtr
     CMP dword ptr [EAX + 0x40],0x0      ; 004b54bb | g_CFieldNotesInstance.is_displayed
     JZ 0x004b5cfa                       ; 004b54bf
@@ -531,8 +531,8 @@ section .text
     ADD ESP,0x4                         ; 004b5680
     MOV ECX,dword ptr [EBP + 0x92]      ; 004b5683
     PUSH ECX                            ; 004b5689
-    CALL core_game.cpp_FUN_004bb3d0     ; 004b568a
-        ;   XREF to: 004bb3d0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004bb3d0(CGame * this_ptr)
+    CALL core_game.cpp_CGame_renderIrisFade_FUN_004bb3d0 ; 004b568a
+        ;   XREF to: 004bb3d0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_renderIrisFade_FUN_004bb3d0(CGame * this_ptr)
     MOV EAX,dword ptr [EBP + 0x92]      ; 004b568f
     MOV EBX,dword ptr [EAX + 0x200]     ; 004b5695
     ADD ESP,0x4                         ; 004b569b
@@ -1032,8 +1032,8 @@ section .text
         ;   Label: LAB_004b5c36
     MOV EDI,dword ptr [0x006138e0]      ; 004b5c38 | g_CEditorToolsPtr
     PUSH EDI                            ; 004b5c3e
-    CALL shape_edittool.cpp_FUN_0047f210 ; 004b5c3f
-        ;   XREF to: 0047f210 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047f210()
+    CALL shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210 ; 004b5c3f
+        ;   XREF to: 0047f210 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210(CEditorTools * this_ptr, int use_clipping)
     ADD ESP,0x8                         ; 004b5c44
     PUSH 0x0                            ; 004b5c47
         ;   Label: LAB_004b5c47
@@ -1069,8 +1069,8 @@ section .text
     PUSH 0x1                            ; 004b5c9a
     MOV EDX,dword ptr [0x0061b5a8]      ; 004b5c9c | g_CDemonSetPtr
     PUSH EDX                            ; 004b5ca2
-    CALL core_set.cpp_FUN_0052f2a0      ; 004b5ca3
-        ;   XREF to: 0052f2a0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0052f2a0(CDemonSet * this_ptr, int skip_prerender)
+    CALL core_set.cpp_CDemonSet_renderScene_FUN_0052f2a0 ; 004b5ca3
+        ;   XREF to: 0052f2a0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderScene_FUN_0052f2a0(CDemonSet * this_ptr, int skip_prerender)
     ADD ESP,0x8                         ; 004b5ca8
     JMP 0x004b5298                      ; 004b5cab
         ;   XREF to: 004b5298 (UNCONDITIONAL_JUMP)  ; LAB_004b5298

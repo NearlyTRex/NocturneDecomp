@@ -17,27 +17,15 @@
   },
   "cross_references": [
     {
-      "addr": "0050b470",
-      "from_addr": "0050b4f7",
-      "name": "core_menu.cpp_FUN_0050b470",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0050ba70",
-      "from_addr": "0050bafc",
-      "name": "core_menu.cpp_FUN_0050ba70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0050c990",
-      "from_addr": "0050ca1f",
-      "name": "core_menu.cpp_FUN_0050c990",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0050a2b0",
       "from_addr": "0050a2cf",
       "name": "core_menu.cpp_calibrateGamepad_FUN_0050a2b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050b470",
+      "from_addr": "0050b4f7",
+      "name": "core_menu.cpp_configureCustomKeys_FUN_0050b470",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -47,9 +35,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0050ba70",
+      "from_addr": "0050bafc",
+      "name": "core_menu.cpp_configureSoundOptions_FUN_0050ba70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0050cc90",
       "from_addr": "0050cdca",
       "name": "core_menu.cpp_showMainGameMenu_FUN_0050cc90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050c990",
+      "from_addr": "0050ca1f",
+      "name": "core_menu.cpp_showOptionsScreen_FUN_0050c990",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -219,7 +219,7 @@
       {
         "call_addr": "0050ca1f",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_0050c990",
+        "caller": "core_menu.cpp_showOptionsScreen_FUN_0050c990",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -241,7 +241,7 @@
       {
         "call_addr": "0050bafc",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_0050ba70",
+        "caller": "core_menu.cpp_configureSoundOptions_FUN_0050ba70",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -252,7 +252,7 @@
       {
         "call_addr": "0050b4f7",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_0050b470",
+        "caller": "core_menu.cpp_configureCustomKeys_FUN_0050b470",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

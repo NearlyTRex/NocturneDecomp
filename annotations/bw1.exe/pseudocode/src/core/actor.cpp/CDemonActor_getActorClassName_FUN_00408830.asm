@@ -11,12 +11,12 @@
 ;   core_actor.cpp_CDemonActor_save_FUN_0040adb0 at 0040adc5
 ;   core_actor.cpp_handleActorPropertyParseError_FUN_0040b090 at 0040b0fe
 ;   core_charactr.cpp_CCharacter_setup_FUN_0042c510 at 0042c75d
-;   core_enemy.cpp_FUN_004a1120 at 004a1130
+;   core_enemy.cpp_CEnemy_countSameClassAttackingHero_FUN_004a1120 at 004a1130
 ;   core_event.cpp_CEventList_setActorVariable_FUN_004a9ff0 at 004aa024
 ;   core_event.cpp_resolveActorByName_FUN_004a1370 at 004a1473
+;   core_inv.cpp_CInventory_addItem_FUN_004f7690 at 004f865c
 ;   core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004f8fe0 at 004f906e
 ;   core_inv.cpp_CInventory_saveItems_FUN_004f9750 at 004f976c
-;   core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004fa4e0 at 004fa525
 ;   ... and 5 more
 ;
 ; *****************************************************************************

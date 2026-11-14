@@ -21,7 +21,7 @@
 ;   core_actor.cpp_FUN_00408de0
 ;   engine_3d.c_drawLine2DFromIndices_FUN_00407c40
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
-;   engine_special.cpp_FUN_0055d723
+;   engine_special.cpp_transformAndProjectPoint_FUN_0055d723
 ;
 ; *****************************************************************************
 
@@ -133,8 +133,8 @@ section .text
     PUSH EAX                            ; 00588005
     MOV EAX,dword ptr [ESI]             ; 00588006
     PUSH EAX                            ; 00588008
-    CALL engine_special.cpp_FUN_0055d723 ; 00588009
-        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 00588009
+        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     XOR ESI,ESI                         ; 0058800e
     ADD ESP,0x8                         ; 00588010
     MOV EDI,dword ptr [EBP + 0x4d0]     ; 00588013
@@ -276,8 +276,8 @@ section .text
     MOV EAX,dword ptr [ESI]             ; 0058820c
     ADD EAX,0x30                        ; 0058820e
     PUSH EAX                            ; 00588211
-    CALL engine_special.cpp_FUN_0055d723 ; 00588212
-        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 00588212
+        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 00588217
     PUSH 0x1                            ; 0058821a
     PUSH 0x0                            ; 0058821c

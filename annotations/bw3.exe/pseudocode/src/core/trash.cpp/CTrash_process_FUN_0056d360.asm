@@ -25,7 +25,7 @@
 ;   core_hero.cpp_isAnyHeroWithinRadius_FUN_004d2370
 ;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_0053de10
 ;   core_setcolid.cpp_FUN_0053bc80
-;   core_xform.cpp_FUN_00583940
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
 ;   core_xform.cpp_matrixToEulerAngles_FUN_00583b10
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005833e0
 ;
@@ -632,16 +632,16 @@ section .text
     MOV dword ptr [ESP + 0x250],EAX     ; 0056dc2a
     LEA EAX,[ESP + 0x18]                ; 0056dc31
     PUSH EAX                            ; 0056dc35
-    CALL core_xform.cpp_FUN_00583940    ; 0056dc36
-        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583940()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 ; 0056dc36
+        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940()
     ADD ESP,0xc                         ; 0056dc3b
     LEA EAX,[ESP + 0xe8]                ; 0056dc3e
     PUSH EAX                            ; 0056dc45
     PUSH 0x2cfd900                      ; 0056dc46
     LEA EAX,[ESP + 0x78]                ; 0056dc4b
     PUSH EAX                            ; 0056dc4f
-    CALL core_xform.cpp_FUN_00583940    ; 0056dc50
-        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583940()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 ; 0056dc50
+        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940()
     ADD ESP,0xc                         ; 0056dc55
     LEA EAX,[ESP + 0x10]                ; 0056dc58
     PUSH EAX                            ; 0056dc5c

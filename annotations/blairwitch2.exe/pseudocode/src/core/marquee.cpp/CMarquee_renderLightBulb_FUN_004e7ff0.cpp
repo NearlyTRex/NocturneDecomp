@@ -28,7 +28,8 @@ void __cdecl core_marquee_cpp_CMarquee_renderLightBulb_FUN_004e7ff0(CMarquee *th
   CStack_1c.x = (int)ROUND(position->x * _DAT_005f9b50);
   CStack_1c.y = (int)ROUND(position->y * _DAT_005f9b50);
   CStack_1c.z = (int)ROUND(position->z * _DAT_005f9b50);
-  engine_special_cpp_FUN_0055d9ec(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&CStack_1c);
+  engine_special_cpp_transformPoint_FUN_0055d9ec
+            (&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&CStack_1c);
   this_ptr_00 = DAT_0060b280;
   pSVar3 = DAT_0060b280->vertex_buffer_ptr;
   pSVar4 = DAT_0060b280->vertex_buffer_ptr + 1;

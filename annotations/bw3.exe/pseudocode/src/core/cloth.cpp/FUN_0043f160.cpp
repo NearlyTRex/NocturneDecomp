@@ -59,12 +59,12 @@ void core_cloth_cpp_FUN_0043f160(int param_1,int param_2,int param_3)
     CStack_58.x = (int)ROUND((float)(fVar5 * (float10)*(float *)(iVar1 + 0x14)) * _DAT_005dd3b0);
     CStack_58.y = (int)ROUND((float)(fVar4 * (float10)*(float *)(iVar1 + 0x18)) * _DAT_005dd3b0);
     CStack_58.z = (int)ROUND(_DAT_005dd3b0 * 0.0);
-    engine_special_cpp_FUN_005632a3
+    engine_special_cpp_transformAndProjectPoint_FUN_005632a3
               ((SProjectedVertex *)
                ((int)&(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).transformed_x + iVar2),
                &CStack_58);
     iStack_28 = vertex_index1 + 0xd;
-    engine_special_cpp_FUN_005632a3
+    engine_special_cpp_transformAndProjectPoint_FUN_005632a3
               ((SProjectedVertex *)
                ((int)&(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).transformed_x + iStack_1c)
                ,(CVector3i *)&stack0xffffff90);
@@ -86,7 +86,7 @@ void core_cloth_cpp_FUN_0043f160(int param_1,int param_2,int param_3)
   if (param_3 != 0) {
     text_color = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004803d0
                            (g_CEditorToolsPtr);
-    shape_edittool_cpp_FUN_00480f00
+    shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_00480f00
               (g_CEditorToolsPtr,*(float *)(iVar1 + 0x14) + *(float *)(iVar1 + 0x18),text_color);
   }
   engine_drender_cpp_pop_FUN_0046d080();

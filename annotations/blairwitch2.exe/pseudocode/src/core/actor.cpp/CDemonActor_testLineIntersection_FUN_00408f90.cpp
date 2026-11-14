@@ -46,7 +46,8 @@ int __cdecl core_actor_cpp_CDemonActor_testLineIntersection_FUN_00408f90(CDemonA
     pCVar4 = line_start;
     afStack_44[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
          afStack_44[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4];
-    fStack_18 = (float)core_actor_cpp_FUN_00408290(pSVar3,pCVar4,pfVar5,puVar6);
+    fStack_18 = (float)core_actor_cpp_rayCylinderIntersect_FUN_00408290(pSVar3,pCVar4,pfVar5,puVar6)
+    ;
     if ((0.0 <= fStack_18) && (fStack_18 <= 1.0)) {
       if (out_intersection_point != (CVector3f *)0x0) {
         afStack_68[2] = fStack_48 * fStack_18;

@@ -27,8 +27,8 @@
 ;
 ; Called Functions:
 ;   core_sound.cpp_CSound_playActorSound_FUN_005609d0
-;   core_weather.cpp_FUN_0057d050
-;   core_weather.cpp_FUN_0057d1a0
+;   core_weather.cpp_CWeather_setOriginAndRotation_FUN_0057d1a0
+;   core_weather.cpp_CWeather_setWeatherType_FUN_0057d050
 ;
 ; *****************************************************************************
 
@@ -77,8 +77,8 @@ section .text
     PUSH 0x5                            ; 004a04f5
     MOV ECX,dword ptr [0x006071f0]      ; 004a04f7 | DAT_006071f0
     PUSH ECX                            ; 004a04fd | DAT_02d0c1a0
-    CALL core_weather.cpp_FUN_0057d050  ; 004a04fe
-        ;   XREF to: 0057d050 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_FUN_0057d050()
+    CALL core_weather.cpp_CWeather_setWeatherType_FUN_0057d050 ; 004a04fe
+        ;   XREF to: 0057d050 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_0057d050(CWeather * this_ptr, EWeatherType type)
     ADD ESP,0x8                         ; 004a0503
     LEA EAX,[ESP + 0x4]                 ; 004a0506
     PUSH EAX                            ; 004a050a
@@ -86,8 +86,8 @@ section .text
     PUSH EAX                            ; 004a050f
     MOV ESI,dword ptr [0x006071f0]      ; 004a0510 | DAT_006071f0
     PUSH ESI                            ; 004a0516 | DAT_02d0c1a0
-    CALL core_weather.cpp_FUN_0057d1a0  ; 004a0517
-        ;   XREF to: 0057d1a0 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_FUN_0057d1a0()
+    CALL core_weather.cpp_CWeather_setOriginAndRotation_FUN_0057d1a0 ; 004a0517
+        ;   XREF to: 0057d1a0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setOriginAndRotation_FUN_0057d1a0(CWeather * this_ptr, CVector3f * direction, CVector3f * rotation)
     ADD ESP,0xc                         ; 004a051c
     POP ESI                             ; 004a051f
     LEA EAX,[ESP + 0x28]                ; 004a0520
@@ -118,8 +118,8 @@ section .text
     PUSH 0x5                            ; 004a0562
         ;   Label: LAB_004a0562
     PUSH EAX                            ; 004a0564 | DAT_02d0c1a0
-    CALL core_weather.cpp_FUN_0057d050  ; 004a0565
-        ;   XREF to: 0057d050 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_FUN_0057d050()
+    CALL core_weather.cpp_CWeather_setWeatherType_FUN_0057d050 ; 004a0565
+        ;   XREF to: 0057d050 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_0057d050(CWeather * this_ptr, EWeatherType type)
     ADD ESP,0x8                         ; 004a056a
     JMP 0x004a0520                      ; 004a056d
         ;   XREF to: 004a0520 (UNCONDITIONAL_JUMP)  ; LAB_004a0520

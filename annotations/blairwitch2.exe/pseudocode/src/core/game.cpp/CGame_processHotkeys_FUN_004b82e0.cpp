@@ -147,11 +147,11 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004b82e0(CGame *this_ptr)
     iVar7 = (**(code **)*0x01D02F84)(0x01D02F84);
     if (((iVar7 != 0) && (iVar7 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84), iVar7 != 0)) &&
        (this_ptr->letterbox_mode == 0)) {
-      core_game_cpp_FUN_004bb9b0(this_ptr,(char *)0x0);
+      core_game_cpp_CGame_saveGame_FUN_004bb9b0(this_ptr,(char *)0x0);
     }
     iVar7 = (**(code **)*0x01D02F84)(0x01D02F84);
     if ((iVar7 != 0) && (this_ptr->letterbox_mode == 0)) {
-      core_game_cpp_FUN_004bb9b0(this_ptr,(char *)0x0);
+      core_game_cpp_CGame_saveGame_FUN_004bb9b0(this_ptr,(char *)0x0);
     }
     iVar7 = (**(code **)*0x01D02F84)(0x01D02F84);
     if (iVar7 != 0) {
@@ -159,7 +159,7 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004b82e0(CGame *this_ptr)
     }
     iVar7 = (**(code **)*0x01D02F84)(0x01D02F84);
     if ((iVar7 != 0) && (this_ptr->letterbox_mode == 0)) {
-      core_game_cpp_FUN_004bb9b0(this_ptr,"quicksavedgame.noc");
+      core_game_cpp_CGame_saveGame_FUN_004bb9b0(this_ptr,"quicksavedgame.noc");
       fVar12 = 2.0;
       pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Quick Save");
       core_game_cpp_CGame_displayMessage_FUN_004b31a0(this_ptr,pcVar10,fVar12);

@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 650,
-    "complexity_score": 440,
+    "complexity_score": 448,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 27,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 255,
+    "pseudocode_lines": 263,
     "suspect_count": 17,
     "suspect_types": [
       "raw_address_pointer_store",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 905
+    "total_lines": 913
   },
   "cross_references": [
     {
@@ -70,7 +70,7 @@
     {
       "addr": "005632a3",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_005632a3"
+      "name": "engine_special.cpp_transformAndProjectPoint_FUN_005632a3"
     }
   ],
   "globals": [
@@ -811,7 +811,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 120,
+      "line": 128,
       "match": "DAT_0060b024",
       "severity": "mild",
       "text": "uVar1 = DAT_0060b024 & DAT_0060b054 & DAT_0060b084 & DAT_0060b0b4 & DAT_0060b0e4 &",
@@ -819,7 +819,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 120,
+      "line": 128,
       "match": "DAT_0060b054",
       "severity": "mild",
       "text": "uVar1 = DAT_0060b024 & DAT_0060b054 & DAT_0060b084 & DAT_0060b0b4 & DAT_0060b0e4 &",
@@ -827,7 +827,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 120,
+      "line": 128,
       "match": "DAT_0060b084",
       "severity": "mild",
       "text": "uVar1 = DAT_0060b024 & DAT_0060b054 & DAT_0060b084 & DAT_0060b0b4 & DAT_0060b0e4 &",
@@ -835,7 +835,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 120,
+      "line": 128,
       "match": "DAT_0060b0b4",
       "severity": "mild",
       "text": "uVar1 = DAT_0060b024 & DAT_0060b054 & DAT_0060b084 & DAT_0060b0b4 & DAT_0060b0e4 &",
@@ -843,7 +843,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 120,
+      "line": 128,
       "match": "DAT_0060b0e4",
       "severity": "mild",
       "text": "uVar1 = DAT_0060b024 & DAT_0060b054 & DAT_0060b084 & DAT_0060b0b4 & DAT_0060b0e4 &",
@@ -851,7 +851,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 121,
+      "line": 129,
       "match": "DAT_0060b114",
       "severity": "mild",
       "text": "DAT_0060b114 & DAT_0060b144 & DAT_0060b174;",
@@ -859,7 +859,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 121,
+      "line": 129,
       "match": "DAT_0060b144",
       "severity": "mild",
       "text": "DAT_0060b114 & DAT_0060b144 & DAT_0060b174;",
@@ -867,7 +867,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 121,
+      "line": 129,
       "match": "DAT_0060b174",
       "severity": "mild",
       "text": "DAT_0060b114 & DAT_0060b144 & DAT_0060b174;",
@@ -875,7 +875,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 236,
+      "line": 244,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(DAT_005f2afc,&local_4c);",
@@ -883,7 +883,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 239,
+      "line": 247,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(DAT_005f2afc,(CVector3f *)&DAT_02cfd900);",
@@ -891,7 +891,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 239,
+      "line": 247,
       "match": "DAT_02cfd900",
       "severity": "mild",
       "text": "(DAT_005f2afc,(CVector3f *)&DAT_02cfd900);",
@@ -899,7 +899,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 241,
+      "line": 249,
       "match": "*(CDemonCube **)(_DAT_01c0b7b4 * 4 + 0x1c0b7bc",
       "severity": "moderate",
       "text": "*(CDemonCube **)(_DAT_01c0b7b4 * 4 + 0x1c0b7bc) = local_34;",
@@ -907,7 +907,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 243,
+      "line": 251,
       "match": "DAT_01c1f03c",
       "severity": "mild",
       "text": "if ((CVector3f *)(&DAT_01c1f03c + iVar2) != &local_4c) {",
@@ -915,7 +915,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 244,
+      "line": 252,
       "match": "DAT_01c1f03c",
       "severity": "mild",
       "text": "((CVector3f *)(&DAT_01c1f03c + iVar2))->x = local_4c.x;",
@@ -923,7 +923,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 245,
+      "line": 253,
       "match": "DAT_01c1f040",
       "severity": "mild",
       "text": "*(float *)(&DAT_01c1f040 + iVar2) = local_4c.y;",
@@ -931,7 +931,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 246,
+      "line": 254,
       "match": "DAT_01c1f044",
       "severity": "mild",
       "text": "*(float *)(&DAT_01c1f044 + iVar2) = local_4c.z;",

@@ -8,7 +8,7 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004d6420 at 004d65c8
+;   core_game.cpp_CGame_saveGame_FUN_004d6420 at 004d65c8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Fire_state_005df678

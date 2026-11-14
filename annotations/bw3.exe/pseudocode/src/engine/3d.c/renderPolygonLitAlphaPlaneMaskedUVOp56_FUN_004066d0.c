@@ -31,7 +31,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp56
       }
     }
     else if (DAT_005fba20 == 0x20) {
-      _DAT_01c6b5cc = engine_special_cpp_FUN_00560f31;
+      _DAT_01c6b5cc = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f31;
     }
     else {
       _DAT_01c6b5cc = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_00561713;

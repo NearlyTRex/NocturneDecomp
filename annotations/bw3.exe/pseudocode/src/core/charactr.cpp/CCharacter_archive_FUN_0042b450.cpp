@@ -44,7 +44,7 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_0042b450(CCharacter *this_
           if (0xc < g_CCharacterClassVersion) {
             core_actor_cpp_archiveVector_FUN_0040b400(&local_38,"carry pos");
             core_actor_cpp_archiveOrientation_FUN_0040b4a0(&local_50,"carry orient");
-            core_xform_cpp_FUN_00583940
+            core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
                       (&this_ptr->carry_hands[aiStack_28[3]].initial_carry_transform,&local_38,
                        &local_50);
           }

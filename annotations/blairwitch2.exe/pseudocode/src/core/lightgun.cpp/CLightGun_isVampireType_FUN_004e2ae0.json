@@ -1,0 +1,98 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 50,
+    "complexity_score": 22,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 72
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004e2ae0",
+    "address_range": [
+      [
+        "004e2ae0",
+        "004e2b47"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_lightgun.cpp_CLightGun_isVampireType_FUN_004e2ae0",
+    "signature": "int __cdecl core_lightgun_cpp_CLightGun_isVampireType_FUN_004e2ae0(CLightGun *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c840",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClass_FUN_0040c840"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.45945945945946,
+    "instruction_count": 37,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "CALL": 5,
+      "CBRANCH": 5,
+      "COPY": 27,
+      "INT_ADD": 10,
+      "INT_AND": 25,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 20,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 10,
+      "INT_SUB": 16,
+      "LOAD": 5,
+      "POPCOUNT": 10,
+      "RETURN": 2,
+      "STORE": 16
+    },
+    "pcode_op_count": 165
+  },
+  "siblings": {
+    "nocedit.exe": {
+      "addr": "005059c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9118
+    },
+    "nocturne.exe": {
+      "addr": "004c6ef0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9118
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLightGun *"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -26,8 +26,8 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_0051bad0(CDemonMission *this
       _DAT_01d1d404 = 0x521;
       core_main_c_FUN_005030e0("CDemonMission::run - no gLocalHero");
     }
-    core_mission_cpp_FUN_0051b610
-              (this_ptr,*(uint *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x2c));
+    core_mission_cpp_CDemonMission_loadSet_FUN_0051b610
+              (this_ptr,*(int *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x2c));
     DAT_01d33b20 = '\0';
     core_mission_cpp_FUN_0051b7b0(this_ptr);
     iVar1 = core_game_cpp_CGame_runGameSession_FUN_004cf5e0(g_CGamePtr);
@@ -48,7 +48,8 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_0051bad0(CDemonMission *this
     core_level_cpp_FUN_004fe840(0x01D1BD1C,9,iVar1 != 0,uVar2);
     core_mission_cpp_CDemonMission_load_FUN_0051a3f0(this_ptr,&DAT_01d33b20,0);
     iVar1 = core_mission_cpp_CDemonMission_createHeros_FUN_0051c0a0(this_ptr,&this_ptr_00->base);
-    if ((iVar1 == 0) || (iVar1 = core_mission_cpp_FUN_0051bdc0(this_ptr), iVar1 == 0))
+    if ((iVar1 == 0) ||
+       (iVar1 = core_mission_cpp_CDemonMission_startMission_FUN_0051bdc0(this_ptr), iVar1 == 0))
     goto LAB_0051bb9a;
   }
   core_mission_cpp_CDemonMission_removeActor_FUN_0051b4d0(this_ptr,(CDemonActor *)this_ptr_00,1);

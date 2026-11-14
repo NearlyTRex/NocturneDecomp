@@ -16,6 +16,6 @@ void __cdecl core_fire_cpp_transformWorldToScreen_FUN_0049eb90(CVector3i *input,
   CStack_10.x = (int)ROUND(world_position->x * _DAT_005f64e4);
   CStack_10.y = (int)ROUND(world_position->y * _DAT_005f64e4);
   CStack_10.z = (int)ROUND(world_position->z * _DAT_005f64e4);
-  engine_special_cpp_FUN_0055d9ec(output,&CStack_10);
+  engine_special_cpp_transformPoint_FUN_0055d9ec(output,&CStack_10);
   return;
 }

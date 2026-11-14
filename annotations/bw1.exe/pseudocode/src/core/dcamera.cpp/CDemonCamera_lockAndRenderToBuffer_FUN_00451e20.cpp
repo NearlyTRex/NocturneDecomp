@@ -37,6 +37,6 @@ int __cdecl core_dcamera_cpp_CDemonCamera_lockAndRenderToBuffer_FUN_00451e20(CDe
       return iVar1;
     }
   }
-  iVar1 = engine_special_cpp_FUN_00581fe0();
+  iVar1 = engine_special_cpp_beginScene_FUN_00581fe0();
   return iVar1;
 }

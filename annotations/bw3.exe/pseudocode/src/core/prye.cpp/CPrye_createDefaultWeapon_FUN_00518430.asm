@@ -31,9 +31,9 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_actor.cpp_createActorByName_FUN_0040c4f0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
+;   core_inv.cpp_CInventory_addItem_FUN_004da880
 ;   core_inv.cpp_CInventory_initialize_FUN_004da4e0
 ;   core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40
-;   core_inv.cpp_FUN_004da880
 ;   core_main.c_FUN_004e4330
 ;
 ; *****************************************************************************
@@ -96,8 +96,8 @@ section .text
     PUSH EBX                            ; 005184b0
     LEA EBX,[EBP + 0x206e8]             ; 005184b1
     PUSH EBX                            ; 005184b7
-    CALL core_inv.cpp_FUN_004da880      ; 005184b8
-        ;   XREF to: 004da880 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004da880(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004da880 ; 005184b8
+        ;   XREF to: 004da880 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004da880(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 005184bd
     PUSH 0x1                            ; 005184c0
     PUSH 0x5                            ; 005184c2
@@ -143,8 +143,8 @@ section .text
     PUSH EBX                            ; 00518519
     LEA EAX,[EBP + 0x206e8]             ; 0051851a
     PUSH EAX                            ; 00518520
-    CALL core_inv.cpp_FUN_004da880      ; 00518521
-        ;   XREF to: 004da880 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004da880(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004da880 ; 00518521
+        ;   XREF to: 004da880 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004da880(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 00518526
     MOV ECX,dword ptr [0x007e1a50]      ; 00518529 | DAT_007e1a50
     PUSH ECX                            ; 0051852f
@@ -196,8 +196,8 @@ section .text
     PUSH EBX                            ; 005185a8
     LEA EAX,[EBP + 0x206e8]             ; 005185a9
     PUSH EAX                            ; 005185af
-    CALL core_inv.cpp_FUN_004da880      ; 005185b0
-        ;   XREF to: 004da880 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004da880(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004da880 ; 005185b0
+        ;   XREF to: 004da880 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004da880(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 005185b5
     MOV EAX,[0x007e17b4]                ; 005185b8 | g_CBoxActorClassInfo.name_hash
     PUSH EAX                            ; 005185bd
@@ -242,8 +242,8 @@ section .text
     PUSH EBX                            ; 00518611
     ADD EBP,0x206e8                     ; 00518612
     PUSH EBP                            ; 00518618
-    CALL core_inv.cpp_FUN_004da880      ; 00518619
-        ;   XREF to: 004da880 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004da880(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004da880 ; 00518619
+        ;   XREF to: 004da880 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004da880(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 0051861e
     POP EBP                             ; 00518621
     POP EDI                             ; 00518622

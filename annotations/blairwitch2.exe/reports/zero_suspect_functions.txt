@@ -69,6 +69,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/CDemonActor_stopIntera
 annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/CDemonActor_testCylinderCollision_FUN_00408f00.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/CDemonActor_updateCollisionData_FUN_00409850.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/CDemonActor_updateOrientationMatrix_FUN_00408ae0.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/CVector3f_arrdtor10_FUN_0040d400.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/CVector3f_ctor_FUN_0040d340.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/CVector3f_dtor_FUN_0040d3f0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/actor.cpp/FUN_004089b0.cpp
@@ -269,11 +270,11 @@ annotations/blairwitch2.exe/pseudocode/src/core/boneguy.cpp/SBoneGuyBox_ctor_FUN
 annotations/blairwitch2.exe/pseudocode/src/core/boneguy.cpp/factoryFuncBoneGuy_FUN_00417f20.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/boneguy.cpp/staticInit_FUN_00417d30.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/box.cpp/CBoundingBox3D_ctor_FUN_00534d20.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/box.cpp/CBoundingBox3D_doesBoxIntersect_FUN_0041b660.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/box.cpp/CBoundingBox3D_expand_FUN_0041a590.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/box.cpp/CBoundingBox3D_getMaximumBound_FUN_0041b6b0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/box.cpp/CBoundingBox3D_reset_FUN_0041b600.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/box.cpp/CBox_dtor_FUN_005b1c70.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/box.cpp/FUN_0041b660.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/box.cpp/SScrape_ctor_FUN_005b46b0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/boxactor.cpp/CBoxActor_canPickup_FUN_0041ccc0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/boxactor.cpp/CBoxActor_getActorType_FUN_0041bd20.cpp
@@ -614,6 +615,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/event.cpp/CEventList_findTimer_F
 annotations/blairwitch2.exe/pseudocode/src/core/event.cpp/CEventList_getCounterValue_FUN_00491510.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/event.cpp/CEventList_getSfxHandle_FUN_00491920.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/event.cpp/CEventList_render_FUN_0048e490.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/event.cpp/CEventList_resetGameFlags_FUN_004910b0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/event.cpp/CEventList_reset_FUN_00489380.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/event.cpp/CEventList_restartSfxEntries_FUN_00491be0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/event.cpp/CRuleList_clear_FUN_00492350.cpp
@@ -953,11 +955,13 @@ annotations/blairwitch2.exe/pseudocode/src/core/hellhag.cpp/staticInit_FUN_005aa
 annotations/blairwitch2.exe/pseudocode/src/core/hero.cpp/CHeroPlaceholder_archive_FUN_004d0af0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/hero.cpp/CHeroPlaceholder_dtor_FUN_004d09a0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/hero.cpp/CHeroPlaceholder_getActorType_FUN_004d0930.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/hero.cpp/CHero_addCarriedItemToInventory_FUN_004cff90.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/hero.cpp/CHero_canBeGrabbed_FUN_004cea00.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/hero.cpp/CHero_canDoHeroAction_FUN_004d06c0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/hero.cpp/CHero_canReachPickup_FUN_004cea40.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/hero.cpp/CHero_createDefaultWeapon_FUN_004cec30.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/hero.cpp/CHero_doHeroAction_FUN_004d03b0.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/hero.cpp/CHero_executeObjectPickup_FUN_004cff50.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/hero.cpp/CHero_getPathMap_FUN_004ce9c0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/hero.cpp/CHero_kill_FUN_004d02b0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/hero.cpp/CHero_removeMatchingKeys_FUN_004d0070.cpp
@@ -971,7 +975,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/hero.cpp/CHero_testCylinderColli
 annotations/blairwitch2.exe/pseudocode/src/core/hero.cpp/CHero_testLineIntersection_FUN_004ce540.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/hero.cpp/CHero_toggleLeverNow_FUN_004cf440.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/hero.cpp/CHero_tryOpenDoor_FUN_004cf230.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/hero.cpp/FUN_004cff50.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/hero.cpp/CHero_tryUseSelectedItem_FUN_004cfc80.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/hero.cpp/factoryFuncHeroPlaceholder_FUN_004d0910.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/hiram.cpp/CHiram_archive_FUN_004d11b0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/hiram.cpp/CHiram_getActorType_FUN_004d0f20.cpp
@@ -1075,6 +1079,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/lever.cpp/staticInit_FUN_004e1bc
 annotations/blairwitch2.exe/pseudocode/src/core/lightgun.cpp/CLightGun_dtor_FUN_004e40e0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/lightgun.cpp/CLightGun_getActorType_FUN_004e2a10.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/lightgun.cpp/CLightGun_getDamage_FUN_004e3ad0.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/lightgun.cpp/CLightGun_isVampireType_FUN_004e2ae0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/lightgun.cpp/factoryFuncLightGun_FUN_004e29f0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/lightgun.cpp/staticInit_FUN_004e29c0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/litecone.cpp/CLightCone_dtor_FUN_004e4440.cpp
@@ -1193,6 +1198,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/morph.cpp/CMorphModel_addPartFro
 annotations/blairwitch2.exe/pseudocode/src/core/morph.cpp/CMorphModel_addPartFromKeyFramedModel_FUN_005b63b0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/morph.cpp/CMorphModel_animateFromDeformableModel_FUN_005b6510.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/morph.cpp/CMorphModel_animateFromKeyframedModel_FUN_005b6560.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/morph.cpp/CMorphModel_arrdtor2_FUN_005b7720.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/morph.cpp/CMorphModel_ctor_FUN_005b5fe0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/morph.cpp/CMorphModel_dtor_FUN_005b6010.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/morph.cpp/CMorphModel_findNearestPoint_FUN_005b6db0.cpp
@@ -1207,7 +1213,6 @@ annotations/blairwitch2.exe/pseudocode/src/core/morph.cpp/CMorph_setupModelFromK
 annotations/blairwitch2.exe/pseudocode/src/core/morph.cpp/CMorph_setupModelFromTriPolygons_FUN_005b6ec0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/morph.cpp/CMorph_updateModelFromDeformable_FUN_005b7150.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/morph.cpp/CMorph_updateModelFromKeyframed_FUN_005b7190.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/morph.cpp/FUN_005b7720.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/motion.cpp/CMotionController_clearTweenState_FUN_005039e0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/motion.cpp/CMotionController_ctor_FUN_00503020.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/motion.cpp/CMotionController_dtor_FUN_00503050.cpp
@@ -1428,6 +1433,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/smiley.cpp/factoryFuncSmiley_FUN
 annotations/blairwitch2.exe/pseudocode/src/core/smiley.cpp/staticInit_FUN_00549770.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/sound.cpp/CSound_configure_FUN_0055ac50.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/sound.cpp/CSound_ctor_FUN_0055a0e0.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/sound.cpp/CSound_findAllSoundFiles_FUN_0055a100.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/sound.cpp/CSound_isSoundPlaying_FUN_0055af70.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/sound.cpp/CSound_killSound_FUN_0055af80.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/sound.cpp/CSound_playActorSound_FUN_0055ae50.cpp
@@ -1435,7 +1441,6 @@ annotations/blairwitch2.exe/pseudocode/src/core/sound.cpp/CSound_playSound_FUN_0
 annotations/blairwitch2.exe/pseudocode/src/core/sound.cpp/CSound_playTrackedActorSound_FUN_0055ae80.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/sound.cpp/CSound_reset_FUN_0055adb0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/sound.cpp/CSound_selectReverbPreset_FUN_0055b110.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/sound.cpp/FUN_0055a100.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/sound.cpp/STrainNoise_ctor_FUN_0055b1d0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/sound.cpp/STrainNoise_dtor_FUN_0055b1e0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/spike.cpp/CSpike_archive_FUN_00560b50.cpp
@@ -1679,7 +1684,7 @@ annotations/blairwitch2.exe/pseudocode/src/core/werewolf.cpp/CWerewolf_playHowl_
 annotations/blairwitch2.exe/pseudocode/src/core/werewolf.cpp/CWerewolf_setWalkTarget_FUN_0058d020.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/werewolf.cpp/CWerewolf_setup_FUN_0058b830.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/werewolf.cpp/factoryFuncWerewolf_FUN_0058b750.cpp
-annotations/blairwitch2.exe/pseudocode/src/core/xform.cpp/FUN_00591ad0.cpp
+annotations/blairwitch2.exe/pseudocode/src/core/xform.cpp/buildMatrixFromEulerAndPosition_FUN_00591ad0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/xform.cpp/clearTranslation_FUN_00591ab0.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/xform.cpp/computeOrthogonalityError_FUN_00592a60.cpp
 annotations/blairwitch2.exe/pseudocode/src/core/xform.cpp/determinant_FUN_005927e0.cpp
@@ -1776,10 +1781,10 @@ annotations/blairwitch2.exe/pseudocode/src/engine/font.cpp/CBitFont_reset_FUN_00
 annotations/blairwitch2.exe/pseudocode/src/engine/font.cpp/CBitFont_setCharYOffsetRange_FUN_004ab5c0.cpp
 annotations/blairwitch2.exe/pseudocode/src/engine/font.cpp/CBitFont_setFontReady_FUN_004ab620.cpp
 annotations/blairwitch2.exe/pseudocode/src/engine/font.cpp/CBitFont_setInitializedFlag_FUN_004a88d0.cpp
+annotations/blairwitch2.exe/pseudocode/src/engine/ini.cpp/CIniFile_ctor_FUN_004d8910.cpp
 annotations/blairwitch2.exe/pseudocode/src/engine/ini.cpp/CIniFile_dtor_FUN_004d8940.cpp
 annotations/blairwitch2.exe/pseudocode/src/engine/ini.cpp/CIni_ctor_FUN_004d8d40.cpp
 annotations/blairwitch2.exe/pseudocode/src/engine/ini.cpp/CIni_dtor_FUN_004d8d50.cpp
-annotations/blairwitch2.exe/pseudocode/src/engine/ini.cpp/FUN_004d8910.cpp
 annotations/blairwitch2.exe/pseudocode/src/engine/ini.cpp/getProfileString_FUN_004d8800.cpp
 annotations/blairwitch2.exe/pseudocode/src/engine/ini.cpp/staticInit_FUN_004d8170.cpp
 annotations/blairwitch2.exe/pseudocode/src/engine/ini.cpp/writeProfileString_FUN_004d88e0.cpp

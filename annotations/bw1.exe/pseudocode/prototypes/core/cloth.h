@@ -25,13 +25,13 @@ void __cdecl CCloth::free(CCloth *this_ptr);
 // Address: 0043e6d0
 int __cdecl CCloth::load(CCloth *this_ptr,char *filename);
 
-// Original: core_cloth.cpp_FUN_0043ec40
+// Original: core_cloth.cpp_CCloth_initializeConnections_FUN_0043ec40
 // Address: 0043ec40
-void __cdecl FUN_0043ec40(CCloth *this_ptr);
+void __cdecl CCloth::initializeConnections(CCloth *this_ptr);
 
-// Original: core_cloth.cpp_FUN_0043eea0
+// Original: core_cloth.cpp_CCloth_setup_FUN_0043eea0
 // Address: 0043eea0
-void __cdecl FUN_0043eea0(CCloth *this_ptr,CVector3f *position,CVector3f *euler,CDeformableModelInstance *model_ptr);
+void __cdecl CCloth::setup(CCloth *this_ptr,CVector3f *position,CVector3f *euler,CDeformableModelInstance *model_ptr);
 
 // Original: core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043fa20
 // Address: 0043fa20

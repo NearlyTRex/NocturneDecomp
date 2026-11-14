@@ -26,7 +26,7 @@ int engine_3d_c_renderPolygonAlphaTexturedNearPlane_FUN_00404e60(void)
       }
     }
     else if (DAT_006141c0 == 0x20) {
-      _DAT_01c35e6c = engine_special_cpp_FUN_0055b3b1;
+      _DAT_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0055b3b1;
     }
     else {
       _DAT_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb93;

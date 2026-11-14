@@ -47,8 +47,8 @@
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b00
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
-;   core_xform.cpp_FUN_005b5620
-;   core_xform.cpp_FUN_005b5760
+;   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005b5620
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
 ;   core_xform.cpp_FUN_005b6270
 ;   core_xform.cpp_matrixToEulerAngles_FUN_005b5930
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005b5200
@@ -168,8 +168,8 @@ section .text
     PUSH EBX                            ; 004ac531
     LEA EAX,[ESP + 0x38]                ; 004ac532
     PUSH EAX                            ; 004ac536
-    CALL core_xform.cpp_FUN_005b5760    ; 004ac537
-        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760 ; 004ac537
+        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     MOV EAX,dword ptr [EBX + 0x10]      ; 004ac53c
     ADD ESP,0xc                         ; 004ac53f
     LEA EDX,[EAX + 0x30]                ; 004ac542
@@ -178,8 +178,8 @@ section .text
     PUSH EAX                            ; 004ac549
     LEA EAX,[ESP + 0x68]                ; 004ac54a
     PUSH EAX                            ; 004ac54e
-    CALL core_xform.cpp_FUN_005b5620    ; 004ac54f
-        ;   XREF to: 005b5620 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_005b5620(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005b5620 ; 004ac54f
+        ;   XREF to: 005b5620 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005b5620(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 004ac554
     LEA EAX,[ESP + 0x60]                ; 004ac557
     PUSH EAX                            ; 004ac55b

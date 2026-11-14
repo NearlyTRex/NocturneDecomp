@@ -22,7 +22,7 @@
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_004620c0
-;   core_dtri.cpp_FUN_004795c0
+;   core_dtri.cpp_rayTriangleFloorTest_FUN_004795c0
 ;   core_main.c_FUN_004e4330
 ;
 ; *****************************************************************************
@@ -95,8 +95,8 @@ section .text
     PUSH dword ptr [ESP + 0x24]         ; 00461f8d
     PUSH EDX                            ; 00461f91
     PUSH ESI                            ; 00461f92
-    CALL core_dtri.cpp_FUN_004795c0     ; 00461f93
-        ;   XREF to: 004795c0 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_FUN_004795c0(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
+    CALL core_dtri.cpp_rayTriangleFloorTest_FUN_004795c0 ; 00461f93
+        ;   XREF to: 004795c0 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayTriangleFloorTest_FUN_004795c0(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 00461f98
     TEST EAX,EAX                        ; 00461f9b
     JZ 0x00461fa4                       ; 00461f9d

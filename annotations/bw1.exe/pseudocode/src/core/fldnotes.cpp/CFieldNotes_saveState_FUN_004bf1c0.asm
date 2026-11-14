@@ -20,7 +20,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004d6420 at 004d66a0
+;   core_game.cpp_CGame_saveGame_FUN_004d6420 at 004d66a0
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004bf17c = 004bf25d

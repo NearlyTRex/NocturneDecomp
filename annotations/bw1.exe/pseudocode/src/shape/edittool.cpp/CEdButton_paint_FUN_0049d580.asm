@@ -38,8 +38,8 @@
 ;   engine_font.cpp_FUN_004c1dd0
 ;   engine_mini3d.cpp_drawHLine_FUN_005182e0
 ;   engine_mini3d.cpp_setColor_FUN_00517d50
-;   shape_edittool.cpp_FUN_00492a40
-;   shape_edittool.cpp_FUN_0049c500
+;   shape_edittool.cpp_draw3DBorder_FUN_0049c500
+;   shape_edittool.cpp_drawDashedLine_FUN_00492a40
 ;
 ; *****************************************************************************
 
@@ -64,8 +64,8 @@ section .text
     MOV [0x01c4f00c],EAX                ; 0049d5a7 | DAT_01c4f00c
     MOV EAX,dword ptr [EBX + 0x8]       ; 0049d5ac
     PUSH EAX                            ; 0049d5af
-    CALL shape_edittool.cpp_FUN_0049c500 ; 0049d5b0
-        ;   XREF to: 0049c500 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0049c500()
+    CALL shape_edittool.cpp_draw3DBorder_FUN_0049c500 ; 0049d5b0
+        ;   XREF to: 0049c500 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_0049c500(int left, int top, int right, int bottom, ...)
     ADD ESP,0x14                        ; 0049d5b5
     MOV dword ptr [0x01c4f00c],ESI      ; 0049d5b8 | DAT_01c4f00c
     LEA ESI,[EBX + 0x1c]                ; 0049d5be
@@ -207,8 +207,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x8]       ; 0049d709
     ADD EAX,0x3                         ; 0049d70c
     PUSH EAX                            ; 0049d70f
-    CALL shape_edittool.cpp_FUN_00492a40 ; 0049d710
-        ;   XREF to: 00492a40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00492a40()
+    CALL shape_edittool.cpp_drawDashedLine_FUN_00492a40 ; 0049d710
+        ;   XREF to: 00492a40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_drawDashedLine_FUN_00492a40(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 0049d715
     JMP 0x0049d669                      ; 0049d718
         ;   XREF to: 0049d669 (UNCONDITIONAL_JUMP)  ; LAB_0049d669

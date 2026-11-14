@@ -11,9 +11,9 @@
 ;   CScript* g_CScriptPtr = 01ed73e0
 ;
 ; Called Functions:
+;   core_mission.cpp_CDemonMission_loadSet_FUN_004f6de0
 ;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_004f6a80
 ;   core_mission.cpp_CDemonMission_removeAllActors_FUN_004f6d70
-;   core_mission.cpp_FUN_004f6de0
 ;   core_script.cpp_CScript_clear_FUN_00528d50
 ;
 ; *****************************************************************************
@@ -61,8 +61,8 @@ section .text
     PUSH 0x0                            ; 004f7286
     PUSH EBX                            ; 004f7288
     MOV dword ptr [EBX],0xffffffff      ; 004f7289
-    CALL core_mission.cpp_FUN_004f6de0  ; 004f728f
-        ;   XREF to: 004f6de0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004f6de0()
+    CALL core_mission.cpp_CDemonMission_loadSet_FUN_004f6de0 ; 004f728f
+        ;   XREF to: 004f6de0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_loadSet_FUN_004f6de0(CDemonMission * this_ptr, int set_index)
     ADD ESP,0x8                         ; 004f7294
     POP EDI                             ; 004f7297
     POP ESI                             ; 004f7298

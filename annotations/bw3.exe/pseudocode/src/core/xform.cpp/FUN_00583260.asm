@@ -18,7 +18,7 @@
 ;   core_chain.cpp_FUN_00429420 at 0042945a
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00430590 at 00430781
 ;   core_charactr.cpp_CCharacter_processDamageDecals_FUN_0042fc90 at 0042fd34
-;   core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042e4b0 at 0042e7a1
+;   core_charactr.cpp_CCharacter_processFire_FUN_0042e8c0 at 0042eb3f
 ;   ... and 42 more
 ;
 ; *****************************************************************************

@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 469,
-    "complexity_score": 994,
+    "complexity_score": 998,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 269,
+    "pseudocode_lines": 273,
     "suspect_count": 69,
     "suspect_types": [
       "extra_output",
@@ -18,7 +18,7 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 738
+    "total_lines": 742
   },
   "cross_references": [
     {
@@ -65,7 +65,7 @@
     {
       "addr": "0055d723",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_0055d723"
+      "name": "engine_special.cpp_transformAndProjectPoint_FUN_0055d723"
     }
   ],
   "globals": [
@@ -959,15 +959,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 111,
+      "line": 112,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_64);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_64);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 112,
+      "line": 113,
       "match": "param_2",
       "severity": "mild",
       "text": "local_54[2] = -local_20 + *param_2;",
@@ -975,7 +975,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 113,
+      "line": 114,
       "match": "param_2",
       "severity": "mild",
       "text": "local_44 = param_2[2];",
@@ -983,7 +983,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 114,
+      "line": 115,
       "match": "param_2",
       "severity": "mild",
       "text": "local_54[3] = param_2[1] + local_24;",
@@ -991,7 +991,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 115,
+      "line": 116,
       "match": "param_2",
       "severity": "mild",
       "text": "local_118 = -local_20 + *param_2;",
@@ -999,15 +999,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 134,
+      "line": 136,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_d0);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_d0);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 135,
+      "line": 137,
       "match": "param_2",
       "severity": "mild",
       "text": "local_f4 = -local_20 + *param_2;",
@@ -1015,7 +1015,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 136,
+      "line": 138,
       "match": "param_2",
       "severity": "mild",
       "text": "local_f0[1] = param_2[2];",
@@ -1023,7 +1023,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 137,
+      "line": 139,
       "match": "param_2",
       "severity": "mild",
       "text": "local_f0[0] = param_2[1] + -local_24;",
@@ -1031,7 +1031,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 138,
+      "line": 140,
       "match": "param_2",
       "severity": "mild",
       "text": "local_34 = -local_20 + *param_2;",
@@ -1039,15 +1039,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 157,
+      "line": 160,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_70);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_70);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 158,
+      "line": 161,
       "match": "param_2",
       "severity": "mild",
       "text": "local_94 = *param_2 + local_20;",
@@ -1055,7 +1055,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 159,
+      "line": 162,
       "match": "param_2",
       "severity": "mild",
       "text": "local_90[1] = param_2[2];",
@@ -1063,7 +1063,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 160,
+      "line": 163,
       "match": "param_2",
       "severity": "mild",
       "text": "local_90[0] = param_2[1] + -local_24;",
@@ -1071,7 +1071,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 161,
+      "line": 164,
       "match": "param_2",
       "severity": "mild",
       "text": "local_58 = *param_2 + local_20;",
@@ -1079,15 +1079,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 180,
+      "line": 184,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_ac);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_ac);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 182,
+      "line": 186,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar11 = (float10)*(float *)(param_1 + 0x10a3c) * fVar10;",
@@ -1095,7 +1095,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 183,
+      "line": 187,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "pSVar6 = DAT_0060b280->vertex_buffer_ptr;",
@@ -1103,7 +1103,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 187,
+      "line": 191,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar11 = (float10)*(float *)(param_1 + 0x10a40) * fVar10;",
@@ -1111,7 +1111,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 188,
+      "line": 192,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "iVar7 = *extraout_EDX;",
@@ -1119,7 +1119,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 192,
+      "line": 196,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar11 = (float10)*(float *)(param_1 + 0x10a44) * fVar10;",
@@ -1127,7 +1127,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 193,
+      "line": 197,
       "match": "extraout_EDX_00",
       "severity": "moderate",
       "text": "iVar7 = *extraout_EDX_00;",
@@ -1135,7 +1135,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 197,
+      "line": 201,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar11 = (float10)*(float *)(param_1 + 0x10a3c) * fVar10;",
@@ -1143,7 +1143,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 198,
+      "line": 202,
       "match": "extraout_EDX_01",
       "severity": "moderate",
       "text": "iVar7 = *extraout_EDX_01;",
@@ -1151,7 +1151,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 202,
+      "line": 206,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar11 = (float10)*(float *)(param_1 + 0x10a40) * fVar10;",
@@ -1159,7 +1159,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 203,
+      "line": 207,
       "match": "extraout_EDX_02",
       "severity": "moderate",
       "text": "iVar7 = *extraout_EDX_02;",
@@ -1167,7 +1167,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 207,
+      "line": 211,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar11 = (float10)*(float *)(param_1 + 0x10a44) * fVar10;",
@@ -1175,7 +1175,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 208,
+      "line": 212,
       "match": "extraout_EDX_03",
       "severity": "moderate",
       "text": "iVar7 = *extraout_EDX_03;",
@@ -1183,7 +1183,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 212,
+      "line": 216,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar11 = (float10)*(float *)(param_1 + 0x10a3c) * fVar10;",
@@ -1191,7 +1191,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 213,
+      "line": 217,
       "match": "extraout_EDX_04",
       "severity": "moderate",
       "text": "iVar7 = *extraout_EDX_04;",
@@ -1199,7 +1199,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 217,
+      "line": 221,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar11 = (float10)*(float *)(param_1 + 0x10a40) * fVar10;",
@@ -1207,7 +1207,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 218,
+      "line": 222,
       "match": "extraout_EDX_05",
       "severity": "moderate",
       "text": "iVar7 = *extraout_EDX_05;",
@@ -1215,7 +1215,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 222,
+      "line": 226,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar11 = (float10)*(float *)(param_1 + 0x10a44) * fVar10;",
@@ -1223,7 +1223,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 223,
+      "line": 227,
       "match": "extraout_EDX_06",
       "severity": "moderate",
       "text": "iVar7 = *extraout_EDX_06;",
@@ -1231,7 +1231,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 227,
+      "line": 231,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar11 = (float10)*(float *)(param_1 + 0x10a3c) * fVar10;",
@@ -1239,7 +1239,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 228,
+      "line": 232,
       "match": "extraout_EDX_07",
       "severity": "moderate",
       "text": "iVar7 = *extraout_EDX_07;",
@@ -1247,7 +1247,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 232,
+      "line": 236,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar11 = (float10)*(float *)(param_1 + 0x10a40) * fVar10;",
@@ -1255,7 +1255,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 233,
+      "line": 237,
       "match": "extraout_EDX_08",
       "severity": "moderate",
       "text": "iVar7 = *extraout_EDX_08;",
@@ -1263,7 +1263,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 238,
+      "line": 242,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar10 = (float10)*(float *)(param_1 + 0x10a44) * fVar10;",
@@ -1271,7 +1271,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 239,
+      "line": 243,
       "match": "extraout_EDX_09",
       "severity": "moderate",
       "text": "iVar7 = *extraout_EDX_09;",
@@ -1279,7 +1279,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 268,
+      "line": 272,
       "match": "DAT_00609ae4",
       "severity": "mild",
       "text": "(this_ptr,(SMRGLTextureBasic *)&DAT_00609ae4);",
@@ -1287,7 +1287,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 269,
+      "line": 273,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,1);",
@@ -1295,7 +1295,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 270,
+      "line": 274,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046a930(DAT_0060b280,&local_14c);",
@@ -1303,7 +1303,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 271,
+      "line": 275,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);",
@@ -1311,7 +1311,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_124 != &local_c4)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 172,
+      "line": 175,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_124 != &local_c4) {",

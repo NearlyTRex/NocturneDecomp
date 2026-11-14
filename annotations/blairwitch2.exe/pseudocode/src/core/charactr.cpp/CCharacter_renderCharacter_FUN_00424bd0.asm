@@ -28,9 +28,9 @@
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_00425aa0
 ;   core_charactr.cpp_CCharacter_renderBurn_FUN_004264d0
+;   core_charactr.cpp_CCharacter_renderCollision_FUN_00424c80
 ;   core_charactr.cpp_CCharacter_renderEthereal_FUN_00426730
 ;   core_charactr.cpp_FUN_004247f0
-;   core_charactr.cpp_FUN_00424c80
 ;   core_cloth.cpp_CClothList_render_FUN_005b17d0
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_00547170
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
@@ -112,8 +112,8 @@ section .text
         ;   XREF to: 00424bdf (UNCONDITIONAL_JUMP)  ; LAB_00424bdf
     PUSH EBX                            ; 00424c6c
         ;   Label: LAB_00424c6c
-    CALL core_charactr.cpp_FUN_00424c80 ; 00424c6d
-        ;   XREF to: 00424c80 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00424c80(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_renderCollision_FUN_00424c80 ; 00424c6d
+        ;   XREF to: 00424c80 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderCollision_FUN_00424c80(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00424c72
     POP EDI                             ; 00424c75
     POP EBX                             ; 00424c76

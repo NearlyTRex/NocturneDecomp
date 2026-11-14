@@ -27,7 +27,7 @@
 ;   engine_drender.cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0046a3a0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0
 ;   engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046b940
-;   engine_special.cpp_FUN_0055d723
+;   engine_special.cpp_transformAndProjectPoint_FUN_0055d723
 ;
 ; *****************************************************************************
 
@@ -119,8 +119,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 004c5734 | DAT_01ba5c50
     ADD EAX,ESI                         ; 004c5736
     PUSH EAX                            ; 004c5738
-    CALL engine_special.cpp_FUN_0055d723 ; 004c5739
-        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 004c5739
+        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x0060b280]                ; 004c573e | DAT_0060b280
     MOV EDX,dword ptr [EAX]             ; 004c5743 | DAT_01ba5c50
     MOV dword ptr [EDX + ESI*0x1 + 0x20],0xffff ; 004c5745

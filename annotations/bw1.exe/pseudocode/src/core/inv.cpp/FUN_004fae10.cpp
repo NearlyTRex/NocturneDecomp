@@ -467,7 +467,8 @@ LAB_004fb230:
     *(float *)((int)&local_d4 + (uint)bVar11 * -8 + 4) = afStack_130[(uint)bVar11 * -2];
     *(float *)((int)&local_d4 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
          afStack_130[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
-    engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_d4);
+    engine_special_cpp_transformAndProjectPoint_FUN_00580173
+              (&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_d4);
     local_94 = -local_58;
     local_98 = local_50;
     local_90 = 0;
@@ -487,7 +488,8 @@ LAB_004fb230:
     *(float *)((int)&local_d4 + (uint)bVar11 * -8 + 4) = afStack_118[(uint)bVar11 * -2];
     *(float *)((int)&local_d4 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
          afStack_118[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
-    engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_d4);
+    engine_special_cpp_transformAndProjectPoint_FUN_00580173
+              (&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_d4);
     local_14c = local_50;
     local_148 = local_58;
     local_144 = 0;
@@ -506,7 +508,8 @@ LAB_004fb230:
     *(float *)((int)&local_d4 + (uint)bVar11 * -8 + 4) = afStack_16c[(uint)bVar11 * -2];
     *(float *)((int)&local_d4 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
          afStack_16c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
-    engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_d4);
+    engine_special_cpp_transformAndProjectPoint_FUN_00580173
+              (&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_d4);
     local_88 = local_58;
     local_8c = -local_50;
     local_84 = 0;
@@ -525,7 +528,8 @@ LAB_004fb230:
     *(float *)((int)&local_d4 + (uint)bVar11 * -8 + 4) = local_ac[(uint)bVar11 * -2 + 3];
     *(float *)((int)&local_d4 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
          local_ac[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
-    engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_d4);
+    engine_special_cpp_transformAndProjectPoint_FUN_00580173
+              (&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_d4);
     local_1e0._4_4_ = 4;
     local_1e0._24_4_ = 0;
     local_1e0._28_4_ = 0;

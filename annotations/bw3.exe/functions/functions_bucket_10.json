@@ -3443,7 +3443,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_box.cpp_FUN_0041e910",
+    "name":"core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041e910",
     "ret":"int",
     "vars":{
       "params":[
@@ -4765,10 +4765,10 @@
         "start":"0042f010"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_FUN_0042f010",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"core_charactr.cpp_CCharacter_renderBurn_FUN_0042f010",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -4884,9 +4884,24 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CCharacter*"
+        }
+      ]
     }
   },
   {
@@ -4900,7 +4915,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_FUN_0042f310",
+    "name":"core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310",
     "ret":"void",
     "vars":{
       "params":[
@@ -7429,14 +7444,9 @@
     "addr":"0043ad90",
     "body":[
       {
-        "end":"0043adf0",
-        "size":97,
+        "end":"0043ae5c",
+        "size":205,
         "start":"0043ad90"
-      },
-      {
-        "end":"0043ae36",
-        "size":28,
-        "start":"0043ae1b"
       }
     ],
     "importable":true,
@@ -13843,14 +13853,61 @@
         "start":"0047b510"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_edittool.cpp_FUN_0047b510",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"shape_edittool.cpp_plotPixelWithClipping_FUN_0047b510",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"x_coord",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"y_coord",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"use_clipping",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -22956,7 +23013,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_game.cpp_FUN_004bda10",
+    "name":"core_game.cpp_CGame_saveGame_FUN_004bda10",
     "ret":"void",
     "vars":{
       "locals":[
@@ -30264,7 +30321,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_mission.cpp_FUN_004f7590",
+    "name":"core_mission.cpp_CDemonMission_startMission_FUN_004f7590",
     "ret":"int",
     "vars":{
       "params":[
@@ -36277,14 +36334,45 @@
         "start":"00515510"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"engine_prim.c_FUN_00515510",
-    "ret":"undefined1",
-    "sig":"default",
+    "name":"engine_prim.c_setupBasicSoftwareEdge_FUN_00515510",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"start_vertex",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SRenderVertex*"
+        },
+        {
+          "name":"end_vertex",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SRenderVertex*"
+        }
+      ]
     }
   },
   {
@@ -44659,7 +44747,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setcolid.cpp_FUN_0053da90",
+    "name":"core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_0053da90",
     "ret":"int",
     "vars":{
       "locals":[
@@ -56058,7 +56146,7 @@
       }
     ],
     "importable":true,
-    "name":"core_xform.cpp_FUN_00584490",
+    "name":"core_xform.cpp_invertAndGetTranslation_FUN_00584490",
     "ret":"undefined1",
     "sig":"default",
     "vars":{

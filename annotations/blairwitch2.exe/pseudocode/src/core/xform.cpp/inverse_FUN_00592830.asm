@@ -33,7 +33,7 @@
 ;   core_cloth.cpp_CCloth_computeBoneTransform_FUN_005af3b0 at 005af400
 ;   core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_004f9990 at 004f9db1
 ;   core_tentacle.cpp_CTentacle_process_FUN_005726c0 at 005729df
-;   core_xform.cpp_FUN_00592760 at 00592774
+;   core_xform.cpp_invertAndGetTranslation_FUN_00592760 at 00592774
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_xform_cpp_005eed4a

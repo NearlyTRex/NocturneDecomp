@@ -7558,8 +7558,8 @@
     ],
     "conv":"__cdecl",
     "instructions":72,
-    "method":"FUN_004795e0",
-    "name":"engine_dosio.cpp_FUN_004795e0",
+    "method":"ensureTrailingSlash",
+    "name":"engine_dosio.cpp_ensureTrailingSlash_FUN_004795e0",
     "params":[
       {
         "name":"input_path",
@@ -8596,14 +8596,14 @@
       "004c4510",
       "005030e0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":21,
-    "method":"FUN_004929e0",
-    "name":"shape_edittool.cpp_FUN_004929e0",
+    "method":"initEditorFontMetrics",
+    "name":"shape_edittool.cpp_initEditorFontMetrics_FUN_004929e0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -8851,19 +8851,12 @@
       "005bfb40",
       "005c03a0"
     ],
+    "cls":"CEditorTools",
     "conv":"__cdecl",
     "instructions":168,
-    "method":"FUN_00498360",
-    "name":"shape_edittool.cpp_FUN_00498360",
+    "method":"draw3DAxisLabels",
+    "name":"shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00498360",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CEditorTools",
-          "ptr":1
-        }
-      },
       {
         "name":"scale_factor",
         "type":{
@@ -8881,7 +8874,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -8896,14 +8889,32 @@
       "00407af0",
       "00507b00"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":108,
-    "method":"FUN_00498660",
-    "name":"shape_edittool.cpp_FUN_00498660",
+    "method":"draw3DInterpolatedLine",
+    "name":"shape_edittool.cpp_draw3DInterpolatedLine_FUN_00498660",
+    "params":[
+      {
+        "name":"start_point",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"end_point",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -12023,19 +12034,12 @@
       "004f8fe0",
       "004fc370"
     ],
+    "cls":"CGame",
     "conv":"__cdecl",
     "instructions":591,
-    "method":"FUN_004d0ee0",
-    "name":"core_game.cpp_FUN_004d0ee0",
+    "method":"processKeyboardControls",
+    "name":"core_game.cpp_CGame_processKeyboardControls_FUN_004d0ee0",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CGame",
-          "ptr":1
-        }
-      },
       {
         "name":"player_control",
         "type":{
@@ -12045,7 +12049,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -13223,21 +13227,12 @@
       "004ff970",
       "005a7520"
     ],
+    "cls":"CHero",
     "conv":"__cdecl",
     "instructions":120,
-    "method":"FUN_004eb660",
-    "name":"core_hero.cpp_FUN_004eb660",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CHero",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"tryPullLever",
+    "name":"core_hero.cpp_CHero_tryPullLever_FUN_004eb660",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"int",
@@ -14838,14 +14833,25 @@
       "00483850",
       "004839a0"
     ],
-    "conv":"unknown",
+    "cls":"CMansionPuzzleCircle",
+    "conv":"__cdecl",
     "instructions":36,
-    "method":"FUN_00504fe0",
-    "name":"core_manpuz.cpp_FUN_00504fe0",
-    "receiver":false,
+    "method":"renderPanel",
+    "name":"core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_00504fe0",
+    "params":[
+      {
+        "name":"panel_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/manpuz.cpp",
@@ -16431,8 +16437,8 @@
       "0051f660"
     ],
     "instructions":95,
-    "method":"FUN_0051fee0",
-    "name":"engine_model.c_FUN_0051fee0",
+    "method":"getMRGLSize",
+    "name":"engine_model.c_getMRGLSize_FUN_0051fee0",
     "params":[
       {
         "name":"header",
@@ -21705,8 +21711,8 @@
     ],
     "conv":"__cdecl",
     "instructions":6,
-    "method":"FUN_00581fe0",
-    "name":"engine_special.cpp_FUN_00581fe0",
+    "method":"beginScene",
+    "name":"engine_special.cpp_beginScene_FUN_00581fe0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -22090,8 +22096,8 @@
     ],
     "conv":"__cdecl",
     "instructions":126,
-    "method":"FUN_00583d60",
-    "name":"core_spline.cpp_FUN_00583d60",
+    "method":"computeSplineBasis",
+    "name":"core_spline.cpp_computeSplineBasis_FUN_00583d60",
     "params":[
       {
         "name":"out_basis",
@@ -23055,14 +23061,15 @@
     "calls":[
       "005c31f7"
     ],
-    "conv":"unknown",
+    "cls":"CTrigger",
+    "conv":"__cdecl",
     "instructions":65,
-    "method":"FUN_0059bee0",
-    "name":"core_trigger.cpp_FUN_0059bee0",
-    "receiver":false,
+    "method":"calculateTestRadius",
+    "name":"core_trigger.cpp_CTrigger_calculateTestRadius_FUN_0059bee0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/trigger.cpp",
@@ -24458,8 +24465,8 @@
     ],
     "conv":"__cdecl",
     "instructions":86,
-    "method":"FUN_005b5760",
-    "name":"core_xform.cpp_FUN_005b5760",
+    "method":"buildMatrixFromEulerAndPositionDirect",
+    "name":"core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760",
     "params":[
       {
         "name":"output_matrix",

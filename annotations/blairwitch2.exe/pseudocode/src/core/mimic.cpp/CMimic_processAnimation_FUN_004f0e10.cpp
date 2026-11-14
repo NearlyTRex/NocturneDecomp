@@ -261,7 +261,8 @@ LAB_004f0f08:
       if (0xc < uVar5) {
         if (uVar5 != 0x13) goto LAB_004f150c;
         if (*(int *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x276c) == 0) {
-          local_28 = core_motion_cpp_FUN_00503e60(&local_20->base);
+          local_28 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00503e60
+                               (&local_20->base);
           pCVar12 = local_20;
           local_40 = (double)local_28;
           local_14 = local_28;
@@ -429,7 +430,7 @@ LAB_004f16d9:
       }
     }
   }
-  core_charactr_cpp_FUN_00423a60((CCharacter *)this_ptr,&local_178);
+  core_charactr_cpp_CCharacter_moveAndCollide_FUN_00423a60((CCharacter *)this_ptr,&local_178);
 LAB_004f171f:
   pCVar12 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_00544f00(pCVar12);

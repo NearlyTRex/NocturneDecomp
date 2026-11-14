@@ -38,13 +38,13 @@
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
 ;   core_box.cpp_FUN_0041a840
 ;   core_charactr.cpp_CCharacter_renderCharacter_FUN_00424bd0
-;   core_motion.cpp_FUN_005042e0
+;   core_motion.cpp_CMotionController_render_FUN_005042e0
 ;   core_muzzle.cpp_FUN_0059e0f0
 ;   engine_2d.c_drawText_FUN_00401fe0
 ;   engine_3d.c_drawLine2DFromIndices_FUN_00407c40
 ;   engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0046bc80
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
-;   engine_special.cpp_FUN_0055d723
+;   engine_special.cpp_transformAndProjectPoint_FUN_0055d723
 ;
 ; *****************************************************************************
 
@@ -136,8 +136,8 @@ section .text
     PUSH ESI                            ; 00425590
     LEA EAX,[ESI + 0x2b4]               ; 00425591
     PUSH EAX                            ; 00425597
-    CALL core_motion.cpp_FUN_005042e0   ; 00425598
-        ;   XREF to: 005042e0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_FUN_005042e0(CMotionController * this_ptr, CDemonActor * actor)
+    CALL core_motion.cpp_CMotionController_render_FUN_005042e0 ; 00425598
+        ;   XREF to: 005042e0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_render_FUN_005042e0(CMotionController * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0042559d
     MOV EAX,dword ptr [ESI + 0x2b0]     ; 004255a0
     PUSH ESI                            ; 004255a6
@@ -218,8 +218,8 @@ section .text
     PUSH EAX                            ; 00425688
     MOV EAX,dword ptr [EDX]             ; 00425689 | DAT_01ba5c50
     PUSH EAX                            ; 0042568b
-    CALL engine_special.cpp_FUN_0055d723 ; 0042568c
-        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 0042568c
+        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     LEA EBX,[ESP + 0x98]                ; 00425691
     ADD ESP,0x8                         ; 00425698
     LEA EAX,[ESP + 0x6c]                ; 0042569b
@@ -238,8 +238,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 004256cf | DAT_01ba5c50
     ADD EAX,0x30                        ; 004256d1
     PUSH EAX                            ; 004256d4
-    CALL engine_special.cpp_FUN_0055d723 ; 004256d5
-        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 004256d5
+        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004256da
     MOV EBX,0x1                         ; 004256dd
     PUSH EBX                            ; 004256e2
@@ -289,8 +289,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0042578e | DAT_01ba5c50
     ADD EAX,0x60                        ; 00425790
     PUSH EAX                            ; 00425793
-    CALL engine_special.cpp_FUN_0055d723 ; 00425794
-        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 00425794
+        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 00425799
     PUSH 0x2                            ; 0042579c
     PUSH 0x0                            ; 0042579e
@@ -329,8 +329,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0042581c | DAT_01ba5c50
     ADD EAX,0x90                        ; 0042581e
     PUSH EAX                            ; 00425823
-    CALL engine_special.cpp_FUN_0055d723 ; 00425824
-        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 00425824
+        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 00425829
     PUSH 0x3                            ; 0042582c
     PUSH 0x0                            ; 0042582e
@@ -385,8 +385,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 004258dd | DAT_01ba5c50
     ADD EAX,0x30                        ; 004258df
     PUSH EAX                            ; 004258e2
-    CALL engine_special.cpp_FUN_0055d723 ; 004258e3
-        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 004258e3
+        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004258e8
     PUSH 0x1                            ; 004258eb
     MOV ECX,0x4                         ; 004258ed
@@ -412,8 +412,8 @@ section .text
         ;   Label: LAB_00425936
     MOV EAX,dword ptr [EDX]             ; 00425937 | DAT_01ba5c50
     PUSH EAX                            ; 00425939
-    CALL engine_special.cpp_FUN_0055d723 ; 0042593a
-        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 0042593a
+        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0042593f
     INC ESI                             ; 00425942
     CMP ESI,0x15                        ; 00425943

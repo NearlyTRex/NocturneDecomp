@@ -357,8 +357,8 @@ section .text
     PUSH ESI                            ; 0049bc36
     MOV EDI,dword ptr [ESP + 0x14c]     ; 0049bc37
     PUSH EDI                            ; 0049bc3e
-    CALL shape_edittool.cpp_FUN_00492a40 ; 0049bc3f
-        ;   XREF to: 00492a40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00492a40()
+    CALL shape_edittool.cpp_drawDashedLine_FUN_00492a40 ; 0049bc3f
+        ;   XREF to: 00492a40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_drawDashedLine_FUN_00492a40(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 0049bc44
     MOV EAX,dword ptr [ESP + 0x140]     ; 0049bc47
         ;   Label: LAB_0049bc47

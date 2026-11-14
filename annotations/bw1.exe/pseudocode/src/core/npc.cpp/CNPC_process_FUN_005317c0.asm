@@ -26,13 +26,13 @@
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b40
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
 ;   core_charactr.cpp_CCharacter_processSmoking_FUN_00434790
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
 ;   core_charactr.cpp_FUN_0042d700
-;   core_charactr.cpp_FUN_0042d750
 ;   core_charactr.cpp_FUN_00432f10
 ;   core_charactr.cpp_FUN_00435320
 ;   core_gore.cpp_CGore_createBloodPool_FUN_004e62e0
@@ -275,8 +275,8 @@ section .text
     FST float ptr [EDX + 0x4]           ; 00531a23
     PUSH EBX                            ; 00531a26
     FSTP float ptr [EDX]                ; 00531a27
-    CALL core_charactr.cpp_FUN_0042d750 ; 00531a29
-        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750 ; 00531a29
+        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 00531a2e
     PUSH EBX                            ; 00531a31
     CALL core_charactr.cpp_CCharacter_preProcess_FUN_0042e160 ; 00531a32

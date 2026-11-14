@@ -20,7 +20,7 @@
 ;   engine_drender.cpp_CDemonRenderer_getCameraAndViewportState_FUN_004851a0
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00483d80
 ;   engine_drender.cpp_CDemonRenderer_setupCameraAndViewport_FUN_00485040
-;   engine_special.cpp_FUN_0058043c
+;   engine_special.cpp_transformPoint_FUN_0058043c
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
     PUSH ESI                            ; 004551dd
         ;   Label: LAB_004551dd
     PUSH EDI                            ; 004551de | DAT_00629014 | DAT_00629044
-    CALL engine_special.cpp_FUN_0058043c ; 004551df
-        ;   XREF to: 0058043c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0058043c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformPoint_FUN_0058043c ; 004551df
+        ;   XREF to: 0058043c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformPoint_FUN_0058043c(SProjectedVertex * output, CVector3i * input)
     ADD ESI,0xc                         ; 004551e4
     ADD ESP,0x8                         ; 004551e7
     ADD EDI,0x30                        ; 004551ea

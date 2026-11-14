@@ -6,8 +6,8 @@
     ],
     "conv":"__cdecl",
     "instructions":108,
-    "method":"FUN_00401450",
-    "name":"engine_2d.c_FUN_00401450",
+    "method":"findBestPaletteMatch",
+    "name":"engine_2d.c_findBestPaletteMatch_FUN_00401450",
     "params":[
       {
         "name":"red",
@@ -5948,14 +5948,14 @@
       "0057fd50",
       "005a3cb2"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":598,
-    "method":"FUN_00459f50",
-    "name":"core_dfont.cpp_FUN_00459f50",
+    "method":"initFonts",
+    "name":"core_dfont.cpp_initFonts_FUN_00459f50",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/dfont.cpp",
@@ -5972,8 +5972,8 @@
     ],
     "conv":"__cdecl",
     "instructions":164,
-    "method":"FUN_0045a8d0",
-    "name":"core_dfont.cpp_FUN_0045a8d0",
+    "method":"freeFonts",
+    "name":"core_dfont.cpp_freeFonts_FUN_0045a8d0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -8277,14 +8277,49 @@
       "004e56b0",
       "004e5ef0"
     ],
-    "conv":"unknown",
+    "cls":"CEditorTools",
+    "conv":"__cdecl",
     "instructions":54,
-    "method":"FUN_00481150",
-    "name":"shape_edittool.cpp_FUN_00481150",
-    "receiver":false,
+    "method":"draw3DAxisLabelsAt",
+    "name":"shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_00481150",
+    "params":[
+      {
+        "name":"scale_factor",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"text_color",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"world_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"orientation",
+        "type":{
+          "kind":"union",
+          "name":"UOrientationVector",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -8301,14 +8336,41 @@
       "004f3520",
       "005a30d7"
     ],
-    "conv":"unknown",
+    "cls":"CEditorTools",
+    "conv":"__cdecl",
     "instructions":377,
-    "method":"FUN_00481350",
-    "name":"shape_edittool.cpp_FUN_00481350",
-    "receiver":false,
+    "method":"draw3DWireframeCube",
+    "name":"shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00481350",
+    "params":[
+      {
+        "name":"corner1",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"corner2",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"color_value",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -10764,21 +10826,12 @@
       "0045ab30",
       "005a3120"
     ],
+    "cls":"CFlame",
     "conv":"__cdecl",
     "instructions":67,
-    "method":"FUN_004a6dd0",
-    "name":"core_flame.cpp_FUN_004a6dd0",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CFlame",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"updateGlobe",
+    "name":"core_flame.cpp_CFlame_updateGlobe_FUN_004a6dd0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -13426,14 +13479,33 @@
       "005a28c0",
       "005a5b9c"
     ],
-    "conv":"unknown",
+    "cls":"CIniFile",
+    "conv":"__cdecl",
     "instructions":34,
-    "method":"FUN_004d8cd0",
-    "name":"engine_ini.cpp_FUN_004d8cd0",
-    "receiver":false,
+    "method":"getFloat",
+    "name":"engine_ini.cpp_CIniFile_getFloat_FUN_004d8cd0",
+    "params":[
+      {
+        "name":"key",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"output",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/ini.cpp",
@@ -20123,8 +20195,8 @@
     ],
     "conv":"__cdecl",
     "instructions":6,
-    "method":"FUN_005658d0",
-    "name":"engine_special.cpp_FUN_005658d0",
+    "method":"endScene",
+    "name":"engine_special.cpp_endScene_FUN_005658d0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -20742,14 +20814,15 @@
     "calls":[
       "005a6067"
     ],
-    "conv":"unknown",
+    "cls":"CTrigger",
+    "conv":"__cdecl",
     "instructions":65,
-    "method":"FUN_0056eed0",
-    "name":"core_trigger.cpp_FUN_0056eed0",
-    "receiver":false,
+    "method":"calculateTestRadius",
+    "name":"core_trigger.cpp_CTrigger_calculateTestRadius_FUN_0056eed0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/trigger.cpp",
@@ -21656,14 +21729,25 @@
       "0040ce40",
       "0044f680"
     ],
-    "conv":"unknown",
+    "cls":"CWeather",
+    "conv":"__cdecl",
     "instructions":81,
-    "method":"FUN_0057d050",
-    "name":"core_weather.cpp_FUN_0057d050",
-    "receiver":false,
+    "method":"setWeatherType",
+    "name":"core_weather.cpp_CWeather_setWeatherType_FUN_0057d050",
+    "params":[
+      {
+        "name":"type",
+        "type":{
+          "kind":"enum",
+          "name":"EWeatherType",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/weather.cpp",
@@ -21949,8 +22033,8 @@
       "005811f4"
     ],
     "instructions":344,
-    "method":"FUN_00580a50",
-    "name":"wincore_winrun.cpp_FUN_00580a50",
+    "method":"mainWindowProc",
+    "name":"wincore_winrun.cpp_mainWindowProc_FUN_00580a50",
     "params":[
       {
         "name":"hWnd",

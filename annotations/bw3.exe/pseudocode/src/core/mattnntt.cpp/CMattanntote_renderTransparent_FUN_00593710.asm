@@ -20,9 +20,9 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0
 ;   core_box.cpp_FUN_0041daf0
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310
 ;   core_charactr.cpp_CCharacter_renderFlames_FUN_0042f6f0
-;   core_charactr.cpp_FUN_0042f310
-;   core_motion.cpp_FUN_004fcdc0
+;   core_motion.cpp_CMotionController_render_FUN_004fcdc0
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0
 ;   crt_math.c_round_FUN_005a3120
 ;   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0
@@ -168,8 +168,8 @@ section .text
         ;   XREF to: 005938c0 (CONDITIONAL_JUMP)  ; LAB_005938c0
     PUSH EBP                            ; 005938b6
     PUSH EBX                            ; 005938b7
-    CALL core_motion.cpp_FUN_004fcdc0   ; 005938b8
-        ;   XREF to: 004fcdc0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_FUN_004fcdc0(CMotionController * this_ptr, CDemonActor * actor)
+    CALL core_motion.cpp_CMotionController_render_FUN_004fcdc0 ; 005938b8
+        ;   XREF to: 004fcdc0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_render_FUN_004fcdc0(CMotionController * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 005938bd
     FLD float ptr [EBP + 0x3254]        ; 005938c0
         ;   Label: LAB_005938c0
@@ -180,8 +180,8 @@ section .text
     JNC 0x005938d8                      ; 005938cd
         ;   XREF to: 005938d8 (CONDITIONAL_JUMP)  ; LAB_005938d8
     PUSH EBP                            ; 005938cf
-    CALL core_charactr.cpp_FUN_0042f310 ; 005938d0
-        ;   XREF to: 0042f310 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042f310(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310 ; 005938d0
+        ;   XREF to: 0042f310 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 005938d5
     PUSH EBP                            ; 005938d8
         ;   Label: LAB_005938d8

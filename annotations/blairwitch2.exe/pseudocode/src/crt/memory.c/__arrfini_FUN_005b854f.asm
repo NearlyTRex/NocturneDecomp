@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[36]:
-;   core_actor.cpp_FUN_0040d400 at 0040d40c
+;   core_actor.cpp_CVector3f_arrdtor10_FUN_0040d400 at 0040d40c
 ;   core_armour.cpp_FUN_0040f2b0 at 0040f2bc
 ;   core_bmppuzzl.cpp_CAlphaBitmap_arrdtor4_FUN_0059bfe0 at 0059bfec
 ;   core_bmppuzzl.cpp_SButtonStruct_arrdtor30_FUN_0059bfc0 at 0059bfcc

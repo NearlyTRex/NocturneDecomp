@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   core_menu.cpp_FUN_004e94f0 at 004e9d23
-;   core_sound.cpp_FUN_0055fc60 at 0055fc97
+;   core_menu.cpp_configureSoundOptions_FUN_004e94f0 at 004e9d23
+;   core_sound.cpp_CSound_findAllSoundFiles_FUN_0055fc60 at 0055fc97
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0060423c

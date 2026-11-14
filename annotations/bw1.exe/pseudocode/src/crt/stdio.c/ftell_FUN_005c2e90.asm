@@ -8,7 +8,7 @@
 ;
 ; XREF[9]:
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004bcba0 at 004bcc56
-;   core_game.cpp_FUN_004d6990 at 004d6b1e
+;   core_game.cpp_CGame_loadGame_FUN_004d6990 at 004d6b1e
 ;   core_script.cpp_CScript_dbLoad_FUN_0054af20 at 0054af86
 ;   core_script.cpp_FUN_00543e00 at 00543ece
 ;   crt_stdio.c_fclose_FUN_005c0e40 at 005c0e84

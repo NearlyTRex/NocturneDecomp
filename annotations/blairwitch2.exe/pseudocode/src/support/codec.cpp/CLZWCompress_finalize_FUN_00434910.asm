@@ -9,10 +9,10 @@
 ;
 ; XREF[2]:
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00441f50 at 004424f0
-;   core_game.cpp_FUN_004bb9b0 at 004bbd54
+;   core_game.cpp_CGame_saveGame_FUN_004bb9b0 at 004bbd54
 ;
 ; Called Functions:
-;   support_codec.cpp_FUN_00433ad0
+;   support_codec.cpp_flushBitBuffer_FUN_00433ad0
 ;   support_codec.cpp_FUN_00434570
 ;
 ; *****************************************************************************
@@ -66,8 +66,8 @@ section .text
     PUSH EDI                            ; 00434961
     ADD EBX,0x18                        ; 00434962
     PUSH EBX                            ; 00434965
-    CALL support_codec.cpp_FUN_00433ad0 ; 00434966
-        ;   XREF to: 00433ad0 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_00433ad0()
+    CALL support_codec.cpp_flushBitBuffer_FUN_00433ad0 ; 00434966
+        ;   XREF to: 00433ad0 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_flushBitBuffer_FUN_00433ad0()
     ADD ESP,0x8                         ; 0043496b
     TEST EAX,EAX                        ; 0043496e
     JZ 0x0043497f                       ; 00434970

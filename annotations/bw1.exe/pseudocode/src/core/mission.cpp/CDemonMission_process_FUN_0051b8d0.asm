@@ -18,8 +18,8 @@
 ;   undefined4 g_CScriptInstance.focus_actor_changed
 ;
 ; Called Functions:
+;   core_mission.cpp_CDemonMission_loadSet_FUN_0051b610
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_0051b4d0
-;   core_mission.cpp_FUN_0051b610
 ;   core_mission.cpp_FUN_0051b7b0
 ;   core_set.cpp_CDemonSet_clearLights_FUN_00551b90
 ;   core_set.cpp_CDemonSet_initScene_FUN_0054ec60
@@ -152,8 +152,8 @@ section .text
     MOV EBP,dword ptr [EDI + 0x112c]    ; 0051ba08
     PUSH EBP                            ; 0051ba0e
     PUSH EDI                            ; 0051ba0f
-    CALL core_mission.cpp_FUN_0051b610  ; 0051ba10
-        ;   XREF to: 0051b610 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_0051b610()
+    CALL core_mission.cpp_CDemonMission_loadSet_FUN_0051b610 ; 0051ba10
+        ;   XREF to: 0051b610 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_loadSet_FUN_0051b610(CDemonMission * this_ptr, int set_index)
     ADD ESP,0x8                         ; 0051ba15
     MOV EAX,[0x00622c18]                ; 0051ba18 | g_CDemonSetPtr
     PUSH EAX                            ; 0051ba1d

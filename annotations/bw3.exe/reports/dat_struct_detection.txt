@@ -38,7 +38,7 @@ Consider removing the Ghidra label and leaving the raw number.
       CMP dword ptr [EBX + 0x68],0x78a123 ; 0057ba2d | DAT_0078a123
 
   DAT_006034c0  value=0x6034C0 (6304960)  refs=5
-    FUN_00459f50
+    initFonts
       PUSH 0x6034c0                       ; 0045a733 | DAT_006034c0
     readMessageFile
       PUSH 0x6034c0                       ; 0050859f | DAT_006034c0
@@ -110,28 +110,28 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x7dfd28                       ; 0040ddd9 | DAT_007dfd28
 
   DAT_005f1094  value=0x5F1094 (6230164)  refs=2
+    CCharacter_renderEthereal
+      ADD EAX,0x5f1094                    ; 0042f4ba | DAT_005f1094
     FUN_0042f280
       MOV EAX,0x5f1094                    ; 0042f2ea | DAT_005f1094
-    FUN_0042f310
-      ADD EAX,0x5f1094                    ; 0042f4ba | DAT_005f1094
 
   DAT_005f1124  value=0x5F1124 (6230308)  refs=2
+    CCharacter_renderEthereal
+      ADD EAX,0x5f1124                    ; 0042f494 | DAT_005f1124
     FUN_0042f280
       MOV EAX,0x5f1124                    ; 0042f2ba | DAT_005f1124
-    FUN_0042f310
-      ADD EAX,0x5f1124                    ; 0042f494 | DAT_005f1124
 
   DAT_005f11b4  value=0x5F11B4 (6230452)  refs=2
+    CCharacter_renderEthereal
+      ADD EAX,0x5f11b4                    ; 0042f4cd | DAT_005f11b4
     FUN_0042f280
       MOV EAX,0x5f11b4                    ; 0042f2fb | DAT_005f11b4
-    FUN_0042f310
-      ADD EAX,0x5f11b4                    ; 0042f4cd | DAT_005f11b4
 
   DAT_005f1244  value=0x5F1244 (6230596)  refs=2
+    CCharacter_renderEthereal
+      ADD EAX,0x5f1244                    ; 0042f4e0 | DAT_005f1244
     FUN_0042f280
       MOV EAX,0x5f1244                    ; 0042f2d9 | DAT_005f1244
-    FUN_0042f310
-      ADD EAX,0x5f1244                    ; 0042f4e0 | DAT_005f1244
 
   DAT_005f16c4  value=0x5F16C4 (6231748)  refs=2
     CConstruct_process
@@ -309,16 +309,16 @@ Consider removing the Ghidra label and leaving the raw number.
     CCharacter_getDeathState
       PUSH 0x5b83d7                       ; 00431055 | DAT_005b83d7
 
-  DAT_007e2ad0  value=0x7E2AD0 (8268496)  refs=1
-    FUN_0042d9f0
-      PUSH 0x7e2ad0                       ; 0042da4d | DAT_007e2ad0
-
   DAT_005f0f5c  value=0x5F0F5C (6229852)  refs=1
-    FUN_0042f010
+    CCharacter_renderBurn
       PUSH 0x5f0f5c                       ; 0042f02f | DAT_005f0f5c
 
+  DAT_007e2ad0  value=0x7E2AD0 (8268496)  refs=1
+    CCharacter_renderCollision
+      PUSH 0x7e2ad0                       ; 0042da4d | DAT_007e2ad0
+
   DAT_005f0f74  value=0x5F0F74 (6229876)  refs=1
-    FUN_0042f310
+    CCharacter_renderEthereal
       ADD EAX,0x5f0f74                    ; 0042f4f3 | DAT_005f0f74
 
   DAT_007f8edc  value=0x7F8EDC (8359644)  refs=1
@@ -434,7 +434,7 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x5fde70                       ; 004a694a | DAT_005fde70
 
   DAT_005c601c  value=0x5C601C (6053916)  refs=1
-    FUN_004da880
+    CInventory_addItem
       MOV ESI,0x5c601c                    ; 004db400 | DAT_005c601c
 
   DAT_005c6b27  value=0x5C6B27 (6056743)  refs=1

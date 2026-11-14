@@ -10,7 +10,7 @@
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005bfb40
-;   sound_snddx.cpp_FUN_00577500
+;   sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500
 ;   sound_sndmain.cpp_logSoundError_FUN_005773f0
 ;
 ; *****************************************************************************
@@ -56,8 +56,8 @@ section .text
     RET                                 ; 0057996c
     PUSH EAX                            ; 0057996d
         ;   Label: LAB_0057996d
-    CALL sound_snddx.cpp_FUN_00577500   ; 0057996e
-        ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00577500(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500 ; 0057996e
+        ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00577500(uint error_code)
     ADD ESP,0x4                         ; 00579973
     PUSH EAX                            ; 00579976
     PUSH 0x5f529b                       ; 00579977 | s_Get_active_sfx_secondary_005f529a+1

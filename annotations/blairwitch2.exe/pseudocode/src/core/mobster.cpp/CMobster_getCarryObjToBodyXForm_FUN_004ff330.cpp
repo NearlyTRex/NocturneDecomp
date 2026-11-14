@@ -106,7 +106,8 @@ CMatrix3x4f * __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_
       auStack_74[10] = 0xbfdac083;
     }
   }
-  core_xform_cpp_FUN_00591c10(&CStack_c0,auStack_74 + 2,auStack_74 + 8);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
+            (&CStack_c0,auStack_74 + 2,auStack_74 + 8);
   core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
             (&CStack_c0,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar2,
              &CStack_f0);

@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
-;   core_xform.cpp_FUN_00591c10
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005916b0
 ;
 ; *****************************************************************************
@@ -78,8 +78,8 @@ section .text
     PUSH EAX                            ; 004ff40b
     LEA EAX,[ESP + 0x38]                ; 004ff40c
     PUSH EAX                            ; 004ff410
-    CALL core_xform.cpp_FUN_00591c10    ; 004ff411
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591c10()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 004ff411
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10()
     LEA EDX,[EBP*0x4 + 0x0]             ; 004ff416
     ADD ESP,0xc                         ; 004ff41d
     SUB EDX,EBP                         ; 004ff420

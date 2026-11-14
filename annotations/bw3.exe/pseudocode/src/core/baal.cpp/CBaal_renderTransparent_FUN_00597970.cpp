@@ -63,7 +63,8 @@ int __cdecl core_baal_cpp_CBaal_renderTransparent_FUN_00597970(CBaal *this_ptr)
               (this_ptr_00,-1,0x2e7,1,0);
     engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0(DAT_005f2afc);
     if (_DAT_01d8e40c != 0) {
-      core_motion_cpp_FUN_004fcdc0(&this_ptr_00->base,(CDemonActor *)this_ptr);
+      core_motion_cpp_CMotionController_render_FUN_004fcdc0
+                (&this_ptr_00->base,(CDemonActor *)this_ptr);
     }
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830((CDemonActor *)this_ptr);

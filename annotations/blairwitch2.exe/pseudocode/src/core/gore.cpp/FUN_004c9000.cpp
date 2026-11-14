@@ -43,7 +43,7 @@ void core_gore_cpp_FUN_004c9000(uint *param_1,int param_2)
     local_1c.y = (int)ROUND(pfVar2[1] * _DAT_005f7ba8);
     local_1c.z = (int)ROUND(pfVar2[2] * _DAT_005f7ba8);
     pfVar2 = pfVar2 + 3;
-    engine_special_cpp_FUN_0055d9ec(output,&local_1c);
+    engine_special_cpp_transformPoint_FUN_0055d9ec(output,&local_1c);
     output = output + 2;
   } while (pfVar2 != (float *)(param_1 + 0xe));
   if (param_1[0xf] == 0) {

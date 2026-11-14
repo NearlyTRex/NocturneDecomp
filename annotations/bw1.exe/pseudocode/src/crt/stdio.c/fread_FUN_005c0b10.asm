@@ -10,7 +10,7 @@
 ; _FILE *          Stack[0x10]:4   file
 ;
 ; XREF[27]:
-;   cockpit_ckptutil.c_FUN_00438bd0 at 00438c40
+;   cockpit_ckptutil.c_loadEdgeListFile_FUN_00438bd0 at 00438c40
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00538280 at 005382a2
 ;   cockpit_pkbitmap.cpp_parsePBGFile_FUN_005385d0 at 005385e9
 ;   cockpit_pkbmpset.cpp_FUN_00538b30 at 00538c8e

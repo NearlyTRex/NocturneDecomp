@@ -110,7 +110,8 @@ void __cdecl core_dracbrid_cpp_FUN_004658e0(CDraculaBride *this_ptr,float delta_
             local_18[2] = local_48;
           }
         }
-        core_spline_cpp_FUN_00561310((float *)&stack0xffffff60,(float)local_24[7],0.0);
+        core_spline_cpp_computeSplineBasis_FUN_00561310
+                  ((float *)&stack0xffffff60,(float)local_24[7],0.0);
         core_spline_cpp_FUN_00561540();
         puVar1 = local_24;
         puVar5 = local_24 + 1;

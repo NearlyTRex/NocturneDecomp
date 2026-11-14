@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[3]:
-;   core_menu.cpp_FUN_004ed260 at 004ed799
+;   core_menu.cpp_configureSoundOptions_FUN_004ed260 at 004ed799
 ;   sound_sndmain.cpp_setAudioChannelCount_FUN_00552850 at 0055285b
 ;   sound_sndmain.cpp_setAudioSampleRate_FUN_00552870 at 0055287b
 ;

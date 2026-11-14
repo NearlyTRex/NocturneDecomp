@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 182,
-    "complexity_score": 445,
+    "complexity_score": 446,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 85,
+    "pseudocode_lines": 86,
     "suspect_count": 32,
     "suspect_types": [
       "fast_sqrt_inline",
@@ -19,7 +19,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 267
+    "total_lines": 268
   },
   "cross_references": [],
   "function": {
@@ -51,14 +51,14 @@
       "name": "core_box.cpp_FUN_0041daf0"
     },
     {
+      "addr": "0042f310",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310"
+    },
+    {
       "addr": "0042f6f0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_renderFlames_FUN_0042f6f0"
-    },
-    {
-      "addr": "0042f310",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_0042f310"
     },
     {
       "addr": "004fc070",
@@ -68,7 +68,7 @@
     {
       "addr": "004fcdc0",
       "is_variadic": false,
-      "name": "core_motion.cpp_FUN_004fcdc0"
+      "name": "core_motion.cpp_CMotionController_render_FUN_004fcdc0"
     },
     {
       "addr": "0054e3a0",
@@ -388,26 +388,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 78,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_motion_cpp_FUN_004fcdc0(&(param_1->model).base,&param_1->base);",
+      "text": "(&(param_1->model).base,&param_1->base);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 78,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_motion_cpp_FUN_004fcdc0(&(param_1->model).base,&param_1->base);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 79,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0.0 < param_1->bind_time) {",
+      "text": "(&(param_1->model).base,&param_1->base);",
       "type": "unnamed_param"
     },
     {
@@ -415,12 +407,20 @@
       "line": 80,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_charactr_cpp_FUN_0042f310(param_1);",
+      "text": "if (0.0 < param_1->bind_time) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 82,
+      "line": 81,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_charactr_cpp_CCharacter_renderEthereal_FUN_0042f310(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 83,
       "match": "param_1",
       "severity": "mild",
       "text": "core_charactr_cpp_CCharacter_renderFlames_FUN_0042f6f0(param_1);",
@@ -428,7 +428,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 85,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830(&param_1->base);",
@@ -436,7 +436,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 85,
+      "line": 86,
       "match": "param_1",
       "severity": "mild",
       "text": "return param_1->was_rendered_opaque;",

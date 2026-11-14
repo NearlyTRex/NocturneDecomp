@@ -82,7 +82,7 @@ void __cdecl core_stranger_cpp_CStranger_makeDrawDecision_FUN_00567880(CStranger
   }
   if ((this_ptr->base).base.layer_action_index != 0xe) goto LAB_00567a5a;
   pCVar11 = &(this_ptr->base).base.model;
-  fVar2 = core_motion_cpp_FUN_00503e60(&pCVar11->base);
+  fVar2 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00503e60(&pCVar11->base);
   local_1c = 1.0;
   local_18 = fVar2;
   pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&pCVar11->base);

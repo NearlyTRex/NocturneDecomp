@@ -46,7 +46,7 @@
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_allocMemory_FUN_005ade20
-;   core_cloth.cpp_FUN_005ae420
+;   core_cloth.cpp_CCloth_initializeConnections_FUN_005ae420
 ;   core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_0044efe0
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_0044dcd0
 ;   core_main.c_FUN_004e4500
@@ -269,8 +269,8 @@ section .text
     MOV EAX,EAX                         ; 005ae15e
     PUSH ESI                            ; 005ae160
         ;   Label: LAB_005ae160
-    CALL core_cloth.cpp_FUN_005ae420    ; 005ae161
-        ;   XREF to: 005ae420 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_005ae420(CCloth * this_ptr)
+    CALL core_cloth.cpp_CCloth_initializeConnections_FUN_005ae420 ; 005ae161
+        ;   XREF to: 005ae420 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_initializeConnections_FUN_005ae420(CCloth * this_ptr)
     ADD ESP,0x4                         ; 005ae166
     MOV EBX,dword ptr [ESP + 0x208]     ; 005ae169
     PUSH EBX                            ; 005ae170

@@ -276,8 +276,8 @@ section .text
     LEA EAX,[ESP + 0x134]               ; 00572992
     PUSH EAX                            ; 00572999
     MOV dword ptr [EBX + 0x10b04],0x0   ; 0057299a
-    CALL core_xform.cpp_FUN_00591c10    ; 005729a4
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591c10()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 005729a4
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10()
     ADD ESP,0xc                         ; 005729a9
     MOV EDX,dword ptr [ESP + 0x28c]     ; 005729ac
     PUSH EDX                            ; 005729b3
@@ -285,8 +285,8 @@ section .text
     PUSH ECX                            ; 005729bb
     LEA EAX,[ESP + 0x74]                ; 005729bc
     PUSH EAX                            ; 005729c0
-    CALL core_xform.cpp_FUN_00591ad0    ; 005729c1
-        ;   XREF to: 00591ad0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_00591ad0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0 ; 005729c1
+        ;   XREF to: 00591ad0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 005729c6
     LEA EAX,[ESP + 0x18c]               ; 005729c9
     PUSH EAX                            ; 005729d0

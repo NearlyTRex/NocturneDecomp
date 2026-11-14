@@ -15,7 +15,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_hero.cpp_FUN_004cfc80 at 004cfd22
+;   core_hero.cpp_CHero_tryUseSelectedItem_FUN_004cfc80 at 004cfd22
 ;   core_inv.cpp_CInventory_autoUseHealthItem_FUN_004df010 at 004df0aa
 ;
 ; Referenced Globals:
@@ -41,7 +41,7 @@
 ;   core_actor.cpp_isOfClass_FUN_0040c840
 ;   core_ammo.cpp_FUN_0040e450
 ;   core_doc.cpp_FUN_0045d260
-;   core_event.cpp_FUN_00490f80
+;   core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80
 ;   core_game.cpp_CGame_displayMessage_FUN_004b31a0
 ;   core_health.cpp_CHealthItem_useItem_FUN_004cdf90
 ;   core_inv.cpp_CInventory_removeItem_FUN_004db8e0
@@ -451,8 +451,8 @@ section .text
     PUSH EAX                            ; 004dcc8b
     MOV ECX,dword ptr [0x006141f0]      ; 004dcc8c | DAT_006141f0
     PUSH ECX                            ; 004dcc92
-    CALL core_event.cpp_FUN_00490f80    ; 004dcc93
-        ;   XREF to: 00490f80 (UNCONDITIONAL_CALL)  ; void core_event.cpp_FUN_00490f80(CEventList * this_ptr, char * name, int add_flag)
+    CALL core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80 ; 004dcc93
+        ;   XREF to: 00490f80 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80(CEventList * this_ptr, char * name, int add_flag)
     ADD ESP,0xc                         ; 004dcc98
     XOR EAX,EAX                         ; 004dcc9b
     MOV ESP,EBP                         ; 004dcc9d

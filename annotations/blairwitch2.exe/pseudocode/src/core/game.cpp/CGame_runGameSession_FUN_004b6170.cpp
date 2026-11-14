@@ -239,7 +239,7 @@ LAB_004b6635:
               if (iVar5 == 1) {
                 engine_keys_cpp_CKeys_toggleInputMask_FUN_004dfee0(0x01D02F84,0);
                 core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0(this_ptr);
-                core_menu_cpp_FUN_004ee1a0(1);
+                core_menu_cpp_showOptionsScreen_FUN_004ee1a0(1);
                 core_game_cpp_CGame_setGameRes_FUN_004b5fd0(this_ptr);
                 engine_keys_cpp_CKeys_toggleInputMask_FUN_004dfee0
                           (0x01D02F84,(uint)(this_ptr->is_paused == 0));
@@ -254,7 +254,7 @@ LAB_004b6635:
                 core_game_cpp_CGame_promptLoadGame_FUN_004bdb10(this_ptr);
               }
               if (iVar5 == 3) {
-                core_game_cpp_FUN_004bb9b0(this_ptr,(char *)0x0);
+                core_game_cpp_CGame_saveGame_FUN_004bb9b0(this_ptr,(char *)0x0);
               }
               if (iVar5 == 4) {
                 pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(&DAT_005d7866);

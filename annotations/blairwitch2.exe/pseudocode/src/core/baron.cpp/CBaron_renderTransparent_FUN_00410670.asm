@@ -20,7 +20,7 @@
 ;   core_box.cpp_FUN_0041a840
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
-;   core_motion.cpp_FUN_005042e0
+;   core_motion.cpp_CMotionController_render_FUN_005042e0
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_00547170
 ;   crt_math.c_round_FUN_005b7ff0
 ;   engine_3d.c_setRenderAlpha_FUN_00406da0
@@ -189,8 +189,8 @@ section .text
         ;   XREF to: 0041081a (CONDITIONAL_JUMP)  ; LAB_0041081a
     PUSH EBX                            ; 00410810
     PUSH ESI                            ; 00410811
-    CALL core_motion.cpp_FUN_005042e0   ; 00410812
-        ;   XREF to: 005042e0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_FUN_005042e0(CMotionController * this_ptr, CDemonActor * actor)
+    CALL core_motion.cpp_CMotionController_render_FUN_005042e0 ; 00410812
+        ;   XREF to: 005042e0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_render_FUN_005042e0(CMotionController * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00410817
     PUSH 0x0                            ; 0041081a
         ;   Label: LAB_0041081a

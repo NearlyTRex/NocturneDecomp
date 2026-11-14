@@ -53,7 +53,7 @@ void __cdecl core_cloth_cpp_CClothList_render_FUN_005b17d0(CClothList *this_ptr,
 void __cdecl core_cloth_cpp_CClothList_setWindVelocity_FUN_005b1890(CClothList *this_ptr,CVector3f *wind_velocity);
 void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_005b18e0(CCloth *this_ptr,char *bone_name,int vertex_index);
 void __cdecl core_cloth_cpp_CCloth_resetState_FUN_005b1980(CCloth *this_ptr,int vertex_index);
-void core_cloth_cpp_FUN_005b19b0(int param_1,float *param_2);
+void __cdecl core_cloth_cpp_CCloth_applyRotation_FUN_005b19b0(CCloth *this_ptr,CVector3f *euler);
 float __cdecl core_cloth_cpp_vectorLengthFast_FUN_005b1b10(CVector3f *v);
 CVector3f * __cdecl core_cloth_cpp_applyLightAttenuation_FUN_005b1b40(CVector3f *v);
 SClothBone * __cdecl core_cloth_cpp_SClothBone_ctor_FUN_005b1b90(SClothBone *this_ptr);
@@ -113,7 +113,7 @@ void __cdecl core_morph_cpp_CMorph_updateModelFromDeformable_FUN_005b7150(CMorph
 void __cdecl core_morph_cpp_CMorph_updateModelFromKeyframed_FUN_005b7190(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index,int part_index);
 void __cdecl core_morph_cpp_CMorph_getReady_FUN_005b71d0(CMorph *this_ptr);
 void __cdecl core_morph_cpp_CMorph_render_FUN_005b76a0(CMorph *this_ptr,float morph_t);
-CMorphModel * __cdecl core_morph_cpp_FUN_005b7720(CMorphModel *this_ptr,uint flags);
+CMorphModel * __cdecl core_morph_cpp_CMorphModel_arrdtor2_FUN_005b7720(CMorphModel *this_ptr,uint flags);
 void crt_cpp_c_pureVirtualStub_FUN_005b7740(void);
 void crt_unknown_c_FUN_005b7750(int *param_1,undefined1 param_2);
 int __cdecl crt_stdio_c_vsprintf_FUN_005b7768(char *buffer,char *format,va_list_t args);

@@ -32,10 +32,11 @@ void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00431ab0(CCharacter 
     _DAT_01d71de4 = 0xf21;
     core_main_c_FUN_004e4330("CCharacter::computePickup - invalid hand!  Character is %s, hand is %d",this_ptr,param_2);
   }
-  core_xform_cpp_FUN_00583800
+  core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_00583800
             (&local_d0,&(pSVar2->carry_actor->location).position,&(pSVar2->carry_actor->orient).vec)
   ;
-  core_xform_cpp_FUN_00583940(&local_a0,&(this_ptr->base).location,&(this_ptr->base).orient);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
+            (&local_a0,&(this_ptr->base).location,&(this_ptr->base).orient);
   core_xform_cpp_multiplyMatrix3x4_FUN_005833e0(&local_a0,&local_d0,&local_100);
   pCVar3 = &local_100;
   pCVar5 = &local_130;

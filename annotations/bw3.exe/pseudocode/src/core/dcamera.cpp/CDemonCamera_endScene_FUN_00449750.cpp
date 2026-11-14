@@ -24,7 +24,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endScene_FUN_00449750(CDemonCamera *t
     this_ptr->scene_open_flag = 0;
   }
   if (_DAT_02cf5fcc != 0) {
-    engine_special_cpp_FUN_005658d0();
+    engine_special_cpp_endScene_FUN_005658d0();
   }
   if ((this_ptr->skip_clear_buffer_flag == 0) && (skip_zbuffer_copy == 0)) {
     if (_DAT_01c6cee8 != 0) {

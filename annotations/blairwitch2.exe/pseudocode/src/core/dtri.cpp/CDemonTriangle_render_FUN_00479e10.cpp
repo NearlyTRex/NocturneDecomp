@@ -30,15 +30,18 @@ void __cdecl core_dtri_cpp_CDemonTriangle_render_FUN_00479e10(CDemonTriangle *th
   CStack_30.x = (int)ROUND((this_ptr->vertex1).x * _DAT_005f5b50);
   CStack_30.y = (int)ROUND((this_ptr->vertex1).y * _DAT_005f5b50);
   CStack_30.z = (int)ROUND((this_ptr->vertex1).z * _DAT_005f5b50);
-  engine_special_cpp_FUN_0055d723(&DAT_0060b27c->vertex_buffer_ptr->projected_vertex,&CStack_30);
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+            (&DAT_0060b27c->vertex_buffer_ptr->projected_vertex,&CStack_30);
   CStack_18.x = (int)ROUND((this_ptr->vertex2).x * _DAT_005f5b50);
   CStack_18.y = (int)ROUND((this_ptr->vertex2).y * _DAT_005f5b50);
   CStack_18.z = (int)ROUND((this_ptr->vertex2).z * _DAT_005f5b50);
-  engine_special_cpp_FUN_0055d723(&DAT_0060b27c->vertex_buffer_ptr[1].projected_vertex,&CStack_18);
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+            (&DAT_0060b27c->vertex_buffer_ptr[1].projected_vertex,&CStack_18);
   CStack_24.x = (int)ROUND((this_ptr->vertex3).x * _DAT_005f5b50);
   CStack_24.y = (int)ROUND((this_ptr->vertex3).y * _DAT_005f5b50);
   CStack_24.z = (int)ROUND((this_ptr->vertex3).z * _DAT_005f5b50);
-  engine_special_cpp_FUN_0055d723(&DAT_0060b27c->vertex_buffer_ptr[2].projected_vertex,&CStack_24);
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+            (&DAT_0060b27c->vertex_buffer_ptr[2].projected_vertex,&CStack_24);
   poly = (SMRGLPrimitivePoly *)&stack0xffffff88;
   iStack_74 = 3;
   fVar1 = (float10)_DAT_005d1e23;

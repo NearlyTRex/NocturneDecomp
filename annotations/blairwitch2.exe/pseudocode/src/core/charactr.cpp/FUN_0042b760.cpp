@@ -115,7 +115,8 @@ void core_charactr_cpp_FUN_0042b760(int param_1,float *param_2)
   local_a0 = local_100;
   local_9c = local_fc;
   local_98 = local_f8;
-  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_64);
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+            (&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_64);
   local_54[2] = -local_20 + *param_2;
   local_44 = param_2[2];
   local_54[3] = param_2[1] + local_24;
@@ -138,7 +139,8 @@ void core_charactr_cpp_FUN_0042b760(int param_1,float *param_2)
   local_d0.x = (int)ROUND(local_124 * _DAT_005f4060);
   local_d0.y = (int)ROUND(local_120 * _DAT_005f4060);
   local_d0.z = (int)ROUND(local_11c * _DAT_005f4060);
-  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_d0);
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+            (&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_d0);
   local_f4 = -local_20 + *param_2;
   local_f0[1] = param_2[2];
   local_f0[0] = param_2[1] + -local_24;
@@ -161,7 +163,8 @@ void core_charactr_cpp_FUN_0042b760(int param_1,float *param_2)
   local_70.x = (int)ROUND(local_124 * _DAT_005f4060);
   local_70.y = (int)ROUND(local_120 * _DAT_005f4060);
   local_70.z = (int)ROUND(local_11c * _DAT_005f4060);
-  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_70);
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+            (&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_70);
   local_94 = *param_2 + local_20;
   local_90[1] = param_2[2];
   local_90[0] = param_2[1] + -local_24;
@@ -184,7 +187,8 @@ void core_charactr_cpp_FUN_0042b760(int param_1,float *param_2)
   local_ac.x = (int)ROUND(local_124 * _DAT_005f4060);
   local_ac.y = (int)ROUND(local_120 * _DAT_005f4060);
   local_ac.z = (int)ROUND(local_11c * _DAT_005f4060);
-  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_ac);
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+            (&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_ac);
   fVar10 = (float10)_DAT_005cd33a;
   fVar11 = (float10)*(float *)(param_1 + 0x10a3c) * fVar10;
   pSVar6 = DAT_0060b280->vertex_buffer_ptr;

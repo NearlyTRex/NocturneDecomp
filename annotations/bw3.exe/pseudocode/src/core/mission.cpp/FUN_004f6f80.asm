@@ -6,9 +6,9 @@
 ;
 ; XREF[4]:
 ;   core_event.cpp_FUN_0048c2e0 at 0048f54e
+;   core_mission.cpp_CDemonMission_loadSet_FUN_004f6de0 at 004f6e55
 ;   core_mission.cpp_CDemonMission_process_FUN_004f70a0 at 004f70fb
 ;   core_mission.cpp_CDemonMission_run_FUN_004f72a0 at 004f7308
-;   core_mission.cpp_FUN_004f6de0 at 004f6e55
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c8b57

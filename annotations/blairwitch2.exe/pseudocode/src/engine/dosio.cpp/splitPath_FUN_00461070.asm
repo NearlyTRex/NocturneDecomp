@@ -20,7 +20,7 @@
 ;   core_game.cpp_FUN_004b5190 at 004b56be
 ;   core_script.cpp_CScript_step_FUN_00522350 at 0052457d
 ;   core_set.cpp_CDemonSet_load_FUN_0052c0e0 at 0052c50e
-;   engine_dosio.cpp_FUN_004610d0 at 00461102
+;   engine_dosio.cpp_FUN_00461260 at 00461298
 ;   ... and 18 more
 ;
 ; Called Functions:

@@ -36,7 +36,7 @@ void engine_drender_cpp_FUN_0046ae40(CDemonRenderer *param_1,int param_2)
     if (((uStack_14 & 0x80000000) == 0) || ((uStack_14 & 0x1f) == 0)) {
       if (param_1->shadow_pass_active == 0) {
         if (DAT_006141c0 == 0x20) {
-          _DAT_01c35e6c = engine_special_cpp_FUN_0055b3b1;
+          _DAT_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0055b3b1;
         }
         else {
           _DAT_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb93;

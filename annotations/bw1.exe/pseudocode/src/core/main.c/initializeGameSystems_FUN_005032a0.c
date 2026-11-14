@@ -72,7 +72,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_005032a0(int argc,char **argv
     _DAT_01d1d404 = 0x3f5;
     core_main_c_FUN_005030e0();
   }
-  core_dfont_cpp_FUN_0045e000();
+  core_dfont_cpp_initFonts_FUN_0045e000();
   if (_DAT_02c9be78 < 0x3c00000) {
     pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Windows is reporting ");
     pcVar10 = acStack_528;
@@ -473,7 +473,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_005032a0(int argc,char **argv
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d4b0(&CStack_28,0,0,0x8000);
   wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
   engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d0c0(&CStack_28,0);
-  core_sound_cpp_FUN_0057cb30(0x02C82A60);
+  core_sound_cpp_CSound_findAllSoundFiles_FUN_0057cb30(0x02C82A60);
   iVar6 = 0;
   core_mission_cpp_FUN_0051a2d0();
   iStack_14 = 0;

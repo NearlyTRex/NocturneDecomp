@@ -117,24 +117,27 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_0050c980(CPathMap *this_pt
         CStack_50.z = (int)ROUND(fVar7);
         round();
         CStack_50.y = (int)ROUND(fVar6);
-        engine_special_cpp_FUN_005632a3((SProjectedVertex *)*extraout_EDX,pCVar9);
+        engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+                  ((SProjectedVertex *)*extraout_EDX,pCVar9);
         iStack_18 = CStack_50.x;
         pCVar9 = &CStack_50;
         fVar3 = (float10)CStack_50.x + (float10)fStack_68;
         round();
         CStack_50.x = (int)ROUND(fVar3);
-        engine_special_cpp_FUN_005632a3((SProjectedVertex *)(*extraout_EDX_00 + 0x30),pCVar9);
+        engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+                  ((SProjectedVertex *)(*extraout_EDX_00 + 0x30),pCVar9);
         iStack_18 = CStack_50.z;
         pCVar9 = &CStack_50;
         fVar3 = (float10)CStack_50.z + (float10)afStack_64[1];
         round();
         CStack_50.z = (int)ROUND(fVar3);
-        engine_special_cpp_FUN_005632a3((SProjectedVertex *)(*extraout_EDX_01 + 0x60),pCVar9);
+        engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+                  ((SProjectedVertex *)(*extraout_EDX_01 + 0x60),pCVar9);
         iStack_18 = CStack_50.x;
         fVar3 = (float10)CStack_50.x - (float10)fStack_68;
         uVar8 = round();
         CStack_50.x = (int)ROUND(fVar3);
-        engine_special_cpp_FUN_005632a3
+        engine_special_cpp_transformAndProjectPoint_FUN_005632a3
                   ((SProjectedVertex *)(*(int *)uVar8 + 0x90),
                    (CVector3i *)((ulonglong)uVar8 >> 0x20));
         this_ptr_00 = DAT_005f2afc;

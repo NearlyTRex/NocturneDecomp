@@ -33,7 +33,7 @@ LAB_00404169:
       }
     }
     else if (DAT_005fba20 == 0x20) {
-      _DAT_01c6b5cc = engine_special_cpp_FUN_00560f31;
+      _DAT_01c6b5cc = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f31;
     }
     else {
 LAB_00404250:
@@ -46,7 +46,7 @@ LAB_00404250:
   }
   else {
     if (DAT_005fba20 != 0x20) goto LAB_00404250;
-    _DAT_01c6b5cc = engine_special_cpp_FUN_00560f31;
+    _DAT_01c6b5cc = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f31;
   }
   engine_3d_c_calculatePolygonLighting_FUN_004039d0(prim);
   _DAT_01c6e2b4 = 0x13;

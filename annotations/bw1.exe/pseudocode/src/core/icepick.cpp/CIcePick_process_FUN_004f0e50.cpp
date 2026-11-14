@@ -141,7 +141,7 @@ LAB_004f1252:
                 if ((iVar9 != 0) ||
                    (iVar9 = core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004eb240
                                       (&this_ptr->base), iVar9 != 0)) goto LAB_004f12f7;
-                iVar9 = core_hero_cpp_FUN_004eb660(&this_ptr->base);
+                iVar9 = core_hero_cpp_CHero_tryPullLever_FUN_004eb660(&this_ptr->base);
                 if (iVar9 != 0) {
                   core_hero_cpp_CHero_toggleLeverNow_FUN_004eb7f0(&this_ptr->base);
                   goto LAB_004f12f7;
@@ -260,7 +260,7 @@ LAB_004f0f65:
     CStack_64.x = CStack_64.x + afStack_9c[2];
     CStack_64.y = CStack_64.y + afStack_9c[3];
     CStack_64.z = CStack_64.z + fStack_8c;
-    core_charactr_cpp_FUN_0042d750((CCharacter *)this_ptr,pCVar15);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042d750((CCharacter *)this_ptr,pCVar15);
     goto LAB_004f111a;
   }
   if ((this_ptr->base).base.grabbed_type == 0) {

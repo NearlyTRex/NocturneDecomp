@@ -7,7 +7,7 @@
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_0052f2a0 at 0052f553
+;   core_set.cpp_CDemonSet_renderScene_FUN_0052f2a0 at 0052f553
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dcamera_cpp_005ce5ce
@@ -20,10 +20,10 @@
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00442820
 ;   core_main.c_FUN_004e4500
-;   engine_special.cpp_FUN_0055f500
-;   engine_special.cpp_FUN_0055f590
+;   engine_special.cpp_beginScene_FUN_0055f590
 ;   engine_special.cpp_FUN_00560120
 ;   engine_special.cpp_FUN_00560140
+;   engine_special.cpp_lockFrame_FUN_0055f500
 ;   engine_special.cpp_unlockFrame_FUN_0055f550
 ;
 ; *****************************************************************************
@@ -36,8 +36,8 @@ section .text
     CMP dword ptr [0x006141bc],0x1e0    ; 00440762 | DAT_006141bc
     JG 0x004407a1                       ; 0044076c
         ;   XREF to: 004407a1 (CONDITIONAL_JUMP)  ; LAB_004407a1
-    CALL engine_special.cpp_FUN_0055f500 ; 0044076e
-        ;   XREF to: 0055f500 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_0055f500()
+    CALL engine_special.cpp_lockFrame_FUN_0055f500 ; 0044076e
+        ;   XREF to: 0055f500 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_0055f500()
     MOV ESI,dword ptr [ESP + 0xc]       ; 00440773
         ;   Label: LAB_00440773
     PUSH ESI                            ; 00440777
@@ -86,8 +86,8 @@ section .text
     POP EDI                             ; 004407e4
     POP ESI                             ; 004407e5
     RET                                 ; 004407e6
-    CALL engine_special.cpp_FUN_0055f590 ; 004407e7
-        ;   XREF to: 0055f590 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_0055f590()
+    CALL engine_special.cpp_beginScene_FUN_0055f590 ; 004407e7
+        ;   XREF to: 0055f590 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_beginScene_FUN_0055f590()
         ;   Label: LAB_004407e7
     POP EDI                             ; 004407ec
     POP ESI                             ; 004407ed

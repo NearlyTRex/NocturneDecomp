@@ -39,7 +39,8 @@ uint core_hero_cpp_FUN_004eca10(CHero *param_1,uint param_2)
     return 1;
   }
   iVar4 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,7);
-  if ((iVar4 != 0) && (iVar4 = core_hero_cpp_FUN_004eb660(param_1), iVar4 != 0)) {
+  if ((iVar4 != 0) && (iVar4 = core_hero_cpp_CHero_tryPullLever_FUN_004eb660(param_1), iVar4 != 0))
+  {
     return 1;
   }
   iVar4 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,8);

@@ -102,7 +102,7 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_00540aa0(CSkeleton *this
     _DAT_01d046a4 = 0x14f;
     core_main_c_FUN_004e4500("CSkeleton::loadStream - error reading file.");
   }
-  core_motion_cpp_FUN_00502820(&this_ptr->motion_list,file_handle);
+  core_motion_cpp_CMotionList_load_FUN_00502820(&this_ptr->motion_list,file_handle);
   if ((file_handle->_flag & 0x20) == 0) {
     return;
   }

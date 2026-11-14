@@ -57,28 +57,32 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_00493dd0(CBulletHole *this_ptr
   _DAT_0062208c = _DAT_0062205c;
   _DAT_006220bc = DAT_0062202c;
   _DAT_006220c0 = DAT_00622090;
-  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_4c);
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+            (&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_4c);
   local_64 = 0x3e2e147b;
   local_60 = 0xbe2e147b;
   local_5c = 0;
   local_7c.x = (int)ROUND(_DAT_005f64e4 * 0.17);
   local_7c.y = (int)ROUND(_DAT_005f64e4 * -0.17);
   local_7c.z = (int)ROUND(_DAT_005f64e4 * 0.0);
-  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_7c);
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+            (&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_7c);
   local_64 = 0x3e2e147b;
   local_60 = 0x3e2e147b;
   local_5c = 0;
   local_1c.x = (int)ROUND(_DAT_005f64e4 * 0.17);
   local_1c.y = (int)ROUND(_DAT_005f64e4 * 0.17);
   local_1c.z = (int)ROUND(_DAT_005f64e4 * 0.0);
-  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_1c);
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+            (&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_1c);
   local_64 = 0xbe2e147b;
   local_60 = 0x3e2e147b;
   local_5c = 0;
   local_34.x = (int)ROUND(_DAT_005f64e4 * -0.17);
   local_34.y = (int)ROUND(_DAT_005f64e4 * 0.17);
   local_34.z = (int)ROUND(_DAT_005f64e4 * 0.0);
-  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_34);
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+            (&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_34);
   if (this_ptr->actor_ptr == (CDemonActor *)0x0) {
     DAT_00622038 = 0xffff;
     DAT_0062203c = 0xffff;

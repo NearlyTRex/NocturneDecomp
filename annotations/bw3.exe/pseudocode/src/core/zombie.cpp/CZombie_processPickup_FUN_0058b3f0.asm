@@ -50,7 +50,7 @@
 ;   core_zombie.cpp_classifyObjectShape_FUN_00588750
 ;   core_zombie.cpp_CZombie_canPickupWithHand_FUN_0058bdf0
 ;   core_zombie.cpp_CZombie_getPickupHandIndex_FUN_0058bd50
-;   core_zombie.cpp_FUN_0058cc20
+;   core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20
 ;   engine_console.cpp_CConsole_printf_FUN_00441ff0
 ;
 ; *****************************************************************************
@@ -408,8 +408,8 @@ section .text
     MOV dword ptr [EAX + 0xd064],0x0    ; 0058b887
     PUSH EAX                            ; 0058b891
     MOV dword ptr [EAX + 0xd060],0x0    ; 0058b892
-    CALL core_zombie.cpp_FUN_0058cc20   ; 0058b89c
-        ;   XREF to: 0058cc20 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_FUN_0058cc20(CZombie * this_ptr)
+    CALL core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20 ; 0058b89c
+        ;   XREF to: 0058cc20 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20(CZombie * this_ptr)
     ADD ESP,0x4                         ; 0058b8a1
     XOR EAX,EAX                         ; 0058b8a4
     MOV ESP,EBP                         ; 0058b8a6
@@ -527,8 +527,8 @@ section .text
     MOV dword ptr [EAX + 0xd064],0x0    ; 0058ba3f
     PUSH EAX                            ; 0058ba49
     MOV dword ptr [EAX + 0xd060],0x41a00000 ; 0058ba4a
-    CALL core_zombie.cpp_FUN_0058cc20   ; 0058ba54
-        ;   XREF to: 0058cc20 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_FUN_0058cc20(CZombie * this_ptr)
+    CALL core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20 ; 0058ba54
+        ;   XREF to: 0058cc20 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20(CZombie * this_ptr)
     ADD ESP,0x4                         ; 0058ba59
     XOR EAX,EAX                         ; 0058ba5c
     MOV ESP,EBP                         ; 0058ba5e

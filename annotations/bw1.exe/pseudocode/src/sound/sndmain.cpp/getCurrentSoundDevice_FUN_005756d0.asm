@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   core_menu.cpp_FUN_0050ba70 at 0050c04d
+;   core_menu.cpp_configureSoundOptions_FUN_0050ba70 at 0050c04d
 ;   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_00574e00 at 00574e74
 ;
 ; Referenced Globals:

@@ -36,7 +36,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_dcube.cpp_FUN_004584a0 at 004584cf
+;   core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_004584a0 at 004584cf
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d7abf

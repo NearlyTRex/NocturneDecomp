@@ -15,7 +15,7 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
 ;   crt_unknown.c_sprintf_FUN_005a28c0
-;   sound_snddx.cpp_FUN_0055a670
+;   sound_snddx.cpp_getDirectSoundErrorString_FUN_0055a670
 ;   sound_sndmain.cpp_logSoundError_FUN_0055a560
 ;
 ; *****************************************************************************
@@ -70,8 +70,8 @@ section .text
     JZ 0x0055bdef                       ; 0055bdc1
         ;   XREF to: 0055bdef (CONDITIONAL_JUMP)  ; LAB_0055bdef
     PUSH EAX                            ; 0055bdc3
-    CALL sound_snddx.cpp_FUN_0055a670   ; 0055bdc4
-        ;   XREF to: 0055a670 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_0055a670(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_0055a670 ; 0055bdc4
+        ;   XREF to: 0055a670 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_0055a670(uint error_code)
     ADD ESP,0x4                         ; 0055bdc9
     PUSH EAX                            ; 0055bdcc
     PUSH 0x5d47ea                       ; 0055bdcd | = "Unlock hw sample buffer"

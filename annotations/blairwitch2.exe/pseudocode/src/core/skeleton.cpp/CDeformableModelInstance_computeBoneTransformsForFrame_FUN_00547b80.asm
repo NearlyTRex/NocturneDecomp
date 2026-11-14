@@ -13,7 +13,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_findPatchToFrame_FUN_00547910 at 00547984
 ;
 ; Called Functions:
-;   core_motion.cpp_FUN_00504080
+;   core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_00504080
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
 ;   core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_00540f30
 ;
@@ -47,8 +47,8 @@ section .text
     PUSH ECX                            ; 00547bb1
     MOV EBX,dword ptr [EBP + 0x14]      ; 00547bb2
     PUSH EBX                            ; 00547bb5
-    CALL core_motion.cpp_FUN_00504080   ; 00547bb6
-        ;   XREF to: 00504080 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_FUN_00504080(CMotionController * this_ptr, int motion_index, float frame_number, int * out_frame1, ...)
+    CALL core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_00504080 ; 00547bb6
+        ;   XREF to: 00504080 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_00504080(CMotionController * this_ptr, int motion_index, float frame_number, int * out_frame1, ...)
     ADD ESP,0x18                        ; 00547bbb
     MOV EDI,dword ptr [ESI + 0x1d1f8]   ; 00547bbe
     XOR EBX,EBX                         ; 00547bc4

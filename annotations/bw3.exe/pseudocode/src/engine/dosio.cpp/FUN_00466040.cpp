@@ -44,7 +44,7 @@ void engine_dosio_cpp_FUN_00466040(char *param_1,char *param_2,char *param_3)
     } while (cVar1 != '\0');
     return;
   }
-  engine_dosio_cpp_FUN_00465eb0(param_1,acStack_10,&stack0xfffffaec);
+  engine_dosio_cpp_ensureTrailingSlash_FUN_00465eb0(param_1,acStack_10,&stack0xfffffaec);
   if ((acStack_108[0] == '/') || (acStack_108[0] == '\\')) {
     acStack_508[0] = '\0';
   }

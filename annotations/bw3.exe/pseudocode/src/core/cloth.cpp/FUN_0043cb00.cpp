@@ -199,7 +199,7 @@ void core_cloth_cpp_FUN_0043cb00(CCloth *param_1,float *param_2,float *param_3,C
       pCVar10 = (CVector3f *)((int)(pCVar10 + 0x17) + 8);
     } while (iVar8 < (param_1->model).vertex_count);
   }
-  core_cloth_cpp_FUN_0043c8a0(param_1);
+  core_cloth_cpp_CCloth_initializeConnections_FUN_0043c8a0(param_1);
   iVar8 = 0;
   pCVar21 = param_1;
   if (0 < param_1->locked_vertex_count) {

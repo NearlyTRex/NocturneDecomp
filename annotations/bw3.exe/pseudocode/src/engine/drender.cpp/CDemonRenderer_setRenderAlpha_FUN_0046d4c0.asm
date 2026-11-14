@@ -15,8 +15,8 @@
 ;   core_boxactor.cpp_CBoxActor_renderTransparent_FUN_0041f9f0 at 0041faac
 ;   core_bugs.cpp_CBugs_renderOpaque_FUN_004215f0 at 0042173c
 ;   core_chain.cpp_CChain_renderTransparent_FUN_0042a280 at 0042a37c
-;   core_charactr.cpp_FUN_0042d9f0 at 0042daf6
-;   core_charactr.cpp_FUN_0042f310 at 0042f33e
+;   core_charactr.cpp_CCharacter_renderCollision_FUN_0042d9f0 at 0042daf6
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310 at 0042f33e
 ;   core_cloth.cpp_CCloth_render_FUN_0043f460 at 0043f4a8
 ;   ... and 41 more
 ;

@@ -5,9 +5,9 @@
 // Function prototypes for core/motion.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_motion.cpp_FUN_00502820
+// Original: core_motion.cpp_CMotionList_load_FUN_00502820
 // Address: 00502820
-void __cdecl FUN_00502820(CMotionList *this_ptr,_FILE *file_handle);
+void __cdecl CMotionList::load(CMotionList *this_ptr,_FILE *file_handle);
 
 // Original: core_motion.cpp_FUN_00502c20
 // Address: 00502c20
@@ -109,17 +109,17 @@ int __cdecl CMotionController::advanceFrameToExitPoint(CMotionController *this_p
 // Address: 00503d80
 void FUN_00503d80(int *param_1,int param_2,float param_3,float *param_4);
 
-// Original: core_motion.cpp_FUN_00503e60
+// Original: core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60
 // Address: 00503e60
-float __cdecl FUN_00503e60(CMotionController *this_ptr);
+float __cdecl CMotionController::frameToMarkerPosition(CMotionController *this_ptr);
 
 // Original: core_motion.cpp_CMotionController_markerPositionToFrame_FUN_00503f50
 // Address: 00503f50
 float __cdecl CMotionController::markerPositionToFrame(CMotionController *this_ptr,int motion_index,float marker_position);
 
-// Original: core_motion.cpp_FUN_00504080
+// Original: core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_00504080
 // Address: 00504080
-void __cdecl FUN_00504080(CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1,int *out_frame2,float *out_blend_weight);
+void __cdecl CMotionController::getFramesForInterpolation(CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1,int *out_frame2,float *out_blend_weight);
 
 // Original: core_motion.cpp_CMotionController_load_FUN_005041b0
 // Address: 005041b0
@@ -129,6 +129,6 @@ void __cdecl CMotionController::load(CMotionController *this_ptr,_FILE *file_han
 // Address: 00504250
 void __cdecl CMotionController::save(CMotionController *this_ptr,_FILE *file_handle,char *indent_prefix);
 
-// Original: core_motion.cpp_FUN_005042e0
+// Original: core_motion.cpp_CMotionController_render_FUN_005042e0
 // Address: 005042e0
-void __cdecl FUN_005042e0(CMotionController *this_ptr,CDemonActor *actor);
+void __cdecl CMotionController::render(CMotionController *this_ptr,CDemonActor *actor);

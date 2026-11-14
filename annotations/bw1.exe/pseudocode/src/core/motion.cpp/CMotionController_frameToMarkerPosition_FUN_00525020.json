@@ -1,0 +1,373 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 101,
+    "complexity_score": 51,
+    "cross_reference_count": 18,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 36,
+    "suspect_count": 1,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
+    "total_lines": 137
+  },
+  "cross_references": [
+    {
+      "addr": "00423b70",
+      "from_addr": "004240b9",
+      "name": "core_bride.cpp_CBride_process_FUN_00423b70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00428ae0",
+      "from_addr": "0042a44a",
+      "name": "core_carved.cpp_CCarved_process_FUN_00428ae0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00459100",
+      "from_addr": "0045a588",
+      "name": "core_demnfolk.cpp_CDemnfolk_process_FUN_00459100",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004613b0",
+      "from_addr": "004614c1",
+      "name": "core_djien.cpp_CDjien_processDamage_FUN_004613b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00460230",
+      "from_addr": "0046057e",
+      "name": "core_djien.cpp_CDjien_process_FUN_00460230",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00476260",
+      "from_addr": "004762d8",
+      "name": "core_doc.cpp_CDoc_getGrabbed_FUN_00476260",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046ea80",
+      "from_addr": "0046ec55",
+      "name": "core_doc.cpp_CDoc_makeDrawDecision_FUN_0046ea80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00469550",
+      "from_addr": "00469faf",
+      "name": "core_doc.cpp_FUN_00469550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c65f0",
+      "from_addr": "004c6cd3",
+      "name": "core_gabriela.cpp_CGabriella_process_FUN_004c65f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004de330",
+      "from_addr": "004dfb99",
+      "name": "core_ghoul.cpp_CGhoul_process_FUN_004de330",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050fba0",
+      "from_addr": "00510188",
+      "name": "core_mimic.cpp_CMimic_processAnimation_FUN_0050fba0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00521480",
+      "from_addr": "00521733",
+      "name": "core_moocow.cpp_CMooCow_process_FUN_00521480",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055de50",
+      "from_addr": "0055eade",
+      "name": "core_shadow.cpp_CShadow_process_FUN_0055de50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00560630",
+      "from_addr": "00560bf8",
+      "name": "core_shadowsc.cpp_CShadowsc_process_FUN_00560630",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058a360",
+      "from_addr": "0058a4bd",
+      "name": "core_stranger.cpp_CStranger_makeDrawDecision_FUN_0058a360",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00585b00",
+      "from_addr": "005863a2",
+      "name": "core_stranger.cpp_CStranger_processFrame_FUN_00585b00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005b8440",
+      "from_addr": "005b85da",
+      "name": "core_yow.cpp_CYow_process_FUN_005b8440",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005bafb0",
+      "from_addr": "005bcbf0",
+      "name": "core_zombie.cpp_CZombie_process_FUN_005bafb0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00525020",
+    "address_range": [
+      [
+        "00525020",
+        "00525109"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020",
+    "signature": "float __cdecl core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00525020(CMotionController *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 37,
+    "call_sites": [
+      {
+        "call_addr": "0042a44a",
+        "call_type": "direct",
+        "caller": "core_carved.cpp_CCarved_process_FUN_00428ae0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0045a588",
+        "call_type": "direct",
+        "caller": "core_demnfolk.cpp_CDemnfolk_process_FUN_00459100",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0045a6c0",
+        "call_type": "direct",
+        "caller": "core_demnfolk.cpp_CDemnfolk_process_FUN_00459100",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0045add6",
+        "call_type": "direct",
+        "caller": "core_demnfolk.cpp_CDemnfolk_process_FUN_00459100",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00469faf",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_00469550",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0046a324",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_00469550",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0046ec55",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_CDoc_makeDrawDecision_FUN_0046ea80",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004c6cd3",
+        "call_type": "direct",
+        "caller": "core_gabriela.cpp_CGabriella_process_FUN_004c65f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004dfb99",
+        "call_type": "direct",
+        "caller": "core_ghoul.cpp_CGhoul_process_FUN_004de330",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004dfd2f",
+        "call_type": "direct",
+        "caller": "core_ghoul.cpp_CGhoul_process_FUN_004de330",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.337209302325581,
+    "instruction_count": 86,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 6,
+      "BRANCH": 2,
+      "CBRANCH": 5,
+      "COPY": 246,
+      "FLOAT2FLOAT": 7,
+      "FLOAT_ADD": 2,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_NAN": 6,
+      "FLOAT_SUB": 2,
+      "INT2FLOAT": 10,
+      "INT_ADD": 47,
+      "INT_AND": 61,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 35,
+      "INT_LEFT": 14,
+      "INT_LESS": 4,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 19,
+      "INT_OR": 20,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 19,
+      "INT_SUB": 9,
+      "INT_XOR": 4,
+      "INT_ZEXT": 12,
+      "LOAD": 35,
+      "POPCOUNT": 17,
+      "RETURN": 2,
+      "STORE": 13
+    },
+    "pcode_op_count": 631
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00503e60",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9655
+    },
+    "bw3.exe": {
+      "addr": "004fc930",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0052e2b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9704
+    },
+    "nocturne.exe": {
+      "addr": "004e1e60",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9704
+    }
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMotionController *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via pointer arithmetic on its own `motion_name` field (which decays to a pointer), `+ CONST`; `offsetof(motion_name) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pSVar2`. Replace those `pSVar2->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 31,
+      "match": "pSVar2 = (T *)(pSVar2->motion_name + CONST)",
+      "severity": "moderate",
+      "text": "pSVar2 = (SMotion *)(pSVar2->motion_name + 4);",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

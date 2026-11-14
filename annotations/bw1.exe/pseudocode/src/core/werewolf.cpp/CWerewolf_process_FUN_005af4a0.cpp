@@ -913,7 +913,7 @@ LAB_005af702:
     (this_ptr->base).base.position_delta.z = 0.0;
     (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
     pCVar2->x = (this_ptr->base).base.position_delta.y;
-    core_charactr_cpp_FUN_0042d750((CCharacter *)this_ptr,&CStack_174);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042d750((CCharacter *)this_ptr,&CStack_174);
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_0042e160((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_005675a0

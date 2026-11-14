@@ -58,7 +58,8 @@ int __cdecl core_biggs_cpp_CBiggs_renderOpaque_FUN_00415120(CBiggs *this_ptr)
     if (_DAT_01d1cdc8 != 0) {
       iVar5 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
       if (iVar5 == 0) {
-        core_motion_cpp_FUN_005042e0(&(this_ptr->base).base.model.base,(CDemonActor *)this_ptr);
+        core_motion_cpp_CMotionController_render_FUN_005042e0
+                  (&(this_ptr->base).base.model.base,(CDemonActor *)this_ptr);
         (*((this_ptr->base).base.base.vtable._ub)->renderTargetPoints)((CDemonActor *)this_ptr);
       }
     }

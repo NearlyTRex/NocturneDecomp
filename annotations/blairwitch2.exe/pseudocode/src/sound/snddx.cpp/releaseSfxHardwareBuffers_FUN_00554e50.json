@@ -1,0 +1,196 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 113,
+    "complexity_score": 110,
+    "cross_reference_count": 3,
+    "function_call_count": 3,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 50,
+    "suspect_count": 5,
+    "suspect_types": [
+      "raw_address_pointer_store",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 163
+  },
+  "cross_references": [
+    {
+      "addr": "005552a0",
+      "from_addr": "005552c8",
+      "name": "sound_snddx.cpp_FUN_005552a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00556290",
+      "from_addr": "005564d3",
+      "name": "sound_snddx.cpp_FUN_00556290",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00557500",
+      "from_addr": "00557532",
+      "name": "sound_snddx.cpp_FUN_00557500",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00554e50",
+    "address_range": [
+      [
+        "00554e50",
+        "00554f7e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_snddx.cpp_releaseSfxHardwareBuffers_FUN_00554e50",
+    "signature": "int __cdecl sound_snddx_cpp_releaseSfxHardwareBuffers_FUN_00554e50(int sfx_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
+    },
+    {
+      "addr": "00554ad0",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0"
+    },
+    {
+      "addr": "005549c0",
+      "is_variadic": true,
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005549c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e9a3b",
+      "name": "s_DirectSux_Unable_to_s_s_005e9a3b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9a88",
+      "name": "s_Stop_hardware_sfx_second_005e9a88",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.076923076923077,
+    "instruction_count": 91,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 18,
+      "BRANCH": 3,
+      "CALL": 3,
+      "CALLIND": 3,
+      "CBRANCH": 7,
+      "COPY": 77,
+      "INT_ADD": 38,
+      "INT_AND": 80,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 45,
+      "INT_LEFT": 6,
+      "INT_LESS": 4,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 15,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 27,
+      "INT_SUB": 26,
+      "INT_XOR": 4,
+      "LOAD": 24,
+      "POPCOUNT": 21,
+      "RETURN": 1,
+      "STORE": 28
+    },
+    "pcode_op_count": 462
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00577880",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0055a9f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005ae1c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5139
+    },
+    "nocturne.exe": {
+      "addr": "00529de0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5139
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "sfx_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 18,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar5 = (**(code **)(*apiStack_1a4[0] + 0x48))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 25,
+      "match": "*(int **)(iVar2 + 0x264ac14",
+      "severity": "moderate",
+      "text": "piVar1 = *(int **)(iVar2 + 0x264ac14);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 27,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*piVar1 + 8))(piVar1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 43,
+      "match": "*(int **)(iVar3 + 0x264a5f4",
+      "severity": "moderate",
+      "text": "if ((piVar1 != *(int **)(iVar3 + 0x264a5f4)) && (piVar1 != (int *)0x0)) {",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 44,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*piVar1 + 8))(piVar1);",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

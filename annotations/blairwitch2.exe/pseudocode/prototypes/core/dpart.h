@@ -41,9 +41,9 @@ void __cdecl CDemonPart::loadFromFile(CDemonPart *this_ptr,_FILE *file_handle,CV
 // Address: 00461a50
 void __cdecl CDemonPart::renderFaces(CDemonPart *this_ptr);
 
-// Original: core_dpart.cpp_FUN_00461c02
+// Original: core_dpart.cpp_setupTriangleEdgeInterpolation_FUN_00461c02
 // Address: 00461c02
-void FUN_00461c02(void);
+void setupTriangleEdgeInterpolation(void);
 
 // Original: core_dpart.cpp_setupDepthOnlyEdgeInterpolation_FUN_00461e10
 // Address: 00461e10

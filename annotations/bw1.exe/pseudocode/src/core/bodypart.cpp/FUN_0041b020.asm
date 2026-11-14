@@ -12,7 +12,7 @@
 ;   core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041c9a0 at 0041cbda
 ;   core_carved.cpp_FUN_0042a930 at 0042ac00
 ;   core_demnfolk.cpp_FUN_0045b560 at 0045b82a
-;   core_mobster.cpp_FUN_0051e5d0 at 0051e83e
+;   core_mobster.cpp_CMobster_processWeaponPickup_FUN_0051e5d0 at 0051e83e
 ;   core_zombie.cpp_CZombie_processPickup_FUN_005bd560 at 005bd82a
 ;
 ; *****************************************************************************

@@ -35,9 +35,9 @@
 // =============================================================================
 
 void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_00550260(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_FUN_00550580(CDemonSet *this_ptr,int skip_prerender);
+void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_00550580(CDemonSet *this_ptr,int skip_prerender);
 void __cdecl core_set_cpp_FUN_00550da0(CDemonSet *this_ptr);
-void core_set_cpp_FUN_00551170(CDemonSet *param_1);
+void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_00551170(CDemonSet *this_ptr);
 void core_set_cpp_FUN_00551480(CDemonSet *param_1);
 void core_set_cpp_FUN_005516c0(CDemonSet *param_1);
 void __cdecl core_set_cpp_CDemonSet_addDynamicLight_FUN_005518e0(CDemonSet *this_ptr,CDemonLight *light);
@@ -51,7 +51,7 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_00551d50(CDemonSet *t
 int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_00552490(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal);
 void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_00552710(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int vertex_index,int skip_lighting_calculation);
 void __cdecl core_set_cpp_CDemonSet_computeLighting_FUN_00552a70(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int start_vertex_index,int vertex_count);
-void __cdecl core_set_cpp_FUN_00552d40(CDemonSet *this_ptr,CVector3f *vertex_position,CVector3f *position_offset,int vertex_index);
+void __cdecl core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_00552d40(CDemonSet *this_ptr,CVector3f *vertex_position,CVector3f *position_offset,int vertex_index);
 void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_00552f50(CDemonSet *this_ptr,int vertex_count);
 void __cdecl core_set_cpp_CDemonSet_rotateVerticies_FUN_00553140(CDemonSet *this_ptr,int vertex_count,CVector3i *input_vertices);
 CVector3i * __stack_esi core_set_cpp_transformToWorldSpace_FUN_00553210(CVector3i *input,CVector3i *output);
@@ -91,7 +91,7 @@ void __cdecl core_set_cpp_CDemonSet_buildActorTypeLists_FUN_00555ad0(CDemonSet *
 void __cdecl core_set_cpp_CDemonSet_loadMasterLightStates_FUN_00555ca0(CDemonSet *this_ptr,int *light_state_buffer);
 int __cdecl core_set_cpp_CDemonSet_saveMasterLightStates_FUN_00555ce0(CDemonSet *this_ptr,int *light_state_buffer);
 int core_set_cpp_FUN_00555d20(int *param_1,undefined4 param_2);
-void core_set_cpp_FUN_00555e30(int *param_1,_FILE *param_2);
+void __cdecl core_set_cpp_CDemonSet_loadStateInfo_FUN_00555e30(CDemonSet *this_ptr,_FILE *file_handle);
 int __cdecl core_set_cpp_CDemonSet_isCameraPanning_FUN_00555fe0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_expireDecals_FUN_00556040(CDemonSet *this_ptr,int expire_flag);
 void __cdecl core_set_cpp_CDemonSet_renderDecals_FUN_00556080(CDemonSet *this_ptr);
@@ -110,7 +110,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_00557630(CDemonSe
 float __cdecl core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_005578b0(CDemonSet *this_ptr,float min_t,CVector3f *ray_origin,CVector3f *ray_target,float max_t);
 int __cdecl core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_00557db0(CDemonSet *this_ptr,CDemonActor *actor);
 int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_00557e10(SIntersectXZCylinder *cylinder,float obstacle_x,float obstacle_y,SCollisionInfo *collision_info);
-int __cdecl core_setcolid_cpp_FUN_005580d0(CDemonSet *this_ptr,SIntersectXZCylinder *cylinder,CBoundingBox3D *bounding_box,CVector3f *position,CMatrix3x3f *orientation_matrix);
+int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_005580d0(CDemonSet *this_ptr,SIntersectXZCylinder *cylinder,CBoundingBox3D *bounding_box,CVector3f *position,CMatrix3x3f *orientation_matrix);
 float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00558450(CDemonSet *this_ptr,float start_x,float start_z,float dir_x,float dir_z,float radius,float bottom_y,float top_y);
 void __cdecl core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_00558eb0(CDemonSet *this_ptr);
 void __cdecl core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00559060(CDemonSet *this_ptr);

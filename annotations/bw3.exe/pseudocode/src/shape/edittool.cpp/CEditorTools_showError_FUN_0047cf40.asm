@@ -15,12 +15,12 @@
 ;   core_fldnotes.cpp_CFieldNotes_enableEntry_FUN_004aba10 at 004abac1
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810 at 004aaa5d
 ;   core_fldnotes.cpp_CFieldNotes_turnToEntry_FUN_004abb90 at 004abc86
+;   core_game.cpp_CGame_loadGame_FUN_004bdfb0 at 004be4d1
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004bb100 at 004bc17f
-;   core_game.cpp_FUN_004bda10 at 004bdf0e
-;   core_game.cpp_FUN_004bdfb0 at 004be4d1
-;   core_game.cpp_FUN_004bec20 at 004bf035
+;   core_game.cpp_CGame_saveGame_FUN_004bda10 at 004bdf0e
+;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004bec20 at 004bf035
 ;   core_hero.cpp_CHero_doHeroAction_FUN_004d4520 at 004d4567
-;   core_menu.cpp_FUN_004eae80 at 004ec6d5
+;   core_menu.cpp_configureCustomKeyBindings_FUN_004eae80 at 004ec6d5
 ;   ... and 17 more
 ;
 ; Referenced Globals:

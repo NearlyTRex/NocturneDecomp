@@ -682,7 +682,9 @@ LAB_0045a07d:
           goto LAB_0045a676;
         }
         if (pCVar7 != (CCharacter *)0x0) {
-          pCStack_14 = (CCharacter_full_vtable *)core_motion_cpp_FUN_00525020(&pCVar2->base);
+          pCStack_14 = (CCharacter_full_vtable *)
+                       core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00525020
+                                 (&pCVar2->base);
           if ((float)_DAT_005d803b < (float)pCStack_14) {
             pCVar23 = (this_ptr->base).victim;
             afStack_198[2] =
@@ -876,7 +878,9 @@ LAB_0045a07d:
     case 9:
     case 10:
       pCVar2 = &(this_ptr->base).base.model;
-      pCStack_14 = (CCharacter_full_vtable *)core_motion_cpp_FUN_00525020(&pCVar2->base);
+      pCStack_14 = (CCharacter_full_vtable *)
+                   core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00525020
+                             (&pCVar2->base);
       if ((float)_DAT_005d803b < (float)pCStack_14) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar2->base,4,1);
       }
@@ -936,7 +940,8 @@ LAB_0045ac61:
               fStack_48 = afStack_1ec[1] * (float)_DAT_005d801b + fStack_48;
             }
             fStack_1c = fStack_48;
-            fStack_4c = core_motion_cpp_FUN_00525020(&(this_ptr->base).base.model.base);
+            fStack_4c = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00525020
+                                  (&(this_ptr->base).base.model.base);
             dStack_c4 = (double)fStack_4c;
             pCStack_14 = (CCharacter_full_vtable *)fStack_4c;
             if ((1.0 <= dStack_c4) && (dStack_c4 <= _DAT_005d8033)) {
@@ -1243,7 +1248,7 @@ LAB_00459d36:
       fVar27 = (this_ptr->base).base.model.accumulated_root_motion.z;
       (this_ptr->base).base.model.accumulated_root_motion.y = fVar27;
       pCVar3->x = fVar27;
-      core_charactr_cpp_FUN_0042d750((CCharacter *)this_ptr,&CStack_10c);
+      core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042d750((CCharacter *)this_ptr,&CStack_10c);
     }
   }
   iVar10 = iStack_20;

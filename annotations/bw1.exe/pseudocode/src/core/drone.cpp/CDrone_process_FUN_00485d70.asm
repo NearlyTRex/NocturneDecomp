@@ -27,13 +27,13 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042e120
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0
 ;   core_charactr.cpp_FUN_0042d700
-;   core_charactr.cpp_FUN_0042d750
 ;   core_charactr.cpp_FUN_00435320
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042c010
 ;   core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a0770
@@ -268,8 +268,8 @@ section .text
     LEA EAX,[EBP + 0x6]                 ; 00485ff5
     PUSH EAX                            ; 00485ff8
     PUSH EBX                            ; 00485ff9
-    CALL core_charactr.cpp_FUN_0042d750 ; 00485ffa
-        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750 ; 00485ffa
+        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 00485fff
     PUSH EBX                            ; 00486002
         ;   Label: LAB_00486002

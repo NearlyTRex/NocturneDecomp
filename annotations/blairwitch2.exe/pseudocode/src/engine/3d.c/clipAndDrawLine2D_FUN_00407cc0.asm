@@ -13,9 +13,9 @@
 ;   core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_005424b0 at 005425d6
 ;   engine_3d.c_drawLine2DFromIndices_FUN_00407c40 at 00407ca5
 ;   engine_3d.c_drawLineStrip2D_FUN_00404590 at 00404616
-;   shape_edittool.cpp_FUN_0047fd00 at 0047fdf8
-;   shape_edittool.cpp_FUN_00480000 at 00480132
-;   shape_edittool.cpp_FUN_00480150 at 004803cc
+;   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_0047fd00 at 0047fdf8
+;   shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00480150 at 004803cc
+;   shape_edittool.cpp_draw3DInterpolatedLine_FUN_00480000 at 00480132
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0070c5b4

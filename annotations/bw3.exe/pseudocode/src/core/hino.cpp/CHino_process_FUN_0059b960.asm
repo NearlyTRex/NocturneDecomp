@@ -33,12 +33,12 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042ccf0
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
 ;   core_charactr.cpp_FUN_0042c1e0
-;   core_charactr.cpp_FUN_0042c230
 ;   core_charactr.cpp_FUN_00434850
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   ... and 19 more
@@ -267,8 +267,8 @@ section .text
     LEA EAX,[EBP + 0xfffffe7e]          ; 0059bbf5
     PUSH EAX                            ; 0059bbfb
     PUSH EBX                            ; 0059bbfc
-    CALL core_charactr.cpp_FUN_0042c230 ; 0059bbfd
-        ;   XREF to: 0042c230 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042c230(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230 ; 0059bbfd
+        ;   XREF to: 0042c230 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 0059bc02
     PUSH EBX                            ; 0059bc05
         ;   Label: LAB_0059bc05
@@ -662,8 +662,8 @@ section .text
         ;   Label: LAB_0059c07f
     MOV ECX,dword ptr [0x006071f0]      ; 0059c081 | DAT_006071f0
     PUSH ECX                            ; 0059c087 | DAT_02d0c1a0
-    CALL core_weather.cpp_FUN_0057d050  ; 0059c088
-        ;   XREF to: 0057d050 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_FUN_0057d050()
+    CALL core_weather.cpp_CWeather_setWeatherType_FUN_0057d050 ; 0059c088
+        ;   XREF to: 0057d050 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_0057d050(CWeather * this_ptr, EWeatherType type)
     ADD ESP,0x8                         ; 0059c08d
     LEA EAX,[EBP + 0xfffffe06]          ; 0059c090
     PUSH EAX                            ; 0059c096
@@ -671,8 +671,8 @@ section .text
     PUSH EAX                            ; 0059c09d
     MOV ESI,dword ptr [0x006071f0]      ; 0059c09e | DAT_006071f0
     PUSH ESI                            ; 0059c0a4 | DAT_02d0c1a0
-    CALL core_weather.cpp_FUN_0057d1a0  ; 0059c0a5
-        ;   XREF to: 0057d1a0 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_FUN_0057d1a0()
+    CALL core_weather.cpp_CWeather_setOriginAndRotation_FUN_0057d1a0 ; 0059c0a5
+        ;   XREF to: 0057d1a0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setOriginAndRotation_FUN_0057d1a0(CWeather * this_ptr, CVector3f * direction, CVector3f * rotation)
     ADD ESP,0xc                         ; 0059c0aa
     MOV dword ptr [EBX + 0xd070],0x1    ; 0059c0ad
         ;   Label: LAB_0059c0ad
@@ -701,8 +701,8 @@ section .text
     PUSH 0x5                            ; 0059c0fa
         ;   Label: LAB_0059c0fa
     PUSH EAX                            ; 0059c0fc | DAT_02d0c1a0
-    CALL core_weather.cpp_FUN_0057d050  ; 0059c0fd
-        ;   XREF to: 0057d050 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_FUN_0057d050()
+    CALL core_weather.cpp_CWeather_setWeatherType_FUN_0057d050 ; 0059c0fd
+        ;   XREF to: 0057d050 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_0057d050(CWeather * this_ptr, EWeatherType type)
     ADD ESP,0x8                         ; 0059c102
     JMP 0x0059c0ad                      ; 0059c105
         ;   XREF to: 0059c0ad (UNCONDITIONAL_JUMP)  ; LAB_0059c0ad
@@ -1243,8 +1243,8 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 0059c844
         ;   Label: LAB_0059c844
     PUSH EAX                            ; 0059c84a
-    CALL core_motion.cpp_FUN_004fc930   ; 0059c84b
-        ;   XREF to: 004fc930 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_004fc930(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930 ; 0059c84b
+        ;   XREF to: 004fc930 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930(CMotionController * this_ptr)
     MOV dword ptr [EBP + 0x76],EAX      ; 0059c850
     ADD ESP,0x4                         ; 0059c853
     FLD float ptr [EBP + 0x76]          ; 0059c856
@@ -1257,8 +1257,8 @@ section .text
     MOV EDI,dword ptr [0x006071f0]      ; 0059c86a | DAT_006071f0
     PUSH EDI                            ; 0059c870 | DAT_02d0c1a0
     MOV dword ptr [EBX + 0xd070],0x0    ; 0059c871
-    CALL core_weather.cpp_FUN_0057d050  ; 0059c87b
-        ;   XREF to: 0057d050 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_FUN_0057d050()
+    CALL core_weather.cpp_CWeather_setWeatherType_FUN_0057d050 ; 0059c87b
+        ;   XREF to: 0057d050 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_0057d050(CWeather * this_ptr, EWeatherType type)
     ADD ESP,0x8                         ; 0059c880
     JMP 0x0059ba81                      ; 0059c883
         ;   XREF to: 0059ba81 (UNCONDITIONAL_JUMP)  ; caseD_7
@@ -1712,8 +1712,8 @@ section .text
     MOV ESI,dword ptr [EBP + 0x2e]      ; 0059cd95
         ;   Label: caseD_c
     PUSH ESI                            ; 0059cd98
-    CALL core_motion.cpp_FUN_004fc930   ; 0059cd99
-        ;   XREF to: 004fc930 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_004fc930(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930 ; 0059cd99
+        ;   XREF to: 004fc930 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930(CMotionController * this_ptr)
     MOV dword ptr [EBP + 0x76],EAX      ; 0059cd9e
     ADD ESP,0x4                         ; 0059cda1
     FLD float ptr [EBP + 0x76]          ; 0059cda4
@@ -1765,8 +1765,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x2e]      ; 0059ce37
         ;   Label: caseD_b
     PUSH EAX                            ; 0059ce3a
-    CALL core_motion.cpp_FUN_004fc930   ; 0059ce3b
-        ;   XREF to: 004fc930 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_004fc930(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930 ; 0059ce3b
+        ;   XREF to: 004fc930 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004fc930(CMotionController * this_ptr)
     MOV dword ptr [EBP + 0x76],EAX      ; 0059ce40
     ADD ESP,0x4                         ; 0059ce43
     FLD float ptr [EBP + 0x76]          ; 0059ce46

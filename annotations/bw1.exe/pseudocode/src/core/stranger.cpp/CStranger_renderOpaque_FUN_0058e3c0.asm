@@ -35,7 +35,7 @@
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_005592d0
 ;   core_stranger.cpp_CStranger_updateWeaponPosition_FUN_0058aeb0
 ;   core_stranger.cpp_FUN_005906e0
-;   core_xform.cpp_FUN_005b5760
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
 ;   ... and 6 more
 ;
 ; *****************************************************************************
@@ -330,8 +330,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0058e6f1
     MOVSD ES:EDI,ESI                    ; 0058e6f2
     MOVSD ES:EDI,ESI                    ; 0058e6f3
-    CALL core_xform.cpp_FUN_005b5760    ; 0058e6f4
-        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760 ; 0058e6f4
+        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     MOV ESI,dword ptr [0x02c83600]      ; 0058e6f9 | DAT_02c83600
     LEA EAX,[ESI*0x4 + 0x0]             ; 0058e6ff
     SUB EAX,ESI                         ; 0058e706
@@ -482,8 +482,8 @@ section .text
     PUSH EAX                            ; 0058e880
     MOV dword ptr [EBP + -0xe],ESI      ; 0058e881
     MOV dword ptr [EBP + -0xa],EDI      ; 0058e884
-    CALL core_xform.cpp_FUN_005b5760    ; 0058e887
-        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760 ; 0058e887
+        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     MOV ESI,dword ptr [0x02c83638]      ; 0058e88c | DAT_02c83638
     LEA EAX,[ESI*0x4 + 0x0]             ; 0058e892
     SUB EAX,ESI                         ; 0058e899

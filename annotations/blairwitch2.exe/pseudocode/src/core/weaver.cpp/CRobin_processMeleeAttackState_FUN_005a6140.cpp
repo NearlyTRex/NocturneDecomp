@@ -40,7 +40,7 @@ void __cdecl core_weaver_cpp_CRobin_processMeleeAttackState_FUN_005a6140(CRobin 
     core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,5,1);
     pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
     if (pSVar5->state_index == 5) {
-      core_motion_cpp_FUN_00503e60(&this_ptr_00->base);
+      core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00503e60(&this_ptr_00->base);
       return;
     }
   }

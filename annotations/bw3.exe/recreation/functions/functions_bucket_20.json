@@ -4836,21 +4836,12 @@
     "calls":[
       "004e4330"
     ],
+    "cls":"CCloth",
     "conv":"__cdecl",
     "instructions":192,
-    "method":"FUN_0043c8a0",
-    "name":"core_cloth.cpp_FUN_0043c8a0",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CCloth",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"initializeConnections",
+    "name":"core_cloth.cpp_CCloth_initializeConnections_FUN_0043c8a0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -8477,14 +8468,56 @@
       "004f3ab0",
       "004f3ad0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":181,
-    "method":"FUN_004850a0",
-    "name":"shape_edittool.cpp_FUN_004850a0",
+    "method":"draw3DBorder",
+    "name":"shape_edittool.cpp_draw3DBorder_FUN_004850a0",
+    "params":[
+      {
+        "name":"left",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"top",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"right",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"bottom",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"pressed",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -11012,21 +11045,12 @@
       "0044a3e0",
       "004bd6a0"
     ],
+    "cls":"CGame",
     "conv":"__cdecl",
     "instructions":136,
-    "method":"FUN_004bd620",
-    "name":"core_game.cpp_FUN_004bd620",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CGame",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"beginFadeIn",
+    "name":"core_game.cpp_CGame_beginFadeIn_FUN_004bd620",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -11082,14 +11106,15 @@
       "005a3a90",
       "005a5128"
     ],
-    "conv":"unknown",
+    "cls":"CGame",
+    "conv":"__cdecl",
     "instructions":395,
-    "method":"FUN_004bec20",
-    "name":"core_game.cpp_FUN_004bec20",
-    "receiver":false,
+    "method":"showFullscreenBitmap",
+    "name":"core_game.cpp_CGame_showFullscreenBitmap_FUN_004bec20",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/game.cpp",
@@ -11935,19 +11960,12 @@
       "004d8aa0",
       "004d8ae0"
     ],
+    "cls":"CIniFile",
     "conv":"__cdecl",
     "instructions":16,
-    "method":"FUN_004d8a20",
-    "name":"engine_ini.cpp_FUN_004d8a20",
+    "method":"ctor",
+    "name":"engine_ini.cpp_CIniFile_ctor_FUN_004d8a20",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CIniFile",
-          "ptr":1
-        }
-      },
       {
         "name":"filename",
         "type":{
@@ -11965,7 +11983,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"class",
       "name":"CIniFile",
@@ -12073,8 +12091,8 @@
     ],
     "conv":"unknown",
     "instructions":99,
-    "method":"FUN_004d9d20",
-    "name":"core_inv.cpp_FUN_004d9d20",
+    "method":"getItemModel",
+    "name":"core_inv.cpp_getItemModel_FUN_004d9d20",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -12442,8 +12460,8 @@
     ],
     "conv":"__cdecl",
     "instructions":590,
-    "method":"FUN_004e85a0",
-    "name":"core_menu.cpp_FUN_004e85a0",
+    "method":"configureGraphicsOptions",
+    "name":"core_menu.cpp_configureGraphicsOptions_FUN_004e85a0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -13537,21 +13555,12 @@
       "004f7530",
       "005a3cb2"
     ],
+    "cls":"CDemonMission",
     "conv":"__cdecl",
     "instructions":151,
-    "method":"FUN_004f7a20",
-    "name":"core_mission.cpp_FUN_004f7a20",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CDemonMission",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"ensureHeroPlaceholder",
+    "name":"core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004f7a20",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -13615,8 +13624,8 @@
     ],
     "conv":"__cdecl",
     "instructions":98,
-    "method":"FUN_004f89a0",
-    "name":"engine_model.c_FUN_004f89a0",
+    "method":"loadModelChunk",
+    "name":"engine_model.c_loadModelChunk_FUN_004f89a0",
     "params":[
       {
         "name":"filename",
@@ -15783,19 +15792,12 @@
       "0057c890",
       "005806a0"
     ],
+    "cls":"CDemonSet",
     "conv":"__cdecl",
     "instructions":649,
-    "method":"FUN_00535da0",
-    "name":"core_set.cpp_FUN_00535da0",
+    "method":"renderScene",
+    "name":"core_set.cpp_CDemonSet_renderScene_FUN_00535da0",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CDemonSet",
-          "ptr":1
-        }
-      },
       {
         "name":"skip_prerender",
         "type":{
@@ -15805,7 +15807,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -20064,14 +20066,14 @@
       "005a3260",
       "EXTERNAL:00000047"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":19,
-    "method":"FUN_0057ab20",
-    "name":"wincore_wddvmem.cpp_FUN_0057ab20",
+    "method":"restoreVideoAndMinimizeWindow",
+    "name":"wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_0057ab20",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"wincore/wddvmem.cpp",
@@ -20348,14 +20350,15 @@
       "0057c2e0",
       "0057c840"
     ],
-    "conv":"unknown",
+    "cls":"CWeather",
+    "conv":"__cdecl",
     "instructions":380,
-    "method":"FUN_0057bda0",
-    "name":"core_weather.cpp_FUN_0057bda0",
-    "receiver":false,
+    "method":"update",
+    "name":"core_weather.cpp_CWeather_update_FUN_0057bda0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/weather.cpp",
@@ -20374,14 +20377,33 @@
       "0053ebe0",
       "0053ec70"
     ],
-    "conv":"unknown",
+    "cls":"CWeather",
+    "conv":"__cdecl",
     "instructions":192,
-    "method":"FUN_0057d1a0",
-    "name":"core_weather.cpp_FUN_0057d1a0",
-    "receiver":false,
+    "method":"setOriginAndRotation",
+    "name":"core_weather.cpp_CWeather_setOriginAndRotation_FUN_0057d1a0",
+    "params":[
+      {
+        "name":"direction",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"rotation",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/weather.cpp",
@@ -20884,21 +20906,12 @@
       "004fc0d0",
       "004fc310"
     ],
+    "cls":"CZombie",
     "conv":"__cdecl",
     "instructions":39,
-    "method":"FUN_0058cc20",
-    "name":"core_zombie.cpp_FUN_0058cc20",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CZombie",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"resetChaseState",
+    "name":"core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",

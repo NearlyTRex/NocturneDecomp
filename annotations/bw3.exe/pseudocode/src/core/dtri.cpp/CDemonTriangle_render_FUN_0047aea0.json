@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 132,
+    "complexity_score": 135,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 52,
+    "pseudocode_lines": 55,
     "suspect_count": 6,
     "suspect_types": [
       "raw_address_constant",
@@ -15,7 +15,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 158
+    "total_lines": 161
   },
   "cross_references": [],
   "function": {
@@ -44,7 +44,7 @@
     {
       "addr": "005632a3",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_005632a3"
+      "name": "engine_special.cpp_transformAndProjectPoint_FUN_005632a3"
     }
   ],
   "globals": [
@@ -168,31 +168,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 27,
       "match": "DAT_005f2af8",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_005632a3(&DAT_005f2af8->vertex_buffer_ptr->projected_vertex,&CStack_30);",
+      "text": "(&DAT_005f2af8->vertex_buffer_ptr->projected_vertex,&CStack_30);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 32,
       "match": "DAT_005f2af8",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_005632a3(&DAT_005f2af8->vertex_buffer_ptr[1].projected_vertex,&CStack_18);",
+      "text": "(&DAT_005f2af8->vertex_buffer_ptr[1].projected_vertex,&CStack_18);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 37,
       "match": "DAT_005f2af8",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_005632a3(&DAT_005f2af8->vertex_buffer_ptr[2].projected_vertex,&CStack_24);",
+      "text": "(&DAT_005f2af8->vertex_buffer_ptr[2].projected_vertex,&CStack_24);",
       "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",
-      "line": 35,
+      "line": 38,
       "match": "&stack0xffffff88",
       "severity": "moderate",
       "text": "poly = (SMRGLPrimitivePoly *)&stack0xffffff88;",
@@ -200,7 +200,7 @@
     },
     {
       "description": "Raw hex address 0x1bdd7e4 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 51,
+      "line": 54,
       "match": "0x1bdd7e4",
       "severity": "moderate",
       "text": "this_ptr_00 = 0x01BDD7E4;",

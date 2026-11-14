@@ -8,9 +8,9 @@
 ; int              Stack[0x8]:4   skip_zbuffer_copy
 ;
 ; XREF[3]:
+;   core_set.cpp_CDemonSet_renderScene_FUN_00535da0 at 00536301
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00534890 at 0053500d
 ;   core_set.cpp_FUN_00533e60 at 0053418c
-;   core_set.cpp_FUN_00535da0 at 00536301
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dcamera_cpp_005b9c6f
@@ -28,7 +28,7 @@
 ;   core_main.c_FUN_004e4330
 ;   crt_watcom.c__memcpy_FUN_00495f68
 ;   engine_drender.cpp_popViewport_FUN_0046d320
-;   engine_special.cpp_FUN_005658d0
+;   engine_special.cpp_endScene_FUN_005658d0
 ;   engine_special.cpp_masterZBuffer_FUN_00566350
 ;
 ; *****************************************************************************
@@ -48,8 +48,8 @@ section .text
         ;   Label: LAB_0044976e
     JZ 0x0044977c                       ; 00449775
         ;   XREF to: 0044977c (CONDITIONAL_JUMP)  ; LAB_0044977c
-    CALL engine_special.cpp_FUN_005658d0 ; 00449777
-        ;   XREF to: 005658d0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_005658d0()
+    CALL engine_special.cpp_endScene_FUN_005658d0 ; 00449777
+        ;   XREF to: 005658d0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_endScene_FUN_005658d0()
     MOV EBP,dword ptr [EBX + 0x168]     ; 0044977c
         ;   Label: LAB_0044977c
     TEST EBP,EBP                        ; 00449782

@@ -25,8 +25,8 @@
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407cc0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
 ;   engine_drender.cpp_pop_FUN_0046b4a0
-;   engine_special.cpp_FUN_0055d723
-;   shape_edittool.cpp_FUN_0047fd00
+;   engine_special.cpp_transformAndProjectPoint_FUN_0055d723
+;   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_0047fd00
 ;
 ; *****************************************************************************
 
@@ -86,8 +86,8 @@ section .text
     MOV EAX,dword ptr [ESI]             ; 0054254b
     ADD EAX,dword ptr [ESP + 0x58]      ; 0054254d
     PUSH EAX                            ; 00542551
-    CALL engine_special.cpp_FUN_0055d723 ; 00542552
-        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 00542552
+        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 00542557
     MOV EDI,dword ptr [ESP + 0x5c]      ; 0054255a
     MOV EAX,dword ptr [ESP + 0x60]      ; 0054255e
@@ -189,8 +189,8 @@ section .text
     MOV ESI,dword ptr [0x006138e0]      ; 00542670 | g_CEditorToolsPtr
     PUSH 0x3f000000                     ; 00542676
     PUSH ESI                            ; 0054267b
-    CALL shape_edittool.cpp_FUN_0047fd00 ; 0054267c
-        ;   XREF to: 0047fd00 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_FUN_0047fd00(CEditorTools * this_ptr, float scale_factor, int text_color)
+    CALL shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_0047fd00 ; 0054267c
+        ;   XREF to: 0047fd00 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_0047fd00(CEditorTools * this_ptr, float scale_factor, int text_color)
     ADD ESP,0xc                         ; 00542681
     MOV EDI,dword ptr [0x0060b280]      ; 00542684 | DAT_0060b280
     PUSH EDI                            ; 0054268a

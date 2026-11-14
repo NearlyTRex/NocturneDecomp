@@ -25,7 +25,7 @@
 ;   undefined4 DAT_0264bd00
 ;
 ; Called Functions:
-;   engine_special.cpp_FUN_0055f500
+;   engine_special.cpp_lockFrame_FUN_0055f500
 ;   engine_special.cpp_unlockFrame_FUN_0055f550
 ;   wincore_wddvmem.cpp_closeScreenDevice_FUN_00589170
 ;   wincore_wddvmem.cpp_openScreenDevice_FUN_005890c0
@@ -72,8 +72,8 @@ section .text
     MOV EBP,EAX                         ; 0055ffad
     CALL wincore_wddvmem.cpp_openScreenDevice_FUN_005890c0 ; 0055ffaf
         ;   XREF to: 005890c0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_openScreenDevice_FUN_005890c0()
-    CALL engine_special.cpp_FUN_0055f500 ; 0055ffb4
-        ;   XREF to: 0055f500 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_0055f500()
+    CALL engine_special.cpp_lockFrame_FUN_0055f500 ; 0055ffb4
+        ;   XREF to: 0055f500 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_0055f500()
     CMP dword ptr [0x006141bc],0x0      ; 0055ffb9 | DAT_006141bc
     JLE 0x0055fff0                      ; 0055ffc0
         ;   XREF to: 0055fff0 (CONDITIONAL_JUMP)  ; LAB_0055fff0

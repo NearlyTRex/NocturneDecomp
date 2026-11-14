@@ -17,8 +17,8 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0
-;   core_charactr.cpp_FUN_0042f310
-;   core_motion.cpp_FUN_004fcdc0
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310
+;   core_motion.cpp_CMotionController_render_FUN_004fcdc0
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0
 ;   crt_math.c_round_FUN_005a3120
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540
@@ -155,8 +155,8 @@ section .text
     JNC 0x005917f5                      ; 005917ea
         ;   XREF to: 005917f5 (CONDITIONAL_JUMP)  ; LAB_005917f5
     PUSH EBX                            ; 005917ec
-    CALL core_charactr.cpp_FUN_0042f310 ; 005917ed
-        ;   XREF to: 0042f310 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042f310(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310 ; 005917ed
+        ;   XREF to: 0042f310 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 005917f2
     CMP dword ptr [0x01d8e40c],0x0      ; 005917f5 | DAT_01d8e40c
         ;   Label: LAB_005917f5
@@ -165,8 +165,8 @@ section .text
     PUSH EBX                            ; 005917fe
     LEA EAX,[EBX + 0x158]               ; 005917ff
     PUSH EAX                            ; 00591805
-    CALL core_motion.cpp_FUN_004fcdc0   ; 00591806
-        ;   XREF to: 004fcdc0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_FUN_004fcdc0(CMotionController * this_ptr, CDemonActor * actor)
+    CALL core_motion.cpp_CMotionController_render_FUN_004fcdc0 ; 00591806
+        ;   XREF to: 004fcdc0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_render_FUN_004fcdc0(CMotionController * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0059180b
     CMP dword ptr [EBX + 0xd094],0x0    ; 0059180e
         ;   Label: LAB_0059180e

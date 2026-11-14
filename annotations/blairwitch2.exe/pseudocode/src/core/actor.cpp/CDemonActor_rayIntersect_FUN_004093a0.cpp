@@ -74,10 +74,10 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_004093a0(CDemonActor *
     *(float *)((int)&local_84 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 0x14) =
          local_68[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
     core_box_cpp_CBoundingBox3D_expand_FUN_0041a590(pCVar5,pCVar8);
-    iVar2 = core_box_cpp_FUN_0041b660(&local_fc,&local_9c);
+    iVar2 = core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041b660(&local_fc,&local_9c);
   }
   else {
-    iVar2 = core_box_cpp_FUN_0041b660(ray_bbox,&local_9c);
+    iVar2 = core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041b660(ray_bbox,&local_9c);
   }
   if (iVar2 == 0) {
     return 2.0;
@@ -109,7 +109,7 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_004093a0(CDemonActor *
   }
   else {
     if ((uint)bbox_type < 3) {
-      local_100 = (float)core_actor_cpp_FUN_00408290(collision_info);
+      local_100 = (float)core_actor_cpp_rayCylinderIntersect_FUN_00408290(collision_info);
       afStack_20[3] = local_100;
       goto LAB_0040957e;
     }

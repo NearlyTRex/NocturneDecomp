@@ -15,9 +15,9 @@
 ;   core_box.cpp_FUN_00420570
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
 ;   core_turret.cpp_CTurret_getCurFrame_FUN_005a2ae0
+;   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005b5620
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
 ;   core_xform.cpp_FUN_005b5080
-;   core_xform.cpp_FUN_005b5620
-;   core_xform.cpp_FUN_005b5760
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005b5200
 ;   crt_math.c_round_FUN_005c03a0
 ;
@@ -87,8 +87,8 @@ section .text
     PUSH 0x2c8af28                      ; 005a2989 | DAT_02c8af28
     LEA EAX,[ESP + 0x8]                 ; 005a298e
     PUSH EAX                            ; 005a2992
-    CALL core_xform.cpp_FUN_005b5760    ; 005a2993
-        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760 ; 005a2993
+        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 005a2998
     MOV EAX,dword ptr [ESP + 0x134]     ; 005a299b
     ADD EAX,0x30                        ; 005a29a2
@@ -96,8 +96,8 @@ section .text
     PUSH 0x2c8af28                      ; 005a29a6 | DAT_02c8af28
     LEA EAX,[ESP + 0x38]                ; 005a29ab
     PUSH EAX                            ; 005a29af
-    CALL core_xform.cpp_FUN_005b5620    ; 005a29b0
-        ;   XREF to: 005b5620 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_005b5620(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005b5620 ; 005a29b0
+        ;   XREF to: 005b5620 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005b5620(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 005a29b5
     LEA EAX,[ESP + 0x30]                ; 005a29b8
     PUSH EAX                            ; 005a29bc

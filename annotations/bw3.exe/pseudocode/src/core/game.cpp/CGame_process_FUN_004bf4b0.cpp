@@ -92,7 +92,7 @@ void __cdecl core_game_cpp_CGame_process_FUN_004bf4b0(CGame *this_ptr)
     engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"G%s : %3.2f ms\n" + 1);
   }
   core_terrain_cpp_CTerrain_process_FUN_005724e0(0x02CFD8B8);
-  core_weather_cpp_FUN_0057bda0();
+  core_weather_cpp_CWeather_update_FUN_0057bda0(0x02D0C1A0);
   core_game_cpp_CGame_processCheatCodes_FUN_004bb100(this_ptr);
   core_fldnotes_cpp_CFieldNotes_process_FUN_004ac6b0(g_CFieldNotesPtr);
   core_bmppuzzl_cpp_processActivePuzzle_FUN_00411a90();

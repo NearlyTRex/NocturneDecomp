@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 260,
-    "complexity_score": 327,
+    "complexity_score": 331,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 112,
+    "pseudocode_lines": 116,
     "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
@@ -16,7 +16,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 372
+    "total_lines": 376
   },
   "cross_references": [
     {
@@ -82,7 +82,7 @@
     {
       "addr": "00580173",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_00580173"
+      "name": "engine_special.cpp_transformAndProjectPoint_FUN_00580173"
     }
   ],
   "globals": [
@@ -531,39 +531,39 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 72,
+      "line": 73,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_24);",
+      "text": "(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_24);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 78,
+      "line": 80,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_54);",
+      "text": "(&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_54);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 86,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_3c);",
+      "text": "(&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_3c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 88,
+      "line": 92,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_6c);",
+      "text": "(&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_6c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 89,
+      "line": 93,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "this_ptr_00 = DAT_00612560;",
@@ -571,7 +571,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 90,
+      "line": 94,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "DAT_00612560->vertex_buffer_ptr->u = 0x20000;",
@@ -579,7 +579,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 112,
+      "line": 116,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_00482170(DAT_00612560,&local_94,0x123);",
@@ -587,7 +587,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 113,
+      "line": 117,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);",

@@ -12,11 +12,11 @@
 ;   engine_mini3d.cpp_drawRect_FUN_004f3a60 at 004f3a77
 ;   shape_edittool.cpp_CEdButton_paint_FUN_00486120 at 004863f3
 ;   shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_00480200 at 004802dd
+;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80 at 0047fc9c
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047ee50 at 0047f0ed
 ;   shape_edittool.cpp_FUN_0047b980 at 0047b998
-;   shape_edittool.cpp_FUN_0047fa80 at 0047fc9c
-;   shape_edittool.cpp_FUN_004850a0 at 00485122
 ;   shape_edittool.cpp_FUN_004852f0 at 0048543c
+;   shape_edittool.cpp_draw3DBorder_FUN_004850a0 at 00485122
 ;
 ; Called Functions:
 ;   engine_mini3d.cpp_fillRect_FUN_004f37e0

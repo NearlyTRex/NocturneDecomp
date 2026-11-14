@@ -50,7 +50,8 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041aa20(CBoundi
     local_28.x = (int)ROUND(afStack_48[2] * _DAT_005f39d8);
     local_28.y = (int)ROUND(afStack_48[3] * _DAT_005f39d8);
     local_28.z = (int)ROUND(local_38 * _DAT_005f39d8);
-    engine_special_cpp_FUN_0055d723((SProjectedVertex *)(*0x01BA5C50 + iVar3),&local_28);
+    engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+              ((SProjectedVertex *)(*0x01BA5C50 + iVar3),&local_28);
     if ((*(byte *)((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).screen_x + iVar3 + 3) &
         0x80) == 0) {
       local_18 = 0;

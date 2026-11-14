@@ -47,10 +47,11 @@ int __cdecl core_hecaitmx_cpp_CHecaitomix_renderTransparent_FUN_00598480(CHecait
               (this_ptr_00,-1,0x2e7,1,0);
     engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0(DAT_005f2afc);
     if (_DAT_01d8e40c != 0) {
-      core_motion_cpp_FUN_004fcdc0(&this_ptr_00->base,(CDemonActor *)this_ptr);
+      core_motion_cpp_CMotionController_render_FUN_004fcdc0
+                (&this_ptr_00->base,(CDemonActor *)this_ptr);
     }
     if (0.0 < (this_ptr->base).base.bind_time) {
-      core_charactr_cpp_FUN_0042f310((CCharacter *)this_ptr);
+      core_charactr_cpp_CCharacter_renderEthereal_FUN_0042f310((CCharacter *)this_ptr);
     }
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830((CDemonActor *)this_ptr);

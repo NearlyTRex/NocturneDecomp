@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   engine_model.c_FUN_0051f920 at 0051fd8a
+;   engine_model.c_getMRGLBounds_FUN_0051f920 at 0051fd8a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d1d400

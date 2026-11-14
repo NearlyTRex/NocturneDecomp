@@ -9,7 +9,7 @@
 ; XREF[9]:
 ;   core_event.cpp_FUN_0048c2e0 at 0048f22d
 ;   core_game.cpp_FUN_004c4a60 at 004c4af6
-;   core_menu.cpp_FUN_004e94f0 at 004e9698
+;   core_menu.cpp_configureSoundOptions_FUN_004e94f0 at 004e9698
 ;   core_sound.cpp_CSound_init_FUN_0055fd30 at 0055fdc2
 ;   core_sound.cpp_CSound_process_FUN_0055ff40 at 0056018d
 ;   core_sound.cpp_syncChannel3WithChannel0_FUN_0055fcd0 at 0055fcd5

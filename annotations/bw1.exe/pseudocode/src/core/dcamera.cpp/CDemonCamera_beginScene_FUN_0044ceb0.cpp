@@ -107,7 +107,7 @@ switchD_0044cec8_caseD_3:
             (DAT_00612560,&(this_ptr->base).rotation_matrix);
   if (skip_clear_buffers == 0) {
     if (_DAT_02c83370 != 0) {
-      engine_special_cpp_FUN_00581fe0();
+      engine_special_cpp_beginScene_FUN_00581fe0();
     }
     engine_special_cpp_clearScreen_FUN_0057dc40();
     engine_special_cpp_clearZBufferNative_FUN_0057dca4();

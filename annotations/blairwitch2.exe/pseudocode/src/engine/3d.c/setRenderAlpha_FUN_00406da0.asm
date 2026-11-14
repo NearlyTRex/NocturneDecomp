@@ -14,7 +14,7 @@
 ;   core_game.cpp_CGame_rollCredits_FUN_004be430 at 004be592
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_004b3c50 at 004b3c6c
 ;   core_inv.cpp_FUN_004dd9b0 at 004de2ee
-;   core_menu.cpp_FUN_004eb0e0 at 004eb17c
+;   core_menu.cpp_renderMenuAndGetChoice_FUN_004eb0e0 at 004eb17c
 ;   core_script.cpp_CScript_renderSubtitles_FUN_005218a0 at 00521a49
 ;   engine_3d.c_renderPolygonSolidTexturedClampedOp51_FUN_004062b0 at 00406310
 ;   ... and 16 more

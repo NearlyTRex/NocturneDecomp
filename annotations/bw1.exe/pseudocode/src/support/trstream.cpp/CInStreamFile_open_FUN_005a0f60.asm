@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   binary_mode
 ;
 ; XREF[4]:
-;   core_game.cpp_FUN_004d6420 at 004d6706
-;   core_game.cpp_FUN_004d6990 at 004d6c3c
+;   core_game.cpp_CGame_loadGame_FUN_004d6990 at 004d6c3c
+;   core_game.cpp_CGame_saveGame_FUN_004d6420 at 004d6706
 ;   engine_pod.cpp_FUN_0053b250 at 0053b383
 ;   support_trstream.cpp_CInStreamFile_ctorOpen_FUN_005a0930 at 005a0991
 ;

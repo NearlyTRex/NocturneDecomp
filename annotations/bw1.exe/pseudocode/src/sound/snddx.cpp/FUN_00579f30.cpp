@@ -9,11 +9,11 @@
 void sound_snddx_cpp_FUN_00579f30(uint param_1,int param_2)
 
 {
-  int iVar1;
+  int sfx_handle;
   
-  iVar1 = *(int *)(param_2 + 0x60);
-  if (((0 < iVar1) && (iVar1 < 0x1f)) && (*(int *)(iVar1 * 0x24 + 0x2c823e0) != 0)) {
-    sound_snddx_cpp_FUN_00577880(iVar1);
+  sfx_handle = *(int *)(param_2 + 0x60);
+  if (((0 < sfx_handle) && (sfx_handle < 0x1f)) && (*(int *)(sfx_handle * 0x24 + 0x2c823e0) != 0)) {
+    sound_snddx_cpp_releaseSfxHardwareBuffers_FUN_00577880(sfx_handle);
     return;
   }
   sound_sndmain_cpp_logSoundError_FUN_005773f0("DirectSoundDevice::killSfx - handle wasn't valid, call ignored");

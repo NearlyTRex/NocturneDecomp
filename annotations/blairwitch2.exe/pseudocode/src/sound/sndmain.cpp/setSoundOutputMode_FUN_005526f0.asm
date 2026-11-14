@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   sample_rate
 ;
 ; XREF[7]:
-;   core_menu.cpp_FUN_004ed260 at 004ee120
-;   core_sound.cpp_FUN_0055a100 at 0055a14f
+;   core_menu.cpp_configureSoundOptions_FUN_004ed260 at 004ee120
+;   core_sound.cpp_CSound_findAllSoundFiles_FUN_0055a100 at 0055a14f
 ;   sound_sndmain.cpp_enableSoundSystem_FUN_005524b0 at 00552502
 ;   sound_sndmain.cpp_readIni_FUN_00553680 at 00553865
 ;   sound_sndmain.cpp_setAudioBitDepth_FUN_00552830 at 00552841

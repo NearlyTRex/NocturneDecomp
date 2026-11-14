@@ -22,7 +22,7 @@ void __cdecl core_gabriela_cpp_CGabriella_setup_FUN_004ad3e0(CGabriella *this_pt
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0(this_ptr_00,"gabriela.dfm");
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00547480(this_ptr_00);
   core_cloth_cpp_CCloth_load_FUN_005adeb0(&this_ptr->coat_cloth,"gabcoat.cth");
-  core_cloth_cpp_FUN_005ae680
+  core_cloth_cpp_CCloth_setup_FUN_005ae680
             (&this_ptr->coat_cloth,&(this_ptr->base).base.base.location.position,
              &(this_ptr->base).base.base.orient.vec,this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(this_ptr_00);

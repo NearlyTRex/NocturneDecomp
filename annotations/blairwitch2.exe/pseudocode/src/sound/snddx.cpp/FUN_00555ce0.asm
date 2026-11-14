@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005b77c0
 ;   crt_unknown.c_sprintf_FUN_005b7790
-;   sound_snddx.cpp_FUN_00554ad0
+;   sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0
 ;   sound_sndmain.cpp_logSoundError_FUN_005549c0
 ;
 ; *****************************************************************************
@@ -203,8 +203,8 @@ section .text
         ;   XREF to: 00555e32 (UNCONDITIONAL_JUMP)  ; LAB_00555e32
     PUSH EAX                            ; 00555f67
         ;   Label: LAB_00555f67
-    CALL sound_snddx.cpp_FUN_00554ad0   ; 00555f68
-        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00554ad0(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0 ; 00555f68
+        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0(uint error_code)
     ADD ESP,0x4                         ; 00555f6d
     PUSH EAX                            ; 00555f70
     PUSH 0x5e9bfd                       ; 00555f71 | s_Create_secondary_buffer_005e9bfc+1

@@ -23,7 +23,7 @@
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
 ;   engine_drender.cpp_pop_FUN_0046b4a0
-;   engine_special.cpp_FUN_0055d9ec
+;   engine_special.cpp_transformPoint_FUN_0055d9ec
 ;
 ; *****************************************************************************
 
@@ -67,8 +67,8 @@ section .text
     MOV EAX,ESP                         ; 0049b73d
     PUSH EAX                            ; 0049b73f
     PUSH EDI                            ; 0049b740
-    CALL engine_special.cpp_FUN_0055d9ec ; 0049b741
-        ;   XREF to: 0055d9ec (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d9ec(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformPoint_FUN_0055d9ec ; 0049b741
+        ;   XREF to: 0055d9ec (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformPoint_FUN_0055d9ec(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0049b746
     PUSH EDI                            ; 0049b749
     MOV EDX,dword ptr [0x0060b280]      ; 0049b74a | DAT_0060b280

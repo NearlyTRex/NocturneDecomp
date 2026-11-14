@@ -114,25 +114,25 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00585e10(CWater *th
             local_64.x = (int)ROUND(_DAT_005fdc5c * 0.0);
             local_64.y = (int)ROUND(_DAT_005fdc5c * 0.0);
             local_64.z = (int)ROUND(_DAT_005fdc5c * 0.0);
-            engine_special_cpp_FUN_0055d723
+            engine_special_cpp_transformAndProjectPoint_FUN_0055d723
                       (&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_64);
             local_94.x = this_ptr->tile_size;
             local_a0.x = (int)ROUND(local_94.x * _DAT_005fdc5c);
             local_a0.y = (int)ROUND(local_94.y * _DAT_005fdc5c);
             local_a0.z = (int)ROUND(local_94.z * _DAT_005fdc5c);
-            engine_special_cpp_FUN_0055d723
+            engine_special_cpp_transformAndProjectPoint_FUN_0055d723
                       (&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_a0);
             local_94.z = this_ptr->tile_size;
             local_7c.x = (int)ROUND(local_94.x * _DAT_005fdc5c);
             local_7c.y = (int)ROUND(local_94.y * _DAT_005fdc5c);
             local_7c.z = (int)ROUND(local_94.z * _DAT_005fdc5c);
-            engine_special_cpp_FUN_0055d723
+            engine_special_cpp_transformAndProjectPoint_FUN_0055d723
                       (&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_7c);
             local_94.x = 0.0;
             local_88.x = (int)ROUND(_DAT_005fdc5c * 0.0);
             local_88.y = (int)ROUND(local_94.y * _DAT_005fdc5c);
             local_88.z = (int)ROUND(local_94.z * _DAT_005fdc5c);
-            engine_special_cpp_FUN_0055d723
+            engine_special_cpp_transformAndProjectPoint_FUN_0055d723
                       (&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_88);
             uVar3 = DAT_0060b284;
             uVar5 = DAT_00622024 & DAT_00622054 & DAT_00622084 & DAT_006220b4;

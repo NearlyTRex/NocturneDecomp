@@ -66,7 +66,7 @@ void core_werewolf_cpp_FUN_0058dd00(CCharacter *param_1)
       *(uint *)((int)&local_3c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
            *(uint *)(&stack0xffffff78 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
       local_3c.y = 0.0;
-      core_charactr_cpp_FUN_00423a60(param_1,&local_3c);
+      core_charactr_cpp_CCharacter_moveAndCollide_FUN_00423a60(param_1,&local_3c);
       return;
     }
     local_6c = local_9c - local_60;
@@ -95,7 +95,7 @@ void core_werewolf_cpp_FUN_0058dd00(CCharacter *param_1)
         local_54.y = local_18 * 0.0;
         local_54.z = local_54.z * local_18;
         local_14 = fVar1;
-        core_charactr_cpp_FUN_00423a60(param_1,&local_54);
+        core_charactr_cpp_CCharacter_moveAndCollide_FUN_00423a60(param_1,&local_54);
         return;
       }
     }

@@ -56,7 +56,8 @@ CMatrix3x4f * __stack2_esi core_hino_cpp_CHino_getCarryObjToBodyXForm_FUN_0059d5
       uStack_1c = 0xbfc9f40a;
     }
   }
-  core_xform_cpp_FUN_00583940(&CStack_78,&uStack_3c,&uStack_24);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
+            (&CStack_78,&uStack_3c,&uStack_24);
   core_xform_cpp_multiplyMatrix3x4_FUN_005833e0
             (&CStack_78,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar1,
              &CStack_a8);

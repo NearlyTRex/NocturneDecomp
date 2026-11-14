@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b6584
-;   core_menu.cpp_FUN_004eed60 at 004efd2a
+;   core_menu.cpp_configureCustomKeyBindings_FUN_004eed60 at 004efd2a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006141cc

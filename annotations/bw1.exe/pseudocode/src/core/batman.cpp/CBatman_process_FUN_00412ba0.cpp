@@ -606,7 +606,7 @@ switchD_004132d2_default:
     (this_ptr->base).base.model.accumulated_root_motion.y =
          (this_ptr->base).base.model.accumulated_root_motion.z;
     pCVar14->x = (this_ptr->base).base.model.accumulated_root_motion.y;
-    core_charactr_cpp_FUN_0042d750((CCharacter *)this_ptr,&CStack_228);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042d750((CCharacter *)this_ptr,&CStack_228);
   }
   if (iStack_18 != 0xd) {
     this_ptr->mist_state = 0;

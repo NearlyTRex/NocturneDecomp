@@ -39,7 +39,7 @@
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004b5b30
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0
-;   core_flame.cpp_FUN_004b8e40
+;   core_flame.cpp_CFlame_updateGlobe_FUN_004b8e40
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005593c0
 ;   core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0
 ;   core_sound.cpp_CSound_killSound_FUN_0057d9d0
@@ -168,8 +168,8 @@ section .text
     MOV dword ptr [EAX + 0x38],0x0      ; 004b7cf6
     PUSH EAX                            ; 004b7cfd
     MOV dword ptr [EAX + 0x34],0x0      ; 004b7cfe
-    CALL core_flame.cpp_FUN_004b8e40    ; 004b7d05
-        ;   XREF to: 004b8e40 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_FUN_004b8e40(CFlame * this_ptr)
+    CALL core_flame.cpp_CFlame_updateGlobe_FUN_004b8e40 ; 004b7d05
+        ;   XREF to: 004b8e40 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_CFlame_updateGlobe_FUN_004b8e40(CFlame * this_ptr)
     ADD ESP,0x4                         ; 004b7d0a
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b7d0d
     MOV EBX,dword ptr [EAX + 0x2a0]     ; 004b7d10

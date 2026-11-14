@@ -36,7 +36,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
 ;   core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_00544f50
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80
-;   core_stranger.cpp_FUN_00565ff0
+;   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00565ff0
 ;
 ; *****************************************************************************
 
@@ -291,8 +291,8 @@ section .text
     MOV dword ptr [EBX + 0x8],EAX       ; 00562e55
     PUSH EBP                            ; 00562e58
         ;   Label: LAB_00562e58
-    CALL core_stranger.cpp_FUN_00565ff0 ; 00562e59
-        ;   XREF to: 00565ff0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_FUN_00565ff0(CStranger * this_ptr)
+    CALL core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00565ff0 ; 00562e59
+        ;   XREF to: 00565ff0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00565ff0(CStranger * this_ptr)
     ADD ESP,0x4                         ; 00562e5e
     PUSH 0x5eb482                       ; 00562e61 | = "stranger-hat.kfm"
     LEA EBX,[EBP + 0x25744]             ; 00562e66

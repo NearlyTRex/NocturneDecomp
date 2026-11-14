@@ -230,10 +230,11 @@ LAB_00511630:
     euler_angles = &(this_ptr->base).orient;
     position = &(this_ptr->base).location;
     afStack_38[1] = (this_ptr->base).location.position.y;
-    core_xform_cpp_FUN_00583800
+    core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_00583800
               ((CMatrix3x4f *)(auStack_294 + 0x28),&position->position,&euler_angles->vec);
     core_platfrm_cpp_CPlatform_evaluatePosition_FUN_00511340(this_ptr);
-    core_xform_cpp_FUN_00583940(auStack_29c,position,euler_angles);
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
+              (auStack_29c,position,euler_angles);
     (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_fffffc58);
     ppCVar10 = &SStack_13c.deformable_model;
     puVar13 = auStack_104;
@@ -321,7 +322,8 @@ LAB_00511630:
     for (iStack_14 = 0; iStack_14 < g_CDemonSetPtr->actor_count; iStack_14 = iStack_14 + 1) {
       iVar3 = *(int *)((int)g_CDemonSetPtr->actors + iStack_1c);
       if (this_ptr == *(CPlatform **)(iVar3 + 0xdc)) {
-        core_xform_cpp_FUN_00583940(&CStack_204,(float *)(iVar3 + 0x20),iVar3 + 0x30);
+        core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
+                  (&CStack_204,(float *)(iVar3 + 0x20),iVar3 + 0x30);
         core_xform_cpp_multiplyMatrix3x4_FUN_005833e0(&CStack_204,&CStack_264,&CStack_1a4);
         pCVar11 = &CStack_1a4;
         pCVar14 = &CStack_1d4;
@@ -374,7 +376,7 @@ LAB_00511630:
       }
       iStack_1c = iStack_1c + 4;
     }
-    core_platfrm_cpp_FUN_00512be0(this_ptr);
+    core_platfrm_cpp_CPlatform_updateAttachedActors_FUN_00512be0(this_ptr);
   }
   return;
 }

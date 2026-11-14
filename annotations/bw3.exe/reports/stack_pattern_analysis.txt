@@ -70,7 +70,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 00407e01: MOV EDI,ESP
     - [alt_frame_pointer] at 00407e11: MOV EDI,ESP
 
-  core_actor.cpp_FUN_00408100
+  core_actor.cpp_rayCylinderIntersect_FUN_00408100
     File: core/actor.cpp, Suspects: 93
     - [stack_alignment] at 0040810c: AND ESP,0xfffffff8
 
@@ -267,5 +267,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 27.9 suspects/function
-  Without stack patterns: avg 6.6 suspects/function
+  With stack patterns:    avg 27.4 suspects/function
+  Without stack patterns: avg 6.5 suspects/function

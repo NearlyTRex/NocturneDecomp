@@ -3359,8 +3359,8 @@
     "addr":"004241c0",
     "conv":"unknown",
     "instructions":46,
-    "method":"FUN_004241c0",
-    "name":"core_bugs.cpp_FUN_004241c0",
+    "method":"normalizeVector",
+    "name":"core_bugs.cpp_normalizeVector_FUN_004241c0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -3552,14 +3552,25 @@
       "00556be0",
       "00583260"
     ],
-    "conv":"unknown",
+    "cls":"CCharacter",
+    "conv":"__cdecl",
     "instructions":451,
-    "method":"FUN_0042e8c0",
-    "name":"core_charactr.cpp_FUN_0042e8c0",
-    "receiver":false,
+    "method":"processFire",
+    "name":"core_charactr.cpp_CCharacter_processFire_FUN_0042e8c0",
+    "params":[
+      {
+        "name":"delta_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/charactr.cpp",
@@ -7491,8 +7502,8 @@
     ],
     "conv":"__cdecl",
     "instructions":301,
-    "method":"FUN_004795c0",
-    "name":"core_dtri.cpp_FUN_004795c0",
+    "method":"rayTriangleFloorTest",
+    "name":"core_dtri.cpp_rayTriangleFloorTest_FUN_004795c0",
     "params":[
       {
         "name":"triangle",
@@ -13495,19 +13506,12 @@
       "005632a3",
       "005a28c0"
     ],
+    "cls":"CMotionController",
     "conv":"__cdecl",
     "instructions":161,
-    "method":"FUN_004fcdc0",
-    "name":"core_motion.cpp_FUN_004fcdc0",
+    "method":"render",
+    "name":"core_motion.cpp_CMotionController_render_FUN_004fcdc0",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CMotionController",
-          "ptr":1
-        }
-      },
       {
         "name":"actor",
         "type":{
@@ -13517,7 +13521,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -20373,8 +20377,8 @@
     ],
     "conv":"unknown",
     "instructions":86,
-    "method":"FUN_00583940",
-    "name":"core_xform.cpp_FUN_00583940",
+    "method":"buildMatrixFromEulerAndPositionDirect",
+    "name":"core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940",
     "receiver":false,
     "ret":{
       "kind":"builtin",

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_mission.cpp_FUN_004f6de0 at 004f6e72
+;   core_mission.cpp_CDemonMission_loadSet_FUN_004f6de0 at 004f6e72
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8

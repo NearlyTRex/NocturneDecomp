@@ -110,7 +110,7 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_00582eb0(char *directory_path,cha
   hThread = GetCurrentProcess();
   nPriority = GetThreadPriority(hThread);
   SetThreadPriority(hThread,-0xf);
-  while (((wincore_winrun_cpp_FUN_00580f70(), _DAT_02d22fac != 0 &&
+  while (((wincore_winrun_cpp_processWindowMessages_FUN_00580f70(), _DAT_02d22fac != 0 &&
           (iVar6 = wincore_winrun_cpp_wasKeyPressed_FUN_00580800(), iVar6 == 0)) &&
          (_DAT_02d22fb0 != 0))) {
     Sleep(0x14);

@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 275,
+    "complexity_score": 277,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
+    "pseudocode_lines": 57,
     "suspect_count": 20,
     "suspect_types": [
       "suspect_float",
@@ -15,7 +15,7 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 187
+    "total_lines": 189
   },
   "cross_references": [
     {
@@ -49,6 +49,11 @@
       "name": "core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850"
     },
     {
+      "addr": "00503e60",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60"
+    },
+    {
       "addr": "005035c0",
       "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0"
@@ -57,11 +62,6 @@
       "addr": "00503620",
       "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_00503620"
-    },
-    {
-      "addr": "00503e60",
-      "is_variadic": false,
-      "name": "core_motion.cpp_FUN_00503e60"
     },
     {
       "addr": "0059d8e0",
@@ -272,7 +272,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1].model.bone_transform.pose_data.bone_rotations[0x4a].w = fVar5;",
@@ -280,7 +280,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
       "text": "(&(param_1->model).base);",
@@ -288,15 +288,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 51,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar5 = core_motion_cpp_FUN_00503e60(&(param_1->model).base);",
+      "text": "(&(param_1->model).base);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 54,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1].model.bone_transform.pose_data.bone_rotations[0x4a].w = fVar5;",

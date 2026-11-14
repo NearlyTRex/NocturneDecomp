@@ -79,7 +79,7 @@ char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_004eaa60(EInputCodeType key_c
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Gamepad back");
   }
   if (pcVar3 == (char *)0x0) {
-    pcVar3 = wincore_winrun_cpp_FUN_00581360(key_code);
+    pcVar3 = wincore_winrun_cpp_getKeyName_FUN_00581360(key_code);
   }
   pcVar2 = (char *)(_DAT_01d76220 * 0x100 + 0x1d76228);
   pcVar4 = pcVar2;

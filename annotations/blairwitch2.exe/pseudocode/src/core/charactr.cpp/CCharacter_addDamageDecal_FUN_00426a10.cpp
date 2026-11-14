@@ -109,7 +109,7 @@ void __cdecl core_charactr_cpp_CCharacter_addDamageDecal_FUN_00426a10(CCharacter
     afStack_74[(uint)bVar9 * -2 + 9] = afStack_74[(uint)bVar9 * -2 + 0x12];
     afStack_74[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 10] =
          afStack_74[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0x13];
-    core_xform_cpp_FUN_00591c10(pCVar7,pfVar10,pfVar5);
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10(pCVar7,pfVar10,pfVar5);
     pCVar7 = &local_2b8;
     local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(-0.034906585,0.034906585);
     core_xform_cpp_buildRotationY_FUN_005932c0(local_14,&local_2e8);
@@ -146,7 +146,7 @@ void __cdecl core_charactr_cpp_CCharacter_addDamageDecal_FUN_00426a10(CCharacter
       pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar9 * -2 + 1) * 4);
       pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar9 * -2 + 1) * 4);
     }
-    core_xform_cpp_FUN_00591ad0
+    core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0
               (&local_1c8,&(this_ptr->base).location.position,&(this_ptr->base).orient.vec);
     core_xform_cpp_inverse_FUN_00592830
               ((this_ptr->model).bone_transform.bone_model_matrices + local_18->bone_index);

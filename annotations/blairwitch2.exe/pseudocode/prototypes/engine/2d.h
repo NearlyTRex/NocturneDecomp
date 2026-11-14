@@ -29,9 +29,9 @@ void __cdecl plotPixelWithDepth(int x_coord,int y_coord,uint depth_value);
 // Address: 00401310
 void __cdecl drawLine3D(int x1,int y1,uint z1,int x2,int y2,uint z2);
 
-// Original: engine_2d.c_FUN_00401450
+// Original: engine_2d.c_findBestPaletteMatch_FUN_00401450
 // Address: 00401450
-int __cdecl FUN_00401450(int red,int green,int blue,int start_index,int end_index);
+int __cdecl findBestPaletteMatch(int red,int green,int blue,int start_index,int end_index);
 
 // Original: engine_2d.c_FUN_00401590
 // Address: 00401590

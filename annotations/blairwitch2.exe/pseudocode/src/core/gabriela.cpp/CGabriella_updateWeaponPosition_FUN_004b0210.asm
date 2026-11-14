@@ -56,9 +56,9 @@
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0
 ;   core_actor.cpp_isOfClass_FUN_0040c840
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00428e30
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
 ;   core_xform.cpp_buildRotationX_FUN_00593240
 ;   core_xform.cpp_buildRotationY_FUN_005932c0
-;   core_xform.cpp_FUN_00591c10
 ;   core_xform.cpp_FUN_00592720
 ;   core_xform.cpp_matrixToEulerAngles_FUN_00591de0
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005916b0
@@ -88,8 +88,8 @@ section .text
     LEA EAX,[EBP + 0xfffffd12]          ; 004b023f
     PUSH EAX                            ; 004b0245
     LEA ESI,[EBX + 0x1134]              ; 004b0246
-    CALL core_xform.cpp_FUN_00591c10    ; 004b024c
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591c10()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 004b024c
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10()
     FLD float ptr [EBX + 0x25648]       ; 004b0251
     LEA EAX,[EBX + 0x2437c]             ; 004b0257
     ADD ESP,0xc                         ; 004b025d
@@ -114,8 +114,8 @@ section .text
     PUSH 0x1cb0644                      ; 004b02a0
     LEA EAX,[EBP + 0xffffff22]          ; 004b02a5
     PUSH EAX                            ; 004b02ab
-    CALL core_xform.cpp_FUN_00591c10    ; 004b02ac
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591c10()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 004b02ac
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10()
     MOV EDX,dword ptr [0x01cb06bc]      ; 004b02b1 | DAT_01cb06bc
     LEA EAX,[EDX*0x4 + 0x0]             ; 004b02b7
     SUB EAX,EDX                         ; 004b02be
@@ -225,8 +225,8 @@ section .text
     PUSH EAX                            ; 004b0413
     FSTP ST1                            ; 004b0414
     FSTP float ptr [EBP + 0x1a]         ; 004b0416
-    CALL core_xform.cpp_FUN_00591c10    ; 004b0419
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591c10()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 004b0419
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10()
     ADD ESP,0xc                         ; 004b041e
     LEA EAX,[EBP + 0xfffffd12]          ; 004b0421
         ;   Label: LAB_004b0421
@@ -322,8 +322,8 @@ section .text
     PUSH 0x1cb0650                      ; 004b052d
     LEA EAX,[EBP + 0xfffffe92]          ; 004b0532
     PUSH EAX                            ; 004b0538
-    CALL core_xform.cpp_FUN_00591c10    ; 004b0539
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591c10()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 004b0539
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10()
     ADD ESP,0xc                         ; 004b053e
     LEA EAX,[EBP + 0xfffffd12]          ; 004b0541
     MOV EDX,dword ptr [0x01cb06a0]      ; 004b0547 | DAT_01cb06a0

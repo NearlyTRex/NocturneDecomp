@@ -11,8 +11,8 @@
 ; XREF[4]:
 ;   core_set.cpp_CDemonSet_expireDecals_FUN_00556040 at 00556066
 ;   core_set.cpp_CDemonSet_renderDecals_FUN_00556080 at 005560be
+;   core_set.cpp_CDemonSet_renderScene_FUN_00550580 at 005509ff
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0 at 0054fb30
-;   core_set.cpp_FUN_00550580 at 005509ff
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c6eaa0

@@ -29,7 +29,7 @@
 ;   core_game.cpp_FUN_004b5040 at 004b5066
 ;   core_game.cpp_drawKeyBindingEntry_FUN_004b50f0 at 004b5147
 ;   core_inv.cpp_CInventory_renderAllItems_FUN_004dda90 at 004ddcad
-;   core_menu.cpp_FUN_004e7860 at 004e7999
+;   core_menu.cpp_calibrateGamepad_FUN_004e7dc0 at 004e7e52
 ;   ... and 13 more
 ;
 ; Referenced Globals:

@@ -15,6 +15,6 @@ void __cdecl core_bmppuzzl_cpp_CExamplePuzzle_render_FUN_0059ada0(CExamplePuzzle
   _DAT_01c35e60 = 0xff;
   engine_2d_c_drawRect_FUN_00403170
             (this_ptr->rect_left,this_ptr->rect_top,this_ptr->rect_right,this_ptr->rect_bottom);
-  shape_edittool_cpp_FUN_0047f210(g_CEditorToolsPtr,0);
+  shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_0047f210(g_CEditorToolsPtr,0);
   return;
 }

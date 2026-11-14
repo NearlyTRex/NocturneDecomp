@@ -77,7 +77,7 @@
 ;   core_actor.cpp_isOfClass_FUN_0040c550
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
-;   core_inv.cpp_FUN_004f60c0
+;   core_inv.cpp_getItemModel_FUN_004f60c0
 ;   crt_string.c__stricmp_FUN_005c04e0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
@@ -187,8 +187,8 @@ section .text
         ;   XREF to: 00483c10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_pushViewport_FUN_00483c10(CDemonRenderer * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x14                        ; 004f921a
     PUSH EBX                            ; 004f921d
-    CALL core_inv.cpp_FUN_004f60c0      ; 004f921e
-        ;   XREF to: 004f60c0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004f60c0()
+    CALL core_inv.cpp_getItemModel_FUN_004f60c0 ; 004f921e
+        ;   XREF to: 004f60c0 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_inv.cpp_getItemModel_FUN_004f60c0(CDemonActor * actor_ptr)
     ADD ESP,0x4                         ; 004f9223
     PUSH EAX                            ; 004f9226
     LEA EDI,[EBP + -0x3e]               ; 004f9227

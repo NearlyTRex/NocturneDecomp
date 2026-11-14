@@ -700,7 +700,7 @@ LAB_00582605:
     *(float *)((int)&CStack_f4 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8) =
          afStack_138[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 10];
     CStack_f4.y = CStack_f4.y - delta_time * (float)_DAT_005eda94;
-    core_charactr_cpp_FUN_00423a60((CCharacter *)this_ptr,&CStack_f4);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_00423a60((CCharacter *)this_ptr,&CStack_f4);
   }
   (this_ptr->base).base.position_delta.z = 0.0;
   (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;

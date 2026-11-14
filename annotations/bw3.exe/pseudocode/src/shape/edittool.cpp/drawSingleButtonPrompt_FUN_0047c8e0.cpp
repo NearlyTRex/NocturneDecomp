@@ -59,7 +59,7 @@ void __cdecl shape_edittool_cpp_drawSingleButtonPrompt_FUN_0047c8e0(char *title,
     if (iVar4 != 0) break;
     iVar4 = shape_edittool_cpp_CEdButton_wasClicked_FUN_00486440(&local_108);
     if ((iVar4 != 0) || (_DAT_02d21b80 != 0)) break;
-    shape_edittool_cpp_FUN_0047fa80(g_CEditorToolsPtr);
+    shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80(g_CEditorToolsPtr);
     shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_00480200(g_CEditorToolsPtr,1);
     engine_3d_c_setRenderAlpha_FUN_00406bf0(0xffff);
     engine_mini3d_cpp_setAlpha_FUN_004edaf0(1.0);

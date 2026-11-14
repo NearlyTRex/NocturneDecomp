@@ -11,8 +11,8 @@
 ; XREF[4]:
 ;   core_set.cpp_CDemonSet_expireDecals_FUN_0053ba00 at 0053ba10
 ;   core_set.cpp_CDemonSet_renderDecals_FUN_0053ba40 at 0053ba6b
+;   core_set.cpp_CDemonSet_renderScene_FUN_00535da0 at 0053620c
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00534890 at 005352dd
-;   core_set.cpp_FUN_00535da0 at 0053620c
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01d2130c

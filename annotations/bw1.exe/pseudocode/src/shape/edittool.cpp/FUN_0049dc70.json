@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 299,
+    "complexity_score": 300,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 49,
+    "pseudocode_lines": 50,
     "suspect_count": 23,
     "suspect_types": [
       "unaffected_reg",
@@ -15,7 +15,7 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 191
+    "total_lines": 192
   },
   "cross_references": [],
   "function": {
@@ -69,7 +69,7 @@
     {
       "addr": "0049c500",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0049c500"
+      "name": "shape_edittool.cpp_draw3DBorder_FUN_0049c500"
     }
   ],
   "globals": [
@@ -210,7 +210,7 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar6 = param_1->right_boundary;",
+      "text": "iVar5 = param_1->right_boundary;",
       "type": "unnamed_param"
     },
     {
@@ -218,7 +218,7 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = param_1->x_position;",
+      "text": "left = param_1->x_position;",
       "type": "unnamed_param"
     },
     {
@@ -258,7 +258,7 @@
       "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar6 = param_1->text_color_mode;",
+      "text": "iVar5 = param_1->text_color_mode;",
       "type": "unnamed_param"
     },
     {
@@ -271,23 +271,23 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 32,
+      "line": 33,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "shape_edittool_cpp_FUN_0049c500(iVar5,iVar1,iVar2,unaff_EBX,param_1->border_style_flag);",
+      "text": "(left,iVar1,iVar2,unaff_EBX,param_1->border_style_flag);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "shape_edittool_cpp_FUN_0049c500(iVar5,iVar1,iVar2,unaff_EBX,param_1->border_style_flag);",
+      "text": "(left,iVar1,iVar2,unaff_EBX,param_1->border_style_flag);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->border_style_flag == 0) {",
@@ -295,7 +295,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 34,
+      "line": 35,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = unaff_EBX + -1;",
@@ -303,7 +303,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 34,
+      "line": 35,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = unaff_EBX + -1;",
@@ -311,7 +311,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->checked_state == 1) {",
@@ -319,7 +319,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 48,
       "match": "DAT_01c4e9fa",
       "severity": "mild",
       "text": "((uint)DAT_01c4e9fa | (uint)DAT_01c4e9f9 << 8 | (uint)DAT_01c4e9f8 << 0x10);",
@@ -327,7 +327,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 48,
       "match": "DAT_01c4e9f9",
       "severity": "mild",
       "text": "((uint)DAT_01c4e9fa | (uint)DAT_01c4e9f9 << 8 | (uint)DAT_01c4e9f8 << 0x10);",
@@ -335,7 +335,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 48,
       "match": "DAT_01c4e9f8",
       "severity": "mild",
       "text": "((uint)DAT_01c4e9fa | (uint)DAT_01c4e9f9 << 8 | (uint)DAT_01c4e9f8 << 0x10);",
@@ -343,18 +343,18 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 49,
+      "line": 50,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "engine_2d_c_clipLineGlobal_FUN_00402ca0(iVar5 + 1,iVar1 + 1,iVar2 + -2,unaff_EBX + -2);",
+      "text": "engine_2d_c_clipLineGlobal_FUN_00402ca0(left + 1,iVar1 + 1,iVar2 + -2,unaff_EBX + -2);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 50,
+      "line": 51,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "engine_2d_c_clipLineGlobal_FUN_00402ca0(iVar2 + -2,iVar1 + 1,iVar5 + 1,unaff_EBX + -2);",
+      "text": "engine_2d_c_clipLineGlobal_FUN_00402ca0(iVar2 + -2,iVar1 + 1,left + 1,unaff_EBX + -2);",
       "type": "unaffected_reg"
     }
   ]

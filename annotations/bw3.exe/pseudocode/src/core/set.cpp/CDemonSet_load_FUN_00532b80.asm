@@ -38,7 +38,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_mission.cpp_FUN_004f6de0 at 004f6e02
+;   core_mission.cpp_CDemonMission_loadSet_FUN_004f6de0 at 004f6e02
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Loading_set_005d0121

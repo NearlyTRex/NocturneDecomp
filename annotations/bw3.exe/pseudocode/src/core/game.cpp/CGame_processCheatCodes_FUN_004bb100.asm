@@ -74,7 +74,7 @@
 ;   core_game.cpp_CGame_displayMessage_FUN_004b46b0
 ;   core_game.cpp_giveHeroWeapon_FUN_004bafd0
 ;   core_game.cpp_scaleBoneRecursive_FUN_004bb090
-;   core_inv.cpp_FUN_004da880
+;   core_inv.cpp_CInventory_addItem_FUN_004da880
 ;   core_inv.cpp_FUN_004db990
 ;   core_set.cpp_CDemonSet_reinitCamera_FUN_005353b0
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
@@ -1046,8 +1046,8 @@ section .text
     PUSH EBX                            ; 004bbbb4
     ADD EAX,0x206e8                     ; 004bbbb5
     PUSH EAX                            ; 004bbbba
-    CALL core_inv.cpp_FUN_004da880      ; 004bbbbb
-        ;   XREF to: 004da880 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004da880(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004da880 ; 004bbbbb
+        ;   XREF to: 004da880 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004da880(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 004bbbc0
     PUSH 0x40a00000                     ; 004bbbc3
     PUSH 0x5c2d13                       ; 004bbbc8 | = "You have the skeleton key"
@@ -2650,8 +2650,8 @@ section .text
     XOR AL,AL                           ; 004bcd97
     PUSH ESI                            ; 004bcd99
     MOV [0x01d22c70],AL                 ; 004bcd9a | DAT_01d22c70
-    CALL core_weather.cpp_FUN_0057d050  ; 004bcd9f
-        ;   XREF to: 0057d050 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_FUN_0057d050()
+    CALL core_weather.cpp_CWeather_setWeatherType_FUN_0057d050 ; 004bcd9f
+        ;   XREF to: 0057d050 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_0057d050(CWeather * this_ptr, EWeatherType type)
     ADD ESP,0x8                         ; 004bcda4
     PUSH 0x5c33d4                       ; 004bcda7 | DAT_005c33d4
         ;   Label: LAB_004bcda7
@@ -2706,8 +2706,8 @@ section .text
     XOR AH,AH                           ; 004bce22
     PUSH ESI                            ; 004bce24
     MOV byte ptr [0x01d22c70],AH        ; 004bce25 | DAT_01d22c70
-    CALL core_weather.cpp_FUN_0057d050  ; 004bce2b
-        ;   XREF to: 0057d050 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_FUN_0057d050()
+    CALL core_weather.cpp_CWeather_setWeatherType_FUN_0057d050 ; 004bce2b
+        ;   XREF to: 0057d050 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_0057d050(CWeather * this_ptr, EWeatherType type)
     ADD ESP,0x8                         ; 004bce30
     PUSH 0x5c340b                       ; 004bce33 | DAT_005c340b
         ;   Label: LAB_004bce33

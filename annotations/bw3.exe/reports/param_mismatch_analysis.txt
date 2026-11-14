@@ -15,13 +15,13 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5428
 Functions with no callers: 2542
-Parameter mismatches detected: 619
-Signature accuracy rate: 78.6%
+Parameter mismatches detected: 599
+Signature accuracy rate: 79.2%
 
 Mismatches by confidence:
   High confidence:   33 (multiple call sites agree)
-  Medium confidence: 119 (some agreement)
-  Low confidence:    467 (limited data)
+  Medium confidence: 116 (some agreement)
+  Low confidence:    450 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -195,7 +195,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Sample call sites:
       core_dskybox.cpp_renderSkyDome at 0046f4e8: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
       core_water.cpp_CWater_calculat at 00577314: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
-      core_weather.cpp_FUN_0057c2e0 at 0057c652: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      core_weather.cpp_CWeather_crea at 0057c652: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
 
   core_prye.cpp_FUN_00518cd0
     Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
@@ -359,16 +359,14 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
 MEDIUM CONFIDENCE MISMATCHES
 ====================================================================================================
 
-  shape_edittool.cpp_FUN_004850a0                    declared:0 est:8 (+8) [7 calls]
   crt_unknown.c_FUN_005a82c0                         declared:0 est:7 (+7) [2 calls]
   crt_unknown.c_FUN_005b1090                         declared:0 est:7 (+7) [2 calls]
-  core_actor.cpp_FUN_00408100                        declared:0 est:6 (+6) [2 calls]
+  core_actor.cpp_rayCylinderIntersect_FUN_00408100   declared:0 est:6 (+6) [2 calls]
   core_bugs.cpp_FUN_00422a00                         declared:0 est:6 (+6) [2 calls]
   core_motion.cpp_FUN_004fc850                       declared:0 est:6 (+6) [4 calls]
   core_prye.cpp_FUN_0051f490                         declared:0 est:6 (+6) [2 calls]
   core_setcolid.cpp_FUN_0053ed10                     declared:0 est:6 (+6) [2 calls]
   core_setdir.cpp_FUN_0053f940                       declared:0 est:6 (+6) [5 calls]
-  shape_edittool.cpp_FUN_0047b5e0                    declared:0 est:6 (+6) [2 calls]
   support_trisock.cpp_FUN_00570350                   declared:0 est:6 (+6) [2 calls]
   support_trisock.cpp_FUN_005704a0                   declared:0 est:6 (+6) [2 calls]
   core_flashlit.cpp_FUN_004a8180                     declared:0 est:5 (+5) [2 calls]
@@ -393,7 +391,6 @@ MEDIUM CONFIDENCE MISMATCHES
   crt_unknown.c_FUN_005af9bd                         declared:0 est:4 (+4) [1 calls]
   crt_unknown.c_FUN_005b0454                         declared:0 est:4 (+4) [1 calls]
   engine_dosio.cpp_FUN_00466040                      declared:0 est:4 (+4) [4 calls]
-  engine_ini.cpp_FUN_004d8cd0                        declared:0 est:4 (+4) [2 calls]
   engine_matrix.c_normalizeVector3DFixed_FUN_004e614 declared:0 est:4 (+4) [2 calls]
   engine_texture.cpp_FUN_0056a690                    declared:0 est:4 (+4) [2 calls]
   support_codec.cpp_FUN_00440210                     declared:0 est:4 (+4) [2 calls]
@@ -409,14 +406,17 @@ MEDIUM CONFIDENCE MISMATCHES
   core_xform.cpp_negateFirstComponent_FUN_00585930   declared:0 est:3 (+3) [7 calls]
   crt_unknown.c_FUN_005abe28                         declared:0 est:3 (+3) [2 calls]
   crt_unknown.c_FUN_005ad290                         declared:0 est:3 (+3) [2 calls]
+  crt_unknown.c_FUN_005ae490                         declared:0 est:3 (+3) [2 calls]
+  crt_unknown.c_FUN_005b0d00                         declared:0 est:3 (+3) [2 calls]
+  core_actor.cpp_FUN_004088d0                        declared:0 est:2 (+2) [2 calls]
 
-  ... and 69 more
+  ... and 66 more
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  467 functions with low-confidence mismatches
+  450 functions with low-confidence mismatches
   Sample:
     engine_2d.c_FUN_00401590                      declared:0 est:1 (+1)
     engine_2d.c_drawTextRightAlignedColor_FUN_004 declared:3 est:0 (-3)
@@ -436,7 +436,7 @@ MISMATCH DIRECTION ANALYSIS
 Functions where declaration has MORE params than estimated: 35
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 584
+Functions where declaration has FEWER params than estimated: 564
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -446,14 +446,14 @@ Distribution of differences (estimated - declared):
   -3 params: 3 functions
   -2 params: 6 functions
   -1 params: 22 functions
-  +1 params: 123 functions
-  +2 params: 140 functions
-  +3 params: 101 functions
-  +4 params: 89 functions
+  +1 params: 119 functions
+  +2 params: 135 functions
+  +3 params: 98 functions
+  +4 params: 85 functions
   +5 params: 49 functions
-  +6 params: 39 functions
-  +7 params: 20 functions
-  +8 params: 13 functions
+  +6 params: 38 functions
+  +7 params: 18 functions
+  +8 params: 12 functions
   +9 params: 4 functions
   +10 params: 5 functions
   +11 params: 1 functions

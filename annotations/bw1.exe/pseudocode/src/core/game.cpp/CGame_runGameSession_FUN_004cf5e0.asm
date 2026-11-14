@@ -41,6 +41,7 @@
 ;   core_dlight.cpp_CDemonLight_init_FUN_00462590
 ;   core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004a9870
 ;   core_fire.cpp_CFireEffect_init_FUN_004b4b30
+;   core_game.cpp_CGame_beginFadeIn_FUN_004d6030
 ;   core_game.cpp_CGame_beginFadeOut_FUN_004d6070
 ;   core_game.cpp_CGame_clearOverlay_FUN_004cc1f0
 ;   core_game.cpp_CGame_fadeIn_FUN_004d62e0
@@ -50,7 +51,6 @@
 ;   core_game.cpp_CGame_processHotkeys_FUN_004d1a80
 ;   core_game.cpp_CGame_promptLoadGame_FUN_004d85f0
 ;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0
-;   core_game.cpp_CGame_saveClockTime_FUN_004cbf10
 ;   ... and 48 more
 ;
 ; *****************************************************************************
@@ -274,8 +274,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004cf929
         ;   Label: LAB_004cf929
     PUSH EAX                            ; 004cf92c
-    CALL core_game.cpp_FUN_004d6030     ; 004cf92d
-        ;   XREF to: 004d6030 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004d6030(CGame * this_ptr)
+    CALL core_game.cpp_CGame_beginFadeIn_FUN_004d6030 ; 004cf92d
+        ;   XREF to: 004d6030 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_beginFadeIn_FUN_004d6030(CGame * this_ptr)
     ADD ESP,0x4                         ; 004cf932
     MOV EDX,dword ptr [EBP + 0x14]      ; 004cf935
     PUSH EDX                            ; 004cf938
@@ -708,8 +708,8 @@ section .text
     CMP dword ptr [EAX + 0xe0],0x0      ; 004cfdeb
     JZ 0x004d0258                       ; 004cfdf2
         ;   XREF to: 004d0258 (CONDITIONAL_JUMP)  ; LAB_004d0258
-    CALL wincore_winrun.cpp_FUN_005b2cf0 ; 004cfdf8
-        ;   XREF to: 005b2cf0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_FUN_005b2cf0()
+    CALL wincore_winrun.cpp_processWindowMessages_FUN_005b2cf0 ; 004cfdf8
+        ;   XREF to: 005b2cf0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_005b2cf0()
         ;   Label: LAB_004cfdf8
     CMP dword ptr [0x02c9be74],0x0      ; 004cfdfd | DAT_02c9be74
         ;   Label: LAB_004cfdfd
@@ -916,8 +916,8 @@ section .text
         ;   XREF to: 004cf530 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004cf530(CGame * this_ptr)
     ADD ESP,0x4                         ; 004d0048
     PUSH EDI                            ; 004d004b
-    CALL core_menu.cpp_FUN_0050c990     ; 004d004c
-        ;   XREF to: 0050c990 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_FUN_0050c990()
+    CALL core_menu.cpp_showOptionsScreen_FUN_0050c990 ; 004d004c
+        ;   XREF to: 0050c990 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_showOptionsScreen_FUN_0050c990(int initialize_systems)
     ADD ESP,0x4                         ; 004d0051
     PUSH ESI                            ; 004d0054
     CALL core_game.cpp_CGame_setGameRes_FUN_004cf430 ; 004d0055
@@ -963,8 +963,8 @@ section .text
     PUSH 0x0                            ; 004d00c4
     MOV EDX,dword ptr [EBP + 0x14]      ; 004d00c6
     PUSH EDX                            ; 004d00c9
-    CALL core_game.cpp_FUN_004d6420     ; 004d00ca
-        ;   XREF to: 004d6420 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004d6420(CGame * this_ptr, char * save_filename)
+    CALL core_game.cpp_CGame_saveGame_FUN_004d6420 ; 004d00ca
+        ;   XREF to: 004d6420 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveGame_FUN_004d6420(CGame * this_ptr, char * save_filename)
     ADD ESP,0x8                         ; 004d00cf
     CMP EBX,0x4                         ; 004d00d2
         ;   Label: LAB_004d00d2
@@ -1130,8 +1130,8 @@ section .text
     CALL engine_special.cpp_presentToExternalRenderer_FUN_00582990 ; 004d0296
         ;   XREF to: 00582990 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_presentToExternalRenderer_FUN_00582990(int skip_buffer_copy)
     ADD ESP,0x4                         ; 004d029b
-    CALL wincore_winrun.cpp_FUN_005b2cf0 ; 004d029e
-        ;   XREF to: 005b2cf0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_FUN_005b2cf0()
+    CALL wincore_winrun.cpp_processWindowMessages_FUN_005b2cf0 ; 004d029e
+        ;   XREF to: 005b2cf0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_005b2cf0()
     MOV EAX,dword ptr [EBP + 0x14]      ; 004d02a3
     INC dword ptr [EAX + 0x29c]         ; 004d02a6
     JMP 0x004cfdfd                      ; 004d02ac
@@ -1192,8 +1192,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004d0338
         ;   Label: LAB_004d0338
     PUSH EBX                            ; 004d033b
-    CALL core_game.cpp_FUN_004d77d0     ; 004d033c
-        ;   XREF to: 004d77d0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004d77d0(CGame * this_ptr)
+    CALL core_game.cpp_CGame_showFullscreenBitmap_FUN_004d77d0 ; 004d033c
+        ;   XREF to: 004d77d0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_showFullscreenBitmap_FUN_004d77d0(CGame * this_ptr)
     MOV ESI,dword ptr [EBX + 0x21c]     ; 004d0341
     ADD ESP,0x4                         ; 004d0347
     TEST ESI,ESI                        ; 004d034a

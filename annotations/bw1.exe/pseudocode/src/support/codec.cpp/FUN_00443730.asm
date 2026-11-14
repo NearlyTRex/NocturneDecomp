@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004d6990 at 004d6cc1
+;   core_game.cpp_CGame_loadGame_FUN_004d6990 at 004d6cc1
 ;
 ; Called Functions:
 ;   support_codec.cpp_FUN_004431b0

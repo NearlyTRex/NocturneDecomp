@@ -116,7 +116,8 @@ void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_004328f0(CCha
           pCVar3[5].y = 1.0;
         }
       }
-      core_xform_cpp_FUN_005b5760(&CStack_dc,local_1c,local_18);
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+                (&CStack_dc,local_1c,local_18);
       in_stack_fffffd38 = (CMatrix3x4f *)0x432a25;
       core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&CStack_10c,&CStack_dc,&CStack_ac);
       pCVar7 = &CStack_ac;

@@ -274,6 +274,8 @@
 ;   core_bmppuzzl.cpp_activatePuzzle_FUN_0059ab70
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10
 ;   core_door.cpp_FUN_0045efe0
+;   core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_00491110
+;   core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0048e340
 ;   core_event.cpp_CEventList_getCounterValue_FUN_00491510
 ;   core_event.cpp_CEventList_getSfxHandle_FUN_00491920
@@ -283,8 +285,6 @@
 ;   core_event.cpp_CEventList_updateSfxEntries_FUN_00491a90
 ;   core_event.cpp_CEventList_validateCondition_FUN_0048e3a0
 ;   core_event.cpp_extractParenArg_FUN_00488fc0
-;   core_event.cpp_formatEventError_FUN_00488ba0
-;   core_event.cpp_FUN_00490f80
 ;   ... and 51 more
 ;
 ; *****************************************************************************
@@ -1564,8 +1564,8 @@ section .text
     PUSH EAX                            ; 0048a1ee
     LEA EAX,[EBP + 0xfffffe9e]          ; 0048a1ef
     PUSH EAX                            ; 0048a1f5
-    CALL core_xform.cpp_FUN_00591c10    ; 0048a1f6
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591c10()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 0048a1f6
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10()
     ADD ESP,0xc                         ; 0048a1fb
     LEA EAX,[EBP + 0xfffffe9e]          ; 0048a1fe
     PUSH EAX                            ; 0048a204
@@ -3475,8 +3475,8 @@ section .text
     PUSH EAX                            ; 0048b3cd
     MOV EDX,dword ptr [EBP + 0xfe]      ; 0048b3ce
     PUSH EDX                            ; 0048b3d4
-    CALL core_event.cpp_FUN_00490f80    ; 0048b3d5
-        ;   XREF to: 00490f80 (UNCONDITIONAL_CALL)  ; void core_event.cpp_FUN_00490f80(CEventList * this_ptr, char * name, int add_flag)
+    CALL core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80 ; 0048b3d5
+        ;   XREF to: 00490f80 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80(CEventList * this_ptr, char * name, int add_flag)
     ADD ESP,0xc                         ; 0048b3da
     JMP 0x00489af6                      ; 0048b3dd
         ;   XREF to: 00489af6 (UNCONDITIONAL_JUMP)  ; caseD_6
@@ -3530,8 +3530,8 @@ section .text
     PUSH EAX                            ; 0048b453
     MOV EBX,dword ptr [EBP + 0xfe]      ; 0048b454
     PUSH EBX                            ; 0048b45a
-    CALL core_event.cpp_FUN_00490f80    ; 0048b45b
-        ;   XREF to: 00490f80 (UNCONDITIONAL_CALL)  ; void core_event.cpp_FUN_00490f80(CEventList * this_ptr, char * name, int add_flag)
+    CALL core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80 ; 0048b45b
+        ;   XREF to: 00490f80 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80(CEventList * this_ptr, char * name, int add_flag)
     ADD ESP,0xc                         ; 0048b460
     JMP 0x00489af6                      ; 0048b463
         ;   XREF to: 00489af6 (UNCONDITIONAL_JUMP)  ; caseD_6
@@ -3585,8 +3585,8 @@ section .text
     PUSH EAX                            ; 0048b4de
     MOV EDI,dword ptr [EBP + 0xfe]      ; 0048b4df
     PUSH EDI                            ; 0048b4e5
-    CALL core_event.cpp_FUN_00491110    ; 0048b4e6
-        ;   XREF to: 00491110 (UNCONDITIONAL_CALL)  ; void core_event.cpp_FUN_00491110(CEventList * this_ptr, char * name, int add_flag)
+    CALL core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_00491110 ; 0048b4e6
+        ;   XREF to: 00491110 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_00491110(CEventList * this_ptr, char * name, int add_flag)
     ADD ESP,0xc                         ; 0048b4eb
     JMP 0x00489af6                      ; 0048b4ee
         ;   XREF to: 00489af6 (UNCONDITIONAL_JUMP)  ; caseD_6
@@ -3640,8 +3640,8 @@ section .text
     PUSH EAX                            ; 0048b569
     MOV EDX,dword ptr [EBP + 0xfe]      ; 0048b56a
     PUSH EDX                            ; 0048b570
-    CALL core_event.cpp_FUN_00491110    ; 0048b571
-        ;   XREF to: 00491110 (UNCONDITIONAL_CALL)  ; void core_event.cpp_FUN_00491110(CEventList * this_ptr, char * name, int add_flag)
+    CALL core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_00491110 ; 0048b571
+        ;   XREF to: 00491110 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_00491110(CEventList * this_ptr, char * name, int add_flag)
     ADD ESP,0xc                         ; 0048b576
     JMP 0x00489af6                      ; 0048b579
         ;   XREF to: 00489af6 (UNCONDITIONAL_JUMP)  ; caseD_6

@@ -106,7 +106,8 @@ CMatrix3x4f * __stack2_esi core_zombiepriest_cpp_CZombiePriest_getCarryObjToBody
       auStack_74[10] = 0xbfd6540d;
     }
   }
-  core_xform_cpp_FUN_00583940(&CStack_c0,auStack_74 + 2,auStack_74 + 8);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
+            (&CStack_c0,auStack_74 + 2,auStack_74 + 8);
   core_xform_cpp_multiplyMatrix3x4_FUN_005833e0
             (&CStack_c0,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar2,
              &CStack_f0);

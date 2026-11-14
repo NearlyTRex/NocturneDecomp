@@ -466,7 +466,7 @@ switchD_0056cb7d_caseD_3:
       fVar14 = (this_ptr->base).base.model.accumulated_root_motion.z;
       (this_ptr->base).base.model.accumulated_root_motion.y = fVar14;
       pCVar2->x = fVar14;
-      core_charactr_cpp_FUN_0042d750((CCharacter *)this_ptr,&CStack_12c);
+      core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042d750((CCharacter *)this_ptr,&CStack_12c);
     }
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_0042e160((CCharacter *)this_ptr);

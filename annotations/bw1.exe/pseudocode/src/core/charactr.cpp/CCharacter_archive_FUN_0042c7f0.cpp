@@ -46,7 +46,7 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_0042c7f0(CCharacter *this_
           if (10 < iVar2) {
             core_actor_cpp_archiveVector_FUN_0040b1c0(&local_50,"carry pos");
             core_actor_cpp_archiveOrientation_FUN_0040b260(&local_44,"carry orient");
-            core_xform_cpp_FUN_005b5760
+            core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
                       (&this_ptr->carry_hands[local_1c].initial_carry_transform,&local_50,
                        (CVector3f *)&local_44);
           }

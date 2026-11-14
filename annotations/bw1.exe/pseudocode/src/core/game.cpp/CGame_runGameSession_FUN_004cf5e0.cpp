@@ -121,7 +121,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004cf5e0(CGame *this_ptr)
   else {
     core_setdir_cpp_FUN_00559f80(g_CDemonSetPtr,g_CScriptPtr->focus_actor,1);
   }
-  core_game_cpp_FUN_004d6030(this_ptr);
+  core_game_cpp_CGame_beginFadeIn_FUN_004d6030(this_ptr);
   core_game_cpp_CGame_loadAssets_FUN_004d5e40(this_ptr);
   iVar4 = core_netgame_cpp_CNetGame_syncPlayers_FUN_0052cf90(g_CNetGamePtr,3);
   if ((iVar4 != 0) &&
@@ -257,7 +257,7 @@ LAB_004cfb22:
             if (iVar4 == 1) {
               engine_keys_cpp_CKeys_toggleInputMask_FUN_004fd2b0(0x01D1BCA0,0);
               core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004cf530(this_ptr);
-              core_menu_cpp_FUN_0050c990(1);
+              core_menu_cpp_showOptionsScreen_FUN_0050c990(1);
               core_game_cpp_CGame_setGameRes_FUN_004cf430(this_ptr);
               engine_keys_cpp_CKeys_toggleInputMask_FUN_004fd2b0
                         (0x01D1BCA0,(uint)(this_ptr->is_paused == 0));
@@ -272,7 +272,7 @@ LAB_004cfb22:
               core_game_cpp_CGame_promptLoadGame_FUN_004d85f0(this_ptr);
             }
             if (iVar4 == 3) {
-              core_game_cpp_FUN_004d6420(this_ptr,(char *)0x0);
+              core_game_cpp_CGame_saveGame_FUN_004d6420(this_ptr,(char *)0x0);
             }
             if (iVar4 == 4) {
               pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Quit");
@@ -335,12 +335,12 @@ LAB_004cfde8:
       }
       else {
         engine_special_cpp_presentToExternalRenderer_FUN_00582990(1);
-        wincore_winrun_cpp_FUN_005b2cf0();
+        wincore_winrun_cpp_processWindowMessages_FUN_005b2cf0();
         this_ptr->frame_counter = this_ptr->frame_counter + 1;
       }
     }
     else {
-      wincore_winrun_cpp_FUN_005b2cf0();
+      wincore_winrun_cpp_processWindowMessages_FUN_005b2cf0();
     }
     if (_DAT_02c9be74 != 0) {
       _DAT_02c9be74 = 0;
@@ -368,7 +368,7 @@ LAB_004cfde8:
       local_1c = 1;
       goto LAB_004cfbd7;
     }
-    core_game_cpp_FUN_004d77d0(this_ptr);
+    core_game_cpp_CGame_showFullscreenBitmap_FUN_004d77d0(this_ptr);
     if (this_ptr->wait_for_keypress != 0) {
       wincore_winrun_cpp_getNextKeypress_FUN_005b2510();
     }

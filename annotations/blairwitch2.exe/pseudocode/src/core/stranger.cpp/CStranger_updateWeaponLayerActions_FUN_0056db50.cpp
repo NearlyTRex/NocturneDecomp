@@ -367,7 +367,7 @@ LAB_0056dcd2:
         }
       }
       if ((this_ptr->action_pending == 1) && (local_1c == 3)) {
-        core_hero_cpp_FUN_004cff90(this_ptr,1);
+        core_hero_cpp_CHero_addCarriedItemToInventory_FUN_004cff90(&this_ptr->base,1);
         this_ptr->action_pending = 0;
       }
       pCVar9 = (this_ptr->base).target_actor;

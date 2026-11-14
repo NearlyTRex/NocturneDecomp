@@ -86,7 +86,7 @@
 ;   core_set.cpp_CDemonSet_addDynamicLight_FUN_00530630
 ;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_005466c0
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00546ae0
-;   core_xform.cpp_FUN_00591c10
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
 ;   core_xform.cpp_matrixToEulerAngles_FUN_00591de0
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005916b0
 ;   core_xform.cpp_multiplyMatrix3x4InPlace_FUN_00591860
@@ -412,8 +412,8 @@ section .text
     PUSH EAX                            ; 004560a1
     MOV dword ptr [EBP + 0x32],ESI      ; 004560a2
     MOV dword ptr [EBP + 0x36],EDI      ; 004560a5
-    CALL core_xform.cpp_FUN_00591c10    ; 004560a8
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591c10()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 004560a8
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10()
     MOV ESI,dword ptr [0x01b4d290]      ; 004560ad | DAT_01b4d290
     LEA EAX,[ESI*0x4 + 0x0]             ; 004560b3
     SUB EAX,ESI                         ; 004560ba
@@ -433,8 +433,8 @@ section .text
     PUSH EAX                            ; 004560e1
     LEA EAX,[EBP + 0xfffffe02]          ; 004560e2
     PUSH EAX                            ; 004560e8
-    CALL core_xform.cpp_FUN_00591c10    ; 004560e9
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591c10()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 004560e9
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10()
     ADD ESP,0xc                         ; 004560ee
     LEA EAX,[EBP + 0xfffffe02]          ; 004560f1
     PUSH EAX                            ; 004560f7

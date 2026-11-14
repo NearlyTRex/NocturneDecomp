@@ -7,7 +7,7 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_game.cpp_FUN_004d6990 at 004d71b3
+;   core_game.cpp_CGame_loadGame_FUN_004d6990 at 004d71b3
 ;   core_game.cpp_FUN_004d7250 at 004d7544
 ;   core_game.cpp_joinNetworkGame_FUN_004d7e90 at 004d7f14
 ;
@@ -38,11 +38,11 @@
 ;   core_mission.cpp_CDemonMission_clearMissionData_FUN_0051a3b0
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_0051c0a0
 ;   core_mission.cpp_CDemonMission_load_FUN_0051a3f0
+;   core_mission.cpp_CDemonMission_loadSet_FUN_0051b610
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_0051b4d0
 ;   core_mission.cpp_CDemonMission_removeActorFromList_FUN_0051b1d0
-;   core_mission.cpp_FUN_0051b610
+;   core_mission.cpp_CDemonMission_startMission_FUN_0051bdc0
 ;   core_mission.cpp_FUN_0051b7b0
-;   core_mission.cpp_FUN_0051bdc0
 ;   crt_string.c__stricmp_FUN_005c3160
 ;
 ; *****************************************************************************
@@ -78,8 +78,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x2c]      ; 0051bb22
     PUSH EDX                            ; 0051bb25
     PUSH EBX                            ; 0051bb26
-    CALL core_mission.cpp_FUN_0051b610  ; 0051bb27
-        ;   XREF to: 0051b610 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_0051b610()
+    CALL core_mission.cpp_CDemonMission_loadSet_FUN_0051b610 ; 0051bb27
+        ;   XREF to: 0051b610 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_loadSet_FUN_0051b610(CDemonMission * this_ptr, int set_index)
     ADD ESP,0x8                         ; 0051bb2c
     XOR AH,AH                           ; 0051bb2f
     PUSH EBX                            ; 0051bb31
@@ -182,8 +182,8 @@ section .text
     JZ 0x0051bb9a                       ; 0051bc33
         ;   XREF to: 0051bb9a (CONDITIONAL_JUMP)  ; LAB_0051bb9a
     PUSH EBX                            ; 0051bc39
-    CALL core_mission.cpp_FUN_0051bdc0  ; 0051bc3a
-        ;   XREF to: 0051bdc0 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_FUN_0051bdc0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_startMission_FUN_0051bdc0 ; 0051bc3a
+        ;   XREF to: 0051bdc0 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_startMission_FUN_0051bdc0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0051bc3f
     TEST EAX,EAX                        ; 0051bc42
     JNZ 0x0051bad8                      ; 0051bc44

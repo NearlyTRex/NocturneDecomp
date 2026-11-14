@@ -75,12 +75,12 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_004254b0(CCharacter *t
           aCStack_3c[0].x = (int)ROUND(afStack_68[2] * _DAT_005f4060);
           aCStack_3c[0].y = (int)ROUND(afStack_68[3] * _DAT_005f4060);
           aCStack_3c[0].z = (int)ROUND(afStack_68[4] * _DAT_005f4060);
-          engine_special_cpp_FUN_0055d723
+          engine_special_cpp_transformAndProjectPoint_FUN_0055d723
                     (&DAT_0060b280->vertex_buffer_ptr->projected_vertex,aCStack_3c);
           CStack_48.x = (int)ROUND(fStack_6c * _DAT_005f4060);
           CStack_48.y = (int)ROUND(afStack_68[0] * _DAT_005f4060);
           CStack_48.z = (int)ROUND(afStack_68[1] * _DAT_005f4060);
-          engine_special_cpp_FUN_0055d723
+          engine_special_cpp_transformAndProjectPoint_FUN_0055d723
                     (&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&CStack_48);
           _DAT_01c35e60 = 1;
           engine_3d_c_drawLine2DFromIndices_FUN_00407c40(0,1);
@@ -97,7 +97,7 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_004254b0(CCharacter *t
           CStack_a8.x = (int)ROUND(fStack_6c * _DAT_005f4060);
           CStack_a8.y = (int)ROUND(afStack_68[0] * _DAT_005f4060);
           CStack_a8.z = (int)ROUND(afStack_68[1] * _DAT_005f4060);
-          engine_special_cpp_FUN_0055d723
+          engine_special_cpp_transformAndProjectPoint_FUN_0055d723
                     (&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&CStack_a8);
           engine_3d_c_drawLine2DFromIndices_FUN_00407c40(0,2);
           fVar7 = (float10)fsin((float10)(float)piStack_1c[9] * (float10)_DAT_005ccd26 +
@@ -109,7 +109,7 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_004254b0(CCharacter *t
           CStack_9c.x = (int)ROUND(fStack_6c * _DAT_005f4060);
           CStack_9c.y = (int)ROUND(afStack_68[0] * _DAT_005f4060);
           CStack_9c.z = (int)ROUND(afStack_68[1] * _DAT_005f4060);
-          engine_special_cpp_FUN_0055d723
+          engine_special_cpp_transformAndProjectPoint_FUN_0055d723
                     (&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&CStack_9c);
           engine_3d_c_drawLine2DFromIndices_FUN_00407c40(0,3);
           if (&fStack_6c != (float *)(piStack_1c + 2)) {
@@ -135,7 +135,7 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_004254b0(CCharacter *t
               CStack_54.x = (int)ROUND(fStack_78 * _DAT_005f4060);
               CStack_54.y = (int)ROUND(_DAT_005f4060 * 0.0);
               CStack_54.z = (int)ROUND(fStack_70 * _DAT_005f4060);
-              engine_special_cpp_FUN_0055d723
+              engine_special_cpp_transformAndProjectPoint_FUN_0055d723
                         (&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&CStack_54);
               _DAT_01c35e60 = 4;
               engine_3d_c_drawLine2DFromIndices_FUN_00407c40(0,1);
@@ -144,7 +144,7 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_004254b0(CCharacter *t
               CStack_84.z = (int)ROUND(fStack_70 * _DAT_005f4060);
               input = &CStack_84;
             }
-            engine_special_cpp_FUN_0055d723
+            engine_special_cpp_transformAndProjectPoint_FUN_0055d723
                       (&DAT_0060b280->vertex_buffer_ptr->projected_vertex,input);
             iVar2 = iVar2 + 1;
           } while (iVar2 < 0x15);
@@ -160,7 +160,8 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_004254b0(CCharacter *t
       if ((_DAT_01d1cdc8 != 0) &&
          (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280),
          iVar2 == 0)) {
-        core_motion_cpp_FUN_005042e0(&(this_ptr->model).base,&this_ptr->base);
+        core_motion_cpp_CMotionController_render_FUN_005042e0
+                  (&(this_ptr->model).base,&this_ptr->base);
         (*((this_ptr->base).vtable._ub)->renderTargetPoints)(&this_ptr->base);
       }
     }

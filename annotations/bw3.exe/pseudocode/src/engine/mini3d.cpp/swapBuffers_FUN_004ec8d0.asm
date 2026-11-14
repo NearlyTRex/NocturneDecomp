@@ -12,7 +12,7 @@
 ; Called Functions:
 ;   engine_special.cpp_presentToExternalRenderer_FUN_00566260
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0
-;   wincore_winrun.cpp_FUN_00580f70
+;   wincore_winrun.cpp_processWindowMessages_FUN_00580f70
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     CALL engine_special.cpp_presentToExternalRenderer_FUN_00566260 ; 004ec8db
         ;   XREF to: 00566260 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_presentToExternalRenderer_FUN_00566260(int skip_buffer_copy)
     ADD ESP,0x4                         ; 004ec8e0
-    CALL wincore_winrun.cpp_FUN_00580f70 ; 004ec8e3
-        ;   XREF to: 00580f70 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_FUN_00580f70()
+    CALL wincore_winrun.cpp_processWindowMessages_FUN_00580f70 ; 004ec8e3
+        ;   XREF to: 00580f70 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_00580f70()
     MOV EAX,[0x005e2974]                ; 004ec8e8 | DAT_005e2974
     MOV [0x01d7a6b4],EAX                ; 004ec8ed | DAT_01d7a6b4
     RET                                 ; 004ec8f2

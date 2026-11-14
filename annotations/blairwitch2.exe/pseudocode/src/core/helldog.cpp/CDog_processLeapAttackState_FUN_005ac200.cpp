@@ -25,7 +25,7 @@ void __cdecl core_helldog_cpp_CDog_processLeapAttackState_FUN_005ac200(CDog *thi
   pCVar1 = &(this_ptr->base).base.base.model;
   pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&pCVar1->base);
   iVar2 = pSVar4->state_index;
-  fVar5 = core_motion_cpp_FUN_00503e60(&pCVar1->base);
+  fVar5 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00503e60(&pCVar1->base);
   if ((iVar2 == 3) && (fVar5 < (float)_DAT_005f0df6)) {
     core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00423850
               ((CCharacter *)this_ptr,&(((this_ptr->base).base.victim)->base).location.position);

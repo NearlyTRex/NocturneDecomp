@@ -204,7 +204,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0044
               local_e0.x = (int)ROUND(local_d4 * _DAT_005f5050);
               local_e0.y = (int)ROUND(local_d0 * _DAT_005f5050);
               local_e0.z = (int)ROUND(local_cc * _DAT_005f5050);
-              engine_special_cpp_FUN_0055d723
+              engine_special_cpp_transformAndProjectPoint_FUN_0055d723
                         (&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_e0);
               local_cc = local_34;
               if (local_24 < local_34) {
@@ -215,7 +215,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0044
               local_164.x = (int)ROUND(local_d4 * _DAT_005f5050);
               local_164.y = (int)ROUND(local_d0 * _DAT_005f5050);
               local_164.z = (int)ROUND(local_cc * _DAT_005f5050);
-              engine_special_cpp_FUN_0055d723
+              engine_special_cpp_transformAndProjectPoint_FUN_0055d723
                         (&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_164);
               local_cc = local_34;
               if (local_28 < local_34) {
@@ -226,7 +226,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0044
               local_134.x = (int)ROUND(local_d4 * _DAT_005f5050);
               local_134.y = (int)ROUND(local_d0 * _DAT_005f5050);
               local_134.z = (int)ROUND(local_cc * _DAT_005f5050);
-              engine_special_cpp_FUN_0055d723
+              engine_special_cpp_transformAndProjectPoint_FUN_0055d723
                         (&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_134);
               local_cc = local_30;
               if (local_28 < local_30) {
@@ -237,7 +237,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0044
               local_110.x = (int)ROUND(local_d4 * _DAT_005f5050);
               local_110.y = (int)ROUND(local_d0 * _DAT_005f5050);
               local_110.z = (int)ROUND(local_cc * _DAT_005f5050);
-              engine_special_cpp_FUN_0055d723
+              engine_special_cpp_transformAndProjectPoint_FUN_0055d723
                         (&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_110);
               this_ptr_00 = DAT_0060b280;
               DAT_0060b280->vertex_buffer_ptr->r = local_6c;

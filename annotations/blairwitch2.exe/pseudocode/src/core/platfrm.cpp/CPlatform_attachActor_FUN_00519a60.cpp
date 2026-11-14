@@ -34,8 +34,9 @@ void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_00519a60(CPlatform *this
         pCVar2 = this_ptr;
         while( true ) {
           if (pCVar1 == (CDemonActor *)0x0) {
-            core_xform_cpp_FUN_00591c10(&local_a0,&actor->location,&actor->orient);
-            core_xform_cpp_FUN_00591ad0
+            core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
+                      (&local_a0,&actor->location,&actor->orient);
+            core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0
                       (&local_40,&(this_ptr->base).location.position,&(this_ptr->base).orient.vec);
             pCVar2->attach_actors[0].actor = actor;
             core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(&local_a0,&local_40,&local_70);

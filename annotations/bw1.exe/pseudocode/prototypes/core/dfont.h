@@ -5,13 +5,13 @@
 // Function prototypes for core/dfont.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_dfont.cpp_FUN_0045e000
+// Original: core_dfont.cpp_initFonts_FUN_0045e000
 // Address: 0045e000
-void __cdecl FUN_0045e000(void);
+void __cdecl initFonts(void);
 
-// Original: core_dfont.cpp_FUN_0045e7a0
+// Original: core_dfont.cpp_freeFonts_FUN_0045e7a0
 // Address: 0045e7a0
-void __cdecl FUN_0045e7a0(void);
+void __cdecl freeFonts(void);
 
 // Original: core_dfont.cpp_remapFonts_FUN_0045e960
 // Address: 0045e960

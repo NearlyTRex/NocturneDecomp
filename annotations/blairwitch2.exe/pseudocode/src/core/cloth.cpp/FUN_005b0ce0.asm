@@ -19,9 +19,9 @@
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046b970
 ;   engine_drender.cpp_pop_FUN_0046b4a0
-;   engine_special.cpp_FUN_0055d723
+;   engine_special.cpp_transformAndProjectPoint_FUN_0055d723
+;   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_0047fd00
 ;   shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_0047f1c0
-;   shape_edittool.cpp_FUN_0047fd00
 ;
 ; *****************************************************************************
 
@@ -101,8 +101,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 005b0dc1
     ADD EAX,EDI                         ; 005b0dc3
     PUSH EAX                            ; 005b0dc5
-    CALL engine_special.cpp_FUN_0055d723 ; 005b0dc6
-        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 005b0dc6
+        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 005b0dcb
     MOV EAX,dword ptr [EBP + 0x44]      ; 005b0dce
     MOV dword ptr [ESP + 0x14],EAX      ; 005b0dd1
@@ -125,8 +125,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 005b0e0d
     ADD EAX,dword ptr [ESP + 0x58]      ; 005b0e0f
     PUSH EAX                            ; 005b0e13
-    CALL engine_special.cpp_FUN_0055d723 ; 005b0e14
-        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 005b0e14
+        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 005b0e19
     TEST ESI,ESI                        ; 005b0e1c
     JG 0x005b0e73                       ; 005b0e1e
@@ -205,8 +205,8 @@ section .text
     MOV EBX,dword ptr [0x006138e0]      ; 005b0ed3 | g_CEditorToolsPtr
     FSTP float ptr [ESP]                ; 005b0ed9
     PUSH EBX                            ; 005b0edc
-    CALL shape_edittool.cpp_FUN_0047fd00 ; 005b0edd
-        ;   XREF to: 0047fd00 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_FUN_0047fd00(CEditorTools * this_ptr, float scale_factor, int text_color)
+    CALL shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_0047fd00 ; 005b0edd
+        ;   XREF to: 0047fd00 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_0047fd00(CEditorTools * this_ptr, float scale_factor, int text_color)
     ADD ESP,0xc                         ; 005b0ee2
     JMP 0x005b0e5c                      ; 005b0ee5
         ;   XREF to: 005b0e5c (UNCONDITIONAL_JUMP)  ; LAB_005b0e5c

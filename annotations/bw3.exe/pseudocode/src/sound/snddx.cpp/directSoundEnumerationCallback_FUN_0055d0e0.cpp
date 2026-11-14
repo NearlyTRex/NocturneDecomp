@@ -30,7 +30,7 @@ int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_0055d0e0(LPGUID d
   pIStack_14 = (LPDIRECTSOUND)0x0;
   uVar1 = DirectSoundCreate(device_guid,&pIStack_14,(LPUNKNOWN)0x0);
   if (uVar1 != 0) {
-    sound_snddx_cpp_FUN_0055a670(uVar1);
+    sound_snddx_cpp_getDirectSoundErrorString_FUN_0055a670(uVar1);
     _sprintf(acStack_394,"DirectSux: Unable to %s.  (%s)");
     sound_sndmain_cpp_logSoundError_FUN_0055a560(acStack_394);
     return 1;
@@ -42,7 +42,7 @@ int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_0055d0e0(LPGUID d
   DStack_74.dwSize = 0x60;
   uVar1 = (*pIStack_14->vtable->GetCaps)(pIStack_14,&DStack_74);
   if (uVar1 != 0) {
-    sound_snddx_cpp_FUN_0055a670(uVar1);
+    sound_snddx_cpp_getDirectSoundErrorString_FUN_0055a670(uVar1);
     _sprintf(acStack_20c,"DirectSux: Unable to %s.  (%s)");
     sound_sndmain_cpp_logSoundError_FUN_0055a560(acStack_20c);
   }

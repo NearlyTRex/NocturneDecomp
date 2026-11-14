@@ -8,7 +8,7 @@
 ;   TerminatedCString s_DirectSoundDevice_killSf_005f5552
 ;
 ; Called Functions:
-;   sound_snddx.cpp_FUN_00577880
+;   sound_snddx.cpp_releaseSfxHardwareBuffers_FUN_00577880
 ;   sound_sndmain.cpp_logSoundError_FUN_005773f0
 ;
 ; *****************************************************************************
@@ -37,8 +37,8 @@ section .text
     JZ 0x00579f40                       ; 00579f5f
         ;   XREF to: 00579f40 (CONDITIONAL_JUMP)  ; LAB_00579f40
     PUSH EDX                            ; 00579f61
-    CALL sound_snddx.cpp_FUN_00577880   ; 00579f62
-        ;   XREF to: 00577880 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_FUN_00577880()
+    CALL sound_snddx.cpp_releaseSfxHardwareBuffers_FUN_00577880 ; 00579f62
+        ;   XREF to: 00577880 (UNCONDITIONAL_CALL)  ; int sound_snddx.cpp_releaseSfxHardwareBuffers_FUN_00577880(int sfx_handle)
     ADD ESP,0x4                         ; 00579f67
     RET                                 ; 00579f6a
 

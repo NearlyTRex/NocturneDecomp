@@ -47,9 +47,9 @@
 ;   core_game.cpp_CGame_promptLoadGame_FUN_004bdb10
 ;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004b8250
 ;   core_game.cpp_CGame_saveClockTime_FUN_004b3000
+;   core_game.cpp_CGame_saveGame_FUN_004bb9b0
 ;   core_game.cpp_CGame_setGameRes_FUN_004b5fd0
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0
-;   core_game.cpp_CGame_updateStatusDisplays_FUN_004b3820
 ;   ... and 42 more
 ;
 ; *****************************************************************************
@@ -851,8 +851,8 @@ section .text
         ;   XREF to: 004b60c0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0(CGame * this_ptr)
     ADD ESP,0x4                         ; 004b6b1d
     PUSH EBX                            ; 004b6b20
-    CALL core_menu.cpp_FUN_004ee1a0     ; 004b6b21
-        ;   XREF to: 004ee1a0 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_FUN_004ee1a0(int initialize_systems)
+    CALL core_menu.cpp_showOptionsScreen_FUN_004ee1a0 ; 004b6b21
+        ;   XREF to: 004ee1a0 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_showOptionsScreen_FUN_004ee1a0(int initialize_systems)
     ADD ESP,0x4                         ; 004b6b26
     MOV ECX,dword ptr [EBP + 0x14]      ; 004b6b29
     PUSH ECX                            ; 004b6b2c
@@ -900,8 +900,8 @@ section .text
     PUSH EDI                            ; 004b6b9e
     MOV ESI,dword ptr [EBP + 0x14]      ; 004b6b9f
     PUSH ESI                            ; 004b6ba2
-    CALL core_game.cpp_FUN_004bb9b0     ; 004b6ba3
-        ;   XREF to: 004bb9b0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004bb9b0(CGame * this_ptr, char * save_filename)
+    CALL core_game.cpp_CGame_saveGame_FUN_004bb9b0 ; 004b6ba3
+        ;   XREF to: 004bb9b0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveGame_FUN_004bb9b0(CGame * this_ptr, char * save_filename)
     ADD ESP,0x8                         ; 004b6ba8
     CMP EBX,0x4                         ; 004b6bab
         ;   Label: LAB_004b6bab

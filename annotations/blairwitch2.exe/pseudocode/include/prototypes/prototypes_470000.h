@@ -17,6 +17,7 @@
 #include "types/classes/CVector3i.h"
 #include "types/structs/SIntersectXZCylinder.h"
 #include "types/structs/SSoftwareEdge.h"
+#include "types/unions/UOrientationVector.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x470000
@@ -54,7 +55,7 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00472ab0(C
 CDemonCube * __cdecl core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_00472af0(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z);
 void core_dtrace_cpp_FUN_00472b50(undefined4 param_1,float *param_2,float *param_3);
 float core_dtrace_cpp_FUN_00472c60(CDemonRaytrace *param_1,CVector3f *param_2,float *param_3,CVector3f *param_4,uint *param_5);
-int __cdecl core_dtrace_cpp_FUN_00473390(CDemonRaytrace *this_ptr,CVector3f *start_pos,CVector3f *end_pos);
+int __cdecl core_dtrace_cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00473390(CDemonRaytrace *this_ptr,CVector3f *start_pos,CVector3f *end_pos);
 float __cdecl core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_004738d0(CDemonRaytrace *this_ptr,CVector3f *pos,int *hit_flag,CVector3f *normal_out);
 float __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00473b20(CDemonRaytrace *this_ptr,CVector3f *pos,float radius,int *hit_flag,CVector3f *normal_out);
 void __cdecl core_dtrace_cpp_initIntersectionCylinder_FUN_00473d40(SIntersectXZCylinder *this_ptr,float start_x,float start_z,float dir_x,float dir_z,float radius,float bottom_y,float top_y);
@@ -90,7 +91,7 @@ int __cdecl core_dtri_cpp_cylinderEdgeIntersection_FUN_00477c60(SIntersectXZCyli
 void __cdecl core_dtri_cpp_cylinderEdgeTestWithHeight_FUN_00477f40(SIntersectXZCylinder *cylinder,CVector3f *vertex1,CVector3f *vertex2);
 void __cdecl core_dtri_cpp_cylinderTriangleTest_FUN_00477fe0(CDemonTriangle *triangle,SIntersectXZCylinder *cylinder);
 int __cdecl core_dtri_cpp_rayEdgeHeightTest_FUN_004783e0(CVector3f *vertex1,CVector3f *vertex2,float ray_radius,float *out_height);
-int __cdecl core_dtri_cpp_FUN_00478550(CDemonTriangle *triangle,CVector3f *position,float search_radius,float *out_height);
+int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_00478550(CDemonTriangle *triangle,CVector3f *position,float search_radius,float *out_height);
 void __cdecl core_dtri_cpp_clipLineToPlane_FUN_00478900(CVector3f *point1_ptr,CVector3f *point2_ptr,CVector3f *result_ptr,double plane_nx,double plane_ny,double plane_nz,double plane_d);
 void __cdecl core_dtri_cpp_clipPolygonToRight_FUN_00478d70(float x_max);
 void __cdecl core_dtri_cpp_clipPolygonToFar_FUN_004791a0(float z_far);
@@ -114,9 +115,9 @@ void __cdecl core_dynamite_cpp_CDynamite_process_FUN_0047a1e0(CDynamite *this_pt
 CDynamite * __cdecl core_dynamite_cpp_CDynamite_dtor_FUN_0047a3e0(CDynamite *this_ptr,uint flags);
 void __cdecl shape_edittool_cpp_staticInit_FUN_0047a430(void);
 void shape_edittool_cpp_FUN_0047a450(void);
-void shape_edittool_cpp_FUN_0047a480(int param_1,int param_2,int param_3);
-void shape_edittool_cpp_FUN_0047a4f0(void);
-void shape_edittool_cpp_FUN_0047a590(int param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl shape_edittool_cpp_plotPixelWithClipping_FUN_0047a480(int x_coord,int y_coord,int use_clipping);
+void __cdecl shape_edittool_cpp_initEditorFontMetrics_FUN_0047a4f0(void);
+void __cdecl shape_edittool_cpp_drawDashedLine_FUN_0047a590(int x1,int y1,int x2,int y2,int dash_length);
 void shape_edittool_cpp_FUN_0047a720(void);
 void shape_edittool_cpp_FUN_0047a770(int param_1,int param_2,int param_3,int param_4,uint param_5,uint param_6);
 void shape_edittool_cpp_FUN_0047a890(int param_1,int param_2,int param_3,int param_4,uint param_5);
@@ -147,7 +148,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_showWarning_FUN_0047bdf0(CEditorToo
 void __cdecl shape_edittool_cpp_CEditorTools_showError_FUN_0047be40(CEditorTools *this_ptr,char *format);
 void shape_edittool_cpp_FUN_0047be90(undefined4 param_1,char *param_2);
 void shape_edittool_cpp_FUN_0047bf80(void);
-int __cdecl shape_edittool_cpp_FUN_0047c0f0(CStrList *str_list,char *dialog_title,int dialog_mode);
+int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_0047c0f0(CStrList *str_list,char *dialog_title,int dialog_mode);
 int __cdecl shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0047c760(CEditorTools *this_ptr,char *format_string);
 int __cdecl shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0047c7f0(CEditorTools *this_ptr,char *format_string);
 int __cdecl shape_edittool_cpp_CEditorTools_showYesAllNoCancelDialog_FUN_0047c880(CEditorTools *this_ptr,char *format);
@@ -169,9 +170,9 @@ void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_0047e780(CEditor
 void shape_edittool_cpp_FUN_0047e870(void);
 void __cdecl shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_0047eff0(CEditorTools *this_ptr,int line_position);
 uint __cdecl shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_0047f1c0(CEditorTools *this_ptr);
-void shape_edittool_cpp_FUN_0047f210(CEditorTools *param_1,int param_2);
+void __cdecl shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_0047f210(CEditorTools *this_ptr,int use_clipping);
 char * __cdecl shape_edittool_cpp_CEditorTools_getClipboardText_FUN_0047fbb0(CEditorTools *this_ptr);
 void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_0047fc30(CEditorTools *this_ptr,char *text_data);
-void __cdecl shape_edittool_cpp_FUN_0047fd00(CEditorTools *this_ptr,float scale_factor,int text_color);
-void shape_edittool_cpp_FUN_0047ff50(void);
+void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_0047fd00(CEditorTools *this_ptr,float scale_factor,int text_color);
+void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_0047ff50(CEditorTools *this_ptr,float scale_factor,int text_color,CVector3f *world_position,UOrientationVector *orientation);
 

@@ -142,7 +142,8 @@ void __cdecl core_asgaya_cpp_CAsgaya_process_FUN_005a0be0(CAsgaya *this_ptr,floa
   if (iVar4 == 0) {
     pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&pCVar10->base);
     iVar4 = pSVar7->state_index;
-    fStack_188 = core_motion_cpp_FUN_004fc930(&pCVar10->base);
+    fStack_188 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                           (&pCVar10->base);
     pcVar12 = core_motion_cpp_CMotionController_getCurrentStateName_FUN_004fc320(&pCVar10->base);
     iVar8 = _strcmp(pcVar12,"APPEAR");
     if ((iVar8 == 0) && (this_ptr->appear_state < 1)) {
@@ -363,7 +364,8 @@ LAB_005a0ed4:
        (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
-  core_charactr_cpp_FUN_0042c230((CCharacter *)this_ptr,(CVector3f *)(auStack_78 + 8));
+  core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230
+            ((CCharacter *)this_ptr,(CVector3f *)(auStack_78 + 8));
   core_charactr_cpp_CCharacter_preProcess_FUN_0042cd30((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130
             (&(this_ptr->base).base.model);

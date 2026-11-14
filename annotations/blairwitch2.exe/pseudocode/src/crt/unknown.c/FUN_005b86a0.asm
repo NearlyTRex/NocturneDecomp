@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[79]:
-;   cockpit_ckptutil.c_FUN_0042dec0 at 0042e01d
 ;   cockpit_ckptutil.c_FUN_0042f4f0 at 0042f5cc
+;   cockpit_ckptutil.c_loadEdgeListFile_FUN_0042dec0 at 0042e01d
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00516200 at 00516226
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_00516960 at 00516991
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_005168e0 at 0051692f

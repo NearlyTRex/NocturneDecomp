@@ -11,7 +11,7 @@
 ; int              Stack[0x14]:4   y_offset2
 ;
 ; XREF[1]:
-;   core_dfont.cpp_FUN_00459f50 at 0045a739
+;   core_dfont.cpp_initFonts_FUN_00459f50 at 0045a739
 ;
 ; Referenced Globals:
 ;   void* PTR_CreateFontA_005b340c = 001b3814

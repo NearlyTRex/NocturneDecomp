@@ -115,7 +115,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_00544f8
   
   bVar18 = 0;
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(this_ptr);
-  core_motion_cpp_FUN_00504080
+  core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_00504080
             (&this_ptr->base,motion_index,frame_number,&local_84,&local_80,&stack0xffffe770);
   if (bone_index < 0) {
     local_30 = 0;

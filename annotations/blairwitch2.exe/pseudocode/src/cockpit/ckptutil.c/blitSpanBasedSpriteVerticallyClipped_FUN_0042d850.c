@@ -26,7 +26,7 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_0042d85
   int iStack_30;
   int iStack_2c;
   
-  pcVar4 = (code *)cockpit_ckptutil_c_FUN_0042c410();
+  pcVar4 = (code *)cockpit_ckptutil_c_getColorConversionFunction_FUN_0042c410();
   if (DAT_006141c0 == 8) {
     iStack_2c = _DAT_01c35e4c;
     if (_DAT_01c35e4c <= _DAT_01c35e54) {

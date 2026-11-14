@@ -81,7 +81,7 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004f90d0(CInventory *th
          (int)((ulonglong)((longlong)iVar4 * 0x482b) >> 0x20) << 0x10;
     engine_drender_cpp_CDemonRenderer_pushViewport_FUN_00483c10
               (this_ptr_00,viewport_x,viewport_y,viewport_size,viewport_size);
-    local_18 = (CKeyFramedModelInstance *)core_inv_cpp_FUN_004f60c0(item);
+    local_18 = core_inv_cpp_getItemModel_FUN_004f60c0(item);
     pCVar5 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900(local_18);
     pCVar7 = pCVar5->frame_bounds;
     pfVar8 = &stack0xffffff4c;

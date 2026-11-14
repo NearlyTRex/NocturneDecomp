@@ -116,7 +116,7 @@ LAB_00407bd2:
         engine_3d_c_renderPolygonFullEffectsBufferedOp65_FUN_004072b0((SMRGLHeaderPrimitive *)mrgl);
       }
     }
-    iVar4 = engine_model_c_FUN_00500f30(mrgl);
+    iVar4 = engine_model_c_getMRGLSize_FUN_00500f30(mrgl);
     mrgl = (SMRGLHeaderExtended *)((int)&(((SMRGLHeaderPrimitive *)mrgl)->base).type + iVar4);
     cVar2 = (char)(((SMRGLHeaderPrimitive *)mrgl)->base).type;
   } while( true );

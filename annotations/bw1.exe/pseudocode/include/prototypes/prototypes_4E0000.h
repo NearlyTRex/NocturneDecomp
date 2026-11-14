@@ -231,7 +231,7 @@ int __cdecl core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004eb240(CHero *thi
 bool core_hero_cpp_FUN_004eb3e0(CDemonActor *param_1);
 void core_hero_cpp_FUN_004eb5b0(int param_1);
 int __cdecl core_hero_cpp_CHero_tryOpenDoor_FUN_004eb5e0(CHero *this_ptr);
-int __cdecl core_hero_cpp_FUN_004eb660(CHero *this_ptr);
+int __cdecl core_hero_cpp_CHero_tryPullLever_FUN_004eb660(CHero *this_ptr);
 undefined4 __cdecl core_hero_cpp_CHero_toggleLeverNow_FUN_004eb7f0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryPushNearbyBox_FUN_004eb890(CHero *this_ptr);
 void __cdecl core_hero_cpp_CHero_stopPushingBox_FUN_004ebbe0(CHero *this_ptr);
@@ -241,7 +241,7 @@ int __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004ebeb0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryUseSelectedItem_FUN_004ec020(CHero *this_ptr);
 bool __cdecl core_hero_cpp_CHero_tryPickupActorOfClass_FUN_004ec090(CHero *this_ptr,char *class_name);
 int __cdecl core_hero_cpp_CHero_canLookAt_FUN_004ec1b0(CHero *this_ptr);
-void __cdecl core_hero_cpp_FUN_004ec280(CHero *this_ptr,int hand_index);
+void __cdecl core_hero_cpp_CHero_executeObjectPickup_FUN_004ec280(CHero *this_ptr,int hand_index);
 void __cdecl core_hero_cpp_CHero_addCarriedItemToInventory_FUN_004ec2c0(CHero *this_ptr,int hand_index);
 void __cdecl core_hero_cpp_CHero_removeMatchingKeys_FUN_004ec300(CHero *this_ptr,uint key_mask);
 void __cdecl core_hero_cpp_CHero_setAiTask_FUN_004ec320(CHero *this_ptr,int ai_task);

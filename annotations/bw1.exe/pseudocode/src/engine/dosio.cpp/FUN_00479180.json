@@ -14,15 +14,15 @@
   },
   "cross_references": [
     {
-      "addr": "00438bd0",
-      "from_addr": "00438bea",
-      "name": "cockpit_ckptutil.c_FUN_00438bd0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00438e40",
       "from_addr": "00438e65",
       "name": "cockpit_ckptutil.c_FUN_00438e40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00438bd0",
+      "from_addr": "00438bea",
+      "name": "cockpit_ckptutil.c_loadEdgeListFile_FUN_00438bd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -40,7 +40,7 @@
     {
       "addr": "00538750",
       "from_addr": "0053877a",
-      "name": "cockpit_pkbitmap.cpp_FUN_00538750",
+      "name": "cockpit_pkbitmap.cpp_loadPBGFile_FUN_00538750",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -116,6 +116,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004d6990",
+      "from_addr": "004d6b13",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004d6990",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004d1a80",
       "from_addr": "004d2262",
       "name": "core_game.cpp_CGame_processHotkeys_FUN_004d1a80",
@@ -128,27 +134,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004d77d0",
+      "from_addr": "004d7899",
+      "name": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004d77d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004ce580",
       "from_addr": "004cf1ae",
       "name": "core_game.cpp_FUN_004ce580",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004d6990",
-      "from_addr": "004d6b13",
-      "name": "core_game.cpp_FUN_004d6990",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004d7250",
       "from_addr": "004d7269",
       "name": "core_game.cpp_FUN_004d7250",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004d77d0",
-      "from_addr": "004d7899",
-      "name": "core_game.cpp_FUN_004d77d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -250,7 +250,7 @@
     {
       "addr": "00520150",
       "from_addr": "0052016a",
-      "name": "engine_model.c_FUN_00520150",
+      "name": "engine_model.c_loadModelChunk_FUN_00520150",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -384,7 +384,7 @@
       {
         "call_addr": "004d6b13",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d6990",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004d6990",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

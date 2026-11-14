@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_menu.cpp_FUN_0050c990 at 0050cb3e
+;   core_menu.cpp_showOptionsScreen_FUN_0050c990 at 0050cb3e
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0050aa70 = 0050aeb5

@@ -29,13 +29,13 @@ void FUN_005abf20(void);
 // Address: 005abff0
 void FUN_005abff0(void);
 
-// Original: wincore_wddvmem.cpp_FUN_005ac040
+// Original: wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005ac040
 // Address: 005ac040
-int __cdecl FUN_005ac040(int width,int height);
+int __cdecl initializeGraphicsSystem(int width,int height);
 
-// Original: wincore_wddvmem.cpp_FUN_005ac1b0
+// Original: wincore_wddvmem.cpp_cleanupGraphicsSystem_FUN_005ac1b0
 // Address: 005ac1b0
-void __cdecl FUN_005ac1b0(void);
+void __cdecl cleanupGraphicsSystem(void);
 
 // Original: wincore_wddvmem.cpp_initializeScanlinePointers_FUN_005ac270
 // Address: 005ac270
@@ -73,9 +73,9 @@ void __cdecl setupColorPalette(void);
 // Address: 005acff0
 void __cdecl swapBuffers(void);
 
-// Original: wincore_wddvmem.cpp_FUN_005ad270
+// Original: wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_005ad270
 // Address: 005ad270
-void FUN_005ad270(void);
+void __cdecl restoreVideoAndMinimizeWindow(void);
 
 // Original: wincore_wddvmem.cpp_videoRestore_FUN_005ad2c0
 // Address: 005ad2c0

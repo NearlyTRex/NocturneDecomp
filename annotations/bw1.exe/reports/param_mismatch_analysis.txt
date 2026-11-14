@@ -15,13 +15,13 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5714
 Functions with no callers: 2699
-Parameter mismatches detected: 589
-Signature accuracy rate: 80.5%
+Parameter mismatches detected: 577
+Signature accuracy rate: 80.9%
 
 Mismatches by confidence:
   High confidence:   32 (multiple call sites agree)
-  Medium confidence: 107 (some agreement)
-  Low confidence:    450 (limited data)
+  Medium confidence: 103 (some agreement)
+  Low confidence:    442 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -349,17 +349,15 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
 MEDIUM CONFIDENCE MISMATCHES
 ====================================================================================================
 
-  shape_edittool.cpp_FUN_0049c500                    declared:0 est:8 (+8) [7 calls]
   core_charactr.cpp_FUN_00431cc0                     declared:0 est:7 (+7) [8 calls]
   crt_unknown.c_FUN_005c5450                         declared:0 est:7 (+7) [2 calls]
   crt_unknown.c_FUN_005ce300                         declared:0 est:7 (+7) [2 calls]
-  core_actor.cpp_FUN_004080c0                        declared:0 est:6 (+6) [2 calls]
+  core_actor.cpp_rayCylinderIntersect_FUN_004080c0   declared:0 est:6 (+6) [2 calls]
   core_box.cpp_FUN_00420ee0                          declared:0 est:6 (+6) [10 calls]
   core_bugs.cpp_FUN_00426870                         declared:0 est:6 (+6) [2 calls]
   core_doc.cpp_FUN_0046f740                          declared:0 est:6 (+6) [2 calls]
   core_motion.cpp_FUN_00524f40                       declared:0 est:6 (+6) [4 calls]
   core_stranger.cpp_FUN_0058afe0                     declared:0 est:6 (+6) [2 calls]
-  shape_edittool.cpp_FUN_00492a40                    declared:0 est:6 (+6) [2 calls]
   support_trisock.cpp_FUN_0059d360                   declared:0 est:6 (+6) [2 calls]
   support_trisock.cpp_FUN_0059d4b0                   declared:0 est:6 (+6) [2 calls]
   core_flashlit.cpp_FUN_004ba540                     declared:0 est:5 (+5) [2 calls]
@@ -381,7 +379,6 @@ MEDIUM CONFIDENCE MISMATCHES
   crt_unknown.c_FUN_005cc1c0                         declared:0 est:4 (+4) [4 calls]
   crt_unknown.c_FUN_005cd6c4                         declared:0 est:4 (+4) [1 calls]
   engine_dosio.cpp_FUN_00479770                      declared:0 est:4 (+4) [4 calls]
-  engine_ini.cpp_FUN_004f4db0                        declared:0 est:4 (+4) [2 calls]
   engine_matrix.c_normalizeVector3DFixed_FUN_0050870 declared:0 est:4 (+4) [2 calls]
   engine_texture.cpp_FUN_005976a0                    declared:0 est:4 (+4) [2 calls]
   support_codec.cpp_FUN_004425b0                     declared:0 est:4 (+4) [2 calls]
@@ -399,14 +396,17 @@ MEDIUM CONFIDENCE MISMATCHES
   crt_unknown.c_FUN_005cdf70                         declared:0 est:3 (+3) [2 calls]
   core_actor.cpp_FUN_00408890                        declared:0 est:2 (+2) [2 calls]
   core_bodypart.cpp_FUN_0041ad40                     declared:0 est:2 (+2) [2 calls]
+  core_dlight.cpp_FUN_00463850                       declared:0 est:2 (+2) [2 calls]
+  core_dpart.cpp_FUN_00479ae0                        declared:0 est:2 (+2) [2 calls]
+  core_flashlit.cpp_FUN_004b9e30                     declared:0 est:2 (+2) [2 calls]
 
-  ... and 57 more
+  ... and 53 more
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  450 functions with low-confidence mismatches
+  442 functions with low-confidence mismatches
   Sample:
     engine_2d.c_FUN_00401590                      declared:0 est:1 (+1)
     engine_2d.c_drawTextRightAlignedColor_FUN_004 declared:3 est:0 (-3)
@@ -426,7 +426,7 @@ MISMATCH DIRECTION ANALYSIS
 Functions where declaration has MORE params than estimated: 36
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 553
+Functions where declaration has FEWER params than estimated: 541
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -436,14 +436,14 @@ Distribution of differences (estimated - declared):
   -3 params: 3 functions
   -2 params: 6 functions
   -1 params: 24 functions
-  +1 params: 120 functions
+  +1 params: 118 functions
   +2 params: 129 functions
-  +3 params: 93 functions
-  +4 params: 87 functions
+  +3 params: 88 functions
+  +4 params: 84 functions
   +5 params: 47 functions
-  +6 params: 37 functions
+  +6 params: 36 functions
   +7 params: 17 functions
-  +8 params: 11 functions
+  +8 params: 10 functions
   +9 params: 6 functions
   +10 params: 5 functions
   +11 params: 1 functions

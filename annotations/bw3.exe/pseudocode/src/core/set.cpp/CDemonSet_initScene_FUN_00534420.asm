@@ -241,8 +241,8 @@ section .text
     PUSH ECX                            ; 00534636
     MOV EBX,dword ptr [0x006071f0]      ; 00534637 | DAT_006071f0
     PUSH EBX                            ; 0053463d
-    CALL core_weather.cpp_FUN_0057d050  ; 0053463e
-        ;   XREF to: 0057d050 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_FUN_0057d050()
+    CALL core_weather.cpp_CWeather_setWeatherType_FUN_0057d050 ; 0053463e
+        ;   XREF to: 0057d050 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_0057d050(CWeather * this_ptr, EWeatherType type)
     ADD ESP,0x8                         ; 00534643
     ADD ESP,0x4                         ; 00534646
     POP EBP                             ; 00534649

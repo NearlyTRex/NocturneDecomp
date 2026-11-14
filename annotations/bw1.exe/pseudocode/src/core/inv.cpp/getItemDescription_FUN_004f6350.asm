@@ -7,7 +7,7 @@
 ; CDemonActor *    Stack[0x4]:4   actor_ptr
 ;
 ; XREF[2]:
-;   core_inv.cpp_FUN_004f7690 at 004f7766
+;   core_inv.cpp_CInventory_addItem_FUN_004f7690 at 004f7766
 ;   core_inv.cpp_FUN_004fae10 at 004fb11c
 ;
 ; Referenced Globals:
@@ -15,7 +15,7 @@
 ;   undefined4 DAT_01d08dc8
 ;
 ; Called Functions:
-;   core_inv.cpp_FUN_004f60c0
+;   core_inv.cpp_getItemModel_FUN_004f60c0
 ;   crt_string.c__stricmp_FUN_005c04e0
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;
@@ -33,8 +33,8 @@ section .text
     PUSH EDX                            ; 004f6359
     MOV EBX,0x1d08dd0                   ; 004f635a
     XOR ESI,ESI                         ; 004f635f
-    CALL core_inv.cpp_FUN_004f60c0      ; 004f6361
-        ;   XREF to: 004f60c0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004f60c0()
+    CALL core_inv.cpp_getItemModel_FUN_004f60c0 ; 004f6361
+        ;   XREF to: 004f60c0 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_inv.cpp_getItemModel_FUN_004f60c0(CDemonActor * actor_ptr)
     MOV ECX,dword ptr [0x01d08dc8]      ; 004f6366 | DAT_01d08dc8
     ADD ESP,0x4                         ; 004f636c
     LEA EDI,[EAX + 0x78]                ; 004f636f

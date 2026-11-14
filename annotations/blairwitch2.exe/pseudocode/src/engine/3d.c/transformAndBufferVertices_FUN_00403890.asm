@@ -20,7 +20,7 @@
 ;   undefined4 DAT_01c38aec
 ;
 ; Called Functions:
-;   engine_special.cpp_FUN_0055d723
+;   engine_special.cpp_transformAndProjectPoint_FUN_0055d723
 ;
 ; *****************************************************************************
 
@@ -57,8 +57,8 @@ section .text
     PUSH EDI                            ; 004038e3
         ;   Label: LAB_004038e3
     PUSH ESI                            ; 004038e4
-    CALL engine_special.cpp_FUN_0055d723 ; 004038e5
-        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 004038e5
+        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x01c38aec]                ; 004038ea | DAT_01c38aec
     MOV dword ptr [ESI + 0x2c],EAX      ; 004038ef | DAT_00622040
     MOV AH,byte ptr [ESI + 0x13]        ; 004038f2 | DAT_00622024+3

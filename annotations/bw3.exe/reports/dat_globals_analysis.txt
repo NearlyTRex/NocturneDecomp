@@ -13,10 +13,10 @@ Current type breakdown:
   undefined8                     19
   undefined2                     4
 
-DAT_ globals with type hints: 1279 / 3197
+DAT_ globals with type hints: 1280 / 3197
 
 --------------------------------------------------------------------------------
-HIGH CONFIDENCE INFERENCES (1028)
+HIGH CONFIDENCE INFERENCES (1029)
 --------------------------------------------------------------------------------
   DAT_005b5849                    addr=005b5849    current=undefined4      likely=float           refs=1
     nearby: s_core_actor_cpp_005b584d (TerminatedCString) at offset -4
@@ -1557,6 +1557,8 @@ HIGH CONFIDENCE INFERENCES (1028)
   DAT_02d059b0                    addr=02d059b0    current=undefined4      likely=float           refs=1
   DAT_02d0bce0                    addr=02d0bce0    current=undefined4      likely=LPDIRECTDRAW *  refs=8
     nearby: g_CWayPointClassInfo.name_hash (undefined4) at offset +8
+  DAT_02d0c1a0                    addr=02d0c1a0    current=undefined4      likely=CWeather *      refs=4
+    nearby: g_CWeaponClassInfo.name_hash (undefined4) at offset +80
   DAT_02d0c208                    addr=02d0c208    current=undefined4      likely=float           refs=3
     nearby: g_CWeaponClassInfo.name_hash (undefined4) at offset +184
   DAT_02d0c20c                    addr=02d0c20c    current=undefined4      likely=float           refs=3
@@ -1928,7 +1930,7 @@ LOW CONFIDENCE INFERENCES (0)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
-NO TYPE HINTS (1918)
+NO TYPE HINTS (1917)
 --------------------------------------------------------------------------------
   DAT_005c601d                    addr=005c601d    type=undefined1      refs=1  nearby: s_You_ve_received_d_health_005c6021 at -4
   DAT_005c6b1f                    addr=005c6b1f    type=undefined4      refs=1  nearby: s_falloff_005c6b2b at -12
@@ -2128,7 +2130,7 @@ NO TYPE HINTS (1918)
   DAT_005fe4b8                    addr=005fe4b8    type=undefined4      refs=1  nearby: g_CFieldNotesPtr at +8
   DAT_005fe4bc                    addr=005fe4bc    type=undefined4      refs=1  nearby: g_CFieldNotesPtr at +12
   DAT_005fe970                    addr=005fe970    type=undefined4      refs=1  nearby: g_CGamePtr at -108
-  DAT_005fe9ec                    addr=005fe9ec    type=undefined4      refs=3  nearby: PTR_DAT_005fe9e0 at +12
+  DAT_005fe9ec                    addr=005fe9ec    type=undefined4      refs=3  nearby: s_save_SAVE_TMP_005fe9f8 at -12
   DAT_005fe9f0                    addr=005fe9f0    type=undefined4      refs=3  nearby: s_save_SAVE_TMP_005fe9f8 at -8
   DAT_005fed64                    addr=005fed64    type=undefined4      refs=1  nearby: g_CGorePtr at +64
   DAT_005fedc4                    addr=005fedc4    type=undefined4      refs=1  nearby: g_CGorePtr at +160
@@ -3733,7 +3735,6 @@ NO TYPE HINTS (1918)
   DAT_02d0bd10                    addr=02d0bd10    type=undefined4      refs=3  nearby: g_CWayPointClassInfo.name_hash at +56
   DAT_02d0c174                    addr=02d0c174    type=undefined4      refs=1  nearby: g_CWeaponClassInfo.name_hash at +36
   DAT_02d0c190                    addr=02d0c190    type=undefined4      refs=1  nearby: g_CWeaponClassInfo.name_hash at +64
-  DAT_02d0c1a0                    addr=02d0c1a0    type=undefined4      refs=4  nearby: g_CWeaponClassInfo.name_hash at +80
   DAT_02d0c1c4                    addr=02d0c1c4    type=undefined4      refs=1  nearby: g_CWeaponClassInfo.name_hash at +116
   DAT_02d0c214                    addr=02d0c214    type=undefined4      refs=2  nearby: g_CWeaponClassInfo.name_hash at +196
   DAT_02d0c218                    addr=02d0c218    type=undefined4      refs=2  nearby: g_CWeaponClassInfo.name_hash at +200
@@ -3963,8 +3964,8 @@ They appear only as inline constant values.
   DAT_007e1a18                    value=0x7E1A18        refs=1
   DAT_007e2bac                    value=0x7E2BAC        refs=1
   DAT_005b83d7                    value=0x5B83D7        refs=1
-  DAT_007e2ad0                    value=0x7E2AD0        refs=1
   DAT_005f0f5c                    value=0x5F0F5C        refs=1
+  DAT_007e2ad0                    value=0x7E2AD0        refs=1
   DAT_005f0f74                    value=0x5F0F74        refs=1
   DAT_007f8edc                    value=0x7F8EDC        refs=1
   DAT_007f8f18                    value=0x7F8F18        refs=1

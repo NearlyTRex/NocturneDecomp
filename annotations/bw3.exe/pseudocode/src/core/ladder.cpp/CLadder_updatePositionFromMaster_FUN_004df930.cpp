@@ -34,9 +34,9 @@ void __cdecl core_ladder_cpp_CLadder_updatePositionFromMaster_FUN_004df930(CLadd
   if (this_ptr->master_actor == (CDemonActor *)0x0) {
     return;
   }
-  core_xform_cpp_FUN_00583940
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
             (&CStack_c4,&this_ptr->relative_position,&this_ptr->cached_euler_angles);
-  core_xform_cpp_FUN_00583940
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
             (&CStack_94,&this_ptr->master_actor->location,&this_ptr->master_actor->orient);
   core_xform_cpp_multiplyMatrix3x4_FUN_005833e0(&CStack_c4,&CStack_94,&CStack_64);
   pCVar3 = &CStack_64;

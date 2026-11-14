@@ -340,8 +340,8 @@ section .text
     MOV EDI,EAX                         ; 005b4fbf
     CALL dword ptr CS:[0x5d0650]        ; 005b4fc1 | PTR_SetThreadPriority_005d0650
     XOR EBX,EBX                         ; 005b4fc8
-    CALL wincore_winrun.cpp_FUN_005b2cf0 ; 005b4fca
-        ;   XREF to: 005b2cf0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_FUN_005b2cf0()
+    CALL wincore_winrun.cpp_processWindowMessages_FUN_005b2cf0 ; 005b4fca
+        ;   XREF to: 005b2cf0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_005b2cf0()
         ;   Label: LAB_005b4fca
     CMP EBX,dword ptr [0x02c9d29c]      ; 005b4fcf | DAT_02c9d29c
     JZ 0x005b5044                       ; 005b4fd5

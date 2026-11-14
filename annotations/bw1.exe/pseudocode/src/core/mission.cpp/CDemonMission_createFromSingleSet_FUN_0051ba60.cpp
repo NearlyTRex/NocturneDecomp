@@ -28,6 +28,6 @@ void __cdecl core_mission_cpp_CDemonMission_createFromSingleSet_FUN_0051ba60(CDe
   core_script_cpp_CScript_clear_FUN_00543740(g_CScriptPtr);
   core_mission_cpp_CDemonMission_prepareAllActors_FUN_0051b2b0(this_ptr);
   this_ptr->current_set_index = -1;
-  core_mission_cpp_FUN_0051b610(this_ptr,0);
+  core_mission_cpp_CDemonMission_loadSet_FUN_0051b610(this_ptr,0);
   return;
 }

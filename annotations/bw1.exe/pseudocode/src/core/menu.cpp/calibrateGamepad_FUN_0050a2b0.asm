@@ -9,9 +9,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_menu.cpp_FUN_0050b470 at 0050b9ff
-;   core_menu.cpp_FUN_0050d640 at 0050e6db
 ;   core_menu.cpp_checkAndCalibrateGamepad_FUN_0050b410 at 0050b425
+;   core_menu.cpp_configureCustomKeyBindings_FUN_0050d640 at 0050e6db
+;   core_menu.cpp_configureCustomKeys_FUN_0050b470 at 0050b9ff
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_d_x_005e7aae

@@ -511,7 +511,8 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
               fStack_1c8 = fStack_cc;
               fStack_1c4 = fStack_c8;
             }
-            fStack_48 = core_motion_cpp_FUN_004fc930(&pCStack_34->base);
+            fStack_48 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                                  (&pCStack_34->base);
             fStack_70 = fStack_1c4 * fStack_1c4 + fStack_1cc * fStack_1cc + fStack_1c8 * fStack_1c8;
             fStack_6c = (float)(((int)fStack_70 >> 1) + _DAT_01d1a0a4);
             fStack_14 = fStack_48;
@@ -565,7 +566,8 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
               fStack_150 = afStack_144[0];
               fStack_14c = afStack_144[1];
             }
-            fStack_4c = core_motion_cpp_FUN_004fc930(&pCStack_34->base);
+            fStack_4c = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                                  (&pCStack_34->base);
             fStack_78 = fStack_14c * fStack_14c + fStack_154 * fStack_154 + fStack_150 * fStack_150;
             fStack_74 = (float)(((int)fStack_78 >> 1) + _DAT_01d1a0a4);
             fStack_14 = fStack_4c;
@@ -620,7 +622,8 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
               fStack_1ec = afStack_2d0[3];
               fStack_1e8 = fStack_2c0;
             }
-            fStack_44 = core_motion_cpp_FUN_004fc930(&pCStack_34->base);
+            fStack_44 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                                  (&pCStack_34->base);
             fStack_80 = fStack_1e8 * fStack_1e8 + fStack_1f0 * fStack_1f0 + fStack_1ec * fStack_1ec;
             fStack_68 = (float)(((int)fStack_80 >> 1) + _DAT_01d1a0a4);
             fStack_14 = fStack_44;
@@ -769,8 +772,8 @@ void __cdecl core_kedward_cpp_CKedward_process_FUN_00590010(CKedward *this_ptr,f
           iVar4 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
           iVar4 = (**(code **)(*(int *)(iVar4 + 0x154) + 0x10c))(iVar4);
           if ((iVar4 != 0) &&
-             (fStack_14 = core_motion_cpp_FUN_004fc930(&pCStack_34->base),
-             (float)_DAT_005d8e8c < fStack_14)) {
+             (fStack_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                                    (&pCStack_34->base), (float)_DAT_005d8e8c < fStack_14)) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&pCStack_34->base,0,1);
           }
           break;
@@ -881,7 +884,7 @@ LAB_00590865:
       pCStack_38->z = 0.0;
       pCStack_38->y = pCStack_38->z;
       pCStack_38->x = pCStack_38->y;
-      core_charactr_cpp_FUN_0042c230((CCharacter *)this_ptr,&CStack_124);
+      core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230((CCharacter *)this_ptr,&CStack_124);
     }
     core_charactr_cpp_CCharacter_preProcess_FUN_0042cd30((CCharacter *)this_ptr);
     core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130(pCStack_34);

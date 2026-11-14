@@ -11,17 +11,17 @@
 char * __cdecl core_inv_cpp_getItemDisplayName_FUN_004f62e0(CDemonActor *actor_ptr)
 
 {
-  int iVar1;
+  CKeyFramedModelInstance *pCVar1;
   int iVar2;
   char *str2;
   int iVar3;
   
   str2 = (char *)0x1d08dd0;
   iVar3 = 0;
-  iVar1 = core_inv_cpp_FUN_004f60c0(actor_ptr);
+  pCVar1 = core_inv_cpp_getItemModel_FUN_004f60c0(actor_ptr);
   if (0 < _DAT_01d08dc8) {
     do {
-      iVar2 = _stricmp((char *)(iVar1 + 0x78),str2);
+      iVar2 = _stricmp(pCVar1->model_name,str2);
       if (iVar2 == 0) {
         return str2 + 0x100;
       }

@@ -188,7 +188,7 @@ int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_0058b3f0(CZombie *this_ptr
               (g_CConsolePtr,"?%s can't pick up %s, sombody else beat me to it!\n" + 1);
     this_ptr->pickup_target = (CDemonActor *)0x0;
     this_ptr->pickup_approach_progress = 0.0;
-    core_zombie_cpp_FUN_0058cc20(this_ptr);
+    core_zombie_cpp_CZombie_resetChaseState_FUN_0058cc20(this_ptr);
     return 0;
   }
   fVar10 = (pCVar6->position).x - (this_ptr->pickup_target->location).position.x;
@@ -332,7 +332,7 @@ LAB_0058b9e6:
               (g_CConsolePtr,"%s can't pick up %s, giving up\n");
     this_ptr->pickup_target = (CDemonActor *)0x0;
     this_ptr->pickup_approach_progress = 20.0;
-    core_zombie_cpp_FUN_0058cc20(this_ptr);
+    core_zombie_cpp_CZombie_resetChaseState_FUN_0058cc20(this_ptr);
     return 0;
   }
   if (iVar5 < 1) {

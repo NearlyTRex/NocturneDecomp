@@ -25,14 +25,14 @@
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
 ;   core_box.cpp_FUN_0041a840
 ;   core_flies.cpp_drawFlyPixel_FUN_004a6fe0
-;   core_spline.cpp_FUN_00561310
+;   core_spline.cpp_computeSplineBasis_FUN_00561310
 ;   core_spline.cpp_FUN_00561540
 ;   crt_math.c_round_FUN_005b7ff0
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_00469d00
 ;   engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0046b7f0
 ;   engine_prim.c_replaceWWithDepth_FUN_0051c720
-;   engine_special.cpp_FUN_0055d723
+;   engine_special.cpp_transformAndProjectPoint_FUN_0055d723
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_00574e00
 ;
 ; *****************************************************************************
@@ -107,8 +107,8 @@ section .text
     FSTP float ptr [ESP]                ; 004a716f
     PUSH ESI                            ; 004a7172
     INC EBX                             ; 004a7173
-    CALL core_spline.cpp_FUN_00561310   ; 004a7174
-        ;   XREF to: 00561310 (UNCONDITIONAL_CALL)  ; void core_spline.cpp_FUN_00561310(float * out_basis, float t, float tension)
+    CALL core_spline.cpp_computeSplineBasis_FUN_00561310 ; 004a7174
+        ;   XREF to: 00561310 (UNCONDITIONAL_CALL)  ; void core_spline.cpp_computeSplineBasis_FUN_00561310(float * out_basis, float t, float tension)
     ADD ESP,0xc                         ; 004a7179
     ADD ESI,0x20                        ; 004a717c
     CMP EBX,0x40                        ; 004a717f
@@ -235,8 +235,8 @@ section .text
     PUSH EAX                            ; 004a7350
     MOV EAX,dword ptr [EDX]             ; 004a7351
     PUSH EAX                            ; 004a7353
-    CALL engine_special.cpp_FUN_0055d723 ; 004a7354
-        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0055d723 ; 004a7354
+        ;   XREF to: 0055d723 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x0060b280]                ; 004a7359 | DAT_0060b280
     MOV EBX,dword ptr [EAX]             ; 004a735e
     MOV DL,byte ptr [EBX + 0x13]        ; 004a7360

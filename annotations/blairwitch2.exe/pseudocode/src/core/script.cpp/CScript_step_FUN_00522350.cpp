@@ -613,7 +613,7 @@ LAB_00523d13:
                       {
                         local_1ec = core_script_cpp_skipWhitespace_FUN_00521180(pcVar18 + 0xb);
                         if (_DAT_01e650f8 == 0) {
-                          core_game_cpp_FUN_004bb240(g_CGamePtr);
+                          core_game_cpp_CGame_beginFadeIn_FUN_004bb240(g_CGamePtr);
                         }
                       }
                       else {
@@ -1327,17 +1327,19 @@ LAB_00525147:
                                                   if (_DAT_01e650f8 == 0) {
                                                     local_210 = _DAT_01e650f8;
                                                     if (0.0 <= this_ptr->cmd_timer) {
-                                                      iVar5 = core_game_cpp_FUN_004bb4e0(g_CGamePtr)
-                                                      ;
-                                                      if (iVar5 != 0) {
-                                                        local_210 = 1;
-                                                        g_CGamePtr->allow_damage_flag = 1;
-                                                      }
-                                                    }
-                                                    else {
-                                                      core_game_cpp_FUN_004bb240(g_CGamePtr);
-                                                      this_ptr->cmd_timer = 1.0;
-                                                    }
+                                                      uVar16 = 
+                                                  core_game_cpp_CGame_fadeIn_FUN_004bb4e0
+                                                            (g_CGamePtr);
+                                                  if (uVar16 != 0) {
+                                                    local_210 = 1;
+                                                    g_CGamePtr->allow_damage_flag = 1;
+                                                  }
+                                                  }
+                                                  else {
+                                                    core_game_cpp_CGame_beginFadeIn_FUN_004bb240
+                                                              (g_CGamePtr);
+                                                    this_ptr->cmd_timer = 1.0;
+                                                  }
                                                   }
                                                   }
                                                   else {
@@ -1356,16 +1358,17 @@ LAB_00525147:
                                                     g_CGamePtr->allow_damage_flag = 0;
                                                     local_210 = uVar16;
                                                     if (0.0 <= this_ptr->cmd_timer) {
-                                                      iVar5 = core_game_cpp_FUN_004bb4e0(pCVar3);
-                                                      if (iVar5 != 0) {
-                                                        local_210 = 1;
-                                                      }
-                                                    }
-                                                    else {
-                                                      core_game_cpp_CGame_beginFadeOut_FUN_004bb280
-                                                                (pCVar3);
-                                                      this_ptr->cmd_timer = 1.0;
-                                                    }
+                                                      uVar16 = 
+                                                  core_game_cpp_CGame_fadeIn_FUN_004bb4e0(pCVar3);
+                                                  if (uVar16 != 0) {
+                                                    local_210 = 1;
+                                                  }
+                                                  }
+                                                  else {
+                                                    core_game_cpp_CGame_beginFadeOut_FUN_004bb280
+                                                              (pCVar3);
+                                                    this_ptr->cmd_timer = 1.0;
+                                                  }
                                                   }
                                                   }
                                                   else {
@@ -1448,7 +1451,7 @@ LAB_00525147:
                                                   core_script_cpp_trimString_FUN_00521110
                                                             (local_2534);
                                                   if (_DAT_01e650f8 == 0) {
-                                                    engine_ini_cpp_FUN_004d8910
+                                                    engine_ini_cpp_CIniFile_ctor_FUN_004d8910
                                                               (&local_4dac,
                                                                "system\\nocturne.ini",
                                                                &DAT_005e3b01);
@@ -3411,7 +3414,7 @@ LAB_005281fe:
                                                   core_script_cpp_trimString_FUN_00521110
                                                             (local_372c);
                                                   if (_DAT_01e650f8 == 0) {
-                                                    engine_ini_cpp_FUN_004d8910
+                                                    engine_ini_cpp_CIniFile_ctor_FUN_004d8910
                                                               (&local_4ba8,
                                                                "system\\nocturne.ini",
                                                                &DAT_005e48e1);

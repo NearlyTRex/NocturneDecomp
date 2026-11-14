@@ -42,7 +42,7 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004b46e0(CRainDrop *this_ptr)
   CStack_68.x = (int)ROUND((this_ptr->base).position.x * _DAT_005fff94);
   CStack_68.y = (int)ROUND((this_ptr->base).position.y * _DAT_005fff94);
   CStack_68.z = (int)ROUND((this_ptr->base).position.z * _DAT_005fff94);
-  engine_special_cpp_FUN_0058043c(&vertex_ptr->projected_vertex,&CStack_68);
+  engine_special_cpp_transformPoint_FUN_0058043c(&vertex_ptr->projected_vertex,&CStack_68);
   iVar1 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_00484fd0(DAT_00612560,vertex_ptr);
   if (iVar1 == 0) {
     return;
@@ -64,28 +64,32 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004b46e0(CRainDrop *this_ptr)
   CStack_50.x = (int)ROUND(_DAT_005fff94 * -0.125);
   CStack_50.y = (int)ROUND(_DAT_005fff94 * -0.125);
   CStack_50.z = (int)ROUND(_DAT_005fff94 * 0.0);
-  engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&CStack_50);
+  engine_special_cpp_transformAndProjectPoint_FUN_00580173
+            (&DAT_00612560->vertex_buffer_ptr->projected_vertex,&CStack_50);
   uStack_5c = 0x3e000000;
   uStack_58 = 0xbe000000;
   uStack_54 = 0;
   CStack_80.x = (int)ROUND(_DAT_005fff94 * 0.125);
   CStack_80.y = (int)ROUND(_DAT_005fff94 * -0.125);
   CStack_80.z = (int)ROUND(_DAT_005fff94 * 0.0);
-  engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&CStack_80);
+  engine_special_cpp_transformAndProjectPoint_FUN_00580173
+            (&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&CStack_80);
   uStack_5c = 0x3e000000;
   uStack_58 = 0x3e000000;
   uStack_54 = 0;
   CStack_74.x = (int)ROUND(_DAT_005fff94 * 0.125);
   CStack_74.y = (int)ROUND(_DAT_005fff94 * 0.125);
   CStack_74.z = (int)ROUND(_DAT_005fff94 * 0.0);
-  engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&CStack_74);
+  engine_special_cpp_transformAndProjectPoint_FUN_00580173
+            (&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&CStack_74);
   uStack_5c = 0xbe000000;
   uStack_58 = 0x3e000000;
   uStack_54 = 0;
   CStack_44.x = (int)ROUND(_DAT_005fff94 * -0.125);
   CStack_44.y = (int)ROUND(_DAT_005fff94 * 0.125);
   CStack_44.z = (int)ROUND(_DAT_005fff94 * 0.0);
-  engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&CStack_44);
+  engine_special_cpp_transformAndProjectPoint_FUN_00580173
+            (&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&CStack_44);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
             (DAT_00612560,(SMRGLTextureBasic *)&DAT_0061cb54);
   (**(code **)(*(int *)(DAT_007c6120 + 0x3c) + 4))(DAT_007c6120,this_ptr,0);

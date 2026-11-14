@@ -8,7 +8,7 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004bb9b0 at 004bbc20
+;   core_game.cpp_CGame_saveGame_FUN_004bb9b0 at 004bbc20
 ;
 ; Referenced Globals:
 ;   undefined4 s_Set_state_version_005e5bd9+1

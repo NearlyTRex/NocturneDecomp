@@ -48,26 +48,29 @@ void __cdecl core_path_cpp_renderGridQuad_FUN_00534a70(int grid_x,int grid_y,int
   puVar3 = (uint *)round();
   CStack_1c.y = (int)ROUND(fVar7);
   iVar5 = blue << 8;
-  engine_special_cpp_FUN_00580173((SProjectedVertex *)*puVar3,pCVar12);
+  engine_special_cpp_transformAndProjectPoint_FUN_00580173((SProjectedVertex *)*puVar3,pCVar12);
   iStack_8 = CStack_1c.x;
   pCVar12 = &CStack_1c;
   fVar8 = (float10)CStack_1c.x + (float10)fVar1;
   round();
   CStack_1c.x = (int)ROUND(fVar8);
-  engine_special_cpp_FUN_00580173((SProjectedVertex *)(*extraout_EDX + 0x30),pCVar12);
+  engine_special_cpp_transformAndProjectPoint_FUN_00580173
+            ((SProjectedVertex *)(*extraout_EDX + 0x30),pCVar12);
   iStack_8 = CStack_1c.z;
   pCVar12 = &CStack_1c;
   fVar8 = (float10)CStack_1c.z + (float10)fVar2;
   round();
   CStack_1c.z = (int)ROUND(fVar8);
-  engine_special_cpp_FUN_00580173((SProjectedVertex *)(*extraout_EDX_00 + 0x60),pCVar12);
+  engine_special_cpp_transformAndProjectPoint_FUN_00580173
+            ((SProjectedVertex *)(*extraout_EDX_00 + 0x60),pCVar12);
   iStack_8 = CStack_1c.x;
   pCVar12 = &CStack_1c;
   fVar8 = (float10)CStack_1c.x - (float10)fVar1;
   round();
   CStack_1c.x = (int)ROUND(fVar8);
   iVar6 = alpha << 8;
-  engine_special_cpp_FUN_00580173((SProjectedVertex *)(*extraout_EDX_01 + 0x90),pCVar12);
+  engine_special_cpp_transformAndProjectPoint_FUN_00580173
+            ((SProjectedVertex *)(*extraout_EDX_01 + 0x90),pCVar12);
   this_ptr = DAT_00612560;
   DAT_00612560->vertex_buffer_ptr->r = iVar4;
   this_ptr->vertex_buffer_ptr->g = extraout_ECX;

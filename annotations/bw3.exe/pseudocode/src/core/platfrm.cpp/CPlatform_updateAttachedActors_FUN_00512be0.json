@@ -1,0 +1,360 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 88,
+    "complexity_score": 219,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 54,
+    "suspect_count": 14,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
+      "stack_alignment_array",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 142
+  },
+  "cross_references": [
+    {
+      "addr": "005114f0",
+      "from_addr": "00512006",
+      "name": "core_platfrm.cpp_CPlatform_process_FUN_005114f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00512be0",
+    "address_range": [
+      [
+        "00512be0",
+        "00512ced"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_00512be0",
+    "signature": "void __cdecl core_platfrm_cpp_CPlatform_updateAttachedActors_FUN_00512be0(CPlatform *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00583940",
+      "is_variadic": false,
+      "name": "core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940"
+    },
+    {
+      "addr": "00584450",
+      "is_variadic": false,
+      "name": "core_xform.cpp_FUN_00584450"
+    },
+    {
+      "addr": "00583b10",
+      "is_variadic": false,
+      "name": "core_xform.cpp_matrixToEulerAngles_FUN_00583b10"
+    },
+    {
+      "addr": "005833e0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_multiplyMatrix3x4_FUN_005833e0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00512006",
+        "call_type": "direct",
+        "caller": "core_platfrm.cpp_CPlatform_process_FUN_005114f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.922077922077922,
+    "instruction_count": 77,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 2,
+      "CALL": 4,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 77,
+      "INT_ADD": 57,
+      "INT_AND": 28,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 29,
+      "INT_LESS": 3,
+      "INT_MULT": 15,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 10,
+      "INT_SEXT": 3,
+      "INT_SLESS": 14,
+      "INT_SUB": 37,
+      "INT_XOR": 1,
+      "INT_ZEXT": 14,
+      "LOAD": 20,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "STORE": 29,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 379
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00519ba0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0053aef0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0054e320",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8286
+    },
+    "nocturne.exe": {
+      "addr": "004f7700",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8286
+    }
+  },
+  "stack_frame": {
+    "frame_size": 228,
+    "local_size": 224,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_dc",
+        "offset": -220,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_ac",
+        "offset": -172,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPlatform *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "00512c35",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 10,
+      "match": "afStackY_1034",
+      "severity": "moderate",
+      "text": "float afStackY_1034 [979];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(CMatrix3x4f *)((int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 35,
+      "match": "(int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 42,
+      "match": "(int)&local_34",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_34 + (uint)bVar5 * -8 + 4) = afStack_48[(uint)bVar5 * -2 + 3];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 43,
+      "match": "(int)&local_34",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 48,
+      "match": "(int)&local_28",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_28 + (uint)bVar5 * -8 + 4) = afStack_48[(uint)bVar5 * -2];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 49,
+      "match": "(int)&local_28",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_28 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 33,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 42,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_34 + (uint)bVar5 * -8 + 4) = afStack_48[(uint)bVar5 * -2 + 3];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 43,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 48,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_28 + (uint)bVar5 * -8 + 4) = afStack_48[(uint)bVar5 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 49,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_28 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 54,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "this_ptr = (CPlatform *)((int)&(this_ptr->base).orient + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `this_ptr` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `this_ptr->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 54,
+      "match": "this_ptr = (T *)((int)&(this_ptr->FIELD).SUBFIELD + CONST)",
+      "severity": "moderate",
+      "text": "this_ptr = (CPlatform *)((int)&(this_ptr->base).orient + 4);",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

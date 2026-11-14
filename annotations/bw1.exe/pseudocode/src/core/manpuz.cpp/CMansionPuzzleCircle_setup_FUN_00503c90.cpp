@@ -105,7 +105,8 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00503c90(CMansionPuz
     (this_ptr->gem_pos).z = -0.1;
     (this_ptr->gem_pos).x = 0.0;
   }
-  core_xform_cpp_FUN_005b5760(&CStack_1ac,&this_ptr->gem_pos,&(this_ptr->gem_orient).vec);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+            (&CStack_1ac,&this_ptr->gem_pos,&(this_ptr->gem_orient).vec);
   pCVar8 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900(&this_ptr->gem_model);
   pSStack_38 = this_ptr->gems;
   pCStack_2c = &this_ptr->gems[0].position;
@@ -153,7 +154,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00503c90(CMansionPuz
     *(float *)((int)&CStack_64 + (uint)bVar15 * -8 + 4) = afStack_54[(uint)bVar15 * -2];
     *(float *)((int)&CStack_64 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8) =
          afStack_54[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 1];
-    core_xform_cpp_FUN_005b5760(pCVar13,position,pCVar11);
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(pCVar13,position,pCVar11);
     core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&CStack_1ac,&CStack_20c,&CStack_17c);
     pCVar13 = &CStack_17c;
     pfVar14 = afStack_1dc;

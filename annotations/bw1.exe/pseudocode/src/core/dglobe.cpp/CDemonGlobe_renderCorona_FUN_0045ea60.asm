@@ -61,7 +61,7 @@
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
 ;   engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_00483c50
 ;   engine_drender.cpp_FUN_00483ae0
-;   engine_special.cpp_FUN_00580173
+;   engine_special.cpp_transformAndProjectPoint_FUN_00580173
 ;
 ; *****************************************************************************
 
@@ -164,8 +164,8 @@ section .text
     ADD EAX,EDI                         ; 0045eb7a
     PUSH EAX                            ; 0045eb7c
     ADD ESI,0xc                         ; 0045eb7d
-    CALL engine_special.cpp_FUN_00580173 ; 0045eb80
-        ;   XREF to: 00580173 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_00580173(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_00580173 ; 0045eb80
+        ;   XREF to: 00580173 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_00580173(SProjectedVertex * output, CVector3i * input)
     ADD EDI,0x30                        ; 0045eb85
     ADD ESP,0x8                         ; 0045eb88
     CMP ESI,0x2e8                       ; 0045eb8b

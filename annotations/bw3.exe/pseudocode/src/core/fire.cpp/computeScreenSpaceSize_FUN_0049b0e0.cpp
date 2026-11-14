@@ -26,7 +26,8 @@ float __cdecl core_fire_cpp_computeScreenSpaceSize_FUN_0049b0e0(float depth,floa
   local_34.x = (int)ROUND(_DAT_005df8e4 * 0.0);
   local_34.y = (int)ROUND(_DAT_005df8e4 * 0.0);
   local_34.z = (int)ROUND(depth * _DAT_005df8e4);
-  engine_special_cpp_FUN_005632a3((SProjectedVertex *)*DAT_005f2afc,&local_34);
+  engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+            ((SProjectedVertex *)*DAT_005f2afc,&local_34);
   fVar2 = (float)_DAT_005c05f0;
   fVar1 = (((float)*(int *)(*DAT_005f2afc + 8) * (float)_DAT_005c05e8) /
           ((float)DAT_005fba44 * fVar2)) * _DAT_005c05f8;

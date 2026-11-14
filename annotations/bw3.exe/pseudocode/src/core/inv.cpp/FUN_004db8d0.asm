@@ -10,7 +10,7 @@
 ;
 ; Called Functions:
 ;   core_ammo.cpp_CAmmo_ctor_FUN_0040de60
-;   core_inv.cpp_FUN_004da880
+;   core_inv.cpp_CInventory_addItem_FUN_004da880
 ;   core_main.c_FUN_004e4330
 ;   crt_memory.c_operator_new_FUN_005a3cb2
 ;
@@ -86,8 +86,8 @@ section .text
     PUSH EBX                            ; 004db96e
     MOV EBP,dword ptr [ESP + 0x1c]      ; 004db96f
     PUSH EBP                            ; 004db973
-    CALL core_inv.cpp_FUN_004da880      ; 004db974
-        ;   XREF to: 004da880 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004da880(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004da880 ; 004db974
+        ;   XREF to: 004da880 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004da880(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 004db979
     POP EBX                             ; 004db97c
     POP EDI                             ; 004db97d

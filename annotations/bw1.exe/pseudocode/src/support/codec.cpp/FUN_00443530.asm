@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004d6420 at 004d67ae
+;   core_game.cpp_CGame_saveGame_FUN_004d6420 at 004d67ae
 ;
 ; Called Functions:
 ;   support_codec.cpp_CLZWDictionary_addNode_FUN_00443110

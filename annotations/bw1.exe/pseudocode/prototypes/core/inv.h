@@ -9,9 +9,9 @@
 // Address: 004f5ef0
 void __cdecl staticInit(void);
 
-// Original: core_inv.cpp_FUN_004f60c0
+// Original: core_inv.cpp_getItemModel_FUN_004f60c0
 // Address: 004f60c0
-CDemonActor * FUN_004f60c0(CDemonActor *param_1);
+CKeyFramedModelInstance * __cdecl getItemModel(CDemonActor *actor_ptr);
 
 // Original: core_inv.cpp_getItemDisplayName_FUN_004f62e0
 // Address: 004f62e0
@@ -73,9 +73,9 @@ void __cdecl freeInventory(void);
 // Address: 004f7660
 void __cdecl clampWeaponAmmoCount(CDemonActor *actor_ptr);
 
-// Original: core_inv.cpp_FUN_004f7690
+// Original: core_inv.cpp_CInventory_addItem_FUN_004f7690
 // Address: 004f7690
-int __cdecl FUN_004f7690(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message);
+int __cdecl CInventory::addItem(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message);
 
 // Original: core_inv.cpp_FUN_004f8b70
 // Address: 004f8b70

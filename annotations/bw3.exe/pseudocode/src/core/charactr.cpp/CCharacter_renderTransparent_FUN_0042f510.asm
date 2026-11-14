@@ -44,8 +44,8 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0
 ;   core_box.cpp_FUN_0041daf0
+;   core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0
 ;   core_charactr.cpp_CCharacter_renderFlames_FUN_0042f6f0
-;   core_charactr.cpp_FUN_0042d8e0
 ;   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0045ab30
 ;   core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0045aae0
 ;   core_set.cpp_CDemonSet_addCoronaGlobe_FUN_005372f0
@@ -172,8 +172,8 @@ section .text
         ;   XREF to: 0042f688 (CONDITIONAL_JUMP)  ; LAB_0042f688
     PUSH EBX                            ; 0042f675
     MOV dword ptr [EBX + 0x27bc],0x1    ; 0042f676
-    CALL core_charactr.cpp_FUN_0042d8e0 ; 0042f680
-        ;   XREF to: 0042d8e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042d8e0()
+    CALL core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0 ; 0042f680
+        ;   XREF to: 0042d8e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0042f685
     PUSH EBX                            ; 0042f688
         ;   Label: LAB_0042f688

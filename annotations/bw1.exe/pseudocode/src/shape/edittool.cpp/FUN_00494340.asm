@@ -15,7 +15,7 @@
 ;   core_fldnotes.cpp_CFieldNotes_loadState_FUN_004bebc0 at 004bedc3
 ;   core_main.c_initializeGameSystems_FUN_005032a0 at 00503650
 ;   core_script.cpp_CScript_loadState_FUN_0054b3e0 at 0054b6f4
-;   core_set.cpp_FUN_00555e30 at 00555ec8
+;   core_set.cpp_CDemonSet_loadStateInfo_FUN_00555e30 at 00555ec8
 ;   core_stranger.cpp_CStranger_processMotionEvents_FUN_005881d0 at 0058891c
 ;   core_stranger.cpp_CStranger_processPickupComplete_FUN_0058cda0 at 0058ce0e
 ;   ... and 2 more

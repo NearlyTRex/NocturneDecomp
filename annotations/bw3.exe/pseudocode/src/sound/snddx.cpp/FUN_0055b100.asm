@@ -26,7 +26,7 @@
 ;   crt_math.c_round_FUN_005a3120
 ;   crt_memory.c_memset_FUN_005a28f0
 ;   crt_unknown.c_sprintf_FUN_005a28c0
-;   sound_snddx.cpp_FUN_0055a670
+;   sound_snddx.cpp_getDirectSoundErrorString_FUN_0055a670
 ;   sound_sndmain.cpp_getMaxSwLatency_FUN_005591a0
 ;   sound_sndmain.cpp_hasHardware3DSound_FUN_005586d0
 ;   sound_sndmain.cpp_logSoundError_FUN_0055a560
@@ -312,8 +312,8 @@ section .text
     RET                                 ; 0055b4c8
     PUSH EAX                            ; 0055b4c9
         ;   Label: LAB_0055b4c9
-    CALL sound_snddx.cpp_FUN_0055a670   ; 0055b4ca
-        ;   XREF to: 0055a670 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_0055a670(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_0055a670 ; 0055b4ca
+        ;   XREF to: 0055a670 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_0055a670(uint error_code)
     ADD ESP,0x4                         ; 0055b4cf
     PUSH EAX                            ; 0055b4d2
     PUSH 0x5d465a                       ; 0055b4d3 | = "Set Primary buffer format"
@@ -332,8 +332,8 @@ section .text
         ;   XREF to: 0055b124 (UNCONDITIONAL_JUMP)  ; LAB_0055b124
     PUSH EAX                            ; 0055b502
         ;   Label: LAB_0055b502
-    CALL sound_snddx.cpp_FUN_0055a670   ; 0055b503
-        ;   XREF to: 0055a670 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_0055a670(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_0055a670 ; 0055b503
+        ;   XREF to: 0055a670 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_0055a670(uint error_code)
     ADD ESP,0x4                         ; 0055b508
     PUSH EAX                            ; 0055b50b
     PUSH 0x5d4674                       ; 0055b50c | = "Get Primary buffer format"
@@ -352,8 +352,8 @@ section .text
         ;   XREF to: 0055b124 (UNCONDITIONAL_JUMP)  ; LAB_0055b124
     PUSH EAX                            ; 0055b53b
         ;   Label: LAB_0055b53b
-    CALL sound_snddx.cpp_FUN_0055a670   ; 0055b53c
-        ;   XREF to: 0055a670 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_0055a670(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_0055a670 ; 0055b53c
+        ;   XREF to: 0055a670 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_0055a670(uint error_code)
     ADD ESP,0x4                         ; 0055b541
     PUSH EAX                            ; 0055b544
     PUSH 0x5d4623                       ; 0055b545 | = "Create temp secondary buffer for prop..."
@@ -410,8 +410,8 @@ section .text
     RET                                 ; 0055b5e3
     PUSH EAX                            ; 0055b5e4
         ;   Label: LAB_0055b5e4
-    CALL sound_snddx.cpp_FUN_0055a670   ; 0055b5e5
-        ;   XREF to: 0055a670 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_0055a670(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_0055a670 ; 0055b5e5
+        ;   XREF to: 0055a670 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_0055a670(uint error_code)
     ADD ESP,0x4                         ; 0055b5ea
     PUSH EAX                            ; 0055b5ed
     PUSH 0x5d468e                       ; 0055b5ee | = "Create the secondary buffer"

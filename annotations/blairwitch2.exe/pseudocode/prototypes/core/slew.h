@@ -13,6 +13,6 @@ void __cdecl staticInit(void);
 // Address: 00549380
 undefined8 __cdecl CSlew::init(CSlew *this_ptr);
 
-// Original: core_slew.cpp_FUN_005493d0
+// Original: core_slew.cpp_CSlew_processInput_FUN_005493d0
 // Address: 005493d0
-void FUN_005493d0(float *param_1);
+void __cdecl CSlew::processInput(CSlew *this_ptr);

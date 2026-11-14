@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[7]:
-;   core_menu.cpp_FUN_004e94f0 at 004ea141
+;   core_menu.cpp_configureSoundOptions_FUN_004e94f0 at 004ea141
 ;   core_sound.cpp_CSound_reset_FUN_00560930 at 00560930
 ;   core_sound.cpp_CSound_shutdown_FUN_0055fee0 at 0055ff24
 ;   sound_sndmain.cpp_closeSoundDevice_FUN_005587e0 at 005587e2

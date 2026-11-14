@@ -15,8 +15,8 @@
 ; XREF[18]:
 ;   core_flashlit.cpp_FUN_004a16b0 at 004a16fb
 ;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004a5700 at 004a5a35
+;   core_game.cpp_CGame_renderIrisFade_FUN_004bb3d0 at 004bb42e
 ;   core_game.cpp_CGame_renderOverlay_FUN_004b32c0 at 004b35f8
-;   core_game.cpp_FUN_004bb3d0 at 004bb42e
 ;   core_game.cpp_drawHealthBar_FUN_004b3220 at 004b32aa
 ;   core_inv.cpp_FUN_004dd9b0 at 004de139
 ;   core_level.cpp_CLevelLoader_update_FUN_004e1600 at 004e163a

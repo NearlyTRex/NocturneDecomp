@@ -22,8 +22,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
-;   engine_model.c_FUN_00500f30
-;   engine_model.c_FUN_005011a0
+;   engine_model.c_getMRGLSize_FUN_00500f30
+;   engine_model.c_loadModelChunk_FUN_005011a0
 ;   engine_model.c_loadModelFile_FUN_00500720
 ;
 ; *****************************************************************************
@@ -44,16 +44,16 @@ section .text
         ;   Label: LAB_004df785
     MOV ECX,dword ptr [EAX + 0x14]      ; 004df789
     PUSH ECX                            ; 004df78c
-    CALL engine_model.c_FUN_00500f30    ; 004df78d
-        ;   XREF to: 00500f30 (UNCONDITIONAL_CALL)  ; int engine_model.c_FUN_00500f30(SMRGLHeaderExtended * header)
+    CALL engine_model.c_getMRGLSize_FUN_00500f30 ; 004df78d
+        ;   XREF to: 00500f30 (UNCONDITIONAL_CALL)  ; int engine_model.c_getMRGLSize_FUN_00500f30(SMRGLHeaderExtended * header)
     ADD ESP,0x4                         ; 004df792
     MOV EBP,EAX                         ; 004df795
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004df797
     MOV EAX,dword ptr [EAX + 0x14]      ; 004df79b
     ADD EAX,EBP                         ; 004df79e
     PUSH EAX                            ; 004df7a0
-    CALL engine_model.c_FUN_00500f30    ; 004df7a1
-        ;   XREF to: 00500f30 (UNCONDITIONAL_CALL)  ; int engine_model.c_FUN_00500f30(SMRGLHeaderExtended * header)
+    CALL engine_model.c_getMRGLSize_FUN_00500f30 ; 004df7a1
+        ;   XREF to: 00500f30 (UNCONDITIONAL_CALL)  ; int engine_model.c_getMRGLSize_FUN_00500f30(SMRGLHeaderExtended * header)
     ADD ESP,0x4                         ; 004df7a6
     ADD EBP,EAX                         ; 004df7a9
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004df7ab
@@ -70,8 +70,8 @@ section .text
         ;   XREF to: 004df7d6 (CONDITIONAL_JUMP)  ; LAB_004df7d6
     PUSH EBP                            ; 004df7c6
     PUSH EDI                            ; 004df7c7
-    CALL engine_model.c_FUN_005011a0    ; 004df7c8
-        ;   XREF to: 005011a0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_model.c_FUN_005011a0(char * filename, int model_size)
+    CALL engine_model.c_loadModelChunk_FUN_005011a0 ; 004df7c8
+        ;   XREF to: 005011a0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_model.c_loadModelChunk_FUN_005011a0(char * filename, int model_size)
     ADD ESP,0x8                         ; 004df7cd
     MOV dword ptr [EBX + 0x118],EAX     ; 004df7d0
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004df7d6

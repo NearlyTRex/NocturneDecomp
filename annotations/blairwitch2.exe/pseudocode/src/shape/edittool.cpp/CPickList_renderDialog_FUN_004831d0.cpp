@@ -78,7 +78,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004831d0(CPickList *t
                 uVar10 = _DAT_01c35e60;
               }
               _DAT_01c35e60 = uVar10;
-              shape_edittool_cpp_FUN_0047a590(local_28,local_1c,iVar9,iVar8,1);
+              shape_edittool_cpp_drawDashedLine_FUN_0047a590(local_28,local_1c,iVar9,iVar8,1);
             }
           }
           local_18 = 0;
@@ -169,7 +169,7 @@ LAB_004833e8:
               (&this_ptr->cancel_button,(uint)(this_ptr->selection_state == 1));
   }
   if (this_ptr->state_flag == 0) {
-    shape_edittool_cpp_FUN_0047f210(g_CEditorToolsPtr,0);
+    shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_0047f210(g_CEditorToolsPtr,0);
     return;
   }
   return;

@@ -2681,8 +2681,8 @@ section .text
     PUSH EAX                            ; 0052b3e3
     ADD ESI,0x206e8                     ; 0052b3e4
     PUSH ESI                            ; 0052b3ea
-    CALL core_inv.cpp_FUN_004da880      ; 0052b3eb
-        ;   XREF to: 004da880 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004da880(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004da880 ; 0052b3eb
+        ;   XREF to: 004da880 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004da880(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 0052b3f0
     JMP 0x00529b1b                      ; 0052b3f3
         ;   XREF to: 00529b1b (UNCONDITIONAL_JUMP)  ; LAB_00529b1b
@@ -2981,8 +2981,8 @@ section .text
         ;   XREF to: 00529b1b (CONDITIONAL_JUMP)  ; LAB_00529b1b
     MOV EDX,dword ptr [0x005fe9dc]      ; 0052b7b2 | g_CGamePtr
     PUSH EDX                            ; 0052b7b8
-    CALL core_game.cpp_FUN_004bd620     ; 0052b7b9
-        ;   XREF to: 004bd620 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004bd620(CGame * this_ptr)
+    CALL core_game.cpp_CGame_beginFadeIn_FUN_004bd620 ; 0052b7b9
+        ;   XREF to: 004bd620 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_beginFadeIn_FUN_004bd620(CGame * this_ptr)
     ADD ESP,0x4                         ; 0052b7be
     JMP 0x00529b1b                      ; 0052b7c1
         ;   XREF to: 00529b1b (UNCONDITIONAL_JUMP)  ; LAB_00529b1b
@@ -4438,8 +4438,8 @@ section .text
         ;   XREF to: 0052c918 (CONDITIONAL_JUMP)  ; LAB_0052c918
     MOV EDI,dword ptr [0x005fe9dc]      ; 0052c8fd | g_CGamePtr
     PUSH EDI                            ; 0052c903
-    CALL core_game.cpp_FUN_004bd620     ; 0052c904
-        ;   XREF to: 004bd620 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004bd620(CGame * this_ptr)
+    CALL core_game.cpp_CGame_beginFadeIn_FUN_004bd620 ; 0052c904
+        ;   XREF to: 004bd620 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_beginFadeIn_FUN_004bd620(CGame * this_ptr)
     ADD ESP,0x4                         ; 0052c909
     MOV dword ptr [EBX + 0x48],0x3f800000 ; 0052c90c
     JMP 0x00529b1b                      ; 0052c913
@@ -4713,8 +4713,8 @@ section .text
     PUSH 0x5ceb15                       ; 0052cc6e | = "system\\bw3.ini"
     LEA EAX,[ESP + 0x240]               ; 0052cc73
     PUSH EAX                            ; 0052cc7a
-    CALL engine_ini.cpp_FUN_004d8a20    ; 0052cc7b
-        ;   XREF to: 004d8a20 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_FUN_004d8a20(CIniFile * this_ptr, char * filename, char * section)
+    CALL engine_ini.cpp_CIniFile_ctor_FUN_004d8a20 ; 0052cc7b
+        ;   XREF to: 004d8a20 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004d8a20(CIniFile * this_ptr, char * filename, char * section)
     ADD ESP,0xc                         ; 0052cc80
     LEA EAX,[ESP + 0x203c]              ; 0052cc83
     PUSH EAX                            ; 0052cc8a
@@ -7593,8 +7593,8 @@ section .text
     PUSH 0x5cf5a1                       ; 0052ef81 | = "system\\bw3.ini"
     LEA EAX,[ESP + 0x3c]                ; 0052ef86
     PUSH EAX                            ; 0052ef8a
-    CALL engine_ini.cpp_FUN_004d8a20    ; 0052ef8b
-        ;   XREF to: 004d8a20 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_FUN_004d8a20(CIniFile * this_ptr, char * filename, char * section)
+    CALL engine_ini.cpp_CIniFile_ctor_FUN_004d8a20 ; 0052ef8b
+        ;   XREF to: 004d8a20 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004d8a20(CIniFile * this_ptr, char * filename, char * section)
     ADD ESP,0xc                         ; 0052ef90
     MOV ESI,dword ptr [ESP + 0x48e8]    ; 0052ef93
     PUSH ESI                            ; 0052ef9a

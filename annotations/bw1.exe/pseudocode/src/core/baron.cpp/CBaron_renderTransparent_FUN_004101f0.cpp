@@ -86,7 +86,7 @@ LAB_00410269:
     core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_00569810(pCVar1,-1,0x2e7,1,0);
     engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00(DAT_00612560);
     if (_DAT_01d39d34 != 0) {
-      core_motion_cpp_FUN_005254b0(&pCVar1->base,(CDemonActor *)this_ptr);
+      core_motion_cpp_CMotionController_render_FUN_005254b0(&pCVar1->base,(CDemonActor *)this_ptr);
     }
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);
   }

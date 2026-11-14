@@ -10,8 +10,8 @@
 ;   shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_0047eff0 at 0047f046
 ;   shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_00482a00 at 00482e88
 ;   shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0 at 0048330b
-;   shape_edittool.cpp_FUN_0047c0f0 at 0047c2f7
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800 at 0047b868
+;   shape_edittool.cpp_showMultiChoiceDialog_FUN_0047c0f0 at 0047c2f7
 ;   shape_edittool.cpp_showTextInputDialog_FUN_0047b1f0 at 0047b289
 ;
 ; Referenced Globals:

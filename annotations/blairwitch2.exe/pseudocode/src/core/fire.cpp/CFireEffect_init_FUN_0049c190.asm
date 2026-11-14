@@ -10,8 +10,8 @@
 ;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 0048c376
 ;   core_fire.cpp_CFireEffect_ctor_FUN_0049c170 at 0049c176
 ;   core_fire.cpp_CFireEffect_load_FUN_0049ea80 at 0049eaa1
+;   core_game.cpp_CGame_loadGame_FUN_004bbf70 at 004bc67a
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b683c
-;   core_game.cpp_FUN_004bbf70 at 004bc67a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c3f8dc

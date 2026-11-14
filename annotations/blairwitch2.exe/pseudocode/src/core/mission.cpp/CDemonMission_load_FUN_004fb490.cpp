@@ -26,6 +26,6 @@ void __cdecl core_mission_cpp_CDemonMission_load_FUN_004fb490(CDemonMission *thi
   core_level_cpp_CLevelLoader_update_FUN_004e1600(0x01D03000,text,clear_screen);
   core_mission_cpp_CDemonMission_readMissionFile_FUN_004fb590(this_ptr,file_handle,load_flags);
   _fclose(file_handle);
-  core_mission_cpp_FUN_004fd280(this_ptr);
+  core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_004fd280(this_ptr);
   return;
 }

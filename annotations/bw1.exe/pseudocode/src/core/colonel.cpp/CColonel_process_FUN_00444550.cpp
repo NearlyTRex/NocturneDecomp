@@ -127,7 +127,7 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_00444550(CColonel *this_ptr,f
             if ((iVar8 != 0) ||
                (iVar8 = core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004eb240(&this_ptr->base),
                iVar8 != 0)) goto LAB_00444948;
-            iVar8 = core_hero_cpp_FUN_004eb660(&this_ptr->base);
+            iVar8 = core_hero_cpp_CHero_tryPullLever_FUN_004eb660(&this_ptr->base);
             if (iVar8 != 0) {
               core_hero_cpp_CHero_toggleLeverNow_FUN_004eb7f0(&this_ptr->base);
               goto LAB_00444948;
@@ -214,7 +214,7 @@ switchD_00444a17_caseD_4:
     (this_ptr->base).base.position_delta.z = 0.0;
     (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
     pCVar1->x = (this_ptr->base).base.position_delta.y;
-    core_charactr_cpp_FUN_0042d750((CCharacter *)this_ptr,&local_b4);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042d750((CCharacter *)this_ptr,&local_b4);
   }
   else {
     if ((this_ptr->base).base.grabbed_type == 0) {

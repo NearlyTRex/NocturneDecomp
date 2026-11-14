@@ -11,7 +11,7 @@
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_setOrientation_FUN_00433220
 ;   core_toxhand.cpp_FUN_0056cbd0
-;   core_xform.cpp_FUN_00583940
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
 ;   core_xform.cpp_FUN_00584450
 ;   core_xform.cpp_lerpMatrix3x4_FUN_005854a0
 ;   core_xform.cpp_matrixToEulerAngles_FUN_00583b10
@@ -55,8 +55,8 @@ section .text
     LEA ESI,[ESP + 0x130]               ; 0056ca64
     PUSH EAX                            ; 0056ca6b
     MOVSD.REP ES:EDI,ESI                ; 0056ca6c
-    CALL core_xform.cpp_FUN_00583940    ; 0056ca6e
-        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583940()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940 ; 0056ca6e
+        ;   XREF to: 00583940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940()
     ADD ESP,0xc                         ; 0056ca73
     LEA EAX,[ESP + 0x98]                ; 0056ca76
     PUSH EAX                            ; 0056ca7d

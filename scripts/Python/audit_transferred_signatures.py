@@ -59,8 +59,6 @@ import sys
 from collections import Counter, defaultdict
 
 THIS_DIR = os.path.dirname(os.path.abspath(__file__))
-if THIS_DIR not in sys.path:
-    sys.path.insert(0, THIS_DIR)
 
 REPO = os.path.dirname(os.path.dirname(THIS_DIR))
 ADDR_SUFFIX_RE = re.compile(r"_FUN_[0-9a-fA-F]{6,}$")
@@ -90,9 +88,7 @@ def load_functions(program):
     pattern = os.path.join(annotations_dir(program), "functions",
                            "functions_bucket_*.json")
     for path in sorted(glob.glob(pattern)):
-        if path.endswith("functions_buckets.json"):
-            continue
-        with open(path) as fh:
+        with open(path, encoding="utf-8") as fh:
             for rec in json.load(fh):
                 if isinstance(rec, dict) and rec.get("name"):
                     out.append(rec)
@@ -120,7 +116,7 @@ def load_effective_signatures(program):
             if not fn.endswith(".cpp") or fn.endswith(".keep.cpp"):
                 continue
             addr = sig = None
-            with open(os.path.join(dirpath, fn), errors="ignore") as fh:
+            with open(os.path.join(dirpath, fn), encoding="utf-8", errors="ignore") as fh:
                 for _ in range(12):
                     line = fh.readline()
                     if not line:
@@ -153,9 +149,7 @@ def load_vtable_members(program):
     members = set()
     pattern = os.path.join(annotations_dir(program), "vtables", "vtables_bucket_*.json")
     for path in sorted(glob.glob(pattern)):
-        if path.endswith("vtables_buckets.json"):
-            continue
-        with open(path) as fh:
+        with open(path, encoding="utf-8") as fh:
             for table in json.load(fh):
                 if not isinstance(table, dict):
                     continue
@@ -175,7 +169,7 @@ def load_types(program):
     the same fact the decompiler is using.
     """
     path = os.path.join(annotations_dir(program), "data_types", "data_types.json")
-    with open(path) as fh:
+    with open(path, encoding="utf-8") as fh:
         data = json.load(fh)
     base_of, names = {}, set()
     for kind in ("structs", "unions"):
@@ -274,6 +268,8 @@ def receiver_verdict(cls, actual, base_of, type_names, prefix=""):
     if bare == cls and is_pointer(actual):
         return prefix + "ok"
     if bare == cls:
+        # Right class, passed by value -- every class here is passed by
+        # pointer, so this is still wrong, just differently.
         return prefix + "wrong_nonclass"
     if bare in ancestors(cls, base_of):
         return prefix + "wrong_base"
@@ -327,20 +323,7 @@ def classify(func, base_of, type_names, effective=None):
         return ("no_params", cls, method, None)
 
     actual = param.get("type") or ""
-    bare = strip_ptr(actual)
-    if bare == cls and is_pointer(actual):
-        return ("ok", cls, method, actual)
-    if bare == cls:
-        # Right class, passed by value -- every class here is passed by
-        # pointer, so this is still wrong, just differently.
-        return ("wrong_nonclass", cls, method, actual)
-    if bare in ancestors(cls, base_of):
-        return ("wrong_base", cls, method, actual)
-    if cls in ancestors(bare, base_of):
-        return ("wrong_derived", cls, method, actual)
-    if bare in type_names:
-        return ("wrong_unrelated", cls, method, actual)
-    return ("wrong_nonclass", cls, method, actual)
+    return (receiver_verdict(cls, actual, base_of, type_names), cls, method, actual)
 
 
 # --------------------------------------------------------------------------
@@ -430,7 +413,7 @@ def run_name_core_compare(program, other, show):
 
 
 def run_mapping_check(mapping_path, show):
-    with open(mapping_path) as fh:
+    with open(mapping_path, encoding="utf-8") as fh:
         payload = json.load(fh)
     src_prog, dst_prog = payload.get("from"), payload.get("to")
     if not src_prog or not dst_prog:
@@ -471,7 +454,7 @@ def run_mapping_check(mapping_path, show):
 
 # --------------------------------------------------------------------------
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--program", default="nocturne.exe",
@@ -482,8 +465,9 @@ def main():
     ap.add_argument("--mapping",
                     help="mapping.json from map_sibling_functions.py; same "
                          "comparison but paired by address instead of by name")
+    # Only verdicts that are findings: an `ok` receiver is counted, never listed.
     ap.add_argument("--verdict", choices=("all", "applied", "unsigned")
-                    + ERROR_VERDICTS + UNSIGNED_BAD + ("ok", "unsigned_ok"),
+                    + ERROR_VERDICTS + UNSIGNED_BAD + ("thunk_unsigned",),
                     default="all",
                     help="list only this verdict; 'applied' = wrong applied "
                          "signatures, 'unsigned' = bad inferred receivers")
@@ -492,7 +476,7 @@ def main():
                          "Watcom iostream receivers are void* by design)")
     ap.add_argument("--show", type=int, default=20, help="examples to list (default: 20)")
     ap.add_argument("--out", help="write full findings as JSON")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
     funcs = load_functions(args.program)
     base_of, type_names = load_types(args.program)
@@ -599,7 +583,7 @@ def main():
     drift = run_mapping_check(args.mapping, args.show) if args.mapping else None
 
     if args.out:
-        with open(args.out, "w") as fh:
+        with open(args.out, "w", encoding="utf-8") as fh:
             json.dump({"program": args.program, "counts": dict(counts),
                        "receiver_findings": findings,
                        "name_core_drift": by_core,

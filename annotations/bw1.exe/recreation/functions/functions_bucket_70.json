@@ -5453,10 +5453,10 @@
       "00438560",
       "00537760"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":15,
-    "method":"FUN_00437270",
-    "name":"cockpit_ckptutil.c_FUN_00437270",
+    "method":"getColorConversionFunction",
+    "name":"cockpit_ckptutil.c_getColorConversionFunction_FUN_00437270",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -9583,14 +9583,40 @@
       "00401130",
       "00517f10"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":32,
-    "method":"FUN_00492970",
-    "name":"shape_edittool.cpp_FUN_00492970",
+    "method":"plotPixelWithClipping",
+    "name":"shape_edittool.cpp_plotPixelWithClipping_FUN_00492970",
+    "params":[
+      {
+        "name":"x_coord",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"y_coord",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"use_clipping",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
@@ -15374,14 +15400,25 @@
     "calls":[
       "00408bb0"
     ],
-    "conv":"unknown",
+    "cls":"CLever",
+    "conv":"__cdecl",
     "instructions":59,
-    "method":"FUN_004ff970",
-    "name":"core_lever.cpp_FUN_004ff970",
-    "receiver":false,
+    "method":"isAccessibleFrom",
+    "name":"core_lever.cpp_CLever_isAccessibleFrom_FUN_004ff970",
+    "params":[
+      {
+        "name":"world_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/lever.cpp",
@@ -16233,8 +16270,8 @@
     ],
     "conv":"__cdecl",
     "instructions":381,
-    "method":"FUN_0050b470",
-    "name":"core_menu.cpp_FUN_0050b470",
+    "method":"configureCustomKeys",
+    "name":"core_menu.cpp_configureCustomKeys_FUN_0050b470",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -16298,8 +16335,8 @@
     ],
     "conv":"__cdecl",
     "instructions":1133,
-    "method":"FUN_0050ba70",
-    "name":"core_menu.cpp_FUN_0050ba70",
+    "method":"configureSoundOptions",
+    "name":"core_menu.cpp_configureSoundOptions_FUN_0050ba70",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -18675,21 +18712,12 @@
       "005b5930",
       "005b6270"
     ],
+    "cls":"CPlatform",
     "conv":"__cdecl",
     "instructions":77,
-    "method":"FUN_0053aef0",
-    "name":"core_platfrm.cpp_FUN_0053aef0",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CPlatform",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"updateAttachedActors",
+    "name":"core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_0053aef0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -19209,14 +19237,15 @@
       "005b5080",
       "005b5930"
     ],
-    "conv":"unknown",
+    "cls":"CDemonSet",
+    "conv":"__cdecl",
     "instructions":263,
-    "method":"FUN_00551170",
-    "name":"core_set.cpp_FUN_00551170",
-    "receiver":false,
+    "method":"renderGogglesView",
+    "name":"core_set.cpp_CDemonSet_renderGogglesView_FUN_00551170",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/set.cpp",
@@ -23525,14 +23554,14 @@
       "005c04e0",
       "EXTERNAL:00000048"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":19,
-    "method":"FUN_005ad270",
-    "name":"wincore_wddvmem.cpp_FUN_005ad270",
+    "method":"restoreVideoAndMinimizeWindow",
+    "name":"wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_005ad270",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"wincore/wddvmem.cpp",
@@ -23792,8 +23821,8 @@
     ],
     "conv":"__cdecl",
     "instructions":57,
-    "method":"FUN_005b2cf0",
-    "name":"wincore_winrun.cpp_FUN_005b2cf0",
+    "method":"processWindowMessages",
+    "name":"wincore_winrun.cpp_processWindowMessages_FUN_005b2cf0",
     "receiver":false,
     "ret":{
       "kind":"builtin",

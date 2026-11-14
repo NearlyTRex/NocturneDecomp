@@ -50,7 +50,7 @@
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0046d460
 ;   engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0046d3d0
-;   engine_special.cpp_FUN_005632a3
+;   engine_special.cpp_transformAndProjectPoint_FUN_005632a3
 ;
 ; *****************************************************************************
 
@@ -114,8 +114,8 @@ section .text
     LEA EAX,[EBP + -0x38]               ; 00454157
     PUSH EAX                            ; 0045415a
     PUSH EDI                            ; 0045415b
-    CALL engine_special.cpp_FUN_005632a3 ; 0045415c
-        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005632a3 ; 0045415c
+        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
     MOV DH,byte ptr [EDI + 0x13]        ; 00454161
     ADD ESP,0x8                         ; 00454164
     TEST DH,0x80                        ; 00454167

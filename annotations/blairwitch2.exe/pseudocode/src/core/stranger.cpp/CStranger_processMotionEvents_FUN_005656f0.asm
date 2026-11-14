@@ -63,10 +63,10 @@
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042aa00
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004c9850
+;   core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004cff90
+;   core_hero.cpp_CHero_executeObjectPickup_FUN_004cff50
 ;   core_hero.cpp_CHero_toggleLeverNow_FUN_004cf440
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004cf230
-;   core_hero.cpp_FUN_004cff50
-;   core_hero.cpp_FUN_004cff90
 ;   core_motion.cpp_CMotionController_advance_FUN_005030c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   core_motion.cpp_FUN_005038a0
@@ -301,8 +301,8 @@ section .text
     PUSH 0x1                            ; 00565980
         ;   Label: LAB_00565980
     PUSH EBX                            ; 00565982
-    CALL core_hero.cpp_FUN_004cff50     ; 00565983
-        ;   XREF to: 004cff50 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004cff50(CHero * this_ptr, int hand_index)
+    CALL core_hero.cpp_CHero_executeObjectPickup_FUN_004cff50 ; 00565983
+        ;   XREF to: 004cff50 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_executeObjectPickup_FUN_004cff50(CHero * this_ptr, int hand_index)
     ADD ESP,0x8                         ; 00565988
     JMP 0x00565806                      ; 0056598b
         ;   XREF to: 00565806 (UNCONDITIONAL_JUMP)  ; LAB_00565806
@@ -330,8 +330,8 @@ section .text
     PUSH 0x1                            ; 005659dc
         ;   Label: LAB_005659dc
     PUSH EBX                            ; 005659de
-    CALL core_hero.cpp_FUN_004cff90     ; 005659df
-        ;   XREF to: 004cff90 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004cff90()
+    CALL core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004cff90 ; 005659df
+        ;   XREF to: 004cff90 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004cff90(CHero * this_ptr, int hand_index)
     MOV EDI,dword ptr [EBX + 0x256a4]   ; 005659e4
     ADD ESP,0x8                         ; 005659ea
     CMP EDI,0x1                         ; 005659ed

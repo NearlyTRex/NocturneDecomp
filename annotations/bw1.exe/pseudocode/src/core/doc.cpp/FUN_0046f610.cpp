@@ -35,7 +35,7 @@ void core_doc_cpp_FUN_0046f610(int param_1,int param_2)
       pfVar3 = pfVar3 + (uint)bVar5 * -2 + 1;
       pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
     }
-    core_xform_cpp_FUN_005b5760
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
               (&local_98,(CVector3f *)(param_1 + 0x20),(CVector3f *)(param_1 + 0x30));
     core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&local_c8,&local_98,&local_68);
     pCVar4 = &local_68;

@@ -13,7 +13,7 @@ void __cdecl engine_mini3d_cpp_swapBuffers_FUN_00511100(void)
 {
   if (_DAT_01c50948 != 0) {
     engine_special_cpp_presentToExternalRenderer_FUN_00582990(1);
-    wincore_winrun_cpp_FUN_005b2cf0();
+    wincore_winrun_cpp_processWindowMessages_FUN_005b2cf0();
     _DAT_01d25f34 = _DAT_00603c94;
     return;
   }

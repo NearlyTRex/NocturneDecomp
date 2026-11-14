@@ -57,9 +57,9 @@ void __cdecl CCharacter::applyDamage(CCharacter *this_ptr,int damage_type,float 
 // Address: 00423a10
 void FUN_00423a10(int param_1,float param_2);
 
-// Original: core_charactr.cpp_FUN_00423a60
+// Original: core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60
 // Address: 00423a60
-void __cdecl FUN_00423a60(CCharacter *this_ptr,CVector3f *velocity);
+void __cdecl CCharacter::moveAndCollide(CCharacter *this_ptr,CVector3f *velocity);
 
 // Original: core_charactr.cpp_CCharacter_isOnGround_FUN_00424430
 // Address: 00424430
@@ -93,9 +93,9 @@ void FUN_00424b90(int param_1,undefined4 param_2,undefined4 param_3);
 // Address: 00424bd0
 void __cdecl CCharacter::renderCharacter(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_00424c80
+// Original: core_charactr.cpp_CCharacter_renderCollision_FUN_00424c80
 // Address: 00424c80
-void __cdecl FUN_00424c80(CCharacter *this_ptr);
+void __cdecl CCharacter::renderCollision(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_renderOpaque_FUN_004254b0
 // Address: 004254b0

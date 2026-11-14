@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   description
 ;
 ; XREF[1]:
-;   core_menu.cpp_FUN_004eed60 at 004efebf
+;   core_menu.cpp_configureCustomKeyBindings_FUN_004eed60 at 004efebf
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01cb6900

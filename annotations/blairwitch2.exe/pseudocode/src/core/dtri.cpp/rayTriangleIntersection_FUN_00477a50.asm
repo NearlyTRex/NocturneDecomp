@@ -26,7 +26,7 @@
 ;
 ; XREF[6]:
 ;   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_0044f020 at 0044f24a
-;   core_dtri.cpp_FUN_00478550 at 00478773
+;   core_dtri.cpp_rayTriangleFloorTest_FUN_00478550 at 00478773
 ;   core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_004e5970 at 004e5a23
 ;   core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_00543a40 at 00543bb8
 ;   core_stairs.cpp_CStairs_customRayIntersect_FUN_005620b0 at 005620fb

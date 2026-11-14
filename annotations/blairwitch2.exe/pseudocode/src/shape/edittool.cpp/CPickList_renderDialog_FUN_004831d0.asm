@@ -51,11 +51,11 @@
 ;   shape_edittool.cpp_calculateButtonHeight_FUN_00485380
 ;   shape_edittool.cpp_calculateGridHeight_FUN_00484df0
 ;   shape_edittool.cpp_CEdButton_paint_FUN_00484f20
+;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210
 ;   shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_0047eff0
 ;   shape_edittool.cpp_CEdScrollBar_render_FUN_00484440
 ;   shape_edittool.cpp_CPickList_isItemEnabled_FUN_00483aa0
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_00481240
-;   shape_edittool.cpp_FUN_0047a590
 ;   ... and 2 more
 ;
 ; *****************************************************************************
@@ -357,8 +357,8 @@ section .text
     PUSH ESI                            ; 004835d6
     MOV EDI,dword ptr [ESP + 0x14c]     ; 004835d7
     PUSH EDI                            ; 004835de
-    CALL shape_edittool.cpp_FUN_0047a590 ; 004835df
-        ;   XREF to: 0047a590 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047a590()
+    CALL shape_edittool.cpp_drawDashedLine_FUN_0047a590 ; 004835df
+        ;   XREF to: 0047a590 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_drawDashedLine_FUN_0047a590(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 004835e4
     MOV EAX,dword ptr [ESP + 0x140]     ; 004835e7
         ;   Label: LAB_004835e7
@@ -527,8 +527,8 @@ section .text
         ;   Label: LAB_004837ca
     MOV ESI,dword ptr [0x006138e0]      ; 004837cb | g_CEditorToolsPtr
     PUSH ESI                            ; 004837d1
-    CALL shape_edittool.cpp_FUN_0047f210 ; 004837d2
-        ;   XREF to: 0047f210 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047f210()
+    CALL shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210 ; 004837d2
+        ;   XREF to: 0047f210 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210(CEditorTools * this_ptr, int use_clipping)
     ADD ESP,0x8                         ; 004837d7
     ADD ESP,0x154                       ; 004837da
     POP EBP                             ; 004837e0

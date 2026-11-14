@@ -20,7 +20,7 @@
 ;   shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_004867c0
 ;   shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_00486780
 ;   shape_edittool.cpp_CEdCheck_calculateSpacing_FUN_004867f0
-;   shape_edittool.cpp_FUN_004850a0
+;   shape_edittool.cpp_draw3DBorder_FUN_004850a0
 ;
 ; *****************************************************************************
 
@@ -99,8 +99,8 @@ section .text
     PUSH EBP                            ; 004868b3
     PUSH ESI                            ; 004868b4
     PUSH EDI                            ; 004868b5
-    CALL shape_edittool.cpp_FUN_004850a0 ; 004868b6
-        ;   XREF to: 004850a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004850a0()
+    CALL shape_edittool.cpp_draw3DBorder_FUN_004850a0 ; 004868b6
+        ;   XREF to: 004850a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_004850a0(int left, int top, int right, int bottom, ...)
     MOV EDX,dword ptr [EBX + 0x20]      ; 004868bb
     ADD ESP,0x14                        ; 004868be
     TEST EDX,EDX                        ; 004868c1

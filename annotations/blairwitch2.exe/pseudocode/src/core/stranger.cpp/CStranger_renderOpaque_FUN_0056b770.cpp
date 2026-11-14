@@ -166,7 +166,7 @@ LAB_0056ba07:
       afStack_5c[(uint)bVar6 * -2] = afStack_5c[(uint)bVar6 * -2 + 0xc];
       afStack_5c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
            afStack_5c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0xd];
-      core_xform_cpp_FUN_00591c10(pCVar4,pfVar5,puVar8);
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10(pCVar4,pfVar5,puVar8);
       core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
                 (&CStack_18c,pCStack_20 + _DAT_0264be30,&CStack_1bc);
       pCVar4 = &CStack_1bc;
@@ -183,7 +183,8 @@ LAB_0056ba07:
       afStack_9c[2] = 0.130713;
       afStack_9c[0] = 0.512623;
       afStack_9c[1] = -0.0202601;
-      core_xform_cpp_FUN_00591c10(&CStack_fc,afStack_b0 + 5,pfVar5);
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
+                (&CStack_fc,afStack_b0 + 5,pfVar5);
       core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
                 (&CStack_fc,pCStack_20 + _DAT_0264be68,&CStack_12c);
       pCVar4 = &CStack_12c;

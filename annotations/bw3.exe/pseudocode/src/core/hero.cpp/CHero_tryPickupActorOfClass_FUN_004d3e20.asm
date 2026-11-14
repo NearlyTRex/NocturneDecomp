@@ -31,7 +31,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_actor.cpp_isOfClass_FUN_0040c790
 ;   core_game.cpp_CGame_displayMessage_FUN_004b46b0
-;   core_inv.cpp_FUN_004da880
+;   core_inv.cpp_CInventory_addItem_FUN_004da880
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;
 ; *****************************************************************************
@@ -209,8 +209,8 @@ section .text
     PUSH EBX                            ; 004d400e
     LEA EAX,[ESI + 0x206e8]             ; 004d400f
     PUSH EAX                            ; 004d4015
-    CALL core_inv.cpp_FUN_004da880      ; 004d4016
-        ;   XREF to: 004da880 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004da880(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004da880 ; 004d4016
+        ;   XREF to: 004da880 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004da880(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     JMP 0x004d3fb8                      ; 004d401b
         ;   XREF to: 004d3fb8 (UNCONDITIONAL_JUMP)  ; LAB_004d3fb8
     PUSH 0x5c4e3f                       ; 004d401d | = "Already have max mana!"

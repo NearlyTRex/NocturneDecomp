@@ -580,7 +580,7 @@ void core_doc_cpp_FUN_00450c60(CHero *param_1,float param_2)
                                 (&(param_1->base).model.base,iVar22,1);
                     }
                     if ((param_1->player_input).action_state.use_item != 0) {
-                      core_hero_cpp_FUN_004cfc80();
+                      core_hero_cpp_CHero_tryUseSelectedItem_FUN_004cfc80(param_1);
                     }
                     if (((param_1->player_input).drop_item != 0) &&
                        (ABS(param_1[1].base.model.bone_origins[8].y) == 0.0)) {
@@ -1022,7 +1022,7 @@ switchD_0045277b_caseD_6:
                     core_actor_cpp_castToClassHash_FUN_0040c8f0
                               (param_1->object_to_pick_up,g_CAmmoBoxClassInfo.name_hash),
      this_ptr_01 != (CAmmoBox *)0x0)) {
-    local_14 = core_motion_cpp_FUN_00503e60(&pCVar3->base);
+    local_14 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00503e60(&pCVar3->base);
     core_ammobox_cpp_CAmmoBox_openBox_FUN_0040e600(this_ptr_01,local_14);
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_00424470(&param_1->base);
@@ -1226,7 +1226,7 @@ LAB_00452acb:
     local_3f4.y = local_3f4.y + local_144;
     local_3f4.z = local_3f4.z + local_140;
     param_1[1].base.base.particle_systems[0].owner = (CDemonActor *)(param_1->base).velocity.y;
-    core_charactr_cpp_FUN_00423a60(&param_1->base,pCVar37);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_00423a60(&param_1->base,pCVar37);
     if ((param_1->base).base.location.position.y <
         (param_1->base).closest_distance_threshold + (float)_DAT_005cffdf) {
       (param_1->base).is_on_ground = 1;
@@ -1533,7 +1533,9 @@ LAB_004514a7:
     core_hero_cpp_CHero_stopPushingBox_FUN_004cf830(param_1);
   }
   else {
-    local_28 = (CCharacter_full_vtable *)core_motion_cpp_FUN_00503e60(&(param_1->base).model.base);
+    local_28 = (CCharacter_full_vtable *)
+               core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00503e60
+                         (&(param_1->base).model.base);
     if ((1.0 < (float)local_28) &&
        (local_1c = (CBoxActor *)
                    core_actor_cpp_castToClassHash_FUN_0040c8f0

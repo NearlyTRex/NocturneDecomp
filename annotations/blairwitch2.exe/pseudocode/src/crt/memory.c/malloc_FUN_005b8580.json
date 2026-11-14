@@ -14,18 +14,6 @@
   },
   "cross_references": [
     {
-      "addr": "0042c520",
-      "from_addr": "0042c5d5",
-      "name": "cockpit_ckptutil.c_FUN_0042c520",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0042dec0",
-      "from_addr": "0042e034",
-      "name": "cockpit_ckptutil.c_FUN_0042dec0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0042f330",
       "from_addr": "0042f432",
       "name": "cockpit_ckptutil.c_FUN_0042f330",
@@ -35,6 +23,18 @@
       "addr": "0042f4f0",
       "from_addr": "0042f51f",
       "name": "cockpit_ckptutil.c_FUN_0042f4f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042dec0",
+      "from_addr": "0042e034",
+      "name": "cockpit_ckptutil.c_loadEdgeListFile_FUN_0042dec0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042c520",
+      "from_addr": "0042c5d5",
+      "name": "cockpit_ckptutil.c_readBitmapFile_FUN_0042c520",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -136,7 +136,7 @@
     {
       "addr": "00502820",
       "from_addr": "00502a26",
-      "name": "core_motion.cpp_FUN_00502820",
+      "name": "core_motion.cpp_CMotionList_load_FUN_00502820",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -274,7 +274,7 @@
     {
       "addr": "005011a0",
       "from_addr": "005011d0",
-      "name": "engine_model.c_FUN_005011a0",
+      "name": "engine_model.c_loadModelChunk_FUN_005011a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -443,7 +443,7 @@
       {
         "call_addr": "0042c5d5",
         "call_type": "direct",
-        "caller": "cockpit_ckptutil.c_FUN_0042c520",
+        "caller": "cockpit_ckptutil.c_readBitmapFile_FUN_0042c520",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

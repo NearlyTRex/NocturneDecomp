@@ -12,7 +12,7 @@
 ;   undefined4 DAT_01c6b5b0
 ;
 ; Called Functions:
-;   cockpit_ckptutil.c_FUN_00434e80
+;   cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80
 ;
 ; *****************************************************************************
 
@@ -55,8 +55,8 @@ section .text
     ADD ECX,EAX                         ; 004355a5
     MOV EBP,dword ptr [ESP + 0x64]      ; 004355a7
     MOV dword ptr [ESP + 0x48],ECX      ; 004355ab
-    CALL cockpit_ckptutil.c_FUN_00434e80 ; 004355af
-        ;   XREF to: 00434e80 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_00434e80()
+    CALL cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80 ; 004355af
+        ;   XREF to: 00434e80 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_getColorConversionFunction_FUN_00434e80()
     MOV dword ptr [ESP + 0x30],EAX      ; 004355b4
     MOV EAX,EBP                         ; 004355b8
     SHL EAX,0x5                         ; 004355ba

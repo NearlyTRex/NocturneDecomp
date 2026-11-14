@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_0052f2a0 at 0052fa57
+;   core_set.cpp_CDemonSet_renderScene_FUN_0052f2a0 at 0052fa57
 ;
 ; *****************************************************************************
 

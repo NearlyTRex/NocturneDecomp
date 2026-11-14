@@ -14,7 +14,7 @@
 ;   core_game.cpp_CGame_rollCredits_FUN_004d8e50 at 004d8fda
 ;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004d027e
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004cf530 at 004cf571
-;   core_game.cpp_FUN_004ce580 at 004ce669
+;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004d77d0 at 004d7999
 ;   ... and 16 more
 ;
 ; Referenced Globals:

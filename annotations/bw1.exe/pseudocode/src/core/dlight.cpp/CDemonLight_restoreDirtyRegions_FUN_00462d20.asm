@@ -17,8 +17,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   core_set.cpp_CDemonSet_renderScene_FUN_00550580 at 0055086a
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0 at 0054f136
-;   core_set.cpp_FUN_00550580 at 0055086a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dlight_cpp_005d9114

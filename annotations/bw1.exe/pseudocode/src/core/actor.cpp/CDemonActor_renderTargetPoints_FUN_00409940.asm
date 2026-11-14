@@ -19,7 +19,7 @@
 ; Called Functions:
 ;   crt_memory.c___arrinit_FUN_005c0357
 ;   engine_2d.c_plotPixel_FUN_00401130
-;   engine_special.cpp_FUN_00580173
+;   engine_special.cpp_transformAndProjectPoint_FUN_00580173
 ;
 ; *****************************************************************************
 
@@ -72,8 +72,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 004099c5 | DAT_01bc120c
     ADD EAX,0xea5d0                     ; 004099c7
     PUSH EAX                            ; 004099cc
-    CALL engine_special.cpp_FUN_00580173 ; 004099cd
-        ;   XREF to: 00580173 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_00580173(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_00580173 ; 004099cd
+        ;   XREF to: 00580173 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_00580173(SProjectedVertex * output, CVector3i * input)
     MOV ESI,dword ptr [0x0061255c]      ; 004099d2 | DAT_0061255c
     MOV ESI,dword ptr [ESI]             ; 004099d8 | DAT_01bc120c
     MOV AH,byte ptr [ESI + 0xea5e3]     ; 004099da

@@ -9,9 +9,9 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[3]:
-;   core_menu.cpp_FUN_004ed260 at 004edb4a
-;   core_menu.cpp_FUN_004ee1a0 at 004ee34d
+;   core_menu.cpp_configureSoundOptions_FUN_004ed260 at 004edb4a
 ;   core_menu.cpp_showMainGameMenu_FUN_004ee3f0 at 004ee732
+;   core_menu.cpp_showOptionsScreen_FUN_004ee1a0 at 004ee34d
 ;
 ; Referenced Globals:
 ;   undefined4 s_XBLAIRMENU_wav_005ea903+1

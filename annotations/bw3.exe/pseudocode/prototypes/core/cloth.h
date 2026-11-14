@@ -25,9 +25,9 @@ void __cdecl CCloth::free(CCloth *this_ptr);
 // Address: 0043c330
 int __cdecl CCloth::load(CCloth *this_ptr,char *filename);
 
-// Original: core_cloth.cpp_FUN_0043c8a0
+// Original: core_cloth.cpp_CCloth_initializeConnections_FUN_0043c8a0
 // Address: 0043c8a0
-void __cdecl FUN_0043c8a0(CCloth *this_ptr);
+void __cdecl CCloth::initializeConnections(CCloth *this_ptr);
 
 // Original: core_cloth.cpp_FUN_0043cb00
 // Address: 0043cb00

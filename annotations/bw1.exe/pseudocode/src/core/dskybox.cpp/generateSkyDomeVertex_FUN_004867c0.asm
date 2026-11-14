@@ -37,7 +37,7 @@
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005c03a0
-;   engine_special.cpp_FUN_00580173
+;   engine_special.cpp_transformAndProjectPoint_FUN_00580173
 ;
 ; *****************************************************************************
 
@@ -128,8 +128,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 004868a9
     ADD EAX,ESI                         ; 004868ab
     PUSH EAX                            ; 004868ad
-    CALL engine_special.cpp_FUN_00580173 ; 004868ae
-        ;   XREF to: 00580173 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_00580173(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_00580173 ; 004868ae
+        ;   XREF to: 00580173 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_00580173(SProjectedVertex * output, CVector3i * input)
     MOV EAX,dword ptr [EDI]             ; 004868b3
     MOV dword ptr [ESI + 0x629034],EAX  ; 004868b5 | DAT_00629034
     MOV dword ptr [ESI + 0x629038],EAX  ; 004868bb | DAT_00629038

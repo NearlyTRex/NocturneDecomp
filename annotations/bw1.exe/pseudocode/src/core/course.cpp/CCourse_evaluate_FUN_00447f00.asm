@@ -27,7 +27,7 @@
 ;   core_vehicle.cpp_CVehicle_process_FUN_005a7b50 at 005a7ba7
 ;
 ; Called Functions:
-;   core_course.cpp_FUN_00447fb0
+;   core_course.cpp_CCourse_interpolate_FUN_00447fb0
 ;   core_xform.cpp_matrixToEulerAngles_FUN_005b5930
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_005b7560
 ;
@@ -48,8 +48,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0xa0]      ; 00447f1d
     PUSH dword ptr [ESP + 0xa4]         ; 00447f24
     PUSH ECX                            ; 00447f2b
-    CALL core_course.cpp_FUN_00447fb0   ; 00447f2c
-        ;   XREF to: 00447fb0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_FUN_00447fb0(CCourse * this_ptr, float time, CVector3f * out_pos, CQuaternion4f * out_orient)
+    CALL core_course.cpp_CCourse_interpolate_FUN_00447fb0 ; 00447f2c
+        ;   XREF to: 00447fb0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_interpolate_FUN_00447fb0(CCourse * this_ptr, float time, CVector3f * out_pos, CQuaternion4f * out_orient)
     ADD ESP,0x10                        ; 00447f31
     LEA EAX,[ESP + 0x60]                ; 00447f34
     PUSH EAX                            ; 00447f38

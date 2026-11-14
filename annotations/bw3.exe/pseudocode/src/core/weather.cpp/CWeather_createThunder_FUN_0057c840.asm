@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   core_weather.cpp_FUN_0057bda0 at 0057c19d
+;   core_weather.cpp_CWeather_update_FUN_0057bda0 at 0057c19d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_thndr_wav_005d797b

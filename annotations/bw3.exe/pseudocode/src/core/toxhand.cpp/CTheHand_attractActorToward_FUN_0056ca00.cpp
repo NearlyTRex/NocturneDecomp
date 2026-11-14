@@ -46,7 +46,7 @@ int __cdecl core_toxhand_cpp_CTheHand_attractActorToward_FUN_0056ca00(CTheHand *
     pfVar3 = pfVar3 + (uint)bVar7 * -2 + 1;
     pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
   }
-  core_xform_cpp_FUN_00583940
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
             (&CStack_154,&(this_ptr->base).base.base.location,&(this_ptr->base).base.base.orient);
   pCVar5 = &CStack_154;
   core_toxhand_cpp_FUN_0056cbd0(this_ptr);

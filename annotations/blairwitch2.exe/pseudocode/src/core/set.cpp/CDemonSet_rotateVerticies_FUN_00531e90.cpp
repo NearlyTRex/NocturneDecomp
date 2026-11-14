@@ -26,7 +26,8 @@ void __cdecl core_set_cpp_CDemonSet_rotateVerticies_FUN_00531e90(CDemonSet *this
   output = DAT_0060b280->vertex_buffer_ptr;
   if (0 < vertex_count) {
     do {
-      engine_special_cpp_FUN_0055d723(&output->projected_vertex,input_vertices);
+      engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+                (&output->projected_vertex,input_vertices);
       if ((int)((output->projected_vertex).screen_x & -0x80000000) == 0) {
         local_14 = local_14 + 1;
       }

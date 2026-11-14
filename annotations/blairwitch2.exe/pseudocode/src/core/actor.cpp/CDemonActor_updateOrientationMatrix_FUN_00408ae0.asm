@@ -18,7 +18,7 @@
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041c090 at 0041c368
 ;   core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_0041ce90 at 0041ceca
 ;   core_bride.cpp_CBride_process_FUN_0041dbe0 at 0041e613
-;   core_charactr.cpp_CCharacter_setOrientation_FUN_00429d60 at 00429dc6
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60 at 00424102
 ;   ... and 29 more
 ;
 ; Called Functions:

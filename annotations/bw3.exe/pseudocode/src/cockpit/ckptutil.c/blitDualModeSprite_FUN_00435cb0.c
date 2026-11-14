@@ -26,7 +26,7 @@ void __cdecl cockpit_ckptutil_c_blitDualModeSprite_FUN_00435cb0(void *sprite_dat
   
   iVar4 = _DAT_01c5faf0 - _DAT_01c5faec;
   if (sprite_data != (void *)0x0) {
-    pcVar5 = (code *)cockpit_ckptutil_c_FUN_00434e80();
+    pcVar5 = (code *)cockpit_ckptutil_c_getColorConversionFunction_FUN_00434e80();
     if (DAT_005fba20 == 8) {
       iStack_18 = dest_x + *(int *)(&DAT_01c5faec + dest_y * 4);
       if (0 < height) {

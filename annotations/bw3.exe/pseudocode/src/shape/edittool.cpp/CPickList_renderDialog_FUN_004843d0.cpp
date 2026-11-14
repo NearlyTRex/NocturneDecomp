@@ -36,7 +36,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004843d0(CPickList *t
   int local_18;
   int *local_14;
   
-  shape_edittool_cpp_FUN_0047fa80(g_CEditorToolsPtr);
+  shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80(g_CEditorToolsPtr);
   shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_00480200(g_CEditorToolsPtr,1);
   local_28 = _DAT_01c6b5a8;
   local_24 = this_ptr->scroll_top;
@@ -78,7 +78,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004843d0(CPickList *t
                 uVar10 = _DAT_01c6b5c0;
               }
               _DAT_01c6b5c0 = uVar10;
-              shape_edittool_cpp_FUN_0047b5e0(local_28,local_1c,iVar9,iVar8,1);
+              shape_edittool_cpp_drawDashedLine_FUN_0047b5e0(local_28,local_1c,iVar9,iVar8,1);
             }
           }
           local_18 = 0;

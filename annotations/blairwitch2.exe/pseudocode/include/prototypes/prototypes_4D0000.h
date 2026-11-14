@@ -115,8 +115,8 @@ CDemonActorType * __cdecl core_icepick_cpp_CIcePick_getActorType_FUN_004d4980(CI
 CIcePick * __cdecl core_icepick_cpp_CIcePick_ctor_FUN_004d4990(CIcePick *this_ptr);
 void __cdecl core_icepick_cpp_CIcePick_setup_FUN_004d4a20(CIcePick *this_ptr);
 void __cdecl core_icepick_cpp_CIcePick_process_FUN_004d4c50(CIcePick *this_ptr,float delta_time);
-void __cdecl core_icepick_cpp_FUN_004d5470(CIcePick *this_ptr,float delta_time);
-int __cdecl core_icepick_cpp_FUN_004d55e0(CIcePick *this_ptr);
+void __cdecl core_icepick_cpp_CIcePick_updateShootBlend_FUN_004d5470(CIcePick *this_ptr,float delta_time);
+int __cdecl core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004d55e0(CIcePick *this_ptr);
 int __cdecl core_icepick_cpp_FUN_004d5780(CIcePick *this_ptr);
 CMatrix3x4f * __stack2_esi core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004d57e0(CIcePick *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 void __cdecl core_icepick_cpp_CIcePick_processAI_FUN_004d5950(CIcePick *this_ptr,float delta_time);
@@ -149,7 +149,7 @@ int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004d8530(CIni *this_ptr,c
 void __cdecl engine_ini_cpp_getProfileString_FUN_004d8800(char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename);
 int __cdecl engine_ini_cpp_getProfileInteger_FUN_004d8840(char *section,char *key,int default_value,char *filename);
 void __cdecl engine_ini_cpp_writeProfileString_FUN_004d88e0(char *section,char *key,char *value,char *filename);
-CIniFile * __cdecl engine_ini_cpp_FUN_004d8910(CIniFile *this_ptr,char *filename,char *section);
+CIniFile * __cdecl engine_ini_cpp_CIniFile_ctor_FUN_004d8910(CIniFile *this_ptr,char *filename,char *section);
 CIniFile * __cdecl engine_ini_cpp_CIniFile_dtor_FUN_004d8940(CIniFile *this_ptr,uint flags);
 void __cdecl engine_ini_cpp_initIniFile_FUN_004d8990(char *dest,char *source);
 void __cdecl engine_ini_cpp_CIniFile_readIniHeader_FUN_004d89d0(CIniFile *this_ptr,char *section);
@@ -157,7 +157,7 @@ void __cdecl engine_ini_cpp_CIniFile_getString_FUN_004d8a10(CIniFile *this_ptr,c
 void __cdecl engine_ini_cpp_CIniFile_setString_FUN_004d8aa0(CIniFile *this_ptr,char *key,char *value);
 void engine_ini_cpp_FUN_004d8b20(int param_1,undefined4 param_2);
 void engine_ini_cpp_FUN_004d8b80(int param_1,undefined4 param_2);
-void engine_ini_cpp_FUN_004d8bc0(int param_1,undefined4 param_2);
+void __cdecl engine_ini_cpp_CIniFile_getFloat_FUN_004d8bc0(CIniFile *this_ptr,char *key,float *output);
 void engine_ini_cpp_FUN_004d8c30(int param_1,undefined4 param_2);
 void engine_ini_cpp_FUN_004d8c80(void);
 void engine_ini_cpp_FUN_004d8cf0(int param_1,undefined4 param_2);

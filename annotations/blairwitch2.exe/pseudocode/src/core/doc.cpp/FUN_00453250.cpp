@@ -182,7 +182,7 @@ LAB_00453522:
                   if (uVar2 == 0) goto LAB_00453522;
 LAB_004535e0:
                   if (param_1[1].base.base.health != 0) {
-                    core_hero_cpp_FUN_004cff50(param_1,1);
+                    core_hero_cpp_CHero_executeObjectPickup_FUN_004cff50(param_1,1);
                     goto LAB_00453374;
                   }
                 }
@@ -192,8 +192,8 @@ LAB_004535e0:
                   param_1[1].base.base.health = 0;
                 }
                 if (pCVar7 != (CDemonActor *)0x0) {
-                  core_hero_cpp_FUN_004cff50(param_1,1);
-                  core_hero_cpp_FUN_004cff90();
+                  core_hero_cpp_CHero_executeObjectPickup_FUN_004cff50(param_1,1);
+                  core_hero_cpp_CHero_addCarriedItemToInventory_FUN_004cff90(param_1,1);
                   core_inv_cpp_CInventory_selectWeapon_FUN_004db9d0
                             ((CInventory *)local_28,pCVar7,5,1);
                   pCVar11 = param_1 + 1;
@@ -207,7 +207,7 @@ LAB_004535e0:
                   goto LAB_00453374;
                 }
               }
-              core_hero_cpp_FUN_004cff50(param_1,1);
+              core_hero_cpp_CHero_executeObjectPickup_FUN_004cff50(param_1,1);
             }
           }
         }
@@ -339,7 +339,7 @@ LAB_004533c6:
               (CDemonActor *)param_1[1].base.base.orient_matrix.m[2].y) {
             param_1[1].base.base.orient_matrix.m[2].y = 0.0;
           }
-          core_hero_cpp_FUN_004cff90(param_1,1);
+          core_hero_cpp_CHero_addCarriedItemToInventory_FUN_004cff90(param_1,1);
           if (param_1[1].base.base.health == 1) {
             param_1[1].base.base.health = 0;
           }

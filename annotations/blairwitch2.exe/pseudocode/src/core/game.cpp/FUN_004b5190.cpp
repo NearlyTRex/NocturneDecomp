@@ -75,7 +75,7 @@ void core_game_cpp_FUN_004b5190(CGame *param_1)
     }
     if (((g_CFieldNotesPtr->is_displayed == 0) && (param_1->goggles_active == 0)) &&
        (_DAT_026677e0 == (int *)0x0)) {
-      core_set_cpp_FUN_0052f2a0(g_CDemonSetPtr,1);
+      core_set_cpp_CDemonSet_renderScene_FUN_0052f2a0(g_CDemonSetPtr,1);
     }
     if (_DAT_026677e0 != (int *)0x0) {
       (**(code **)(*_DAT_026677e0 + 0x1c))(_DAT_026677e0);
@@ -99,7 +99,7 @@ void core_game_cpp_FUN_004b5190(CGame *param_1)
         local_b4.orientation.vec.y = *(float *)(iVar2 + 0x34);
         local_b4.orientation.vec.z = *(float *)(iVar2 + 0x38);
       }
-      core_slew_cpp_FUN_005493d0(&local_b4);
+      core_slew_cpp_CSlew_processInput_FUN_005493d0(&local_b4);
       iVar2 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
       (**(code **)(*(int *)(iVar2 + 0x2b0) + 0x70))(iVar2,&local_b4,&local_b4.orientation);
       if ((DAT_01c2a384 & 1) != 0) {
@@ -138,7 +138,7 @@ void core_game_cpp_FUN_004b5190(CGame *param_1)
       ;
     }
     if (param_1->skip_frame_render == 0) {
-      engine_special_cpp_FUN_0055f500();
+      engine_special_cpp_lockFrame_FUN_0055f500();
       if (g_CFieldNotesPtr->is_displayed == 0) {
         if (_DAT_026677e0 == (int *)0x0) {
           if (param_1->goggles_active == 0) {
@@ -256,7 +256,7 @@ void core_game_cpp_FUN_004b5190(CGame *param_1)
       }
       core_script_cpp_CScript_renderSubtitles_FUN_005218a0(g_CScriptPtr);
       core_game_cpp_CGame_renderOverlay_FUN_004b32c0(param_1);
-      core_game_cpp_FUN_004bb3d0(param_1);
+      core_game_cpp_CGame_renderIrisFade_FUN_004bb3d0(param_1);
       if (param_1->camera_debug_enabled == 0) {
         _DAT_01cb1110 = 0.0;
         _DAT_01cb1118 = 0;
@@ -352,7 +352,7 @@ void core_game_cpp_FUN_004b5190(CGame *param_1)
         shape_edittool_cpp_CPickList_renderDialog_FUN_004831d0(&g_CPickList);
       }
       if ((param_1->is_paused != 0) || (param_1->game_control == CONTROL_MODE_POINT_AND_CLICK)) {
-        shape_edittool_cpp_FUN_0047f210(g_CEditorToolsPtr,0);
+        shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_0047f210(g_CEditorToolsPtr,0);
       }
       engine_special_cpp_unlockFrame_FUN_0055f550(0);
     }

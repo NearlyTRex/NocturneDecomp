@@ -41,7 +41,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCoronaTextured_FUN_0045ec60(CDemo
     CStack_1c.x = (int)ROUND(fStack_28 * _DAT_005fe9d0);
     CStack_1c.y = (int)ROUND(fStack_24 * _DAT_005fe9d0);
     CStack_1c.z = (int)ROUND(fStack_20 * _DAT_005fe9d0);
-    engine_special_cpp_FUN_00580173
+    engine_special_cpp_transformAndProjectPoint_FUN_00580173
               ((SProjectedVertex *)
                ((int)&(0x01BC120C->vertex_buffer_ptr->projected_vertex).transformed_x + iVar2),
                &CStack_1c);

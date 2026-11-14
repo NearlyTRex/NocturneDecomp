@@ -13,8 +13,8 @@
 ;
 ; XREF[4]:
 ;   shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0 at 00483412
-;   shape_edittool.cpp_FUN_0047c0f0 at 0047c6db
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800 at 0047ba5d
+;   shape_edittool.cpp_showMultiChoiceDialog_FUN_0047c0f0 at 0047c6db
 ;   shape_edittool.cpp_showTextInputDialog_FUN_0047b1f0 at 0047b403
 ;
 ; Referenced Globals:
@@ -38,8 +38,8 @@
 ;   engine_font.cpp_FUN_004a8df0
 ;   engine_mini3d.cpp_drawHLine_FUN_004f9390
 ;   engine_mini3d.cpp_setColor_FUN_004f8e20
-;   shape_edittool.cpp_FUN_0047a590
-;   shape_edittool.cpp_FUN_00483ea0
+;   shape_edittool.cpp_draw3DBorder_FUN_00483ea0
+;   shape_edittool.cpp_drawDashedLine_FUN_0047a590
 ;
 ; *****************************************************************************
 
@@ -64,8 +64,8 @@ section .text
     MOV [0x01c35e4c],EAX                ; 00484f47 | DAT_01c35e4c
     MOV EAX,dword ptr [EBX + 0x8]       ; 00484f4c
     PUSH EAX                            ; 00484f4f
-    CALL shape_edittool.cpp_FUN_00483ea0 ; 00484f50
-        ;   XREF to: 00483ea0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00483ea0()
+    CALL shape_edittool.cpp_draw3DBorder_FUN_00483ea0 ; 00484f50
+        ;   XREF to: 00483ea0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_00483ea0(int left, int top, int right, int bottom, ...)
     ADD ESP,0x14                        ; 00484f55
     MOV dword ptr [0x01c35e4c],ESI      ; 00484f58 | DAT_01c35e4c
     LEA ESI,[EBX + 0x1c]                ; 00484f5e
@@ -207,8 +207,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x8]       ; 004850a9
     ADD EAX,0x3                         ; 004850ac
     PUSH EAX                            ; 004850af
-    CALL shape_edittool.cpp_FUN_0047a590 ; 004850b0
-        ;   XREF to: 0047a590 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047a590()
+    CALL shape_edittool.cpp_drawDashedLine_FUN_0047a590 ; 004850b0
+        ;   XREF to: 0047a590 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_drawDashedLine_FUN_0047a590(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 004850b5
     JMP 0x00485009                      ; 004850b8
         ;   XREF to: 00485009 (UNCONDITIONAL_JUMP)  ; LAB_00485009

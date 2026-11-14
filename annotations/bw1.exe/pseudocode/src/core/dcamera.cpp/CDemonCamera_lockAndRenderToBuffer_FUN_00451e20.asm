@@ -7,7 +7,7 @@
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_00550580 at 00550833
+;   core_set.cpp_CDemonSet_renderScene_FUN_00550580 at 00550833
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dcamera_cpp_005d7897
@@ -20,7 +20,7 @@
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453ed0
 ;   core_main.c_FUN_005030e0
-;   engine_special.cpp_FUN_00581fe0
+;   engine_special.cpp_beginScene_FUN_00581fe0
 ;   engine_special.cpp_FUN_00582b70
 ;   engine_special.cpp_FUN_00582b90
 ;   engine_special.cpp_lockFrame_FUN_00581f50
@@ -86,8 +86,8 @@ section .text
     POP EDI                             ; 00451ea4
     POP ESI                             ; 00451ea5
     RET                                 ; 00451ea6
-    CALL engine_special.cpp_FUN_00581fe0 ; 00451ea7
-        ;   XREF to: 00581fe0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_00581fe0()
+    CALL engine_special.cpp_beginScene_FUN_00581fe0 ; 00451ea7
+        ;   XREF to: 00581fe0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_beginScene_FUN_00581fe0()
         ;   Label: LAB_00451ea7
     POP EDI                             ; 00451eac
     POP ESI                             ; 00451ead

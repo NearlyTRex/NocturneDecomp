@@ -8,8 +8,8 @@
 ;
 ; XREF[9]:
 ;   core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_00451e20 at 00451e93
+;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004d77d0 at 004d79a0
 ;   core_game.cpp_FUN_004ce580 at 004cf026
-;   core_game.cpp_FUN_004d77d0 at 004d79a0
 ;   core_mission.cpp_CDemonMission_process_FUN_0051b8d0 at 0051b9f5
 ;   engine_mini3d.cpp_unlockFrame_FUN_00511170 at 00511172
 ;   engine_special.cpp_presentToExternalRenderer_FUN_00582990 at 00582a42

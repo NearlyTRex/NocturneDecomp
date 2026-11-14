@@ -218,7 +218,7 @@ void __cdecl core_flame_cpp_CFlame_renderBackground_FUN_004b8ac0(CFlame *this_pt
 CBoundingBox3D * __cdecl core_flame_cpp_CFlame_getBoundingBox_FUN_004b8c90(CFlame *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_flame_cpp_CFlame_archive_FUN_004b8d10(CFlame *this_ptr);
 ECollisionType __cdecl core_flame_cpp_CFlame_getCollisionType_FUN_004b8e30(CFlame *this_ptr,SCollisionInfo *collision_info);
-void __cdecl core_flame_cpp_FUN_004b8e40(CFlame *this_ptr);
+void __cdecl core_flame_cpp_CFlame_updateGlobe_FUN_004b8e40(CFlame *this_ptr);
 void __cdecl core_flamecan_cpp_staticInit_FUN_004b8f10(void);
 CFlameCan * __cdecl core_flamecan_cpp_factoryFuncFlameCan_FUN_004b8f40(void);
 CDemonActorType * __cdecl core_flamecan_cpp_CFlameCan_getActorType_FUN_004b8f60(CFlameCan *this_ptr);

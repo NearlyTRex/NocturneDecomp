@@ -10,7 +10,7 @@
 ; undefined        Stack[-0x110]:1  local_110
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004d6990 at 004d707a
+;   core_game.cpp_CGame_loadGame_FUN_004d6990 at 004d707a
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_0051a4f0 at 0051ab46
 ;
 ; Referenced Globals:

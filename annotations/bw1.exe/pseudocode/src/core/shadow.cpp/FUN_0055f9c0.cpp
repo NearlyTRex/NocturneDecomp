@@ -42,7 +42,7 @@ void core_shadow_cpp_FUN_0055f9c0(void)
   *(int *)(unaff_retaddr + -4) = unaff_retaddr + 0xac;
   *(int *)(unaff_retaddr + -8) = *piVar2 + 0x90;
   *(uint *)(unaff_retaddr + -0xc) = 0x55fa6a;
-  engine_special_cpp_FUN_00580173
+  engine_special_cpp_transformAndProjectPoint_FUN_00580173
             (*(SProjectedVertex **)(unaff_retaddr + -8),*(CVector3i **)(unaff_retaddr + -4));
   piVar2 = DAT_00612560;
   *(uint *)(*DAT_00612560 + 0x20) = 0xffff;

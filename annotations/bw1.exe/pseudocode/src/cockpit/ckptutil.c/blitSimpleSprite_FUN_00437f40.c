@@ -20,7 +20,7 @@ void __cdecl cockpit_ckptutil_c_blitSimpleSprite_FUN_00437f40(void *sprite_data,
   
   iVar3 = _DAT_01c43550 - _DAT_01c4354c;
   if (sprite_data != (void *)0x0) {
-    pcVar1 = (code *)cockpit_ckptutil_c_FUN_00437270();
+    pcVar1 = (code *)cockpit_ckptutil_c_getColorConversionFunction_FUN_00437270();
     iVar2 = dest_y * 4;
     if (DAT_0061b4a0 == 8) {
       iVar2 = *(int *)(&DAT_01c4354c + iVar2) + dest_x;

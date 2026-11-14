@@ -12,9 +12,9 @@
 ;   core_set.cpp_CDemonSet_initScene_FUN_00534420 at 005344e9
 ;   core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_0053b280 at 0053b2ad
 ;   core_setutil.cpp_C3DSCamera_apply_FUN_00541fb0 at 00542025
-;   core_weather.cpp_FUN_0057bda0 at 0057c10d
-;   core_weather.cpp_FUN_0057c2e0 at 0057c601
-;   core_weather.cpp_FUN_0057d050 at 0057d073
+;   core_weather.cpp_CWeather_createLightningStrike_FUN_0057c2e0 at 0057c601
+;   core_weather.cpp_CWeather_setWeatherType_FUN_0057d050 at 0057d073
+;   core_weather.cpp_CWeather_update_FUN_0057bda0 at 0057c10d
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b9f66

@@ -7,8 +7,8 @@
 ; COutStreamFile * Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_game.cpp_FUN_004bb9b0 at 004bbc70
-;   core_game.cpp_FUN_004bbf70 at 004bc1ea
+;   core_game.cpp_CGame_loadGame_FUN_004bbf70 at 004bc1ea
+;   core_game.cpp_CGame_saveGame_FUN_004bb9b0 at 004bbc70
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 004029f2
 ;
 ; Referenced Globals:

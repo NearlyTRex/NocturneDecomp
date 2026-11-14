@@ -64,7 +64,8 @@ LAB_004d3fd9:
                   goto LAB_004d3f97;
                 }
 code_r0x004d400c:
-                core_inv_cpp_FUN_004da880(&this_ptr->inventory,(CDemonActor *)this_ptr_00,1);
+                core_inv_cpp_CInventory_addItem_FUN_004da880
+                          (&this_ptr->inventory,(CDemonActor *)this_ptr_00,1);
               }
               else {
                 if ((pCVar1[2].validation_magic == 0xb) && (this_ptr->bullets == 0x32)) {

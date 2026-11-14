@@ -30,8 +30,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
-;   core_xform.cpp_FUN_005b5620
-;   core_xform.cpp_FUN_005b5760
+;   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005b5620
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
 ;   core_xform.cpp_inverse_FUN_005b6380
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005b5200
 ;
@@ -66,8 +66,8 @@ section .text
     PUSH EAX                            ; 004326cd
     LEA EAX,[ESP + 0xa0]                ; 004326ce
     PUSH EAX                            ; 004326d5
-    CALL core_xform.cpp_FUN_005b5620    ; 004326d6
-        ;   XREF to: 005b5620 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_005b5620(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005b5620 ; 004326d6
+        ;   XREF to: 005b5620 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005b5620(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 004326db
     MOV EAX,dword ptr [EBP + 0x14]      ; 004326de
     ADD EAX,0x30                        ; 004326e1
@@ -77,8 +77,8 @@ section .text
     PUSH EAX                            ; 004326eb
     LEA EAX,[ESP + 0xd0]                ; 004326ec
     PUSH EAX                            ; 004326f3
-    CALL core_xform.cpp_FUN_005b5760    ; 004326f4
-        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760 ; 004326f4
+        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 004326f9
     LEA EAX,[ESP + 0x98]                ; 004326fc
     PUSH EAX                            ; 00432703

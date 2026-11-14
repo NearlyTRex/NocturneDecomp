@@ -2,20 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 124,
+    "complexity_score": 122,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 54,
+    "pseudocode_lines": 52,
     "suspect_count": 5,
     "suspect_types": [
-      "raw_address_constant",
+      "stack_ref",
       "undefined_data",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 180
+    "total_lines": 178
   },
   "cross_references": [],
   "function": {
@@ -54,7 +54,7 @@
     {
       "addr": "004e6340",
       "is_variadic": false,
-      "name": "core_manpuz.cpp_FUN_004e6340"
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_004e6340"
     },
     {
       "addr": "004e6820",
@@ -69,7 +69,7 @@
     {
       "addr": "0055d723",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_0055d723"
+      "name": "engine_special.cpp_transformAndProjectPoint_FUN_0055d723"
     }
   ],
   "globals": [
@@ -181,8 +181,16 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 18,
+      "match": "&stack0xffffffb8",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)&stack0xffffffb8;",
+      "type": "stack_ref"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 31,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(&DAT_0060b280->vertex_buffer_ptr[1000].projected_vertex,&CStack_18);",
@@ -190,23 +198,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 39,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280),",
       "type": "undefined_data"
     },
     {
-      "description": "Raw hex address 0x4e57b9 assigned to bare local `uStack_48`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_48` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 52,
-      "match": "0x4e57b9",
-      "severity": "moderate",
-      "text": "uStack_48 = 0x4e57b9;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 21,
+      "line": 20,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",

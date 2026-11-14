@@ -124,7 +124,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_0042ea10(CCharacte
       local_a8.x = (int)ROUND(local_c0 * _DAT_005fd5f0);
       local_a8.y = (int)ROUND(local_bc * _DAT_005fd5f0);
       local_a8.z = (int)ROUND(local_b8 * _DAT_005fd5f0);
-      engine_special_cpp_FUN_00580173
+      engine_special_cpp_transformAndProjectPoint_FUN_00580173
                 ((SProjectedVertex *)
                  ((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x + local_1c
                  ),&local_a8);
@@ -162,7 +162,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_0042ea10(CCharacte
       local_cc.x = (int)ROUND(local_c0 * _DAT_005fd5f0);
       local_cc.y = (int)ROUND(local_bc * _DAT_005fd5f0);
       local_cc.z = (int)ROUND(local_b8 * _DAT_005fd5f0);
-      engine_special_cpp_FUN_00580173
+      engine_special_cpp_transformAndProjectPoint_FUN_00580173
                 ((SProjectedVertex *)
                  ((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x + local_20
                  ),&local_cc);
@@ -199,7 +199,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_0042ea10(CCharacte
     local_b4.y = (int)ROUND(local_5c * _DAT_005fd5f0);
     local_b4.z = (int)ROUND(local_b8 * _DAT_005fd5f0);
     local_18 = local_2c;
-    engine_special_cpp_FUN_00580173
+    engine_special_cpp_transformAndProjectPoint_FUN_00580173
               ((SProjectedVertex *)
                ((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x + iVar5),
                &local_b4);
@@ -212,7 +212,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_0042ea10(CCharacte
     local_9c.x = (int)ROUND(local_c0 * _DAT_005fd5f0);
     local_9c.y = (int)ROUND(local_50 * _DAT_005fd5f0);
     local_9c.z = (int)ROUND(local_b8 * _DAT_005fd5f0);
-    engine_special_cpp_FUN_00580173
+    engine_special_cpp_transformAndProjectPoint_FUN_00580173
               ((SProjectedVertex *)
                ((int)&(pCVar2->vertex_buffer_ptr->projected_vertex).transformed_x + iVar3),&local_9c
               );
@@ -237,7 +237,8 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_0042ea10(CCharacte
   local_90.x = (int)ROUND(_DAT_02c8af28 * _DAT_005fd5f0);
   local_90.y = (int)ROUND(_DAT_02c8af2c * _DAT_005fd5f0);
   local_90.z = (int)ROUND(_DAT_02c8af30 * _DAT_005fd5f0);
-  engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_90);
+  engine_special_cpp_transformAndProjectPoint_FUN_00580173
+            (&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_90);
   pCVar2 = DAT_00612560;
   DAT_00612560->vertex_buffer_ptr->r = 0xffff;
   iVar5 = 0;
@@ -258,7 +259,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_0042ea10(CCharacte
     local_d8.x = (int)ROUND(local_c0 * _DAT_005fd5f0);
     local_d8.y = (int)ROUND(_DAT_005fd5f0 * 0.0);
     local_d8.z = (int)ROUND(local_b8 * _DAT_005fd5f0);
-    engine_special_cpp_FUN_00580173
+    engine_special_cpp_transformAndProjectPoint_FUN_00580173
               ((SProjectedVertex *)
                ((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x + iVar3),
                &local_d8);

@@ -69,9 +69,9 @@ undefined4 FUN_004207b0(CBoundingBox3D *param_1,int param_2);
 // Address: 00420990
 int __cdecl CBoundingBox3D::isVisibleWithCamera(CBoundingBox3D *this_ptr);
 
-// Original: core_box.cpp_FUN_00420dc0
+// Original: core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420dc0
 // Address: 00420dc0
-float __cdecl FUN_00420dc0(CBoundingBox3D *this_ptr);
+float __cdecl CBoundingBox3D::getBoundingBoxScreenSize(CBoundingBox3D *this_ptr);
 
 // Original: core_box.cpp_FUN_00420ee0
 // Address: 00420ee0
@@ -81,9 +81,9 @@ float FUN_00420ee0(float *param_1,float *param_2,float *param_3,float *param_4);
 // Address: 00421570
 void __cdecl CBoundingBox3D::reset(CBoundingBox3D *this_ptr);
 
-// Original: core_box.cpp_FUN_004215d0
+// Original: core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_004215d0
 // Address: 004215d0
-int __cdecl FUN_004215d0(CBoundingBox3D *this_ptr,CBoundingBox3D *other);
+int __cdecl CBoundingBox3D::doesBoxIntersect(CBoundingBox3D *this_ptr,CBoundingBox3D *other);
 
 // Original: core_box.cpp_CBoundingBox3D_getMaximumBound_FUN_00421620
 // Address: 00421620

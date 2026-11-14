@@ -80,7 +80,7 @@ void __cdecl core_prye_cpp_CPrye_makeDrawDecision_FUN_0051e6d0(CPrye *this_ptr)
   }
   if ((this_ptr->base).base.layer_action_index != 0x11) goto LAB_0051e8aa;
   pCVar11 = &(this_ptr->base).base.model;
-  fVar1 = core_motion_cpp_FUN_004fc930(&pCVar11->base);
+  fVar1 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930(&pCVar11->base);
   local_1c = 1.0;
   local_18 = (CDeformableModelInstance *)fVar1;
   pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&pCVar11->base);

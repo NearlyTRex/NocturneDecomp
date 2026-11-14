@@ -123,7 +123,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004b7f90(CGame *this_ptr)
   else {
     core_setdir_cpp_FUN_0053f940(g_CDemonSetPtr,g_CScriptPtr->focus_actor,1);
   }
-  core_game_cpp_FUN_004bd620(this_ptr);
+  core_game_cpp_CGame_beginFadeIn_FUN_004bd620(this_ptr);
   core_game_cpp_CGame_loadAssets_FUN_004bd430(this_ptr);
   iVar5 = core_netgame_cpp_CNetGame_syncPlayers_FUN_00504890(g_CNetGamePtr,3);
   if ((iVar5 != 0) &&
@@ -264,7 +264,7 @@ LAB_004b84e1:
             if (iVar5 == 1) {
               engine_keys_cpp_CKeys_toggleInputMask_FUN_004df5d0(0x01D70A78,0);
               core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b7ee0(this_ptr);
-              core_menu_cpp_FUN_004ea280(1);
+              core_menu_cpp_showOptionsScreen_FUN_004ea280(1);
               core_game_cpp_CGame_setGameRes_FUN_004b7de0(this_ptr);
               engine_keys_cpp_CKeys_toggleInputMask_FUN_004df5d0
                         (0x01D70A78,(uint)(this_ptr->is_paused == 0));
@@ -279,7 +279,7 @@ LAB_004b84e1:
               core_game_cpp_CGame_promptLoadGame_FUN_004bfa40(this_ptr);
             }
             if (iVar5 == 3) {
-              core_game_cpp_FUN_004bda10(this_ptr,(char *)0x0);
+              core_game_cpp_CGame_saveGame_FUN_004bda10(this_ptr,(char *)0x0);
             }
             if (iVar5 == 4) {
               pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00508960(&DAT_005c278d);
@@ -330,7 +330,7 @@ LAB_004b84e1:
 LAB_004b8719:
     if (((this_ptr->cinematic_skip_in_progress != 0) || (g_CNetGamePtr->has_pending_sim_frame != 0))
        || (bVar2)) {
-      wincore_winrun_cpp_FUN_00580f70();
+      wincore_winrun_cpp_processWindowMessages_FUN_00580f70();
     }
     else {
       if (this_ptr->screen_clear_count < 3) {
@@ -343,7 +343,7 @@ LAB_004b8719:
       }
       else {
         engine_special_cpp_presentToExternalRenderer_FUN_00566260(1);
-        wincore_winrun_cpp_FUN_00580f70();
+        wincore_winrun_cpp_processWindowMessages_FUN_00580f70();
         this_ptr->frame_counter = this_ptr->frame_counter + 1;
       }
     }
@@ -388,7 +388,7 @@ LAB_004b8719:
       local_1c = 1;
       goto LAB_004b8594;
     }
-    core_game_cpp_FUN_004bec20(this_ptr);
+    core_game_cpp_CGame_showFullscreenBitmap_FUN_004bec20(this_ptr);
     if (this_ptr->wait_for_keypress != 0) {
       wincore_winrun_cpp_getNextKeypress_FUN_00580790();
     }

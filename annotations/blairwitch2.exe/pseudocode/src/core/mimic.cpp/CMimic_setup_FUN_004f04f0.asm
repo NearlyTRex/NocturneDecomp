@@ -28,7 +28,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
 ;   core_actor.cpp_createActorByName_FUN_0040c5a0
 ;   core_cloth.cpp_CCloth_load_FUN_005adeb0
-;   core_cloth.cpp_FUN_005ae680
+;   core_cloth.cpp_CCloth_setup_FUN_005ae680
 ;   core_enemy.cpp_CEnemy_setup_FUN_00487eb0
 ;   core_main.c_FUN_004e4500
 ;   core_morph.cpp_CMorph_getReady_FUN_005b71d0
@@ -216,8 +216,8 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 004f06d6
     PUSH EAX                            ; 004f06d9
     PUSH ESI                            ; 004f06da
-    CALL core_cloth.cpp_FUN_005ae680    ; 004f06db
-        ;   XREF to: 005ae680 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_005ae680(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
+    CALL core_cloth.cpp_CCloth_setup_FUN_005ae680 ; 004f06db
+        ;   XREF to: 005ae680 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_setup_FUN_005ae680(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
     ADD ESP,0x10                        ; 004f06e0
     MOV EBP,dword ptr [0x01c264e0]      ; 004f06e3 | g_CEnemyClassInfo.name_hash
     PUSH EBP                            ; 004f06e9

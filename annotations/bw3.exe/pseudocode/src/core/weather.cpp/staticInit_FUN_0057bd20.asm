@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_weather.cpp_FUN_0057bd80
+;   core_weather.cpp_CWeather_ctor_FUN_0057bd80
 ;   crt_memory.c___arrinit_FUN_005a30d7
 ;
 ; *****************************************************************************
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x2d0c1a0                      ; 0057bd20
         ;   Label: core_weather.cpp_staticInit_FUN_0057bd20
-    CALL core_weather.cpp_FUN_0057bd80  ; 0057bd25
-        ;   XREF to: 0057bd80 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_FUN_0057bd80()
+    CALL core_weather.cpp_CWeather_ctor_FUN_0057bd80 ; 0057bd25
+        ;   XREF to: 0057bd80 (UNCONDITIONAL_CALL)  ; CWeather * core_weather.cpp_CWeather_ctor_FUN_0057bd80(CWeather * this_ptr)
     ADD ESP,0x4                         ; 0057bd2a
     PUSH 0x5db0f0                       ; 0057bd2d
     PUSH 0x7d0                          ; 0057bd32

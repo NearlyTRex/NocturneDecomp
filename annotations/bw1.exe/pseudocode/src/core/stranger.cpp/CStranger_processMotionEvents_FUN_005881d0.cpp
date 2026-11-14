@@ -176,7 +176,7 @@ LAB_0058899d:
                 }
                 (this_ptr->base).action_pending = 1;
               }
-              core_hero_cpp_FUN_004ec280(&this_ptr->base,1);
+              core_hero_cpp_CHero_executeObjectPickup_FUN_004ec280(&this_ptr->base,1);
             }
           }
         }

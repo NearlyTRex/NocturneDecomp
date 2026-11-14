@@ -382,6 +382,18 @@ def test_a_receiver_only_the_signature_brings_is_never_named_without_it():
     assert func.getName() == "old"
 
 
+def test_the_plan_defers_a_receiver_its_prototype_cannot_bring():
+    funcs = {"00000010": Func("old", 0x10)}
+    here = {"b": "00000010", "receiver_from_signature": True}
+    rows = [row("NAME_SIG", conv = "__fpucall", **here), row("NAME_SIG", sig = {"ret": "Nope"}, **here),
+            row("NAME_SIG", sig = None, **here), row("NAME_SIG", **here), row("NAME_SIG", b = "00000010"),
+            row("SIG_ONLY", conv = "__fpucall", **here), row("NAME_SIG", b = "00000099", receiver_from_signature = True)]
+    asa.defer_unbuildable_receivers(rows, funcs, dtm(), {})
+    assert [r["action"] for r in rows] == ["SKIP_NO_RECEIVER"] * 3 + ["NAME_SIG", "NAME_SIG", "SIG_ONLY", "NAME_SIG"]
+    assert "custom storage" in rows[0]["detail"] and "a type this program lacks" in rows[1]["detail"]
+    assert rows[2]["detail"].startswith("name claims class CBox and only its prototype supplies this_ptr")
+
+
 def test_an_unreadable_result_is_reset_and_the_receiver_name_undone():
     func = Func("old", 0x10, breaks = True)
     assert apply(func, row("NAME_SIG", receiver_from_signature = True)) == "unreadable, reset"
@@ -519,6 +531,17 @@ def test_apply_names_signatures_and_saves_once(world, capsys):
     assert "  1 type(s) the target does not have" in out and "      Nope" in out
     assert world["program"].transactions == [["Apply sibling annotations", True]]
     assert world["program"].getDomainFile().saves == 1 and "Saved." in out
+
+
+def test_a_rewritten_prototype_replaces_the_sources_convention_and_parameters(world):
+    mapping = world["paths"]["mapping"]
+    doc = json.loads(mapping.read_text(encoding = "utf-8"))
+    doc["pairs"][3]["sig_rewrite"] = {"kind": "esi_output", "output": "out", "conv": "__stack_esi",
+                                      "params": [{"name": "count", "type": "int"}, {"name": "out", "type": "int"}]}
+    mapping.write_text(json.dumps(doc), encoding = "utf-8")
+    assert run_main(world, "--signatures", "--apply") == 0
+    convention, params, _ = world["funcs"]["f4"].updates[0]
+    assert convention == "__stack_esi" and [p.getName() for p in params] == ["count", "out"]
 
 
 def test_a_thunk_is_named_only_after_a_name_that_landed(world, monkeypatch):
