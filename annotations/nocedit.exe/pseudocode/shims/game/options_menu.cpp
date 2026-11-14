@@ -131,6 +131,14 @@ void step_halo(int step) {
     g_CGamePtr->halo_mode = (from + kHaloModes + step) % kHaloModes;
 }
 
+// The rates offered are the fullscreen size's, so the size is read first.
+void step_refresh_rate(int step) {
+    int w = 0, h = 0;
+    nocturne_window_fullscreen_size(&w, &h);
+    nocturne_refresh_rate_cycle(step, w, h);
+    nocturne_window_mode_reapply();
+}
+
 // Set while Options runs from a mission's pause menu: the mission sets its own
 // mode as it loads, so only the window follows a pick there.
 bool s_in_mission = false;
@@ -247,13 +255,9 @@ public:
             nocturne_fullscreen_size_cycle(step);
             nocturne_window_mode_reapply();
             break;
-        case DISPLAY_REFRESH_RATE: {
-            int w = 0, h = 0;
-            nocturne_window_fullscreen_size(&w, &h);
-            nocturne_refresh_rate_cycle(step, w, h);
-            nocturne_window_mode_reapply();
+        case DISPLAY_REFRESH_RATE:
+            step_refresh_rate(step);
             break;
-        }
         case DISPLAY_VSYNC:
             nocturne_vsync_cycle(step);
             break;

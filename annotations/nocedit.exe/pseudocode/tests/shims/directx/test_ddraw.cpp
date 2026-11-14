@@ -335,10 +335,23 @@ NOCTURNE_TEST(the_renderer_follows_the_vsync_setting) {
         release(primary);
     }
     {
+        // Made with vsync off, it is known to be off: a Flip with vsync still
+        // off leaves it be, so the flag it was made reporting stays.
+        Screen screen; // resets the stand, so vsync is set after it
         stand.vsync = 0;
-        Screen screen;
         CHECK_EQ(screen.set_mode(64, 48, 32), kOk);
-        CHECK(nocturne_ddraw_present_renderer() != nullptr);
+        SDL_Renderer *renderer = nocturne_ddraw_present_renderer();
+        SDL_RendererInfo made;
+        CHECK_EQ(SDL_GetRendererInfo(renderer, &made), 0);
+        IDirectDrawSurface *primary = nullptr;
+        CHECK_EQ(screen.flip_chain(&primary, kFlipChainInSystemMemory), kOk);
+        IDirectDrawSurface *back = back_buffer_of(primary);
+        CHECK_EQ((*primary->vtable->Flip)(primary, nullptr, 1), kOk);
+        SDL_RendererInfo info;
+        CHECK_EQ(SDL_GetRendererInfo(renderer, &info), 0);
+        CHECK_EQ(info.flags & SDL_RENDERER_PRESENTVSYNC, made.flags & SDL_RENDERER_PRESENTVSYNC);
+        release(back);
+        release(primary);
     }
     stand.vsync = 1;
     SDL_SetHint(SDL_HINT_RENDER_DRIVER, "");

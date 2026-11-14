@@ -177,7 +177,7 @@ Read by `core/podmain.cpp:CDemonPod_load_FUN_005519c0` at startup. Format is pla
 ...
 ```
 
-The first integer is the count; each subsequent line is one filename to mount. If the file is **absent**, the game falls back to scanning the working directory for `*.pod` files via `CFileFinder` and mounts them all in alphabetical order. The game then calls `resolveDependenciesAndSort` to reorder mounts based on declared dependencies.
+The first integer is the count; each subsequent line is one filename to mount. If the file is **absent**, the game falls back to scanning the working directory for `*.pod` files via `CFileFinder` and mounts them all in the order the OS lists them. nocedit then calls `resolveDependenciesAndSort` to reorder mounts by POD3 priority and dependency records; retail and the Blair Witch builds never do. See [`25-pod_archives/mounting.md`](../25-pod_archives/mounting.md).
 
 So `pod.ini` is just a manual override for which pods to load and in what order — useful for development builds where you have many archives present but only want a subset mounted.
 

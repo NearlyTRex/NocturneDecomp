@@ -769,6 +769,31 @@ corrected from contiguity, class, factory, assert and link-order evidence.
 
 ---
 
+### [25-pod_archives/](25-pod_archives/)
+
+The archive formats the engine reads in all five builds: EPD, POD1, POD2 and two POD3s, how
+they are mounted and searched, nocedit's builder, and every shipped POD checked against them.
+
+| File | Description |
+|------|-------------|
+| `README.md` | Index, key facts, Ghidra corrections, open questions |
+| `formats.md` | Every layout with its read sites; CRC-32/MPEG-2 and its ranges; audit and dependency records |
+| `mounting.md` | `pod.ini`, priority and dependency ordering, lookup precedence per build, reading, checksums, errors |
+| `editor.md` | nocedit's POD tools: the POD2 builder, response files, audit trail, mount management |
+| `measurements.md` | The shipped PODs of all four games, measured |
+| `later_versions.md` | POD4 to POD6 from outside sources, unverified |
+
+**Key outcomes:**
+- **Every shipped archive is POD2 but Nocturne's `tground.pod` (POD1)**, and each is exactly
+  nocedit's builder output: both CRCs valid, names sorted, audit records after the data.
+- **nocedit's POD3 and the Blair Witch POD3 are different layouts**; neither ships. Retail reads
+  only POD1 and POD2, and bw1/bw3 cannot read POD1.
+- **CRC-32/MPEG-2 in every build, never checked on mount.** Priority and dependency ordering run
+  only in the editor; elsewhere the mount order is `pod.ini`'s.
+- **A POD beats a loose file, except in bw3.** No format compresses, encrypts or hashes.
+
+---
+
 ## Standalone Documents
 
 ### [ghidra_suspect_patterns.md](ghidra_suspect_patterns.md)

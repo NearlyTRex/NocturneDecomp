@@ -201,11 +201,13 @@ void collect_nested_pods(const std::filesystem::path &top, std::vector<WatcomNes
     // The first of each name, and none the data directory has itself.
     std::vector<WatcomNestedPod> kept;
     for (const WatcomNestedPod &pod : *pods) {
-        bool shadowed = false;
-        for (const std::string &name : own)
-            shadowed = shadowed || nocturne_ascii_iequals(name.c_str(), pod.name.c_str());
-        for (const WatcomNestedPod &other : kept)
-            shadowed = shadowed || nocturne_ascii_iequals(other.name.c_str(), pod.name.c_str());
+        const auto same = [&pod](const std::string &name) {
+            return nocturne_ascii_iequals(name.c_str(), pod.name.c_str());
+        };
+        const bool shadowed =
+            std::any_of(own.begin(), own.end(), same) ||
+            std::any_of(kept.begin(), kept.end(),
+                        [&same](const WatcomNestedPod &other) { return same(other.name); });
         if (!shadowed)
             kept.push_back(pod);
     }

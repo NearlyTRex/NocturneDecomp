@@ -101,7 +101,8 @@ bool display_has_size(int display, int width, int height) {
 
 extern "C" int nocturne_display_index(void) {
     const int saved = s_display.get();
-    return (saved >= 0 && saved < display_count()) ? saved : 0;
+    // Unsigned, so a negative index is out of range too.
+    return (unsigned)saved < (unsigned)display_count() ? saved : 0;
 }
 
 extern "C" int nocturne_display_index_cycle(int step) {

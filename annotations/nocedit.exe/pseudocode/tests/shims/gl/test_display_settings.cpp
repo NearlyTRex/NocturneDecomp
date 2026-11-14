@@ -104,6 +104,7 @@ NOCTURNE_TEST(fullscreen_asks_for_the_mode_the_settings_name) {
     CHECK_EQ(nocturne_refresh_rate_cycle(-1, shown.w, shown.h), 0);
     CHECK_EQ(nocturne_refresh_rate_cycle(1, shown.w, shown.h), hz);
     CHECK_EQ(nocturne_refresh_rate_cycle(0, 1, 1), 0);
+    CHECK_EQ(nocturne_refresh_rate_cycle(0, shown.w, shown.h + 1), 0); // the width alone
 }
 
 // What the resolution list may offer: nothing larger than the desktop, and in
@@ -116,6 +117,7 @@ NOCTURNE_TEST(the_display_offers_what_it_can_show) {
     CHECK_EQ(nocturne_window_mode_cycle(1), NOCTURNE_WINDOW_MODE_FULLSCREEN);
     CHECK_EQ(nocturne_display_offers(shown.w / 2, shown.h / 2), 0);
     CHECK_EQ(nocturne_display_offers(shown.w, shown.h), 1);
+    CHECK_EQ(nocturne_display_offers(shown.w, shown.h / 2), 0); // the width alone
     nocturne_fullscreen_size_cycle(1);
     CHECK_EQ(nocturne_display_offers(shown.w / 2, shown.h / 2), 1);
     nocturne_fullscreen_size_cycle(1);

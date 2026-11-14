@@ -288,6 +288,14 @@ NOCTURNE_TEST(a_pod_in_a_subfolder_reads_as_if_it_were_in_the_data_directory) {
     CHECK_EQ(watcom_resolve_fs_path("ACT2.POD", WatcomPathUse::Write), install.in_user("ACT2.POD"));
     Install::write(install.user / "MUSIC.POD", "mine");
     CHECK(fs::equivalent(watcom_resolve_fs_path("music.pod"), install.in_user("MUSIC.POD")));
+    // The listing has the user directory's copy once, not the subfolder's as well.
+    const std::vector<std::string> listed = nocturne_find_files("music.pod");
+    CHECK_EQ(listed.size(), (size_t)1);
+    if (listed.size() == 1)
+        CHECK_EQ(listed[0], std::string("MUSIC.POD"));
+    // With no user directory a write goes to the data directory, not a subfolder.
+    watcom_set_path_roots({install.data.generic_string(), ""});
+    CHECK_EQ(watcom_resolve_fs_path("ACT2.POD", WatcomPathUse::Write), install.in_data("ACT2.POD"));
 }
 
 // The listing: one per name, the data directory's own left out, and no

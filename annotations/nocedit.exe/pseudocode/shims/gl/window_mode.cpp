@@ -13,6 +13,7 @@
 #include "shim_config.h"
 
 #include <SDL.h>
+#include <tuple>
 
 #ifndef NOCTURNE_PLATFORM_FIXED_DISPLAY
 #define NOCTURNE_PLATFORM_FIXED_DISPLAY 0
@@ -87,6 +88,11 @@ struct Applied {
 };
 Applied s_applied = {0, 0, 0, 0};
 bool s_applied_once = false;
+
+bool same_applied(const Applied &a, const Applied &b) {
+    return std::tie(a.display, a.mode_w, a.mode_h, a.mode_hz) ==
+           std::tie(b.display, b.mode_w, b.mode_h, b.mode_hz);
+}
 
 } // namespace
 
@@ -176,12 +182,9 @@ extern "C" void nocturne_window_mode_apply(SDL_Window *window) {
     // the wider value to tell the two apart.
     // Before the first apply the window has no display mode of ours.
     const Uint32 cur = SDL_GetWindowFlags(window) & SDL_WINDOW_FULLSCREEN_DESKTOP;
-    const bool on_display = SDL_GetWindowDisplayIndex(window) == next.display;
-    const bool same_mode =
-        s_applied_once ? (s_applied.mode_w == next.mode_w && s_applied.mode_h == next.mode_h &&
-                          s_applied.mode_hz == next.mode_hz)
-                       : next.mode_w == 0;
-    if (cur == want && on_display && same_mode)
+    Applied now = s_applied_once ? s_applied : Applied{0, 0, 0, 0};
+    now.display = SDL_GetWindowDisplayIndex(window);
+    if (cur == want && same_applied(now, next))
         return;
 
     DLOG("render", "apply mode=%d (%s) flags 0x%x -> 0x%x display %d mode %dx%d@%d", mode,

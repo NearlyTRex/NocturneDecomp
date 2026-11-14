@@ -620,6 +620,27 @@ NOCTURNE_TEST(setting_the_cursor_reports_the_games_point_and_warps_in_the_window
     stand.logical_scale = 1;
 }
 
+// Motion already queued when the cursor is set is the player's, though the warp
+// is still waiting: only the warp's own point, both coordinates, is its echo.
+NOCTURNE_TEST(motion_ahead_of_the_warps_echo_is_still_the_players) {
+    start();
+    if (g_sdlWindow == nullptr)
+        g_CreateWindowExAFunc(0, "Nocturne", nullptr, 0, 0, 0, 640, 480, 0, 0, 0, nullptr);
+    drain();
+    stand.logical_scale = 2;
+    push_motion(120, 80); // another column
+    push_motion(100, 60); // the warp's column, another row
+    CHECK(g_SetCursorPosFunc(50, 40));
+    const std::vector<long> got = moves(drain());
+    CHECK_EQ(got.size(), (size_t)3);
+    if (got.size() == 3) {
+        CHECK_EQ(got[0], (40L << 16) | 50L);
+        CHECK_EQ(got[1], (40L << 16) | 60L);
+        CHECK_EQ(got[2], (30L << 16) | 50L);
+    }
+    stand.logical_scale = 1;
+}
+
 // Unfocused, the cursor is the player's: setting it reports the point without
 // warping, and motion over the window is nothing until focus comes back.
 NOCTURNE_TEST(unfocused_the_cursor_is_never_warped_and_motion_is_not_the_games) {
